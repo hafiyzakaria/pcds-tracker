@@ -640,7 +640,7 @@ function StatsBar() {
 }
 
 function FilterBar({ active, onFilter }) {
-  const filters = [{ id: "all", label: "All Sectors" }, ...SECTORS.map((s) => ({ id: s.id, label: s.name, color: s.color }))];
+  const filters = [{ id: "all", label: "All Sectors", color: "#4ECCA3" }, ...SECTORS.map((s) => ({ id: s.id, label: s.name, color: s.color }))];
 
   return (
     <div
@@ -663,7 +663,7 @@ function FilterBar({ active, onFilter }) {
             border: active === f.id ? `1px solid ${f.color || "rgba(255,255,255,0.5)"}` : "1px solid rgba(255,255,255,0.1)",
             borderRadius: "2px",
             backgroundColor: active === f.id ? `${(f.color || "#fff")}15` : "transparent",
-            color: active === f.id ? f.color || "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.4)",
+            color: active === f.id ? (f.id === "all" ? "rgba(255,255,255,0.9)" : f.color) : "rgba(255,255,255,0.4)",
             cursor: "pointer",
             transition: "all 0.15s ease",
             fontFamily: "'JetBrains Mono', 'SF Mono', monospace",
