@@ -529,6 +529,7 @@ function ProjectCard({ row, expanded, onToggle }) {
             style={{
               display: "inline-flex",
               alignItems: "center",
+              position: "relative",
               width: "max-content",
               maxWidth: "calc(100% - 32px)",
             }}
@@ -537,8 +538,9 @@ function ProjectCard({ row, expanded, onToggle }) {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                position: "relative",
-                zIndex: 1,
+                position: "absolute",
+                inset: "0 auto 0 0",
+                zIndex: 2,
                 minHeight: "28px",
                 padding: "7px 10px",
                 border: `1px solid ${row.sectorColor}`,
@@ -559,8 +561,7 @@ function ProjectCard({ row, expanded, onToggle }) {
               style={{
                 minWidth: 0,
                 minHeight: "28px",
-                marginLeft: "-9px",
-                padding: "7px 11px 7px 18px",
+                padding: `7px 11px 7px ${row.kind === "sector" ? "68px" : "78px"}`,
                 border: `1px solid ${row.sectorColor}`,
                 borderRadius: "999px",
                 backgroundColor: "#ffffff",
@@ -707,7 +708,6 @@ export default function App() {
     if (!selectedFilter.statuses) return true;
     return selectedFilter.statuses.includes(row.status);
   }));
-  const activeFilterLabel = activeFilter === "all" ? "all phases" : selectedFilter.label.toLowerCase();
 
   return (
     <div
@@ -791,24 +791,6 @@ export default function App() {
         <SummaryMetrics rows={rows} />
 
         <section>
-          <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", alignItems: "flex-end", flexWrap: "wrap", marginBottom: "10px" }}>
-            <div>
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#1a1a2e",
-                  fontSize: "20px",
-                  lineHeight: 1.2,
-                }}
-              >
-                Project Board
-              </h2>
-              <p style={{ margin: "6px 0 0", color: "#6b7280", fontSize: "13px" }}>
-                Showing {filteredRows.length} of {rows.length} tracked projects across {activeFilterLabel}. Ongoing items appear first.
-              </p>
-            </div>
-          </div>
-
           <FilterBar activeFilter={activeFilter} onFilter={setActiveFilter} />
           <StatusLegend />
           <ProjectGrid rows={filteredRows} expandedId={expandedId} onToggle={setExpandedId} />
