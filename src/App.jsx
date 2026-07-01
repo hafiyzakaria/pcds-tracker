@@ -194,22 +194,86 @@ function SummaryMetrics({ rows }) {
   ).length;
   const doneMilestones = rows.reduce((sum, row) => sum + row.doneMilestones, 0);
   const totalMilestones = rows.reduce((sum, row) => sum + row.totalMilestones, 0);
+  const milestoneProgress = totalMilestones ? (doneMilestones / totalMilestones) * 100 : 0;
 
   return (
-    <section
-      className="summary-metrics"
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(132px, 1fr))",
-        marginBottom: "24px",
-        borderLeft: "1px solid #e5e7eb",
-      }}
-    >
-      <Metric value={rows.length} label="Tracked Projects" accent="#0d9488" />
-      <Metric value={ongoing} label="Ongoing" accent="#d97706" />
-      <Metric value={planning} label="Planning" accent="#4f46e5" />
-      <Metric value={completeLike} label="Delivered" accent="#16a34a" />
-      <Metric value={`${doneMilestones}/${totalMilestones}`} label="Milestones" accent="#1d4ed8" />
+    <section className="summary-wrap">
+      <div
+        className="summary-metrics"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(132px, 1fr))",
+          borderLeft: "1px solid #e5e7eb",
+        }}
+      >
+        <Metric value={rows.length} label="Tracked Projects" accent="#0d9488" />
+        <Metric value={ongoing} label="Ongoing" accent="#d97706" />
+        <Metric value={planning} label="Planning" accent="#4f46e5" />
+        <Metric value={completeLike} label="Delivered" accent="#16a34a" />
+        <div className="desktop-milestone-metric">
+          <Metric value={`${doneMilestones}/${totalMilestones}`} label="Milestones" accent="#1d4ed8" />
+        </div>
+      </div>
+      <div
+        className="mobile-milestone-summary"
+        style={{
+          display: "none",
+          padding: "16px 18px",
+          border: "1px solid #e5e7eb",
+          borderTop: 0,
+          backgroundColor: "#ffffff",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "baseline",
+            justifyContent: "space-between",
+            gap: "14px",
+          }}
+        >
+          <div
+            style={{
+              color: "#6b7280",
+              fontSize: "10px",
+              fontWeight: 800,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+            }}
+          >
+            Milestones
+          </div>
+          <div
+            style={{
+              color: "#1a1a2e",
+              fontSize: "22px",
+              fontWeight: 800,
+              lineHeight: 1,
+            }}
+          >
+            {doneMilestones}/{totalMilestones}
+          </div>
+        </div>
+        <div
+          aria-label={`${doneMilestones} of ${totalMilestones} milestones logged`}
+          style={{
+            height: "6px",
+            marginTop: "12px",
+            overflow: "hidden",
+            borderRadius: "999px",
+            backgroundColor: "#e5e7eb",
+          }}
+        >
+          <div
+            style={{
+              width: `${milestoneProgress}%`,
+              height: "100%",
+              borderRadius: "999px",
+              backgroundColor: "#1d4ed8",
+            }}
+          />
+        </div>
+      </div>
     </section>
   );
 }
@@ -728,14 +792,39 @@ export default function App() {
         a:hover { opacity: 0.8; }
         ::selection { background: #0d948844; }
         @media (max-width: 760px) {
+          main {
+            padding: 32px 20px 64px !important;
+          }
+          header {
+            margin-bottom: 24px !important;
+          }
+          .tracker-kicker {
+            font-size: 9px !important;
+            letter-spacing: 0.14em !important;
+          }
           .summary-metrics {
             grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            border-left: 1px solid #e5e7eb;
+          }
+          .desktop-milestone-metric {
+            display: none !important;
+          }
+          .mobile-milestone-summary {
+            display: block !important;
+          }
+          .summary-wrap {
+            margin-bottom: 24px !important;
           }
           .project-card-grid {
             grid-template-columns: 1fr !important;
           }
           .tracker-title {
             font-size: 36px !important;
+          }
+          .tracker-description {
+            font-size: 16px !important;
+            line-height: 1.55 !important;
+            margin-top: 18px !important;
           }
         }
       `}</style>
@@ -747,6 +836,7 @@ export default function App() {
           }}
         >
           <div
+            className="tracker-kicker"
             style={{
               marginBottom: "10px",
               color: "#6b7280",
@@ -775,6 +865,7 @@ export default function App() {
             <span style={{ color: "#0d9488" }}>Project Tracker</span>
           </h1>
           <p
+            className="tracker-description"
             style={{
               maxWidth: "680px",
               margin: "18px 0 0",
@@ -788,7 +879,9 @@ export default function App() {
           </p>
         </header>
 
-        <SummaryMetrics rows={rows} />
+        <div style={{ marginBottom: "24px" }}>
+          <SummaryMetrics rows={rows} />
+        </div>
 
         <section>
           <FilterBar activeFilter={activeFilter} onFilter={setActiveFilter} />
