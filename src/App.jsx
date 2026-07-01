@@ -714,6 +714,9 @@ function ProjectCard({ row, expanded, onToggle }) {
           >
             {row.name}
           </h3>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap", marginTop: "12px" }}>
+            <StatusBadge status={row.status} color={row.statusColor} />
+          </div>
           {expanded && (
             <div
               style={{
@@ -729,9 +732,6 @@ function ProjectCard({ row, expanded, onToggle }) {
               <p style={{ margin: 0 }}>{row.summary}</p>
             </div>
           )}
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap", marginTop: "12px" }}>
-            <StatusBadge status={row.status} color={row.statusColor} />
-          </div>
         </div>
 
         <div style={{ display: "grid", gap: "12px" }}>
