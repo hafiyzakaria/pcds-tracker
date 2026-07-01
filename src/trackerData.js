@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-07-01";
+export const LAST_UPDATED = "2026-07-02";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -32,18 +32,19 @@ export const SECTORS = [
     projects: [
       {
         name: "SMD Semiconductor — GaN Chip Development",
-        status: "Operational",
-        statusColor: "#16a34a",
+        status: "In Progress",
+        statusColor: "#d97706",
         lead: "SMD Semiconductor (State-owned)",
         value: "—",
         summary:
-          "Sarawak's state-owned semiconductor venture developing compound semiconductor chips based on Gallium Nitride (GaN), enhanced by AI. Part of Sarawak's push to become a technology creator, not just a user. Indonesia has expressed interest in collaboration.",
+          "Sarawak's state-owned semiconductor venture developing compound semiconductor chips based on Gallium Nitride (GaN), enhanced by AI. The keteq.GaN and keteq.ai platforms have been publicly unveiled, with global IP registration and commercialisation still the next visible proof points.",
         milestones: [
           { date: "2026-Q1", text: "Premier announces GaN chip development success", done: true },
-          { date: "TBD", text: "Potential Indonesia semiconductor collaboration", done: false },
+          { date: "2026", text: "Global IP registration and commercialisation pathway", done: false },
         ],
         sources: [
           { label: "DayakDaily — SMD Advanced Chip Integration Centre (Sep 2025)", url: "https://dayakdaily.com/sarawak-to-establish-smd-advanced-chip-integration-centre-to-power-semiconductor-leap/" },
+          { label: "DayakDaily — keteq.GaN and AI converter unveiled (Oct 2025)", url: "https://dayakdaily.com/smd-semiconductor-unveils-keteq-gan-ai-convertor-in-london-cementing-sarawak-as-tech-leader/" },
           { label: "DayakDaily — Keteq AI chip secures global IP rights (Oct 2025)", url: "https://dayakdaily.com/sarawak-designed-keteq-ai-chip-set-to-secure-global-ip-rights-by-early-2026/" },
         ],
       },
@@ -57,17 +58,18 @@ export const SECTORS = [
     projects: [
       {
         name: "RM1 Billion Paddy Infrastructure Programme",
-        status: "Planning",
-        statusColor: "#4f46e5",
+        status: "In Progress",
+        statusColor: "#d97706",
         lead: "Sarawak Government / Department of Agriculture",
         value: "RM1 billion",
-        summary: "Statewide paddy irrigation/drainage/farm road programme to boost rice self-sufficiency. RM1B allocated. Targets overtaking Kedah as Malaysia's rice bowl by 2030 with 500,000 tonnes output.",
+        summary: "Statewide paddy irrigation, drainage, and farm road programme to boost rice self-sufficiency. RM1B has been allocated, with implementation guardrails to keep infrastructure dedicated to paddy and support Sarawak's 500,000-tonne 2030 rice output target.",
         milestones: [
           { date: "2024-06", text: "RM1B allocation announced for large-scale paddy cultivation", done: true },
           { date: "2024-11", text: "DID restructured for agriculture/urban focus", done: true },
           { date: "2025-08", text: "Target: 500,000 tonnes rice output by 2030 announced", done: true },
           { date: "2026-02", text: "Minister: RM1B infra must not be diverted to oil palm", done: true },
-          { date: "2030", text: "Target: overtake Kedah as Malaysia's rice bowl", done: false },
+          { date: "2026", text: "Farmer clustering and paddy land-leasing implementation", done: false },
+          { date: "2030", text: "Target: 500,000 tonnes annual rice output", done: false },
         ],
         sources: [
           { label: "DayakDaily — RM1B allocation (Jun 2024)", url: "https://dayakdaily.com/sarawak-allocates-rm1-bln-for-large-scale-paddy-cultivation-to-boost-rice-self-sufficiency/" },
@@ -96,7 +98,7 @@ export const SECTORS = [
           { date: "2025-06", text: "UNESCO field evaluation completed (Jun 23\u201326)", done: true },
           { date: "2025-09", text: "UNESCO Council acceptance secured", done: true },
           { date: "2026-04-27", text: "Officially recognised as UNESCO Global Geopark", done: true },
-          { date: "Operational", text: "Geopark development and tourism infrastructure", done: false },
+          { date: "Ongoing", text: "Tourism products and community-based geopark rollout", done: false },
         ],
         sources: [
           { label: "DayakDaily — UNESCO approval (Apr 2026)", url: "https://dayakdaily.com/sarawak-delta-geopark-gets-unesco-approval/" },
@@ -114,7 +116,7 @@ export const SECTORS = [
         milestones: [
           { date: "2019", text: "Nominated for UNESCO World Heritage listing", done: true },
           { date: "2024", text: "Inscribed as UNESCO World Heritage Site", done: true },
-          { date: "Operational", text: "Heritage conservation and visitor facilities", done: false },
+          { date: "Ongoing", text: "UNESCO site management, conservation, and visitor facilities", done: false },
         ],
         sources: [
           { label: "UNESCO — Niah World Heritage listing", url: "https://whc.unesco.org/en/list/1014" },
@@ -140,7 +142,7 @@ export const SECTORS = [
         milestones: [
           { date: "2023", text: "Ordinance enacted", done: true },
           { date: "2024", text: "Natural Resources and Environment Bill introduced", done: true },
-          { date: "Operational", text: "Carbon trading market development", done: false },
+          { date: "Ongoing", text: "GHG reporting, carbon market, and sustainability reporting rollout", done: false },
         ],
         sources: [
           { label: "FULCRUM — Sarawak's low-carbon future", url: "https://fulcrum.sg/envisioning-a-low-carbon-future-sarawaks-journey-towards-sustainable-development/" },
@@ -168,12 +170,13 @@ export const SECTORS = [
         lead: "JKR / Sarawak Government",
         value: "RM1.52 billion (RM500M equipment fronted)",
         summary:
-          "Sarawak's first dedicated cancer centre in Kota Samarahan. PM directed JKR to expedite tendering in Q1 2026; Sarawak fronted RM500M for medical equipment. One of 5 key projects under the RM40B healthcare boost in 13MP. Expected operational before 2031.",
+          "Sarawak's first dedicated cancer centre in Kota Samarahan. PM directed JKR to expedite tendering in Q1 2026; Sarawak fronted RM500M for medical equipment. One of 5 key projects under the RM40B healthcare boost in 13MP. Groundbreaking is expected in 2026, with operations targeted before 2031.",
         milestones: [
           { date: "2025-12-03", text: "RM1.52B preliminary cost estimate announced", done: true },
           { date: "2025-12-16", text: "PM: expedite project for Q1 2026 tender", done: true },
           { date: "2025-12-17", text: "Sarawak fronts RM500M for medical equipment", done: true },
           { date: "2026-02-26", text: "Construction gathering pace in Samarahan health metropolis", done: true },
+          { date: "2026-Q3", text: "Groundbreaking ceremony", done: false },
           { date: "Before 2031", text: "Target: Operational", done: false },
         ],
         sources: [
@@ -200,10 +203,10 @@ export const SECTORS = [
         lead: "TSG Group / Global Telecommunications Group",
         value: "USD130 million (Phase 1)",
         summary:
-          "500MW data centre park in Kuching. First facility: 17MW IT capacity for Global Telecommunications Group. Aligned with Sarawak Digital Economy Blueprint 2030. Sarawak's abundant hydropower makes it attractive for energy-intensive data centre operations.",
+          "500MW data centre park in Kuching. First facility: 17MW IT capacity for Global Telecommunications Group. Aligned with Sarawak Digital Economy Blueprint 2030. Sarawak's abundant hydropower makes it attractive for energy-intensive data centre operations, with first operations targeted in 2026.",
         milestones: [
           { date: "2025-Q2", text: "Construction began on first facility", done: true },
-          { date: "2026", text: "Target: First data centre operational", done: false },
+          { date: "2026", text: "First 17MW data centre operational", done: false },
         ],
         sources: [
           { label: "DCD — FutureData first off-taker (2025)", url: "https://www.datacenterdynamics.com/en/news/futuredata-announces-first-off-taker-at-500mw-malaysian-data-center-park-in-sarawak/" },
@@ -239,10 +242,11 @@ export const SECTORS = [
         lead: "RECODA",
         value: "Multi-billion",
         summary:
-          "Major economic corridor spanning Samalaju Industrial Park, Tanjung Manis, Mukah, Baram, and Tunoh growth nodes. Powered by hydroelectric energy from Bakun (2,400MW), Murum (944MW), and soon Baleh (1,285MW). RECODA also oversees URDA, HDA, and NRDA for rural/interior development.",
+          "Major economic corridor spanning Samalaju Industrial Park, Tanjung Manis, Mukah, Baram, and Tunoh growth nodes. SCORE has reported RM125B in investment and 53,000 jobs created. RECODA also oversees URDA, HDA, and NRDA for rural/interior development.",
         milestones: [
-          { date: "Operational", text: "Industrial park expansion and investor facilitation", done: false },
-          { date: "Operational", text: "Rural infrastructure via URDA, HDA, NRDA", done: false },
+          { date: "2025-05-10", text: "SCORE reports RM125B investment and 53,000 jobs created", done: true },
+          { date: "Ongoing", text: "Industrial park expansion and investor facilitation", done: false },
+          { date: "Ongoing", text: "Rural infrastructure via URDA, HDA, NRDA", done: false },
         ],
         sources: [
           { label: "DayakDaily — SCORE: RM125B investment, 53K jobs (May 2025)", url: "https://dayakdaily.com/score-fuels-sarawaks-economic-growth-with-rm125-bln-investment-53000-jobs-created/" },
@@ -275,7 +279,7 @@ export const SECTORS = [
         milestones: [
           { date: "2025-12", text: "RM58M contract awarded to Linde EOX for hydrogen plant relocation to Rembus Depot", done: true },
           { date: "2026-Q1", text: "First two ART units arrive in Kuching", done: true },
-          { date: "2026-Q4", text: "Target: Begin passenger operations", done: false },
+          { date: "2026-Q4", text: "Begin passenger operations and complete hydrogen plant relocation", done: false },
           { date: "TBD", text: "Feeder bus network (hydrogen-powered) rollout", done: false },
         ],
         sources: [
@@ -290,12 +294,12 @@ export const SECTORS = [
         lead: "Sarawak Government / Federal Government",
         value: "RM1.8 billion",
         summary:
-          "Return of Bintulu Port to Sarawak state control from the federal government under MA63 devolution. Takeover valued at RM1.8B, agreed in principle Feb 2026. Awaiting Federal Cabinet endorsement (May 2026). Will serve as Sarawak's main port for LNG exports and SCORE corridor.",
+          "Return of Bintulu Port to Sarawak state control from the federal government under MA63 devolution. Takeover valued at RM1.8B, agreed in principle Feb 2026. Federal Cabinet endorsement and final agreement signing remain the next public decision points. Will serve as Sarawak's main port for LNG exports and SCORE corridor.",
         milestones: [
           { date: "2025-01-01", text: "12-month extension agreement signed for transition", done: true },
           { date: "2026-02-04", text: "RM1.8B takeover agreed in principle", done: true },
           { date: "2026-02-06", text: "RM1.8B valuation confirmed after detailed negotiations", done: true },
-          { date: "2026-05-09", text: "Awaiting Federal Cabinet endorsement (latest)", done: false },
+          { date: "2026-05-09", text: "Federal Cabinet endorsement and final agreement signing", done: false },
         ],
         sources: [
           { label: "DayakDaily — RM1.8B takeover agreed in principle (Feb 2026)", url: "https://dayakdaily.com/rm1-8-bln-bintulu-port-takeover-agreed-in-principle-as-handover-enters-final-stage/" },
@@ -318,10 +322,10 @@ export const SECTORS = [
         lead: "Sarawak Energy Berhad",
         value: "~RM10 billion",
         summary:
-          "1,285MW hydroelectric dam on the Baleh River, Kapit Division. Part of Sarawak's '10-20-30' target to reach 10GW generation capacity by 2030, predominantly from renewable sources including hydro, solar, and biomass.",
+          "1,285MW hydroelectric dam on the Baleh River, Kapit Division. Part of Sarawak's '10-20-30' target to reach 10GW generation capacity by 2030, predominantly from renewable sources including hydro, solar, and biomass. Public reporting now separates project completion from the later operational target.",
         milestones: [
-          { date: "2026", text: "Target commissioning year", done: false },
-          { date: "Operational", text: "Main civil works and electromechanical installation", done: false },
+          { date: "2026", text: "Project completion", done: false },
+          { date: "2028", text: "Operational generation", done: false },
         ],
         sources: [
           { label: "DayakDaily — Green revolution supercharging Sarawak energy (Aug 2025)", url: "https://dayakdaily.com/green-revolution-supercharging-sarawaks-energy-prowess/" },
@@ -335,11 +339,11 @@ export const SECTORS = [
         lead: "SEDC Energy / Gentari (Petronas)",
         value: "Multi-billion (USD)",
         summary:
-          "Large-scale green hydrogen production in Bintulu. Sarawak H2 Hub (JV between SEDC Energy and Gentari) to be sole developer/operator. Will supply green hydrogen for downstream e-methanol and sustainable aviation fuel production. H2biscus involves Samsung Engineering, Lotte Chemical, and Korea National Oil Corporation.",
+          "Large-scale green hydrogen production in Bintulu. Sarawak H2 Hub (JV between SEDC Energy and Gentari) to be sole developer/operator. The Rembus hydrogen plant relocation supports KUTS fuel supply, while H2ornbill and H2biscus target commercial hydrogen and derivatives production from 2028.",
         milestones: [
-          { date: "2026", text: "Hydrogen refuelling station at Rembus — ~1,900 tonnes/year capacity", done: false },
-          { date: "2028", text: "Target: Sarawak H2 Hub operations begin", done: false },
-          { date: "2027+", text: "Target: Large-scale commercial hydrogen production and export", done: false },
+          { date: "2026-Q4", text: "Hydrogen plant relocation and upgrading at Rembus", done: false },
+          { date: "2028", text: "H2ornbill and H2biscus commercial production", done: false },
+          { date: "2028+", text: "Large-scale hydrogen derivatives and export", done: false },
         ],
         sources: [
           { label: "DayakDaily — H2ornbill & H2biscus hydrogen economy (Aug 2025)", url: "https://dayakdaily.com/sarawak-powers-ahead-in-hydrogen-economy/" },
