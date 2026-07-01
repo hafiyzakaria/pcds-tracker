@@ -403,25 +403,24 @@ function FactList({ row }) {
       className="project-facts"
       style={{
         display: "grid",
-        gridTemplateColumns: row.value && row.value !== "—" ? "minmax(0, 1fr) minmax(120px, auto)" : "1fr",
-        gap: "10px",
-        marginTop: "10px",
+        gridTemplateColumns: row.value && row.value !== "—" ? "minmax(0, 1fr) minmax(136px, auto)" : "1fr",
+        border: "1px solid #e5e7eb",
+        borderRadius: "6px",
+        backgroundColor: "#ffffff",
+        overflow: "hidden",
       }}
     >
       <div
         style={{
           display: "grid",
           gap: "4px",
-          padding: "10px 12px",
-          border: "1px solid #e5e7eb",
-          borderRadius: "6px",
-          backgroundColor: "#ffffff",
+          padding: "8px 10px",
         }}
       >
         <span
           style={{
             color: "#9ca3af",
-            fontSize: "9px",
+            fontSize: "8px",
             fontWeight: 800,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
@@ -429,23 +428,22 @@ function FactList({ row }) {
         >
           Lead / parties
         </span>
-        <span style={{ color: "#374151", fontWeight: 700 }}>{row.lead}</span>
+        <span style={{ color: "#374151", fontSize: "12px", fontWeight: 750, lineHeight: 1.35 }}>{row.lead}</span>
       </div>
       {row.value && row.value !== "—" && (
         <div
+          className="project-facts-value"
           style={{
             display: "grid",
             gap: "4px",
-            padding: "10px 12px",
-            border: "1px solid #e5e7eb",
-            borderRadius: "6px",
-            backgroundColor: "#ffffff",
+            padding: "8px 10px",
+            borderLeft: "1px solid #e5e7eb",
           }}
         >
           <span
             style={{
               color: "#9ca3af",
-              fontSize: "9px",
+              fontSize: "8px",
               fontWeight: 800,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
@@ -453,57 +451,36 @@ function FactList({ row }) {
           >
             Reported value
           </span>
-          <span style={{ color: row.sectorColor, fontWeight: 800 }}>{row.value}</span>
+          <span style={{ color: row.sectorColor, fontSize: "12px", fontWeight: 850, lineHeight: 1.35 }}>{row.value}</span>
         </div>
       )}
     </div>
   );
 }
 
-function MilestoneNote({ milestone, emptyText }) {
-  if (!milestone) {
-    return <span>{emptyText}</span>;
-  }
-
+function SourceLinks({ sources, color, interactive = true }) {
   return (
-    <span>
-      <strong
-        style={{
-          color: "#374151",
-          fontFamily: FONT_STACK,
-          fontSize: "12px",
-        }}
-      >
-        {milestone.date}
-      </strong>
-      {": "}
-      {milestone.text}
-    </span>
-  );
-}
-
-function SourceLinks({ sources, color }) {
-  return (
-    <div style={{ display: "grid", gap: "8px" }}>
+    <div style={{ display: "grid", gap: "7px" }}>
       {sources.map((source, index) => (
         <a
           key={source.url}
           href={source.url}
           target="_blank"
           rel="noopener noreferrer"
+          tabIndex={interactive ? undefined : -1}
           onClick={(event) => event.stopPropagation()}
           style={{
             display: "grid",
-            gridTemplateColumns: "22px minmax(0, 1fr) auto",
+            gridTemplateColumns: "20px minmax(0, 1fr) auto",
             alignItems: "center",
-            gap: "10px",
-            padding: "9px 10px",
+            gap: "9px",
+            padding: "7px 9px",
             border: "1px solid #e5e7eb",
             borderRadius: "6px",
             backgroundColor: "#ffffff",
             color: "#374151",
             fontFamily: FONT_STACK,
-            fontSize: "12px",
+            fontSize: "11px",
             fontWeight: 700,
             textDecoration: "none",
             lineHeight: 1.35,
@@ -514,21 +491,33 @@ function SourceLinks({ sources, color }) {
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
-              width: "22px",
-              height: "22px",
+              width: "20px",
+              height: "20px",
               borderRadius: "50%",
               backgroundColor: `${color}14`,
               color,
-              fontSize: "10px",
+              fontSize: "9px",
               fontWeight: 800,
             }}
           >
             {index + 1}
           </span>
           <span>{source.label}</span>
-          <span style={{ color, fontSize: "13px" }}>↗</span>
+          <span style={{ color, fontSize: "12px" }}>↗</span>
         </a>
       ))}
+    </div>
+  );
+}
+
+function AccordionReveal({ expanded, children, className = "" }) {
+  return (
+    <div
+      className={`accordion-reveal ${className}`.trim()}
+      aria-hidden={!expanded}
+      inert={expanded ? undefined : ""}
+    >
+      <div className="accordion-reveal-inner">{children}</div>
     </div>
   );
 }
@@ -570,31 +559,7 @@ function MilestoneTimeline({ row }) {
   const loggedMilestones = row.milestones.filter((milestone) => milestone.done);
 
   return (
-    <DetailSection title="Timeline">
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 1fr) auto",
-          alignItems: "center",
-          gap: "12px",
-          marginBottom: "10px",
-        }}
-      >
-        <span style={{ color: "#6b7280", fontSize: "12px", fontWeight: 700 }}>
-          Logged milestones
-        </span>
-        <span
-          style={{
-            color: row.sectorColor,
-            fontFamily: FONT_STACK,
-            fontSize: "11px",
-            fontWeight: 800,
-            whiteSpace: "nowrap",
-          }}
-        >
-          {row.doneMilestones}/{row.totalMilestones}
-        </span>
-      </div>
+    <DetailSection title="Completed Milestones">
       {loggedMilestones.length > 0 ? (
         <MilestoneList milestones={loggedMilestones} />
       ) : (
@@ -606,9 +571,43 @@ function MilestoneTimeline({ row }) {
   );
 }
 
+function NextMilestoneCallout({ row, expanded }) {
+  const text = row.nextMilestone ? `${row.nextMilestone.date}: ${row.nextMilestone.text}` : "No open milestone";
+
+  return (
+    <div
+      style={{
+        display: "grid",
+        gap: "5px",
+        padding: expanded ? "10px 12px" : "9px 11px",
+        border: `1px solid ${row.sectorColor}33`,
+        borderLeft: `4px solid ${row.sectorColor}`,
+        borderRadius: "6px",
+        backgroundColor: `${row.sectorColor}0d`,
+      }}
+    >
+      <div
+        style={{
+          color: row.sectorColor,
+          fontFamily: FONT_STACK,
+          fontSize: "10px",
+          fontWeight: 850,
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+        }}
+      >
+        Next Milestone
+      </div>
+      <div style={{ color: "#374151", fontSize: "13px", fontWeight: expanded ? 700 : 650, lineHeight: 1.45 }}>{text}</div>
+    </div>
+  );
+}
+
 function ProjectCard({ row, expanded, onToggle }) {
   return (
     <article
+      className="project-card"
+      data-expanded={expanded ? "true" : "false"}
       style={{
         border: "1px solid #e5e7eb",
         borderTop: `3px solid ${row.sectorColor}`,
@@ -717,12 +716,12 @@ function ProjectCard({ row, expanded, onToggle }) {
           <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap", marginTop: "12px" }}>
             <StatusBadge status={row.status} color={row.statusColor} />
           </div>
-          {expanded && (
+          <AccordionReveal expanded={expanded} className="project-card-intro-reveal">
             <div
               style={{
                 display: "grid",
                 gap: "8px",
-                marginTop: "12px",
+                paddingTop: "12px",
                 color: "#4b5563",
                 fontSize: "13px",
                 lineHeight: 1.55,
@@ -731,34 +730,21 @@ function ProjectCard({ row, expanded, onToggle }) {
               <FactList row={row} />
               <p style={{ margin: 0 }}>{row.summary}</p>
             </div>
-          )}
+          </AccordionReveal>
         </div>
 
         <div style={{ display: "grid", gap: "12px" }}>
           <MilestoneIndicator row={row} />
-          <div>
-            <div
-              style={{
-                marginBottom: "5px",
-                color: "#9ca3af",
-                fontFamily: FONT_STACK,
-                fontSize: "10px",
-                fontWeight: 800,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-              }}
-            >
-              Next Milestone
+          <NextMilestoneCallout row={row} expanded={expanded} />
+          <AccordionReveal expanded={expanded} className="project-card-timeline-reveal">
+            <div style={{ paddingTop: "2px" }}>
+              <MilestoneTimeline row={row} />
             </div>
-            <div style={{ color: "#4b5563", fontSize: "13px", lineHeight: 1.45 }}>
-              {row.nextMilestone ? `${row.nextMilestone.date}: ${row.nextMilestone.text}` : "No open milestone"}
-            </div>
-          </div>
-          {expanded && <MilestoneTimeline row={row} />}
+          </AccordionReveal>
         </div>
       </button>
 
-      {expanded && (
+      <AccordionReveal expanded={expanded} className="project-card-sources-reveal">
         <div
           style={{
             display: "grid",
@@ -766,18 +752,11 @@ function ProjectCard({ row, expanded, onToggle }) {
             borderTop: "1px solid #e5e7eb",
           }}
         >
-          <DetailSection title="Evidence">
-            <p style={{ margin: "0 0 12px" }}>
-              Latest logged milestone:{" "}
-              <MilestoneNote
-                milestone={row.latestMilestone}
-                emptyText="No completed milestone is currently logged."
-              />
-            </p>
-            <SourceLinks sources={row.sources} color={row.sectorColor} />
+          <DetailSection title="Sources">
+            <SourceLinks sources={row.sources} color={row.sectorColor} interactive={expanded} />
           </DetailSection>
         </div>
-      )}
+      </AccordionReveal>
     </article>
   );
 }
@@ -845,6 +824,44 @@ export default function App() {
         button { font: inherit; }
         a:hover { opacity: 0.8; }
         ::selection { background: #0d948844; }
+        .accordion-reveal {
+          display: grid;
+          grid-template-rows: 0fr;
+          opacity: 0;
+          overflow: hidden;
+          transition:
+            grid-template-rows 260ms cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 160ms ease;
+        }
+        .accordion-reveal-inner {
+          min-height: 0;
+          overflow: hidden;
+        }
+        .project-card[data-expanded="true"] .accordion-reveal {
+          grid-template-rows: 1fr;
+          opacity: 1;
+        }
+        @supports (interpolate-size: allow-keywords) {
+          .project-card {
+            interpolate-size: allow-keywords;
+          }
+          .accordion-reveal {
+            display: block;
+            height: 0;
+            overflow: clip;
+            transition:
+              height 280ms cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 160ms ease;
+          }
+          .project-card[data-expanded="true"] .accordion-reveal {
+            height: auto;
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .accordion-reveal {
+            transition: none !important;
+          }
+        }
         @media (max-width: 760px) {
           main {
             padding: 32px 20px 64px !important;
@@ -882,6 +899,10 @@ export default function App() {
           }
           .project-facts {
             grid-template-columns: 1fr !important;
+          }
+          .project-facts-value {
+            border-left: 0 !important;
+            border-top: 1px solid #e5e7eb !important;
           }
         }
       `}</style>
