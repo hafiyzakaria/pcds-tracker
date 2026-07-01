@@ -30,21 +30,21 @@ const STATUS_META = {
     description: "scope or delivery being shaped",
   },
   Operational: {
-    label: "Delivered",
+    label: "Completed",
     bg: "#16a34a",
     text: "#ffffff",
     order: 3,
     description: "in use or completed",
   },
   Designated: {
-    label: "Delivered",
+    label: "Completed",
     bg: "#16a34a",
     text: "#ffffff",
     order: 4,
     description: "outcome formally achieved",
   },
   Enacted: {
-    label: "Delivered",
+    label: "Completed",
     bg: "#16a34a",
     text: "#ffffff",
     order: 5,
@@ -58,8 +58,6 @@ const FILTERS = [
   { id: "planning", label: STATUS_META.Planning.label, statuses: ["Planning"] },
   { id: "delivered", label: STATUS_META.Operational.label, statuses: ["Operational", "Designated", "Enacted"] },
 ];
-
-const STATUS_LEGEND = ["In Progress", "Planning", "Operational"];
 
 function getStatusMeta(status, color) {
   return STATUS_META[status] || {
@@ -209,7 +207,7 @@ function SummaryMetrics({ rows }) {
         <Metric value={rows.length} label="Tracked Projects" accent="#0d9488" />
         <Metric value={ongoing} label="Ongoing" accent="#d97706" />
         <Metric value={planning} label="Planning" accent="#4f46e5" />
-        <Metric value={completeLike} label="Delivered" accent="#16a34a" />
+      <Metric value={completeLike} label="Completed" accent="#16a34a" />
         <div className="desktop-milestone-metric">
           <Metric value={`${doneMilestones}/${totalMilestones}`} label="Milestones" accent="#1d4ed8" />
         </div>
@@ -319,50 +317,6 @@ function FilterBar({ activeFilter, onFilter }) {
   );
 }
 
-function StatusLegend() {
-  return (
-    <div
-      style={{
-        display: "flex",
-        gap: "10px",
-        flexWrap: "wrap",
-        margin: "-4px 0 18px",
-        color: "#6b7280",
-        fontFamily: FONT_STACK,
-        fontSize: "10px",
-        lineHeight: 1.45,
-      }}
-    >
-      {STATUS_LEGEND.map((status) => {
-        const meta = getStatusMeta(status);
-
-        return (
-          <span
-            key={status}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "5px",
-            }}
-          >
-            <span
-              style={{
-                width: "7px",
-                height: "7px",
-                borderRadius: "50%",
-                backgroundColor: meta.bg,
-              }}
-            />
-            <span>
-              <strong style={{ color: "#374151" }}>{meta.label}</strong>: {meta.description}
-            </span>
-          </span>
-        );
-      })}
-    </div>
-  );
-}
-
 function DetailSection({ title, children }) {
   return (
     <section style={{ display: "grid", gap: "8px" }}>
@@ -389,29 +343,6 @@ function DetailSection({ title, children }) {
         {children}
       </div>
     </section>
-  );
-}
-
-function MilestoneCount({ row }) {
-  return (
-    <span
-      style={{
-        display: "inline-flex",
-        width: "max-content",
-        maxWidth: "100%",
-        padding: "4px 8px",
-        border: "1px solid #e5e7eb",
-        borderRadius: "999px",
-        color: "#6b7280",
-        fontFamily: FONT_STACK,
-        fontSize: "11px",
-        fontWeight: 700,
-        lineHeight: 1,
-        whiteSpace: "nowrap",
-      }}
-    >
-      {row.doneMilestones}/{row.totalMilestones} milestones logged
-    </span>
   );
 }
 
@@ -468,12 +399,63 @@ function MilestoneIndicator({ row }) {
 
 function FactList({ row }) {
   return (
-    <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginTop: "10px" }}>
-      <span>{row.lead}</span>
+    <div
+      className="project-facts"
+      style={{
+        display: "grid",
+        gridTemplateColumns: row.value && row.value !== "—" ? "minmax(0, 1fr) minmax(120px, auto)" : "1fr",
+        gap: "10px",
+        marginTop: "10px",
+      }}
+    >
+      <div
+        style={{
+          display: "grid",
+          gap: "4px",
+          padding: "10px 12px",
+          border: "1px solid #e5e7eb",
+          borderRadius: "6px",
+          backgroundColor: "#ffffff",
+        }}
+      >
+        <span
+          style={{
+            color: "#9ca3af",
+            fontSize: "9px",
+            fontWeight: 800,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+          }}
+        >
+          Lead / parties
+        </span>
+        <span style={{ color: "#374151", fontWeight: 700 }}>{row.lead}</span>
+      </div>
       {row.value && row.value !== "—" && (
-        <span style={{ color: row.sectorColor, fontWeight: 700 }}>{row.value}</span>
+        <div
+          style={{
+            display: "grid",
+            gap: "4px",
+            padding: "10px 12px",
+            border: "1px solid #e5e7eb",
+            borderRadius: "6px",
+            backgroundColor: "#ffffff",
+          }}
+        >
+          <span
+            style={{
+              color: "#9ca3af",
+              fontSize: "9px",
+              fontWeight: 800,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+            }}
+          >
+            Reported value
+          </span>
+          <span style={{ color: row.sectorColor, fontWeight: 800 }}>{row.value}</span>
+        </div>
       )}
-      <MilestoneCount row={row} />
     </div>
   );
 }
@@ -502,8 +484,8 @@ function MilestoneNote({ milestone, emptyText }) {
 
 function SourceLinks({ sources, color }) {
   return (
-    <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-      {sources.map((source) => (
+    <div style={{ display: "grid", gap: "8px" }}>
+      {sources.map((source, index) => (
         <a
           key={source.url}
           href={source.url}
@@ -511,15 +493,40 @@ function SourceLinks({ sources, color }) {
           rel="noopener noreferrer"
           onClick={(event) => event.stopPropagation()}
           style={{
-            color,
+            display: "grid",
+            gridTemplateColumns: "22px minmax(0, 1fr) auto",
+            alignItems: "center",
+            gap: "10px",
+            padding: "9px 10px",
+            border: "1px solid #e5e7eb",
+            borderRadius: "6px",
+            backgroundColor: "#ffffff",
+            color: "#374151",
             fontFamily: FONT_STACK,
-            fontSize: "11px",
+            fontSize: "12px",
             fontWeight: 700,
             textDecoration: "none",
-            borderBottom: `1px solid ${color}33`,
+            lineHeight: 1.35,
           }}
         >
-          {source.label} ↗
+          <span
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "22px",
+              height: "22px",
+              borderRadius: "50%",
+              backgroundColor: `${color}14`,
+              color,
+              fontSize: "10px",
+              fontWeight: 800,
+            }}
+          >
+            {index + 1}
+          </span>
+          <span>{source.label}</span>
+          <span style={{ color, fontSize: "13px" }}>↗</span>
         </a>
       ))}
     </div>
@@ -528,7 +535,7 @@ function SourceLinks({ sources, color }) {
 
 function MilestoneList({ milestones }) {
   return (
-    <div style={{ display: "grid", gap: "0", marginTop: "12px" }}>
+    <div style={{ display: "grid", gap: "0" }}>
       {milestones.map((milestone, index) => (
         <div
           key={`${milestone.date}-${index}`}
@@ -536,7 +543,7 @@ function MilestoneList({ milestones }) {
             display: "grid",
             gridTemplateColumns: "86px minmax(0, 1fr)",
             gap: "12px",
-            padding: "7px 0",
+            padding: "9px 0",
             borderTop: index === 0 ? "1px solid #e5e7eb" : "1px solid #f1f5f9",
           }}
         >
@@ -556,6 +563,46 @@ function MilestoneList({ milestones }) {
         </div>
       ))}
     </div>
+  );
+}
+
+function MilestoneTimeline({ row }) {
+  const loggedMilestones = row.milestones.filter((milestone) => milestone.done);
+
+  return (
+    <DetailSection title="Timeline">
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "minmax(0, 1fr) auto",
+          alignItems: "center",
+          gap: "12px",
+          marginBottom: "10px",
+        }}
+      >
+        <span style={{ color: "#6b7280", fontSize: "12px", fontWeight: 700 }}>
+          Logged milestones
+        </span>
+        <span
+          style={{
+            color: row.sectorColor,
+            fontFamily: FONT_STACK,
+            fontSize: "11px",
+            fontWeight: 800,
+            whiteSpace: "nowrap",
+          }}
+        >
+          {row.doneMilestones}/{row.totalMilestones}
+        </span>
+      </div>
+      {loggedMilestones.length > 0 ? (
+        <MilestoneList milestones={loggedMilestones} />
+      ) : (
+        <p style={{ margin: 0, color: "#6b7280", fontSize: "13px", lineHeight: 1.5 }}>
+          No completed milestones are logged yet.
+        </p>
+      )}
+    </DetailSection>
   );
 }
 
@@ -667,6 +714,21 @@ function ProjectCard({ row, expanded, onToggle }) {
           >
             {row.name}
           </h3>
+          {expanded && (
+            <div
+              style={{
+                display: "grid",
+                gap: "8px",
+                marginTop: "12px",
+                color: "#4b5563",
+                fontSize: "13px",
+                lineHeight: 1.55,
+              }}
+            >
+              <FactList row={row} />
+              <p style={{ margin: 0 }}>{row.summary}</p>
+            </div>
+          )}
           <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap", marginTop: "12px" }}>
             <StatusBadge status={row.status} color={row.statusColor} />
           </div>
@@ -692,6 +754,7 @@ function ProjectCard({ row, expanded, onToggle }) {
               {row.nextMilestone ? `${row.nextMilestone.date}: ${row.nextMilestone.text}` : "No open milestone"}
             </div>
           </div>
+          {expanded && <MilestoneTimeline row={row} />}
         </div>
       </button>
 
@@ -699,26 +762,12 @@ function ProjectCard({ row, expanded, onToggle }) {
         <div
           style={{
             display: "grid",
-            gap: "18px",
             padding: "18px",
             borderTop: "1px solid #e5e7eb",
           }}
         >
-          <DetailSection title="Now">
-            {row.summary}
-            <FactList row={row} />
-          </DetailSection>
-
-          <DetailSection title="Next">
-            <MilestoneNote
-              milestone={row.nextMilestone}
-              emptyText="No open public milestone is currently listed."
-            />
-            <MilestoneList milestones={row.milestones} />
-          </DetailSection>
-
           <DetailSection title="Evidence">
-            <p style={{ margin: "0 0 10px" }}>
+            <p style={{ margin: "0 0 12px" }}>
               Latest logged milestone:{" "}
               <MilestoneNote
                 milestone={row.latestMilestone}
@@ -733,7 +782,7 @@ function ProjectCard({ row, expanded, onToggle }) {
   );
 }
 
-function ProjectGrid({ rows, expandedId, onToggle }) {
+function ProjectGrid({ rows, expandedIds, onToggle }) {
   return (
     <section
       className="project-card-grid"
@@ -748,8 +797,8 @@ function ProjectGrid({ rows, expandedId, onToggle }) {
         <ProjectCard
           key={row.id}
           row={row}
-          expanded={expandedId === row.id}
-          onToggle={() => onToggle(expandedId === row.id ? null : row.id)}
+          expanded={expandedIds.includes(row.id)}
+          onToggle={() => onToggle(row.id)}
         />
       ))}
     </section>
@@ -759,7 +808,7 @@ function ProjectGrid({ rows, expandedId, onToggle }) {
 export default function App() {
   const [loaded, setLoaded] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
-  const [expandedId, setExpandedId] = useState(null);
+  const [expandedIds, setExpandedIds] = useState([]);
 
   useEffect(() => {
     const timeout = setTimeout(() => setLoaded(true), 100);
@@ -772,6 +821,11 @@ export default function App() {
     if (!selectedFilter.statuses) return true;
     return selectedFilter.statuses.includes(row.status);
   }));
+  const toggleExpanded = (id) => {
+    setExpandedIds((current) =>
+      current.includes(id) ? current.filter((expandedId) => expandedId !== id) : [...current, id]
+    );
+  };
 
   return (
     <div
@@ -825,6 +879,9 @@ export default function App() {
             font-size: 16px !important;
             line-height: 1.55 !important;
             margin-top: 18px !important;
+          }
+          .project-facts {
+            grid-template-columns: 1fr !important;
           }
         }
       `}</style>
@@ -885,8 +942,7 @@ export default function App() {
 
         <section>
           <FilterBar activeFilter={activeFilter} onFilter={setActiveFilter} />
-          <StatusLegend />
-          <ProjectGrid rows={filteredRows} expandedId={expandedId} onToggle={setExpandedId} />
+          <ProjectGrid rows={filteredRows} expandedIds={expandedIds} onToggle={toggleExpanded} />
         </section>
 
         <footer
