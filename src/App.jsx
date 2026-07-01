@@ -772,7 +772,7 @@ export default function App() {
           >
             PCDS 2030
             <br />
-            <span style={{ color: "#0d9488" }}>Public Tracker</span>
+            <span style={{ color: "#0d9488" }}>Project Tracker</span>
           </h1>
           <p
             style={{
