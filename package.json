@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview:start": "node scripts/local-preview.mjs start",
+    "preview:stop": "node scripts/local-preview.mjs stop",
+    "preview:status": "node scripts/local-preview.mjs status"
   },
   "dependencies": {
     "react": "^19.2.4",
