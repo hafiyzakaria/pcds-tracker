@@ -253,7 +253,7 @@ function SummaryMetrics({ rows }) {
           </div>
         </div>
         <div
-          aria-label={`${doneMilestones} of ${totalMilestones} milestones logged`}
+          aria-label={`${doneMilestones} of ${totalMilestones} milestones completed`}
           style={{
             height: "6px",
             marginTop: "12px",
@@ -391,7 +391,7 @@ function MilestoneIndicator({ row }) {
           whiteSpace: "nowrap",
         }}
       >
-        {row.doneMilestones}/{row.totalMilestones} logged
+        {row.doneMilestones}/{row.totalMilestones} completed
       </span>
     </div>
   );
@@ -558,15 +558,27 @@ function MilestoneList({ milestones }) {
 function MilestoneTimeline({ row }) {
   const loggedMilestones = row.milestones.filter((milestone) => milestone.done);
 
+  if (loggedMilestones.length === 0) {
+    return null;
+  }
+
   return (
     <DetailSection title="Completed Milestones">
-      {loggedMilestones.length > 0 ? (
-        <MilestoneList milestones={loggedMilestones} />
-      ) : (
-        <p style={{ margin: 0, color: "#6b7280", fontSize: "13px", lineHeight: 1.5 }}>
-          No completed milestones are logged yet.
-        </p>
-      )}
+      <MilestoneList milestones={loggedMilestones} />
+    </DetailSection>
+  );
+}
+
+function FollowingMilestones({ row }) {
+  const followingMilestones = row.milestones.filter((milestone) => !milestone.done).slice(1);
+
+  if (followingMilestones.length === 0) {
+    return null;
+  }
+
+  return (
+    <DetailSection title="Following Milestones">
+      <MilestoneList milestones={followingMilestones} />
     </DetailSection>
   );
 }
@@ -737,7 +749,8 @@ function ProjectCard({ row, expanded, onToggle }) {
           <MilestoneIndicator row={row} />
           <NextMilestoneCallout row={row} expanded={expanded} />
           <AccordionReveal expanded={expanded} className="project-card-timeline-reveal">
-            <div style={{ paddingTop: "2px" }}>
+            <div style={{ display: "grid", gap: "12px", paddingTop: "2px" }}>
+              <FollowingMilestones row={row} />
               <MilestoneTimeline row={row} />
             </div>
           </AccordionReveal>
