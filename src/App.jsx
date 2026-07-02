@@ -630,11 +630,12 @@ function ProjectCard({ row, expanded, onToggle }) {
       }}
     >
       <button
+        className="project-card-button"
         onClick={onToggle}
         aria-expanded={expanded}
         style={{
           width: "100%",
-          minHeight: "190px",
+          minHeight: expanded ? "190px" : "263px",
           display: "grid",
           gridTemplateRows: "auto 1fr auto",
           gap: "14px",
@@ -901,6 +902,9 @@ export default function App() {
           }
           .project-card-grid {
             grid-template-columns: 1fr !important;
+          }
+          .project-card-button {
+            min-height: 0 !important;
           }
           .tracker-title {
             font-size: 36px !important;
