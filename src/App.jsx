@@ -577,6 +577,16 @@ function MilestoneTimeline({ row }) {
   );
 }
 
+function CompletedMilestoneRows({ row }) {
+  const loggedMilestones = row.milestones.filter((milestone) => milestone.done);
+
+  if (loggedMilestones.length === 0) {
+    return null;
+  }
+
+  return <MilestoneList milestones={loggedMilestones} />;
+}
+
 function FollowingMilestones({ row }) {
   const followingMilestones = row.milestones.filter((milestone) => !milestone.done).slice(1);
 
@@ -585,7 +595,7 @@ function FollowingMilestones({ row }) {
   }
 
   return (
-    <DetailSection title="Following Milestones">
+    <DetailSection title="Remaining Milestones">
       <MilestoneList milestones={followingMilestones} />
     </DetailSection>
   );
@@ -792,11 +802,16 @@ function ProjectCard({ row, expanded, onToggle, neutralCards }) {
 
         <div style={{ display: "grid", gap: "12px" }}>
           <MilestoneIndicator row={row} />
+          {neutralCards && (
+            <AccordionReveal expanded={expanded} className="project-card-completed-reveal">
+              <CompletedMilestoneRows row={row} />
+            </AccordionReveal>
+          )}
           <NextMilestoneCallout row={row} expanded={expanded} neutralCards={neutralCards} />
           <AccordionReveal expanded={expanded} className="project-card-timeline-reveal">
             <div style={{ display: "grid", gap: "12px", paddingTop: "2px" }}>
               <FollowingMilestones row={row} />
-              <MilestoneTimeline row={row} />
+              {!neutralCards && <MilestoneTimeline row={row} />}
             </div>
           </AccordionReveal>
         </div>
