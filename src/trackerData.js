@@ -40,7 +40,12 @@ export const SECTORS = [
           "Sarawak's state-owned semiconductor venture developing compound semiconductor chips based on Gallium Nitride (GaN), enhanced by AI. The keteq.GaN and keteq.ai platforms have been publicly unveiled, with global IP registration and commercialisation still the next visible proof points.",
         milestones: [
           { date: "2026-Q1", text: "Premier announces GaN chip development success", done: true },
-          { date: "2026", text: "Global IP registration and commercialisation pathway", done: false },
+          {
+            date: "2026",
+            text: "Global IP registration and commercialisation pathway",
+            shortText: "Global IP registration and commercialisation",
+            done: false,
+          },
         ],
         sources: [
           { label: "DayakDaily — SMD Advanced Chip Integration Centre (Sep 2025)", url: "https://dayakdaily.com/sarawak-to-establish-smd-advanced-chip-integration-centre-to-power-semiconductor-leap/" },
@@ -68,7 +73,12 @@ export const SECTORS = [
           { date: "2024-11", text: "DID restructured for agriculture/urban focus", done: true },
           { date: "2025-08", text: "Target: 500,000 tonnes rice output by 2030 announced", done: true },
           { date: "2026-02", text: "Minister: RM1B infra must not be diverted to oil palm", done: true },
-          { date: "2026", text: "Farmer clustering and paddy land-leasing implementation", done: false },
+          {
+            date: "2026",
+            text: "Farmer clustering and paddy land-leasing implementation",
+            shortText: "Farmer clustering and land leasing",
+            done: false,
+          },
           { date: "2030", text: "Target: 500,000 tonnes annual rice output", done: false },
         ],
         sources: [
@@ -98,7 +108,12 @@ export const SECTORS = [
           { date: "2025-06", text: "UNESCO field evaluation completed (Jun 23\u201326)", done: true },
           { date: "2025-09", text: "UNESCO Council acceptance secured", done: true },
           { date: "2026-04-27", text: "Officially recognised as UNESCO Global Geopark", done: true },
-          { date: "Ongoing", text: "Tourism products and community-based geopark rollout", done: false },
+          {
+            date: "Ongoing",
+            text: "Tourism products and community-based geopark rollout",
+            shortText: "Tourism and community geopark rollout",
+            done: false,
+          },
         ],
         sources: [
           { label: "DayakDaily — UNESCO approval (Apr 2026)", url: "https://dayakdaily.com/sarawak-delta-geopark-gets-unesco-approval/" },
@@ -116,7 +131,12 @@ export const SECTORS = [
         milestones: [
           { date: "2019", text: "Nominated for UNESCO World Heritage listing", done: true },
           { date: "2024", text: "Inscribed as UNESCO World Heritage Site", done: true },
-          { date: "Ongoing", text: "UNESCO site management, conservation, and visitor facilities", done: false },
+          {
+            date: "Ongoing",
+            text: "UNESCO site management, conservation, and visitor facilities",
+            shortText: "Site management and visitor facilities",
+            done: false,
+          },
         ],
         sources: [
           { label: "UNESCO — Niah World Heritage listing", url: "https://whc.unesco.org/en/list/1014" },
@@ -142,7 +162,12 @@ export const SECTORS = [
         milestones: [
           { date: "2023", text: "Ordinance enacted", done: true },
           { date: "2024", text: "Natural Resources and Environment Bill introduced", done: true },
-          { date: "Ongoing", text: "GHG reporting, carbon market, and sustainability reporting rollout", done: false },
+          {
+            date: "Ongoing",
+            text: "GHG reporting, carbon market, and sustainability reporting rollout",
+            shortText: "GHG and carbon market rollout",
+            done: false,
+          },
         ],
         sources: [
           { label: "FULCRUM — Sarawak's low-carbon future", url: "https://fulcrum.sg/envisioning-a-low-carbon-future-sarawaks-journey-towards-sustainable-development/" },
@@ -245,7 +270,12 @@ export const SECTORS = [
           "Major economic corridor spanning Samalaju Industrial Park, Tanjung Manis, Mukah, Baram, and Tunoh growth nodes. SCORE has reported RM125B in investment and 53,000 jobs created. RECODA also oversees URDA, HDA, and NRDA for rural/interior development.",
         milestones: [
           { date: "2025-05-10", text: "SCORE reports RM125B investment and 53,000 jobs created", done: true },
-          { date: "Ongoing", text: "Industrial park expansion and investor facilitation", done: false },
+          {
+            date: "Ongoing",
+            text: "Industrial park expansion and investor facilitation",
+            shortText: "Industrial park expansion and investors",
+            done: false,
+          },
           { date: "Ongoing", text: "Rural infrastructure via URDA, HDA, NRDA", done: false },
         ],
         sources: [
@@ -279,7 +309,12 @@ export const SECTORS = [
         milestones: [
           { date: "2025-12", text: "RM58M contract awarded to Linde EOX for hydrogen plant relocation to Rembus Depot", done: true },
           { date: "2026-Q1", text: "First two ART units arrive in Kuching", done: true },
-          { date: "2026-Q4", text: "Begin passenger operations and complete hydrogen plant relocation", done: false },
+          {
+            date: "2026-Q4",
+            text: "Begin passenger operations and complete hydrogen plant relocation",
+            shortText: "Passenger service and hydrogen plant move",
+            done: false,
+          },
           { date: "TBD", text: "Feeder bus network (hydrogen-powered) rollout", done: false },
         ],
         sources: [
@@ -299,7 +334,12 @@ export const SECTORS = [
           { date: "2025-01-01", text: "12-month extension agreement signed for transition", done: true },
           { date: "2026-02-04", text: "RM1.8B takeover agreed in principle", done: true },
           { date: "2026-02-06", text: "RM1.8B valuation confirmed after detailed negotiations", done: true },
-          { date: "2026-05-09", text: "Federal Cabinet endorsement and final agreement signing", done: false },
+          {
+            date: "2026-05-09",
+            text: "Federal Cabinet endorsement and final agreement signing",
+            shortText: "Cabinet endorsement and final signing",
+            done: false,
+          },
         ],
         sources: [
           { label: "DayakDaily — RM1.8B takeover agreed in principle (Feb 2026)", url: "https://dayakdaily.com/rm1-8-bln-bintulu-port-takeover-agreed-in-principle-as-handover-enters-final-stage/" },
@@ -341,8 +381,18 @@ export const SECTORS = [
         summary:
           "Large-scale green hydrogen production in Bintulu. Sarawak H2 Hub (JV between SEDC Energy and Gentari) to be sole developer/operator. The Rembus hydrogen plant relocation supports KUTS fuel supply, while H2ornbill and H2biscus target commercial hydrogen and derivatives production from 2028.",
         milestones: [
-          { date: "2026-Q4", text: "Hydrogen plant relocation and upgrading at Rembus", done: false },
-          { date: "2028", text: "H2ornbill and H2biscus commercial production", done: false },
+          {
+            date: "2026-Q4",
+            text: "Hydrogen plant relocation and upgrading at Rembus",
+            shortText: "Rembus hydrogen plant relocation",
+            done: false,
+          },
+          {
+            date: "2028",
+            text: "H2ornbill and H2biscus commercial production",
+            shortText: "H2ornbill and H2biscus production",
+            done: false,
+          },
           { date: "2028+", text: "Large-scale hydrogen derivatives and export", done: false },
         ],
         sources: [

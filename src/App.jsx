@@ -601,14 +601,15 @@ function FollowingMilestones({ row }) {
   );
 }
 
-function formatNextMilestone(milestone) {
+function formatNextMilestone(milestone, compact = false) {
   if (!milestone) {
     return "No open milestone";
   }
 
   const phaseOnlyDates = new Set(["ongoing"]);
   const date = milestone.date?.trim();
-  const text = milestone.text.replace(/^(ongoing|planning|completed):\s*/i, "");
+  const fullText = milestone.text.replace(/^(ongoing|planning|completed):\s*/i, "");
+  const text = compact ? milestone.shortText || fullText : fullText;
 
   if (!date || phaseOnlyDates.has(date.toLowerCase())) {
     return text;
@@ -619,7 +620,7 @@ function formatNextMilestone(milestone) {
 
 function NextMilestoneCallout({ row, expanded, neutralCards }) {
   const text = neutralCards
-    ? formatNextMilestone(row.nextMilestone)
+    ? formatNextMilestone(row.nextMilestone, !expanded)
     : row.nextMilestone
       ? `${row.nextMilestone.date}: ${row.nextMilestone.text}`
       : "No open milestone";
@@ -670,13 +671,15 @@ function NextMilestoneCallout({ row, expanded, neutralCards }) {
 }
 
 function ProjectCard({ row, expanded, onToggle, neutralCards }) {
+  const cardBorderColor = neutralCards ? "#cbd5e1" : "#e5e7eb";
+
   return (
     <article
       className="project-card"
       data-expanded={expanded ? "true" : "false"}
       style={{
-        border: "1px solid #e5e7eb",
-        borderTop: neutralCards ? "1px solid #e5e7eb" : `3px solid ${row.sectorColor}`,
+        border: `1px solid ${cardBorderColor}`,
+        borderTop: neutralCards ? `1px solid ${cardBorderColor}` : `3px solid ${row.sectorColor}`,
         borderRadius: "8px",
         backgroundColor: expanded ? "#f8fafc" : "#ffffff",
         overflow: "hidden",
@@ -758,7 +761,7 @@ function ProjectCard({ row, expanded, onToggle, neutralCards }) {
           <span
             aria-hidden="true"
             style={{
-              color: expanded ? row.sectorColor : "#9ca3af",
+              color: row.sectorColor,
               fontFamily: FONT_STACK,
               fontSize: "18px",
               lineHeight: 1,
