@@ -666,7 +666,7 @@ function ProjectCard({ row, expanded, onToggle, neutralCards }) {
       data-expanded={expanded ? "true" : "false"}
       style={{
         border: "1px solid #e5e7eb",
-        borderTop: neutralCards ? undefined : `3px solid ${row.sectorColor}`,
+        borderTop: neutralCards ? "1px solid #e5e7eb" : `3px solid ${row.sectorColor}`,
         borderRadius: "8px",
         backgroundColor: expanded ? "#f8fafc" : "#ffffff",
         overflow: "hidden",
