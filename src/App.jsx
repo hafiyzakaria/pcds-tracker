@@ -59,6 +59,14 @@ const FILTERS = [
   { id: "delivered", label: STATUS_META.Operational.label, statuses: ["Operational", "Designated", "Enacted"] },
 ];
 
+function getActiveVariant() {
+  if (typeof window === "undefined") {
+    return "";
+  }
+
+  return new URLSearchParams(window.location.search).get("variant") || "";
+}
+
 function getStatusMeta(status, color) {
   return STATUS_META[status] || {
     label: status,
@@ -583,8 +591,28 @@ function FollowingMilestones({ row }) {
   );
 }
 
-function NextMilestoneCallout({ row, expanded }) {
-  const text = row.nextMilestone ? `${row.nextMilestone.date}: ${row.nextMilestone.text}` : "No open milestone";
+function formatNextMilestone(milestone) {
+  if (!milestone) {
+    return "No open milestone";
+  }
+
+  const phaseOnlyDates = new Set(["ongoing"]);
+  const date = milestone.date?.trim();
+  const text = milestone.text.replace(/^(ongoing|planning|completed):\s*/i, "");
+
+  if (!date || phaseOnlyDates.has(date.toLowerCase())) {
+    return text;
+  }
+
+  return `${date}: ${text}`;
+}
+
+function NextMilestoneCallout({ row, expanded, neutralCards }) {
+  const text = neutralCards
+    ? formatNextMilestone(row.nextMilestone)
+    : row.nextMilestone
+      ? `${row.nextMilestone.date}: ${row.nextMilestone.text}`
+      : "No open milestone";
 
   return (
     <div
@@ -610,19 +638,35 @@ function NextMilestoneCallout({ row, expanded }) {
       >
         Next Milestone
       </div>
-      <div style={{ color: "#374151", fontSize: "13px", fontWeight: expanded ? 700 : 650, lineHeight: 1.45 }}>{text}</div>
+      <div
+        style={{
+          color: "#374151",
+          fontSize: "13px",
+          fontWeight: expanded ? 700 : 650,
+          lineHeight: 1.45,
+          ...(neutralCards
+            ? {
+                whiteSpace: expanded ? "normal" : "nowrap",
+                overflow: expanded ? "visible" : "hidden",
+                textOverflow: expanded ? "clip" : "ellipsis",
+              }
+            : {}),
+        }}
+      >
+        {text}
+      </div>
     </div>
   );
 }
 
-function ProjectCard({ row, expanded, onToggle }) {
+function ProjectCard({ row, expanded, onToggle, neutralCards }) {
   return (
     <article
       className="project-card"
       data-expanded={expanded ? "true" : "false"}
       style={{
         border: "1px solid #e5e7eb",
-        borderTop: `3px solid ${row.sectorColor}`,
+        borderTop: neutralCards ? undefined : `3px solid ${row.sectorColor}`,
         borderRadius: "8px",
         backgroundColor: expanded ? "#f8fafc" : "#ffffff",
         overflow: "hidden",
@@ -748,7 +792,7 @@ function ProjectCard({ row, expanded, onToggle }) {
 
         <div style={{ display: "grid", gap: "12px" }}>
           <MilestoneIndicator row={row} />
-          <NextMilestoneCallout row={row} expanded={expanded} />
+          <NextMilestoneCallout row={row} expanded={expanded} neutralCards={neutralCards} />
           <AccordionReveal expanded={expanded} className="project-card-timeline-reveal">
             <div style={{ display: "grid", gap: "12px", paddingTop: "2px" }}>
               <FollowingMilestones row={row} />
@@ -775,7 +819,7 @@ function ProjectCard({ row, expanded, onToggle }) {
   );
 }
 
-function ProjectGrid({ rows, expandedIds, onToggle }) {
+function ProjectGrid({ rows, expandedIds, onToggle, neutralCards }) {
   return (
     <section
       className="project-card-grid"
@@ -792,6 +836,7 @@ function ProjectGrid({ rows, expandedIds, onToggle }) {
           row={row}
           expanded={expandedIds.includes(row.id)}
           onToggle={() => onToggle(row.id)}
+          neutralCards={neutralCards}
         />
       ))}
     </section>
@@ -802,6 +847,7 @@ export default function App() {
   const [loaded, setLoaded] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
+  const neutralCards = getActiveVariant() === "neutral-cards";
 
   useEffect(() => {
     const timeout = setTimeout(() => setLoaded(true), 100);
@@ -980,7 +1026,12 @@ export default function App() {
 
         <section>
           <FilterBar activeFilter={activeFilter} onFilter={setActiveFilter} />
-          <ProjectGrid rows={filteredRows} expandedIds={expandedIds} onToggle={toggleExpanded} />
+          <ProjectGrid
+            rows={filteredRows}
+            expandedIds={expandedIds}
+            onToggle={toggleExpanded}
+            neutralCards={neutralCards}
+          />
         </section>
 
         <footer
