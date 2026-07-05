@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/write-cname.mjs production",
+    "build:preview": "vite build --mode preview && node scripts/write-cname.mjs preview",
+    "icons:generate": "node scripts/generate-environment-favicons.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "preview:start": "node scripts/local-preview.mjs start",

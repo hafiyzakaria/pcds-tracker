@@ -4,6 +4,7 @@ import {
   ECONOMIC_SECTOR_IDS,
   SECTORS,
 } from "./trackerData.js";
+import { getAppEnvironment, shouldShowEnvironmentBadge } from "./environment.js";
 
 const FONT_STACK = "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
@@ -59,12 +60,14 @@ const FILTERS = [
   { id: "delivered", label: STATUS_META.Operational.label, statuses: ["Operational", "Designated", "Enacted"] },
 ];
 
-function getActiveVariant() {
+function getActiveVariant(environment) {
   if (typeof window === "undefined") {
     return "";
   }
 
-  return new URLSearchParams(window.location.search).get("variant") || "";
+  return new URLSearchParams(window.location.search).get("variant") || (
+    environment.name === "preview" ? "neutral-cards" : ""
+  );
 }
 
 function getStatusMeta(status, color) {
@@ -146,6 +149,38 @@ function StatusBadge({ status, color }) {
     >
       {tone.label}
     </span>
+  );
+}
+
+function EnvironmentBadge({ environment }) {
+  if (!shouldShowEnvironmentBadge(environment)) {
+    return null;
+  }
+
+  return (
+    <div
+      aria-label={`${environment.name} environment`}
+      style={{
+        position: "fixed",
+        right: "12px",
+        bottom: "12px",
+        zIndex: 50,
+        padding: "5px 8px",
+        border: `1px solid ${environment.badgeColor}`,
+        borderRadius: "4px",
+        backgroundColor: "#ffffff",
+        color: environment.badgeColor,
+        boxShadow: "0 6px 16px rgba(17, 24, 39, 0.14)",
+        fontFamily: FONT_STACK,
+        fontSize: "10px",
+        fontWeight: 850,
+        letterSpacing: "0.08em",
+        lineHeight: 1,
+        pointerEvents: "none",
+      }}
+    >
+      {environment.badgeLabel}
+    </div>
   );
 }
 
@@ -865,7 +900,8 @@ export default function App() {
   const [loaded, setLoaded] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
-  const neutralCards = getActiveVariant() === "neutral-cards";
+  const environment = getAppEnvironment();
+  const neutralCards = getActiveVariant(environment) === "neutral-cards";
 
   useEffect(() => {
     const timeout = setTimeout(() => setLoaded(true), 100);
@@ -1080,6 +1116,7 @@ export default function App() {
           </p>
         </footer>
       </main>
+      <EnvironmentBadge environment={environment} />
     </div>
   );
 }
