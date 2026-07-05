@@ -138,18 +138,42 @@ and pre-production web apps.
 
 ## Future Developer Workflow
 
+This project uses a branch-based release workflow:
+
+- `preview` branch: review site at `https://preview.tracker.hafiy.my`
+- `main` branch: public production site at `https://tracker.hafiy.my`
+
+This is a recommended and common modern web development practice. It keeps
+unfinished work away from the public website, gives you a real deployed site to
+review first, and makes it clear when a change is only being tested versus when
+it has been released.
+
 Use this loop for safer releases:
 
 1. Work locally with `npm run dev`.
 2. Check linting with `npm run lint`.
 3. Build a preview with `npm run build:preview`.
-4. Review the preview deployment and confirm the purple favicon and `PREVIEW`
+4. Commit your changes and push them to the `preview` branch.
+5. Review the preview deployment and confirm the purple favicon and `PREVIEW`
    badge are visible.
-5. Release production with `npm run build`.
-6. Confirm the production site has the brand favicon and no badge.
+6. After approving the preview site, merge the `preview` branch into `main`.
+7. Confirm the production site has the brand favicon and no badge.
 
 No source files should be manually edited to switch environments. Use the npm
 scripts and hosting build commands instead.
+
+For a solo AI-assisted developer, the practical Codex workflow is:
+
+1. Start a new Codex chat for one meaningful task.
+2. Ask Codex to work locally and preserve the existing design.
+3. Push the completed task to the `preview` branch.
+4. Review `https://preview.tracker.hafiy.my`.
+5. Only after you approve it, promote the same change to `main`.
+
+Starting a fresh Codex chat per task is recommended. It prevents old chat
+context from accidentally influencing a new change, and it makes each task
+easier to review later. The repository, commits, and this README should be the
+project's long-term memory.
 
 ## Current Hosting Setup
 
@@ -159,11 +183,15 @@ Production deploys from this repository to GitHub Pages:
 tracker.hafiy.my
 ```
 
+Production should deploy from the `main` branch.
+
 Preview deploys from this same repository to Vercel:
 
 ```txt
 preview.tracker.hafiy.my
 ```
+
+Preview should deploy from the `preview` branch.
 
 The preview DNS record is a CNAME:
 
