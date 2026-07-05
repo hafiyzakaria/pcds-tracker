@@ -47,13 +47,12 @@ Main interface colors:
 
 - Text: deep navy and slate grays.
 - Brand/accent: teal `#0d9488`.
-- Ongoing status: amber/orange `#d97706`.
-- Planning status: indigo `#4f46e5`.
-- Completed status: green `#16a34a`.
 - Development environment: orange `#f97316`.
 - Preview environment: purple `#7c3aed`.
 
-Sector colors are stored in `src/trackerData.js` and appear on card accents, category pills, milestone indicators, and source badges.
+Project-card status badges display the project state, but their colour follows the project sector/enabler accent rather than an independent status colour.
+
+Sector colors are stored in `src/trackerData.js` and appear on card accents, category pills, project-card status badges, milestone indicators, and source badges.
 
 ## Components
 

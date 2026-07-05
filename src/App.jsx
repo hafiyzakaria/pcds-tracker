@@ -8,47 +8,37 @@ import {
 import { getAppEnvironment, shouldShowEnvironmentBadge } from "./environment.js";
 
 const FONT_STACK = "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+const DEFAULT_ACCENT_COLOR = "#6b7280";
+const BADGE_TEXT_COLOR = "#ffffff";
 
 const STATUS_META = {
   "Awaiting Decision": {
     label: "Ongoing",
-    bg: "#d97706",
-    text: "#ffffff",
     order: 0,
     description: "delivery moving, pending approval, or awaiting next public decision",
   },
   "In Progress": {
     label: "Ongoing",
-    bg: "#d97706",
-    text: "#ffffff",
     order: 1,
     description: "delivery moving, pending approval, or awaiting next public decision",
   },
   Planning: {
     label: "Planning",
-    bg: "#4f46e5",
-    text: "#ffffff",
     order: 2,
     description: "scope or delivery being shaped",
   },
   Operational: {
     label: "Completed",
-    bg: "#16a34a",
-    text: "#ffffff",
     order: 3,
     description: "in use or completed",
   },
   Designated: {
     label: "Completed",
-    bg: "#16a34a",
-    text: "#ffffff",
     order: 4,
     description: "outcome formally achieved",
   },
   Enacted: {
     label: "Completed",
-    bg: "#16a34a",
-    text: "#ffffff",
     order: 5,
     description: "law or policy in effect",
   },
@@ -65,13 +55,18 @@ function shouldUsePreviewCards(environment) {
   return environment.name === "preview";
 }
 
-function getStatusMeta(status, color) {
+function getStatusMeta(status) {
   return STATUS_META[status] || {
     label: status,
-    bg: color || "#6b7280",
-    text: "#ffffff",
     order: 99,
     description: "Status is based on available public reporting.",
+  };
+}
+
+function getAccentBadgeTone(color) {
+  return {
+    bg: color || DEFAULT_ACCENT_COLOR,
+    text: BADGE_TEXT_COLOR,
   };
 }
 
@@ -84,7 +79,7 @@ function getProjectRows() {
       const totalMilestones = project.milestones.length;
       const nextMilestone = project.milestones.find((milestone) => !milestone.done);
       const latestMilestone = [...project.milestones].reverse().find((milestone) => milestone.done);
-      const statusMeta = getStatusMeta(project.status, project.statusColor);
+      const statusMeta = getStatusMeta(project.status);
 
       return {
         ...project,
@@ -130,8 +125,9 @@ function formatLastUpdated(value) {
   }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
-function StatusBadge({ status, color }) {
-  const tone = getStatusMeta(status, color);
+function StatusBadge({ status, accentColor }) {
+  const statusMeta = getStatusMeta(status);
+  const tone = getAccentBadgeTone(accentColor);
 
   return (
     <span
@@ -157,7 +153,7 @@ function StatusBadge({ status, color }) {
         fontFamily: FONT_STACK,
       }}
     >
-      {tone.label}
+      {statusMeta.label}
     </span>
   );
 }
@@ -829,7 +825,7 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
             {row.name}
           </h3>
           <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap", marginTop: "12px" }}>
-            <StatusBadge status={row.status} color={row.statusColor} />
+            <StatusBadge status={row.status} accentColor={row.sectorColor} />
           </div>
           <AccordionReveal expanded={expanded} className="project-card-intro-reveal">
             <div
