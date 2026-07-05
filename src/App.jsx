@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import {
   ECONOMIC_SECTOR_IDS,
+  LAST_UPDATED,
   SECTORS,
 } from "./trackerData.js";
 import { getAppEnvironment, shouldShowEnvironmentBadge } from "./environment.js";
@@ -112,6 +113,21 @@ function sortProjectRows(rows) {
 
     return a.name.localeCompare(b.name);
   });
+}
+
+function formatLastUpdated(value) {
+  const [year, month, day] = value.split("-").map(Number);
+
+  if (![year, month, day].every(Number.isInteger)) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
 function StatusBadge({ status, color }) {
@@ -896,6 +912,7 @@ export default function App() {
   const [expandedIds, setExpandedIds] = useState([]);
   const environment = getAppEnvironment();
   const previewCards = shouldUsePreviewCards(environment);
+  const lastUpdatedLabel = formatLastUpdated(LAST_UPDATED);
 
   useEffect(() => {
     const timeout = setTimeout(() => setLoaded(true), 100);
@@ -1065,6 +1082,19 @@ export default function App() {
           >
             A scan-first view of major Sarawak development projects, their current status,
             next visible milestone, and public evidence.
+          </p>
+          <p
+            className="tracker-last-updated"
+            style={{
+              margin: "10px 0 0",
+              color: "#6b7280",
+              fontSize: "13px",
+              fontWeight: 650,
+              lineHeight: 1.4,
+            }}
+          >
+            <span style={{ color: "#374151", fontWeight: 800 }}>Last updated:</span>{" "}
+            {lastUpdatedLabel}
           </p>
         </header>
 

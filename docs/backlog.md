@@ -2,15 +2,13 @@
 
 This backlog documents known issues and recommended next tasks for the next development phase. It is not a promise that every item must be done immediately.
 
-## 1. Must Fix Before Production
+## Completed
 
 ### Display data freshness
 
-- What needs to be done: Show `LAST_UPDATED` from `src/trackerData.js` in the UI, likely near the page description or footer.
-- Why it matters: Readers need to know how fresh the tracker is before trusting project statuses, and the owner needs an obvious reminder when data may be stale.
-- Estimated difficulty: low
-- Risk level: low
-- Suggested first task: Add a small "Last updated" line using the existing `LAST_UPDATED` value, then confirm it reads clearly on desktop and mobile.
+- Completed: The UI shows `LAST_UPDATED` from `src/trackerData.js` near the page description so readers can see how fresh the tracker is.
+
+## 1. Must Fix Before Production
 
 ### Add a production data review checklist
 
