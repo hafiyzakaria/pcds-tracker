@@ -52,7 +52,7 @@ Main interface colors:
 
 Project-card status badges display the project state, but their colour follows the project sector/enabler accent rather than an independent status colour.
 
-Sector colors are stored in `src/trackerData.js` and appear on card accents, category pills, project-card status badges, milestone indicators, and source badges.
+Sector colors are stored in `src/trackerData.js` and appear on card accents, category pills, project-card status badges, milestone indicators, completed milestone dates, and source badges.
 
 ## Components
 

@@ -571,7 +571,7 @@ function AccordionReveal({ expanded, children, className = "" }) {
   );
 }
 
-function MilestoneList({ milestones }) {
+function MilestoneList({ milestones, color = "#0d9488" }) {
   return (
     <div style={{ display: "grid", gap: "0" }}>
       {milestones.map((milestone, index) => (
@@ -587,7 +587,7 @@ function MilestoneList({ milestones }) {
         >
           <span
             style={{
-              color: milestone.done ? "#0d9488" : "#9ca3af",
+              color: milestone.done ? color : "#9ca3af",
               fontFamily: FONT_STACK,
               fontSize: "11px",
               fontWeight: 700,
@@ -613,7 +613,7 @@ function MilestoneTimeline({ row }) {
 
   return (
     <DetailSection title="Completed Milestones">
-      <MilestoneList milestones={loggedMilestones} />
+      <MilestoneList milestones={loggedMilestones} color={row.sectorColor} />
     </DetailSection>
   );
 }
@@ -625,7 +625,7 @@ function CompletedMilestoneRows({ row }) {
     return null;
   }
 
-  return <MilestoneList milestones={loggedMilestones} />;
+  return <MilestoneList milestones={loggedMilestones} color={row.sectorColor} />;
 }
 
 function FollowingMilestones({ row }) {
@@ -637,7 +637,7 @@ function FollowingMilestones({ row }) {
 
   return (
     <DetailSection title="Remaining Milestones">
-      <MilestoneList milestones={followingMilestones} />
+      <MilestoneList milestones={followingMilestones} color={row.sectorColor} />
     </DetailSection>
   );
 }
