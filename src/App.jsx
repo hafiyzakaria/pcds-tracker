@@ -60,14 +60,8 @@ const FILTERS = [
   { id: "delivered", label: STATUS_META.Operational.label, statuses: ["Operational", "Designated", "Enacted"] },
 ];
 
-function getActiveVariant(environment) {
-  if (typeof window === "undefined") {
-    return "";
-  }
-
-  return new URLSearchParams(window.location.search).get("variant") || (
-    environment.name === "preview" ? "neutral-cards" : ""
-  );
+function shouldUsePreviewCards(environment) {
+  return environment.name === "preview";
 }
 
 function getStatusMeta(status, color) {
@@ -653,8 +647,8 @@ function formatNextMilestone(milestone, compact = false) {
   return `${date}: ${text}`;
 }
 
-function NextMilestoneCallout({ row, expanded, neutralCards }) {
-  const text = neutralCards
+function NextMilestoneCallout({ row, expanded, previewCards }) {
+  const text = previewCards
     ? formatNextMilestone(row.nextMilestone, !expanded)
     : row.nextMilestone
       ? `${row.nextMilestone.date}: ${row.nextMilestone.text}`
@@ -690,7 +684,7 @@ function NextMilestoneCallout({ row, expanded, neutralCards }) {
           fontSize: "13px",
           fontWeight: expanded ? 700 : 650,
           lineHeight: 1.45,
-          ...(neutralCards
+          ...(previewCards
             ? {
                 whiteSpace: expanded ? "normal" : "nowrap",
                 overflow: expanded ? "visible" : "hidden",
@@ -705,8 +699,8 @@ function NextMilestoneCallout({ row, expanded, neutralCards }) {
   );
 }
 
-function ProjectCard({ row, expanded, onToggle, neutralCards }) {
-  const cardBorderColor = neutralCards ? "#cbd5e1" : "#e5e7eb";
+function ProjectCard({ row, expanded, onToggle, previewCards }) {
+  const cardBorderColor = previewCards ? "#cbd5e1" : "#e5e7eb";
 
   return (
     <article
@@ -714,7 +708,7 @@ function ProjectCard({ row, expanded, onToggle, neutralCards }) {
       data-expanded={expanded ? "true" : "false"}
       style={{
         border: `1px solid ${cardBorderColor}`,
-        borderTop: neutralCards ? `1px solid ${cardBorderColor}` : `3px solid ${row.sectorColor}`,
+        borderTop: previewCards ? `1px solid ${cardBorderColor}` : `3px solid ${row.sectorColor}`,
         borderRadius: "8px",
         backgroundColor: expanded ? "#f8fafc" : "#ffffff",
         overflow: "hidden",
@@ -840,16 +834,16 @@ function ProjectCard({ row, expanded, onToggle, neutralCards }) {
 
         <div style={{ display: "grid", gap: "12px" }}>
           <MilestoneIndicator row={row} />
-          {neutralCards && (
+          {previewCards && (
             <AccordionReveal expanded={expanded} className="project-card-completed-reveal">
               <CompletedMilestoneRows row={row} />
             </AccordionReveal>
           )}
-          <NextMilestoneCallout row={row} expanded={expanded} neutralCards={neutralCards} />
+          <NextMilestoneCallout row={row} expanded={expanded} previewCards={previewCards} />
           <AccordionReveal expanded={expanded} className="project-card-timeline-reveal">
             <div style={{ display: "grid", gap: "12px", paddingTop: "2px" }}>
               <FollowingMilestones row={row} />
-              {!neutralCards && <MilestoneTimeline row={row} />}
+              {!previewCards && <MilestoneTimeline row={row} />}
             </div>
           </AccordionReveal>
         </div>
@@ -872,7 +866,7 @@ function ProjectCard({ row, expanded, onToggle, neutralCards }) {
   );
 }
 
-function ProjectGrid({ rows, expandedIds, onToggle, neutralCards }) {
+function ProjectGrid({ rows, expandedIds, onToggle, previewCards }) {
   return (
     <section
       className="project-card-grid"
@@ -889,7 +883,7 @@ function ProjectGrid({ rows, expandedIds, onToggle, neutralCards }) {
           row={row}
           expanded={expandedIds.includes(row.id)}
           onToggle={() => onToggle(row.id)}
-          neutralCards={neutralCards}
+          previewCards={previewCards}
         />
       ))}
     </section>
@@ -901,7 +895,7 @@ export default function App() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
   const environment = getAppEnvironment();
-  const neutralCards = getActiveVariant(environment) === "neutral-cards";
+  const previewCards = shouldUsePreviewCards(environment);
 
   useEffect(() => {
     const timeout = setTimeout(() => setLoaded(true), 100);
@@ -1084,7 +1078,7 @@ export default function App() {
             rows={filteredRows}
             expandedIds={expandedIds}
             onToggle={toggleExpanded}
-            neutralCards={neutralCards}
+            previewCards={previewCards}
           />
         </section>
 

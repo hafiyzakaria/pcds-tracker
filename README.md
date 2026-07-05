@@ -41,14 +41,9 @@ Then serve the generated build locally with:
 npm run preview
 ```
 
-Preview uses a purple favicon and a small `PREVIEW` badge. For a hosted preview
-deployment, configure the hosting provider's preview build command to use
-`npm run build:preview`.
-
-The preview environment defaults to the `neutral-cards` variant. This preserves
-the old review URL behavior from `https://tracker.hafiy.my/?variant=neutral-cards`
-while moving it to a cleaner preview domain:
-`https://preview.tracker.hafiy.my`.
+Preview uses a purple favicon, a small `PREVIEW` badge, and the preview card
+layout. For a hosted preview deployment, configure the hosting provider's
+preview build command to use `npm run build:preview`.
 
 Recommended preview URL: use a separate preview deployment URL, such as
 `https://preview.tracker.hafiy.my` or the hosting provider's generated preview
@@ -57,8 +52,8 @@ unless the hosting platform explicitly routes that path to a separate preview
 build. Keeping preview separate from the production domain prevents accidental
 public access, caching confusion, and search indexing mistakes.
 
-For this project, `preview.tracker.hafiy.my` is prepared as the recommended
-preview domain. The preview build writes that domain into `dist/CNAME`.
+For this project, `preview.tracker.hafiy.my` is the preview domain. The preview
+build writes that domain into `dist/CNAME`.
 
 ### Production
 
@@ -156,21 +151,25 @@ Use this loop for safer releases:
 No source files should be manually edited to switch environments. Use the npm
 scripts and hosting build commands instead.
 
-## Manual Setup Still Needed
+## Current Hosting Setup
 
-The code can prepare the correct build, badge, favicon, and `CNAME` file, but it
-cannot create DNS records or GitHub/hosting settings from inside the project.
+Production deploys from this repository to GitHub Pages:
 
-For production, this repository is already set up to deploy GitHub Pages from
-`.github/workflows/deploy.yml` using `npm run build`.
+```txt
+tracker.hafiy.my
+```
 
-For preview, create a separate preview deployment target and point the subdomain
-at it:
+Preview deploys from this same repository to Vercel:
 
-1. Create a DNS `CNAME` record for `preview.tracker.hafiy.my`.
-2. Point that DNS record to the preview hosting target.
-3. Configure that preview target to build with `npm run build:preview`.
-4. Confirm the preview site shows the purple favicon and `PREVIEW` badge.
+```txt
+preview.tracker.hafiy.my
+```
+
+The preview DNS record is a CNAME:
+
+```txt
+preview.tracker -> a9f27710c89f4a47.vercel-dns-017.com
+```
 
 With GitHub Pages, do not deploy preview to this same repository's Pages site,
 because that would replace the production site. Use a separate Pages site,
