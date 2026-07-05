@@ -1,0 +1,125 @@
+# Design Notes
+
+## Current Design Direction
+
+The current site is a compact civic-data tracker. It should feel clear, restrained, and evidence-oriented rather than promotional.
+
+The design direction is:
+
+- White background.
+- Editorial dashboard layout.
+- Compact project cards.
+- Clear status labels.
+- Sector colors used as accents.
+- Minimal decoration.
+- Source links visible inside expanded cards.
+
+Do not redesign this direction without explicit user approval.
+
+## Layout
+
+The page uses one centered column with a maximum width of about `1040px`.
+
+Current layout order:
+
+1. Kicker and title.
+2. Short description.
+3. Summary metrics.
+4. Filter buttons.
+5. Two-column project-card grid on desktop.
+6. One-column project-card grid on mobile.
+7. Footer disclaimer.
+
+## Typography
+
+The app imports Inter from Google Fonts inside `src/App.jsx`, with system font fallbacks.
+
+Current type style:
+
+- Strong bold headings.
+- Small uppercase labels for metadata.
+- Compact body text for project summaries and milestones.
+- No decorative display font.
+
+## Color
+
+Main interface colors:
+
+- Text: deep navy and slate grays.
+- Brand/accent: teal `#0d9488`.
+- Ongoing status: amber/orange `#d97706`.
+- Planning status: indigo `#4f46e5`.
+- Completed status: green `#16a34a`.
+- Development environment: orange `#f97316`.
+- Preview environment: purple `#7c3aed`.
+
+Sector colors are stored in `src/trackerData.js` and appear on card accents, category pills, milestone indicators, and source badges.
+
+## Components
+
+The UI is currently implemented as React functions inside `src/App.jsx`.
+
+Important components:
+
+- `EnvironmentBadge`
+- `SummaryMetrics`
+- `FilterBar`
+- `ProjectGrid`
+- `ProjectCard`
+- `StatusBadge`
+- `MilestoneIndicator`
+- `NextMilestoneCallout`
+- `SourceLinks`
+
+Most styling is inline in `src/App.jsx`, with a small amount of global CSS in `src/index.css` and an inline `<style>` block in `App`.
+
+## Interaction
+
+Current interactions:
+
+- Filter buttons change the visible cards.
+- Project cards expand and collapse.
+- Source links open in a new tab.
+- Environment badge is fixed at the bottom-right in non-production environments.
+
+The expansion animation respects `prefers-reduced-motion`.
+
+## Responsive Behavior
+
+The app switches to a mobile layout below `760px`.
+
+Current mobile changes:
+
+- Main padding reduces.
+- Project grid becomes one column.
+- Summary metrics become two columns.
+- Desktop milestone metric is hidden.
+- Mobile milestone summary appears.
+- Project fact blocks stack vertically.
+
+## Environment Indicators
+
+Environment indicators are intentionally small and unobtrusive:
+
+- Development shows `DEV`.
+- Preview shows `PREVIEW`.
+- Production shows no badge.
+
+This is a professional workflow pattern. It prevents the owner from mistaking a test build for the public website. It is recommended and common for internal, staging, and preview environments.
+
+## Known Design Constraints
+
+- Preview currently uses a slightly different project-card behavior through `shouldUsePreviewCards(environment)`.
+- Most styling is inline, so repeated visual patterns are harder to change consistently.
+- There is no formal design token file yet.
+- There is no component library or Storybook.
+- Empty sectors and enablers are not visually represented.
+
+## Design Guardrails For Future Work
+
+- Keep the existing scan-first tracker experience.
+- Avoid large hero redesigns.
+- Avoid decorative gradients or marketing-style sections.
+- Keep status and milestone information easy to compare.
+- Keep source links close to the claims they support.
+- Test any card or typography change on mobile before release.
