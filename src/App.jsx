@@ -52,7 +52,7 @@ const FILTERS = [
 ];
 
 function shouldUsePreviewCards(environment) {
-  return environment.name === "preview";
+  return environment.name !== "production";
 }
 
 function getStatusMeta(status) {

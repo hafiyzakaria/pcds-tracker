@@ -20,11 +20,11 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ### Confirm Preview and Production behavior
 
-- What needs to be done: Decide whether Preview should match Production except for the badge and favicon, especially around `shouldUsePreviewCards(environment)`.
-- Why it matters: Preview is the review environment before Production. If card behavior differs between environments, the reviewed site may not match the public site.
+- What needs to be done: Decide whether Production should adopt the same project-card behavior used by Development and Preview.
+- Why it matters: Development and Preview now match for review. Production still needs an explicit promotion decision so the public site changes only after approval.
 - Estimated difficulty: medium
 - Risk level: medium
-- Suggested first task: Compare local Preview and Production builds, note every visible behavior difference, and decide whether any difference beyond environment indicators is intentional.
+- Suggested first task: Compare Preview and Production builds, note every visible behavior difference, and decide whether any difference beyond environment indicators is intentional.
 
 ## 2. Should Improve Soon
 
