@@ -9,7 +9,6 @@ import { getAppEnvironment, shouldShowEnvironmentBadge } from "./environment.js"
 
 const FONT_STACK = "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 const DEFAULT_ACCENT_COLOR = "#6b7280";
-const BADGE_TEXT_COLOR = "#ffffff";
 
 const STATUS_META = {
   "Awaiting Decision": {
@@ -64,9 +63,12 @@ function getStatusMeta(status) {
 }
 
 function getAccentBadgeTone(color) {
+  const accent = color || DEFAULT_ACCENT_COLOR;
+
   return {
-    bg: color || DEFAULT_ACCENT_COLOR,
-    text: BADGE_TEXT_COLOR,
+    bg: `${accent}12`,
+    border: `${accent}40`,
+    text: accent,
   };
 }
 
@@ -142,10 +144,11 @@ function StatusBadge({ status, accentColor }) {
         minHeight: "24px",
         padding: "4px 9px",
         borderRadius: "3px",
+        border: `1px solid ${tone.border}`,
         backgroundColor: tone.bg,
         color: tone.text,
         fontSize: "10px",
-        fontWeight: 800,
+        fontWeight: 850,
         letterSpacing: "0.08em",
         lineHeight: 1,
         textTransform: "uppercase",
@@ -194,11 +197,11 @@ function Metric({ value, label, accent = "#0d9488" }) {
   return (
     <div
       style={{
-        minHeight: "82px",
-        padding: "14px 16px",
-        borderTop: `3px solid ${accent}`,
-        borderRight: "1px solid #e5e7eb",
-        borderBottom: "1px solid #e5e7eb",
+        minHeight: "78px",
+        padding: "13px 15px 14px",
+        borderTop: `2px solid ${accent}66`,
+        borderRight: "1px solid #eef2f7",
+        borderBottom: "1px solid #eef2f7",
         backgroundColor: "#ffffff",
       }}
     >
@@ -206,7 +209,7 @@ function Metric({ value, label, accent = "#0d9488" }) {
         style={{
           color: "#1a1a2e",
           fontFamily: FONT_STACK,
-          fontSize: "24px",
+          fontSize: "23px",
           fontWeight: 800,
           lineHeight: 1,
         }}
@@ -215,8 +218,8 @@ function Metric({ value, label, accent = "#0d9488" }) {
       </div>
       <div
         style={{
-          marginTop: "8px",
-          color: "#6b7280",
+          marginTop: "9px",
+          color: "#64748b",
           fontFamily: FONT_STACK,
           fontSize: "10px",
           fontWeight: 700,
@@ -250,7 +253,7 @@ function SummaryMetrics({ rows }) {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(132px, 1fr))",
-          borderLeft: "1px solid #e5e7eb",
+          borderLeft: "1px solid #eef2f7",
         }}
       >
         <Metric value={rows.length} label="Tracked Projects" accent="#0d9488" />
@@ -266,7 +269,7 @@ function SummaryMetrics({ rows }) {
         style={{
           display: "none",
           padding: "16px 18px",
-          border: "1px solid #e5e7eb",
+          border: "1px solid #eef2f7",
           borderTop: 0,
           backgroundColor: "#ffffff",
         }}
@@ -308,7 +311,7 @@ function SummaryMetrics({ rows }) {
             marginTop: "12px",
             overflow: "hidden",
             borderRadius: "999px",
-            backgroundColor: "#e5e7eb",
+            backgroundColor: "#e9edf3",
           }}
         >
           <div
@@ -316,7 +319,7 @@ function SummaryMetrics({ rows }) {
               width: `${milestoneProgress}%`,
               height: "100%",
               borderRadius: "999px",
-              backgroundColor: "#1d4ed8",
+              backgroundColor: "#1d4ed8cc",
             }}
           />
         </div>
@@ -524,7 +527,7 @@ function SourceLinks({ sources, color, interactive = true }) {
             alignItems: "center",
             gap: "9px",
             padding: "7px 9px",
-            border: "1px solid #e5e7eb",
+            border: "1px solid #eef2f7",
             borderRadius: "6px",
             backgroundColor: "#ffffff",
             color: "#374151",
@@ -543,8 +546,9 @@ function SourceLinks({ sources, color, interactive = true }) {
               width: "20px",
               height: "20px",
               borderRadius: "50%",
-              backgroundColor: `${color}14`,
-              color,
+              border: `1px solid ${color}1f`,
+              backgroundColor: `${color}0d`,
+              color: "#475569",
               fontSize: "9px",
               fontWeight: 800,
             }}
@@ -552,7 +556,7 @@ function SourceLinks({ sources, color, interactive = true }) {
             {index + 1}
           </span>
           <span>{source.label}</span>
-          <span style={{ color, fontSize: "12px" }}>↗</span>
+          <span style={{ color: "#94a3b8", fontSize: "12px" }}>↗</span>
         </a>
       ))}
     </div>
@@ -672,10 +676,9 @@ function NextMilestoneCallout({ row, expanded, previewCards }) {
         display: "grid",
         gap: "5px",
         padding: expanded ? "10px 12px" : "9px 11px",
-        border: `1px solid ${row.sectorColor}33`,
-        borderLeft: `4px solid ${row.sectorColor}`,
+        border: `1px solid ${row.sectorColor}30`,
         borderRadius: "6px",
-        backgroundColor: `${row.sectorColor}0d`,
+        backgroundColor: `${row.sectorColor}05`,
       }}
     >
       <div
@@ -752,7 +755,7 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
               alignItems: "center",
               position: "relative",
               width: "max-content",
-              maxWidth: "calc(100% - 32px)",
+              maxWidth: "calc(100% - 122px)",
             }}
           >
             <span
@@ -802,13 +805,25 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
           <span
             aria-hidden="true"
             style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexShrink: 0,
+              minHeight: "24px",
+              padding: "5px 8px",
+              border: `1px solid ${row.sectorColor}24`,
+              borderRadius: "999px",
+              backgroundColor: `${row.sectorColor}08`,
               color: row.sectorColor,
               fontFamily: FONT_STACK,
-              fontSize: "18px",
+              fontSize: "11px",
+              fontWeight: 800,
+              letterSpacing: "0",
               lineHeight: 1,
+              whiteSpace: "nowrap",
             }}
           >
-            {expanded ? "−" : "+"}
+            {expanded ? "Hide details −" : "View details +"}
           </span>
         </div>
 

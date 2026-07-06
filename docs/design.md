@@ -54,6 +54,8 @@ Project-card status badges display the project state, but their colour follows t
 
 Sector colors are stored in `src/trackerData.js` and appear on card accents, category pills, project-card status badges, milestone indicators, completed milestone dates, and source badges.
 
+Category colour should be strongest on project identity and progress signals, especially category pills and milestone bars. Supporting elements such as status pills, next milestone surfaces, source badges, summary metric accents, and expand controls should use lighter tints, outlines, or thinner accents so the dashboard stays credible and scan-first.
+
 ## Components
 
 The UI is currently implemented as React functions inside `src/App.jsx`.
