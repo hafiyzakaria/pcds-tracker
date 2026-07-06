@@ -45,8 +45,8 @@ const STATUS_META = {
 
 const FILTERS = [
   { id: "all", label: "All", statuses: null },
-  { id: "ongoing", label: STATUS_META["In Progress"].label, statuses: ["Awaiting Decision", "In Progress"] },
   { id: "planning", label: STATUS_META.Planning.label, statuses: ["Planning"] },
+  { id: "ongoing", label: STATUS_META["In Progress"].label, statuses: ["Awaiting Decision", "In Progress"] },
   { id: "delivered", label: STATUS_META.Operational.label, statuses: ["Operational", "Designated", "Enacted"] },
 ];
 
@@ -60,6 +60,14 @@ function getStatusMeta(status) {
     order: 99,
     description: "Status is based on available public reporting.",
   };
+}
+
+function filterRowsByStatus(rows, filter) {
+  if (!filter.statuses) {
+    return rows;
+  }
+
+  return rows.filter((row) => filter.statuses.includes(row.status));
 }
 
 function getAccentBadgeTone(color) {
@@ -328,43 +336,80 @@ function SummaryMetrics({ rows }) {
   );
 }
 
-function FilterBar({ activeFilter, onFilter }) {
+function FilterBar({ activeFilter, onFilter, filters = [] }) {
   return (
     <div
       style={{
-        display: "flex",
-        gap: "8px",
+        display: "grid",
+        gap: "9px",
         marginBottom: "16px",
-        paddingBottom: "2px",
-        flexWrap: "wrap",
       }}
     >
-      {FILTERS.map((filter) => {
-        const active = activeFilter === filter.id;
+      <div
+        className="filter-controls"
+        style={{
+          display: "inline-flex",
+          width: "fit-content",
+          maxWidth: "100%",
+          gap: "4px",
+          padding: "4px",
+          border: "1px solid #e5e7eb",
+          borderRadius: "999px",
+          backgroundColor: "#f8fafc",
+          flexWrap: "wrap",
+        }}
+      >
+        {filters.map((filter) => {
+          const active = activeFilter === filter.id;
 
-        return (
-          <button
-            key={filter.id}
-            onClick={() => onFilter(filter.id)}
-            style={{
-              flexShrink: 0,
-              padding: "8px 12px",
-              border: active ? "1px solid #0d9488" : "1px solid #d1d5db",
-              borderRadius: "999px",
-              backgroundColor: active ? "#0d948815" : "#ffffff",
-              color: active ? "#0d9488" : "#6b7280",
-              cursor: "pointer",
-              fontFamily: FONT_STACK,
-              fontSize: "11px",
-              fontWeight: 800,
-              letterSpacing: "0.04em",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {filter.label}
-          </button>
-        );
-      })}
+          return (
+            <button
+              key={filter.id}
+              onClick={() => onFilter(filter.id)}
+              aria-pressed={active}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "7px",
+                flexShrink: 0,
+                minHeight: "30px",
+                padding: "7px 10px",
+                border: active ? "1px solid #0d94884d" : "1px solid transparent",
+                borderRadius: "999px",
+                backgroundColor: active ? "#ffffff" : "transparent",
+                color: active ? "#0f766e" : "#64748b",
+                boxShadow: active ? "0 1px 2px rgba(15, 23, 42, 0.06)" : "none",
+                cursor: "pointer",
+                fontFamily: FONT_STACK,
+                fontSize: "11px",
+                fontWeight: 800,
+                letterSpacing: "0",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <span>{filter.label}</span>
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minWidth: "18px",
+                  height: "18px",
+                  padding: "0 5px",
+                  borderRadius: "999px",
+                  backgroundColor: active ? "#0d948812" : "#e2e8f0",
+                  color: active ? "#0f766e" : "#64748b",
+                  fontSize: "10px",
+                  fontWeight: 850,
+                  lineHeight: 1,
+                }}
+              >
+                {filter.count}
+              </span>
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -932,10 +977,11 @@ export default function App() {
 
   const rows = useMemo(() => sortProjectRows(getProjectRows()), []);
   const selectedFilter = FILTERS.find((filter) => filter.id === activeFilter) || FILTERS[0];
-  const filteredRows = sortProjectRows(rows.filter((row) => {
-    if (!selectedFilter.statuses) return true;
-    return selectedFilter.statuses.includes(row.status);
+  const filtersWithCounts = FILTERS.map((filter) => ({
+    ...filter,
+    count: filterRowsByStatus(rows, filter).length,
   }));
+  const filteredRows = sortProjectRows(filterRowsByStatus(rows, selectedFilter));
   const toggleExpanded = (id) => {
     setExpandedIds((current) =>
       current.includes(id) ? current.filter((expandedId) => expandedId !== id) : [...current, id]
@@ -1114,7 +1160,11 @@ export default function App() {
         </div>
 
         <section>
-          <FilterBar activeFilter={activeFilter} onFilter={setActiveFilter} />
+          <FilterBar
+            activeFilter={activeFilter}
+            onFilter={setActiveFilter}
+            filters={filtersWithCounts}
+          />
           <ProjectGrid
             rows={filteredRows}
             expandedIds={expandedIds}

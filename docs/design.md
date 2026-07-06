@@ -30,6 +30,8 @@ Current layout order:
 6. One-column project-card grid on mobile.
 7. Footer disclaimer.
 
+Filter controls show live counts from project data so readers can understand the current result set before scanning cards.
+
 ## Typography
 
 The app imports Inter from Google Fonts inside `src/App.jsx`, with system font fallbacks.
