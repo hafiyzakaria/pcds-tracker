@@ -30,7 +30,7 @@ Current layout order:
 6. One-column project-card grid on mobile.
 7. Footer disclaimer.
 
-Filter controls show live counts from project data so readers can understand the current result set before scanning cards.
+Filter controls provide status navigation before readers scan the project cards.
 
 Collapsed project cards prioritize category, title, status, milestone count/progress, next milestone, and the details affordance. Expanded cards keep evidence, milestone history, and source links close to the claims they support.
 

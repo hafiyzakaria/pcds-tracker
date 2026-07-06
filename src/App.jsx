@@ -273,9 +273,9 @@ function SummaryMetrics({ rows }) {
         }}
       >
         <Metric value={rows.length} label="Tracked Projects" accent="#0d9488" />
-        <Metric value={ongoing} label="Ongoing" accent="#d97706" />
         <Metric value={planning} label="Planning" accent="#4f46e5" />
-      <Metric value={completeLike} label="Completed" accent="#16a34a" />
+        <Metric value={ongoing} label="Ongoing" accent="#d97706" />
+        <Metric value={completeLike} label="Completed" accent="#16a34a" />
         <div className="desktop-milestone-metric">
           <Metric value={`${doneMilestones}/${totalMilestones}`} label="Milestones" accent="#1d4ed8" />
         </div>
@@ -396,24 +396,6 @@ function FilterBar({ activeFilter, onFilter, filters = [] }) {
               }}
             >
               <span>{filter.label}</span>
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  minWidth: "18px",
-                  height: "18px",
-                  padding: "0 5px",
-                  borderRadius: "999px",
-                  backgroundColor: active ? "#0d948812" : "#e2e8f0",
-                  color: active ? "#0f766e" : "#64748b",
-                  fontSize: "10px",
-                  fontWeight: 850,
-                  lineHeight: 1,
-                }}
-              >
-                {filter.count}
-              </span>
             </button>
           );
         })}
@@ -824,10 +806,11 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
         aria-expanded={expanded}
         style={{
           width: "100%",
-          minHeight: expanded ? "190px" : "238px",
+          minHeight: expanded ? "190px" : "216px",
           display: "grid",
-          gridTemplateRows: "auto 1fr auto",
-          gap: expanded ? "14px" : "12px",
+          gridTemplateRows: expanded ? "auto 1fr auto" : "auto auto auto",
+          alignContent: expanded ? "stretch" : "start",
+          gap: expanded ? "14px" : "10px",
           padding: "18px",
           border: "none",
           backgroundColor: "transparent",
@@ -1029,10 +1012,6 @@ export default function App() {
 
   const rows = useMemo(() => sortProjectRows(getProjectRows()), []);
   const selectedFilter = FILTERS.find((filter) => filter.id === activeFilter) || FILTERS[0];
-  const filtersWithCounts = FILTERS.map((filter) => ({
-    ...filter,
-    count: filterRowsByStatus(rows, filter).length,
-  }));
   const filteredRows = sortProjectRows(filterRowsByStatus(rows, selectedFilter));
   const toggleExpanded = (id) => {
     setExpandedIds((current) =>
@@ -1215,7 +1194,7 @@ export default function App() {
           <FilterBar
             activeFilter={activeFilter}
             onFilter={setActiveFilter}
-            filters={filtersWithCounts}
+            filters={FILTERS}
           />
           <ProjectGrid
             rows={filteredRows}

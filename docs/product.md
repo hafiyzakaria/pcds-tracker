@@ -25,7 +25,7 @@ The current app is a single-page React site with:
 - Header: "Sarawak Development Monitor" and "PCDS 2030 Project Tracker".
 - Summary metrics for tracked projects, ongoing projects, planning projects, completed projects, and milestones.
 - Last updated indicator beneath the page description, sourced from `LAST_UPDATED` in `src/trackerData.js`.
-- Status filters for all, ongoing, planning, and completed projects.
+- Status filters for all, planning, ongoing, and completed projects.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
 - Footer disclaimer stating that the tracker is independent and not affiliated with the Sarawak Government.
 
