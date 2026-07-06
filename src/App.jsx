@@ -70,6 +70,14 @@ function filterRowsByStatus(rows, filter) {
   return rows.filter((row) => filter.statuses.includes(row.status));
 }
 
+function getMilestoneCountLabel(row) {
+  if (row.totalMilestones === 0) {
+    return "No milestones";
+  }
+
+  return `${row.doneMilestones} of ${row.totalMilestones} milestones`;
+}
+
 function getAccentBadgeTone(color) {
   const accent = color || DEFAULT_ACCENT_COLOR;
 
@@ -494,6 +502,41 @@ function MilestoneIndicator({ row }) {
   );
 }
 
+function CollapsedMilestoneSummary({ row }) {
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "7px",
+        minHeight: "24px",
+        color: "#64748b",
+        fontFamily: FONT_STACK,
+        fontSize: "11px",
+        fontWeight: 750,
+        lineHeight: 1.2,
+        whiteSpace: "nowrap",
+      }}
+    >
+      <span>{getMilestoneCountLabel(row)}</span>
+      <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }} aria-hidden="true">
+        {row.milestones.map((milestone, index) => (
+          <span
+            key={`${row.id}-collapsed-indicator-${index}`}
+            style={{
+              width: "15px",
+              height: "5px",
+              borderRadius: "999px",
+              backgroundColor: milestone.done ? row.sectorColor : "#e5e7eb",
+              opacity: milestone.done ? 1 : 0.95,
+            }}
+          />
+        ))}
+      </span>
+    </span>
+  );
+}
+
 function FactList({ row }) {
   return (
     <div
@@ -781,10 +824,10 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
         aria-expanded={expanded}
         style={{
           width: "100%",
-          minHeight: expanded ? "190px" : "263px",
+          minHeight: expanded ? "190px" : "238px",
           display: "grid",
           gridTemplateRows: "auto 1fr auto",
-          gap: "14px",
+          gap: expanded ? "14px" : "12px",
           padding: "18px",
           border: "none",
           backgroundColor: "transparent",
@@ -884,8 +927,17 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
           >
             {row.name}
           </h3>
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap", marginTop: "12px" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              flexWrap: "wrap",
+              marginTop: expanded ? "12px" : "10px",
+            }}
+          >
             <StatusBadge status={row.status} accentColor={row.sectorColor} />
+            {!expanded && <CollapsedMilestoneSummary row={row} />}
           </div>
           <AccordionReveal expanded={expanded} className="project-card-intro-reveal">
             <div
@@ -905,7 +957,7 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
         </div>
 
         <div style={{ display: "grid", gap: "12px" }}>
-          <MilestoneIndicator row={row} />
+          {expanded && <MilestoneIndicator row={row} />}
           {previewCards && (
             <AccordionReveal expanded={expanded} className="project-card-completed-reveal">
               <CompletedMilestoneRows row={row} />

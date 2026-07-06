@@ -32,6 +32,8 @@ Current layout order:
 
 Filter controls show live counts from project data so readers can understand the current result set before scanning cards.
 
+Collapsed project cards prioritize category, title, status, milestone count/progress, next milestone, and the details affordance. Expanded cards keep evidence, milestone history, and source links close to the claims they support.
+
 ## Typography
 
 The app imports Inter from Google Fonts inside `src/App.jsx`, with system font fallbacks.
