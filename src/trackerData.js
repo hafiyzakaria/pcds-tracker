@@ -320,6 +320,7 @@ export const SECTORS = [
         sources: [
           { label: "DayakDaily — ART Q4 2026 operations", url: "https://dayakdaily.com/hydrogen-powered-art-to-begin-service-in-kuching-in-final-quarter-of-2026-premier/" },
           { label: "The Edge — KUTS hydrogen plant relocation", url: "https://theedgemalaysia.com/node/786079" },
+          { label: "Sarawak Metro — KUTS official project page", url: "https://www.mysarawakmetro.com/what-we-do/kuching-urban-transportation-system" },
         ],
       },
       {
