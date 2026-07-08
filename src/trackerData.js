@@ -271,6 +271,31 @@ export const SECTORS = [
           { label: "Sarawak Energy — C4 Sarawak launch (May 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/official-launching-of-sarawaks-first-industrial-microalgae-production-facility-chitose-carbon-capture-central-sarawak" },
         ],
       },
+      {
+        name: "Sarawak Bioindustrial Park",
+        status: "Planning",
+        statusColor: "#4f46e5",
+        lead: "Sarawak Biodiversity Centre / BioVerde Technologies",
+        value: "100-acre bioindustrial hub",
+        summary:
+          "Bioindustry and commercialisation hub intended to turn Sarawak biodiversity research into scalable bio-based production. Official and public sources describe a 100-acre park with industrial plots, pilot bioprocessing, analytical laboratories, and GMP manufacturing; BioVerde describes the park as under development and says anchor and research partners are being selected.",
+        milestones: [
+          { date: "Official report", text: "Sarawak Bioindustrial Park listed as a PCDS 2030 bioindustry platform", done: true },
+          { date: "2025", text: "BioVerde Technologies established with SBP operations mandate", done: true },
+          {
+            date: "2027-Q3",
+            text: "Target: Phase 1 construction completion from official report",
+            shortText: "Phase 1 completion target",
+            done: false,
+          },
+          { date: "2035", text: "Target: full operations from official report", shortText: "Full operations target", done: false },
+        ],
+        sources: [
+          { label: "SBC — Sarawak Bioindustrial Park commercialisation", url: "https://www.sbc.org.my/index.php/commercialisation" },
+          { label: "BioVerde — Sarawak Bioindustrial Park under development", url: "https://www.bioverde.com.my/sbp" },
+          { label: "BioVerde — About BioVerde Technologies", url: "https://www.bioverde.com.my/about" },
+        ],
+      },
     ],
   },
   {
@@ -459,6 +484,42 @@ export const SECTORS = [
           { label: "DayakDaily — H2ornbill & H2biscus hydrogen economy (Aug 2025)", url: "https://dayakdaily.com/sarawak-powers-ahead-in-hydrogen-economy/" },
           { label: "DayakDaily — Bintulu low-carbon industrial push (Jan 2026)", url: "https://dayakdaily.com/bintulu-set-to-anchor-msias-low-carbon-industrial-push-as-swak-integrates-hydrogen-ccus-and-carbon-pricing/" },
           { label: "FULCRUM — Sarawak's green hydrogen ambitions", url: "https://fulcrum.sg/sarawaks-green-hydrogen-ambitions-what-it-means-for-southeast-asia/" },
+        ],
+      },
+      {
+        name: "Batang Ai Floating Solar Farm",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Sarawak Energy / China Power International Holdings / Trina Solar",
+        value: "50MW; 170MW planned",
+        summary:
+          "Sarawak Energy's first floating solar farm on the Batang Ai HEP reservoir, developed with China Power International Holdings and Trina Solar. Public sources describe a 50MW hydro-solar hybrid facility and later reporting points to a December operations or commissioning milestone, but the exact commissioning confirmation date needs review. Sarawak Energy is also reported to be planning an additional 120MW expansion at Batang Ai.",
+        milestones: [
+          { date: "2023-06-20", text: "Construction officially began", done: true },
+          { date: "2024-06-20", text: "Sarawak Energy reported 35 percent construction completion", done: true },
+          {
+            date: "2025-12",
+            text: "Reported operations or commissioning milestone",
+            shortText: "Operations/commissioning milestone",
+            done: true,
+          },
+          {
+            date: "2026",
+            text: "Target: additional 120MW Batang Ai floating solar expansion rollout",
+            shortText: "120MW expansion rollout",
+            done: false,
+          },
+          {
+            date: "TBD",
+            text: "Confirm commercial operation date or latest commissioning status",
+            shortText: "Confirm operational status",
+            done: false,
+          },
+        ],
+        sources: [
+          { label: "Sarawak Energy — Floating solar commissioning target (Jun 2024)", url: "https://www.sarawakenergy.com/media-info/media-releases/2024/sarawak-energys-first-floating-solar-farm-on-track-for-commissioning-by-october-2024" },
+          { label: "MEESty Sarawak — Batang Ai floating solar December launch target (Aug 2025)", url: "https://meesty.sarawak.gov.my/web/subpage/news_view/54" },
+          { label: "The Star — Sarawak solar expansion and Batang Ai capacity (Oct 2025)", url: "https://www.thestar.com.my/news/nation/2025/10/06/sarawak-expands-solar-capacity-in-push-for-renewable-energy-says-abang-johari" },
         ],
       },
     ],
