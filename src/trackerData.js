@@ -248,14 +248,65 @@ export const SECTORS = [
     name: "Innovation",
     icon: "\u25c8",
     color: "#0d9488",
-    projects: [],
+    projects: [
+      {
+        name: "CHITOSE Carbon Capture Central Sarawak",
+        status: "Operational",
+        statusColor: "#16a34a",
+        lead: "CHITOSE Group / Sarawak Energy / Sarawak Biodiversity Centre",
+        value: "450t CO2 / 300t biomass annually",
+        summary:
+          "Industrial microalgae production and carbon capture research facility at Sarawak Energy's Sejingkat coal-fired power plant. C4 Sarawak captures CO2 from flue gas for microalgae cultivation, with expected annual output of 450 tonnes of CO2 captured and 300 tonnes of dried biomass.",
+        milestones: [
+          { date: "2020", text: "C4 Sarawak microalgae carbon-capture project began", done: true },
+          { date: "2023-05-10", text: "C4 Sarawak facility officially launched in Kuching", done: true },
+          {
+            date: "Ongoing",
+            text: "Public reporting on actual annual CO2 capture, biomass output, or expansion decision",
+            shortText: "Annual output or expansion update",
+            done: false,
+          },
+        ],
+        sources: [
+          { label: "Sarawak Energy — C4 Sarawak launch (May 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/official-launching-of-sarawaks-first-industrial-microalgae-production-facility-chitose-carbon-capture-central-sarawak" },
+        ],
+      },
+    ],
   },
   {
     id: "education",
     name: "Education & Human Capital",
     icon: "\u25c6",
     color: "#2563eb",
-    projects: [],
+    projects: [
+      {
+        name: "Yayasan Sarawak International Secondary Schools Expansion",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Yayasan Sarawak / Sarawak Government",
+        value: "Six-school network",
+        summary:
+          "State-backed international secondary school network intended to expand access to international-syllabus education for low-income and rural students. Petra Jaya began operations in 2022, the official site lists Petra Jaya, Kuching 12th Mile, and Sibu campuses, and public reporting says three more schools are targeted for completion within two to three years.",
+        milestones: [
+          { date: "2022-04-03", text: "YSISS Petra Jaya began operation", done: true },
+          { date: "2025-09", text: "Three YSISS schools reported built statewide", done: true },
+          { date: "2025-10-01", text: "YSISS Sibu scheduled to run its first class", done: true },
+          {
+            date: "2027-2028",
+            text: "Target: remaining three YSISS schools completed or opened",
+            shortText: "Remaining three YSISS schools",
+            done: false,
+          },
+        ],
+        sources: [
+          { label: "YSISS — Official site", url: "https://ysiss.edu.my/" },
+          { label: "YSISS — About YSISS", url: "https://ysiss.edu.my/about-ysiss/" },
+          { label: "YSISS — Campus contacts", url: "https://ysiss.edu.my/contact-us/" },
+          { label: "Borneo Post — YSISS Sibu first class (Sep 2025)", url: "https://www.theborneopost.com/2025/09/29/yayasan-sarawak-international-secondary-school-sibu-to-run-first-class-on-oct-1/" },
+          { label: "Borneo Post — Six-school YSISS network (Sep 2025)", url: "https://www.theborneopost.com/2025/09/07/dr-annuar-ysiss-established-to-uplift-rural-low-income-students/" },
+        ],
+      },
+    ],
   },
   {
     id: "infrastructure",
