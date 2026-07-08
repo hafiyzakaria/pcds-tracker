@@ -734,11 +734,15 @@ function formatNextMilestone(milestone, compact = false) {
 }
 
 function NextMilestoneCallout({ row, expanded, previewCards }) {
+  const isComplete = row.totalMilestones > 0 && row.doneMilestones === row.totalMilestones;
+  const completionMilestone = isComplete ? [...row.milestones].reverse().find((milestone) => milestone.done) : null;
   const text = previewCards
-    ? formatNextMilestone(row.nextMilestone, !expanded)
+    ? formatNextMilestone(isComplete ? completionMilestone : row.nextMilestone, !expanded)
     : row.nextMilestone
       ? `${row.nextMilestone.date}: ${row.nextMilestone.text}`
-      : "No open milestone";
+      : isComplete && completionMilestone
+        ? `${completionMilestone.date}: ${completionMilestone.text}`
+        : "No open milestone";
 
   return (
     <div
@@ -761,7 +765,7 @@ function NextMilestoneCallout({ row, expanded, previewCards }) {
           textTransform: "uppercase",
         }}
       >
-        Next Milestone
+        {isComplete ? "Completed" : "Next Milestone"}
       </div>
       <div
         style={{
