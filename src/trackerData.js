@@ -195,14 +195,15 @@ export const SECTORS = [
         lead: "JKR / Sarawak Government",
         value: "RM1.52 billion (RM500M equipment fronted)",
         summary:
-          "Sarawak's first dedicated cancer centre in Kota Samarahan. PM directed JKR to expedite tendering in Q1 2026; Sarawak fronted RM500M for medical equipment. One of 5 key projects under the RM40B healthcare boost in 13MP. Groundbreaking is expected in 2026, with operations targeted before 2031.",
+          "Sarawak's first dedicated cancer centre in Kota Samarahan. PM directed JKR to expedite tendering in Q1 2026; Sarawak fronted RM500M for medical equipment. Newer public reporting says the project has entered tender procurement, with construction targeted to start in early 2027 and completion expected by 2032.",
         milestones: [
           { date: "2025-12-03", text: "RM1.52B preliminary cost estimate announced", done: true },
           { date: "2025-12-16", text: "PM: expedite project for Q1 2026 tender", done: true },
           { date: "2025-12-17", text: "Sarawak fronts RM500M for medical equipment", done: true },
           { date: "2026-02-26", text: "Construction gathering pace in Samarahan health metropolis", done: true },
-          { date: "2026-Q3", text: "Groundbreaking ceremony", done: false },
-          { date: "Before 2031", text: "Target: Operational", done: false },
+          { date: "2026-05", text: "Tender procurement stage underway", done: false },
+          { date: "2027-Q1", text: "Target: construction starts", done: false },
+          { date: "2032", text: "Target: completion", done: false },
         ],
         sources: [
           { label: "DayakDaily — RM1.52B preliminary estimate (Dec 2025)", url: "https://dayakdaily.com/sarawak-cancer-centre-construction-to-start-by-2026-with-rm1-52-bln-preliminary-estimate-cost/" },
@@ -210,6 +211,8 @@ export const SECTORS = [
           { label: "DayakDaily — RM500M medical equipment fronted (Dec 2025)", url: "https://dayakdaily.com/patients-cannot-wait-sarawak-fronts-rm500-mln-for-cancer-centre-medical-equipment/" },
           { label: "DayakDaily — Arden City construction & Samarahan health hub (Feb 2026)", url: "https://dayakdaily.com/arden-city-construction-gathers-pace-amid-healthcare-education-boom-in-kota-samarahan/" },
           { label: "DayakDaily — RM40B healthcare boost in 13MP (Jul 2025)", url: "https://dayakdaily.com/sarawak-cancer-centre-among-5-key-projects-under-rm40-bln-healthcare-boost-in-13mp/" },
+          { label: "Sarawak Tribune — Tender stage (May 2026)", url: "https://www.sarawaktribune.com/sarawak-cancer-centre-enters-tender-stage/" },
+          { label: "DayakDaily — Tender begins, 2032 completion target (Jul 2026)", url: "https://dayakdaily.com/sarawak-cancer-centre-targets-2032-completion-as-design-and-build-tender-process-begins/" },
         ],
       },
     ],
@@ -309,10 +312,11 @@ export const SECTORS = [
         milestones: [
           { date: "2025-12", text: "RM58M contract awarded to Linde EOX for hydrogen plant relocation to Rembus Depot", done: true },
           { date: "2026-Q1", text: "First two ART units arrive in Kuching", done: true },
+          { date: "2026-04", text: "Dedicated private frequency spectrum secured for ART operations", done: true },
           {
             date: "2026-Q4",
-            text: "Begin passenger operations and complete hydrogen plant relocation",
-            shortText: "Passenger service and hydrogen plant move",
+            text: "Blue Line pilot/revenue-service target and hydrogen plant relocation",
+            shortText: "Blue Line service and hydrogen plant move",
             done: false,
           },
           { date: "TBD", text: "Feeder bus network (hydrogen-powered) rollout", done: false },
@@ -321,31 +325,34 @@ export const SECTORS = [
           { label: "DayakDaily — ART Q4 2026 operations", url: "https://dayakdaily.com/hydrogen-powered-art-to-begin-service-in-kuching-in-final-quarter-of-2026-premier/" },
           { label: "The Edge — KUTS hydrogen plant relocation", url: "https://theedgemalaysia.com/node/786079" },
           { label: "Sarawak Metro — KUTS official project page", url: "https://www.mysarawakmetro.com/what-we-do/kuching-urban-transportation-system" },
+          { label: "Sarawak Tribune — ART pilot run target (Apr 2026)", url: "https://www.sarawaktribune.com/art-golden-trains-set-to-arrive-in-kuching-for-pilot-run-this-year/" },
+          { label: "DayakDaily — Dedicated ART spectrum (Apr 2026)", url: "https://dayakdaily.com/sarawak-metro-first-in-msia-to-secure-dedicated-spectrum-for-art-operations/" },
         ],
       },
       {
         name: "Bintulu Port — State Control Handover",
-        status: "Awaiting Decision",
-        statusColor: "#d97706",
+        status: "Operational",
+        statusColor: "#16a34a",
         lead: "Sarawak Government / Federal Government",
         value: "RM1.8 billion",
         summary:
-          "Return of Bintulu Port to Sarawak state control from the federal government under MA63 devolution. Takeover valued at RM1.8B, agreed in principle Feb 2026. Federal Cabinet endorsement and final agreement signing remain the next public decision points. Will serve as Sarawak's main port for LNG exports and SCORE corridor.",
+          "Return of Bintulu Port to Sarawak state control from the federal government under MA63 devolution. Takeover valued at RM1.8B, agreed in principle Feb 2026, with Tripartite and Completion Agreements signed on Jun 21, 2026. Will serve as Sarawak's main port for LNG exports and SCORE corridor.",
         milestones: [
           { date: "2025-01-01", text: "12-month extension agreement signed for transition", done: true },
           { date: "2026-02-04", text: "RM1.8B takeover agreed in principle", done: true },
           { date: "2026-02-06", text: "RM1.8B valuation confirmed after detailed negotiations", done: true },
           {
-            date: "2026-05-09",
-            text: "Federal Cabinet endorsement and final agreement signing",
-            shortText: "Cabinet endorsement and final signing",
-            done: false,
+            date: "2026-06-21",
+            text: "Tripartite and Completion Agreements signed; Bintulu Port officially handed over to Sarawak",
+            shortText: "Official handover to Sarawak",
+            done: true,
           },
         ],
         sources: [
           { label: "DayakDaily — RM1.8B takeover agreed in principle (Feb 2026)", url: "https://dayakdaily.com/rm1-8-bln-bintulu-port-takeover-agreed-in-principle-as-handover-enters-final-stage/" },
           { label: "DayakDaily — RM1.8B valuation confirmed (Feb 2026)", url: "https://dayakdaily.com/rm1-8-bln-bintulu-port-valuation-not-arbitrary-reflects-true-asset-worth-after-detailed-negotiations/" },
           { label: "DayakDaily — Awaiting cabinet endorsement (May 2026)", url: "https://dayakdaily.com/rm1-8-bln-bintulu-port-handover-to-sarawak-awaits-federal-cabinet-endorsement/" },
+          { label: "DayakDaily — Bintulu Port officially handed over to Sarawak (Jun 2026)", url: "https://dayakdaily.com/bintulu-port-officially-handed-over-to-sarawak-in-rm1-8-bil-deal/" },
         ],
       },
     ],
@@ -365,12 +372,13 @@ export const SECTORS = [
         summary:
           "1,285MW hydroelectric dam on the Baleh River, Kapit Division. Part of Sarawak's '10-20-30' target to reach 10GW generation capacity by 2030, predominantly from renewable sources including hydro, solar, and biomass. Public reporting now separates project completion from the later operational target.",
         milestones: [
-          { date: "2026", text: "Project completion", done: false },
+          { date: "2026", text: "Project completion / commissioning phase", done: false },
           { date: "2028", text: "Operational generation", done: false },
         ],
         sources: [
           { label: "DayakDaily — Green revolution supercharging Sarawak energy (Aug 2025)", url: "https://dayakdaily.com/green-revolution-supercharging-sarawaks-energy-prowess/" },
           { label: "DayakDaily — ASEAN grid & Baleh 1,285MW by 2030 (Jan 2026)", url: "https://dayakdaily.com/sarawak-urges-asean-to-study-european-union-nordic-models-to-realise-regional-power-grid-dream/" },
+          { label: "RECODA — Annual Report page", url: "https://recoda.gov.my/annual-report/" },
         ],
       },
       {
