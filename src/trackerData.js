@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-07-02";
+export const LAST_UPDATED = "2026-07-09";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
