@@ -11,9 +11,9 @@ const PCDS_SUMMARY = {
     "Post COVID-19 Development Strategy 2030. Vision: a thriving society driven by data and innovation. Targets 8% annual GDP growth, RM15,000 median household income by 2030, 45% GHG intensity reduction, and 195,000 new jobs. Anchored on 6 Economic Sectors and 7 Enablers.",
   milestones: [
     { date: "Achieved", text: "Surpassed World Bank high-income threshold ahead of schedule", done: true },
-    { date: "2030", text: "Target: RM282B GDP", done: false },
-    { date: "2030", text: "Target: RM15,000 median monthly household income", done: false },
-    { date: "2030", text: "Target: 195,000 new jobs created", done: false },
+    { date: "2030", text: "RM282B GDP goal", done: false },
+    { date: "2030", text: "RM15,000 median monthly household income goal", done: false },
+    { date: "2030", text: "195,000 new jobs goal", done: false },
   ],
   sources: [
     { label: "Business Events Sarawak — PCDS 2030", url: "https://businesseventssarawak.com/about-sarawak/pcds2030/" },
@@ -71,7 +71,7 @@ export const SECTORS = [
         milestones: [
           { date: "2024-06", text: "RM1B allocation announced for large-scale paddy cultivation", done: true },
           { date: "2024-11", text: "DID restructured for agriculture/urban focus", done: true },
-          { date: "2025-08", text: "Target: 500,000 tonnes rice output by 2030 announced", done: true },
+          { date: "2025-08", text: "500,000 tonnes rice output goal announced", done: true },
           { date: "2026-02", text: "Minister: RM1B infra must not be diverted to oil palm", done: true },
           {
             date: "2026",
@@ -79,7 +79,7 @@ export const SECTORS = [
             shortText: "Farmer clustering and land leasing",
             done: false,
           },
-          { date: "2030", text: "Target: 500,000 tonnes annual rice output", done: false },
+          { date: "2030", text: "500,000 tonnes annual rice output goal", done: false },
         ],
         sources: [
           { label: "DayakDaily — RM1B allocation (Jun 2024)", url: "https://dayakdaily.com/sarawak-allocates-rm1-bln-for-large-scale-paddy-cultivation-to-boost-rice-self-sufficiency/" },
@@ -202,8 +202,8 @@ export const SECTORS = [
           { date: "2025-12-17", text: "Sarawak fronts RM500M for medical equipment", done: true },
           { date: "2026-02-26", text: "Construction gathering pace in Samarahan health metropolis", done: true },
           { date: "2026-05", text: "Tender procurement stage underway", done: false },
-          { date: "2027-Q1", text: "Target: construction starts", done: false },
-          { date: "2032", text: "Target: completion", done: false },
+          { date: "2027-Q1", text: "Planned construction start", done: false },
+          { date: "2032", text: "Expected completion", done: false },
         ],
         sources: [
           { label: "DayakDaily — RM1.52B preliminary estimate (Dec 2025)", url: "https://dayakdaily.com/sarawak-cancer-centre-construction-to-start-by-2026-with-rm1-52-bln-preliminary-estimate-cost/" },
@@ -284,11 +284,11 @@ export const SECTORS = [
           { date: "2025", text: "BioVerde Technologies established with SBP operations mandate", done: true },
           {
             date: "2027-Q3",
-            text: "Target: Phase 1 construction completion from official report",
-            shortText: "Phase 1 completion target",
+            text: "Phase 1 construction completion from official report",
+            shortText: "Phase 1 completion",
             done: false,
           },
-          { date: "2035", text: "Target: full operations from official report", shortText: "Full operations target", done: false },
+          { date: "2035", text: "Full operations from official report", shortText: "Full operations", done: false },
         ],
         sources: [
           { label: "SBC — Sarawak Bioindustrial Park commercialisation", url: "https://www.sbc.org.my/index.php/commercialisation" },
@@ -318,7 +318,7 @@ export const SECTORS = [
           { date: "2025-10-01", text: "YSISS Sibu scheduled to run its first class", done: true },
           {
             date: "2027-2028",
-            text: "Target: remaining three YSISS schools completed or opened",
+            text: "Remaining three YSISS schools completed or opened",
             shortText: "Remaining three YSISS schools",
             done: false,
           },
@@ -446,10 +446,22 @@ export const SECTORS = [
         lead: "Sarawak Energy Berhad",
         value: "~RM10 billion",
         summary:
-          "1,285MW hydroelectric dam on the Baleh River, Kapit Division. Part of Sarawak's '10-20-30' target to reach 10GW generation capacity by 2030, predominantly from renewable sources including hydro, solar, and biomass. Public reporting now separates project completion from the later operational target.",
+          "1,285MW hydroelectric dam on the Baleh River in Kapit Division, led by Sarawak Energy. Public sources describe Baleh HEP as a concrete-faced rockfill dam, with construction completion targeted in 2026, operational generation targeted by 2028, and the 1,285MW capacity expected to contribute to Sarawak's 2030 large-scale hydropower outlook.",
         milestones: [
-          { date: "2026", text: "Project completion / commissioning phase", done: false },
-          { date: "2028", text: "Operational generation", done: false },
+          {
+            date: "2025-08",
+            text: "Project scope: 1,285MW concrete-faced rockfill dam on the Baleh River",
+            shortText: "1,285MW hydroelectric dam scope",
+            done: true,
+          },
+          { date: "2026", text: "Construction completion target", shortText: "Construction completion", done: false },
+          { date: "2028", text: "Operational generation target", shortText: "Operational generation", done: false },
+          {
+            date: "2030",
+            text: "Contribution to Sarawak's 4,843MW large-scale hydropower capacity",
+            shortText: "2030 hydropower capacity contribution",
+            done: false,
+          },
         ],
         sources: [
           { label: "DayakDaily — Green revolution supercharging Sarawak energy (Aug 2025)", url: "https://dayakdaily.com/green-revolution-supercharging-sarawaks-energy-prowess/" },
@@ -505,7 +517,7 @@ export const SECTORS = [
           },
           {
             date: "2026",
-            text: "Target: additional 120MW Batang Ai floating solar expansion rollout",
+            text: "Additional 120MW Batang Ai floating solar expansion rollout",
             shortText: "120MW expansion rollout",
             done: false,
           },
