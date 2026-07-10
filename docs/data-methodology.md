@@ -28,10 +28,23 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-07-09`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-07-10`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
+
+Reported-value standard:
+
+- `value` is reserved for a monetary project cost, allocation, investment, estimate, commitment, or other clearly labelled monetary figure.
+- Capacity, distance, site area, output, and network size belong in the summary or milestones, not the reported-value field.
+- Use `Not disclosed` when no reliable public monetary figure is available.
+- Use `Not applicable` only for non-capital policy or legislative entries where a project value is not meaningful.
+
+Public-source-link standard:
+
+- Live project cards should link to official agency or project-owner pages, parliamentary or government releases, company disclosures, or reputable public news reports.
+- Repository-hosted copies of source PDFs may support internal research, but should not be the primary clickable evidence on a live card.
+- If no public project-specific source can be found, keep the card explicitly provisional and avoid unsupported values, completion claims, or detailed schedules.
 - `POPULATED_ECONOMIC` and `POPULATED_ENABLERS`: exported sets that identify categories with projects. They are not currently used by the dashboard UI.
 
 Category fields inside `SECTORS`:
@@ -117,9 +130,9 @@ Rules to use for future maintenance:
 - Distinguish construction completion, commissioning, operations commencement, and commercial operation. These terms describe different project stages and must not be used interchangeably.
 - Keep supporting context, uncertainty, and attribution in the project summary and sources rather than lengthening the milestone statement.
 
-## Project-by-Project Source Map
+## Selected Project Source Map
 
-This map is based on current `src/trackerData.js` only. Dates are listed only when encoded in source labels or project milestone text.
+This map records the earlier source-audit set. The 10 provisional additions revalidated on 10 July 2026 are summarized separately below, with full field-level rationale in `docs/manual-review-project-addition-plan.md`.
 
 ### SMD Semiconductor - GaN Chip Development
 
@@ -237,6 +250,19 @@ This map is based on current `src/trackerData.js` only. Dates are listed only wh
 - [FULCRUM - Sarawak's green hydrogen ambitions](https://fulcrum.sg/sarawaks-green-hydrogen-ambitions-what-it-means-for-southeast-asia/) - Publisher: FULCRUM; type: policy analysis/public source; date: not encoded in active label; appears to support broader regional hydrogen ambition context.
 - Gaps or uncertainty: no SEDC Energy, Gentari, or project-company primary source is encoded; production milestones are future targets.
 
+### Provisional Additions Revalidated on 10 July 2026
+
+- Pan Borneo Highway Sarawak Phase 1 - `In Progress`; value: RM16.5 billion construction cost; next milestone: Work Package 11 completion; sources: The Edge Malaysia and Sarawak Tribune.
+- Sarawak-Sabah Link Road - `In Progress`; Phase 1 reached 70.05 percent and Phase 2 reached 10.55 percent in April 2026; next milestone: Phase 1 completion expected in 2027; sources: The Star and DayakDaily.
+- Miri Port Kuala Baram Capital Dredging - `In Progress`; value: RM238 million contract; work was reported in full swing in May 2026; next milestone: Q4 2026 completion target; sources: Dredging Today project reports.
+- Bau Gold Project - `Planning`; Besra completed an independent technical review and received conditional Jugan mining-lease renewal progress; next milestone: finalisation of mining-lease conditions; sources: Besra Gold company disclosures.
+- Bintulu-Samalaju Gas Pipeline - `In Progress`; value: RM1 billion committed; next milestone: offshore pipeline installation completion; source: The Star.
+- Sarawak Agrotechnology Park - `Planning`; value: RM5 million reported allocations for Semenggok and Tarat; next milestone: SARTECH site development; source: Sarawak Tribune.
+- Sungai Baji Agropark - `Planning`; the 127-hectare site remained a proposed development in June 2023; next milestone: agropark development decision; source: DayakDaily.
+- Semenggoh and Piasau Discovery Centre Development - `Planning`; current public agency pages confirm the existing destinations but do not publish a consolidated project schedule; source: Sarawak Forestry pages.
+- PETRONAS Kasawari Carbon Capture and Storage Project - `In Progress`; MMHE holds the EPCIC contract and PETRONAS is examining a 2027 first-injection date; sources: The Sun and The Star.
+- Sarawak River Aids to Navigation and Surveillance System - `Operational`; Sarawak River VTMS was reported fully operational in December 2025; next milestone: Miri River system completion targeted for Q3 2027; source: Borneo Post.
+
 ### PCDS 2030 - Overarching Framework
 
 - Current dashboard status: `Operational`
@@ -251,19 +277,19 @@ This map is based on current `src/trackerData.js` only. Dates are listed only wh
 
 The app derives display rows by flattening `SECTORS` into project rows and excluding the overview category:
 
-- Active rendered projects: 12.
-- Stored projects including overview: 13.
+- Active rendered projects: 26.
+- Stored projects including overview: 27.
 - PCDS economic sectors represented in data: 6.
 - PCDS enablers represented in data: 7.
-- Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, social-services.
-- Populated enabler ids: digital-transformation, infrastructure, transport, renewable-energy.
+- Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, mining, social-services.
+- Populated enabler ids: digital-transformation, innovation, education, infrastructure, utilities, transport, renewable-energy.
 
 Current active dashboard status counts from `src/trackerData.js`:
 
-- `In Progress`: 6.
-- `Awaiting Decision`: 1.
-- `Planning`: 1.
-- `Operational`: 1.
+- `In Progress`: 13.
+- `Awaiting Decision`: 0.
+- `Planning`: 6.
+- `Operational`: 4.
 - `Designated`: 2.
 - `Enacted`: 1.
 
@@ -275,11 +301,11 @@ The UI groups detailed statuses into public filter labels:
 
 Current public display counts:
 
-- Tracked projects: 12.
-- Planning: 1.
-- Ongoing: 7.
-- Completed: 4.
-- Milestones: 24 completed out of 43 active-project milestones.
+- Tracked projects: 26.
+- Planning: 6.
+- Ongoing: 13.
+- Completed: 7.
+- Milestones: 57 completed out of 96 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 

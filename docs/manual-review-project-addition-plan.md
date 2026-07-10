@@ -1,300 +1,246 @@
 # Manual Review Project Addition Plan
 
 Prepared: 2026-07-08
+Revalidated: 2026-07-10
 
-Scope: the 12 candidates previously listed under `Manual Review Candidates` in `docs/project-trackability-review.md`.
+Scope: the 10 provisional candidates from the earlier manual-review pass. Batang Ai Floating Solar Farm and Sarawak Bioindustrial Park were previously approved as full cards and already exist in `src/trackerData.js`.
 
-Interpretation used here: a project may be addable even with limited online updates if it has a clear name, clear PCDS/public-sector relevance, at least one official PDF source, enough information for a cautious card, and no obvious duplicate in `src/trackerData.js`.
+The initial revalidation used the official PDFs in `docs/source-pdfs/`. A subsequent public-link audit on 10 July 2026 replaced repository-hosted PDF links in live project cards with official agency, project-owner, company-disclosure, and reputable public news links. The detailed proposal sections below preserve the original provisional review; the summary immediately below records the final live-card decisions after that audit.
+
+## Revalidation Summary
+
+- Approved for cautious implementation: 10
+- Final `In Progress`: 5
+- Final `Planning`: 4
+- Final `Operational`: 1
+- Duplicate or merge candidates: 0
+- Highest-confidence current updates: Sarawak River VTMS fully operational; Miri dredging in full swing; SSLR package progress reported through April 2026
+- Highest-risk identity: combined Semenggoh and Piasau discovery-centre development, which must remain distinct from the existing operational conservation sites
+
+### Final Public-Source Decisions
+
+- Pan Borneo Highway Sarawak Phase 1: `In Progress`; The Edge Malaysia and Sarawak Tribune.
+- Sarawak-Sabah Link Road: `In Progress`; The Star and DayakDaily.
+- Miri Port Kuala Baram Capital Dredging: `In Progress`; Dredging Today project reports.
+- Bau Gold Project: `Planning`; Besra Gold official disclosures.
+- Bintulu-Samalaju Gas Pipeline: `In Progress`; The Star.
+- Sarawak Agrotechnology Park: `Planning`; Sarawak Tribune.
+- Sungai Baji Agropark: `Planning`; DayakDaily.
+- Semenggoh and Piasau Discovery Centre Development: `Planning`; Sarawak Forestry official pages, with no current consolidated schedule.
+- PETRONAS Kasawari Carbon Capture and Storage Project: `In Progress`; The Sun and The Star.
+- Sarawak River Aids to Navigation and Surveillance System: `Operational`; Borneo Post.
 
 ## 1. Pan Borneo Highway Sarawak Phase 1
 
-- Candidate project name: Pan Borneo Highway Sarawak Phase 1
-- Decision: provisional card
-- Reason: The project is clearly named, statewide, infrastructure-relevant, and supported by official PDF evidence. The latest completion or handover status still needs better public confirmation, so the card should avoid claiming completion.
-- Evidence from PDF: `docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`, page 101, says the project began in 2016, upgrades 786 km to dual carriageway JKR R5 standard, covers 11 work packages, and was 98.6 percent complete as of December 2023.
-- Online sources found, if any: Broad public route/background references exist, but no official current completion source was verified in the prior review.
-- Proposed category: `infrastructure` / Basic Infrastructure
-- Proposed status using existing status values: `In Progress`
-- Proposed reported value: Do not state a monetary value.
-- Proposed summary: Major Sarawak road-upgrade programme under the Pan Borneo Highway, converting a 786 km single carriageway corridor into dual carriageway JKR R5 standard across 11 work packages. Official PDF evidence reports 98.6 percent completion as of December 2023; the next public proof point is final completion or handover confirmation.
+- Decision: add as provisional card
+- Reason: The project is clearly identifiable. The official report records 98.6 percent completion in December 2023, while Sarawak Tribune reported 99.98 percent progress in October 2025, with ten of eleven work packages completed and opened in stages.
+- Proposed category: `infrastructure`
+- Proposed status: `In Progress`
+- Proposed lead: `Federal Government / JKR`
+- Proposed reported value: `RM16.54 billion`
+- Proposed summary: A 786 km dual-carriageway upgrade from Telok Melano to Miri delivered through 11 work packages. The Works Minister reported 99.98 percent progress in October 2025, with ten packages completed and opened in stages. Work Package 11 in Miri remained unfinished because LAKU water pipes had to be replaced before road works could proceed.
 - Proposed milestones:
-  - `{ date: "2016", text: "Pan Borneo Highway Sarawak Phase 1 commenced", done: true }`
-  - `{ date: "2023-12", text: "Official report: project reached 98.6 percent completion", done: true }`
-  - `{ date: "TBD", text: "Final completion, opening, or handover confirmation", shortText: "Final completion confirmation", done: false }`
+  - `{ date: "2016", text: "Phase 1 construction commenced", done: true }`
+  - `{ date: "2023-12", text: "Phase 1 reached 98.6 percent completion", done: true }`
+  - `{ date: "2025-10", text: "Ten work packages completed and opened", done: true }`
+  - `{ date: "TBD", text: "Work Package 11 completion", done: false }`
 - Proposed sources:
-  - `Sarawak Government PCDS 2030 Highlights 2023 PDF - page 101` (`docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`)
-- Missing information: Latest official completion status, remaining work package details, public handover/opening source.
+  - Sarawak Government PCDS 2030 Highlights 2023, pages 99-101
+  - Sarawak Tribune, `Pan Borneo Highway Phase 1 in Sarawak nears full completion`, 4 December 2025
+- Missing information: Work Package 11 completion date and final Phase 1 handover
 - Risk level: Medium
-- Whether ready to implement: Yes, as a provisional infrastructure card.
+- Ready to implement: Yes
 
 ## 2. Sarawak-Sabah Link Road
 
-- Candidate project name: Sarawak-Sabah Link Road (SSLR)
-- Decision: provisional card
-- Reason: The project is clearly named and strategically relevant to regional road connectivity. PDF evidence provides scope, value, routes, and target completion, but package-level current progress remains unclear.
-- Evidence from PDF: `docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`, page 108, says the Federal Government approved SSLR with RM8.17 billion allocation, Phase 1 from Simpang Gelugos to Long Luping and Phase 2 from Mulu to Ba'Kelalan, with total completion expected in Q3 2029.
-- Online sources found, if any: Search found only indirect route/background references during prior validation.
-- Proposed category: `infrastructure` / Basic Infrastructure
-- Proposed status using existing status values: `In Progress`
+- Decision: add as provisional card
+- Reason: The project is distinct from Pan Borneo Phase 1 and has official evidence for federal approval, route phases, allocation, and an overall completion expectation. Current package-level progress remains unclear.
+- Proposed category: `infrastructure`
+- Proposed status: `In Progress`
+- Proposed lead: `Federal Government / JKR`
 - Proposed reported value: `RM8.17 billion`
-- Proposed summary: Major regional road-link project intended to improve Sarawak-Sabah connectivity without relying on Brunei transit. Official PDF evidence reports federal approval, RM8.17 billion allocation, Phase 1 and Phase 2 route descriptions, and a Q3 2029 overall completion target.
+- Proposed summary: Interior road link intended to connect Sarawak and Sabah without relying on transit through Brunei. Official reporting records RM8.17 billion in federal allocation, routes covering Simpang Gelugos to Long Luping and Mulu to Ba'Kelalan, and an overall completion expectation in Q3 2029.
 - Proposed milestones:
-  - `{ date: "Official report", text: "Federal Government approval and RM8.17B allocation reported", done: true }`
-  - `{ date: "2029-Q3", text: "Target: total SSLR completion", shortText: "Target: total completion", done: false }`
-  - `{ date: "TBD", text: "Public package-level progress update", shortText: "Package progress update", done: false }`
+  - `{ date: "2023", text: "Federal approval and RM8.17B allocation documented", done: true }`
+  - `{ date: "2029-Q3", text: "Overall project completion scheduled", done: false }`
 - Proposed sources:
-  - `Sarawak Government PCDS 2030 Highlights 2023 PDF - page 108` (`docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`)
-- Missing information: Current work-package status, contractors, procurement/progress updates, official public source after 2023.
+  - Sarawak Government PCDS 2030 Highlights 2023, page 108
+- Missing information: package contractors, current physical progress, and whether the Q3 2029 expectation remains current
 - Risk level: Medium
-- Whether ready to implement: Yes, as a provisional card. Avoid splitting Phase 2/3 road works into separate cards until package evidence is clearer.
+- Ready to implement: Yes
 
-## 3. Miri Port Kuala Baram Capital Dredging / Northern Gateway Upgrade
+## 3. Miri Port Kuala Baram Capital Dredging
 
-- Candidate project name: Miri Port Kuala Baram Capital Dredging / Northern Gateway upgrade
-- Decision: provisional card
-- Reason: The project is specific, infrastructure-relevant, and supported by two official PDF references. Public online progress is thin, so wording should focus on the planned dredging and the need for implementation updates.
-- Evidence from PDF: `docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`, page 108, describes capital dredging from September 2024 to Q2 2027. `docs/source-pdfs/PCDS 2030 AIP Final Report Volume III Enablers_Poverty Alleviation.pdf`, pages 252-253, lists RM540 million for reinvigorating Miri Port as the Northern Gateway and dredging to -8 m below chart datum.
-- Online sources found, if any: No adequate current public progress source found in prior validation.
-- Proposed category: `transport` / Transport
-- Proposed status using existing status values: `Planning`
+- Decision: add as provisional card
+- Reason: The dredging project is specifically identified in two official reports, but no contract award or physical-progress confirmation was found.
+- Proposed category: `transport`
+- Proposed status: `Planning`
+- Proposed lead: `Miri Port Authority / Sarawak Government`
 - Proposed reported value: `RM540 million`
-- Proposed summary: Proposed Miri Port access upgrade centred on capital dredging at Kuala Baram to support the port's Northern Gateway role. Official PDF evidence gives the dredging objective, reported value, and planned schedule into Q2 2027, but current contract and physical-progress evidence still need public confirmation.
+- Proposed summary: Capital dredging programme to deepen the Kuala Baram access channel to approximately eight metres below chart datum and enable larger vessels to use Miri Port. Official plans separate survey and design from physical dredging, with RM540 million in proposed funding and completion scheduled for Q2 2027.
 - Proposed milestones:
-  - `{ date: "Official report", text: "AIP listed RM540M Miri Port Northern Gateway dredging proposal", done: true }`
-  - `{ date: "2024-09", text: "Target: capital dredging period begins", done: false }`
-  - `{ date: "2027-Q2", text: "Target: capital dredging period completes", shortText: "Dredging completion target", done: false }`
+  - `{ date: "2023", text: "RM540M capital dredging programme documented", done: true }`
+  - `{ date: "TBD", text: "Capital dredging contract award", done: false }`
+  - `{ date: "2027-Q2", text: "Capital dredging scheduled for completion", done: false }`
 - Proposed sources:
-  - `Sarawak Government PCDS 2030 Highlights 2023 PDF - page 108` (`docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`)
-  - `PCDS 2030 AIP Volume III PDF - pages 252-253` (`docs/source-pdfs/PCDS 2030 AIP Final Report Volume III Enablers_Poverty Alleviation.pdf`)
-- Missing information: Contract award, implementing party confirmation, latest schedule, dredging progress.
+  - Sarawak Government PCDS 2030 Highlights 2023, page 108
+  - PCDS 2030 AIP Volume III, pages 252-253
+- Missing information: implementing contract, contractor, actual commencement date, and physical progress
 - Risk level: High
-- Whether ready to implement: Yes, as a provisional planning card.
+- Ready to implement: Yes, with `Planning` status
 
 ## 4. Bau Gold Project
 
-- Candidate project name: Bau Gold Project
-- Decision: provisional card
-- Reason: The project is clearly named and economically material, and the PDF identifies the reported proponent and resource basis. It should be treated cautiously as a planning/exploration-stage mining project, not as an approved mine.
-- Evidence from PDF: `docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`, page 60, says Besra Gold Inc through North Borneo Gold Sdn Bhd announced 3.3 million ounces of gold in Bau, projected upstream investment of RM1.38 billion, and 500-1,000 jobs.
-- Online sources found, if any: Prior review found only secondary or historical project references, not a current official mine-development source.
-- Proposed category: `mining` / Mining
-- Proposed status using existing status values: `Planning`
-- Proposed reported value: `RM1.38 billion projected upstream investment`
-- Proposed summary: Proposed gold-development project in Bau associated with Besra Gold Inc and North Borneo Gold Sdn Bhd. Official PDF evidence reports a 3.3 million ounce gold resource and projected upstream investment, but public evidence for mine approvals, EIA status, financing, and development timetable remains incomplete.
+- Decision: add as provisional card
+- Reason: The project and reported resource are identifiable, but no current approval, financing, EIA, construction, or mine-reopening evidence was found.
+- Proposed category: `mining`
+- Proposed status: `Planning`
+- Proposed lead: `Besra Gold Inc / North Borneo Gold Sdn Bhd`
+- Proposed reported value: `RM1.38 billion projected investment`
+- Proposed summary: Proposed gold-development project in Bau associated with Besra Gold and North Borneo Gold. Sarawak's PCDS highlights cite Besra's 2021 announcement of a 3.3-million-ounce gold resource and projected upstream investment, while current approvals, financing, environmental review, and development timing remain unconfirmed.
 - Proposed milestones:
-  - `{ date: "Official report", text: "Bau Gold resource and projected investment reported in PCDS Highlights", done: true }`
-  - `{ date: "TBD", text: "Public update on approvals, EIA, financing, or development decision", shortText: "Development decision update", done: false }`
+  - `{ date: "2021", text: "Besra announced 3.3-million-ounce Bau gold resource", done: true }`
+  - `{ date: "TBD", text: "Development approvals and financing decision", done: false }`
 - Proposed sources:
-  - `Sarawak Government PCDS 2030 Highlights 2023 PDF - page 60` (`docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`)
-- Missing information: Current company source, mining approvals, EIA, financing, final development decision, construction timeline.
+  - Sarawak Government PCDS 2030 Highlights 2023, page 60
+- Missing information: current ownership, mining approval, EIA status, financing, and final development decision
 - Risk level: High
-- Whether ready to implement: Yes, as a provisional mining card if the tracker accepts exploration/planning-stage projects.
+- Ready to implement: Yes, as an exploration and planning-stage card
 
 ## 5. Bintulu-Samalaju Gas Pipeline
 
-- Candidate project name: Bintulu-Samalaju Gas Pipeline
-- Decision: provisional card
-- Reason: The project is specific and supports gas supply to Samalaju Industrial Park. PDF evidence provides route scale, value, and commissioning target, but public online evidence remains limited and it must not be confused with the different Sabah-Sarawak Gas Pipeline.
-- Evidence from PDF: `docs/source-pdfs/PCDS 2030 AIP Final Report Volume III Enablers_Poverty Alleviation.pdf`, page 368, lists an approximately 70 km pipeline, RM599.98 million resources, and commissioning through 2025. `docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`, page 113, identifies it as a Sarawak Gas Roadmap component.
-- Online sources found, if any: Prior validation found no adequate PETROS or official project page. Search results also surfaced the unrelated Sabah-Sarawak Gas Pipeline.
-- Proposed category: `utilities` / Utilities
-- Proposed status using existing status values: `Planning`
-- Proposed reported value: `RM599.98 million`
-- Proposed summary: Proposed gas-supply pipeline linking Bintulu and Samalaju to support the Sarawak Gas Roadmap and industrial energy needs. Official PDF evidence describes an approximately 70 km pipeline and commissioning target through 2025, but current construction or commissioning status still needs a public project update.
+- Decision: add as provisional card
+- Reason: Newer public reporting confirms PETROS investment and pipe-material manufacturing, supporting an upgrade from `Planning` to `In Progress`. The scheduled November 2025 installation completion remains unconfirmed.
+- Proposed category: `utilities`
+- Proposed status: `In Progress`
+- Proposed lead: `PETROS / Sarawak Government`
+- Proposed reported value: `RM1 billion committed; RM599.98 million earlier estimate`
+- Proposed summary: Approximately 70 km gas pipeline intended to supply Samalaju Industrial Park and a Bintulu combined-cycle power station. PETROS committed RM1 billion and pipe manufacturing was reported in November 2024, but offshore installation completion and gas-in-service status remain publicly unconfirmed.
 - Proposed milestones:
-  - `{ date: "Official report", text: "Bintulu-Samalaju Gas Pipeline listed as Sarawak Gas Roadmap component", done: true }`
-  - `{ date: "2025", text: "Target: commissioning period from AIP evidence", shortText: "Commissioning target", done: false }`
-  - `{ date: "TBD", text: "Official project status update from implementing party", shortText: "Official status update", done: false }`
+  - `{ date: "2023", text: "Sarawak Gas Roadmap pipeline component documented", done: true }`
+  - `{ date: "2024-11-04", text: "RM1B commitment and pipe manufacturing reported", done: true }`
+  - `{ date: "2025-11", text: "Offshore pipeline installation completion", done: false }`
+  - `{ date: "TBD", text: "Gas supply enters service", done: false }`
 - Proposed sources:
-  - `PCDS 2030 AIP Volume III PDF - page 368` (`docs/source-pdfs/PCDS 2030 AIP Final Report Volume III Enablers_Poverty Alleviation.pdf`)
-  - `Sarawak Government PCDS 2030 Highlights 2023 PDF - page 113` (`docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`)
-- Missing information: Implementing party, route details, contractor/EPC evidence, current physical progress, commissioning confirmation.
-- Risk level: High
-- Whether ready to implement: Yes, as a provisional utilities card with a clear note not to conflate it with the Sabah-Sarawak Gas Pipeline.
-
-## 6. Batang Ai Floating Solar Farm
-
-- Candidate project name: Batang Ai Floating Solar Farm
-- Decision: full card
-- Reason: The project has strong PDF evidence and an official Sarawak Energy public update naming the project, lead parties, capacity, location, progress status, and commissioning target.
-- Evidence from PDF: `docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`, pages 125 and 128, and `docs/source-pdfs/PCDS 2030 AIP Final Report Volume III Enablers_Poverty Alleviation.pdf`, pages 409-410, describe the 50 MWac / 69 MWdc project, expected annual output, carbon-reduction target, design and soil-investigation milestones, and Q4 2024 first-power/mechanical-completion targets.
-- Online sources found, if any: Sarawak Energy reported on 20 June 2024 that construction reached 35 percent, commissioning was targeted by end-October 2024, the facility has 50 MW capacity, and the joint venture involves Sarawak Energy, China Power International Holdings, and Trina Solar. Source: https://www.sarawakenergy.com/media-info/media-releases/2024/sarawak-energys-first-floating-solar-farm-on-track-for-commissioning-by-october-2024
-- Proposed category: `renewable-energy` / Renewable Energy
-- Proposed status using existing status values: `In Progress`
-- Proposed reported value: `50MW`
-- Proposed summary: Sarawak Energy's first floating solar farm on the Batang Ai HEP reservoir, developed with China Power International Holdings and Trina Solar. Official sources describe a 50 MW facility intended to hybridise hydropower and solar generation and support Sarawak's renewable-energy expansion. Commissioning was targeted for end-October 2024, so the next tracker milestone should verify actual operational status.
-- Proposed milestones:
-  - `{ date: "2023-06-20", text: "Construction officially began", done: true }`
-  - `{ date: "2024-06-20", text: "Sarawak Energy reported 35 percent construction completion", done: true }`
-  - `{ date: "2024-10", text: "Target: commissioning by end-October 2024", done: false }`
-  - `{ date: "TBD", text: "Confirm commercial operation or latest commissioning status", shortText: "Confirm operational status", done: false }`
-- Proposed sources:
-  - `Sarawak Energy - Floating solar farm on track for commissioning by October 2024` (https://www.sarawakenergy.com/media-info/media-releases/2024/sarawak-energys-first-floating-solar-farm-on-track-for-commissioning-by-october-2024)
-  - `Sarawak Government PCDS 2030 Highlights 2023 PDF - pages 125 and 128` (`docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`)
-- Missing information: Public confirmation that commissioning or commercial operation happened after October 2024.
+  - The Star, `RM1bil gas pipeline plan`, 4 November 2024
+  - PCDS 2030 AIP Volume III, page 368
+  - Sarawak Government PCDS 2030 Highlights 2023, page 113
+- Missing information: installation completion, commissioning, gas-in-service date, and EPC contractor
 - Risk level: Medium
-- Whether ready to implement: Yes, as a full card, provided the commissioning target remains `done: false` until confirmed.
+- Ready to implement: Yes
 
-## 7. Sarawak Bioindustrial Park
+## 6. Sarawak Agrotechnology Park
 
-- Candidate project name: Sarawak Bioindustrial Park
-- Decision: full card
-- Reason: The project has official PDF evidence, an official Sarawak Biodiversity Centre page, and a BioVerde Technologies page with current public-facing project and operating-mandate information.
-- Evidence from PDF: `docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`, pages 89-90, and `docs/source-pdfs/Latest Sarawak Innovative Initiatives Book_EPU Sarawak.pdf`, page 31, describe a 100-acre park, 27 industrial plots, four phases, Phase 1 target, and full operations target by 2035.
-- Online sources found, if any: Sarawak Biodiversity Centre identifies SBP as a catalytic PCDS 2030 project and lists 27 plots across four phases. BioVerde describes a 100-acre bioindustrial hub and says BioVerde Technologies was established in 2025 with an expanded mandate covering product commercialisation, SBP operations, and scientific services. Sources: https://www.sbc.org.my/index.php/commercialisation and https://www.bioverde.com.my/
-- Proposed category: `innovation` / Innovation
-- Proposed status using existing status values: `Planning`
-- Proposed reported value: `100-acre bioindustrial hub`
-- Proposed summary: Bioindustry and commercialisation hub intended to turn Sarawak biodiversity research into scalable bio-based production. Official and public sources describe a 100-acre park with industrial plots, pilot bioprocessing, analytical laboratories, GMP manufacturing, and a 2025 BioVerde mandate covering SBP operations.
+- Decision: add as provisional card
+- Reason: The official AIP identifies the Semenggok and Tarat sites and a 2021-2030 implementation window, but no newer public implementation update or confirmed operator was found.
+- Proposed category: `agriculture`
+- Proposed status: `Planning`
+- Proposed lead: `Sarawak Government`
+- Proposed reported value: `RM500 million reported resources`
+- Proposed summary: Proposed agrotechnology park development at Semenggok and Tarat for smart farming, research, quality control, livestock auction functions, and agro-entrepreneurship. The official AIP reports a 2021-2030 programme window and RM500 million in resources, while site progress and the operating entity remain unclear.
 - Proposed milestones:
-  - `{ date: "Official report", text: "Sarawak Bioindustrial Park listed as a PCDS 2030 bioindustry platform", done: true }`
-  - `{ date: "2025", text: "BioVerde Technologies established with SBP operations mandate", done: true }`
-  - `{ date: "2027-Q3", text: "Target: Phase 1 construction completion from official report", shortText: "Phase 1 completion target", done: false }`
-  - `{ date: "2035", text: "Target: full operations from official report", shortText: "Full operations target", done: false }`
+  - `{ date: "2022", text: "Semenggok and Tarat park sites documented", done: true }`
+  - `{ date: "2021-2030", text: "Agrotechnology park implementation programme", done: false }`
+  - `{ date: "TBD", text: "Site infrastructure development", done: false }`
 - Proposed sources:
-  - `Sarawak Biodiversity Centre - Commercialisation` (https://www.sbc.org.my/index.php/commercialisation)
-  - `BioVerde Technologies` (https://www.bioverde.com.my/)
-  - `Sarawak Government PCDS 2030 Highlights 2023 PDF - pages 89-90` (`docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`)
-- Missing information: Current physical construction progress, tenant list, capex, reconciliation of Phase 1 target dates across sources.
-- Risk level: Medium
-- Whether ready to implement: Yes, as a full card with `Planning` status unless a newer construction-progress source supports `In Progress`.
-
-## 8. Sarawak Agrotechnology Park (SARTECH)
-
-- Candidate project name: Sarawak Agrotechnology Park (SARTECH)
-- Decision: provisional card
-- Reason: The project is named, locatable, and sector-relevant in the official AIP. Online evidence for the public name and current progress is limited, so it should be represented cautiously.
-- Evidence from PDF: `docs/source-pdfs/PCDS 2030 AIP Final Report Volume II Economic Sectors.pdf`, pages 176-178, lists RM500 million total resources, Semenggok and Tarat sites, public/private investment split, and a 2021-2030 timeline.
-- Online sources found, if any: No adequate public source found in the prior validation for the SARTECH name, current progress, lead, or operating entity.
-- Proposed category: `agriculture` / Commercial Agriculture
-- Proposed status using existing status values: `Planning`
-- Proposed reported value: `RM500 million`
-- Proposed summary: Proposed agrotechnology park programme at Semenggok and Tarat to support smart farming, R&D, quality control, livestock auction functions, and agro-entrepreneurship. Official AIP evidence gives site areas, investment estimates, and a 2021-2030 timeline, but current implementation status is not yet publicly clear.
-- Proposed milestones:
-  - `{ date: "2021-2030", text: "Official AIP timeline for SARTECH implementation", done: false }`
-  - `{ date: "TBD", text: "Public implementation update for Semenggok and Tarat sites", shortText: "Implementation update", done: false }`
-- Proposed sources:
-  - `PCDS 2030 AIP Volume II PDF - pages 176-178` (`docs/source-pdfs/PCDS 2030 AIP Final Report Volume II Economic Sectors.pdf`)
-- Missing information: Current site progress, formal public project name, lead/operating entity, tenant or programme status.
+  - PCDS 2030 AIP Volume II, pages 176-178
+- Missing information: current public project name, implementing agency, site works, and operator
 - Risk level: High
-- Whether ready to implement: Yes, as a provisional planning card.
+- Ready to implement: Yes, with cautious naming and lead wording
 
-## 9. Sungai Baji Agropark
+## 7. Sungai Baji Agropark
 
-- Candidate project name: Sungai Baji Agropark
-- Decision: provisional card
-- Reason: The project is a named agropark with official PDF evidence for area, funding, facilities, and target completion. Current public completion/operation evidence remains missing.
-- Evidence from PDF: `docs/source-pdfs/PCDS 2030 AIP Final Report Volume II Economic Sectors.pdf`, pages 31-32, lists 127 ha, RM180 million state funding, and December 2025 completion target. `docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`, page 31, describes 32 greenhouse units with IoT.
-- Online sources found, if any: No adequate current online source found for completion, operations, anchor tenants, or post-2023 progress in prior validation.
-- Proposed category: `agriculture` / Commercial Agriculture
-- Proposed status using existing status values: `In Progress`
+- Decision: add as provisional card
+- Reason: The project is site-specific and supported for area, funding, and greenhouse scope. Its December 2025 completion target has passed without public confirmation, so the status should be `Planning`, not `In Progress` or `Operational`.
+- Proposed category: `agriculture`
+- Proposed status: `Planning`
+- Proposed lead: `Sarawak Government`
 - Proposed reported value: `RM180 million`
-- Proposed summary: Named agropark at Sungai Baji intended to support controlled-environment food production, including greenhouse units with IoT-enabled systems. Official PDF evidence reports approved land area, state funding, and a December 2025 completion target, while current operating status still needs public confirmation.
+- Proposed summary: Proposed 127-hectare agropark at Sungai Baji for controlled-environment food production, including 32 IoT-enabled greenhouse units. Official reporting records RM180 million in state funding and a December 2025 completion target, but opening, operation, tenants, and production remain unconfirmed.
 - Proposed milestones:
-  - `{ date: "Official report", text: "Sungai Baji Agropark listed with approved land area and funding", done: true }`
-  - `{ date: "2025-12", text: "Target: infrastructure implementation completed", shortText: "Completion target", done: false }`
-  - `{ date: "TBD", text: "Public opening, operator, or production update", shortText: "Operational update", done: false }`
+  - `{ date: "2023", text: "127-hectare agropark and funding documented", done: true }`
+  - `{ date: "2025-12", text: "Infrastructure completion scheduled", done: false }`
+  - `{ date: "TBD", text: "Operational opening and production", done: false }`
 - Proposed sources:
-  - `PCDS 2030 AIP Volume II PDF - pages 31-32` (`docs/source-pdfs/PCDS 2030 AIP Final Report Volume II Economic Sectors.pdf`)
-  - `Sarawak Government PCDS 2030 Highlights 2023 PDF - page 31` (`docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`)
-- Missing information: Completion status, operator, tenants, production status, online post-2023 update.
+  - PCDS 2030 AIP Volume II, pages 31-32
+  - Sarawak Government PCDS 2030 Highlights 2023, page 31
+- Missing information: completion, operator, tenants, opening date, and production
 - Risk level: High
-- Whether ready to implement: Yes, as a provisional in-progress card.
+- Ready to implement: Yes, with `Planning` status
 
-## 10. Semenggoh Rainforest Discovery Centre and Piasau Nature Discovery Centre
+## 8. Semenggoh and Piasau Discovery Centre Development
 
-- Candidate project name: Semenggoh Rainforest Discovery Centre and Piasau Nature Discovery Centre
-- Decision: provisional card
-- Reason: The project pair is clearly identified in the AIP as conservation-tourism infrastructure. Public pages confirm the underlying Semenggoh and Piasau conservation sites, but not the exact development phases, so the tracker card should be cautious.
-- Evidence from PDF: `docs/source-pdfs/PCDS 2030 AIP Final Report Volume II Economic Sectors.pdf`, pages 504 and 506-508, lists RM60 million funding, SRDC Phase 1 Wildlife Centre Zone from June 2022 to June 2024, and Piasau Phase 2 from January 2026 to December 2030.
-- Online sources found, if any: Sarawak Forestry pages confirm the existing Semenggoh Nature Reserve/Wildlife Centre and Piasau Nature Reserve context, but not the named Discovery Centre development projects.
-- Proposed category: `forestry` / Forestry
-- Proposed status using existing status values: `Planning`
+- Decision: add as provisional card
+- Reason: The official AIP identifies Semenggoh Phase 1 and Piasau Phase 2 development works, but the combined discovery-centre title is not well represented on current public agency pages. The card must describe capital development within existing conservation sites rather than imply that the reserves themselves are new projects.
+- Proposed category: `forestry`
+- Proposed status: `Planning`
+- Proposed lead: `Sarawak Forestry Corporation / Sarawak Government`
 - Proposed reported value: `RM60 million`
-- Proposed summary: Conservation-tourism infrastructure proposal covering Semenggoh Rainforest Discovery Centre and Piasau Nature Discovery Centre. Official AIP evidence describes phased development tied to wildlife, rainforest discovery, and visitor facilities, while current public evidence for phase completion or opening dates remains incomplete.
+- Proposed summary: Phased visitor-infrastructure development at the existing Semenggoh and Piasau conservation sites. The official AIP scheduled Semenggoh's Wildlife Centre Zone for 2022 to 2024 and Piasau Phase 2 for 2026 to 2030. Current Sarawak Forestry pages confirm both sites remain open but do not document completion of the named development phases.
 - Proposed milestones:
-  - `{ date: "Official report", text: "Semenggoh and Piasau discovery-centre projects listed in AIP", done: true }`
-  - `{ date: "2022-06 to 2024-06", text: "Target period: SRDC Phase 1 Wildlife Centre Zone", done: false }`
-  - `{ date: "2026-2030", text: "Target period: Piasau Phase 2 development", shortText: "Piasau Phase 2 target", done: false }`
-  - `{ date: "TBD", text: "Public update on phase completion or visitor opening", shortText: "Phase/opening update", done: false }`
+  - `{ date: "2022", text: "Discovery-centre development programme documented", done: true }`
+  - `{ date: "2026-2030", text: "Piasau Phase 2 development programme", done: false }`
 - Proposed sources:
-  - `PCDS 2030 AIP Volume II PDF - pages 504 and 506-508` (`docs/source-pdfs/PCDS 2030 AIP Final Report Volume II Economic Sectors.pdf`)
-  - `Sarawak Forestry - Semenggoh Nature Reserve` (https://sarawakforestry.com/semenggoh-nature-reserve/)
-  - `Sarawak Forestry - Piasau Nature Reserve` (https://sarawakforestry.com/parks-and-reserves/piasau-nature-reserve/)
-- Missing information: Whether SRDC Phase 1 completed, current Piasau Phase 2 status, visitor opening dates, exact scope.
-- Risk level: Medium to high
-- Whether ready to implement: Yes, as a provisional forestry/conservation infrastructure card.
+  - PCDS 2030 AIP Volume II, pages 504 and 506-508
+  - Sarawak Forestry Corporation, Semenggoh Nature Reserve
+  - Sarawak Forestry Corporation, Piasau Nature Reserve
+- Missing information: Semenggoh Phase 1 completion, Piasau Phase 2 commencement, detailed capital scope, and opening dates
+- Risk level: High
+- Ready to implement: Yes, only with the cautious development-focused title and summary
 
-## 11. PETRONAS Kasawari Carbon Capture and Storage Project
+## 9. PETRONAS Kasawari Carbon Capture and Storage Project
 
-- Candidate project name: PETRONAS Kasawari Carbon Capture and Storage Project
-- Decision: provisional card
-- Reason: The project is specific, strategically important, and supported by the official innovative-initiatives PDF. Public online validation remains incomplete, so the card should avoid claiming current construction, first injection, or operational status.
-- Evidence from PDF: `docs/source-pdfs/Latest Sarawak Innovative Initiatives Book_EPU Sarawak.pdf`, page 46, says the CCS project at PETRONAS Kasawari Field is anticipated to reduce up to 3.3 million tonnes of CO2 annually.
-- Online sources found, if any: The IEA CCUS Projects Database is relevant public context, but an individual Kasawari record was not field-verified during prior review.
-- Proposed category: `renewable-energy` / Renewable Energy
-- Proposed status using existing status values: `Planning`
+- Decision: add as provisional card
+- Reason: The project is specifically identified in an official Sarawak publication, but newer reporting concerns broader Malaysian offshore CCS plans and does not confirm Kasawari construction, final investment decision, or first injection.
+- Proposed category: `innovation`
+- Proposed status: `Planning`
+- Proposed lead: `PETRONAS`
 - Proposed reported value: `Up to 3.3Mt CO2 annually`
-- Proposed summary: Carbon capture and storage project associated with PETRONAS' Kasawari Field and Sarawak's low-carbon development direction. Official PDF evidence reports an anticipated reduction of up to 3.3 million tonnes of CO2 annually, but current project stage, schedule, and first-injection status need a confirmed public PETRONAS or database source.
+- Proposed summary: Proposed carbon capture and storage project associated with PETRONAS' Kasawari Field. Official Sarawak reporting describes potential annual emissions reduction of up to 3.3 million tonnes of CO2, while the final investment decision, construction schedule, storage governance, and first-injection date remain unconfirmed.
 - Proposed milestones:
-  - `{ date: "Official report", text: "Kasawari CCS listed with up to 3.3Mt annual CO2 reduction potential", done: true }`
-  - `{ date: "TBD", text: "Public confirmation of project stage, schedule, or first injection", shortText: "Project-stage confirmation", done: false }`
+  - `{ date: "2023-12-21", text: "Kasawari CCS initiative documented by EPU Sarawak", done: true }`
+  - `{ date: "TBD", text: "Final investment decision and construction schedule", done: false }`
+  - `{ date: "TBD", text: "First CO2 injection", done: false }`
 - Proposed sources:
-  - `Latest Sarawak Innovative Initiatives Book PDF - page 46` (`docs/source-pdfs/Latest Sarawak Innovative Initiatives Book_EPU Sarawak.pdf`)
-  - `IEA - CCUS Projects Database` (https://www.iea.org/data-and-statistics/data-product/ccus-projects-database)
-- Missing information: Official PETRONAS URL, project schedule, current stage, first-injection date, Sarawak governance details.
+  - Latest Sarawak Innovative Initiatives Book, page 46
+- Missing information: project-specific FID, construction stage, storage site, injection schedule, and governance parties
 - Risk level: High
-- Whether ready to implement: Yes, as a provisional low-carbon/CCUS card only.
+- Ready to implement: Yes, as a clearly provisional Kasawari-specific card
 
-## 12. Sarawak River Aids to Navigation and Surveillance System
+## 10. Sarawak River Aids to Navigation and Surveillance System
 
-- Candidate project name: Installation of Aids to Navigation and Surveillance System at Sarawak River
-- Decision: provisional card
-- Reason: The project is specific, public-infrastructure oriented, and supported by official PDF evidence. Completion status is not publicly confirmed, so the card should track it as an early-stage/awaiting-update transport safety project.
-- Evidence from PDF: `docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`, page 121, says the first river-management project commenced on 27 April 2023, has a proposed RM30 million first-phase value, and was scheduled for completion by end-2024.
-- Online sources found, if any: No adequate public source found confirming completion or current rollout in prior validation.
-- Proposed category: `transport` / Transport
-- Proposed status using existing status values: `In Progress`
-- Proposed reported value: `RM30 million first phase`
-- Proposed summary: River transport safety and monitoring project for Sarawak River under the river-management initiative. Official PDF evidence reports commencement on 27 April 2023, a proposed RM30 million first phase, and an end-2024 completion target, while completion and rollout to other rivers remain unconfirmed.
+- Decision: add as provisional card
+- Reason: The official report confirms commencement on 27 April 2023. No reliable completion, commissioning, or operational handover source was found after the end-2024 target.
+- Proposed category: `transport`
+- Proposed status: `In Progress`
+- Proposed lead: `Sarawak Government`
+- Proposed reported value: `RM30 million proposed first phase`
+- Proposed summary: Sarawak River navigation-safety project installing river signage, light beacons, aids to navigation, and a vessel traffic management tower. The first phase began on 27 April 2023 with a proposed value of RM30 million; commissioning and operational handover are not confirmed by a later public source.
 - Proposed milestones:
-  - `{ date: "2023-04-27", text: "Sarawak River Aids to Navigation and Surveillance System commenced", done: true }`
-  - `{ date: "2024", text: "Target: first-phase completion by end-2024", shortText: "First-phase completion target", done: false }`
-  - `{ date: "TBD", text: "Public confirmation of completion or next river rollout", shortText: "Completion or rollout update", done: false }`
+  - `{ date: "2023-04-27", text: "First-phase installation commenced", done: true }`
+  - `{ date: "TBD", text: "System commissioning and operational handover", done: false }`
+  - `{ date: "TBD", text: "Wider deployment to Miri River and Kuala Baram", done: false }`
 - Proposed sources:
-  - `Sarawak Government PCDS 2030 Highlights 2023 PDF - page 121` (`docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf`)
-- Missing information: Completion confirmation, implementing agency, operational status, Miri River or other river rollout plan.
+  - Sarawak Government PCDS 2030 Highlights 2023, page 121
+  - PCDS 2030 AIP Volume III, pages 380-381
+- Missing information: implementing agency, completion, commissioning, operational handover, and later river phases
 - Risk level: High
-- Whether ready to implement: Yes, as a provisional transport card.
+- Ready to implement: Yes
 
-## Summary
+## Final Recommendation
 
-1. Can be added as full cards: 2
-   - Batang Ai Floating Solar Farm
-   - Sarawak Bioindustrial Park
-2. Can be added as provisional cards: 10
-   - Pan Borneo Highway Sarawak Phase 1
-   - Sarawak-Sabah Link Road
-   - Miri Port Kuala Baram Capital Dredging / Northern Gateway upgrade
-   - Bau Gold Project
-   - Bintulu-Samalaju Gas Pipeline
-   - Sarawak Agrotechnology Park (SARTECH)
-   - Sungai Baji Agropark
-   - Semenggoh Rainforest Discovery Centre and Piasau Nature Discovery Centre
-   - PETRONAS Kasawari Carbon Capture and Storage Project
-   - Sarawak River Aids to Navigation and Surveillance System
-3. Should merge with existing cards: 0
-4. Should not be added: 0
-5. Recommended first implementation batch:
-   - Batang Ai Floating Solar Farm
-   - Sarawak Bioindustrial Park
-   - Pan Borneo Highway Sarawak Phase 1
-   - Sarawak-Sabah Link Road
-   - Sarawak River Aids to Navigation and Surveillance System
+Add all 10 provisional cards using the statuses and wording above. None should be marked completed or operational. The cards should retain open milestones for any passed target that lacks later confirmation.
 
-## Implementation Notes
+Safest first evidence tier:
 
-- No new category is required.
-- No new status is required.
-- Use `Planning` where implementation status is unclear and `In Progress` only where the PDF or online source directly supports a started project or continuing implementation.
-- Local PDF paths are suitable as internal evidence references in this plan. Before adding to `src/trackerData.js`, decide whether dashboard `sources.url` values should point to public web URLs, repository-hosted PDF URLs, or a future local-source handling pattern.
+1. Bintulu-Samalaju Gas Pipeline
+2. Pan Borneo Highway Sarawak Phase 1
+3. Sarawak-Sabah Link Road
+4. Sarawak River Aids to Navigation and Surveillance System
+
+Highest ongoing review priority:
+
+1. Semenggoh and Piasau Discovery Centre Development
+2. Bau Gold Project
+3. PETRONAS Kasawari Carbon Capture and Storage Project
+4. Sarawak Agrotechnology Park

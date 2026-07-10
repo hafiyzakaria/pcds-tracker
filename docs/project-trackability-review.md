@@ -1,5 +1,9 @@
 # Project Trackability Review
 
+> Historical review note: this document records the earlier validation pass. The final live-card status, values, milestones, and public source links were revalidated on 10 July 2026 and are summarised in `docs/manual-review-project-addition-plan.md` and `docs/data-methodology.md`.
+
+> Revalidation note (10 July 2026): the 10 candidates previously retained for manual review were researched again and approved for cautious implementation. Updated statuses, milestones, and source decisions are maintained in `docs/manual-review-project-addition-plan.md`, which supersedes the older manual-review recommendations in this document.
+
 Validation date: 2026-07-08
 
 Scope: this review validates the 43 high- and medium-confidence candidates extracted in `docs/project-candidates-from-pdfs.md`. Programme-only items from that report are not promoted here unless a specific, public-checkable project was identified.
@@ -67,19 +71,19 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 ### Pan Borneo Highway Sarawak Phase 1
 
 - Candidate project name: Pan Borneo Highway Sarawak Phase 1.
-- Source PDF evidence: `SarawakGovt PCDS2030 - Highlights 2023.pdf`, page 101, says the 786 km, 11-package project began in 2016 and was 98.6 percent complete as of December 2023.
-- Online sources found: Search surfaced broad route/background references, but no sufficiently current official completion or handover source was verified.
+- Source PDF evidence: `SarawakGovt PCDS2030 - Highlights 2023.pdf`, pages 99-101, reports a RM16.54 billion project cost and says the 786 km, 11-package project began in 2016 and was 98.6 percent complete as of December 2023.
+- Online sources found: Sarawak Tribune reported on 4 December 2025 that Phase 1 reached 99.98 percent progress in October 2025, with ten of eleven work packages completed and opened in stages. Work Package 11 in Miri remained unfinished.
 - Proposed tracker category: Basic Infrastructure or Transport.
 - Proposed status: Near complete / completion to verify.
 - Proposed lead/parties: Federal Works Ministry / JKR, subject to official confirmation.
-- Proposed reported value: Do not state from online sources in this pass.
-- Proposed milestones: 2016 start; 98.6 percent completion as of December 2023 from PDF; final completion or handover still needs validation.
-- Proposed next milestone: Official completion, opening, or handover confirmation.
+- Proposed reported value: RM16.54 billion from the official PCDS report.
+- Proposed milestones: 2016 start; 98.6 percent completion in December 2023; ten work packages completed and opened by October 2025.
+- Proposed next milestone: Work Package 11 completion.
 - Confidence level: Medium.
 - Risk level: Medium.
 - Recommendation: manual review.
 - What is unclear: Whether Phase 1 should be tracked as a current project card in 2026 if most works are already complete.
-- What evidence is missing: Official latest completion status and remaining work package details.
+- What evidence is missing: Work Package 11 completion date and final Phase 1 handover.
 - Human decision needed: Add as a near-completion infrastructure card only if a current official or reliable source confirms status.
 
 ### Sarawak-Sabah Link Road
@@ -109,8 +113,8 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 - Proposed status: Planning / In Progress only if a contract or progress source is verified.
 - Proposed lead/parties: Miri Port Authority / Sarawak Government, to verify.
 - Proposed reported value: RM540 million only if supported by PDF or later online source.
-- Proposed milestones: Maintenance dredging; design/survey; capital dredging to Q2 2027 from PDF evidence.
-- Proposed next milestone: Contract award or physical dredging progress.
+- Proposed milestones: RM540 million capital dredging programme documented; capital dredging contract award; Q2 2027 completion schedule.
+- Proposed next milestone: Capital dredging contract award.
 - Confidence level: Low to medium.
 - Risk level: High.
 - Recommendation: manual review.
@@ -127,7 +131,7 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 - Proposed status: Planning / Exploration, if current company evidence is confirmed.
 - Proposed lead/parties: Besra Gold / North Borneo Gold, to verify.
 - Proposed reported value: Do not use in-ground value as a project value. RM1.38 billion projected upstream investment should be used only with supporting source.
-- Proposed milestones: Resource announcement; approvals; mine development decision.
+- Proposed milestones: Besra's 2021 announcement of a 3.3-million-ounce Bau gold resource; approvals; mine development decision.
 - Proposed next milestone: Current company status, approvals, EIA, or development decision.
 - Confidence level: Low to medium.
 - Risk level: High.
@@ -241,7 +245,7 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 - Proposed lead/parties: Sarawak Forestry Corporation, to verify for these specific development works.
 - Proposed reported value: Do not state without source.
 - Proposed milestones: SRDC master plan/Phase 1 and Piasau Phase 2 only if supported by project source.
-- Proposed next milestone: Confirm SRDC Phase 1 completion or Piasau Phase 2 start.
+- Proposed next milestone: Piasau Phase 2 development programme for 2026-2030.
 - Confidence level: Low to medium.
 - Risk level: Medium to high.
 - Recommendation: manual review.
@@ -278,8 +282,8 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 - Proposed status: Trackable later if completion/current rollout is confirmed.
 - Proposed lead/parties: Not safely supported online.
 - Proposed reported value: RM30 million only if PDF is accepted or online source confirms it.
-- Proposed milestones: 27 April 2023 commencement; end-2024 completion target from PDF.
-- Proposed next milestone: Completion confirmation or next river rollout.
+- Proposed milestones: 27 April 2023 commencement; system commissioning and operational handover; wider deployment to Miri River and Kuala Baram.
+- Proposed next milestone: System commissioning and operational handover.
 - Confidence level: Low to medium.
 - Risk level: High.
 - Recommendation: manual review.
