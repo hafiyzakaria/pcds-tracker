@@ -39,13 +39,8 @@ export const SECTORS = [
         summary:
           "Sarawak's state-owned semiconductor venture developing compound semiconductor chips based on Gallium Nitride (GaN), enhanced by AI. The keteq.GaN and keteq.ai platforms have been publicly unveiled, with global IP registration and commercialisation still the next visible proof points.",
         milestones: [
-          { date: "2026-Q1", text: "Premier announces GaN chip development success", done: true },
-          {
-            date: "2026",
-            text: "Global IP registration and commercialisation pathway",
-            shortText: "Global IP registration and commercialisation",
-            done: false,
-          },
+          { date: "2026-Q1", text: "Premier announced GaN chip development success", done: true },
+          { date: "2026", text: "Global IP registration and commercialisation planned", done: false },
         ],
         sources: [
           { label: "DayakDaily — SMD Advanced Chip Integration Centre (Sep 2025)", url: "https://dayakdaily.com/sarawak-to-establish-smd-advanced-chip-integration-centre-to-power-semiconductor-leap/" },
@@ -70,16 +65,11 @@ export const SECTORS = [
         summary: "Statewide paddy irrigation, drainage, and farm road programme to boost rice self-sufficiency. RM1B has been allocated, with implementation guardrails to keep infrastructure dedicated to paddy and support Sarawak's 500,000-tonne 2030 rice output target.",
         milestones: [
           { date: "2024-06", text: "RM1B allocation announced for large-scale paddy cultivation", done: true },
-          { date: "2024-11", text: "DID restructured for agriculture/urban focus", done: true },
-          { date: "2025-08", text: "500,000 tonnes rice output goal announced", done: true },
-          { date: "2026-02", text: "Minister: RM1B infra must not be diverted to oil palm", done: true },
-          {
-            date: "2026",
-            text: "Farmer clustering and paddy land-leasing implementation",
-            shortText: "Farmer clustering and land leasing",
-            done: false,
-          },
-          { date: "2030", text: "500,000 tonnes annual rice output goal", done: false },
+          { date: "2024-11", text: "DID restructured for agricultural and urban infrastructure", done: true },
+          { date: "2025-08", text: "500,000-tonne annual rice output goal announced", done: true },
+          { date: "2026-02", text: "Minister warned against diverting paddy infrastructure to oil palm", done: true },
+          { date: "2026", text: "Farmer clustering and paddy land leasing planned", done: false },
+          { date: "2030", text: "500,000-tonne annual rice output goal", done: false },
         ],
         sources: [
           { label: "DayakDaily — RM1B allocation (Jun 2024)", url: "https://dayakdaily.com/sarawak-allocates-rm1-bln-for-large-scale-paddy-cultivation-to-boost-rice-self-sufficiency/" },
@@ -105,15 +95,10 @@ export const SECTORS = [
         summary: "3,112 km\u00b2 geopark covering Kuching-Santubong-Bako region. Officially recognised as UNESCO Global Geopark on April 27, 2026 \u2014 Malaysia's 3rd after Langkawi and Kinabalu. Branded \u201cBorneo's Cradle of Origin\u201d for unique geological heritage.",
         milestones: [
           { date: "2024-10", text: "Geopark nomination dossier prepared", done: true },
-          { date: "2025-06", text: "UNESCO field evaluation completed (Jun 23\u201326)", done: true },
+          { date: "2025-06", text: "UNESCO field evaluation completed", done: true },
           { date: "2025-09", text: "UNESCO Council acceptance secured", done: true },
-          { date: "2026-04-27", text: "Officially recognised as UNESCO Global Geopark", done: true },
-          {
-            date: "Ongoing",
-            text: "Tourism products and community-based geopark rollout",
-            shortText: "Tourism and community geopark rollout",
-            done: false,
-          },
+          { date: "2026-04-27", text: "Recognised as a UNESCO Global Geopark", done: true },
+          { date: "Ongoing", text: "Development of tourism and community geopark programmes", done: false },
         ],
         sources: [
           { label: "DayakDaily — UNESCO approval (Apr 2026)", url: "https://dayakdaily.com/sarawak-delta-geopark-gets-unesco-approval/" },
@@ -131,12 +116,7 @@ export const SECTORS = [
         milestones: [
           { date: "2019", text: "Nominated for UNESCO World Heritage listing", done: true },
           { date: "2024", text: "Inscribed as UNESCO World Heritage Site", done: true },
-          {
-            date: "Ongoing",
-            text: "UNESCO site management, conservation, and visitor facilities",
-            shortText: "Site management and visitor facilities",
-            done: false,
-          },
+          { date: "Ongoing", text: "Site conservation and visitor facility improvements", done: false },
         ],
         sources: [
           { label: "UNESCO — Niah World Heritage listing", url: "https://whc.unesco.org/en/list/1014" },
@@ -162,12 +142,7 @@ export const SECTORS = [
         milestones: [
           { date: "2023", text: "Ordinance enacted", done: true },
           { date: "2024", text: "Natural Resources and Environment Bill introduced", done: true },
-          {
-            date: "Ongoing",
-            text: "GHG reporting, carbon market, and sustainability reporting rollout",
-            shortText: "GHG and carbon market rollout",
-            done: false,
-          },
+          { date: "Ongoing", text: "GHG reporting and carbon market implementation", done: false },
         ],
         sources: [
           { label: "FULCRUM — Sarawak's low-carbon future", url: "https://fulcrum.sg/envisioning-a-low-carbon-future-sarawaks-journey-towards-sustainable-development/" },
@@ -197,13 +172,12 @@ export const SECTORS = [
         summary:
           "Sarawak's first dedicated cancer centre in Kota Samarahan. PM directed JKR to expedite tendering in Q1 2026; Sarawak fronted RM500M for medical equipment. Newer public reporting says the project has entered tender procurement, with construction targeted to start in early 2027 and completion expected by 2032.",
         milestones: [
-          { date: "2025-12-03", text: "RM1.52B preliminary cost estimate announced", done: true },
-          { date: "2025-12-16", text: "PM: expedite project for Q1 2026 tender", done: true },
-          { date: "2025-12-17", text: "Sarawak fronts RM500M for medical equipment", done: true },
-          { date: "2026-02-26", text: "Construction gathering pace in Samarahan health metropolis", done: true },
-          { date: "2026-05", text: "Tender procurement stage underway", done: false },
-          { date: "2027-Q1", text: "Planned construction start", done: false },
-          { date: "2032", text: "Expected completion", done: false },
+          { date: "2025-12-03", text: "Preliminary RM1.52B cost estimate announced", done: true },
+          { date: "2025-12-16", text: "Prime Minister directed expedited Q1 2026 tendering", done: true },
+          { date: "2025-12-17", text: "Sarawak committed RM500M for medical equipment", done: true },
+          { date: "2026-05", text: "Tender procurement underway", done: false },
+          { date: "2027-Q1", text: "Construction planned to begin", done: false },
+          { date: "2032", text: "Project completion expected", done: false },
         ],
         sources: [
           { label: "DayakDaily — RM1.52B preliminary estimate (Dec 2025)", url: "https://dayakdaily.com/sarawak-cancer-centre-construction-to-start-by-2026-with-rm1-52-bln-preliminary-estimate-cost/" },
@@ -234,7 +208,7 @@ export const SECTORS = [
           "500MW data centre park in Kuching. First facility: 17MW IT capacity for Global Telecommunications Group. Aligned with Sarawak Digital Economy Blueprint 2030. Sarawak's abundant hydropower makes it attractive for energy-intensive data centre operations, with first operations targeted in 2026.",
         milestones: [
           { date: "2025-Q2", text: "Construction began on first facility", done: true },
-          { date: "2026", text: "First 17MW data centre operational", done: false },
+          { date: "2026", text: "First 17MW data centre expected to begin operations", done: false },
         ],
         sources: [
           { label: "DCD — FutureData first off-taker (2025)", url: "https://www.datacenterdynamics.com/en/news/futuredata-announces-first-off-taker-at-500mw-malaysian-data-center-park-in-sarawak/" },
@@ -258,14 +232,9 @@ export const SECTORS = [
         summary:
           "Industrial microalgae production and carbon capture research facility at Sarawak Energy's Sejingkat coal-fired power plant. C4 Sarawak captures CO2 from flue gas for microalgae cultivation, with expected annual output of 450 tonnes of CO2 captured and 300 tonnes of dried biomass.",
         milestones: [
-          { date: "2020", text: "C4 Sarawak microalgae carbon-capture project began", done: true },
-          { date: "2023-05-10", text: "C4 Sarawak facility officially launched in Kuching", done: true },
-          {
-            date: "Ongoing",
-            text: "Public reporting on actual annual CO2 capture, biomass output, or expansion decision",
-            shortText: "Annual output or expansion update",
-            done: false,
-          },
+          { date: "2020", text: "Microalgae carbon-capture project began", done: true },
+          { date: "2023-05-10", text: "Industrial microalgae facility officially launched", done: true },
+          { date: "Ongoing", text: "Annual CO2 capture and biomass output reporting", done: false },
         ],
         sources: [
           { label: "Sarawak Energy — C4 Sarawak launch (May 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/official-launching-of-sarawaks-first-industrial-microalgae-production-facility-chitose-carbon-capture-central-sarawak" },
@@ -280,15 +249,10 @@ export const SECTORS = [
         summary:
           "Bioindustry and commercialisation hub intended to turn Sarawak biodiversity research into scalable bio-based production. Official and public sources describe a 100-acre park with industrial plots, pilot bioprocessing, analytical laboratories, and GMP manufacturing; BioVerde describes the park as under development and says anchor and research partners are being selected.",
         milestones: [
-          { date: "Official report", text: "Sarawak Bioindustrial Park listed as a PCDS 2030 bioindustry platform", done: true },
-          { date: "2025", text: "BioVerde Technologies established with SBP operations mandate", done: true },
-          {
-            date: "2027-Q3",
-            text: "Phase 1 construction completion from official report",
-            shortText: "Phase 1 completion",
-            done: false,
-          },
-          { date: "2035", text: "Full operations from official report", shortText: "Full operations", done: false },
+          { date: "Official report", text: "Identified as a PCDS 2030 bioindustry platform", done: true },
+          { date: "2025", text: "BioVerde established with park operations mandate", done: true },
+          { date: "2027-Q3", text: "Phase 1 construction completion planned", done: false },
+          { date: "2035", text: "Full park operations planned", done: false },
         ],
         sources: [
           { label: "SBC — Sarawak Bioindustrial Park commercialisation", url: "https://www.sbc.org.my/index.php/commercialisation" },
@@ -313,15 +277,10 @@ export const SECTORS = [
         summary:
           "State-backed international secondary school network intended to expand access to international-syllabus education for low-income and rural students. Petra Jaya began operations in 2022, the official site lists Petra Jaya, Kuching 12th Mile, and Sibu campuses, and public reporting says three more schools are targeted for completion within two to three years.",
         milestones: [
-          { date: "2022-04-03", text: "YSISS Petra Jaya began operation", done: true },
-          { date: "2025-09", text: "Three YSISS schools reported built statewide", done: true },
-          { date: "2025-10-01", text: "YSISS Sibu scheduled to run its first class", done: true },
-          {
-            date: "2027-2028",
-            text: "Remaining three YSISS schools completed or opened",
-            shortText: "Remaining three YSISS schools",
-            done: false,
-          },
+          { date: "2022-04-03", text: "Petra Jaya campus began operations", done: true },
+          { date: "2025-09", text: "Three campuses completed statewide", done: true },
+          { date: "2025-09", text: "Sibu campus opening date announced", done: true },
+          { date: "2027-2028", text: "Remaining three campuses planned for completion", done: false },
         ],
         sources: [
           { label: "YSISS — Official site", url: "https://ysiss.edu.my/" },
@@ -348,14 +307,9 @@ export const SECTORS = [
         summary:
           "Major economic corridor spanning Samalaju Industrial Park, Tanjung Manis, Mukah, Baram, and Tunoh growth nodes. SCORE has reported RM125B in investment and 53,000 jobs created. RECODA also oversees URDA, HDA, and NRDA for rural/interior development.",
         milestones: [
-          { date: "2025-05-10", text: "SCORE reports RM125B investment and 53,000 jobs created", done: true },
-          {
-            date: "Ongoing",
-            text: "Industrial park expansion and investor facilitation",
-            shortText: "Industrial park expansion and investors",
-            done: false,
-          },
-          { date: "Ongoing", text: "Rural infrastructure via URDA, HDA, NRDA", done: false },
+          { date: "2025-05-10", text: "RM125B investment and 53,000 jobs reported", done: true },
+          { date: "Ongoing", text: "Industrial park expansion and investor support", done: false },
+          { date: "Ongoing", text: "Rural infrastructure delivery through URDA, HDA, and NRDA", done: false },
         ],
         sources: [
           { label: "DayakDaily — SCORE: RM125B investment, 53K jobs (May 2025)", url: "https://dayakdaily.com/score-fuels-sarawaks-economic-growth-with-rm125-bln-investment-53000-jobs-created/" },
@@ -386,16 +340,12 @@ export const SECTORS = [
         summary:
           "Southeast Asia's first hydrogen-powered Autonomous Rapid Transit (ART) system. Phase 1 covers three lines: Blue Line (Rembus\u2013Hikmah Exchange), Red Line, and Green Line. ART vehicles run on dedicated trackless lanes using rubber tyres.",
         milestones: [
-          { date: "2025-12", text: "RM58M contract awarded to Linde EOX for hydrogen plant relocation to Rembus Depot", done: true },
-          { date: "2026-Q1", text: "First two ART units arrive in Kuching", done: true },
-          { date: "2026-04", text: "Dedicated private frequency spectrum secured for ART operations", done: true },
-          {
-            date: "2026-Q4",
-            text: "Blue Line pilot/revenue-service target and hydrogen plant relocation",
-            shortText: "Blue Line service and hydrogen plant move",
-            done: false,
-          },
-          { date: "TBD", text: "Feeder bus network (hydrogen-powered) rollout", done: false },
+          { date: "2025-12", text: "RM58M hydrogen plant relocation contract awarded", done: true },
+          { date: "2026-Q1", text: "First two ART units arrived in Kuching", done: true },
+          { date: "2026-04", text: "Dedicated frequency spectrum secured for ART operations", done: true },
+          { date: "2026-Q4", text: "Blue Line passenger service scheduled to begin", done: false },
+          { date: "2026-Q4", text: "Rembus hydrogen plant relocation scheduled for completion", done: false },
+          { date: "TBD", text: "Hydrogen-powered feeder bus network planned", done: false },
         ],
         sources: [
           { label: "DayakDaily — ART Q4 2026 operations", url: "https://dayakdaily.com/hydrogen-powered-art-to-begin-service-in-kuching-in-final-quarter-of-2026-premier/" },
@@ -417,12 +367,8 @@ export const SECTORS = [
           { date: "2025-01-01", text: "12-month extension agreement signed for transition", done: true },
           { date: "2026-02-04", text: "RM1.8B takeover agreed in principle", done: true },
           { date: "2026-02-06", text: "RM1.8B valuation confirmed after detailed negotiations", done: true },
-          {
-            date: "2026-06-21",
-            text: "Tripartite and Completion Agreements signed; Bintulu Port officially handed over to Sarawak",
-            shortText: "Official handover to Sarawak",
-            done: true,
-          },
+          { date: "2026-06-21", text: "Tripartite and Completion Agreements signed", done: true },
+          { date: "2026-06-21", text: "Bintulu Port handed over to Sarawak", done: true },
         ],
         sources: [
           { label: "DayakDaily — RM1.8B takeover agreed in principle (Feb 2026)", url: "https://dayakdaily.com/rm1-8-bln-bintulu-port-takeover-agreed-in-principle-as-handover-enters-final-stage/" },
@@ -448,20 +394,10 @@ export const SECTORS = [
         summary:
           "1,285MW hydroelectric dam on the Baleh River in Kapit Division, led by Sarawak Energy. Public sources describe Baleh HEP as a concrete-faced rockfill dam, with construction completion targeted in 2026, operational generation targeted by 2028, and the 1,285MW capacity expected to contribute to Sarawak's 2030 large-scale hydropower outlook.",
         milestones: [
-          {
-            date: "2025-08",
-            text: "Project scope: 1,285MW concrete-faced rockfill dam on the Baleh River",
-            shortText: "1,285MW hydroelectric dam scope",
-            done: true,
-          },
-          { date: "2026", text: "Construction completion target", shortText: "Construction completion", done: false },
-          { date: "2028", text: "Operational generation target", shortText: "Operational generation", done: false },
-          {
-            date: "2030",
-            text: "Contribution to Sarawak's 4,843MW large-scale hydropower capacity",
-            shortText: "2030 hydropower capacity contribution",
-            done: false,
-          },
+          { date: "2025-08", text: "1,285MW dam scope publicly confirmed", done: true },
+          { date: "2026", text: "Planned completion of dam construction", done: false },
+          { date: "2028", text: "Electricity generation planned to begin", done: false },
+          { date: "2030", text: "Planned 1,285MW contribution to Sarawak's hydropower capacity", done: false },
         ],
         sources: [
           { label: "DayakDaily — Green revolution supercharging Sarawak energy (Aug 2025)", url: "https://dayakdaily.com/green-revolution-supercharging-sarawaks-energy-prowess/" },
@@ -478,19 +414,9 @@ export const SECTORS = [
         summary:
           "Large-scale green hydrogen production in Bintulu. Sarawak H2 Hub (JV between SEDC Energy and Gentari) to be sole developer/operator. The Rembus hydrogen plant relocation supports KUTS fuel supply, while H2ornbill and H2biscus target commercial hydrogen and derivatives production from 2028.",
         milestones: [
-          {
-            date: "2026-Q4",
-            text: "Hydrogen plant relocation and upgrading at Rembus",
-            shortText: "Rembus hydrogen plant relocation",
-            done: false,
-          },
-          {
-            date: "2028",
-            text: "H2ornbill and H2biscus commercial production",
-            shortText: "H2ornbill and H2biscus production",
-            done: false,
-          },
-          { date: "2028+", text: "Large-scale hydrogen derivatives and export", done: false },
+          { date: "2026-Q4", text: "Rembus hydrogen plant relocation and upgrade planned", done: false },
+          { date: "2028", text: "Commercial production planned for H2ornbill and H2biscus", done: false },
+          { date: "2028+", text: "Large-scale hydrogen derivatives production and export planned", done: false },
         ],
         sources: [
           { label: "DayakDaily — H2ornbill & H2biscus hydrogen economy (Aug 2025)", url: "https://dayakdaily.com/sarawak-powers-ahead-in-hydrogen-economy/" },
@@ -508,25 +434,14 @@ export const SECTORS = [
           "Sarawak Energy's first floating solar farm on the Batang Ai HEP reservoir, developed with China Power International Holdings and Trina Solar. Public sources describe a 50MW hydro-solar hybrid facility and later reporting points to a December operations or commissioning milestone, but the exact commissioning confirmation date needs review. Sarawak Energy is also reported to be planning an additional 120MW expansion at Batang Ai.",
         milestones: [
           { date: "2023-06-20", text: "Construction officially began", done: true },
-          { date: "2024-06-20", text: "Sarawak Energy reported 35 percent construction completion", done: true },
-          {
-            date: "2025-12",
-            text: "Reported operations or commissioning milestone",
-            shortText: "Operations/commissioning milestone",
-            done: true,
-          },
+          { date: "2024-06-20", text: "Construction reached 35 percent completion", done: true },
+          { date: "2025-08-19", text: "December operations start announced", done: true },
           {
             date: "2026",
-            text: "Additional 120MW Batang Ai floating solar expansion rollout",
-            shortText: "120MW expansion rollout",
+            text: "Planned addition of 120MW floating solar capacity",
             done: false,
           },
-          {
-            date: "TBD",
-            text: "Confirm commercial operation date or latest commissioning status",
-            shortText: "Confirm operational status",
-            done: false,
-          },
+          { date: "TBD", text: "Commercial operation date pending public confirmation", done: false },
         ],
         sources: [
           { label: "Sarawak Energy — Floating solar commissioning target (Jun 2024)", url: "https://www.sarawakenergy.com/media-info/media-releases/2024/sarawak-energys-first-floating-solar-farm-on-track-for-commissioning-by-october-2024" },

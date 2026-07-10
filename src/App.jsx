@@ -716,15 +716,14 @@ function FollowingMilestones({ row }) {
   );
 }
 
-function formatNextMilestone(milestone, compact = false) {
+function formatNextMilestone(milestone) {
   if (!milestone) {
     return "No open milestone";
   }
 
   const phaseOnlyDates = new Set(["ongoing"]);
   const date = milestone.date?.trim();
-  const fullText = milestone.text.replace(/^(ongoing|planning|completed):\s*/i, "");
-  const text = compact ? milestone.shortText || fullText : fullText;
+  const text = milestone.text.replace(/^(ongoing|planning|completed):\s*/i, "");
 
   if (!date || phaseOnlyDates.has(date.toLowerCase())) {
     return text;
@@ -737,7 +736,7 @@ function NextMilestoneCallout({ row, expanded, previewCards }) {
   const isComplete = row.totalMilestones > 0 && row.doneMilestones === row.totalMilestones;
   const completionMilestone = isComplete ? [...row.milestones].reverse().find((milestone) => milestone.done) : null;
   const text = previewCards
-    ? formatNextMilestone(isComplete ? completionMilestone : row.nextMilestone, !expanded)
+    ? formatNextMilestone(isComplete ? completionMilestone : row.nextMilestone)
     : row.nextMilestone
       ? `${row.nextMilestone.date}: ${row.nextMilestone.text}`
       : isComplete && completionMilestone
@@ -773,13 +772,7 @@ function NextMilestoneCallout({ row, expanded, previewCards }) {
           fontSize: "13px",
           fontWeight: expanded ? 700 : 650,
           lineHeight: 1.45,
-          ...(previewCards
-            ? {
-                whiteSpace: expanded ? "normal" : "nowrap",
-                overflow: expanded ? "visible" : "hidden",
-                textOverflow: expanded ? "clip" : "ellipsis",
-              }
-            : {}),
+          overflowWrap: "anywhere",
         }}
       >
         {text}
