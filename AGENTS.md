@@ -15,8 +15,8 @@ This repository is the PCDS 2030 Project Tracker, a Vite and React static site.
 
 - `preview` is the normal development branch.
 - `main` is the production branch.
-- Preview deploys to `https://preview.tracker.hafiy.my` through Vercel.
-- Production deploys to `https://tracker.hafiy.my` through GitHub Pages.
+- Preview deploys to `https://preview.pcds2030.com` through Vercel.
+- Production deploys to `https://pcds2030.com` through GitHub Pages.
 - Push work to `preview` first.
 - Merge or promote to `main` only after the preview site has been reviewed and approved.
 

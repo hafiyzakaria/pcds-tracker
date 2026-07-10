@@ -104,7 +104,7 @@ Purpose: review changes after pushing them, before production release.
 Environment:
 
 ```txt
-https://preview.tracker.hafiy.my
+https://preview.pcds2030.com
 ```
 
 Indicators:
@@ -121,7 +121,7 @@ Purpose: public website.
 Environment:
 
 ```txt
-https://tracker.hafiy.my
+https://pcds2030.com
 ```
 
 Indicators:
@@ -152,9 +152,9 @@ Recommended solo-developer loop:
 3. Run `npm run lint`.
 4. Build with `npm run build:preview`.
 5. Push to `preview`.
-6. Review `https://preview.tracker.hafiy.my`.
+6. Review `https://preview.pcds2030.com`.
 7. Merge or promote to `main` only after approval.
-8. Confirm `https://tracker.hafiy.my`.
+8. Confirm `https://pcds2030.com`.
 
 This workflow prevents accidental public releases. It is recommended and common.
 
@@ -206,8 +206,8 @@ Badges exist to make the current environment immediately recognizable. This prev
 
 The build scripts write the correct custom domain into `dist/CNAME`:
 
-- `npm run build:preview` writes `preview.tracker.hafiy.my`.
-- `npm run build` writes `tracker.hafiy.my`.
+- `npm run build:preview` writes `preview.pcds2030.com`.
+- `npm run build` writes `pcds2030.com`.
 
 This prevents a preview build from accidentally carrying the production custom domain.
 
