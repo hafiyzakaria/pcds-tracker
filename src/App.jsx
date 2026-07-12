@@ -1165,8 +1165,8 @@ export default function App() {
               lineHeight: 1.65,
             }}
           >
-            A scan-first view of major Sarawak development projects, their current status,
-            next visible milestone, and public evidence.
+            An independent PCDS 2030 dashboard for the Sarawak Post COVID-19 Development
+            Strategy 2030, tracking major projects, current status, milestones, and public evidence.
           </p>
           <p
             className="tracker-last-updated"
