@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import {
   ECONOMIC_SECTOR_IDS,
@@ -994,18 +994,50 @@ function ProjectGrid({ rows, expandedIds, onToggle, previewCards }) {
   );
 }
 
+function AboutTracker({ lastUpdatedLabel }) {
+  return (
+    <section
+      aria-labelledby="about-pcds-2030"
+      style={{
+        maxWidth: "760px",
+        marginTop: "56px",
+        paddingTop: "24px",
+        borderTop: "1px solid #e5e7eb",
+      }}
+    >
+      <h2
+        id="about-pcds-2030"
+        style={{
+          margin: 0,
+          color: "#1a1a2e",
+          fontSize: "20px",
+          fontWeight: 800,
+          lineHeight: 1.3,
+        }}
+      >
+        About PCDS 2030
+      </h2>
+      <p style={{ margin: "12px 0 0", color: "#64748b", fontSize: "14px", lineHeight: 1.7 }}>
+        The Sarawak Post COVID-19 Development Strategy 2030, or PCDS 2030, is Sarawak&apos;s
+        long-term development framework. This independent dashboard brings major publicly
+        reported projects into one place so readers can compare current status, visible
+        milestones, reported values, and supporting evidence.
+      </p>
+      <p style={{ margin: "10px 0 0", color: "#64748b", fontSize: "14px", lineHeight: 1.7 }}>
+        Project information is maintained from public reports, official announcements, and news
+        sources. Statuses are best-effort assessments of available evidence, the tracker was last
+        updated on {lastUpdatedLabel}, and it is not affiliated with the Sarawak Government.
+      </p>
+    </section>
+  );
+}
+
 export default function App() {
-  const [loaded, setLoaded] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
   const environment = getAppEnvironment();
   const previewCards = shouldUsePreviewCards(environment);
   const lastUpdatedLabel = formatLastUpdated(LAST_UPDATED);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setLoaded(true), 100);
-    return () => clearTimeout(timeout);
-  }, []);
 
   const rows = useMemo(() => sortProjectRows(getProjectRows()), []);
   const selectedFilter = FILTERS.find((filter) => filter.id === activeFilter) || FILTERS[0];
@@ -1018,19 +1050,23 @@ export default function App() {
 
   return (
     <div
+      className="app-shell"
       style={{
         minHeight: "100vh",
         backgroundColor: "#ffffff",
         color: "#374151",
         fontFamily: FONT_STACK,
-        opacity: loaded ? 1 : 0,
-        transition: "opacity 0.5s ease",
       }}
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         * { box-sizing: border-box; }
         body { background: #ffffff; }
+        .app-shell { animation: app-fade-in 0.5s ease; }
+        @keyframes app-fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
         button { font: inherit; }
         a:hover { opacity: 0.8; }
         ::selection { background: #0d948844; }
@@ -1068,6 +1104,9 @@ export default function App() {
           }
         }
         @media (prefers-reduced-motion: reduce) {
+          .app-shell {
+            animation: none !important;
+          }
           .accordion-reveal {
             transition: none !important;
           }
@@ -1200,6 +1239,8 @@ export default function App() {
             previewCards={previewCards}
           />
         </section>
+
+        <AboutTracker lastUpdatedLabel={lastUpdatedLabel} />
 
         <footer
           style={{

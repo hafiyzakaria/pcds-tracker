@@ -28,7 +28,8 @@ Current layout order:
 4. Filter buttons.
 5. Two-column project-card grid on desktop.
 6. One-column project-card grid on mobile.
-7. Footer disclaimer.
+7. Compact "About PCDS 2030" context and methodology section.
+8. Footer disclaimer.
 
 Filter controls provide status navigation before readers scan the project cards.
 

@@ -18,12 +18,14 @@ These docs are the project memory. Keeping project context in files instead of r
 ```txt
 src/
   App.jsx              Main React app and most UI components
+  entry-server.jsx     Server-render entry used to pre-render the initial HTML
   environment.js      Development, Preview, and Production detection
   trackerData.js      Hand-maintained tracker data
   main.jsx            React entry point
   index.css           Minimal global CSS
 scripts/
   write-cname.mjs                 Writes the correct custom domain into dist/CNAME
+  prerender.mjs                   Pre-renders the React app into dist/index.html
   local-preview.mjs               Starts, stops, and checks a local preview server
   generate-environment-favicons.mjs
 public/
@@ -35,6 +37,10 @@ docs/
 ```
 
 The app is intentionally simple: one Vite app, no backend, no database, and no unnecessary runtime dependencies.
+
+Production and Preview builds pre-render the initial React view into `dist/index.html`, then
+hydrate it in the browser. This keeps the existing interactions while making headings, project
+content, and explanatory copy available in the initial HTML.
 
 ## Run Locally
 
