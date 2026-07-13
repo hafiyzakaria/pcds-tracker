@@ -16,26 +16,26 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ### Pre-render the initial dashboard content
 
-- Completed on Preview: Production and Preview build commands now pre-render the React dashboard
-  before browser hydration. The initial HTML includes the H1, introductory copy, project headings,
-  statuses, milestones, and source content.
-- Production status: Implementation is ready but must be selectively promoted to `main` after
-  review. Preview remains protected by Vercel's `noindex, nofollow` response header.
+- Completed on Production: Production and Preview build commands now pre-render the React
+  dashboard before browser hydration. The initial HTML includes the H1, introductory copy, project
+  headings, statuses, milestones, and source content. Preview remains protected by Vercel's
+  `noindex, nofollow` response header.
 
 ### Consolidate the PCDS explanation into the introduction
 
-- Completed on Preview: The separate About section was removed. Two concise paragraphs beneath
+- Completed on Production: The separate About section was removed. Two concise paragraphs beneath
   the title now explain the strategy, economic target, dashboard purpose, and independent scope.
-- Production status: Ready to be promoted with the pre-rendering implementation after approval.
+- Final treatment: The copy uses a narrower editorial measure, selective emphasis for the main
+  strategy facts, quieter last-updated metadata, and the plain-language phrase "links to publicly
+  available sources".
 
 ### Stabilize collapsed project-card sizing
 
-- Completed on Preview: Collapsed desktop cards once again use the established shared minimum
+- Completed on Production: Collapsed desktop cards once again use the established shared minimum
   height, while one-column mobile cards remain content-driven.
 - QA completed: All 26 desktop cards align at one height; status filters preserve the alignment;
   multiple cards can remain expanded; and narrow mobile cards have no clipping, overlap, or
   horizontal overflow.
-- Production status: Ready for review on `https://preview.pcds2030.com` before promotion.
 
 ## 1. Must Fix Before Production
 
@@ -46,25 +46,6 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Estimated difficulty: low
 - Risk level: low
 - Suggested first task: Add a checklist section to project documentation covering source URL, source date, milestone status, `LAST_UPDATED`, Preview review, and Production promotion.
-
-### Confirm Preview and Production behavior
-
-- What needs to be done: Decide whether Production should adopt the same project-card behavior used by Development and Preview.
-- Why it matters: Development and Preview now match for review. Production still needs an explicit promotion decision so the public site changes only after approval.
-- Estimated difficulty: medium
-- Risk level: medium
-- Suggested first task: Compare Preview and Production builds, note every visible behavior difference, and decide whether any difference beyond environment indicators is intentional.
-
-### Promote the approved SEO content changes without unfinished Preview work
-
-- What needs to be done: Move the pre-rendering implementation and approved two-paragraph
-  introduction to `main` without automatically merging unrelated Preview dashboard or data changes.
-- Why it matters: Production needs the indexable HTML improvements, while Preview must remain the
-  safe workspace for unfinished development.
-- Estimated difficulty: medium
-- Risk level: medium
-- Suggested first task: Create a release branch from current `main`, port only the approved SEO and
-  introduction changes, then run lint, Production build, raw-HTML checks, and `git diff --check`.
 
 ## 2. Should Improve Soon
 

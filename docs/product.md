@@ -4,7 +4,8 @@
 
 PCDS 2030 Project Tracker is an independent public tracker for major Sarawak Post COVID-19 Development Strategy 2030 projects.
 
-The site presents a scan-first view of major projects, their current status, next visible milestone, and public evidence.
+The site presents a scan-first view of major projects, their current status, next visible milestone,
+and links to publicly available sources.
 
 ## Audience
 
@@ -29,6 +30,10 @@ The current app is a single-page React site with:
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
 - Two short introductory paragraphs explaining the strategy, its central economic target, and
   the independent tracker purpose without adding a separate promotional About section.
+- Restrained emphasis on the 10-year strategy, 8% annual-growth target, RM282 billion 2030 target,
+  and independent-tracker scope so readers can scan the key points quickly.
+- Plain-language source wording that promises links to publicly available sources rather than
+  referring abstractly to "supporting public evidence".
 - Footer disclaimer stating that the tracker is independent and not affiliated with the Sarawak Government.
 
 The initial dashboard view is pre-rendered during the build and hydrated by React in the browser.

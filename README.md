@@ -2,7 +2,8 @@
 
 A Vite and React tracker for Sarawak PCDS 2030 projects.
 
-The site is an independent, public, scan-first tracker for major Sarawak development projects, their current status, next visible milestone, and public evidence.
+The site is an independent, public, scan-first tracker for major Sarawak development projects,
+their current status, next visible milestone, and links to publicly available sources.
 
 ## Documentation
 
@@ -44,6 +45,8 @@ content, and explanatory copy available in the initial HTML.
 
 The pre-rendered introduction is intentionally compact: two paragraphs explain the PCDS 2030
 strategy and economic target, followed by the purpose and independent scope of this tracker.
+Important strategy facts and the independent-tracker label use restrained bold emphasis, while
+the source wording explicitly describes links to publicly available sources.
 
 ## Run Locally
 

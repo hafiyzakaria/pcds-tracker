@@ -35,6 +35,9 @@ The PCDS context belongs near the title so readers understand the dashboard at f
 Keep it succinct and integrated with the introduction rather than placing a separate About section
 below the project grid.
 
+The introduction uses a maximum reading width of about `720px`. This keeps the text visually
+connected to the compact title block and avoids an overly wide paragraph slab on desktop.
+
 Filter controls provide status navigation before readers scan the project cards.
 
 Collapsed project cards prioritize category, title, status, milestone count/progress, next milestone, and the details affordance. Expanded cards keep evidence, milestone history, and source links close to the claims they support.
@@ -53,6 +56,9 @@ Current type style:
 - Strong bold headings.
 - Small uppercase labels for metadata.
 - Compact body text for project summaries and milestones.
+- Introductory copy at `16px` with a `1.6` line height and restrained dark-gray emphasis on only
+  the most important strategy facts and the independent-tracker label.
+- A quieter `12px` last-updated line so freshness metadata does not compete with the introduction.
 - No decorative display font.
 
 ## Color
