@@ -634,7 +634,7 @@ function AccordionReveal({ expanded, children, className = "" }) {
     <div
       className={`accordion-reveal ${className}`.trim()}
       aria-hidden={!expanded}
-      inert={expanded ? undefined : ""}
+      inert={expanded ? undefined : true}
     >
       <div className="accordion-reveal-inner">{children}</div>
     </div>
