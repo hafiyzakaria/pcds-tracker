@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-07-10";
+export const LAST_UPDATED = "2026-07-13";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -468,6 +468,42 @@ export const SECTORS = [
           { label: "The Star — RM1bil gas pipeline plan (Nov 2024)", url: "https://www.thestar.com.my/business/business-news/2024/11/04/rm1bil-gas-pipeline-plan" },
         ],
       },
+      {
+        name: "Sejingkat Battery Energy Storage System",
+        status: "Operational",
+        statusColor: "#16a34a",
+        lead: "Sarawak Energy",
+        value: "Not disclosed",
+        summary:
+          "Malaysia's first utility-scale battery energy storage system, located at Sejingkat Power Plant in Kuching. The 60MW/82MWh facility was energised in December 2024 and provides spinning reserve, voltage and frequency regulation, and peak-demand management for Sarawak's power grid.",
+        milestones: [
+          { date: "2024-12", text: "60MW/82MWh system energised", done: true },
+          { date: "2025-02-14", text: "Utility-scale BESS commissioning announced", done: true },
+          { date: "Ongoing", text: "Grid services and performance monitoring", done: false },
+        ],
+        sources: [
+          { label: "Sarawak Energy — Sejingkat BESS commissioned (Feb 2025)", url: "https://www.sarawakenergy.com/media-info/media-releases/2025/sarawak-energy-strengthens-grid-resilience-with-battery-energy-storage-system" },
+        ],
+      },
+      {
+        name: "Sarawak-Singapore Electricity Interconnection",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Sarawak Energy / Sembcorp Utilities",
+        value: "Not disclosed",
+        summary:
+          "Proposed cross-border interconnection to export around 1GW of renewable electricity from Sarawak to Singapore. Singapore's Energy Market Authority granted conditional approval in October 2025, allowing the project to proceed toward further regulatory approvals and licences, with electricity flow expected around 2035 or earlier.",
+        milestones: [
+          { date: "2023", text: "Techno-commercial study commenced", done: true },
+          { date: "2025-10-17", text: "Conditional approval obtained", done: true },
+          { date: "TBD", text: "Further regulatory approvals and licences", done: false },
+          { date: "2035", text: "Electricity flow expected", done: false },
+        ],
+        sources: [
+          { label: "Sarawak Energy — Interconnection study (Mar 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/sarawak-moves-closer-to-regional-powerhouse-aspiration-through-hydropower-venture-in-indonesia" },
+          { label: "Sarawak Energy — Conditional approval (Oct 2025)", url: "https://www.sarawakenergy.com/media-info/media-releases/2025/sarawak-singapore-interconnection-project-receives-conditional-approval-from-energy-market-authority-of-singapore-to-proceed-to-next-phase" },
+        ],
+      },
     ],
   },
   {
@@ -585,6 +621,25 @@ export const SECTORS = [
           { label: "DayakDaily — Green revolution supercharging Sarawak energy (Aug 2025)", url: "https://dayakdaily.com/green-revolution-supercharging-sarawaks-energy-prowess/" },
           { label: "DayakDaily — ASEAN grid & Baleh 1,285MW by 2030 (Jan 2026)", url: "https://dayakdaily.com/sarawak-urges-asean-to-study-european-union-nordic-models-to-realise-regional-power-grid-dream/" },
           { label: "RECODA — Annual Report page", url: "https://recoda.gov.my/annual-report/" },
+        ],
+      },
+      {
+        name: "Mentarang Induk Hydroelectric Project",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "PT Kayan Hydropower Nusantara / Sarawak Energy-led consortium",
+        value: "US$2.6 billion",
+        summary:
+          "A 1,375MW hydropower project in North Kalimantan developed by PT Kayan Hydropower Nusantara, a joint venture involving Sarawak Energy, Adaro Energy Indonesia, and Kayan Patria Pratama. Groundbreaking was held in March 2023 and early works were reported underway later that year; current physical-construction progress remains publicly unclear.",
+        milestones: [
+          { date: "2023-03-01", text: "Groundbreaking ceremony held", done: true },
+          { date: "2023-10-31", text: "Early works reported underway", done: true },
+          { date: "2029", text: "First power expected", done: false },
+        ],
+        sources: [
+          { label: "Sarawak Energy — Mentarang Induk groundbreaking (Mar 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/sarawak-moves-closer-to-regional-powerhouse-aspiration-through-hydropower-venture-in-indonesia" },
+          { label: "Office of the Premier — Early works underway (Oct 2023)", url: "https://premier.sarawak.gov.my/web/subpage/news_view/5662" },
+          { label: "PT Kayan Hydropower Nusantara — MIHEP project page", url: "https://www.ptkhn.com/projects/mentarang-induk-hydroelectric-project-mihep-" },
         ],
       },
       {

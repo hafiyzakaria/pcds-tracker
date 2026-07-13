@@ -10,8 +10,42 @@
 - `Post Covid19 Development Strategy.pdf` - reviewed as an image-based PDF; `pdfplumber` extraction returned no usable text and a quick OCR pass did not produce reliable text, so no candidate is added solely from this file.
 - `SarawakGovt PCDS2030 - Highlights 2023 Chapter 1.pdf` - reviewed; overlaps with the first chapter of the full Highlights report and is mostly framework/summary material.
 - `SarawakGovt PCDS2030 - Highlights 2023.pdf` - reviewed; yielded current progress evidence for several infrastructure, utilities, innovation, agriculture, transport, and renewable-energy candidates.
+- `Sarawak-Sustainability-Vision-2030-Datu-Dr.-Muhammad-Abdullah-Zaidel.pdf` - reviewed; July 2024 government presentation that yielded three energy candidates and context for existing renewable-energy, transport, SCORE, and carbon-governance cards.
 
 ## High-Confidence Candidate Projects
+
+### Sejingkat Battery Energy Storage System
+
+- Project name: Sejingkat Battery Energy Storage System
+- Why it is relevant: Utility-scale grid-storage infrastructure supporting power-system resilience and renewable-energy integration.
+- Source PDF: `Sarawak-Sustainability-Vision-2030-Datu-Dr.-Muhammad-Abdullah-Zaidel.pdf`
+- Page/section: Page 8, diversifying energy systems
+- Evidence: The presentation describes a 60MWh BESS at the existing Sejingkat Power Corporation coal-fired power plant as Sarawak's first pilot project. Later official reporting supersedes the early specification and confirms a commissioned 60MW/82MWh facility.
+- Possible tracker category: Utilities
+- Possible milestones: Energised in December 2024; commissioning announced in February 2025; ongoing grid services and performance monitoring.
+- Missing information: Public monetary value and future expansion schedule.
+
+### Mentarang Induk Hydroelectric Project
+
+- Project name: Mentarang Induk Hydroelectric Project
+- Why it is relevant: Cross-border Sarawak Energy hydropower investment supporting regional renewable-energy integration.
+- Source PDF: `Sarawak-Sustainability-Vision-2030-Datu-Dr.-Muhammad-Abdullah-Zaidel.pdf`
+- Page/section: Page 12, Borneo Grid development
+- Evidence: The presentation identifies a partnership with Indonesia to develop 1,375MW of hydropower in North Kalimantan. Later official sources confirm a US$2.6 billion project, March 2023 groundbreaking, and early works.
+- Possible tracker category: Renewable Energy
+- Possible milestones: Groundbreaking on 1 March 2023; early works reported in October 2023; first power expected by end-2029.
+- Missing information: Current physical-construction progress and confirmation that the 2029 target remains current.
+
+### Sarawak-Singapore Electricity Interconnection
+
+- Project name: Sarawak-Singapore Electricity Interconnection
+- Why it is relevant: Cross-border transmission infrastructure intended to export Sarawak renewable electricity to Singapore.
+- Source PDF: `Sarawak-Sustainability-Vision-2030-Datu-Dr.-Muhammad-Abdullah-Zaidel.pdf`
+- Page/section: Page 13, power export to Singapore
+- Evidence: The presentation says an interconnection feasibility study was ongoing. Later official reporting confirms conditional approval in October 2025 for around 1GW of renewable electricity exports and progression toward further approvals and licences.
+- Possible tracker category: Utilities
+- Possible milestones: Techno-commercial study in 2023; conditional approval on 17 October 2025; further approvals and licences; electricity flow expected around 2035 or earlier.
+- Missing information: Final investment decision, construction schedule, route, cable contracts, and public monetary value.
 
 ### Pan Borneo Highway Sarawak Phase 1
 
@@ -490,6 +524,8 @@
 
 ## Programmes / Not Yet Trackable
 
+- Borneo Grid / ASEAN Power Grid expansion - the Sustainability Vision presentation shows broad proposed interconnections across Borneo, but only the named Mentarang Induk and Sarawak-Singapore projects have enough public evidence for standalone cards.
+- Smart-grid digitalisation - advanced metering, distribution automation, asset monitoring, field-force automation, and substation surveillance are presented as capabilities rather than one named project with a delivery schedule.
 - Coastal Road Network and Second Trunk Road (CSTR) - RM11 billion and 60 subprojects, including 10 major bridge crossings. It is highly relevant, but should either be tracked as an umbrella programme or split into bridge/road packages after online validation.
 - Projek Rakyat - RM4.41 billion and 173 projects covering roads, bridges, buildings, jetties, and STOLports. Too broad for a single project card without selected named packages.
 - Sarawak Alternative Rural Electrification Scheme (SARES) - RM774 million, 548 villages, expected completion by 31 December 2025. Strong programme candidate, but village/package-level tracking is not identified in the PDF.
@@ -528,10 +564,10 @@
 
 ## Summary
 
-1. Number of PDFs reviewed: 8
-2. Number of high-confidence candidates: 25
+1. Number of PDFs reviewed: 9
+2. Number of high-confidence candidates: 28
 3. Number of medium-confidence candidates: 18
-4. Number of programme-only items: 18
+4. Number of programme-only items: 20
 5. Recommended candidates for online validation:
    - Batang Ai Floating Solar Farm
    - Bintulu-Samalaju Gas Pipeline

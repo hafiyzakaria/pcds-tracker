@@ -28,7 +28,7 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-07-10`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-07-13`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
@@ -62,7 +62,7 @@ Project fields:
 - `status`: detailed source-data status such as `Planning`, `In Progress`, `Awaiting Decision`, `Operational`, `Designated`, or `Enacted`.
 - `statusColor`: stored in data but the current UI mainly uses category accent color for badges.
 - `lead`: lead party or parties shown in the card facts.
-- `value`: reported monetary value, capacity, target, or placeholder `-`.
+- `value`: reported monetary value, or `Not disclosed` / `Not applicable` when a monetary value is unavailable or not meaningful.
 - `summary`: prose summary of the project and current public context.
 - `milestones`: manually defined project milestone list.
 - `sources`: manually defined project-level evidence links.
@@ -263,6 +263,12 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - PETRONAS Kasawari Carbon Capture and Storage Project - `In Progress`; MMHE holds the EPCIC contract and PETRONAS is examining a 2027 first-injection date; sources: The Sun and The Star.
 - Sarawak River Aids to Navigation and Surveillance System - `Operational`; Sarawak River VTMS was reported fully operational in December 2025; next milestone: Miri River system completion targeted for Q3 2027; source: Borneo Post.
 
+### Sustainability Vision 2030 Energy Projects Added on 13 July 2026
+
+- Sejingkat Battery Energy Storage System - `Operational`; 60MW/82MWh facility energised in December 2024 and publicly announced as commissioned in February 2025; source: Sarawak Energy.
+- Mentarang Induk Hydroelectric Project - `In Progress`; US$2.6 billion, 1,375MW cross-border hydropower venture in North Kalimantan; groundbreaking and early works were reported in 2023, while current physical progress remains unclear; sources: Sarawak Energy, Office of the Premier, and PT Kayan Hydropower Nusantara.
+- Sarawak-Singapore Electricity Interconnection - `In Progress`; conditional approval obtained in October 2025 for around 1GW of renewable power exports, with further regulatory approvals and licences still required; source: Sarawak Energy.
+
 ### PCDS 2030 - Overarching Framework
 
 - Current dashboard status: `Operational`
@@ -277,8 +283,8 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 The app derives display rows by flattening `SECTORS` into project rows and excluding the overview category:
 
-- Active rendered projects: 26.
-- Stored projects including overview: 27.
+- Active rendered projects: 29.
+- Stored projects including overview: 30.
 - PCDS economic sectors represented in data: 6.
 - PCDS enablers represented in data: 7.
 - Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, mining, social-services.
@@ -286,10 +292,10 @@ The app derives display rows by flattening `SECTORS` into project rows and exclu
 
 Current active dashboard status counts from `src/trackerData.js`:
 
-- `In Progress`: 13.
+- `In Progress`: 15.
 - `Awaiting Decision`: 0.
 - `Planning`: 6.
-- `Operational`: 4.
+- `Operational`: 5.
 - `Designated`: 2.
 - `Enacted`: 1.
 
@@ -301,11 +307,11 @@ The UI groups detailed statuses into public filter labels:
 
 Current public display counts:
 
-- Tracked projects: 26.
+- Tracked projects: 29.
 - Planning: 6.
-- Ongoing: 13.
-- Completed: 7.
-- Milestones: 57 completed out of 96 active-project milestones.
+- Ongoing: 15.
+- Completed: 8.
+- Milestones: 63 completed out of 106 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 
