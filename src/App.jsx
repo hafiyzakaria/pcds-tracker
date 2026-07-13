@@ -50,10 +50,6 @@ const FILTERS = [
   { id: "delivered", label: STATUS_META.Operational.label, statuses: ["Operational", "Designated", "Enacted"] },
 ];
 
-function shouldUsePreviewCards(environment) {
-  return environment.name !== "production";
-}
-
 function getStatusMeta(status) {
   return STATUS_META[status] || {
     label: status,
@@ -678,20 +674,6 @@ function MilestoneList({ milestones, color = "#0d9488" }) {
   );
 }
 
-function MilestoneTimeline({ row }) {
-  const loggedMilestones = row.milestones.filter((milestone) => milestone.done);
-
-  if (loggedMilestones.length === 0) {
-    return null;
-  }
-
-  return (
-    <DetailSection title="Completed Milestones">
-      <MilestoneList milestones={loggedMilestones} color={row.sectorColor} />
-    </DetailSection>
-  );
-}
-
 function CompletedMilestoneRows({ row }) {
   const loggedMilestones = row.milestones.filter((milestone) => milestone.done);
 
@@ -732,16 +714,10 @@ function formatNextMilestone(milestone) {
   return `${date}: ${text}`;
 }
 
-function NextMilestoneCallout({ row, expanded, previewCards }) {
+function NextMilestoneCallout({ row, expanded }) {
   const isComplete = row.totalMilestones > 0 && row.doneMilestones === row.totalMilestones;
   const completionMilestone = isComplete ? [...row.milestones].reverse().find((milestone) => milestone.done) : null;
-  const text = previewCards
-    ? formatNextMilestone(isComplete ? completionMilestone : row.nextMilestone)
-    : row.nextMilestone
-      ? `${row.nextMilestone.date}: ${row.nextMilestone.text}`
-      : isComplete && completionMilestone
-        ? `${completionMilestone.date}: ${completionMilestone.text}`
-        : "No open milestone";
+  const text = formatNextMilestone(isComplete ? completionMilestone : row.nextMilestone);
 
   return (
     <div
@@ -781,8 +757,8 @@ function NextMilestoneCallout({ row, expanded, previewCards }) {
   );
 }
 
-function ProjectCard({ row, expanded, onToggle, previewCards }) {
-  const cardBorderColor = previewCards ? "#cbd5e1" : "#e5e7eb";
+function ProjectCard({ row, expanded, onToggle }) {
+  const cardBorderColor = "#cbd5e1";
 
   return (
     <article
@@ -790,7 +766,7 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
       data-expanded={expanded ? "true" : "false"}
       style={{
         border: `1px solid ${cardBorderColor}`,
-        borderTop: previewCards ? `1px solid ${cardBorderColor}` : `3px solid ${row.sectorColor}`,
+        borderTop: `1px solid ${cardBorderColor}`,
         borderRadius: "8px",
         backgroundColor: expanded ? "#f8fafc" : "#ffffff",
         overflow: "hidden",
@@ -947,16 +923,13 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
 
         <div style={{ display: "grid", gap: "12px" }}>
           {expanded && <MilestoneIndicator row={row} />}
-          {previewCards && (
-            <AccordionReveal expanded={expanded} className="project-card-completed-reveal">
-              <CompletedMilestoneRows row={row} />
-            </AccordionReveal>
-          )}
-          <NextMilestoneCallout row={row} expanded={expanded} previewCards={previewCards} />
+          <AccordionReveal expanded={expanded} className="project-card-completed-reveal">
+            <CompletedMilestoneRows row={row} />
+          </AccordionReveal>
+          <NextMilestoneCallout row={row} expanded={expanded} />
           <AccordionReveal expanded={expanded} className="project-card-timeline-reveal">
             <div style={{ display: "grid", gap: "12px", paddingTop: "2px" }}>
               <FollowingMilestones row={row} />
-              {!previewCards && <MilestoneTimeline row={row} />}
             </div>
           </AccordionReveal>
         </div>
@@ -979,7 +952,7 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
   );
 }
 
-function ProjectGrid({ rows, expandedIds, onToggle, previewCards }) {
+function ProjectGrid({ rows, expandedIds, onToggle }) {
   return (
     <section
       className="project-card-grid"
@@ -996,7 +969,6 @@ function ProjectGrid({ rows, expandedIds, onToggle, previewCards }) {
           row={row}
           expanded={expandedIds.includes(row.id)}
           onToggle={() => onToggle(row.id)}
-          previewCards={previewCards}
         />
       ))}
     </section>
@@ -1007,7 +979,6 @@ export default function App() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
   const environment = getAppEnvironment();
-  const previewCards = shouldUsePreviewCards(environment);
   const lastUpdatedLabel = formatLastUpdated(LAST_UPDATED);
 
   const rows = useMemo(() => sortProjectRows(getProjectRows()), []);
@@ -1220,7 +1191,6 @@ export default function App() {
             rows={filteredRows}
             expandedIds={expandedIds}
             onToggle={toggleExpanded}
-            previewCards={previewCards}
           />
         </section>
 

@@ -37,6 +37,13 @@ This backlog documents known issues and recommended next tasks for the next deve
   multiple cards can remain expanded; and narrow mobile cards have no clipping, overlap, or
   horizontal overflow.
 
+### Align card behavior across environments
+
+- Completed on Production: Development, Preview, and Production now use the same neutral card
+  border, milestone formatting, completed-milestone rows, and expanded-card content.
+- Environment differences are limited to deployment, domain, indexing policy, favicon, and the
+  Development or Preview badge.
+
 ## 1. Must Fix Before Production
 
 ### Add a production data review checklist
@@ -103,14 +110,6 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Suggested first task: Leave the current UI unchanged and note one or two real user questions that would justify showing empty categories.
 
 ## 4. Design Polish
-
-### Review card behavior after the Preview decision
-
-- What needs to be done: Once Preview versus Production behavior is decided, clean up any confusing card interaction or presentation differences.
-- Why it matters: Project cards are the core reading experience, and inconsistent card behavior can make status comparison harder.
-- Estimated difficulty: medium
-- Risk level: medium
-- Suggested first task: Test expanded and collapsed project cards on desktop and mobile, then make only the smallest changes needed for consistency.
 
 ### Extract design tokens when styling changes become repetitive
 

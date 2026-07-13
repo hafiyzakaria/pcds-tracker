@@ -81,6 +81,9 @@ The product now has three environments:
 - Preview: Vercel preview site, purple favicon, `PREVIEW` badge.
 - Production: GitHub Pages public site, brand favicon, no badge.
 
+All three environments use the same project-card behavior. Environment differences are limited to
+deployment, domain, indexing policy, favicon, and the Development or Preview badge.
+
 This workflow exists to prevent unfinished changes from reaching the public site. It is recommended and common in modern web development.
 
 ## Content Maintenance Notes

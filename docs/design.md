@@ -129,7 +129,8 @@ Environment indicators are intentionally small and unobtrusive:
 
 This is a professional workflow pattern. It prevents the owner from mistaking a test build for the public website. It is recommended and common for internal, staging, and preview environments.
 
-Development and Preview use the same project-card behavior so local review matches the site that will deploy to `preview.pcds2030.com`.
+Development, Preview, and Production use the same project-card behavior so local review matches
+both deployed sites. Environment-specific presentation is limited to the badge and favicon.
 
 ## Known Design Constraints
 
