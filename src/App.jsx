@@ -1117,8 +1117,12 @@ export default function App() {
           }
           .tracker-description {
             font-size: 16px !important;
-            line-height: 1.55 !important;
+            line-height: 1.6 !important;
             margin-top: 18px !important;
+          }
+          .tracker-description strong {
+            color: #374151;
+            font-weight: 700;
           }
           .project-facts {
             grid-template-columns: 1fr !important;
@@ -1168,34 +1172,36 @@ export default function App() {
           <div
             className="tracker-description"
             style={{
-              maxWidth: "820px",
+              maxWidth: "720px",
               margin: "18px 0 0",
               color: "#6b7280",
-              fontSize: "17px",
-              lineHeight: 1.65,
+              fontSize: "16px",
+              lineHeight: 1.6,
             }}
           >
             <p style={{ margin: 0 }}>
-              PCDS 2030 (Post COVID-19 Development Strategy 2030) is the Sarawak Government&apos;s
-              10-year blueprint for sustainable, high-income growth driven by data and innovation.
-              It targets 8% annual growth, from RM136 billion in 2019 to RM282 billion by 2030.
+              PCDS 2030 is the Sarawak Government&apos;s{" "}
+              <strong>10-year Post COVID-19 Development Strategy</strong> for sustainable,
+              high-income growth driven by data and innovation. It targets{" "}
+              <strong>8% annual growth</strong>, from RM136 billion in 2019 to{" "}
+              <strong>RM282 billion by 2030</strong>.
             </p>
-            <p style={{ margin: "8px 0 0" }}>
-              This independent tracker brings major projects, current status, milestones, and public
-              evidence into one scan-first view.
+            <p style={{ margin: "10px 0 0" }}>
+              This <strong>independent tracker</strong> brings major projects, their current status,
+              key milestones, and links to publicly available sources into one scan-first view.
             </p>
           </div>
           <p
             className="tracker-last-updated"
             style={{
-              margin: "10px 0 0",
+              margin: "14px 0 0",
               color: "#6b7280",
-              fontSize: "13px",
-              fontWeight: 650,
+              fontSize: "12px",
+              fontWeight: 600,
               lineHeight: 1.4,
             }}
           >
-            <span style={{ color: "#374151", fontWeight: 800 }}>Last updated:</span>{" "}
+            <span style={{ color: "#4b5563", fontWeight: 700 }}>Last updated:</span>{" "}
             {lastUpdatedLabel}
           </p>
         </header>
