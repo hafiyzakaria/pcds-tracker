@@ -27,7 +27,7 @@ The current app is a single-page React site with:
 - Last updated indicator beneath the page description, sourced from `LAST_UPDATED` in `src/trackerData.js`.
 - Status filters for all, planning, ongoing, and completed projects.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
-- An "About PCDS 2030" section explaining the strategy, tracker scope, evidence approach, and independent status.
+- Introductory context explaining the strategy, its central economic target, and the independent tracker scope.
 - Footer disclaimer stating that the tracker is independent and not affiliated with the Sarawak Government.
 
 The initial dashboard view is pre-rendered during the build and hydrated by React in the browser.

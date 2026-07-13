@@ -994,44 +994,6 @@ function ProjectGrid({ rows, expandedIds, onToggle, previewCards }) {
   );
 }
 
-function AboutTracker({ lastUpdatedLabel }) {
-  return (
-    <section
-      aria-labelledby="about-pcds-2030"
-      style={{
-        maxWidth: "760px",
-        marginTop: "56px",
-        paddingTop: "24px",
-        borderTop: "1px solid #e5e7eb",
-      }}
-    >
-      <h2
-        id="about-pcds-2030"
-        style={{
-          margin: 0,
-          color: "#1a1a2e",
-          fontSize: "20px",
-          fontWeight: 800,
-          lineHeight: 1.3,
-        }}
-      >
-        About PCDS 2030
-      </h2>
-      <p style={{ margin: "12px 0 0", color: "#64748b", fontSize: "14px", lineHeight: 1.7 }}>
-        The Sarawak Post COVID-19 Development Strategy 2030, or PCDS 2030, is Sarawak&apos;s
-        long-term development framework. This independent dashboard brings major publicly
-        reported projects into one place so readers can compare current status, visible
-        milestones, reported values, and supporting evidence.
-      </p>
-      <p style={{ margin: "10px 0 0", color: "#64748b", fontSize: "14px", lineHeight: 1.7 }}>
-        Project information is maintained from public reports, official announcements, and news
-        sources. Statuses are best-effort assessments of available evidence, the tracker was last
-        updated on {lastUpdatedLabel}, and it is not affiliated with the Sarawak Government.
-      </p>
-    </section>
-  );
-}
-
 export default function App() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
@@ -1197,15 +1159,19 @@ export default function App() {
           <p
             className="tracker-description"
             style={{
-              maxWidth: "680px",
+              maxWidth: "820px",
               margin: "18px 0 0",
               color: "#6b7280",
               fontSize: "17px",
               lineHeight: 1.65,
             }}
           >
-            An independent PCDS 2030 dashboard for the Sarawak Post COVID-19 Development
-            Strategy 2030, tracking major projects, current status, milestones, and public evidence.
+            PCDS 2030 (Post COVID-19 Development Strategy 2030) is the Sarawak Government&apos;s
+            10-year blueprint for post-pandemic recovery and sustainable growth. It aims for a
+            thriving, high-income Sarawak driven by data and innovation, with GDP targeted to grow
+            from RM136 billion in 2019 to RM282 billion by 2030 at an average of 8% annually. This
+            independent tracker follows major projects, current status, milestones, and public
+            evidence.
           </p>
           <p
             className="tracker-last-updated"
@@ -1239,8 +1205,6 @@ export default function App() {
             previewCards={previewCards}
           />
         </section>
-
-        <AboutTracker lastUpdatedLabel={lastUpdatedLabel} />
 
         <footer
           style={{
