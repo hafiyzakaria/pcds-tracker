@@ -803,7 +803,8 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
         aria-expanded={expanded}
         style={{
           width: "100%",
-          minHeight: expanded ? "190px" : "216px",
+          minWidth: 0,
+          minHeight: expanded ? "190px" : "263px",
           display: "grid",
           gridTemplateRows: expanded ? "auto 1fr auto" : "auto auto auto",
           alignContent: expanded ? "stretch" : "start",
@@ -816,7 +817,15 @@ function ProjectCard({ row, expanded, onToggle, previewCards }) {
           textAlign: "left",
         }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", gap: "12px", alignItems: "flex-start" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            gap: "12px",
+            alignItems: "flex-start",
+            minWidth: 0,
+          }}
+        >
           <div
             style={{
               display: "inline-flex",

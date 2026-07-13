@@ -8,6 +8,35 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 - Completed: The UI shows `LAST_UPDATED` from `src/trackerData.js` near the page description so readers can see how fresh the tracker is.
 
+### Add the Production SEO foundation
+
+- Completed on Production: `https://pcds2030.com` has canonical, Open Graph, Twitter, and
+  `WebSite` structured-data metadata, plus `robots.txt` and `sitemap.xml` using the canonical
+  Production domain.
+
+### Pre-render the initial dashboard content
+
+- Completed on Preview: Production and Preview build commands now pre-render the React dashboard
+  before browser hydration. The initial HTML includes the H1, introductory copy, project headings,
+  statuses, milestones, and source content.
+- Production status: Implementation is ready but must be selectively promoted to `main` after
+  review. Preview remains protected by Vercel's `noindex, nofollow` response header.
+
+### Consolidate the PCDS explanation into the introduction
+
+- Completed on Preview: The separate About section was removed. Two concise paragraphs beneath
+  the title now explain the strategy, economic target, dashboard purpose, and independent scope.
+- Production status: Ready to be promoted with the pre-rendering implementation after approval.
+
+### Stabilize collapsed project-card sizing
+
+- Completed on Preview: Collapsed desktop cards once again use the established shared minimum
+  height, while one-column mobile cards remain content-driven.
+- QA completed: All 26 desktop cards align at one height; status filters preserve the alignment;
+  multiple cards can remain expanded; and narrow mobile cards have no clipping, overlap, or
+  horizontal overflow.
+- Production status: Ready for review on `https://preview.pcds2030.com` before promotion.
+
 ## 1. Must Fix Before Production
 
 ### Add a production data review checklist
@@ -26,7 +55,29 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Risk level: medium
 - Suggested first task: Compare Preview and Production builds, note every visible behavior difference, and decide whether any difference beyond environment indicators is intentional.
 
+### Promote the approved SEO content changes without unfinished Preview work
+
+- What needs to be done: Move the pre-rendering implementation and approved two-paragraph
+  introduction to `main` without automatically merging unrelated Preview dashboard or data changes.
+- Why it matters: Production needs the indexable HTML improvements, while Preview must remain the
+  safe workspace for unfinished development.
+- Estimated difficulty: medium
+- Risk level: medium
+- Suggested first task: Create a release branch from current `main`, port only the approved SEO and
+  introduction changes, then run lint, Production build, raw-HTML checks, and `git diff --check`.
+
 ## 2. Should Improve Soon
+
+### Verify indexing after the SEO release
+
+- What needs to be done: After the pre-rendering and introduction reach Production, inspect the
+  live URL in Google Search Console and request indexing again if appropriate.
+- Why it matters: Repository changes make the page crawlable and understandable, but Google still
+  controls when it recrawls and reranks the site.
+- Estimated difficulty: low
+- Risk level: low
+- Suggested first task: Confirm the live HTML and canonical URL, then use URL Inspection for
+  `https://pcds2030.com/` and monitor the submitted sitemap.
 
 ### Add basic data-shape tests
 

@@ -42,6 +42,9 @@ Production and Preview builds pre-render the initial React view into `dist/index
 hydrate it in the browser. This keeps the existing interactions while making headings, project
 content, and explanatory copy available in the initial HTML.
 
+The pre-rendered introduction is intentionally compact: two paragraphs explain the PCDS 2030
+strategy and economic target, followed by the purpose and independent scope of this tracker.
+
 ## Run Locally
 
 Install dependencies:
@@ -159,7 +162,7 @@ Recommended solo-developer loop:
 4. Build with `npm run build:preview`.
 5. Push to `preview`.
 6. Review `https://preview.pcds2030.com`.
-7. Merge or promote to `main` only after approval.
+7. Merge or selectively promote only approved changes to `main`.
 8. Confirm `https://pcds2030.com`.
 
 This workflow prevents accidental public releases. It is recommended and common.
@@ -217,6 +220,21 @@ The build scripts write the correct custom domain into `dist/CNAME`:
 
 This prevents a preview build from accidentally carrying the production custom domain.
 
+## Search Visibility
+
+Production is the only environment intended to appear in search engines:
+
+- `https://pcds2030.com` is the canonical public URL.
+- Production includes canonical, Open Graph, Twitter, and `WebSite` structured-data metadata.
+- `public/robots.txt` and `public/sitemap.xml` point search engines to the Production domain.
+- Pre-rendering puts the page heading, two-paragraph introduction, project names, statuses,
+  milestones, and source content in the initial HTML.
+
+Preview remains a review environment even though its HTML is also pre-rendered. Vercel applies
+`X-Robots-Tag: noindex, nofollow` to all Preview routes through `vercel.json`, so
+`https://preview.pcds2030.com` should not be indexed. Do not remove that protection when
+promoting approved application changes to Production.
+
 ## Current Design Direction
 
 The current design is a compact civic-data tracker:
@@ -239,7 +257,6 @@ Important current risks:
 
 - Data freshness is manual.
 - Source links are not automatically checked.
-- `LAST_UPDATED` exists in data but is not displayed.
 - Most UI and styling live in one large `src/App.jsx` file.
 - There are no automated data-shape tests yet.
 

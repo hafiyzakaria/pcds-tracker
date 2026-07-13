@@ -23,16 +23,26 @@ The page uses one centered column with a maximum width of about `1040px`.
 Current layout order:
 
 1. Kicker and title.
-2. Short description.
-3. Summary metrics.
-4. Filter buttons.
-5. Two-column project-card grid on desktop.
-6. One-column project-card grid on mobile.
-7. Footer disclaimer.
+2. Two short introductory paragraphs covering the strategy and tracker purpose.
+3. Last-updated indicator.
+4. Summary metrics.
+5. Filter buttons.
+6. Two-column project-card grid on desktop.
+7. One-column project-card grid on mobile.
+8. Footer disclaimer and source-methodology note.
+
+The PCDS context belongs near the title so readers understand the dashboard at first glance.
+Keep it succinct and integrated with the introduction rather than placing a separate About section
+below the project grid.
 
 Filter controls provide status navigation before readers scan the project cards.
 
 Collapsed project cards prioritize category, title, status, milestone count/progress, next milestone, and the details affordance. Expanded cards keep evidence, milestone history, and source links close to the claims they support.
+
+Collapsed desktop cards use a shared minimum height so every two-column row remains visually
+aligned even when titles or milestone copy vary. Mobile cards return to content-driven heights in
+the one-column layout, and their internal grid and flex rows must be allowed to shrink so narrow
+screens do not clip card content.
 
 ## Typography
 
@@ -97,6 +107,7 @@ Current mobile changes:
 
 - Main padding reduces.
 - Project grid becomes one column.
+- Project cards remove the fixed desktop minimum height.
 - Summary metrics become two columns.
 - Desktop milestone metric is hidden.
 - Mobile milestone summary appears.
@@ -128,4 +139,6 @@ Development and Preview use the same project-card behavior so local review match
 - Avoid decorative gradients or marketing-style sections.
 - Keep status and milestone information easy to compare.
 - Keep source links close to the claims they support.
+- Keep the strategy context in the concise two-paragraph introduction; do not add a separate
+  promotional About section without explicit approval.
 - Test any card or typography change on mobile before release.

@@ -27,11 +27,22 @@ The current app is a single-page React site with:
 - Last updated indicator beneath the page description, sourced from `LAST_UPDATED` in `src/trackerData.js`.
 - Status filters for all, planning, ongoing, and completed projects.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
-- Introductory context explaining the strategy, its central economic target, and the independent tracker scope.
+- Two short introductory paragraphs explaining the strategy, its central economic target, and
+  the independent tracker purpose without adding a separate promotional About section.
 - Footer disclaimer stating that the tracker is independent and not affiliated with the Sarawak Government.
 
 The initial dashboard view is pre-rendered during the build and hydrated by React in the browser.
 This keeps the current interactions while making the public content available in the initial HTML.
+
+## Search Visibility
+
+Production at `https://pcds2030.com` is the canonical, indexable public site. Its SEO foundation
+includes canonical and social metadata, `WebSite` structured data, `robots.txt`, and a sitemap.
+The pre-rendered dashboard gives search engines meaningful content before client-side React runs.
+
+Preview at `https://preview.pcds2030.com` is for development review only. Vercel sends
+`X-Robots-Tag: noindex, nofollow` for every Preview route. Pre-rendering Preview improves review
+fidelity but does not make Preview eligible for Google indexing.
 
 ## Current Data Model
 
@@ -85,3 +96,4 @@ Current content risks:
 - Keep public claims tied to visible source links.
 - Avoid turning the site into a marketing landing page.
 - Preserve the independent-tracker disclaimer.
+- Keep Production indexable and Preview explicitly noindexed.
