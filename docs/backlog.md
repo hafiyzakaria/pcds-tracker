@@ -63,6 +63,9 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Evidence correction completed: The provisional combined Semenggoh and Piasau discovery-centre
   card was split into two PCDS-backed projects with separate RM30 million values, scope, milestones,
   and current public sources. Semenggoh Phase 1 completion remains unconfirmed.
+- Data refresh completed: Sungai Baji Agropark now reflects RM180 million reported state funding,
+  completed infrastructure and agricultural components, LCDA's anchor-company appointment, and
+  the still-unconfirmed operations and commercial-production milestones reported for 2026.
 
 ## 1. Must Fix Before Production
 
