@@ -60,6 +60,9 @@ This backlog documents known issues and recommended next tasks for the next deve
   Gas Pipeline timeline were updated from July and May 2026 public reporting. The Greenhouse Gas
   Emission Ordinance entry now includes the March 2026 NREB implementation update reported by the
   Borneo Post.
+- Evidence correction completed: The provisional combined Semenggoh and Piasau discovery-centre
+  card was split into two PCDS-backed projects with separate RM30 million values, scope, milestones,
+  and current public sources. Semenggoh Phase 1 completion remains unconfirmed.
 
 ## 1. Must Fix Before Production
 
