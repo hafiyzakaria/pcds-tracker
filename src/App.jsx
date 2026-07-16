@@ -13,7 +13,7 @@ const DEFAULT_ACCENT_COLOR = "#6b7280";
 const STATUS_META = {
   "Awaiting Decision": {
     label: "Ongoing",
-    order: 0,
+    order: 1,
     description: "delivery moving, pending approval, or awaiting next public decision",
   },
   "In Progress": {
@@ -23,31 +23,31 @@ const STATUS_META = {
   },
   Planning: {
     label: "Planning",
-    order: 2,
+    order: 0,
     description: "scope or delivery being shaped",
   },
   Operational: {
     label: "Completed",
-    order: 3,
+    order: 2,
     description: "in use or completed",
   },
   Designated: {
     label: "Completed",
-    order: 4,
+    order: 2,
     description: "outcome formally achieved",
   },
   Enacted: {
     label: "Completed",
-    order: 5,
+    order: 2,
     description: "law or policy in effect",
   },
 };
 
 const FILTERS = [
-  { id: "all", label: "All", statuses: null },
-  { id: "planning", label: STATUS_META.Planning.label, statuses: ["Planning"] },
-  { id: "ongoing", label: STATUS_META["In Progress"].label, statuses: ["Awaiting Decision", "In Progress"] },
-  { id: "delivered", label: STATUS_META.Operational.label, statuses: ["Operational", "Designated", "Enacted"] },
+  { id: "all", label: "All", publicStatus: null },
+  { id: "planning", label: STATUS_META.Planning.label, publicStatus: "Planning" },
+  { id: "ongoing", label: STATUS_META["In Progress"].label, publicStatus: "Ongoing" },
+  { id: "delivered", label: STATUS_META.Operational.label, publicStatus: "Completed" },
 ];
 
 function getStatusMeta(status) {
@@ -58,12 +58,26 @@ function getStatusMeta(status) {
   };
 }
 
+function getPublicStatusMeta(status, milestones) {
+  const statusMeta = getStatusMeta(status);
+  const hasOpenMilestone = milestones.some((milestone) => !milestone.done);
+
+  if (statusMeta.label === "Completed" && hasOpenMilestone) {
+    return {
+      ...STATUS_META["In Progress"],
+      description: "delivery remains open because at least one milestone is unfinished",
+    };
+  }
+
+  return statusMeta;
+}
+
 function filterRowsByStatus(rows, filter) {
-  if (!filter.statuses) {
+  if (!filter.publicStatus) {
     return rows;
   }
 
-  return rows.filter((row) => filter.statuses.includes(row.status));
+  return rows.filter((row) => row.statusMeta.label === filter.publicStatus);
 }
 
 function getMilestoneCountLabel(row) {
@@ -89,15 +103,17 @@ function getProjectRows() {
     const kind = ECONOMIC_SECTOR_IDS.has(sector.id) ? "sector" : "enabler";
 
     return sector.projects.map((project) => {
+      const displayName = project.displayName || project.name;
       const doneMilestones = project.milestones.filter((milestone) => milestone.done).length;
       const totalMilestones = project.milestones.length;
       const nextMilestone = project.milestones.find((milestone) => !milestone.done);
       const latestMilestone = [...project.milestones].reverse().find((milestone) => milestone.done);
-      const statusMeta = getStatusMeta(project.status);
+      const statusMeta = getPublicStatusMeta(project.status, project.milestones);
 
       return {
         ...project,
         id: `${sector.id}-${project.name}`,
+        displayName,
         sectorId: sector.id,
         sectorName: sector.name,
         sectorColor: sector.color,
@@ -120,7 +136,7 @@ function sortProjectRows(rows) {
       return a.attentionOrder - b.attentionOrder;
     }
 
-    return a.name.localeCompare(b.name);
+    return a.displayName.localeCompare(b.displayName);
   });
 }
 
@@ -139,8 +155,7 @@ function formatLastUpdated(value) {
   }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
-function StatusBadge({ status, accentColor }) {
-  const statusMeta = getStatusMeta(status);
+function StatusBadge({ status, statusMeta = getStatusMeta(status), accentColor }) {
   const tone = getAccentBadgeTone(accentColor);
 
   return (
@@ -247,13 +262,9 @@ function Metric({ value, label, accent = "#0d9488" }) {
 }
 
 function SummaryMetrics({ rows }) {
-  const active = rows.filter((row) => row.status === "In Progress").length;
-  const planning = rows.filter((row) => row.status === "Planning").length;
-  const awaiting = rows.filter((row) => row.status === "Awaiting Decision").length;
-  const ongoing = active + awaiting;
-  const completeLike = rows.filter((row) =>
-    ["Operational", "Designated", "Enacted"].includes(row.status)
-  ).length;
+  const planning = rows.filter((row) => row.statusMeta.label === "Planning").length;
+  const ongoing = rows.filter((row) => row.statusMeta.label === "Ongoing").length;
+  const completeLike = rows.filter((row) => row.statusMeta.label === "Completed").length;
   const doneMilestones = rows.reduce((sum, row) => sum + row.doneMilestones, 0);
   const totalMilestones = rows.reduce((sum, row) => sum + row.totalMilestones, 0);
   const milestoneProgress = totalMilestones ? (doneMilestones / totalMilestones) * 100 : 0;
@@ -641,47 +652,103 @@ function AccordionReveal({ expanded, children, className = "" }) {
   );
 }
 
+function formatMilestoneDate(value) {
+  const date = value?.trim();
+
+  if (!date || date.toLowerCase() === "tbd") {
+    return null;
+  }
+
+  if (date.toLowerCase() === "ongoing") {
+    return "Ongoing";
+  }
+
+  const yearQuarter = date.match(/^(\d{4})-Q([1-4])$/);
+  if (yearQuarter) {
+    return `Q${yearQuarter[2]} ${yearQuarter[1]}`;
+  }
+
+  const yearRange = date.match(/^(\d{4})-(\d{4})$/);
+  if (yearRange) {
+    return `${yearRange[1]}–${yearRange[2]}`;
+  }
+
+  const yearOnward = date.match(/^(\d{4})\+$/);
+  if (yearOnward) {
+    return `${yearOnward[1]} onward`;
+  }
+
+  const fullDate = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (fullDate) {
+    return new Intl.DateTimeFormat("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    }).format(new Date(Date.UTC(Number(fullDate[1]), Number(fullDate[2]) - 1, Number(fullDate[3]))));
+  }
+
+  const yearMonth = date.match(/^(\d{4})-(\d{2})$/);
+  if (yearMonth) {
+    return new Intl.DateTimeFormat("en-GB", {
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    }).format(new Date(Date.UTC(Number(yearMonth[1]), Number(yearMonth[2]) - 1, 1)));
+  }
+
+  return date;
+}
+
 function MilestoneList({ milestones, color = "#0d9488" }) {
   return (
     <div style={{ display: "grid", gap: "0" }}>
-      {milestones.map((milestone, index) => (
-        <div
-          key={`${milestone.date}-${index}`}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "86px minmax(0, 1fr)",
-            gap: "12px",
-            padding: "9px 0",
-            borderTop: index === 0 ? "1px solid #e5e7eb" : "1px solid #f1f5f9",
-          }}
-        >
-          <span
+      {milestones.map((milestone, index) => {
+        const formattedDate = formatMilestoneDate(milestone.date);
+
+        return (
+          <div
+            key={`${milestone.date}-${index}`}
             style={{
-              color: milestone.done ? color : "#9ca3af",
-              fontFamily: FONT_STACK,
-              fontSize: "11px",
-              fontWeight: 700,
+              display: "grid",
+              gridTemplateColumns: formattedDate ? "118px minmax(0, 1fr)" : "1fr",
+              gap: "12px",
+              padding: "9px 0",
+              borderTop: index === 0 ? "1px solid #e5e7eb" : "1px solid #f1f5f9",
             }}
           >
-            {milestone.date}
-          </span>
-          <span style={{ color: "#4b5563", fontSize: "13px", lineHeight: 1.45 }}>
-            {milestone.text}
-          </span>
-        </div>
-      ))}
+            {formattedDate && (
+              <span
+                style={{
+                  color: milestone.done ? color : "#9ca3af",
+                  fontFamily: FONT_STACK,
+                  fontSize: "11px",
+                  fontWeight: 700,
+                }}
+              >
+                {formattedDate}
+              </span>
+            )}
+            <span style={{ color: "#4b5563", fontSize: "13px", lineHeight: 1.45 }}>
+              {milestone.text}
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 }
 
 function CompletedMilestoneRows({ row }) {
   const loggedMilestones = row.milestones.filter((milestone) => milestone.done);
+  const isComplete = row.totalMilestones > 0 && row.doneMilestones === row.totalMilestones;
+  const visibleMilestones = isComplete ? loggedMilestones.slice(0, -1) : loggedMilestones;
 
-  if (loggedMilestones.length === 0) {
+  if (visibleMilestones.length === 0) {
     return null;
   }
 
-  return <MilestoneList milestones={loggedMilestones} color={row.sectorColor} />;
+  return <MilestoneList milestones={visibleMilestones} color={row.sectorColor} />;
 }
 
 function FollowingMilestones({ row }) {
@@ -698,26 +765,20 @@ function FollowingMilestones({ row }) {
   );
 }
 
-function formatNextMilestone(milestone) {
+function getMilestoneCalloutContent(milestone) {
   if (!milestone) {
-    return "No open milestone";
+    return { date: null, text: "No open milestone" };
   }
 
-  const phaseOnlyDates = new Set(["ongoing"]);
-  const date = milestone.date?.trim();
   const text = milestone.text.replace(/^(ongoing|planning|completed):\s*/i, "");
 
-  if (!date || phaseOnlyDates.has(date.toLowerCase())) {
-    return text;
-  }
-
-  return `${date}: ${text}`;
+  return { date: formatMilestoneDate(milestone.date), text };
 }
 
 function NextMilestoneCallout({ row, expanded }) {
   const isComplete = row.totalMilestones > 0 && row.doneMilestones === row.totalMilestones;
   const completionMilestone = isComplete ? [...row.milestones].reverse().find((milestone) => milestone.done) : null;
-  const text = formatNextMilestone(isComplete ? completionMilestone : row.nextMilestone);
+  const content = getMilestoneCalloutContent(isComplete ? completionMilestone : row.nextMilestone);
 
   return (
     <div
@@ -730,17 +791,33 @@ function NextMilestoneCallout({ row, expanded }) {
         backgroundColor: `${row.sectorColor}05`,
       }}
     >
-      <div
-        style={{
-          color: row.sectorColor,
-          fontFamily: FONT_STACK,
-          fontSize: "10px",
-          fontWeight: 850,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-        }}
-      >
-        {isComplete ? "Completed" : "Next Milestone"}
+      <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "12px" }}>
+        <span
+          style={{
+            color: row.sectorColor,
+            fontFamily: FONT_STACK,
+            fontSize: "10px",
+            fontWeight: 850,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+          }}
+        >
+          {isComplete ? "Completed" : "Next Milestone"}
+        </span>
+        {content.date && (
+          <span
+            style={{
+              color: "#64748b",
+              fontFamily: FONT_STACK,
+              fontSize: "11px",
+              fontWeight: 750,
+              lineHeight: 1.3,
+              textAlign: "right",
+            }}
+          >
+            {content.date}
+          </span>
+        )}
       </div>
       <div
         style={{
@@ -751,7 +828,7 @@ function NextMilestoneCallout({ row, expanded }) {
           overflowWrap: "anywhere",
         }}
       >
-        {text}
+        {content.text}
       </div>
     </div>
   );
@@ -882,15 +959,21 @@ function ProjectCard({ row, expanded, onToggle }) {
 
         <div>
           <h3
+            className="project-card-title"
             style={{
               margin: 0,
+              minHeight: expanded ? 0 : "44px",
+              display: expanded ? "block" : "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: expanded ? "unset" : 2,
+              overflow: "hidden",
               color: "#1a1a2e",
               fontSize: "18px",
               fontWeight: 800,
               lineHeight: 1.22,
             }}
           >
-            {row.name}
+            {row.displayName}
           </h3>
           <div
             style={{
@@ -901,7 +984,7 @@ function ProjectCard({ row, expanded, onToggle }) {
               marginTop: expanded ? "12px" : "10px",
             }}
           >
-            <StatusBadge status={row.status} accentColor={row.sectorColor} />
+            <StatusBadge status={row.status} statusMeta={row.statusMeta} accentColor={row.sectorColor} />
             {!expanded && <CollapsedMilestoneSummary row={row} />}
           </div>
           <AccordionReveal expanded={expanded} className="project-card-intro-reveal">

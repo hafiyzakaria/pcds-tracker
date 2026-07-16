@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-07-13";
+export const LAST_UPDATED = "2026-07-16";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -32,6 +32,7 @@ export const SECTORS = [
     projects: [
       {
         name: "SMD Semiconductor — GaN Chip Development",
+        displayName: "Gallium Nitride (GaN) Chip Development",
         status: "In Progress",
         statusColor: "#d97706",
         lead: "SMD Semiconductor (State-owned)",
@@ -40,7 +41,7 @@ export const SECTORS = [
           "Sarawak's state-owned semiconductor venture developing compound semiconductor chips based on Gallium Nitride (GaN), enhanced by AI. The keteq.GaN and keteq.ai platforms have been publicly unveiled, with global IP registration and commercialisation still the next visible proof points.",
         milestones: [
           { date: "2026-Q1", text: "Premier announced GaN chip development success", done: true },
-          { date: "2026", text: "Global IP registration and commercialisation planned", done: false },
+          { date: "2026", text: "Global IP registration and commercialisation", done: false },
         ],
         sources: [
           { label: "DayakDaily — SMD Advanced Chip Integration Centre (Sep 2025)", url: "https://dayakdaily.com/sarawak-to-establish-smd-advanced-chip-integration-centre-to-power-semiconductor-leap/" },
@@ -58,6 +59,7 @@ export const SECTORS = [
     projects: [
       {
         name: "RM1 Billion Paddy Infrastructure Programme",
+        displayName: "Paddy Infrastructure Programme",
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Sarawak Government / Department of Agriculture",
@@ -68,7 +70,7 @@ export const SECTORS = [
           { date: "2024-11", text: "DID restructured for agricultural and urban infrastructure", done: true },
           { date: "2025-08", text: "500,000-tonne annual rice output goal announced", done: true },
           { date: "2026-02", text: "Minister warned against diverting paddy infrastructure to oil palm", done: true },
-          { date: "2026", text: "Farmer clustering and paddy land leasing planned", done: false },
+          { date: "2026", text: "Farmer clustering and paddy land leasing", done: false },
           { date: "2030", text: "500,000-tonne annual rice output goal", done: false },
         ],
         sources: [
@@ -119,7 +121,8 @@ export const SECTORS = [
     color: "#ce1126",
     projects: [
       {
-        name: "Sarawak Delta Geopark",
+        name: "Sarawak Delta Geopark - UNESCO Global Geopark Designation",
+        displayName: "Sarawak Delta UNESCO Global Geopark",
         status: "Designated",
         statusColor: "#16a34a",
         lead: "Sarawak Government / UNESCO",
@@ -130,18 +133,17 @@ export const SECTORS = [
           { date: "2025-06", text: "UNESCO field evaluation completed", done: true },
           { date: "2025-09", text: "UNESCO Council acceptance secured", done: true },
           { date: "2026-04-27", text: "Recognised as a UNESCO Global Geopark", done: true },
-          { date: "Ongoing", text: "Development of tourism and community geopark programmes", done: false },
         ],
         sources: [
           { label: "DayakDaily — UNESCO approval (Apr 2026)", url: "https://dayakdaily.com/sarawak-delta-geopark-gets-unesco-approval/" },
           { label: "DayakDaily — Borneo's Cradle of Origin (Apr 2026)", url: "https://dayakdaily.com/borneos-cradle-of-origin-puts-sarawak-delta-geopark-on-world-map-with-unesco-recognition/" },
-          { label: "DayakDaily — Heritage tourism boost (Apr 2026)", url: "https://dayakdaily.com/unesco-recognition-of-sarawak-delta-geopark-boosts-heritage-tourism-potential/" },
         ],
       },
       {
         name: "Niah National Park — UNESCO World Heritage",
-        status: "Designated",
-        statusColor: "#16a34a",
+        displayName: "Niah National Park World Heritage Site",
+        status: "In Progress",
+        statusColor: "#d97706",
         lead: "Sarawak Forestry Corporation / UNESCO",
         value: "Not disclosed",
         summary: "Niah Caves complex \u2014 one of SE Asia's most important archaeological sites, preserving at least 50,000 years of human interaction with rainforest environments. Inscribed as a UNESCO World Heritage Site in 2024. Premier heritage tourism draw.",
@@ -164,24 +166,28 @@ export const SECTORS = [
     color: "#2d6a4f",
     projects: [
       {
-        name: "Greenhouse Gas Emission Ordinance 2023",
-        status: "Enacted",
-        statusColor: "#16a34a",
+        name: "Environment (Reduction of Greenhouse Gases Emission) Ordinance 2023",
+        displayName: "Greenhouse Gas Emission Ordinance 2023",
+        status: "In Progress",
+        statusColor: "#d97706",
         lead: "Sarawak Government",
         value: "Not applicable",
         summary:
-          "Mandates GHG emissions reporting and supports development of carbon markets in Sarawak. Part of the state's broader environmental governance framework alongside the Land (Carbon Storage) Rules 2022 for CCUS and the Natural Resources and Environment Bill 2024.",
+          "Provides the state framework for regulating and managing greenhouse gas emissions. NREB reported in March 2026 that scheduled economic sectors must register and submit annual carbon emissions reports, supported by accredited external auditors and an integrated Greenhouse Gas Management System.",
         milestones: [
           { date: "2023", text: "Ordinance enacted", done: true },
-          { date: "2024", text: "Natural Resources and Environment Bill introduced", done: true },
-          { date: "Ongoing", text: "GHG reporting and carbon market implementation", done: false },
+          { date: "2025", text: "Accredited external auditor rules established", done: true },
+          { date: "2026-03-12", text: "Integrated Greenhouse Gas Management System reported in place", done: true },
+          { date: "Annual", text: "Scheduled sectors submit verified emissions reports", done: false },
         ],
         sources: [
+          { label: "Borneo Post — Climate governance implementation update (Mar 2026)", url: "https://www.theborneopost.com/2026/03/12/sarawak-intensifies-climate-governance-on-path-to-net-zero-2050/" },
           { label: "FULCRUM — Sarawak's low-carbon future", url: "https://fulcrum.sg/envisioning-a-low-carbon-future-sarawaks-journey-towards-sustainable-development/" },
         ],
       },
       {
         name: "Semenggoh and Piasau Discovery Centre Development",
+        displayName: "Semenggoh and Piasau Discovery Centres",
         status: "Planning",
         statusColor: "#4f46e5",
         lead: "Sarawak Forestry Corporation / Sarawak Government",
@@ -216,7 +222,7 @@ export const SECTORS = [
           { date: "2025-11-13", text: "Independent technical review completed", done: true },
           { date: "2026-02-25", text: "Jugan mining lease renewal conditionally approved", done: true },
           { date: "2026-05-13", text: "Conditional lease-renewal terms received", done: true },
-          { date: "TBD", text: "Mining lease conditions finalised", done: false },
+          { date: "TBD", text: "Finalised mining lease conditions", done: false },
         ],
         sources: [
           { label: "Besra Gold — Independent technical review (Nov 2025)", url: "https://www.besra.com/independent-technical-review-and-corporate-update/" },
@@ -239,13 +245,13 @@ export const SECTORS = [
         lead: "JKR / Sarawak Government",
         value: "RM1.52 billion (RM500M equipment fronted)",
         summary:
-          "Sarawak's first dedicated cancer centre in Kota Samarahan. PM directed JKR to expedite tendering in Q1 2026; Sarawak fronted RM500M for medical equipment. Newer public reporting says the project has entered tender procurement, with construction targeted to start in early 2027 and completion expected by 2032.",
+          "Sarawak's first dedicated cancer centre in Kota Samarahan. Sarawak fronted RM500M for medical equipment, and the project entered design-and-build procurement in July 2026. Construction is targeted to start in January 2027, with completion expected by 2032.",
         milestones: [
           { date: "2025-12-03", text: "Preliminary RM1.52B cost estimate announced", done: true },
           { date: "2025-12-16", text: "Prime Minister directed expedited Q1 2026 tendering", done: true },
           { date: "2025-12-17", text: "Sarawak committed RM500M for medical equipment", done: true },
-          { date: "2026-05", text: "Tender procurement underway", done: false },
-          { date: "2027-Q1", text: "Construction planned to begin", done: false },
+          { date: "2026-07-07", text: "Design-and-build procurement stage confirmed", done: true },
+          { date: "2027-Q1", text: "Construction begins", done: false },
           { date: "2032", text: "Project completion expected", done: false },
         ],
         sources: [
@@ -269,6 +275,7 @@ export const SECTORS = [
     projects: [
       {
         name: "FutureData — Kuching Data Centre Park",
+        displayName: "Kuching Data Centre Park",
         status: "In Progress",
         statusColor: "#d97706",
         lead: "TSG Group / Global Telecommunications Group",
@@ -303,7 +310,6 @@ export const SECTORS = [
         milestones: [
           { date: "2020", text: "Microalgae carbon-capture project began", done: true },
           { date: "2023-05-10", text: "Industrial microalgae facility officially launched", done: true },
-          { date: "Ongoing", text: "Annual CO2 capture and biomass output reporting", done: false },
         ],
         sources: [
           { label: "Sarawak Energy — C4 Sarawak launch (May 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/official-launching-of-sarawaks-first-industrial-microalgae-production-facility-chitose-carbon-capture-central-sarawak" },
@@ -320,8 +326,8 @@ export const SECTORS = [
         milestones: [
           { date: "Official report", text: "Identified as a PCDS 2030 bioindustry platform", done: true },
           { date: "2025", text: "BioVerde established with park operations mandate", done: true },
-          { date: "2027-Q3", text: "Phase 1 construction completion planned", done: false },
-          { date: "2035", text: "Full park operations planned", done: false },
+          { date: "2027-Q3", text: "Phase 1 construction completion", done: false },
+          { date: "2035", text: "Full park operations", done: false },
         ],
         sources: [
           { label: "SBC — Sarawak Bioindustrial Park commercialisation", url: "https://www.sbc.org.my/index.php/commercialisation" },
@@ -331,6 +337,7 @@ export const SECTORS = [
       },
       {
         name: "PETRONAS Kasawari Carbon Capture and Storage Project",
+        displayName: "Kasawari Carbon Capture and Storage Project",
         status: "In Progress",
         statusColor: "#d97706",
         lead: "PETRONAS / MMHE",
@@ -357,6 +364,7 @@ export const SECTORS = [
     projects: [
       {
         name: "Yayasan Sarawak International Secondary Schools Expansion",
+        displayName: "Yayasan Sarawak International Schools Expansion",
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Yayasan Sarawak / Sarawak Government",
@@ -367,7 +375,7 @@ export const SECTORS = [
           { date: "2022-04-03", text: "Petra Jaya campus began operations", done: true },
           { date: "2025-09", text: "Three campuses completed statewide", done: true },
           { date: "2025-09", text: "Sibu campus opening date announced", done: true },
-          { date: "2027-2028", text: "Remaining three campuses planned for completion", done: false },
+          { date: "2027-2028", text: "Remaining three campuses completed", done: false },
         ],
         sources: [
           { label: "YSISS — Official site", url: "https://ysiss.edu.my/" },
@@ -387,8 +395,9 @@ export const SECTORS = [
     projects: [
       {
         name: "SCORE — Sarawak Corridor of Renewable Energy",
-        status: "Operational",
-        statusColor: "#16a34a",
+        displayName: "Sarawak Corridor of Renewable Energy (SCORE)",
+        status: "In Progress",
+        statusColor: "#d97706",
         lead: "RECODA",
         value: "RM125 billion reported investment",
         summary:
@@ -434,7 +443,7 @@ export const SECTORS = [
           { date: "2021", text: "Phase 1 construction commenced", done: true },
           { date: "2025-09-11", text: "Phase 2 officially launched", done: true },
           { date: "2026-04", text: "Phase 1 reached 70.05 percent progress", done: true },
-          { date: "2027", text: "Phase 1 completion expected", done: false },
+          { date: "2027", text: "Expected Phase 1 completion", done: false },
           { date: "2029", text: "Phase 2 completion scheduled", done: false },
         ],
         sources: [
@@ -457,15 +466,18 @@ export const SECTORS = [
         lead: "PETROS / Sarawak Government",
         value: "RM1 billion committed",
         summary:
-          "Approximately 70 km gas pipeline intended to supply Samalaju Industrial Park and a Bintulu combined-cycle power station. PETROS committed RM1 billion and pipe manufacturing was reported in November 2024, but offshore installation completion and gas-in-service status remain publicly unconfirmed.",
+          "Approximately 70 km gas pipeline intended to supply Samalaju Industrial Park and a Bintulu combined-cycle power station. The offshore section was reported completed in October 2025, and Bintulu Port Authority published a notice for pipeline pre-commissioning activities in May 2026. Progressive commercial operations are now expected from 2027.",
         milestones: [
           { date: "2023", text: "Sarawak Gas Roadmap pipeline component documented", done: true },
           { date: "2024-11-04", text: "RM1B commitment and pipe manufacturing reported", done: true },
-          { date: "2025-11", text: "Offshore pipeline installation completion", done: false },
-          { date: "TBD", text: "Gas supply enters service", done: false },
+          { date: "2025-10", text: "Offshore pipeline section completed", done: true },
+          { date: "2026-05-12", text: "Pipeline pre-commissioning activities notified", done: true },
+          { date: "2027", text: "Progressive commercial operations expected to begin", done: false },
         ],
         sources: [
           { label: "The Star — RM1bil gas pipeline plan (Nov 2024)", url: "https://www.thestar.com.my/business/business-news/2024/11/04/rm1bil-gas-pipeline-plan" },
+          { label: "Bintulu Port Authority — Pipeline pre-commissioning notice (May 2026)", url: "https://www.bpa.gov.my/web/home/notice_view/0/439/" },
+          { label: "Sarawak Tribune — Samalaju pipeline operations from 2027 (May 2026)", url: "https://www.sarawaktribune.com/samalaju-power-pipeline-ready-by-2027/" },
         ],
       },
       {
@@ -479,7 +491,6 @@ export const SECTORS = [
         milestones: [
           { date: "2024-12", text: "60MW/82MWh system energised", done: true },
           { date: "2025-02-14", text: "Utility-scale BESS commissioning announced", done: true },
-          { date: "Ongoing", text: "Grid services and performance monitoring", done: false },
         ],
         sources: [
           { label: "Sarawak Energy — Sejingkat BESS commissioned (Feb 2025)", url: "https://www.sarawakenergy.com/media-info/media-releases/2025/sarawak-energy-strengthens-grid-resilience-with-battery-energy-storage-system" },
@@ -487,6 +498,7 @@ export const SECTORS = [
       },
       {
         name: "Sarawak-Singapore Electricity Interconnection",
+        displayName: "Sarawak-Singapore Electricity Interconnection",
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Sarawak Energy / Sembcorp Utilities",
@@ -514,6 +526,7 @@ export const SECTORS = [
     projects: [
       {
         name: "Miri Port Kuala Baram Capital Dredging",
+        displayName: "Kuala Baram Capital Dredging",
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Miri Port Authority / Rimbun Prima-CCCC JV",
@@ -524,7 +537,7 @@ export const SECTORS = [
           { date: "2024-06-19", text: "RM238M dredging contract awarded", done: true },
           { date: "2024-12-09", text: "Works reported ahead of schedule", done: true },
           { date: "2026-05-08", text: "Dredging reported in full swing", done: true },
-          { date: "2026-Q4", text: "Dredging completion targeted", done: false },
+          { date: "2026-Q4", text: "Targeted dredging completion", done: false },
         ],
         sources: [
           { label: "Dredging Today — Kuala Baram contract award (Jun 2024)", url: "https://www.dredgingtoday.com/2024/06/19/malaysian-chinese-jv-wins-miri-port-dredging-contract/" },
@@ -534,16 +547,17 @@ export const SECTORS = [
       },
       {
         name: "Sarawak River Aids to Navigation and Surveillance System",
-        status: "Operational",
-        statusColor: "#16a34a",
+        displayName: "Sarawak River Navigation and Surveillance System",
+        status: "In Progress",
+        statusColor: "#d97706",
         lead: "Sarawak Rivers Board / Ministry of Transport Sarawak",
         value: "Not disclosed",
         summary:
-          "Sarawak River navigation-safety system combining aids to navigation with vessel surveillance and monitoring. The Transport Minister reported in December 2025 that the Sungai Sarawak VTMS was fully operational, while Sarawak Rivers Board had installed 65 new navigation aids across five divisions.",
+          "This card currently tracks the operational Sarawak River navigation-safety system together with the related Miri River system under construction. The Transport Minister reported in December 2025 that the Sungai Sarawak VTMS was fully operational and the Sungai Miri system was targeted for completion in Q3 2027.",
         milestones: [
           { date: "2023-04-27", text: "First-phase installation commenced", done: true },
           { date: "2025-10-31", text: "Sarawak River VTMS fully operational", done: true },
-          { date: "2027-Q3", text: "Miri River system completion targeted", done: false },
+          { date: "2027-Q3", text: "Miri River system completion", done: false },
         ],
         sources: [
           { label: "Borneo Post — Sarawak River VTMS fully operational (Dec 2025)", url: "https://www.theborneopost.com/2025/12/02/lee-sarawak-rivers-board-installs-65-new-navigation-aids-to-boost-safety/" },
@@ -551,6 +565,7 @@ export const SECTORS = [
       },
       {
         name: "KUTS — Kuching Urban Transportation System",
+        displayName: "Kuching Urban Transportation System (KUTS)",
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Sarawak Metro Sdn Bhd",
@@ -563,7 +578,7 @@ export const SECTORS = [
           { date: "2026-04", text: "Dedicated frequency spectrum secured for ART operations", done: true },
           { date: "2026-Q4", text: "Blue Line passenger service scheduled to begin", done: false },
           { date: "2026-Q4", text: "Rembus hydrogen plant relocation scheduled for completion", done: false },
-          { date: "TBD", text: "Hydrogen-powered feeder bus network planned", done: false },
+          { date: "TBD", text: "Hydrogen-powered feeder bus network rollout", done: false },
         ],
         sources: [
           { label: "DayakDaily — ART Q4 2026 operations", url: "https://dayakdaily.com/hydrogen-powered-art-to-begin-service-in-kuching-in-final-quarter-of-2026-premier/" },
@@ -575,6 +590,7 @@ export const SECTORS = [
       },
       {
         name: "Bintulu Port — State Control Handover",
+        displayName: "Bintulu Port Handover to Sarawak",
         status: "Operational",
         statusColor: "#16a34a",
         lead: "Sarawak Government / Federal Government",
@@ -613,9 +629,9 @@ export const SECTORS = [
           "1,285MW hydroelectric dam on the Baleh River in Kapit Division, led by Sarawak Energy. Public sources describe Baleh HEP as a concrete-faced rockfill dam, with construction completion targeted in 2026, operational generation targeted by 2028, and the 1,285MW capacity expected to contribute to Sarawak's 2030 large-scale hydropower outlook.",
         milestones: [
           { date: "2025-08", text: "1,285MW dam scope publicly confirmed", done: true },
-          { date: "2026", text: "Planned completion of dam construction", done: false },
-          { date: "2028", text: "Electricity generation planned to begin", done: false },
-          { date: "2030", text: "Planned 1,285MW contribution to Sarawak's hydropower capacity", done: false },
+          { date: "2026", text: "Dam construction completion", done: false },
+          { date: "2028", text: "Electricity generation begins", done: false },
+          { date: "2030", text: "1,285MW contribution to Sarawak's hydropower capacity", done: false },
         ],
         sources: [
           { label: "DayakDaily — Green revolution supercharging Sarawak energy (Aug 2025)", url: "https://dayakdaily.com/green-revolution-supercharging-sarawaks-energy-prowess/" },
@@ -644,6 +660,7 @@ export const SECTORS = [
       },
       {
         name: "Green Hydrogen Economy — H2ornbill & H2biscus",
+        displayName: "H2biscus and H2ornbill Hydrogen Projects",
         status: "Planning",
         statusColor: "#4f46e5",
         lead: "SEDC Energy / Gentari (Petronas)",
@@ -651,9 +668,9 @@ export const SECTORS = [
         summary:
           "Large-scale green hydrogen production in Bintulu. Sarawak H2 Hub (JV between SEDC Energy and Gentari) to be sole developer/operator. The Rembus hydrogen plant relocation supports KUTS fuel supply, while H2ornbill and H2biscus target commercial hydrogen and derivatives production from 2028.",
         milestones: [
-          { date: "2026-Q4", text: "Rembus hydrogen plant relocation and upgrade planned", done: false },
-          { date: "2028", text: "Commercial production planned for H2ornbill and H2biscus", done: false },
-          { date: "2028+", text: "Large-scale hydrogen derivatives production and export planned", done: false },
+          { date: "2026-Q4", text: "Rembus hydrogen plant relocation and upgrade", done: false },
+          { date: "2028", text: "Commercial production begins for H2ornbill and H2biscus", done: false },
+          { date: "2028+", text: "Large-scale hydrogen derivatives production and export", done: false },
         ],
         sources: [
           { label: "DayakDaily — H2ornbill & H2biscus hydrogen economy (Aug 2025)", url: "https://dayakdaily.com/sarawak-powers-ahead-in-hydrogen-economy/" },
@@ -675,7 +692,7 @@ export const SECTORS = [
           { date: "2025-08-19", text: "December operations start announced", done: true },
           {
             date: "2026",
-            text: "Planned addition of 120MW floating solar capacity",
+            text: "Addition of 120MW floating solar capacity",
             done: false,
           },
           { date: "TBD", text: "Commercial operations commencement", done: false },

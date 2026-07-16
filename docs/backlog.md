@@ -44,6 +44,23 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Environment differences are limited to deployment, domain, indexing policy, favicon, and the
   Development or Preview badge.
 
+### Standardize card titles, statuses, and milestones
+
+- Completed on Preview: Public card titles now use project-first naming, acronyms in parentheses,
+  and optional `displayName` values while retaining canonical names for stable identity.
+- Completed on Preview: Milestone dates now use consistent reader-facing formats, with dates
+  separated from milestone descriptions in collapsed cards.
+- Completed on Preview: Badges, filters, sorting, and summary counts now follow one public-status
+  rule: a card is `Completed` only when every delivery milestone displayed on it is complete.
+- Completed on Preview: Routine operational work was removed from completion milestones, and the
+  expanded milestone list no longer repeats the milestone shown in the next-or-completed callout.
+- Completed on Preview: Future milestone wording now states the outcome directly and avoids a
+  redundant `planned` qualifier when the date and open state already communicate future delivery.
+- Data refresh completed: The Sarawak Cancer Centre procurement milestone and Bintulu-Samalaju
+  Gas Pipeline timeline were updated from July and May 2026 public reporting. The Greenhouse Gas
+  Emission Ordinance entry now includes the March 2026 NREB implementation update reported by the
+  Borneo Post.
+
 ## 1. Must Fix Before Production
 
 ### Add a production data review checklist

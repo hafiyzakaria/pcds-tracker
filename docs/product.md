@@ -73,6 +73,8 @@ The UI maps detailed statuses into simpler user-facing labels:
 
 This keeps the public interface simple while preserving more specific source-data states in the data file.
 
+For reader clarity, a card displays as `Completed` only when every delivery milestone shown on that card is complete. Recurring operational activities such as monitoring, annual reporting, conservation, or routine service delivery belong in the summary rather than remaining permanently open delivery milestones. Umbrella programmes and mixed-scope cards remain `Ongoing` while a genuine delivery milestone is still open.
+
 ## Environment Workflow
 
 The product now has three environments:

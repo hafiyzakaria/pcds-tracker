@@ -28,7 +28,7 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-07-13`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-07-16`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
@@ -58,7 +58,8 @@ Category fields inside `SECTORS`:
 
 Project fields:
 
-- `name`: displayed project name.
+- `name`: canonical project name used for stable project identity.
+- `displayName`: optional shorter public title. Use it when an organisation prefix, acronym-first construction, or descriptive suffix makes the canonical name harder to scan.
 - `status`: detailed source-data status such as `Planning`, `In Progress`, `Awaiting Decision`, `Operational`, `Designated`, or `Enacted`.
 - `statusColor`: stored in data but the current UI mainly uses category accent color for badges.
 - `lead`: lead party or parties shown in the card facts.
@@ -72,6 +73,13 @@ Milestone fields:
 - `date`: display date, phase, target, or placeholder such as `Ongoing`, `TBD`, or `Before 2031`.
 - `text`: canonical milestone statement rendered in both collapsed and expanded card states.
 - `done`: boolean used to count completed milestones, draw progress indicators, split completed and remaining milestones, and select the next open milestone.
+
+Milestone date display standard:
+
+- Keep source values compact and sortable where possible: `YYYY-MM-DD`, `YYYY-MM`, `YYYY-Q#`, or `YYYY`.
+- Use `TBD` only when no reliable date has been published; the UI omits the date label.
+- Use `Ongoing` only for continuous activity without a single completion date.
+- The UI formats full dates, month targets, quarter targets, ranges, and open-ended years consistently rather than exposing the compact source syntax directly.
 
 Legacy `shortText` aliases have been removed. Milestones now use one canonical `text` value in every card state.
 
@@ -126,7 +134,7 @@ Rules to use for future maintenance:
 - Do not repeat the project name when the card title already provides the context.
 - Avoid `Target:` prefixes, slash-separated alternatives, vague `rollout` wording, and internal research tasks such as confirming a project's status.
 - Write completed milestones with a definitive past-tense outcome, such as `Construction officially began` or `Contract awarded`.
-- Write future milestones with one evidence-supported qualifier, such as `Planned`, `Scheduled`, or `Expected`, and keep `done: false` until completion is confirmed.
+- Write future milestones as concise outcomes or actions and keep `done: false` until completion is confirmed. Do not add `planned` when the milestone date and open state already communicate that the outcome is prospective.
 - Distinguish construction completion, commissioning, operations commencement, and commercial operation. These terms describe different project stages and must not be used interchangeably.
 - Keep supporting context, uncertainty, and attribution in the project summary and sources rather than lengthening the milestone statement.
 
@@ -137,7 +145,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 ### SMD Semiconductor - GaN Chip Development
 
 - Current dashboard status: `In Progress`
-- Current next milestone: Global IP registration and commercialisation planned
+- Current next milestone: Global IP registration and commercialisation
 - Sources currently used:
 - [DayakDaily - SMD Advanced Chip Integration Centre (Sep 2025)](https://dayakdaily.com/sarawak-to-establish-smd-advanced-chip-integration-centre-to-power-semiconductor-leap/) - Publisher: DayakDaily; type: news report; date: Sep 2025; appears to support the SMD centre/chip-development context.
 - [DayakDaily - keteq.GaN and AI converter unveiled (Oct 2025)](https://dayakdaily.com/smd-semiconductor-unveils-keteq-gan-ai-convertor-in-london-cementing-sarawak-as-tech-leader/) - Publisher: DayakDaily; type: news report; date: Oct 2025; appears to support platform/product unveiling claims.
@@ -147,7 +155,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 ### RM1 Billion Paddy Infrastructure Programme
 
 - Current dashboard status: `In Progress`
-- Current next milestone: Farmer clustering and paddy land leasing planned
+- Current next milestone: Farmer clustering and paddy land leasing
 - Sources currently used:
 - [DayakDaily - RM1B allocation (Jun 2024)](https://dayakdaily.com/sarawak-allocates-rm1-bln-for-large-scale-paddy-cultivation-to-boost-rice-self-sufficiency/) - Publisher: DayakDaily; type: news report; date: Jun 2024; appears to support allocation, value, and paddy infrastructure scope.
 - [DayakDaily - Minister warns against misuse (Feb 2026)](https://dayakdaily.com/rm1-bln-in-infra-at-stake-minister-warns-against-misuse-of-paddy-facilities-for-oil-palm/) - Publisher: DayakDaily; type: news report; date: Feb 2026; appears to support implementation guardrails and paddy-only use.
@@ -155,19 +163,18 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - [DayakDaily - Overtake Kedah as rice bowl (Aug 2025)](https://dayakdaily.com/sarawak-to-overtake-kedah-as-nations-rice-bowl-by-2030-eyes-global-export-future/) - Publisher: DayakDaily; type: news report; date: Aug 2025; appears to support broader rice-self-sufficiency/export framing.
 - Gaps or uncertainty: no official agriculture department page or project implementation dashboard is encoded; physical infrastructure progress is not field-mapped.
 
-### Sarawak Delta Geopark
+### Sarawak Delta Geopark - UNESCO Global Geopark Designation
 
 - Current dashboard status: `Designated`
-- Current next milestone: Development of tourism and community geopark programmes
+- Current next milestone: none; the designation milestones are complete
 - Sources currently used:
 - [DayakDaily - UNESCO approval (Apr 2026)](https://dayakdaily.com/sarawak-delta-geopark-gets-unesco-approval/) - Publisher: DayakDaily; type: news report; date: Apr 2026; appears to support UNESCO approval/designation.
 - [DayakDaily - Borneo's Cradle of Origin (Apr 2026)](https://dayakdaily.com/borneos-cradle-of-origin-puts-sarawak-delta-geopark-on-world-map-with-unesco-recognition/) - Publisher: DayakDaily; type: news report; date: Apr 2026; appears to support branding and designation context.
-- [DayakDaily - Heritage tourism boost (Apr 2026)](https://dayakdaily.com/unesco-recognition-of-sarawak-delta-geopark-boosts-heritage-tourism-potential/) - Publisher: DayakDaily; type: news report; date: Apr 2026; appears to support tourism potential and post-designation rollout context.
-- Gaps or uncertainty: no direct UNESCO page is encoded for the geopark; ongoing rollout is open-ended.
+- Gaps or uncertainty: no direct UNESCO page is encoded for the geopark. The card is scoped to the completed designation effort rather than open-ended tourism and community programmes.
 
 ### Niah National Park - UNESCO World Heritage
 
-- Current dashboard status: `Designated`
+- Current dashboard status: `In Progress`
 - Current next milestone: Site conservation and visitor facility improvements
 - Sources currently used:
 - [UNESCO - Niah World Heritage listing](https://whc.unesco.org/en/list/1014) - Publisher: UNESCO; type: official international body; date: not encoded in label; appears to support inscription/designation and heritage-site facts.
@@ -176,23 +183,26 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 ### Greenhouse Gas Emission Ordinance 2023
 
-- Current dashboard status: `Enacted`
-- Current next milestone: GHG reporting and carbon market implementation
+- Canonical legislation name: `Environment (Reduction of Greenhouse Gases Emission) Ordinance 2023`
+- Current dashboard status: `In Progress`
+- Current next milestone: scheduled sectors submit verified emissions reports annually
 - Sources currently used:
+- [Borneo Post - Climate governance implementation update (Mar 2026)](https://www.theborneopost.com/2026/03/12/sarawak-intensifies-climate-governance-on-path-to-net-zero-2050/) - Publisher: Borneo Post; type: news report quoting NREB; date: 12 Mar 2026; supports annual reporting requirements, accredited external-auditor rules, and the integrated Greenhouse Gas Management System.
 - [FULCRUM - Sarawak's low-carbon future](https://fulcrum.sg/envisioning-a-low-carbon-future-sarawaks-journey-towards-sustainable-development/) - Publisher: FULCRUM; type: policy analysis/public source; date: not encoded in active source label; appears to support the ordinance, carbon-market context, and low-carbon policy framing.
-- Gaps or uncertainty: the audit notes legislative items should be verifiable via official gazettes, but no official ordinance/gazette source is encoded in active dashboard data.
+- Gaps or uncertainty: the 2026 update is a news report quoting NREB rather than a direct NREB implementation page, and no official ordinance/gazette source is encoded in active dashboard data.
 
 ### Sarawak Cancer Centre
 
 - Current dashboard status: `In Progress`
-- Current next milestone: Tender procurement underway
+- Current next milestone: Construction begins in Q1 2027
 - Sources currently used:
 - [DayakDaily - RM1.52B preliminary estimate (Dec 2025)](https://dayakdaily.com/sarawak-cancer-centre-construction-to-start-by-2026-with-rm1-52-bln-preliminary-estimate-cost/) - Publisher: DayakDaily; type: news report; date: Dec 2025; appears to support reported value and construction timeline.
 - [DayakDaily - PM tells JKR to expedite (Dec 2025)](https://dayakdaily.com/pm-tells-jkr-to-expedite-swak-cancer-centre-project-to-be-tendered-in-q1-2026-operational-before-2031/) - Publisher: DayakDaily; type: news report; date: Dec 2025; appears to support lead/delivery agency, Q1 2026 tender direction, and before-2031 operational target.
 - [DayakDaily - RM500M medical equipment fronted (Dec 2025)](https://dayakdaily.com/patients-cannot-wait-sarawak-fronts-rm500-mln-for-cancer-centre-medical-equipment/) - Publisher: DayakDaily; type: news report; date: Dec 2025; appears to support equipment funding/fronting claim.
 - [DayakDaily - Arden City construction & Samarahan health hub (Feb 2026)](https://dayakdaily.com/arden-city-construction-gathers-pace-amid-healthcare-education-boom-in-kota-samarahan/) - Publisher: DayakDaily; type: news report; date: Feb 2026; appears to support health-metropolis/Samarahan construction context.
 - [DayakDaily - RM40B healthcare boost in 13MP (Jul 2025)](https://dayakdaily.com/sarawak-cancer-centre-among-5-key-projects-under-rm40-bln-healthcare-boost-in-13mp/) - Publisher: DayakDaily; type: news report; date: Jul 2025; appears to support 13MP healthcare context.
-- Gaps or uncertainty: no official JKR tender page or health ministry project page is encoded; future groundbreaking and operational milestones need later confirmation.
+- July 2026 update: DayakDaily reported that the project entered design-and-build procurement on 7 July 2026, with construction targeted for January 2027 and completion by 2032.
+- Gaps or uncertainty: no official JKR tender award page or health ministry project page is encoded; the contractor award and construction start still need later confirmation.
 
 ### FutureData - Kuching Data Centre Park
 
@@ -205,7 +215,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 ### SCORE - Sarawak Corridor of Renewable Energy
 
-- Current dashboard status: `Operational`
+- Current dashboard status: `In Progress`
 - Current next milestone: Industrial park expansion and investor support
 - Sources currently used:
 - [DayakDaily - SCORE: RM125B investment, 53K jobs (May 2025)](https://dayakdaily.com/score-fuels-sarawaks-economic-growth-with-rm125-bln-investment-53000-jobs-created/) - Publisher: DayakDaily; type: news report; date: May 2025; appears to support reported investment and job figures.
@@ -234,7 +244,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 ### Baleh Hydroelectric Project
 
 - Current dashboard status: `In Progress`
-- Current next milestone: Planned completion of dam construction
+- Current next milestone: Dam construction completion
 - Sources currently used:
 - [DayakDaily - Green revolution supercharging Sarawak energy (Aug 2025)](https://dayakdaily.com/green-revolution-supercharging-sarawaks-energy-prowess/) - Publisher: DayakDaily; type: news report; date: Aug 2025; appears to support energy-transition context and Baleh project positioning.
 - [DayakDaily - ASEAN grid & Baleh 1,285MW by 2030 (Jan 2026)](https://dayakdaily.com/sarawak-urges-asean-to-study-european-union-nordic-models-to-realise-regional-power-grid-dream/) - Publisher: DayakDaily; type: news report; date: Jan 2026; appears to support capacity and regional-grid/2030 context.
@@ -243,7 +253,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 ### Green Hydrogen Economy - H2ornbill & H2biscus
 
 - Current dashboard status: `Planning`
-- Current next milestone: Rembus hydrogen plant relocation and upgrade planned
+- Current next milestone: Rembus hydrogen plant relocation and upgrade
 - Sources currently used:
 - [DayakDaily - H2ornbill & H2biscus hydrogen economy (Aug 2025)](https://dayakdaily.com/sarawak-powers-ahead-in-hydrogen-economy/) - Publisher: DayakDaily; type: news report; date: Aug 2025; appears to support H2ornbill/H2biscus project framing and hydrogen economy context.
 - [DayakDaily - Bintulu low-carbon industrial push (Jan 2026)](https://dayakdaily.com/bintulu-set-to-anchor-msias-low-carbon-industrial-push-as-swak-integrates-hydrogen-ccus-and-carbon-pricing/) - Publisher: DayakDaily; type: news report; date: Jan 2026; appears to support Bintulu low-carbon/hydrogen integration context.
@@ -253,19 +263,19 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 ### Provisional Additions Revalidated on 10 July 2026
 
 - Pan Borneo Highway Sarawak Phase 1 - `In Progress`; value: RM16.5 billion construction cost; next milestone: Work Package 11 completion; sources: The Edge Malaysia and Sarawak Tribune.
-- Sarawak-Sabah Link Road - `In Progress`; Phase 1 reached 70.05 percent and Phase 2 reached 10.55 percent in April 2026; next milestone: Phase 1 completion expected in 2027; sources: The Star and DayakDaily.
-- Miri Port Kuala Baram Capital Dredging - `In Progress`; value: RM238 million contract; work was reported in full swing in May 2026; next milestone: Q4 2026 completion target; sources: Dredging Today project reports.
-- Bau Gold Project - `Planning`; Besra completed an independent technical review and received conditional Jugan mining-lease renewal progress; next milestone: finalisation of mining-lease conditions; sources: Besra Gold company disclosures.
-- Bintulu-Samalaju Gas Pipeline - `In Progress`; value: RM1 billion committed; next milestone: offshore pipeline installation completion; source: The Star.
+- Sarawak-Sabah Link Road - `In Progress`; Phase 1 reached 70.05 percent and Phase 2 reached 10.55 percent in April 2026; next milestone: expected Phase 1 completion in 2027; sources: The Star and DayakDaily.
+- Miri Port Kuala Baram Capital Dredging - `In Progress`; value: RM238 million contract; work was reported in full swing in May 2026; next milestone: targeted dredging completion in Q4 2026; sources: Dredging Today project reports.
+- Bau Gold Project - `Planning`; Besra completed an independent technical review and received conditional Jugan mining-lease renewal progress; next milestone: finalised mining lease conditions; sources: Besra Gold company disclosures.
+- Bintulu-Samalaju Gas Pipeline - `In Progress`; value: RM1 billion committed; offshore work was reported complete in October 2025 and pre-commissioning activity was publicly notified in May 2026; next milestone: progressive commercial operations expected from 2027; sources: The Star, Bintulu Port Authority, and Sarawak Tribune.
 - Sarawak Agrotechnology Park - `Planning`; value: RM5 million reported allocations for Semenggok and Tarat; next milestone: SARTECH site development; source: Sarawak Tribune.
 - Sungai Baji Agropark - `Planning`; the 127-hectare site remained a proposed development in June 2023; next milestone: agropark development decision; source: DayakDaily.
 - Semenggoh and Piasau Discovery Centre Development - `Planning`; current public agency pages confirm the existing destinations but do not publish a consolidated project schedule; source: Sarawak Forestry pages.
 - PETRONAS Kasawari Carbon Capture and Storage Project - `In Progress`; MMHE holds the EPCIC contract and PETRONAS is examining a 2027 first-injection date; sources: The Sun and The Star.
-- Sarawak River Aids to Navigation and Surveillance System - `Operational`; Sarawak River VTMS was reported fully operational in December 2025; next milestone: Miri River system completion targeted for Q3 2027; source: Borneo Post.
+- Sarawak River Aids to Navigation and Surveillance System - `In Progress` as an interim combined card; Sarawak River VTMS was reported fully operational in December 2025, while Miri River system completion remains scheduled for Q3 2027. The PCDS 2030 Highlights 2023 report identifies Sarawak River as the first project under a wider river-management initiative and describes similar systems for Miri River and Kuala Baram as later plans. The scopes should ultimately be separated, but the combined card remains `Ongoing` while the Miri milestone is open; source: Borneo Post and PCDS 2030 Highlights 2023, PDF page 121 (printed page 120).
 
 ### Sustainability Vision 2030 Energy Projects Added on 13 July 2026
 
-- Sejingkat Battery Energy Storage System - `Operational`; 60MW/82MWh facility energised in December 2024 and publicly announced as commissioned in February 2025; source: Sarawak Energy.
+- Sejingkat Battery Energy Storage System - `Operational`; 60MW/82MWh facility energised in December 2024 and publicly announced as commissioned in February 2025. Routine grid services and performance monitoring are operational activities rather than open delivery milestones, so the commissioned facility displays as `Completed`; source: Sarawak Energy.
 - Mentarang Induk Hydroelectric Project - `In Progress`; US$2.6 billion, 1,375MW cross-border hydropower venture in North Kalimantan; groundbreaking and early works were reported in 2023, while current physical progress remains unclear; sources: Sarawak Energy, Office of the Premier, and PT Kayan Hydropower Nusantara.
 - Sarawak-Singapore Electricity Interconnection - `In Progress`; conditional approval obtained in October 2025 for around 1GW of renewable power exports, with further regulatory approvals and licences still required; source: Sarawak Energy.
 
