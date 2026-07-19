@@ -65,7 +65,7 @@ Current type style:
 - Small uppercase labels for metadata.
 - Compact body text for project summaries and milestones.
 - Introductory copy at `16px` with a `1.6` line height and restrained dark-gray emphasis on only
-  the most important strategy facts and the independent-tracker label.
+  the most important strategy facts and the `project tracker` phrase.
 - A quieter `12px` last-updated line so freshness metadata does not compete with the introduction.
 - No decorative display font.
 
@@ -115,7 +115,8 @@ Current interactions:
 
 - `EN | BM` buttons switch the tracker presentation language and remember the selection. The site
   kicker, main title, and project titles remain in English in both modes so the identity and project
-  names stay consistent across the tracker and its sources.
+  names stay consistent across the tracker and its sources. In BM copy, the borrowed English phrase
+  `'Project tracker'` is enclosed in single quotation marks in the introduction and footer.
 - The icon theme button switches between light and dark modes and remembers the selection.
 - Filter buttons change the visible cards.
 - Project cards expand and collapse.

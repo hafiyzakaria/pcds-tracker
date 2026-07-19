@@ -13,6 +13,8 @@ This backlog documents known issues and recommended next tasks for the next deve
   and 115 rendered milestone statements across all 30 project cards. The site identity and project
   titles remain in English, while canonical project identities, evidence URLs, date tokens, and
   completion flags remain shared with the English source data.
+- Completed on Preview: BM mode retains the quoted English phrase `'Project tracker'` in the
+  introduction and footer, and both language versions keep the English site identity and project titles.
 - Release gate: Review both themes and languages on the deployed Preview site before any
   Production promotion.
 
@@ -36,7 +38,8 @@ This backlog documents known issues and recommended next tasks for the next deve
 ### Consolidate the PCDS explanation into the introduction
 
 - Completed on Production: The separate About section was removed. Two concise paragraphs beneath
-  the title now explain the strategy, economic target, dashboard purpose, and independent scope.
+  the title now explain the strategy, economic target, and project tracker purpose. Independence and
+  government non-affiliation remain stated in the footer.
 - Final treatment: The copy uses a narrower editorial measure, selective emphasis for the main
   strategy facts, quieter last-updated metadata, and the plain-language phrase "links to publicly
   available sources".

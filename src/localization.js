@@ -49,7 +49,7 @@ const MS = {
   card: { sector: "Sektor", enabler: "Pemacu", viewDetails: "Lihat butiran +", hideDetails: "Sembunyikan butiran −", expand: (name) => `Lihat butiran ${name}`, collapse: (name) => `Sembunyikan butiran ${name}` },
   header: {
     kicker: "Sarawak Development Monitor", title: "Project Tracker", lastUpdated: "Kemas kini terakhir:",
-    intro: ["PCDS 2030 ialah Strategi Pembangunan Pasca COVID-19 Kerajaan Sarawak selama 10 tahun untuk pertumbuhan mampan berpendapatan tinggi yang dipacu data dan inovasi. Strategi ini menyasarkan pertumbuhan tahunan 8%, daripada RM136 bilion pada 2019 kepada RM282 bilion menjelang 2030.", "'Project tracker' ini menghimpunkan projek utama, status semasa, pencapaian utama dan pautan kepada sumber awam dalam satu paparan yang mudah diteliti."],
+    intro: ["PCDS 2030 ialah Strategi Pembangunan Pasca COVID-19 Kerajaan Sarawak selama 10 tahun untuk pertumbuhan mampan berpendapatan tinggi yang dipacu data dan inovasi. Strategi ini menyasarkan pertumbuhan tahunan 8%, daripada RM136 bilion pada 2019 kepada RM282 bilion menjelang 2030.", "'Project tracker' ini menghimpunkan projek, status pelaksanaan, pencapaian dan pautan kepada sumber awam dalam satu paparan yang mudah diteliti."],
   },
   footer: { independent: "'Project tracker' dibangunkan oleh — hafiy.my. Tidak berafiliasi dengan Kerajaan Sarawak.", methodology: "Data diperoleh daripada laporan awam, portal berita dan pengumuman rasmi. Status pencapaian utama ialah rumusan terbaik berdasarkan maklumat yang tersedia." },
   accessibility: { environment: (name) => `persekitaran ${{ development: "pembangunan", preview: "pratonton", production: "produksi" }[name] || name}` },
