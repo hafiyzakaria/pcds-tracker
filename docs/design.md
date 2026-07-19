@@ -113,8 +113,9 @@ rules in the inline `<style>` block in `App`.
 
 Current interactions:
 
-- `EN | BM` buttons switch the tracker presentation language and remember the selection. Project
-  titles remain in English in both modes so names stay consistent across the tracker and its sources.
+- `EN | BM` buttons switch the tracker presentation language and remember the selection. The site
+  kicker, main title, and project titles remain in English in both modes so the identity and project
+  names stay consistent across the tracker and its sources.
 - The icon theme button switches between light and dark modes and remembers the selection.
 - Filter buttons change the visible cards.
 - Project cards expand and collapse.

@@ -48,13 +48,13 @@ const INTRO_EMPHASIS = {
     "10-year Post COVID-19 Development Strategy",
     "8% annual growth",
     "RM282 billion by 2030",
-    "independent tracker",
+    "project tracker",
   ],
   ms: [
     "Strategi Pembangunan Pasca COVID-19 Kerajaan Sarawak selama 10 tahun",
     "pertumbuhan tahunan 8%",
     "RM282 bilion menjelang 2030",
-    "Penjejak bebas",
+    "Project tracker",
   ],
 };
 

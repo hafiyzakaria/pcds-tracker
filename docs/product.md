@@ -27,16 +27,16 @@ The current app is a single-page React site with:
 - Summary metrics for tracked projects, ongoing projects, planning projects, completed projects, and milestones.
 - Last updated indicator beneath the page description, sourced from `LAST_UPDATED` in `src/trackerData.js`.
 - Status filters for all, planning, ongoing, and completed projects.
-- A compact `EN | BM` control that translates the interface, project summaries, facts, and milestones into Malaysian Bahasa Melayu while keeping project titles in English and preserving canonical project identities and source links.
+- A compact `EN | BM` control that translates the interface, project summaries, facts, and milestones into Malaysian Bahasa Melayu while keeping the site identity and project titles in English and preserving canonical project identities and source links.
 - An icon theme control that defaults to the reader's system preference, supports explicit light or dark selection, and remembers that selection locally.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
 - Two short introductory paragraphs explaining the strategy, its central economic target, and
-  the independent tracker purpose without adding a separate promotional About section.
+  the project tracker purpose without adding a separate promotional About section.
 - Restrained emphasis on the 10-year strategy, 8% annual-growth target, RM282 billion 2030 target,
-  and independent-tracker scope so readers can scan the key points quickly.
+  and project-tracker purpose so readers can scan the key points quickly.
 - Plain-language source wording that promises links to publicly available sources rather than
   referring abstractly to "supporting public evidence".
-- Footer disclaimer stating that the tracker is independent and not affiliated with the Sarawak Government.
+- Footer attribution identifying hafiy.my as the builder and stating that the tracker is not affiliated with the Sarawak Government; the English version additionally describes it as independent.
 
 The initial dashboard view is pre-rendered during the build and hydrated by React in the browser.
 This keeps the current interactions while making the public content available in the initial HTML.

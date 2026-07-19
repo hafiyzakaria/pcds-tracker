@@ -10,9 +10,9 @@ This backlog documents known issues and recommended next tasks for the next deve
   defaults to the reader's system preference, applies the theme before paint, and remembers an
   explicit selection.
 - Completed on Preview: The `EN | BM` control translates the interface, facts, summaries,
-  and 115 rendered milestone statements across all 30 project cards. Project titles remain in
-  English, while canonical project identities, evidence URLs, date tokens, and completion flags
-  remain shared with the English source data.
+  and 115 rendered milestone statements across all 30 project cards. The site identity and project
+  titles remain in English, while canonical project identities, evidence URLs, date tokens, and
+  completion flags remain shared with the English source data.
 - Release gate: Review both themes and languages on the deployed Preview site before any
   Production promotion.
 
