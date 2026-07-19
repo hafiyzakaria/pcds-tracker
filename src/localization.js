@@ -46,7 +46,7 @@ const MS = {
   metrics: { trackedProjects: "Projek", planning: "Perancangan", ongoing: "Pelaksanaan", completed: "Selesai", milestones: "Pencapaian" },
   milestones: { label: "Pencapaian Utama", remaining: "Pencapaian Utama yang Baki", next: "Pencapaian Seterusnya", completed: "Selesai", noOpen: "Tiada pencapaian utama yang belum selesai", none: "Tiada pencapaian utama", count: (done, total) => `${done}/${total} pencapaian`, progress: (done, total) => `${done} daripada ${total} pencapaian utama selesai` },
   facts: { lead: "Peneraju / pihak terlibat", value: "Nilai dilaporkan", sources: "Sumber" },
-  card: { sector: "Sektor", enabler: "Pemacu", viewDetails: "Lihat butiran", hideDetails: "Sembunyikan butiran −", expand: (name) => `Lihat butiran ${name}`, collapse: (name) => `Sembunyikan butiran ${name}` },
+  card: { sector: "Sektor", enabler: "Pemacu", viewDetails: "Lihat butiran +", hideDetails: "Sembunyikan butiran −", expand: (name) => `Lihat butiran ${name}`, collapse: (name) => `Sembunyikan butiran ${name}` },
   header: {
     kicker: "Pemantau Pembangunan Sarawak", title: "Penjejak Projek", lastUpdated: "Kemas kini terakhir:",
     intro: ["PCDS 2030 ialah Strategi Pembangunan Pasca COVID-19 Kerajaan Sarawak selama 10 tahun untuk pertumbuhan mampan berpendapatan tinggi yang dipacu data dan inovasi. Strategi ini menyasarkan pertumbuhan tahunan 8%, daripada RM136 bilion pada 2019 kepada RM282 bilion menjelang 2030.", "Penjejak bebas ini menghimpunkan projek utama, status semasa, pencapaian utama dan pautan kepada sumber awam dalam satu paparan yang mudah diteliti."],
