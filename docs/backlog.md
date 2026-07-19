@@ -4,6 +4,18 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ## Completed
 
+### Add dark mode and a Bahasa Melayu presentation
+
+- Completed on Preview: A compact icon control now supports light and dark modes,
+  defaults to the reader's system preference, applies the theme before paint, and remembers an
+  explicit selection.
+- Completed on Preview: The `EN | BM` control translates the interface, facts, summaries,
+  and 115 rendered milestone statements across all 30 project cards. Project titles remain in
+  English, while canonical project identities, evidence URLs, date tokens, and completion flags
+  remain shared with the English source data.
+- Release gate: Review both themes and languages on the deployed Preview site before any
+  Production promotion.
+
 ### Display data freshness
 
 - Completed: The UI shows `LAST_UPDATED` from `src/trackerData.js` near the page description so readers can see how fresh the tracker is.
@@ -67,6 +79,11 @@ This backlog documents known issues and recommended next tasks for the next deve
   completed infrastructure and agricultural components, LCDA's anchor-company appointment, and
   the still-unconfirmed operations and commercial-production milestones reported for 2026.
 
+### Clarify the live-card source policy
+
+- Completed on Preview: PCDS PDFs are documented as confirmation and research references, while
+  claims displayed on live project cards require visible, project-specific public webpage evidence.
+
 ## 1. Must Fix Before Production
 
 ### Add a production data review checklist
@@ -106,14 +123,6 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Risk level: medium
 - Suggested first task: Start with a simple script that extracts project source URLs and reports non-2xx or timeout responses without failing deployments yet.
 
-### Add content source notes
-
-- What needs to be done: Explain how official PCDS PDFs, public announcements, and news sources relate to the tracker content.
-- Why it matters: Future maintenance will be easier if official strategy sources and ongoing project-status sources are clearly distinguished.
-- Estimated difficulty: low
-- Risk level: low
-- Suggested first task: Draft `docs/data-sources.md` with a short distinction between official framework sources and project progress sources.
-
 ## 3. Nice To Have
 
 ### Add an automated visual regression check
@@ -132,17 +141,7 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Risk level: medium
 - Suggested first task: Leave the current UI unchanged and note one or two real user questions that would justify showing empty categories.
 
-## 4. Design Polish
-
-### Extract design tokens when styling changes become repetitive
-
-- What needs to be done: Move shared colors, font choices, and spacing values into a small design-token module when future styling work requires it.
-- Why it matters: Inline styling is workable for the current app, but repeated values make small visual maintenance easier to get wrong over time.
-- Estimated difficulty: medium
-- Risk level: low
-- Suggested first task: Start with shared colors and the font stack only; avoid broad restyling.
-
-## 5. Technical Cleanup
+## 4. Technical Cleanup
 
 ### Split the large app file when related work makes it worthwhile
 

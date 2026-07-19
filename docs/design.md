@@ -6,7 +6,7 @@ The current site is a compact civic-data tracker. It should feel clear, restrain
 
 The design direction is:
 
-- White background.
+- Light and dark theme surfaces built from the same restrained neutral palette.
 - Editorial dashboard layout.
 - Compact project cards.
 - Clear status labels.
@@ -22,7 +22,7 @@ The page uses one centered column with a maximum width of about `1040px`.
 
 Current layout order:
 
-1. Kicker and title.
+1. Kicker with compact language and theme controls, followed by the title.
 2. Two short introductory paragraphs covering the strategy and tracker purpose.
 3. Last-updated indicator.
 4. Summary metrics.
@@ -48,7 +48,7 @@ Project titles use a short public-facing `displayName` when the canonical source
 
 Collapsed desktop titles reserve a shared two-line, `44px` title area at the existing `18px` size. This keeps status and milestone content aligned without making the project order depend on viewport-specific title wrapping. The All view sorts cards by the public status sequence `Planning`, `Ongoing`, then `Completed`, with titles alphabetised inside each group. Mobile remains a one-column layout.
 
-Milestone dates are stored as compact source values but formatted consistently in the interface. Full dates use day, full month, and year; month targets use full month and year; quarter targets use `Q# YYYY`; milestones without a published date omit the date label; and open-ended work displays as `Ongoing`. The next-milestone date is visually separated from its description so readers can scan timing and outcome independently.
+Milestone dates are stored as compact source values but formatted consistently in the interface. Full dates use day, full month, and year; month targets use full month and year; quarter targets use `Quarter # YYYY` in English and `Suku # YYYY` in BM; milestones without a published date omit the date label; and open-ended work displays as `Ongoing`. The next-milestone date is visually separated from its description so readers can scan timing and outcome independently.
 
 Collapsed desktop cards use a shared minimum height so every two-column row remains visually
 aligned even when titles or milestone copy vary. Mobile cards return to content-driven heights in
@@ -73,8 +73,13 @@ Current type style:
 
 Main interface colors:
 
-- Text: deep navy and slate grays.
-- Brand/accent: teal `#0d9488`.
+- Light theme: white surfaces with deep navy and slate-gray text.
+- Dark theme: charcoal `#121212` page background with lighter neutral surfaces, high-contrast
+  slate, and near-white text. The neutral base keeps the teal brand and project category colours
+  clear while retaining comfortable separation between the page and raised surfaces.
+- Emphasized phrases in the introductory copy use white in dark mode so the key strategy facts
+  remain visibly distinct from the muted body text.
+- Brand/accent: teal `#0d9488` in light mode and a brighter teal treatment in dark mode.
 - Development environment: orange `#f97316`.
 - Preview environment: purple `#7c3aed`.
 
@@ -100,12 +105,17 @@ Important components:
 - `NextMilestoneCallout`
 - `SourceLinks`
 
-Most styling is inline in `src/App.jsx`, with a small amount of global CSS in `src/index.css` and an inline `<style>` block in `App`.
+Most component layout styling remains inline in `src/App.jsx`. Shared light/dark color tokens,
+focus treatment, and theme-icon visibility live in `src/index.css`, with responsive and animation
+rules in the inline `<style>` block in `App`.
 
 ## Interaction
 
 Current interactions:
 
+- `EN | BM` buttons switch the tracker presentation language and remember the selection. Project
+  titles remain in English in both modes so names stay consistent across the tracker and its sources.
+- The icon theme button switches between light and dark modes and remembers the selection.
 - Filter buttons change the visible cards.
 - Project cards expand and collapse.
 - Source links open in a new tab.
@@ -119,6 +129,7 @@ The app switches to a mobile layout below `760px`.
 
 Current mobile changes:
 
+- Header controls remain compact beside the kicker and may tighten their spacing.
 - Main padding reduces.
 - Project grid becomes one column.
 - Project cards remove the fixed desktop minimum height.
@@ -142,8 +153,8 @@ both deployed sites. Environment-specific presentation is limited to the badge a
 
 ## Known Design Constraints
 
-- Most styling is inline, so repeated visual patterns are harder to change consistently.
-- There is no formal design token file yet.
+- Most layout styling is inline, so repeated non-color visual patterns remain harder to change consistently.
+- Theme color tokens live in `src/index.css`; there is no separate JavaScript design-token module.
 - There is no component library or Storybook.
 - Empty sectors and enablers are not visually represented.
 

@@ -13,7 +13,7 @@ The tracker brings publicly available project information into one place so anyo
 - the next publicly visible milestone; and
 - links to public reports, announcements, and other sources.
 
-Select a project card on the website to see its summary, lead parties, reported value, milestones, and source links. Filters make it easy to browse projects by status.
+Select a project card on the website to see its summary, lead parties, reported value, milestones, and source links. Filters make it easy to browse projects by status. The interface can be switched between English and Bahasa Melayu, and the theme control supports light and dark viewing.
 
 ## Why it exists
 
@@ -35,7 +35,7 @@ See the [data methodology](docs/data-methodology.md) for more detail.
 
 ## For contributors and developers
 
-The website is a static [Vite](https://vite.dev/) and [React](https://react.dev/) app. It has no backend or database. Most interface code is in `src/App.jsx`, and the hand-maintained project data is in `src/trackerData.js`.
+The website is a static [Vite](https://vite.dev/) and [React](https://react.dev/) app. It has no backend or database. Most interface code is in `src/App.jsx`, the hand-maintained project data is in `src/trackerData.js`, and the BM presentation copy is in `src/localization.js`.
 
 ### Run it locally
 

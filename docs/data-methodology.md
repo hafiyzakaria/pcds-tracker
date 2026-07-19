@@ -18,6 +18,12 @@ The active dashboard imports:
 
 Tracker rendering, derived metrics, filters, status grouping, sorting, milestone progress, source rendering, and last-updated formatting are implemented in `src/App.jsx`.
 
+`src/localization.js` is a presentation layer, not an independent evidence source. It stores
+explicit Malaysian Bahasa Melayu renderings of current project facts, summaries, and milestones.
+Project titles remain in English, while canonical names, URLs, date tokens, and completion flags
+stay shared with `src/trackerData.js`. Source citation labels remain in their original language so linked
+article and report titles are not misrepresented.
+
 Additional repository source material:
 
 - `audit/pcds-audit.json`: prior evidence-quality and trackability audit notes. This file is not rendered by the dashboard and some counts/status labels differ from current `src/trackerData.js`, so it should be treated as methodology context rather than active dashboard data.
@@ -43,7 +49,8 @@ Reported-value standard:
 Public-source-link standard:
 
 - Live project cards should link to official agency or project-owner pages, parliamentary or government releases, company disclosures, or reputable public news reports.
-- Repository-hosted copies of source PDFs may support internal research, but should not be the primary clickable evidence on a live card.
+- PCDS strategy and report PDFs may confirm project inclusion, naming, scope, and historical context during research, but PDF-only claims should not be added to live project cards.
+- Each public card claim should remain independently verifiable through a visible, project-specific public webpage link. PDF references may instead be recorded in methodology, audit, or research documentation.
 - If no public project-specific source can be found, keep the card explicitly provisional and avoid unsupported values, completion claims, or detailed schedules.
 - `POPULATED_ECONOMIC` and `POPULATED_ENABLERS`: exported sets that identify categories with projects. They are not currently used by the dashboard UI.
 
@@ -90,6 +97,10 @@ Source fields:
 
 No per-project `lastReviewed`, per-source publication date, source type, confidence score, or field-level evidence mapping exists in the active data file.
 
+When canonical project facts change, update the corresponding explicit BM entry in
+`src/localization.js` in the same change. A missing localization must fall back safely to the
+English source rather than alter or invent a claim.
+
 ## Source Types
 
 The current data uses these source types:
@@ -122,6 +133,7 @@ Rules to use for future maintenance:
 - No update should be made without a source.
 - Statuses reflect available public evidence, not official project certification.
 - When a source supports only general context, do not treat it as proof of a specific milestone unless the source directly supports that milestone.
+- Use PCDS PDFs as confirmation and research references rather than as the sole live-card evidence. If a potentially useful PDF fact has no supporting public webpage, leave the corresponding card field unchanged.
 - When a milestone is future-dated or target-based, leave `done: false` until a source confirms completion.
 - When sources disagree on cost, date, scope, or completion, keep the existing value until manually reviewed and note the conflict before changing dashboard data.
 
@@ -350,6 +362,7 @@ Explicit methodology found in docs/code:
 - The tracker is independent and public-facing.
 - Data is manually curated.
 - Public claims should have source links.
+- PCDS PDFs are confirmation and research references; live card claims require visible, project-specific public webpage evidence.
 - Milestone statuses are best-effort based on available public information.
 - `LAST_UPDATED` is manually maintained.
 - Source links are not automatically checked.
@@ -371,7 +384,6 @@ Unknown methodology needing human confirmation:
 - The exact definition and scoring formula for `PRESS_total` and `PRESS_tier` in `audit/pcds-audit.json`.
 - Whether every completed milestone has been checked against a direct source, or whether some are inferred from broader reporting.
 - Whether `LAST_UPDATED` means any data edit, source review, link check, or full tracker review.
-- Whether local PCDS PDFs are authoritative background only or should be cited field-by-field in active dashboard data.
 - How to handle stale, broken, paywalled, changed, or redirected source URLs.
 - Whether future updates should require one official source, multiple public sources, or a documented exception.
 - Whether source publication dates should become structured fields rather than embedded in labels.

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 import {
   ECONOMIC_SECTOR_IDS,
@@ -6,100 +6,123 @@ import {
   SECTORS,
 } from "./trackerData.js";
 import { getAppEnvironment, shouldShowEnvironmentBadge } from "./environment.js";
+import {
+  DEFAULT_LANGUAGE,
+  SUPPORTED_LANGUAGES,
+  getUiCopy,
+  localizeSectors,
+} from "./localization.js";
 
 const FONT_STACK = "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 const DEFAULT_ACCENT_COLOR = "#6b7280";
 
-const STATUS_META = {
+const STATUS_CONFIG = {
   "Awaiting Decision": {
-    label: "Ongoing",
+    group: "ongoing",
     order: 1,
-    description: "delivery moving, pending approval, or awaiting next public decision",
   },
   "In Progress": {
-    label: "Ongoing",
+    group: "ongoing",
     order: 1,
-    description: "delivery moving, pending approval, or awaiting next public decision",
   },
   Planning: {
-    label: "Planning",
+    group: "planning",
     order: 0,
-    description: "scope or delivery being shaped",
   },
   Operational: {
-    label: "Completed",
+    group: "completed",
     order: 2,
-    description: "in use or completed",
   },
   Designated: {
-    label: "Completed",
+    group: "completed",
     order: 2,
-    description: "outcome formally achieved",
   },
   Enacted: {
-    label: "Completed",
+    group: "completed",
     order: 2,
-    description: "law or policy in effect",
   },
 };
 
-const FILTERS = [
-  { id: "all", label: "All", publicStatus: null },
-  { id: "planning", label: STATUS_META.Planning.label, publicStatus: "Planning" },
-  { id: "ongoing", label: STATUS_META["In Progress"].label, publicStatus: "Ongoing" },
-  { id: "delivered", label: STATUS_META.Operational.label, publicStatus: "Completed" },
-];
+const INTRO_EMPHASIS = {
+  en: [
+    "10-year Post COVID-19 Development Strategy",
+    "8% annual growth",
+    "RM282 billion by 2030",
+    "independent tracker",
+  ],
+  ms: [
+    "Strategi Pembangunan Pasca COVID-19 Kerajaan Sarawak selama 10 tahun",
+    "pertumbuhan tahunan 8%",
+    "RM282 bilion menjelang 2030",
+    "Penjejak bebas",
+  ],
+};
 
-function getStatusMeta(status) {
-  return STATUS_META[status] || {
-    label: status,
-    order: 99,
-    description: "Status is based on available public reporting.",
-  };
+function getFilters(copy) {
+  return [
+    { id: "all", label: copy.filters.all },
+    { id: "planning", label: copy.filters.planning },
+    { id: "ongoing", label: copy.filters.ongoing },
+    { id: "completed", label: copy.filters.completed },
+  ];
 }
 
-function getPublicStatusMeta(status, milestones) {
-  const statusMeta = getStatusMeta(status);
+function getStatusMeta(status, copy) {
+  const config = STATUS_CONFIG[status] || {
+    group: "unknown",
+    order: 99,
+  };
+  const translated = copy.status[status] || {
+    ...copy.status.fallback,
+    label: status,
+  };
+
+  return { ...translated, ...config };
+}
+
+function getPublicStatusMeta(status, milestones, copy) {
+  const statusMeta = getStatusMeta(status, copy);
   const hasOpenMilestone = milestones.some((milestone) => !milestone.done);
 
-  if (statusMeta.label === "Completed" && hasOpenMilestone) {
-    return {
-      ...STATUS_META["In Progress"],
-      description: "delivery remains open because at least one milestone is unfinished",
-    };
+  if (statusMeta.group === "completed" && hasOpenMilestone) {
+    return getStatusMeta("In Progress", copy);
   }
 
   return statusMeta;
 }
 
 function filterRowsByStatus(rows, filter) {
-  if (!filter.publicStatus) {
+  if (filter.id === "all") {
     return rows;
   }
 
-  return rows.filter((row) => row.statusMeta.label === filter.publicStatus);
+  return rows.filter((row) => row.statusMeta.group === filter.id);
 }
 
-function getMilestoneCountLabel(row) {
+function getMilestoneCountLabel(row, copy) {
   if (row.totalMilestones === 0) {
-    return "No milestones";
+    return copy.milestones.none;
   }
 
-  return `${row.doneMilestones} of ${row.totalMilestones} milestones`;
+  return copy.milestones.count(row.doneMilestones, row.totalMilestones);
 }
 
 function getAccentBadgeTone(color) {
   const accent = color || DEFAULT_ACCENT_COLOR;
 
   return {
-    bg: `${accent}12`,
-    border: `${accent}40`,
-    text: accent,
+    bg: `color-mix(in srgb, ${accent} 9%, var(--surface))`,
+    border: `color-mix(in srgb, ${accent} 28%, var(--surface))`,
+    text: `color-mix(in srgb, ${accent} 78%, var(--accent-text-mix))`,
   };
 }
 
-function getProjectRows() {
-  return SECTORS.filter((sector) => !sector.isOverview).flatMap((sector) => {
+function getAccentTextColor(color) {
+  return `color-mix(in srgb, ${color || DEFAULT_ACCENT_COLOR} 78%, var(--accent-text-mix))`;
+}
+
+function getProjectRows(sectors, copy) {
+  return sectors.filter((sector) => !sector.isOverview).flatMap((sector) => {
     const kind = ECONOMIC_SECTOR_IDS.has(sector.id) ? "sector" : "enabler";
 
     return sector.projects.map((project) => {
@@ -108,7 +131,7 @@ function getProjectRows() {
       const totalMilestones = project.milestones.length;
       const nextMilestone = project.milestones.find((milestone) => !milestone.done);
       const latestMilestone = [...project.milestones].reverse().find((milestone) => milestone.done);
-      const statusMeta = getPublicStatusMeta(project.status, project.milestones);
+      const statusMeta = getPublicStatusMeta(project.status, project.milestones, copy);
 
       return {
         ...project,
@@ -130,24 +153,24 @@ function getProjectRows() {
   });
 }
 
-function sortProjectRows(rows) {
+function sortProjectRows(rows, language = DEFAULT_LANGUAGE) {
   return [...rows].sort((a, b) => {
     if (a.attentionOrder !== b.attentionOrder) {
       return a.attentionOrder - b.attentionOrder;
     }
 
-    return a.displayName.localeCompare(b.displayName);
+    return a.displayName.localeCompare(b.displayName, language === "ms" ? "ms-MY" : "en-MY");
   });
 }
 
-function formatLastUpdated(value) {
+function formatLastUpdated(value, language = DEFAULT_LANGUAGE) {
   const [year, month, day] = value.split("-").map(Number);
 
   if (![year, month, day].every(Number.isInteger)) {
     return value;
   }
 
-  return new Intl.DateTimeFormat("en-GB", {
+  return new Intl.DateTimeFormat(language === "ms" ? "ms-MY" : "en-GB", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -155,12 +178,12 @@ function formatLastUpdated(value) {
   }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
-function StatusBadge({ status, statusMeta = getStatusMeta(status), accentColor }) {
+function StatusBadge({ statusMeta, accentColor }) {
   const tone = getAccentBadgeTone(accentColor);
 
   return (
     <span
-      title={status}
+      title={statusMeta.description}
       style={{
         display: "inline-flex",
         alignItems: "center",
@@ -188,14 +211,14 @@ function StatusBadge({ status, statusMeta = getStatusMeta(status), accentColor }
   );
 }
 
-function EnvironmentBadge({ environment }) {
+function EnvironmentBadge({ environment, copy }) {
   if (!shouldShowEnvironmentBadge(environment)) {
     return null;
   }
 
   return (
     <div
-      aria-label={`${environment.name} environment`}
+      aria-label={copy.accessibility.environment(environment.name)}
       style={{
         position: "fixed",
         right: "12px",
@@ -204,9 +227,9 @@ function EnvironmentBadge({ environment }) {
         padding: "5px 8px",
         border: `1px solid ${environment.badgeColor}`,
         borderRadius: "4px",
-        backgroundColor: "#ffffff",
+        backgroundColor: "var(--surface)",
         color: environment.badgeColor,
-        boxShadow: "0 6px 16px rgba(17, 24, 39, 0.14)",
+        boxShadow: "0 6px 16px var(--shadow)",
         fontFamily: FONT_STACK,
         fontSize: "10px",
         fontWeight: 850,
@@ -227,14 +250,14 @@ function Metric({ value, label, accent = "#0d9488" }) {
         minHeight: "78px",
         padding: "13px 15px 14px",
         borderTop: `2px solid ${accent}66`,
-        borderRight: "1px solid #eef2f7",
-        borderBottom: "1px solid #eef2f7",
-        backgroundColor: "#ffffff",
+        borderRight: "1px solid var(--border-soft)",
+        borderBottom: "1px solid var(--border-soft)",
+        backgroundColor: "var(--surface)",
       }}
     >
       <div
         style={{
-          color: "#1a1a2e",
+          color: "var(--text-strong)",
           fontFamily: FONT_STACK,
           fontSize: "23px",
           fontWeight: 800,
@@ -246,7 +269,7 @@ function Metric({ value, label, accent = "#0d9488" }) {
       <div
         style={{
           marginTop: "9px",
-          color: "#64748b",
+          color: "var(--text-muted)",
           fontFamily: FONT_STACK,
           fontSize: "10px",
           fontWeight: 700,
@@ -261,10 +284,10 @@ function Metric({ value, label, accent = "#0d9488" }) {
   );
 }
 
-function SummaryMetrics({ rows }) {
-  const planning = rows.filter((row) => row.statusMeta.label === "Planning").length;
-  const ongoing = rows.filter((row) => row.statusMeta.label === "Ongoing").length;
-  const completeLike = rows.filter((row) => row.statusMeta.label === "Completed").length;
+function SummaryMetrics({ rows, copy }) {
+  const planning = rows.filter((row) => row.statusMeta.group === "planning").length;
+  const ongoing = rows.filter((row) => row.statusMeta.group === "ongoing").length;
+  const completeLike = rows.filter((row) => row.statusMeta.group === "completed").length;
   const doneMilestones = rows.reduce((sum, row) => sum + row.doneMilestones, 0);
   const totalMilestones = rows.reduce((sum, row) => sum + row.totalMilestones, 0);
   const milestoneProgress = totalMilestones ? (doneMilestones / totalMilestones) * 100 : 0;
@@ -276,15 +299,15 @@ function SummaryMetrics({ rows }) {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(132px, 1fr))",
-          borderLeft: "1px solid #eef2f7",
+          borderLeft: "1px solid var(--border-soft)",
         }}
       >
-        <Metric value={rows.length} label="Tracked Projects" accent="#0d9488" />
-        <Metric value={planning} label="Planning" accent="#4f46e5" />
-        <Metric value={ongoing} label="Ongoing" accent="#d97706" />
-        <Metric value={completeLike} label="Completed" accent="#16a34a" />
+        <Metric value={rows.length} label={copy.metrics.trackedProjects} accent="#0d9488" />
+        <Metric value={planning} label={copy.metrics.planning} accent="#4f46e5" />
+        <Metric value={ongoing} label={copy.metrics.ongoing} accent="#d97706" />
+        <Metric value={completeLike} label={copy.metrics.completed} accent="#16a34a" />
         <div className="desktop-milestone-metric">
-          <Metric value={`${doneMilestones}/${totalMilestones}`} label="Milestones" accent="#1d4ed8" />
+          <Metric value={`${doneMilestones}/${totalMilestones}`} label={copy.metrics.milestones} accent="#1d4ed8" />
         </div>
       </div>
       <div
@@ -292,9 +315,9 @@ function SummaryMetrics({ rows }) {
         style={{
           display: "none",
           padding: "16px 18px",
-          border: "1px solid #eef2f7",
+          border: "1px solid var(--border-soft)",
           borderTop: 0,
-          backgroundColor: "#ffffff",
+          backgroundColor: "var(--surface)",
         }}
       >
         <div
@@ -307,18 +330,18 @@ function SummaryMetrics({ rows }) {
         >
           <div
             style={{
-              color: "#6b7280",
+              color: "var(--text-muted)",
               fontSize: "10px",
               fontWeight: 800,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
             }}
           >
-            Milestones
+            {copy.metrics.milestones}
           </div>
           <div
             style={{
-              color: "#1a1a2e",
+              color: "var(--text-strong)",
               fontSize: "22px",
               fontWeight: 800,
               lineHeight: 1,
@@ -328,13 +351,13 @@ function SummaryMetrics({ rows }) {
           </div>
         </div>
         <div
-          aria-label={`${doneMilestones} of ${totalMilestones} milestones completed`}
+          aria-label={copy.milestones.progress(doneMilestones, totalMilestones)}
           style={{
             height: "6px",
             marginTop: "12px",
             overflow: "hidden",
             borderRadius: "999px",
-            backgroundColor: "#e9edf3",
+            backgroundColor: "var(--progress-track)",
           }}
         >
           <div
@@ -368,9 +391,9 @@ function FilterBar({ activeFilter, onFilter, filters = [] }) {
           maxWidth: "100%",
           gap: "4px",
           padding: "4px",
-          border: "1px solid #e5e7eb",
+          border: "1px solid var(--border)",
           borderRadius: "999px",
-          backgroundColor: "#f8fafc",
+          backgroundColor: "var(--surface-subtle)",
           flexWrap: "wrap",
         }}
       >
@@ -389,11 +412,11 @@ function FilterBar({ activeFilter, onFilter, filters = [] }) {
                 flexShrink: 0,
                 minHeight: "30px",
                 padding: "7px 10px",
-                border: active ? "1px solid #0d94884d" : "1px solid transparent",
+                border: active ? "1px solid color-mix(in srgb, var(--brand) 32%, transparent)" : "1px solid transparent",
                 borderRadius: "999px",
-                backgroundColor: active ? "#ffffff" : "transparent",
-                color: active ? "#0f766e" : "#64748b",
-                boxShadow: active ? "0 1px 2px rgba(15, 23, 42, 0.06)" : "none",
+                backgroundColor: active ? "var(--surface)" : "transparent",
+                color: active ? "var(--brand-strong)" : "var(--text-muted)",
+                boxShadow: active ? "0 1px 2px var(--control-shadow)" : "none",
                 cursor: "pointer",
                 fontFamily: FONT_STACK,
                 fontSize: "11px",
@@ -417,7 +440,7 @@ function DetailSection({ title, children }) {
       <h4
         style={{
           margin: 0,
-          color: "#9ca3af",
+          color: "var(--text-faint)",
           fontFamily: FONT_STACK,
           fontSize: "10px",
           fontWeight: 800,
@@ -429,7 +452,7 @@ function DetailSection({ title, children }) {
       </h4>
       <div
         style={{
-          color: "#4b5563",
+          color: "var(--text-secondary)",
           fontSize: "14px",
           lineHeight: 1.6,
         }}
@@ -440,7 +463,7 @@ function DetailSection({ title, children }) {
   );
 }
 
-function MilestoneIndicator({ row }) {
+function MilestoneIndicator({ row, copy }) {
   return (
     <div
       style={{
@@ -452,7 +475,7 @@ function MilestoneIndicator({ row }) {
     >
       <span
         style={{
-          color: "#9ca3af",
+          color: "var(--text-faint)",
           fontFamily: FONT_STACK,
           fontSize: "10px",
           fontWeight: 800,
@@ -460,7 +483,7 @@ function MilestoneIndicator({ row }) {
           textTransform: "uppercase",
         }}
       >
-        Milestones
+        {copy.milestones.label}
       </span>
       <div style={{ display: "flex", alignItems: "center", gap: "4px" }} aria-hidden="true">
         {row.milestones.map((milestone, index) => (
@@ -470,7 +493,7 @@ function MilestoneIndicator({ row }) {
               width: "18px",
               height: "6px",
               borderRadius: "999px",
-              backgroundColor: milestone.done ? row.sectorColor : "#e5e7eb",
+              backgroundColor: milestone.done ? row.sectorColor : "var(--border)",
               opacity: milestone.done ? 1 : 0.95,
             }}
           />
@@ -478,20 +501,20 @@ function MilestoneIndicator({ row }) {
       </div>
       <span
         style={{
-          color: "#6b7280",
+          color: "var(--text-muted)",
           fontFamily: FONT_STACK,
           fontSize: "11px",
           fontWeight: 700,
           whiteSpace: "nowrap",
         }}
       >
-        {row.doneMilestones}/{row.totalMilestones} completed
+        {copy.milestones.progress(row.doneMilestones, row.totalMilestones)}
       </span>
     </div>
   );
 }
 
-function CollapsedMilestoneSummary({ row }) {
+function CollapsedMilestoneSummary({ row, copy }) {
   return (
     <span
       style={{
@@ -499,7 +522,7 @@ function CollapsedMilestoneSummary({ row }) {
         alignItems: "center",
         gap: "7px",
         minHeight: "24px",
-        color: "#64748b",
+        color: "var(--text-muted)",
         fontFamily: FONT_STACK,
         fontSize: "11px",
         fontWeight: 750,
@@ -507,7 +530,7 @@ function CollapsedMilestoneSummary({ row }) {
         whiteSpace: "nowrap",
       }}
     >
-      <span>{getMilestoneCountLabel(row)}</span>
+      <span>{getMilestoneCountLabel(row, copy)}</span>
       <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }} aria-hidden="true">
         {row.milestones.map((milestone, index) => (
           <span
@@ -516,7 +539,7 @@ function CollapsedMilestoneSummary({ row }) {
               width: "15px",
               height: "5px",
               borderRadius: "999px",
-              backgroundColor: milestone.done ? row.sectorColor : "#e5e7eb",
+              backgroundColor: milestone.done ? row.sectorColor : "var(--border)",
               opacity: milestone.done ? 1 : 0.95,
             }}
           />
@@ -526,16 +549,16 @@ function CollapsedMilestoneSummary({ row }) {
   );
 }
 
-function FactList({ row }) {
+function FactList({ row, copy }) {
   return (
     <div
       className="project-facts"
       style={{
         display: "grid",
         gridTemplateColumns: row.value && row.value !== "—" ? "minmax(0, 1fr) minmax(136px, auto)" : "1fr",
-        border: "1px solid #e5e7eb",
+        border: "1px solid var(--border)",
         borderRadius: "6px",
-        backgroundColor: "#ffffff",
+        backgroundColor: "var(--surface)",
         overflow: "hidden",
       }}
     >
@@ -548,16 +571,16 @@ function FactList({ row }) {
       >
         <span
           style={{
-            color: "#9ca3af",
+            color: "var(--text-faint)",
             fontSize: "8px",
             fontWeight: 800,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
           }}
         >
-          Lead / parties
+          {copy.facts.lead}
         </span>
-        <span style={{ color: "#374151", fontSize: "12px", fontWeight: 750, lineHeight: 1.35 }}>{row.lead}</span>
+        <span style={{ color: "var(--text-body)", fontSize: "12px", fontWeight: 750, lineHeight: 1.35 }}>{row.lead}</span>
       </div>
       {row.value && row.value !== "—" && (
         <div
@@ -566,21 +589,21 @@ function FactList({ row }) {
             display: "grid",
             gap: "4px",
             padding: "8px 10px",
-            borderLeft: "1px solid #e5e7eb",
+            borderLeft: "1px solid var(--border)",
           }}
         >
           <span
             style={{
-              color: "#9ca3af",
+              color: "var(--text-faint)",
               fontSize: "8px",
               fontWeight: 800,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
             }}
           >
-            Reported value
+            {copy.facts.value}
           </span>
-          <span style={{ color: row.sectorColor, fontSize: "12px", fontWeight: 850, lineHeight: 1.35 }}>{row.value}</span>
+          <span style={{ color: getAccentTextColor(row.sectorColor), fontSize: "12px", fontWeight: 850, lineHeight: 1.35 }}>{row.value}</span>
         </div>
       )}
     </div>
@@ -604,10 +627,10 @@ function SourceLinks({ sources, color, interactive = true }) {
             alignItems: "center",
             gap: "9px",
             padding: "7px 9px",
-            border: "1px solid #eef2f7",
+            border: "1px solid var(--border-soft)",
             borderRadius: "6px",
-            backgroundColor: "#ffffff",
-            color: "#374151",
+            backgroundColor: "var(--surface)",
+            color: "var(--text-body)",
             fontFamily: FONT_STACK,
             fontSize: "11px",
             fontWeight: 700,
@@ -625,7 +648,7 @@ function SourceLinks({ sources, color, interactive = true }) {
               borderRadius: "50%",
               border: `1px solid ${color}1f`,
               backgroundColor: `${color}0d`,
-              color: "#475569",
+              color: "var(--text-icon)",
               fontSize: "9px",
               fontWeight: 800,
             }}
@@ -633,7 +656,7 @@ function SourceLinks({ sources, color, interactive = true }) {
             {index + 1}
           </span>
           <span>{source.label}</span>
-          <span style={{ color: "#94a3b8", fontSize: "12px" }}>↗</span>
+          <span style={{ color: "var(--text-faint)", fontSize: "12px" }}>↗</span>
         </a>
       ))}
     </div>
@@ -652,7 +675,7 @@ function AccordionReveal({ expanded, children, className = "" }) {
   );
 }
 
-function formatMilestoneDate(value) {
+function formatMilestoneDate(value, language = DEFAULT_LANGUAGE) {
   const date = value?.trim();
 
   if (!date || date.toLowerCase() === "tbd") {
@@ -660,12 +683,14 @@ function formatMilestoneDate(value) {
   }
 
   if (date.toLowerCase() === "ongoing") {
-    return "Ongoing";
+    return language === "ms" ? "Berterusan" : "Ongoing";
   }
 
   const yearQuarter = date.match(/^(\d{4})-Q([1-4])$/);
   if (yearQuarter) {
-    return `Q${yearQuarter[2]} ${yearQuarter[1]}`;
+    return language === "ms"
+      ? `Suku ${yearQuarter[2]} ${yearQuarter[1]}`
+      : `Quarter ${yearQuarter[2]} ${yearQuarter[1]}`;
   }
 
   const yearRange = date.match(/^(\d{4})-(\d{4})$/);
@@ -675,12 +700,12 @@ function formatMilestoneDate(value) {
 
   const yearOnward = date.match(/^(\d{4})\+$/);
   if (yearOnward) {
-    return `${yearOnward[1]} onward`;
+    return language === "ms" ? `mulai ${yearOnward[1]}` : `${yearOnward[1]} onward`;
   }
 
   const fullDate = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
   if (fullDate) {
-    return new Intl.DateTimeFormat("en-GB", {
+    return new Intl.DateTimeFormat(language === "ms" ? "ms-MY" : "en-GB", {
       day: "numeric",
       month: "long",
       year: "numeric",
@@ -690,7 +715,7 @@ function formatMilestoneDate(value) {
 
   const yearMonth = date.match(/^(\d{4})-(\d{2})$/);
   if (yearMonth) {
-    return new Intl.DateTimeFormat("en-GB", {
+    return new Intl.DateTimeFormat(language === "ms" ? "ms-MY" : "en-GB", {
       month: "long",
       year: "numeric",
       timeZone: "UTC",
@@ -700,11 +725,11 @@ function formatMilestoneDate(value) {
   return date;
 }
 
-function MilestoneList({ milestones, color = "#0d9488" }) {
+function MilestoneList({ milestones, language, color = "#0d9488" }) {
   return (
     <div style={{ display: "grid", gap: "0" }}>
       {milestones.map((milestone, index) => {
-        const formattedDate = formatMilestoneDate(milestone.date);
+        const formattedDate = formatMilestoneDate(milestone.date, language);
 
         return (
           <div
@@ -714,13 +739,13 @@ function MilestoneList({ milestones, color = "#0d9488" }) {
               gridTemplateColumns: formattedDate ? "118px minmax(0, 1fr)" : "1fr",
               gap: "12px",
               padding: "9px 0",
-              borderTop: index === 0 ? "1px solid #e5e7eb" : "1px solid #f1f5f9",
+              borderTop: index === 0 ? "1px solid var(--border)" : "1px solid var(--border-faint)",
             }}
           >
             {formattedDate && (
               <span
                 style={{
-                  color: milestone.done ? color : "#9ca3af",
+                  color: milestone.done ? getAccentTextColor(color) : "var(--text-faint)",
                   fontFamily: FONT_STACK,
                   fontSize: "11px",
                   fontWeight: 700,
@@ -729,7 +754,7 @@ function MilestoneList({ milestones, color = "#0d9488" }) {
                 {formattedDate}
               </span>
             )}
-            <span style={{ color: "#4b5563", fontSize: "13px", lineHeight: 1.45 }}>
+            <span style={{ color: "var(--text-secondary)", fontSize: "13px", lineHeight: 1.45 }}>
               {milestone.text}
             </span>
           </div>
@@ -739,7 +764,7 @@ function MilestoneList({ milestones, color = "#0d9488" }) {
   );
 }
 
-function CompletedMilestoneRows({ row }) {
+function CompletedMilestoneRows({ row, language }) {
   const loggedMilestones = row.milestones.filter((milestone) => milestone.done);
   const isComplete = row.totalMilestones > 0 && row.doneMilestones === row.totalMilestones;
   const visibleMilestones = isComplete ? loggedMilestones.slice(0, -1) : loggedMilestones;
@@ -748,10 +773,10 @@ function CompletedMilestoneRows({ row }) {
     return null;
   }
 
-  return <MilestoneList milestones={visibleMilestones} color={row.sectorColor} />;
+  return <MilestoneList milestones={visibleMilestones} language={language} color={row.sectorColor} />;
 }
 
-function FollowingMilestones({ row }) {
+function FollowingMilestones({ row, copy, language }) {
   const followingMilestones = row.milestones.filter((milestone) => !milestone.done).slice(1);
 
   if (followingMilestones.length === 0) {
@@ -759,26 +784,26 @@ function FollowingMilestones({ row }) {
   }
 
   return (
-    <DetailSection title="Remaining Milestones">
-      <MilestoneList milestones={followingMilestones} color={row.sectorColor} />
+    <DetailSection title={copy.milestones.remaining}>
+      <MilestoneList milestones={followingMilestones} language={language} color={row.sectorColor} />
     </DetailSection>
   );
 }
 
-function getMilestoneCalloutContent(milestone) {
+function getMilestoneCalloutContent(milestone, copy, language) {
   if (!milestone) {
-    return { date: null, text: "No open milestone" };
+    return { date: null, text: copy.milestones.noOpen };
   }
 
-  const text = milestone.text.replace(/^(ongoing|planning|completed):\s*/i, "");
+  const text = milestone.text.replace(/^(ongoing|planning|completed|berterusan|perancangan|selesai):\s*/i, "");
 
-  return { date: formatMilestoneDate(milestone.date), text };
+  return { date: formatMilestoneDate(milestone.date, language), text };
 }
 
-function NextMilestoneCallout({ row, expanded }) {
+function NextMilestoneCallout({ row, expanded, copy, language }) {
   const isComplete = row.totalMilestones > 0 && row.doneMilestones === row.totalMilestones;
   const completionMilestone = isComplete ? [...row.milestones].reverse().find((milestone) => milestone.done) : null;
-  const content = getMilestoneCalloutContent(isComplete ? completionMilestone : row.nextMilestone);
+  const content = getMilestoneCalloutContent(isComplete ? completionMilestone : row.nextMilestone, copy, language);
 
   return (
     <div
@@ -788,13 +813,13 @@ function NextMilestoneCallout({ row, expanded }) {
         padding: expanded ? "10px 12px" : "9px 11px",
         border: `1px solid ${row.sectorColor}30`,
         borderRadius: "6px",
-        backgroundColor: `${row.sectorColor}05`,
+        backgroundColor: `color-mix(in srgb, ${row.sectorColor} 6%, var(--surface))`,
       }}
     >
       <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "12px" }}>
         <span
           style={{
-            color: row.sectorColor,
+            color: getAccentTextColor(row.sectorColor),
             fontFamily: FONT_STACK,
             fontSize: "10px",
             fontWeight: 850,
@@ -802,12 +827,12 @@ function NextMilestoneCallout({ row, expanded }) {
             textTransform: "uppercase",
           }}
         >
-          {isComplete ? "Completed" : "Next Milestone"}
+          {isComplete ? copy.milestones.completed : copy.milestones.next}
         </span>
         {content.date && (
           <span
             style={{
-              color: "#64748b",
+              color: "var(--text-muted)",
               fontFamily: FONT_STACK,
               fontSize: "11px",
               fontWeight: 750,
@@ -821,7 +846,7 @@ function NextMilestoneCallout({ row, expanded }) {
       </div>
       <div
         style={{
-          color: "#374151",
+          color: "var(--text-body)",
           fontSize: "13px",
           fontWeight: expanded ? 700 : 650,
           lineHeight: 1.45,
@@ -834,8 +859,8 @@ function NextMilestoneCallout({ row, expanded }) {
   );
 }
 
-function ProjectCard({ row, expanded, onToggle }) {
-  const cardBorderColor = "#cbd5e1";
+function ProjectCard({ row, expanded, onToggle, copy, language }) {
+  const cardBorderColor = "var(--border-strong)";
 
   return (
     <article
@@ -845,15 +870,17 @@ function ProjectCard({ row, expanded, onToggle }) {
         border: `1px solid ${cardBorderColor}`,
         borderTop: `1px solid ${cardBorderColor}`,
         borderRadius: "8px",
-        backgroundColor: expanded ? "#f8fafc" : "#ffffff",
+        backgroundColor: expanded ? "var(--surface-subtle)" : "var(--surface)",
         overflow: "hidden",
         transition: "background-color 0.15s ease, border-color 0.15s ease",
       }}
     >
       <button
         className="project-card-button"
+        type="button"
         onClick={onToggle}
         aria-expanded={expanded}
+        aria-label={expanded ? copy.card.collapse(row.displayName) : copy.card.expand(row.displayName)}
         style={{
           width: "100%",
           minWidth: 0,
@@ -909,7 +936,7 @@ function ProjectCard({ row, expanded, onToggle }) {
                 whiteSpace: "nowrap",
               }}
             >
-              {row.kind === "sector" ? "Sector" : "Enabler"}
+              {row.kind === "sector" ? copy.card.sector : copy.card.enabler}
             </span>
             <span
               style={{
@@ -918,8 +945,8 @@ function ProjectCard({ row, expanded, onToggle }) {
                 padding: `7px 11px 7px ${row.kind === "sector" ? "68px" : "78px"}`,
                 border: `1px solid ${row.sectorColor}`,
                 borderRadius: "999px",
-                backgroundColor: "#ffffff",
-                color: row.sectorColor,
+                backgroundColor: "var(--surface)",
+                color: getAccentTextColor(row.sectorColor),
                 fontFamily: FONT_STACK,
                 fontSize: "11px",
                 fontWeight: 800,
@@ -944,7 +971,7 @@ function ProjectCard({ row, expanded, onToggle }) {
               border: `1px solid ${row.sectorColor}24`,
               borderRadius: "999px",
               backgroundColor: `${row.sectorColor}08`,
-              color: row.sectorColor,
+              color: getAccentTextColor(row.sectorColor),
               fontFamily: FONT_STACK,
               fontSize: "11px",
               fontWeight: 800,
@@ -953,7 +980,7 @@ function ProjectCard({ row, expanded, onToggle }) {
               whiteSpace: "nowrap",
             }}
           >
-            {expanded ? "Hide details −" : "View details +"}
+            {expanded ? copy.card.hideDetails : copy.card.viewDetails}
           </span>
         </div>
 
@@ -967,7 +994,7 @@ function ProjectCard({ row, expanded, onToggle }) {
               WebkitBoxOrient: "vertical",
               WebkitLineClamp: expanded ? "unset" : 2,
               overflow: "hidden",
-              color: "#1a1a2e",
+              color: "var(--text-strong)",
               fontSize: "18px",
               fontWeight: 800,
               lineHeight: 1.22,
@@ -984,8 +1011,8 @@ function ProjectCard({ row, expanded, onToggle }) {
               marginTop: expanded ? "12px" : "10px",
             }}
           >
-            <StatusBadge status={row.status} statusMeta={row.statusMeta} accentColor={row.sectorColor} />
-            {!expanded && <CollapsedMilestoneSummary row={row} />}
+            <StatusBadge statusMeta={row.statusMeta} accentColor={row.sectorColor} />
+            {!expanded && <CollapsedMilestoneSummary row={row} copy={copy} />}
           </div>
           <AccordionReveal expanded={expanded} className="project-card-intro-reveal">
             <div
@@ -993,26 +1020,26 @@ function ProjectCard({ row, expanded, onToggle }) {
                 display: "grid",
                 gap: "8px",
                 paddingTop: "12px",
-                color: "#4b5563",
+                color: "var(--text-secondary)",
                 fontSize: "13px",
                 lineHeight: 1.55,
               }}
             >
-              <FactList row={row} />
+              <FactList row={row} copy={copy} />
               <p style={{ margin: 0 }}>{row.summary}</p>
             </div>
           </AccordionReveal>
         </div>
 
         <div style={{ display: "grid", gap: "12px" }}>
-          {expanded && <MilestoneIndicator row={row} />}
+          {expanded && <MilestoneIndicator row={row} copy={copy} />}
           <AccordionReveal expanded={expanded} className="project-card-completed-reveal">
-            <CompletedMilestoneRows row={row} />
+            <CompletedMilestoneRows row={row} language={language} />
           </AccordionReveal>
-          <NextMilestoneCallout row={row} expanded={expanded} />
+          <NextMilestoneCallout row={row} expanded={expanded} copy={copy} language={language} />
           <AccordionReveal expanded={expanded} className="project-card-timeline-reveal">
             <div style={{ display: "grid", gap: "12px", paddingTop: "2px" }}>
-              <FollowingMilestones row={row} />
+              <FollowingMilestones row={row} copy={copy} language={language} />
             </div>
           </AccordionReveal>
         </div>
@@ -1023,10 +1050,10 @@ function ProjectCard({ row, expanded, onToggle }) {
           style={{
             display: "grid",
             padding: "18px",
-            borderTop: "1px solid #e5e7eb",
+            borderTop: "1px solid var(--border)",
           }}
         >
-          <DetailSection title="Sources">
+          <DetailSection title={copy.facts.sources}>
             <SourceLinks sources={row.sources} color={row.sectorColor} interactive={expanded} />
           </DetailSection>
         </div>
@@ -1035,7 +1062,7 @@ function ProjectCard({ row, expanded, onToggle }) {
   );
 }
 
-function ProjectGrid({ rows, expandedIds, onToggle }) {
+function ProjectGrid({ rows, expandedIds, onToggle, copy, language }) {
   return (
     <section
       className="project-card-grid"
@@ -1052,25 +1079,204 @@ function ProjectGrid({ rows, expandedIds, onToggle }) {
           row={row}
           expanded={expandedIds.includes(row.id)}
           onToggle={() => onToggle(row.id)}
+          copy={copy}
+          language={language}
         />
       ))}
     </section>
   );
 }
 
+function EmphasizedText({ text, phrases }) {
+  const escaped = phrases.map((phrase) => phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const pattern = new RegExp(`(${escaped.join("|")})`, "gi");
+
+  return text.split(pattern).map((part, index) => {
+    const emphasized = phrases.some((phrase) => phrase.toLocaleLowerCase() === part.toLocaleLowerCase());
+    return emphasized ? <strong key={`${part}-${index}`}>{part}</strong> : part;
+  });
+}
+
+function HeaderControls({ language, onLanguageChange, onThemeToggle, copy }) {
+  return (
+    <div className="header-controls" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+      <div
+        role="group"
+        aria-label={copy.languageControl.label}
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          minHeight: "36px",
+          padding: "3px",
+          border: "1px solid var(--border)",
+          borderRadius: "999px",
+          backgroundColor: "var(--surface-subtle)",
+        }}
+      >
+        {SUPPORTED_LANGUAGES.map((option, index) => (
+          <span key={option} style={{ display: "inline-flex", alignItems: "center" }}>
+            {index > 0 && <span aria-hidden="true" style={{ color: "var(--text-faint)", fontSize: "10px" }}>|</span>}
+            <button
+              type="button"
+              aria-pressed={language === option}
+              onClick={() => onLanguageChange(option)}
+              style={{
+                minWidth: "38px",
+                minHeight: "28px",
+                padding: "5px 8px",
+                border: language === option ? "1px solid color-mix(in srgb, var(--brand) 32%, transparent)" : "1px solid transparent",
+                borderRadius: "999px",
+                backgroundColor: language === option ? "var(--surface)" : "transparent",
+                color: language === option ? "var(--brand-strong)" : "var(--text-muted)",
+                boxShadow: language === option ? "0 1px 2px var(--control-shadow)" : "none",
+                cursor: "pointer",
+                fontSize: "11px",
+                fontWeight: 850,
+                lineHeight: 1,
+              }}
+            >
+              {option === "en" ? "EN" : "BM"}
+            </button>
+          </span>
+        ))}
+      </div>
+      <button
+        className="theme-toggle"
+        type="button"
+        onClick={onThemeToggle}
+        aria-label={`${copy.themeToggle.label}: ${copy.themeToggle.light} / ${copy.themeToggle.dark}`}
+        title={`${copy.themeToggle.label}: ${copy.themeToggle.light} / ${copy.themeToggle.dark}`}
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "36px",
+          height: "36px",
+          padding: 0,
+          border: "1px solid var(--border)",
+          borderRadius: "50%",
+          backgroundColor: "var(--surface-subtle)",
+          color: "var(--text-body)",
+          cursor: "pointer",
+        }}
+      >
+        <svg className="theme-icon-moon" aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z" />
+        </svg>
+        <svg className="theme-icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="3.5" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" />
+        </svg>
+      </button>
+    </div>
+  );
+}
+
+function applyDocumentTheme(theme) {
+  const root = document.documentElement;
+  root.dataset.theme = theme;
+  root.style.colorScheme = theme;
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) {
+    themeColor.setAttribute("content", theme === "dark" ? "#121212" : "#ffffff");
+  }
+}
+
+function applyDocumentLanguage(language, metadata) {
+  document.documentElement.lang = language;
+  document.title = metadata.title;
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    description.setAttribute("content", metadata.description);
+  }
+}
+
+let sessionLanguage = DEFAULT_LANGUAGE;
+
+function getLanguageSnapshot() {
+  try {
+    const savedLanguage = localStorage.getItem("pcds-language");
+    return SUPPORTED_LANGUAGES.includes(savedLanguage) ? savedLanguage : sessionLanguage;
+  } catch {
+    return sessionLanguage;
+  }
+}
+
+function subscribeToLanguage(onChange) {
+  const handleStorage = (event) => {
+    if (event.key === "pcds-language") {
+      onChange();
+    }
+  };
+  window.addEventListener("storage", handleStorage);
+  window.addEventListener("pcds-language-change", onChange);
+  return () => {
+    window.removeEventListener("storage", handleStorage);
+    window.removeEventListener("pcds-language-change", onChange);
+  };
+}
+
 export default function App() {
+  const language = useSyncExternalStore(
+    subscribeToLanguage,
+    getLanguageSnapshot,
+    () => DEFAULT_LANGUAGE
+  );
   const [activeFilter, setActiveFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
   const environment = getAppEnvironment();
-  const lastUpdatedLabel = formatLastUpdated(LAST_UPDATED);
+  const copy = getUiCopy(language);
+  const filters = getFilters(copy);
+  const lastUpdatedLabel = formatLastUpdated(LAST_UPDATED, language);
 
-  const rows = useMemo(() => sortProjectRows(getProjectRows()), []);
-  const selectedFilter = FILTERS.find((filter) => filter.id === activeFilter) || FILTERS[0];
-  const filteredRows = sortProjectRows(filterRowsByStatus(rows, selectedFilter));
+  useEffect(() => {
+    applyDocumentLanguage(language, copy.metadata);
+  }, [copy, language]);
+
+  useEffect(() => {
+    const preference = window.matchMedia("(prefers-color-scheme: dark)");
+    const followSystemTheme = (event) => {
+      try {
+        if (!localStorage.getItem("pcds-theme")) {
+          applyDocumentTheme(event.matches ? "dark" : "light");
+        }
+      } catch {
+        applyDocumentTheme(event.matches ? "dark" : "light");
+      }
+    };
+
+    preference.addEventListener("change", followSystemTheme);
+    return () => preference.removeEventListener("change", followSystemTheme);
+  }, []);
+
+  const localizedSectors = localizeSectors(SECTORS, language);
+  const rows = sortProjectRows(getProjectRows(localizedSectors, copy), language);
+  const selectedFilter = filters.find((filter) => filter.id === activeFilter) || filters[0];
+  const filteredRows = sortProjectRows(filterRowsByStatus(rows, selectedFilter), language);
+
   const toggleExpanded = (id) => {
     setExpandedIds((current) =>
       current.includes(id) ? current.filter((expandedId) => expandedId !== id) : [...current, id]
     );
+  };
+  const selectLanguage = (nextLanguage) => {
+    sessionLanguage = nextLanguage;
+    applyDocumentLanguage(nextLanguage, getUiCopy(nextLanguage).metadata);
+    try {
+      localStorage.setItem("pcds-language", nextLanguage);
+    } catch {
+      // Language selection still works for this session when storage is unavailable.
+    }
+    window.dispatchEvent(new Event("pcds-language-change"));
+  };
+  const toggleTheme = () => {
+    const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    applyDocumentTheme(nextTheme);
+    try {
+      localStorage.setItem("pcds-theme", nextTheme);
+    } catch {
+      // Theme selection still works for this session when storage is unavailable.
+    }
   };
 
   return (
@@ -1078,15 +1284,15 @@ export default function App() {
       className="app-shell"
       style={{
         minHeight: "100vh",
-        backgroundColor: "#ffffff",
-        color: "#374151",
+        backgroundColor: "var(--page-bg)",
+        color: "var(--text-body)",
         fontFamily: FONT_STACK,
       }}
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         * { box-sizing: border-box; }
-        body { background: #ffffff; }
+        body { background: var(--page-bg); }
         .app-shell { animation: app-fade-in 0.5s ease; }
         @keyframes app-fade-in {
           from { opacity: 0; }
@@ -1094,7 +1300,7 @@ export default function App() {
         }
         button { font: inherit; }
         a:hover { opacity: 0.8; }
-        ::selection { background: #0d948844; }
+        ::selection { background: color-mix(in srgb, var(--brand) 26%, transparent); }
         .accordion-reveal {
           display: grid;
           grid-template-rows: 0fr;
@@ -1147,9 +1353,16 @@ export default function App() {
             font-size: 9px !important;
             letter-spacing: 0.14em !important;
           }
+          .header-meta-row {
+            align-items: flex-start !important;
+            gap: 12px !important;
+          }
+          .header-controls {
+            flex-shrink: 0;
+          }
           .summary-metrics {
             grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            border-left: 1px solid #e5e7eb;
+            border-left: 1px solid var(--border);
           }
           .desktop-milestone-metric {
             display: none !important;
@@ -1175,7 +1388,7 @@ export default function App() {
             margin-top: 18px !important;
           }
           .tracker-description strong {
-            color: #374151;
+            color: var(--text-body);
             font-weight: 700;
           }
           .project-facts {
@@ -1183,7 +1396,7 @@ export default function App() {
           }
           .project-facts-value {
             border-left: 0 !important;
-            border-top: 1px solid #e5e7eb !important;
+            border-top: 1px solid var(--border) !important;
           }
         }
       `}</style>
@@ -1195,24 +1408,40 @@ export default function App() {
           }}
         >
           <div
-            className="tracker-kicker"
+            className="header-meta-row"
             style={{
-              marginBottom: "10px",
-              color: "#6b7280",
-              fontFamily: FONT_STACK,
-              fontSize: "10px",
-              fontWeight: 800,
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "20px",
+              marginBottom: "12px",
             }}
           >
-            Sarawak Development Monitor
+            <div
+              className="tracker-kicker"
+              style={{
+                color: "var(--text-muted)",
+                fontFamily: FONT_STACK,
+                fontSize: "10px",
+                fontWeight: 800,
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+              }}
+            >
+              {copy.header.kicker}
+            </div>
+            <HeaderControls
+              language={language}
+              onLanguageChange={selectLanguage}
+              onThemeToggle={toggleTheme}
+              copy={copy}
+            />
           </div>
           <h1
             className="tracker-title"
             style={{
               margin: 0,
-              color: "#1a1a2e",
+              color: "var(--text-strong)",
               fontSize: "48px",
               fontWeight: 800,
               letterSpacing: "0",
@@ -1221,59 +1450,55 @@ export default function App() {
           >
             PCDS 2030
             <br />
-            <span style={{ color: "#0d9488" }}>Project Tracker</span>
+            <span style={{ color: "var(--brand)" }}>{copy.header.title}</span>
           </h1>
           <div
             className="tracker-description"
             style={{
               maxWidth: "720px",
               margin: "18px 0 0",
-              color: "#6b7280",
+              color: "var(--text-muted)",
               fontSize: "16px",
               lineHeight: 1.6,
             }}
           >
-            <p style={{ margin: 0 }}>
-              PCDS 2030 is the Sarawak Government&apos;s{" "}
-              <strong>10-year Post COVID-19 Development Strategy</strong> for sustainable,
-              high-income growth driven by data and innovation. It targets{" "}
-              <strong>8% annual growth</strong>, from RM136 billion in 2019 to{" "}
-              <strong>RM282 billion by 2030</strong>.
-            </p>
-            <p style={{ margin: "10px 0 0" }}>
-              This <strong>independent tracker</strong> brings major projects, their current status,
-              key milestones, and links to publicly available sources into one scan-first view.
-            </p>
+            {copy.header.intro.map((paragraph, index) => (
+              <p key={paragraph} style={{ margin: index === 0 ? 0 : "10px 0 0" }}>
+                <EmphasizedText text={paragraph} phrases={INTRO_EMPHASIS[language]} />
+              </p>
+            ))}
           </div>
           <p
             className="tracker-last-updated"
             style={{
               margin: "14px 0 0",
-              color: "#6b7280",
+              color: "var(--text-muted)",
               fontSize: "12px",
               fontWeight: 600,
               lineHeight: 1.4,
             }}
           >
-            <span style={{ color: "#4b5563", fontWeight: 700 }}>Last updated:</span>{" "}
+            <span style={{ color: "var(--text-secondary)", fontWeight: 700 }}>{copy.header.lastUpdated}</span>{" "}
             {lastUpdatedLabel}
           </p>
         </header>
 
         <div style={{ marginBottom: "24px" }}>
-          <SummaryMetrics rows={rows} />
+          <SummaryMetrics rows={rows} copy={copy} />
         </div>
 
         <section>
           <FilterBar
             activeFilter={activeFilter}
             onFilter={setActiveFilter}
-            filters={FILTERS}
+            filters={filters}
           />
           <ProjectGrid
             rows={filteredRows}
             expandedIds={expandedIds}
             onToggle={toggleExpanded}
+            copy={copy}
+            language={language}
           />
         </section>
 
@@ -1281,31 +1506,30 @@ export default function App() {
           style={{
             marginTop: "56px",
             paddingTop: "20px",
-            borderTop: "1px solid #e5e7eb",
-            color: "#9ca3af",
+            borderTop: "1px solid var(--border)",
+            color: "var(--text-faint)",
             fontSize: "12px",
             lineHeight: 1.7,
           }}
         >
           <p style={{ margin: "0 0 8px" }}>
-            Built by{" "}
+            {copy.footer.independent.split("hafiy.my")[0]}
             <a
               href="https://hafiy.my"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#0d9488", textDecoration: "none" }}
+              style={{ color: "var(--brand)", textDecoration: "none" }}
             >
               hafiy.my
-            </a>{" "}
-            — an independent tracker. Not affiliated with the Sarawak Government.
+            </a>
+            {copy.footer.independent.split("hafiy.my")[1]}
           </p>
           <p style={{ margin: 0 }}>
-            Data sourced from public reports, news outlets, and official announcements.
-            Milestone statuses are best-effort based on available information.
+            {copy.footer.methodology}
           </p>
         </footer>
       </main>
-      <EnvironmentBadge environment={environment} />
+      <EnvironmentBadge environment={environment} copy={copy} />
     </div>
   );
 }

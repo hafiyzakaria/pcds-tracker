@@ -27,6 +27,8 @@ The current app is a single-page React site with:
 - Summary metrics for tracked projects, ongoing projects, planning projects, completed projects, and milestones.
 - Last updated indicator beneath the page description, sourced from `LAST_UPDATED` in `src/trackerData.js`.
 - Status filters for all, planning, ongoing, and completed projects.
+- A compact `EN | BM` control that translates the interface, project summaries, facts, and milestones into Malaysian Bahasa Melayu while keeping project titles in English and preserving canonical project identities and source links.
+- An icon theme control that defaults to the reader's system preference, supports explicit light or dark selection, and remembers that selection locally.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
 - Two short introductory paragraphs explaining the strategy, its central economic target, and
   the independent tracker purpose without adding a separate promotional About section.
@@ -38,6 +40,9 @@ The current app is a single-page React site with:
 
 The initial dashboard view is pre-rendered during the build and hydrated by React in the browser.
 This keeps the current interactions while making the public content available in the initial HTML.
+The pre-rendered document remains English. A saved BM preference is restored after hydration, and
+the document language is then updated to `ms`; theme preference is applied before paint to avoid a
+light-theme flash.
 
 ## Search Visibility
 
@@ -52,6 +57,11 @@ fidelity but does not make Preview eligible for Google indexing.
 ## Current Data Model
 
 Project data lives in `src/trackerData.js`.
+
+English tracker data remains the canonical editorial source. `src/localization.js` contains the
+explicit BM presentation layer for category names, project facts, summaries, and milestones.
+Project titles stay in English; URLs, compact date values, completion flags, and canonical project
+names are shared between both languages.
 
 The data currently includes:
 
@@ -103,7 +113,8 @@ Current content risks:
 
 - Keep the tracker scan-first.
 - Prioritize clarity over visual novelty.
-- Keep public claims tied to visible source links.
+- Keep public card claims tied to visible, project-specific public webpage links.
+- Use PCDS PDFs to confirm inclusion and guide research, not as the sole evidence for a live card claim.
 - Avoid turning the site into a marketing landing page.
 - Preserve the independent-tracker disclaimer.
 - Keep Production indexable and Preview explicitly noindexed.

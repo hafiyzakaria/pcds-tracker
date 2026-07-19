@@ -279,7 +279,7 @@ export const SECTORS = [
           { date: "2025-12-17", text: "Sarawak committed RM500M for medical equipment", done: true },
           { date: "2026-07-07", text: "Design-and-build procurement stage confirmed", done: true },
           { date: "2027-Q1", text: "Construction begins", done: false },
-          { date: "2032", text: "Project completion expected", done: false },
+          { date: "2032", text: "Project completion", done: false },
         ],
         sources: [
           { label: "DayakDaily — RM1.52B preliminary estimate (Dec 2025)", url: "https://dayakdaily.com/sarawak-cancer-centre-construction-to-start-by-2026-with-rm1-52-bln-preliminary-estimate-cost/" },
@@ -311,7 +311,7 @@ export const SECTORS = [
           "500MW data centre park in Kuching. First facility: 17MW IT capacity for Global Telecommunications Group. Aligned with Sarawak Digital Economy Blueprint 2030. Sarawak's abundant hydropower makes it attractive for energy-intensive data centre operations, with first operations targeted in 2026.",
         milestones: [
           { date: "2025-Q2", text: "Construction began on first facility", done: true },
-          { date: "2026", text: "First 17MW data centre expected to begin operations", done: false },
+          { date: "2026", text: "First 17MW data centre begins operations", done: false },
         ],
         sources: [
           { label: "DCD — FutureData first off-taker (2025)", url: "https://www.datacenterdynamics.com/en/news/futuredata-announces-first-off-taker-at-500mw-malaysian-data-center-park-in-sarawak/" },
@@ -402,7 +402,7 @@ export const SECTORS = [
           { date: "2022-04-03", text: "Petra Jaya campus began operations", done: true },
           { date: "2025-09", text: "Three campuses completed statewide", done: true },
           { date: "2025-09", text: "Sibu campus opening date announced", done: true },
-          { date: "2027-2028", text: "Remaining three campuses completed", done: false },
+          { date: "2027-2028", text: "Completion of the remaining three campuses", done: false },
         ],
         sources: [
           { label: "YSISS — Official site", url: "https://ysiss.edu.my/" },
@@ -470,7 +470,7 @@ export const SECTORS = [
           { date: "2021", text: "Phase 1 construction commenced", done: true },
           { date: "2025-09-11", text: "Phase 2 officially launched", done: true },
           { date: "2026-04", text: "Phase 1 reached 70.05 percent progress", done: true },
-          { date: "2027", text: "Expected Phase 1 completion", done: false },
+          { date: "2027", text: "Phase 1 completion", done: false },
           { date: "2029", text: "Phase 2 completion scheduled", done: false },
         ],
         sources: [
@@ -499,7 +499,7 @@ export const SECTORS = [
           { date: "2024-11-04", text: "RM1B commitment and pipe manufacturing reported", done: true },
           { date: "2025-10", text: "Offshore pipeline section completed", done: true },
           { date: "2026-05-12", text: "Pipeline pre-commissioning activities notified", done: true },
-          { date: "2027", text: "Progressive commercial operations expected to begin", done: false },
+          { date: "2027", text: "Progressive commercial operations begin", done: false },
         ],
         sources: [
           { label: "The Star — RM1bil gas pipeline plan (Nov 2024)", url: "https://www.thestar.com.my/business/business-news/2024/11/04/rm1bil-gas-pipeline-plan" },
@@ -536,7 +536,7 @@ export const SECTORS = [
           { date: "2023", text: "Techno-commercial study commenced", done: true },
           { date: "2025-10-17", text: "Conditional approval obtained", done: true },
           { date: "TBD", text: "Further regulatory approvals and licences", done: false },
-          { date: "2035", text: "Electricity flow expected", done: false },
+          { date: "2035", text: "Electricity flow", done: false },
         ],
         sources: [
           { label: "Sarawak Energy — Interconnection study (Mar 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/sarawak-moves-closer-to-regional-powerhouse-aspiration-through-hydropower-venture-in-indonesia" },
@@ -677,7 +677,7 @@ export const SECTORS = [
         milestones: [
           { date: "2023-03-01", text: "Groundbreaking ceremony held", done: true },
           { date: "2023-10-31", text: "Early works reported underway", done: true },
-          { date: "2029", text: "First power expected", done: false },
+          { date: "2029", text: "First power", done: false },
         ],
         sources: [
           { label: "Sarawak Energy — Mentarang Induk groundbreaking (Mar 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/sarawak-moves-closer-to-regional-powerhouse-aspiration-through-hydropower-venture-in-indonesia" },
