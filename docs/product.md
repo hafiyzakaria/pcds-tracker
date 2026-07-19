@@ -61,7 +61,8 @@ Project data lives in `src/trackerData.js`.
 English tracker data remains the canonical editorial source. `src/localization.js` contains the
 explicit BM presentation layer for category names, project facts, summaries, and milestones.
 Project titles stay in English; URLs, compact date values, completion flags, and canonical project
-names are shared between both languages.
+names are shared between both languages. The BM interface presents the English category term
+`Enabler` as `Pemboleh`.
 
 The data currently includes:
 
