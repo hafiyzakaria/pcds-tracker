@@ -87,6 +87,19 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Completed on Preview: PCDS PDFs are documented as confirmation and research references, while
   claims displayed on live project cards require visible, project-specific public webpage evidence.
 
+### Add indexable BM and editorial update routes
+
+- Completed locally on Preview: `/bm/` now pre-renders the full Malay tracker with `lang="ms"`,
+  Malay metadata, a self-referencing canonical, and reciprocal English and Malay `hreflang` links.
+- Completed locally on Preview: `/updates/` is an editorial history of dated, source-backed public
+  project developments, with a matching BM presentation at `/bm/updates/`, supporting sources, and
+  a visible top-level link back to the matching-language tracker.
+- Completed locally on Preview: `/`, `/bm/`, `/updates/`, and `/bm/updates/` are included in the
+  sitemap and generated as real static HTML files for direct GitHub Pages navigation. Language
+  controls switch instantly after hydration while retaining these static route links as fallback.
+- Release gate: Review all four routes on the deployed Preview site before any Production
+  promotion. Search Console measurement begins only after Production deployment and crawling.
+
 ## 1. Must Fix Before Production
 
 ### Add a production data review checklist
@@ -99,16 +112,18 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ## 2. Should Improve Soon
 
-### Verify indexing after the SEO release
+### Measure indexing and search performance after the next SEO release
 
-- What needs to be done: After the pre-rendering and introduction reach Production, inspect the
-  live URL in Google Search Console and request indexing again if appropriate.
-- Why it matters: Repository changes make the page crawlable and understandable, but Google still
-  controls when it recrawls and reranks the site.
+- What needs to be done: After `/bm/`, `/updates/`, and `/bm/updates/` reach Production, confirm their live HTML,
+  canonical and `hreflang` signals, then review indexing and page-level performance in Google
+  Search Console using `docs/seo-measurement.md`.
+- Why it matters: Local and Preview builds prove the implementation, but impressions, clicks, and
+  indexing status cannot be measured until Production is deployed and crawled.
 - Estimated difficulty: low
 - Risk level: low
-- Suggested first task: Confirm the live HTML and canonical URL, then use URL Inspection for
-  `https://pcds2030.com/` and monitor the submitted sitemap.
+- Suggested first task: After an approved Production release, inspect `/`, `/bm/`, `/updates/`,
+  and `/bm/updates/`, then record the first 28-day baseline without claiming pre-release search
+  performance.
 
 ### Add basic data-shape tests
 

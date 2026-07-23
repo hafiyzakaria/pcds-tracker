@@ -21,14 +21,15 @@ Secondary users:
 
 ## Current User Experience
 
-The current app is a single-page React site with:
+The current product is a small static React site with:
 
 - Header: "Sarawak Development Monitor" and "PCDS 2030 Project Tracker".
 - Summary metrics for tracked projects, ongoing projects, planning projects, completed projects, and milestones.
 - Last updated indicator beneath the page description, sourced from `LAST_UPDATED` in `src/trackerData.js`.
 - Status filters for all, planning, ongoing, and completed projects.
-- A compact `EN | BM` control that translates the interface, project summaries, facts, and milestones into Malaysian Bahasa Melayu while keeping the site identity and project titles in English and preserving canonical project identities and source links. The BM introduction and footer deliberately retain the quoted English phrase `'Project tracker'` as part of the site's identity.
+- A compact `EN | BM` control that switches instantly after hydration while retaining normal links to separately pre-rendered English and BM routes. The BM presentation translates the interface, project summaries, facts, milestones, and editorial update history into Malaysian Bahasa Melayu while keeping the site identity and project titles in English and preserving canonical project identities and source links. The BM introduction and footer deliberately retain the quoted English phrase `'Project tracker'` as part of the site's identity.
 - An icon theme control that defaults to the reader's system preference, supports explicit light or dark selection, and remembers that selection locally.
+- The last-updated pill links directly to the editorial update history, which has a visible top-level pill back to the matching-language tracker.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
 - Two short introductory paragraphs explaining the strategy, its central economic target, and
   the project tracker purpose without adding a separate promotional About section.
@@ -38,21 +39,39 @@ The current app is a single-page React site with:
   referring abstractly to "supporting public evidence".
 - Footer attribution linking to hafiy.my and stating that the tracker is not affiliated with the Sarawak Government. The BM version begins with `'Project tracker' dibangunkan oleh — hafiy.my`, while the English version additionally describes the tracker as independent.
 
-The initial dashboard view is pre-rendered during the build and hydrated by React in the browser.
-This keeps the current interactions while making the public content available in the initial HTML.
-The pre-rendered document remains English. A saved BM preference is restored after hydration, and
-the document language is then updated to `ms`; theme preference is applied before paint to avoid a
+The English tracker at `/`, BM tracker at `/bm/`, English editorial history at `/updates/`, and BM
+editorial history at `/bm/updates/` are all pre-rendered during the build and hydrated by React in
+the browser. Each route has a real static `index.html` file for direct GitHub Pages navigation.
+After hydration, the language control updates the route and presentation without a document
+reload. Direct navigation and no-JavaScript fallback still use the static HTML. BM routes are
+pre-rendered in Malay with `lang="ms"`. Theme preference is applied before paint to avoid a
 light-theme flash.
+
+## Editorial Update History
+
+`/updates/` and `/bm/updates/` are bilingual dated histories of meaningful public developments
+already represented in the tracker data. They are not developer changelogs. Each entry identifies
+the affected project and sector, briefly describes the public development, links to a supporting
+source already attached to that project, and keeps a visible top-level route back to the tracker.
+
+The displayed date is the date of the reported development. It must not be described as the date
+the tracker was edited unless that is independently recorded. New entries should remain selective,
+source-backed, and useful to readers.
 
 ## Search Visibility
 
 Production at `https://pcds2030.com` is the canonical, indexable public site. Its SEO foundation
-includes canonical and social metadata, `WebSite` structured data, `robots.txt`, and a sitemap.
-The pre-rendered dashboard gives search engines meaningful content before client-side React runs.
+includes route-specific canonical and social metadata, structured data, `robots.txt`, and a
+sitemap. Both tracker and update-history language pairs include reciprocal `hreflang` references.
+The pre-rendered tracker and update history give search engines meaningful content before
+client-side React runs.
 
 Preview at `https://preview.pcds2030.com` is for development review only. Vercel sends
 `X-Robots-Tag: noindex, nofollow` for every Preview route. Pre-rendering Preview improves review
 fidelity but does not make Preview eligible for Google indexing.
+
+Search Console measurement for new routes starts only after an approved Production release and
+crawler discovery. The review process is documented in `docs/seo-measurement.md`.
 
 ## Current Data Model
 

@@ -15,6 +15,8 @@ The tracker brings publicly available project information into one place so anyo
 
 Select a project card on the website to see its summary, lead parties, reported value, milestones, and source links. Filters make it easy to browse projects by status. The interface can be switched between English and Bahasa Melayu, and the theme control supports light and dark viewing.
 
+The site also has an [editorial updates page](https://pcds2030.com/updates/) that records meaningful public developments already reflected in the tracker. Each entry links to its supporting public source.
+
 ## Why it exists
 
 Information about large development projects is often spread across many announcements and reports. This project presents that information in a simple, scan-friendly format for members of the public, researchers, journalists, and policy watchers.
@@ -35,7 +37,9 @@ See the [data methodology](docs/data-methodology.md) for more detail.
 
 ## For contributors and developers
 
-The website is a static [Vite](https://vite.dev/) and [React](https://react.dev/) app. It has no backend or database. Most interface code is in `src/App.jsx`, the hand-maintained project data is in `src/trackerData.js`, and the BM presentation copy is in `src/localization.js`.
+The website is a static [Vite](https://vite.dev/) and [React](https://react.dev/) app. It has no backend or database. Most tracker interface code is in `src/App.jsx`, the hand-maintained project data is in `src/trackerData.js`, BM presentation copy is in `src/localization.js`, and editorial update entries are in `src/updateHistory.js`.
+
+The build creates real static HTML for the English tracker at `/`, the BM tracker at `/bm/`, and bilingual update history routes at `/updates/` and `/bm/updates/`. This allows direct navigation on GitHub Pages without relying on a client-side fallback.
 
 ### Run it locally
 
@@ -54,6 +58,8 @@ npm run build:preview  # Build the Preview version
 npm run build          # Build the Production version
 npm run preview        # Serve the latest build locally
 ```
+
+After a build, `npm run preview` can be used to open `/`, `/bm/`, `/updates/`, and `/bm/updates/` directly.
 
 ### Development and release workflow
 
@@ -79,6 +85,7 @@ Preview deploys through Vercel. Production deploys through GitHub Pages. Preview
 - [Product and audience](docs/product.md)
 - [Design guidance](docs/design.md)
 - [Data methodology](docs/data-methodology.md)
+- [SEO measurement after release](docs/seo-measurement.md)
 - [Known issues and next tasks](docs/backlog.md)
 - [Contributor and agent instructions](AGENTS.md)
 
@@ -88,7 +95,7 @@ These files are the project's source of truth for product intent, design decisio
 
 - Data updates and source checks are manual.
 - Project facts are maintained in the codebase rather than a content management system.
-- Most interface code and styling currently live in one large `src/App.jsx` file.
+- Most tracker interface code and styling currently live in one large `src/App.jsx` file.
 - Automated data-shape tests have not yet been added.
 
 See the [backlog](docs/backlog.md) for the current list of known issues and recommended next tasks.

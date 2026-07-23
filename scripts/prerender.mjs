@@ -1,7 +1,14 @@
 #!/usr/bin/env node
-import { mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import {
+  mkdir,
+  mkdtemp,
+  readFile,
+  readdir,
+  rm,
+  writeFile,
+} from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 import { build } from "vite";
@@ -10,6 +17,124 @@ const mode = process.argv[2] || "production";
 const projectRoot = resolve(".");
 const distIndexPath = resolve("dist/index.html");
 const serverOutDir = await mkdtemp(join(tmpdir(), "pcds-tracker-prerender-"));
+const productionOrigin = "https://pcds2030.com";
+
+function escapeHtml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function getCanonical(route) {
+  return new URL(route.path, productionOrigin).href;
+}
+
+function getStructuredData(route) {
+  const canonical = getCanonical(route);
+
+  if (route.id === "tracker-en") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "PCDS 2030 Project Tracker",
+      alternateName: ["PCDS 2030 Dashboard", "Penjejak Projek PCDS 2030"],
+      url: canonical,
+      description: route.metadata.description,
+      inLanguage: ["en-MY", "ms-MY"],
+    };
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@type": route.page === "updates" ? "CollectionPage" : "WebPage",
+    name: route.metadata.title,
+    url: canonical,
+    description: route.metadata.description,
+    inLanguage: route.language === "ms" ? "ms-MY" : "en-MY",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "PCDS 2030 Project Tracker",
+      url: `${productionOrigin}/`,
+    },
+  };
+}
+
+function applyRouteMetadata(template, route, allRoutes) {
+  const canonical = getCanonical(route);
+  const title = escapeHtml(route.metadata.title);
+  const description = escapeHtml(route.metadata.description);
+  const alternateLinks = route.alternates
+    .map(({ hreflang, routeId }) => {
+      const alternateRoute = allRoutes.find((candidate) => candidate.id === routeId);
+      if (!alternateRoute) {
+        throw new Error(`Unknown alternate route ${routeId} for ${route.id}.`);
+      }
+      return `    <link rel="alternate" hreflang="${hreflang}" href="${getCanonical(alternateRoute)}" />`;
+    })
+    .join("\n");
+  const alternateLocale = route.alternates
+    .map(({ routeId }) => allRoutes.find((candidate) => candidate.id === routeId))
+    .find(
+      (alternateRoute) =>
+        alternateRoute && alternateRoute.locale !== route.locale
+    )?.locale;
+  const localeMarkup = [
+    `    <meta property="og:locale" content="${route.locale}" />`,
+    alternateLocale
+      ? `    <meta property="og:locale:alternate" content="${alternateLocale}" />`
+      : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+  const structuredData = JSON.stringify(getStructuredData(route), null, 6)
+    .split("\n")
+    .map((line) => `      ${line}`)
+    .join("\n");
+
+  let output = template
+    .replace(/<html lang="[^"]*">/, `<html lang="${route.language}">`)
+    .replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`)
+    .replace(
+      /<meta name="description" content="[^"]*" \/>/,
+      `<meta name="description" content="${description}" />`
+    )
+    .replace(
+      /<link rel="canonical" href="[^"]*" \/>/,
+      `<link rel="canonical" href="${canonical}" />${alternateLinks ? `\n${alternateLinks}` : ""}`
+    )
+    .replace(
+      /\s*<meta property="og:locale" content="[^"]*" \/>\s*(?:<meta property="og:locale:alternate" content="[^"]*" \/>)?/,
+      `\n${localeMarkup}`
+    )
+    .replace(
+      /<meta property="og:title" content="[^"]*" \/>/,
+      `<meta property="og:title" content="${title}" />`
+    )
+    .replace(
+      /<meta property="og:description" content="[^"]*" \/>/,
+      `<meta property="og:description" content="${description}" />`
+    )
+    .replace(
+      /<meta property="og:url" content="[^"]*" \/>/,
+      `<meta property="og:url" content="${canonical}" />`
+    )
+    .replace(
+      /<meta name="twitter:title" content="[^"]*" \/>/,
+      `<meta name="twitter:title" content="${title}" />`
+    )
+    .replace(
+      /<meta name="twitter:description" content="[^"]*" \/>/,
+      `<meta name="twitter:description" content="${description}" />`
+    )
+    .replace(
+      /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
+      `<script type="application/ld+json">\n${structuredData}\n    </script>`
+    );
+
+  return output;
+}
 
 try {
   await build({
@@ -32,8 +157,10 @@ try {
     throw new Error("Prerender server entry was not generated.");
   }
 
-  const { render } = await import(pathToFileURL(join(serverOutDir, serverEntry)).href);
-  const appHtml = render();
+  const { getStaticRoutes, render } = await import(
+    pathToFileURL(join(serverOutDir, serverEntry)).href
+  );
+  const routes = getStaticRoutes();
   const template = await readFile(distIndexPath, "utf8");
   const rootMarker = '<div id="root"></div>';
 
@@ -41,10 +168,22 @@ try {
     throw new Error(`Could not find ${rootMarker} in ${distIndexPath}.`);
   }
 
-  const output = template.replace(rootMarker, `<div id="root">${appHtml}</div>`);
-  await writeFile(distIndexPath, output);
+  for (const route of routes) {
+    const appHtml = render(route.path);
+    const routeTemplate = applyRouteMetadata(template, route, routes);
+    const output = routeTemplate.replace(
+      rootMarker,
+      `<div id="root">${appHtml}</div>`
+    );
+    const outputPath =
+      route.path === "/"
+        ? distIndexPath
+        : resolve("dist", route.path.slice(1), "index.html");
 
-  console.log(`Prerendered ${mode} HTML into ${distIndexPath}.`);
+    await mkdir(dirname(outputPath), { recursive: true });
+    await writeFile(outputPath, output);
+    console.log(`Prerendered ${mode} ${route.path} into ${outputPath}.`);
+  }
 } finally {
   await rm(serverOutDir, { recursive: true, force: true });
 }

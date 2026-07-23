@@ -1,0 +1,235 @@
+import { shouldShowEnvironmentBadge } from "./environment.js";
+import { getRouteHref } from "./routes.js";
+
+const FONT_STACK =
+  "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+
+export function NavigationPillLink({
+  children,
+  className = "",
+  href,
+  onClick,
+}) {
+  return (
+    <a
+      className={`navigation-pill-link ${className}`.trim()}
+      href={href}
+      onClick={onClick}
+    >
+      <span className="navigation-pill-link-inner">{children}</span>
+    </a>
+  );
+}
+
+export function ProjectClassificationBadge({
+  color,
+  copy,
+  kind,
+  maxWidth = "100%",
+  name,
+}) {
+  const label = kind === "sector" ? copy.card.sector : copy.card.enabler;
+
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        position: "relative",
+        width: "max-content",
+        maxWidth,
+      }}
+    >
+      <span
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          position: "absolute",
+          inset: "0 auto 0 0",
+          zIndex: 2,
+          minHeight: "28px",
+          padding: "7px 10px",
+          border: `1px solid ${color}`,
+          borderRadius: "999px",
+          backgroundColor: color,
+          color: "#ffffff",
+          fontFamily: FONT_STACK,
+          fontSize: "11px",
+          fontWeight: 800,
+          letterSpacing: "0",
+          lineHeight: 1,
+          whiteSpace: "nowrap",
+        }}
+      >
+        {label}
+      </span>
+      <span
+        style={{
+          minWidth: 0,
+          minHeight: "28px",
+          padding: `7px 11px 7px ${kind === "sector" ? "68px" : "78px"}`,
+          border: `1px solid ${color}`,
+          borderRadius: "999px",
+          backgroundColor: "var(--surface)",
+          color: `color-mix(in srgb, ${color} 78%, var(--accent-text-mix))`,
+          fontFamily: FONT_STACK,
+          fontSize: "11px",
+          fontWeight: 800,
+          lineHeight: 1.25,
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+        }}
+      >
+        {name}
+      </span>
+    </span>
+  );
+}
+
+export function LanguageToggle({
+  copy,
+  englishRouteId,
+  language,
+  malayRouteId,
+  onNavigate,
+}) {
+  const options = [
+    { id: "en", label: "EN", routeId: englishRouteId },
+    { id: "ms", label: "BM", routeId: malayRouteId },
+  ];
+
+  return (
+    <div
+      role="group"
+      aria-label={copy.languageControl.label}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        minHeight: "36px",
+        padding: "3px",
+        border: "1px solid var(--border)",
+        borderRadius: "999px",
+        backgroundColor: "var(--surface-subtle)",
+      }}
+    >
+      {options.map((option, index) => (
+        <span
+          key={option.id}
+          style={{ display: "inline-flex", alignItems: "center" }}
+        >
+          {index > 0 && (
+            <span
+              aria-hidden="true"
+              style={{ color: "var(--text-faint)", fontSize: "10px" }}
+            >
+              |
+            </span>
+          )}
+          <a
+            href={getRouteHref(option.routeId)}
+            hrefLang={option.id === "en" ? "en" : "ms"}
+            lang={option.id === "en" ? "en" : "ms"}
+            aria-current={language === option.id ? "page" : undefined}
+            onClick={(event) => onNavigate(event, option.routeId)}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              minWidth: "38px",
+              minHeight: "28px",
+              padding: "5px 8px",
+              border:
+                language === option.id
+                  ? "1px solid color-mix(in srgb, var(--brand) 32%, transparent)"
+                  : "1px solid transparent",
+              borderRadius: "999px",
+              backgroundColor:
+                language === option.id ? "var(--surface)" : "transparent",
+              color:
+                language === option.id
+                  ? "var(--brand-strong)"
+                  : "var(--text-muted)",
+              boxShadow:
+                language === option.id
+                  ? "0 1px 2px var(--control-shadow)"
+                  : "none",
+              cursor: "pointer",
+              fontSize: "11px",
+              fontWeight: 850,
+              lineHeight: 1,
+              textDecoration: "none",
+            }}
+          >
+            {option.label}
+          </a>
+        </span>
+      ))}
+    </div>
+  );
+}
+
+export function EnvironmentBadge({ environment, copy }) {
+  if (!shouldShowEnvironmentBadge(environment)) {
+    return null;
+  }
+
+  return (
+    <div
+      aria-label={copy.accessibility.environment(environment.name)}
+      style={{
+        position: "fixed",
+        right: "12px",
+        bottom: "12px",
+        zIndex: 50,
+        padding: "5px 8px",
+        border: `1px solid ${environment.badgeColor}`,
+        borderRadius: "4px",
+        backgroundColor: "var(--surface)",
+        color: environment.badgeColor,
+        boxShadow: "0 6px 16px var(--shadow)",
+        fontFamily: FONT_STACK,
+        fontSize: "10px",
+        fontWeight: 850,
+        letterSpacing: "0.08em",
+        lineHeight: 1,
+        pointerEvents: "none",
+      }}
+    >
+      {environment.badgeLabel}
+    </div>
+  );
+}
+
+export function ThemeToggle({ onThemeToggle, copy }) {
+  return (
+    <button
+      className="theme-toggle"
+      type="button"
+      onClick={onThemeToggle}
+      aria-label={`${copy.themeToggle.label}: ${copy.themeToggle.light} / ${copy.themeToggle.dark}`}
+      title={`${copy.themeToggle.label}: ${copy.themeToggle.light} / ${copy.themeToggle.dark}`}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "36px",
+        height: "36px",
+        padding: 0,
+        border: "1px solid var(--border)",
+        borderRadius: "50%",
+        backgroundColor: "var(--surface-subtle)",
+        color: "var(--text-body)",
+        cursor: "pointer",
+      }}
+    >
+      <svg className="theme-icon-moon" aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z" />
+      </svg>
+      <svg className="theme-icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="3.5" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" />
+      </svg>
+    </button>
+  );
+}

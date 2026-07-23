@@ -24,7 +24,7 @@ Current layout order:
 
 1. Kicker with compact language and theme controls, followed by the title.
 2. Two short introductory paragraphs covering the strategy and tracker purpose.
-3. Last-updated indicator.
+3. Linked last-updated pill with a `↗` symbol, which opens the matching-language update history.
 4. Summary metrics.
 5. Filter buttons.
 6. Two-column project-card grid on desktop.
@@ -39,6 +39,9 @@ The introduction uses a maximum reading width of about `720px`. This keeps the t
 connected to the compact title block and avoids an overly wide paragraph slab on desktop.
 
 Filter controls provide status navigation before readers scan the project cards.
+
+The update history uses the existing last-updated pill as its entry point. Do not add a separate
+navigation line beneath it or let the link compete with the project summary metrics.
 
 Badges, filters, sorting, and summary counts use the same public status. If a detailed source status such as `Operational`, `Designated`, or `Enacted` still has an unfinished delivery milestone, the card is presented as `Ongoing` until that milestone is completed or removed as routine operational work.
 
@@ -91,7 +94,8 @@ Category colour should be strongest on project identity and progress signals, es
 
 ## Components
 
-The UI is currently implemented as React functions inside `src/App.jsx`.
+The tracker UI is primarily implemented as React functions inside `src/App.jsx`. Shared route
+controls and the update history have separate focused components.
 
 Important components:
 
@@ -104,6 +108,8 @@ Important components:
 - `MilestoneIndicator`
 - `NextMilestoneCallout`
 - `SourceLinks`
+- Shared route controls in `src/SiteControls.jsx`
+- The editorial update history in `src/UpdatesPage.jsx`
 
 Most component layout styling remains inline in `src/App.jsx`. Shared light/dark color tokens,
 focus treatment, and theme-icon visibility live in `src/index.css`, with responsive and animation
@@ -113,7 +119,9 @@ rules in the inline `<style>` block in `App`.
 
 Current interactions:
 
-- `EN | BM` buttons switch the tracker presentation language and remember the selection. The site
+- `EN | BM` controls switch the hydrated presentation without a document reload and retain real
+  route links for direct navigation and fallback. The same pill treatment appears on the tracker
+  and update-history pages. The site
   kicker, main title, and project titles remain in English in both modes so the identity and project
   names stay consistent across the tracker and its sources. In BM copy, the borrowed English phrase
   `'Project tracker'` is enclosed in single quotation marks in the introduction and footer, while
@@ -122,6 +130,9 @@ Current interactions:
 - Filter buttons change the visible cards.
 - Project cards expand and collapse.
 - Source links open in a new tab.
+- The linked last-updated pill opens the matching-language update history. Each update page keeps
+  a visible top-left link back to its matching-language tracker, while entries link only to their
+  supporting public sources.
 - Environment badge is fixed at the bottom-right in non-production environments.
 
 The expansion animation respects `prefers-reduced-motion`.
@@ -140,6 +151,13 @@ Current mobile changes:
 - Desktop milestone metric is hidden.
 - Mobile milestone summary appears.
 - Project fact blocks stack vertically.
+
+The update history uses a date column and content column on desktop, then becomes a single-column
+entry list below `760px`. It uses the same neutral surfaces, typography, theme control, and
+environment badge as the tracker without reproducing the dashboard metrics or filters. Its return
+link uses the same two-layer pill language as the header controls: neutral at rest, with the inner
+selected treatment and brand text colour appearing on hover or keyboard focus. Every update reuses
+the tracker card's joined classification badge for `Sector` or `Enabler` and the specific area.
 
 ## Environment Indicators
 
@@ -170,4 +188,6 @@ both deployed sites. Environment-specific presentation is limited to the badge a
 - Keep source links close to the claims they support.
 - Keep the strategy context in the concise two-paragraph introduction; do not add a separate
   promotional About section without explicit approval.
+- Keep the update history editorial and source-led. Do not style it as a product changelog or
+  promotional news feed.
 - Test any card or typography change on mobile before release.

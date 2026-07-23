@@ -1,17 +1,25 @@
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
 
 import {
   ECONOMIC_SECTOR_IDS,
   LAST_UPDATED,
   SECTORS,
 } from "./trackerData.js";
-import { getAppEnvironment, shouldShowEnvironmentBadge } from "./environment.js";
+import { getAppEnvironment } from "./environment.js";
 import {
   DEFAULT_LANGUAGE,
-  SUPPORTED_LANGUAGES,
   getUiCopy,
   localizeSectors,
 } from "./localization.js";
+import { getProjectAnchor, getRouteHref } from "./routes.js";
+import {
+  EnvironmentBadge,
+  LanguageToggle,
+  NavigationPillLink,
+  ProjectClassificationBadge,
+  ThemeToggle,
+} from "./SiteControls.jsx";
+import { applyDocumentTheme } from "./theme.js";
 
 const FONT_STACK = "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 const DEFAULT_ACCENT_COLOR = "#6b7280";
@@ -208,38 +216,6 @@ function StatusBadge({ statusMeta, accentColor }) {
     >
       {statusMeta.label}
     </span>
-  );
-}
-
-function EnvironmentBadge({ environment, copy }) {
-  if (!shouldShowEnvironmentBadge(environment)) {
-    return null;
-  }
-
-  return (
-    <div
-      aria-label={copy.accessibility.environment(environment.name)}
-      style={{
-        position: "fixed",
-        right: "12px",
-        bottom: "12px",
-        zIndex: 50,
-        padding: "5px 8px",
-        border: `1px solid ${environment.badgeColor}`,
-        borderRadius: "4px",
-        backgroundColor: "var(--surface)",
-        color: environment.badgeColor,
-        boxShadow: "0 6px 16px var(--shadow)",
-        fontFamily: FONT_STACK,
-        fontSize: "10px",
-        fontWeight: 850,
-        letterSpacing: "0.08em",
-        lineHeight: 1,
-        pointerEvents: "none",
-      }}
-    >
-      {environment.badgeLabel}
-    </div>
   );
 }
 
@@ -864,6 +840,7 @@ function ProjectCard({ row, expanded, onToggle, copy, language }) {
 
   return (
     <article
+      id={getProjectAnchor(row.name)}
       className="project-card"
       data-expanded={expanded ? "true" : "false"}
       style={{
@@ -906,59 +883,13 @@ function ProjectCard({ row, expanded, onToggle, copy, language }) {
             minWidth: 0,
           }}
         >
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              position: "relative",
-              width: "max-content",
-              maxWidth: "calc(100% - 122px)",
-            }}
-          >
-            <span
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                position: "absolute",
-                inset: "0 auto 0 0",
-                zIndex: 2,
-                minHeight: "28px",
-                padding: "7px 10px",
-                border: `1px solid ${row.sectorColor}`,
-                borderRadius: "999px",
-                backgroundColor: row.sectorColor,
-                color: "#ffffff",
-                fontFamily: FONT_STACK,
-                fontSize: "11px",
-                fontWeight: 800,
-                letterSpacing: "0",
-                lineHeight: 1,
-                whiteSpace: "nowrap",
-              }}
-            >
-              {row.kind === "sector" ? copy.card.sector : copy.card.enabler}
-            </span>
-            <span
-              style={{
-                minWidth: 0,
-                minHeight: "28px",
-                padding: `7px 11px 7px ${row.kind === "sector" ? "68px" : "78px"}`,
-                border: `1px solid ${row.sectorColor}`,
-                borderRadius: "999px",
-                backgroundColor: "var(--surface)",
-                color: getAccentTextColor(row.sectorColor),
-                fontFamily: FONT_STACK,
-                fontSize: "11px",
-                fontWeight: 800,
-                lineHeight: 1.25,
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-              }}
-            >
-              {row.sectorName}
-            </span>
-          </div>
+          <ProjectClassificationBadge
+            color={row.sectorColor}
+            copy={copy}
+            kind={row.kind}
+            maxWidth="calc(100% - 122px)"
+            name={row.sectorName}
+          />
           <span
             aria-hidden="true"
             style={{
@@ -1097,141 +1028,28 @@ function EmphasizedText({ text, phrases }) {
   });
 }
 
-function HeaderControls({ language, onLanguageChange, onThemeToggle, copy }) {
+function HeaderControls({ language, onNavigate, onThemeToggle, copy }) {
   return (
     <div className="header-controls" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-      <div
-        role="group"
-        aria-label={copy.languageControl.label}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          minHeight: "36px",
-          padding: "3px",
-          border: "1px solid var(--border)",
-          borderRadius: "999px",
-          backgroundColor: "var(--surface-subtle)",
-        }}
-      >
-        {SUPPORTED_LANGUAGES.map((option, index) => (
-          <span key={option} style={{ display: "inline-flex", alignItems: "center" }}>
-            {index > 0 && <span aria-hidden="true" style={{ color: "var(--text-faint)", fontSize: "10px" }}>|</span>}
-            <button
-              type="button"
-              aria-pressed={language === option}
-              onClick={() => onLanguageChange(option)}
-              style={{
-                minWidth: "38px",
-                minHeight: "28px",
-                padding: "5px 8px",
-                border: language === option ? "1px solid color-mix(in srgb, var(--brand) 32%, transparent)" : "1px solid transparent",
-                borderRadius: "999px",
-                backgroundColor: language === option ? "var(--surface)" : "transparent",
-                color: language === option ? "var(--brand-strong)" : "var(--text-muted)",
-                boxShadow: language === option ? "0 1px 2px var(--control-shadow)" : "none",
-                cursor: "pointer",
-                fontSize: "11px",
-                fontWeight: 850,
-                lineHeight: 1,
-              }}
-            >
-              {option === "en" ? "EN" : "BM"}
-            </button>
-          </span>
-        ))}
-      </div>
-      <button
-        className="theme-toggle"
-        type="button"
-        onClick={onThemeToggle}
-        aria-label={`${copy.themeToggle.label}: ${copy.themeToggle.light} / ${copy.themeToggle.dark}`}
-        title={`${copy.themeToggle.label}: ${copy.themeToggle.light} / ${copy.themeToggle.dark}`}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "36px",
-          height: "36px",
-          padding: 0,
-          border: "1px solid var(--border)",
-          borderRadius: "50%",
-          backgroundColor: "var(--surface-subtle)",
-          color: "var(--text-body)",
-          cursor: "pointer",
-        }}
-      >
-        <svg className="theme-icon-moon" aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z" />
-        </svg>
-        <svg className="theme-icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="3.5" />
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" />
-        </svg>
-      </button>
+      <LanguageToggle
+        copy={copy}
+        englishRouteId="tracker-en"
+        language={language}
+        malayRouteId="tracker-ms"
+        onNavigate={onNavigate}
+      />
+      <ThemeToggle copy={copy} onThemeToggle={onThemeToggle} />
     </div>
   );
 }
 
-function applyDocumentTheme(theme) {
-  const root = document.documentElement;
-  root.dataset.theme = theme;
-  root.style.colorScheme = theme;
-  const themeColor = document.querySelector('meta[name="theme-color"]');
-  if (themeColor) {
-    themeColor.setAttribute("content", theme === "dark" ? "#121212" : "#ffffff");
-  }
-}
-
-function applyDocumentLanguage(language, metadata) {
-  document.documentElement.lang = language;
-  document.title = metadata.title;
-  const description = document.querySelector('meta[name="description"]');
-  if (description) {
-    description.setAttribute("content", metadata.description);
-  }
-}
-
-let sessionLanguage = DEFAULT_LANGUAGE;
-
-function getLanguageSnapshot() {
-  try {
-    const savedLanguage = localStorage.getItem("pcds-language");
-    return SUPPORTED_LANGUAGES.includes(savedLanguage) ? savedLanguage : sessionLanguage;
-  } catch {
-    return sessionLanguage;
-  }
-}
-
-function subscribeToLanguage(onChange) {
-  const handleStorage = (event) => {
-    if (event.key === "pcds-language") {
-      onChange();
-    }
-  };
-  window.addEventListener("storage", handleStorage);
-  window.addEventListener("pcds-language-change", onChange);
-  return () => {
-    window.removeEventListener("storage", handleStorage);
-    window.removeEventListener("pcds-language-change", onChange);
-  };
-}
-
-export default function App() {
-  const language = useSyncExternalStore(
-    subscribeToLanguage,
-    getLanguageSnapshot,
-    () => DEFAULT_LANGUAGE
-  );
+export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
   const [activeFilter, setActiveFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
   const environment = getAppEnvironment();
   const copy = getUiCopy(language);
   const filters = getFilters(copy);
   const lastUpdatedLabel = formatLastUpdated(LAST_UPDATED, language);
-
-  useEffect(() => {
-    applyDocumentLanguage(language, copy.metadata);
-  }, [copy, language]);
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-color-scheme: dark)");
@@ -1258,16 +1076,6 @@ export default function App() {
     setExpandedIds((current) =>
       current.includes(id) ? current.filter((expandedId) => expandedId !== id) : [...current, id]
     );
-  };
-  const selectLanguage = (nextLanguage) => {
-    sessionLanguage = nextLanguage;
-    applyDocumentLanguage(nextLanguage, getUiCopy(nextLanguage).metadata);
-    try {
-      localStorage.setItem("pcds-language", nextLanguage);
-    } catch {
-      // Language selection still works for this session when storage is unavailable.
-    }
-    window.dispatchEvent(new Event("pcds-language-change"));
   };
   const toggleTheme = () => {
     const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
@@ -1432,7 +1240,7 @@ export default function App() {
             </div>
             <HeaderControls
               language={language}
-              onLanguageChange={selectLanguage}
+              onNavigate={onNavigate}
               onThemeToggle={toggleTheme}
               copy={copy}
             />
@@ -1478,8 +1286,21 @@ export default function App() {
               lineHeight: 1.4,
             }}
           >
-            <span style={{ color: "var(--text-secondary)", fontWeight: 700 }}>{copy.header.lastUpdated}</span>{" "}
-            {lastUpdatedLabel}
+            <NavigationPillLink
+              className="tracker-updates-link"
+              href={getRouteHref(language === "ms" ? "updates-ms" : "updates")}
+              onClick={(event) =>
+                onNavigate(
+                  event,
+                  language === "ms" ? "updates-ms" : "updates"
+                )
+              }
+            >
+              {copy.header.lastUpdated} {lastUpdatedLabel}
+              <span aria-hidden="true" style={{ marginLeft: "5px" }}>
+                {"\u2197\uFE0E"}
+              </span>
+            </NavigationPillLink>
           </p>
         </header>
 

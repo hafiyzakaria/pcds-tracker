@@ -6,6 +6,14 @@ export const SUPPORTED_LANGUAGES = ["en", "ms"];
 const EN = {
   metadata: { title: "PCDS 2030 Dashboard: Projects & Status | Sarawak", description: "Explore the PCDS 2030 dashboard for the Sarawak Post COVID-19 Development Strategy 2030, with project status, milestones, and public sources." },
   languageControl: { label: "Language", current: "English", switchTo: "Bahasa Melayu" },
+  navigation: { tracker: "Project tracker", updates: "PCDS 2030 updates" },
+  updatesPage: {
+    title: "Updates",
+    intro: "A dated record of meaningful public developments reflected in the project tracker, with a supporting source for each entry.",
+    entriesLabel: "PCDS 2030 public developments",
+    backToTracker: "Project tracker",
+    source: "Source:",
+  },
   themeToggle: { label: "Theme", light: "Light", dark: "Dark", system: "System" },
   status: {
     "Awaiting Decision": { label: "Ongoing", description: "delivery moving, pending approval, or awaiting next public decision" },
@@ -30,8 +38,16 @@ const EN = {
 };
 
 const MS = {
-  metadata: { title: "Papan Pemuka PCDS 2030: Projek & Status | Sarawak", description: "Terokai papan pemuka PCDS 2030 bagi Strategi Pembangunan Pasca COVID-19 Sarawak 2030, termasuk status projek, pencapaian utama dan sumber awam." },
+  metadata: { title: "Papan Pemuka PCDS 2030: Projek & Status | Sarawak", description: "Terokai papan pemuka PCDS 2030 bagi Strategi Pembangunan Pasca COVID-19 Sarawak 2030, termasuk status projek, pencapaian dan sumber awam." },
   languageControl: { label: "Bahasa", current: "Bahasa Melayu", switchTo: "English" },
+  navigation: { tracker: "Project tracker", updates: "Kemas kini PCDS 2030" },
+  updatesPage: {
+    title: "Kemas Kini",
+    intro: "Rekod bertarikh mengenai perkembangan awam penting yang dicerminkan dalam 'project tracker', berserta sumber sokongan bagi setiap catatan.",
+    entriesLabel: "Perkembangan awam PCDS 2030",
+    backToTracker: "Project tracker",
+    source: "Sumber:",
+  },
   themeToggle: { label: "Tema", light: "Cerah", dark: "Gelap", system: "Sistem" },
   status: {
     "Awaiting Decision": { label: "Pelaksanaan", description: "pelaksanaan bergerak, menunggu kelulusan atau keputusan awam seterusnya" },

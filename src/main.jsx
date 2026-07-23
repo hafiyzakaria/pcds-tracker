@@ -1,12 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
+import Site from './Site.jsx'
+import { resolveRoute } from './routes.js'
 
 const container = document.getElementById('root')
+const route = resolveRoute(window.location.pathname, import.meta.env.BASE_URL)
 const app = (
   <StrictMode>
-    <App />
+    <Site route={route} />
   </StrictMode>
 )
 
