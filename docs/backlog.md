@@ -89,14 +89,17 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ### Add indexable BM and editorial update routes
 
-- Completed locally on Preview: `/bm/` now pre-renders the full Malay tracker with `lang="ms"`,
+- Completed and verified on deployed Preview: `/bm/` now pre-renders the full Malay tracker with `lang="ms"`,
   Malay metadata, a self-referencing canonical, and reciprocal English and Malay `hreflang` links.
-- Completed locally on Preview: `/updates/` is an editorial history of dated, source-backed public
+- Completed and verified on deployed Preview: `/updates/` is an editorial history of dated, source-backed public
   project developments, with a matching BM presentation at `/bm/updates/`, supporting sources, and
   a visible top-level link back to the matching-language tracker.
-- Completed locally on Preview: `/`, `/bm/`, `/updates/`, and `/bm/updates/` are included in the
+- Completed and verified on deployed Preview: `/`, `/bm/`, `/updates/`, and `/bm/updates/` are included in the
   sitemap and generated as real static HTML files for direct GitHub Pages navigation. Language
   controls switch instantly after hydration while retaining these static route links as fallback.
+- Deployment verification completed on 23 July 2026: all four routes returned `200` from
+  `preview.pcds2030.com`, the BM routes served `lang="ms"`, and Vercel retained the Preview
+  environment's `noindex, nofollow` response header.
 - Release gate: Review all four routes on the deployed Preview site before any Production
   promotion. Search Console measurement begins only after Production deployment and crawling.
 

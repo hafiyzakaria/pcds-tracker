@@ -69,7 +69,8 @@ Current type style:
 - Compact body text for project summaries and milestones.
 - Introductory copy at `16px` with a `1.6` line height and restrained dark-gray emphasis on only
   the most important strategy facts and the `project tracker` phrase.
-- A quieter `12px` last-updated line so freshness metadata does not compete with the introduction.
+- A compact `12px` linked last-updated pill so freshness metadata remains visible without competing
+  with the introduction.
 - No decorative display font.
 
 ## Color
@@ -133,6 +134,10 @@ Current interactions:
 - The linked last-updated pill opens the matching-language update history. Each update page keeps
   a visible top-left link back to its matching-language tracker, while entries link only to their
   supporting public sources.
+- The last-updated pill uses the text-presentation sequence `U+2197 U+FE0E` for its `↗︎` symbol so
+  mobile platforms do not substitute an emoji glyph.
+- The BM introduction and footer quote the borrowed phrase `'Project tracker'`, while navigation
+  pills use the unquoted label `Project tracker`.
 - Environment badge is fixed at the bottom-right in non-production environments.
 
 The expansion animation respects `prefers-reduced-motion`.

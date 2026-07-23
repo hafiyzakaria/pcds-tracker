@@ -36,7 +36,7 @@ Use rolling 28-day windows once enough Production data exists. Review:
 - landing-page performance.
 
 Compare `/` and `/bm/` separately so English and Malay search demand are not blended. Review
-Compare `/updates/` and `/bm/updates/` by both page and query to see whether the editorial history
+`/updates/` and `/bm/updates/` by both page and query to see whether the editorial history
 is earning visibility for project names, sectors, status, and update-related searches in each
 language.
 
