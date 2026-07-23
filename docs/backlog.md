@@ -48,9 +48,9 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 - Completed on Production: Collapsed desktop cards once again use the established shared minimum
   height, while one-column mobile cards remain content-driven.
-- QA completed: All 26 desktop cards align at one height; status filters preserve the alignment;
-  multiple cards can remain expanded; and narrow mobile cards have no clipping, overlap, or
-  horizontal overflow.
+- QA completed: Current desktop cards align at one height; category filters preserve the
+  alignment; multiple cards can remain expanded; and narrow mobile cards have no clipping,
+  overlap, or horizontal overflow.
 
 ### Align card behavior across environments
 

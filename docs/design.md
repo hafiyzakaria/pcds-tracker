@@ -26,7 +26,7 @@ Current layout order:
 2. Two short introductory paragraphs covering the strategy and tracker purpose.
 3. Linked last-updated pill with a `↗` symbol, which opens the matching-language update history.
 4. Summary metrics.
-5. Filter buttons.
+5. Compact two-row category filter buttons with project counts.
 6. Two-column project-card grid on desktop.
 7. One-column project-card grid on mobile.
 8. Footer disclaimer and source-methodology note.
@@ -38,7 +38,27 @@ below the project grid.
 The introduction uses a maximum reading width of about `720px`. This keeps the text visually
 connected to the compact title block and avoids an overly wide paragraph slab on desktop.
 
-Filter controls provide status navigation before readers scan the project cards.
+Filter controls provide category navigation before readers scan the project cards. `All` remains
+at the left of the first row. A shared scrolling area places `Sectors` and its populated categories
+on row one, with `Enablers` and its populated categories aligned to the same starting edge on row
+two. Group buttons show all projects within that group. Individual category buttons show only that
+category. Every button displays its current project count.
+
+Hovering or selecting `All`, `Sectors`, or `Enablers` uses the brand teal as a solid fill with
+white text. Individual categories use their card accent with the same solid-fill treatment,
+matching the coloured category labels on project cards.
+
+When inactive, the `Sectors` and `Enablers` group buttons retain a subtle teal-tinted surface,
+brand-coloured text, and slightly wider separation from the first sub-category. Individual
+sub-categories remain neutral until interaction, preserving a clear parent-and-child hierarchy.
+`All`, `Sectors`, and `Enablers` use uppercase labels as compact primary controls. Individual
+sub-categories retain their editorial title case for easier reading of longer EN and BM names.
+When an individual sub-category is selected, its parent `Sectors` or `Enablers` button inherits
+that category's accent as a solid fill with white text. The selected sub-category uses the paired
+card-pill treatment: a surface background with the same accent border and text. This visually
+connects the filter branch to the category pill on its project cards. Only the exact selected
+filter is marked as pressed for accessibility. Direct `All`, `Sectors`, and `Enablers` selections
+continue to use the brand teal.
 
 The update history uses the existing last-updated pill as its entry point. Do not add a separate
 navigation line beneath it or let the link compete with the project summary metrics.
@@ -128,7 +148,8 @@ Current interactions:
   `'Project tracker'` is enclosed in single quotation marks in the introduction and footer, while
   the category label `Enabler` is presented as `Pemboleh`.
 - The icon theme button switches between light and dark modes and remembers the selection.
-- Filter buttons change the visible cards.
+- Category filter buttons change the visible cards without changing the status-first sorting
+  within the selected view.
 - Project cards expand and collapse.
 - Source links open in a new tab.
 - The linked last-updated pill opens the matching-language update history. Each update page keeps
@@ -156,6 +177,11 @@ Current mobile changes:
 - Desktop milestone metric is hidden.
 - Mobile milestone summary appears.
 - Project fact blocks stack vertically.
+- The two category rows share one horizontal scroll position, allowing long EN and BM labels to
+  stay readable without compressing the project grid or causing page-level overflow.
+- A custom horizontal scroll indicator stays visually quiet until the filter area is hovered or
+  receives keyboard focus, then appears and follows the scroll position. This avoids depending on
+  operating-system scrollbar settings while signalling that more categories are available.
 
 The update history uses a date column and content column on desktop, then becomes a single-column
 entry list below `760px`. It uses the same neutral surfaces, typography, theme control, and

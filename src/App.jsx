@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
   ECONOMIC_SECTOR_IDS,
@@ -66,13 +66,55 @@ const INTRO_EMPHASIS = {
   ],
 };
 
-function getFilters(copy) {
-  return [
-    { id: "all", label: copy.filters.all },
-    { id: "planning", label: copy.filters.planning },
-    { id: "ongoing", label: copy.filters.ongoing },
-    { id: "completed", label: copy.filters.completed },
+function getCategoryFilters(rows, copy) {
+  const filters = [
+    {
+      id: "all",
+      type: "all",
+      label: copy.filters.all,
+      count: rows.length,
+    },
   ];
+
+  [
+    { kind: "sector", label: copy.filters.sectors },
+    { kind: "enabler", label: copy.filters.enablers },
+  ].forEach((group) => {
+    const groupRows = rows.filter((row) => row.kind === group.kind);
+
+    if (groupRows.length === 0) {
+      return;
+    }
+
+    filters.push({
+      id: `group:${group.kind}`,
+      type: "group",
+      kind: group.kind,
+      label: group.label,
+      count: groupRows.length,
+    });
+
+    const categories = new Map();
+    groupRows.forEach((row) => {
+      const current = categories.get(row.sectorId);
+      categories.set(row.sectorId, {
+        id: `category:${row.sectorId}`,
+        type: "category",
+        kind: group.kind,
+        sectorId: row.sectorId,
+        label: row.sectorName,
+        accentColor: row.sectorColor,
+        count: (current?.count || 0) + 1,
+      });
+    });
+
+    filters.push(...categories.values());
+  });
+
+  return filters.map((filter) => ({
+    ...filter,
+    accessibleLabel: copy.filters.show(filter.label, filter.count),
+  }));
 }
 
 function getStatusMeta(status, copy) {
@@ -99,12 +141,16 @@ function getPublicStatusMeta(status, milestones, copy) {
   return statusMeta;
 }
 
-function filterRowsByStatus(rows, filter) {
-  if (filter.id === "all") {
-    return rows;
+function filterRowsByCategory(rows, filter) {
+  if (filter.type === "group") {
+    return rows.filter((row) => row.kind === filter.kind);
   }
 
-  return rows.filter((row) => row.statusMeta.group === filter.id);
+  if (filter.type === "category") {
+    return rows.filter((row) => row.sectorId === filter.sectorId);
+  }
+
+  return rows;
 }
 
 function getMilestoneCountLabel(row, copy) {
@@ -350,63 +396,161 @@ function SummaryMetrics({ rows, copy }) {
   );
 }
 
-function FilterBar({ activeFilter, onFilter, filters = [] }) {
+function CategoryFilterButton({
+  activeAccentColor,
+  activeFilter,
+  filter,
+  onFilter,
+  parentActive = false,
+}) {
+  if (!filter) {
+    return null;
+  }
+
   return (
-    <div
+    <button
+      className={`category-filter-button category-filter-button--${filter.type}${
+        parentActive ? " category-filter-button--parent-active" : ""
+      }`}
+      key={filter.id}
+      onClick={() => onFilter(filter.id)}
+      aria-label={filter.accessibleLabel}
+      aria-pressed={activeFilter === filter.id}
       style={{
-        display: "grid",
-        gap: "9px",
-        marginBottom: "16px",
+        "--category-filter-accent":
+          activeAccentColor || filter.accentColor || "var(--brand)",
       }}
     >
-      <div
-        className="filter-controls"
-        style={{
-          display: "inline-flex",
-          width: "fit-content",
-          maxWidth: "100%",
-          gap: "4px",
-          padding: "4px",
-          border: "1px solid var(--border)",
-          borderRadius: "999px",
-          backgroundColor: "var(--surface-subtle)",
-          flexWrap: "wrap",
-        }}
-      >
-        {filters.map((filter) => {
-          const active = activeFilter === filter.id;
+      <span>{filter.label}</span>
+      <span className="category-filter-count" aria-hidden="true">
+        {filter.count}
+      </span>
+    </button>
+  );
+}
 
-          return (
-            <button
-              key={filter.id}
-              onClick={() => onFilter(filter.id)}
-              aria-pressed={active}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "7px",
-                flexShrink: 0,
-                minHeight: "30px",
-                padding: "7px 10px",
-                border: active ? "1px solid color-mix(in srgb, var(--brand) 32%, transparent)" : "1px solid transparent",
-                borderRadius: "999px",
-                backgroundColor: active ? "var(--surface)" : "transparent",
-                color: active ? "var(--brand-strong)" : "var(--text-muted)",
-                boxShadow: active ? "0 1px 2px var(--control-shadow)" : "none",
-                cursor: "pointer",
-                fontFamily: FONT_STACK,
-                fontSize: "11px",
-                fontWeight: 800,
-                letterSpacing: "0",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span>{filter.label}</span>
-            </button>
-          );
-        })}
+function FilterBar({ activeFilter, label, onFilter, filters = [] }) {
+  const scrollRef = useRef(null);
+  const scrollTrackRef = useRef(null);
+  const scrollThumbRef = useRef(null);
+  const allFilter = filters.find((filter) => filter.type === "all");
+  const groupRows = filters
+    .filter((filter) => filter.type === "group")
+    .map((group) => ({
+      group,
+      categories: filters.filter(
+        (filter) => filter.type === "category" && filter.kind === group.kind
+      ),
+    }));
+
+  useEffect(() => {
+    const scroller = scrollRef.current;
+    const track = scrollTrackRef.current;
+    const thumb = scrollThumbRef.current;
+
+    if (!scroller || !track || !thumb) {
+      return undefined;
+    }
+
+    const updateIndicator = () => {
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      const scrollable = maxScroll > 1;
+
+      track.hidden = !scrollable;
+
+      if (!scrollable) {
+        return;
+      }
+
+      const trackWidth = track.clientWidth;
+      const thumbWidth = Math.max(
+        48,
+        trackWidth * (scroller.clientWidth / scroller.scrollWidth)
+      );
+      const scrollProgress = scroller.scrollLeft / maxScroll;
+      const thumbOffset = scrollProgress * (trackWidth - thumbWidth);
+
+      thumb.style.width = `${thumbWidth}px`;
+      thumb.style.transform = `translateX(${thumbOffset}px)`;
+    };
+
+    updateIndicator();
+    scroller.addEventListener("scroll", updateIndicator, { passive: true });
+    window.addEventListener("resize", updateIndicator);
+
+    const resizeObserver =
+      typeof ResizeObserver === "undefined"
+        ? null
+        : new ResizeObserver(updateIndicator);
+
+    resizeObserver?.observe(scroller);
+    if (scroller.firstElementChild) {
+      resizeObserver?.observe(scroller.firstElementChild);
+    }
+
+    return () => {
+      scroller.removeEventListener("scroll", updateIndicator);
+      window.removeEventListener("resize", updateIndicator);
+      resizeObserver?.disconnect();
+    };
+  }, [label]);
+
+  return (
+    <nav aria-label={label} style={{ marginBottom: "16px" }}>
+      <div className="category-filter-layout">
+        <CategoryFilterButton
+          activeFilter={activeFilter}
+          filter={allFilter}
+          onFilter={onFilter}
+        />
+        <div className="category-filter-scroll-column">
+          <div className="category-filter-scroll" ref={scrollRef}>
+            <div className="category-filter-group-rows">
+              {groupRows.map(({ group, categories }) => {
+                const selectedCategory = categories.find(
+                  (filter) => filter.id === activeFilter
+                );
+
+                return (
+                  <div
+                    className="category-filter-row"
+                    key={group.id}
+                    role="group"
+                    aria-label={group.label}
+                  >
+                    <CategoryFilterButton
+                      activeAccentColor={selectedCategory?.accentColor}
+                      activeFilter={activeFilter}
+                      filter={group}
+                      onFilter={onFilter}
+                      parentActive={Boolean(selectedCategory)}
+                    />
+                    {categories.map((filter) => (
+                      <CategoryFilterButton
+                        activeFilter={activeFilter}
+                        filter={filter}
+                        key={filter.id}
+                        onFilter={onFilter}
+                      />
+                    ))}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div
+            className="category-filter-scroll-indicator"
+            ref={scrollTrackRef}
+            aria-hidden="true"
+          >
+            <span
+              className="category-filter-scroll-thumb"
+              ref={scrollThumbRef}
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 }
 
@@ -1048,7 +1192,6 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
   const [expandedIds, setExpandedIds] = useState([]);
   const environment = getAppEnvironment();
   const copy = getUiCopy(language);
-  const filters = getFilters(copy);
   const lastUpdatedLabel = formatLastUpdated(LAST_UPDATED, language);
 
   useEffect(() => {
@@ -1069,8 +1212,9 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
 
   const localizedSectors = localizeSectors(SECTORS, language);
   const rows = sortProjectRows(getProjectRows(localizedSectors, copy), language);
+  const filters = getCategoryFilters(rows, copy);
   const selectedFilter = filters.find((filter) => filter.id === activeFilter) || filters[0];
-  const filteredRows = sortProjectRows(filterRowsByStatus(rows, selectedFilter), language);
+  const filteredRows = sortProjectRows(filterRowsByCategory(rows, selectedFilter), language);
 
   const toggleExpanded = (id) => {
     setExpandedIds((current) =>
@@ -1310,7 +1454,8 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
 
         <section>
           <FilterBar
-            activeFilter={activeFilter}
+            activeFilter={selectedFilter.id}
+            label={copy.filters.label}
             onFilter={setActiveFilter}
             filters={filters}
           />
