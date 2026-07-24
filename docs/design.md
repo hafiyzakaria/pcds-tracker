@@ -46,7 +46,8 @@ category. Every button displays its current project count.
 
 Hovering or selecting `All`, `Sectors`, or `Enablers` uses the brand teal as a solid fill with
 white text. Individual categories use their card accent with the same solid-fill treatment,
-matching the coloured category labels on project cards.
+matching the coloured category labels on project cards. Solid interactive fills use a darker
+shade of the same hue when needed to maintain at least `4.5:1` contrast with their white labels.
 
 When inactive, the `Sectors` and `Enablers` group buttons retain a subtle teal-tinted surface,
 brand-coloured text, and slightly wider separation from the first sub-category. Individual
@@ -181,7 +182,11 @@ Current mobile changes:
   stay readable without compressing the project grid or causing page-level overflow.
 - A custom horizontal scroll indicator stays visually quiet until the filter area is hovered or
   receives keyboard focus, then appears and follows the scroll position. This avoids depending on
-  operating-system scrollbar settings while signalling that more categories are available.
+  operating-system scrollbar settings while signalling that more categories are available. On
+  touch devices, the indicator remains faintly visible because hover is unavailable. Subtle edge
+  fades show which direction contains additional filters and soften clipped pills while scrolling.
+- At widths up to `760px`, category buttons use an `11px` label and a `40px` minimum height to
+  improve touch comfort without turning the compact filter into a separate navigation section.
 
 The update history uses a date column and content column on desktop, then becomes a single-column
 entry list below `760px`. It uses the same neutral surfaces, typography, theme control, and

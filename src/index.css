@@ -121,6 +121,38 @@ a:focus-visible {
   min-width: 0;
 }
 
+.category-filter-scroll-column::before,
+.category-filter-scroll-column::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 10px;
+  width: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.category-filter-scroll-column::before {
+  left: 0;
+  background: linear-gradient(to right, var(--page-bg), transparent);
+}
+
+.category-filter-scroll-column::after {
+  right: 0;
+  background: linear-gradient(to left, var(--page-bg), transparent);
+}
+
+.category-filter-scroll-column--scrollable:not(
+    .category-filter-scroll-column--at-start
+  )::before,
+.category-filter-scroll-column--scrollable:not(
+    .category-filter-scroll-column--at-end
+  )::after {
+  opacity: 1;
+}
+
 .category-filter-scroll {
   min-width: 0;
   overflow-x: auto;
@@ -213,8 +245,8 @@ a:focus-visible {
 }
 
 .category-filter-button--parent-active {
-  border-color: var(--category-filter-accent);
-  background-color: var(--category-filter-accent);
+  border-color: var(--category-filter-solid);
+  background-color: var(--category-filter-solid);
   color: #ffffff;
   box-shadow: 0 1px 2px var(--control-shadow);
 }
@@ -234,20 +266,20 @@ a:focus-visible {
 }
 
 .category-filter-button:hover {
-  border-color: var(--category-filter-accent);
-  background-color: var(--category-filter-accent);
+  border-color: var(--category-filter-solid);
+  background-color: var(--category-filter-solid);
   color: #ffffff;
 }
 
 .category-filter-button[aria-pressed="true"] {
-  border-color: var(--category-filter-accent);
-  background-color: var(--category-filter-accent);
+  border-color: var(--category-filter-solid);
+  background-color: var(--category-filter-solid);
   color: #ffffff;
   box-shadow: 0 1px 2px var(--control-shadow);
 }
 
 .category-filter-button[aria-pressed="true"]:hover {
-  background-color: var(--category-filter-accent);
+  background-color: var(--category-filter-solid);
   color: #ffffff;
 }
 
@@ -274,6 +306,24 @@ a:focus-visible {
 
 .category-filter-button:hover .category-filter-count {
   color: inherit;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .category-filter-scroll-indicator {
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 760px) {
+  .category-filter-scroll-indicator {
+    opacity: 0.35;
+  }
+
+  .category-filter-button {
+    min-height: 40px;
+    padding-block: 8px;
+    font-size: 11px;
+  }
 }
 
 .visually-hidden {

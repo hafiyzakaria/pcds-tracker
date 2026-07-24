@@ -23,6 +23,7 @@ import { applyDocumentTheme } from "./theme.js";
 
 const FONT_STACK = "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 const DEFAULT_ACCENT_COLOR = "#6b7280";
+const FILTER_ACTIVE_BRAND_COLOR = "#0d9488";
 
 const STATUS_CONFIG = {
   "Awaiting Decision": {
@@ -173,6 +174,48 @@ function getAccentBadgeTone(color) {
 
 function getAccentTextColor(color) {
   return `color-mix(in srgb, ${color || DEFAULT_ACCENT_COLOR} 78%, var(--accent-text-mix))`;
+}
+
+function getAccessibleSolidAccent(color) {
+  const accent = color || DEFAULT_ACCENT_COLOR;
+  const match = accent.match(/^#([0-9a-f]{6})$/i);
+
+  if (!match) {
+    return `color-mix(in srgb, ${accent} 70%, #000000)`;
+  }
+
+  const channels = [0, 2, 4].map((offset) =>
+    Number.parseInt(match[1].slice(offset, offset + 2), 16)
+  );
+  const relativeLuminance = (rgb) =>
+    rgb
+      .map((channel) => channel / 255)
+      .map((channel) =>
+        channel <= 0.04045
+          ? channel / 12.92
+          : ((channel + 0.055) / 1.055) ** 2.4
+      )
+      .reduce(
+        (total, channel, index) =>
+          total + channel * [0.2126, 0.7152, 0.0722][index],
+        0
+      );
+  const contrastWithWhite = (rgb) =>
+    1.05 / (relativeLuminance(rgb) + 0.05);
+
+  if (contrastWithWhite(channels) >= 4.5) {
+    return accent;
+  }
+
+  for (let factor = 0.95; factor >= 0.5; factor -= 0.05) {
+    const darkened = channels.map((channel) => Math.round(channel * factor));
+
+    if (contrastWithWhite(darkened) >= 4.5) {
+      return `rgb(${darkened.join(" ")})`;
+    }
+  }
+
+  return `color-mix(in srgb, ${accent} 50%, #000000)`;
 }
 
 function getProjectRows(sectors, copy) {
@@ -419,6 +462,9 @@ function CategoryFilterButton({
       style={{
         "--category-filter-accent":
           activeAccentColor || filter.accentColor || "var(--brand)",
+        "--category-filter-solid": getAccessibleSolidAccent(
+          activeAccentColor || filter.accentColor || FILTER_ACTIVE_BRAND_COLOR
+        ),
       }}
     >
       <span>{filter.label}</span>
@@ -447,16 +493,31 @@ function FilterBar({ activeFilter, label, onFilter, filters = [] }) {
     const scroller = scrollRef.current;
     const track = scrollTrackRef.current;
     const thumb = scrollThumbRef.current;
+    const scrollColumn = scroller?.parentElement;
 
-    if (!scroller || !track || !thumb) {
+    if (!scroller || !track || !thumb || !scrollColumn) {
       return undefined;
     }
 
     const updateIndicator = () => {
       const maxScroll = scroller.scrollWidth - scroller.clientWidth;
       const scrollable = maxScroll > 1;
+      const atStart = !scrollable || scroller.scrollLeft <= 1;
+      const atEnd = !scrollable || scroller.scrollLeft >= maxScroll - 1;
 
       track.hidden = !scrollable;
+      scrollColumn.classList.toggle(
+        "category-filter-scroll-column--scrollable",
+        scrollable
+      );
+      scrollColumn.classList.toggle(
+        "category-filter-scroll-column--at-start",
+        atStart
+      );
+      scrollColumn.classList.toggle(
+        "category-filter-scroll-column--at-end",
+        atEnd
+      );
 
       if (!scrollable) {
         return;
@@ -492,6 +553,11 @@ function FilterBar({ activeFilter, label, onFilter, filters = [] }) {
       scroller.removeEventListener("scroll", updateIndicator);
       window.removeEventListener("resize", updateIndicator);
       resizeObserver?.disconnect();
+      scrollColumn.classList.remove(
+        "category-filter-scroll-column--scrollable",
+        "category-filter-scroll-column--at-start",
+        "category-filter-scroll-column--at-end"
+      );
     };
   }, [label]);
 
