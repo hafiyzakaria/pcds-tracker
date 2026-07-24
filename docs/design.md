@@ -188,10 +188,11 @@ Current mobile changes:
 - A custom horizontal scroll indicator stays visually quiet until the filter area is hovered or
   receives keyboard focus, then appears and follows the scroll position. This avoids depending on
   operating-system scrollbar settings while signalling that more categories are available. On
-  touch devices, the indicator remains faintly visible because hover is unavailable. `Sectors`
-  and `Enablers` occupy a fixed parent-category column beside `All`, while a separate column holds
-  the horizontally scrolling sub-categories. This preserves the hierarchy and selected-parent
-  context without sticky overlaps or edge gradients.
+  touch devices, the indicator remains faintly visible because hover is unavailable.
+- On mobile, `All`, `Sectors`, and `Enablers` share one compact main-filter row. The two
+  sub-category rows scroll at the full content width beneath them, preserving parent context while
+  leaving enough room to read and swipe the individual categories. Desktop retains its fixed
+  parent-category column.
 - At widths up to `760px`, the shared pill-control height increases to `40px` for the language,
   theme, navigation, and category controls. This improves touch comfort while keeping their
   visual rhythm consistent.
