@@ -106,10 +106,10 @@ export function LanguageToggle({
       style={{
         display: "inline-flex",
         alignItems: "center",
-        minHeight: "36px",
+        minHeight: "var(--pill-control-height)",
         padding: "3px",
         border: "1px solid var(--border)",
-        borderRadius: "999px",
+        borderRadius: "var(--pill-control-radius)",
         backgroundColor: "var(--surface-subtle)",
       }}
     >
@@ -137,13 +137,13 @@ export function LanguageToggle({
               alignItems: "center",
               justifyContent: "center",
               minWidth: "38px",
-              minHeight: "28px",
+              minHeight: "var(--pill-control-inner-height)",
               padding: "5px 8px",
               border:
                 language === option.id
                   ? "1px solid color-mix(in srgb, var(--brand) 32%, transparent)"
                   : "1px solid transparent",
-              borderRadius: "999px",
+              borderRadius: "var(--pill-control-radius)",
               backgroundColor:
                 language === option.id ? "var(--surface)" : "transparent",
               color:
@@ -155,7 +155,7 @@ export function LanguageToggle({
                   ? "0 1px 2px var(--control-shadow)"
                   : "none",
               cursor: "pointer",
-              fontSize: "11px",
+              fontSize: "var(--pill-control-font-size)",
               fontWeight: 850,
               lineHeight: 1,
               textDecoration: "none",
@@ -213,11 +213,11 @@ export function ThemeToggle({ onThemeToggle, copy }) {
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
-        width: "36px",
-        height: "36px",
+        width: "var(--pill-control-height)",
+        height: "var(--pill-control-height)",
         padding: 0,
         border: "1px solid var(--border)",
-        borderRadius: "50%",
+        borderRadius: "var(--pill-control-radius)",
         backgroundColor: "var(--surface-subtle)",
         color: "var(--text-body)",
         cursor: "pointer",

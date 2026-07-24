@@ -569,39 +569,44 @@ function FilterBar({ activeFilter, label, onFilter, filters = [] }) {
           filter={allFilter}
           onFilter={onFilter}
         />
+        <div className="category-filter-group-labels">
+          {groupRows.map(({ group, categories }) => {
+            const selectedCategory = categories.find(
+              (filter) => filter.id === activeFilter
+            );
+
+            return (
+              <CategoryFilterButton
+                activeAccentColor={selectedCategory?.accentColor}
+                activeFilter={activeFilter}
+                filter={group}
+                key={group.id}
+                onFilter={onFilter}
+                parentActive={Boolean(selectedCategory)}
+              />
+            );
+          })}
+        </div>
         <div className="category-filter-scroll-column">
           <div className="category-filter-scroll" ref={scrollRef}>
             <div className="category-filter-group-rows">
-              {groupRows.map(({ group, categories }) => {
-                const selectedCategory = categories.find(
-                  (filter) => filter.id === activeFilter
-                );
-
-                return (
-                  <div
-                    className="category-filter-row"
-                    key={group.id}
-                    role="group"
-                    aria-label={group.label}
-                  >
+              {groupRows.map(({ group, categories }) => (
+                <div
+                  className="category-filter-row"
+                  key={group.id}
+                  role="group"
+                  aria-label={group.label}
+                >
+                  {categories.map((filter) => (
                     <CategoryFilterButton
-                      activeAccentColor={selectedCategory?.accentColor}
                       activeFilter={activeFilter}
-                      filter={group}
+                      filter={filter}
+                      key={filter.id}
                       onFilter={onFilter}
-                      parentActive={Boolean(selectedCategory)}
                     />
-                    {categories.map((filter) => (
-                      <CategoryFilterButton
-                        activeFilter={activeFilter}
-                        filter={filter}
-                        key={filter.id}
-                        onFilter={onFilter}
-                      />
-                    ))}
-                  </div>
-                );
-              })}
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
           <div

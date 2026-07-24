@@ -39,10 +39,11 @@ The introduction uses a maximum reading width of about `720px`. This keeps the t
 connected to the compact title block and avoids an overly wide paragraph slab on desktop.
 
 Filter controls provide category navigation before readers scan the project cards. `All` remains
-at the left of the first row. A shared scrolling area places `Sectors` and its populated categories
-on row one, with `Enablers` and its populated categories aligned to the same starting edge on row
-two. Group buttons show all projects within that group. Individual category buttons show only that
-category. Every button displays its current project count.
+at the left of the first row. A fixed parent-category column places `Sectors` on row one and
+`Enablers` on row two. Their populated sub-categories use a separate shared scrolling column,
+keeping the parent context visible without overlapping the scrolling pills. Group buttons show all
+projects within that group. Individual category buttons show only that category. Every button
+displays its current project count.
 
 Hovering or selecting `All`, `Sectors`, or `Enablers` uses the brand teal as a solid fill with
 white text. Individual categories use their card accent with the same solid-fill treatment,
@@ -54,6 +55,10 @@ brand-coloured text, and slightly wider separation from the first sub-category. 
 sub-categories remain neutral until interaction, preserving a clear parent-and-child hierarchy.
 `All`, `Sectors`, and `Enablers` use uppercase labels as compact primary controls. Individual
 sub-categories retain their editorial title case for easier reading of longer EN and BM names.
+Independent pill controls use one shared physical system: a fully rounded capsule, an `11px`
+label, and a `36px` total height on desktop. This applies to the language and theme controls,
+navigation pills such as the last-updated link, and category filters. The language control keeps
+its segmented outer shell, while filter buttons remain individual capsules.
 When an individual sub-category is selected, its parent `Sectors` or `Enablers` button inherits
 that category's accent as a solid fill with white text. The selected sub-category uses the paired
 card-pill treatment: a surface background with the same accent border and text. This visually
@@ -183,10 +188,13 @@ Current mobile changes:
 - A custom horizontal scroll indicator stays visually quiet until the filter area is hovered or
   receives keyboard focus, then appears and follows the scroll position. This avoids depending on
   operating-system scrollbar settings while signalling that more categories are available. On
-  touch devices, the indicator remains faintly visible because hover is unavailable. Subtle edge
-  fades show which direction contains additional filters and soften clipped pills while scrolling.
-- At widths up to `760px`, category buttons use an `11px` label and a `40px` minimum height to
-  improve touch comfort without turning the compact filter into a separate navigation section.
+  touch devices, the indicator remains faintly visible because hover is unavailable. `Sectors`
+  and `Enablers` occupy a fixed parent-category column beside `All`, while a separate column holds
+  the horizontally scrolling sub-categories. This preserves the hierarchy and selected-parent
+  context without sticky overlaps or edge gradients.
+- At widths up to `760px`, the shared pill-control height increases to `40px` for the language,
+  theme, navigation, and category controls. This improves touch comfort while keeping their
+  visual rhythm consistent.
 
 The update history uses a date column and content column on desktop, then becomes a single-column
 entry list below `760px`. It uses the same neutral surfaces, typography, theme control, and
