@@ -25,7 +25,7 @@ The tracker is independently maintained and is not affiliated with the Sarawak G
 
 ## How the information is maintained
 
-Project information is reviewed and added manually. Each tracked project includes source links where available, and the website displays the date of the latest data update.
+Project information is reviewed and added manually. Each tracked project includes source links where available, and the website displays the date of the latest data update. Any change to project data, Bahasa Melayu project copy, editorial updates, or a tracked-project addition must follow the [data methodology](docs/data-methodology.md).
 
 Because the process is manual:
 
@@ -54,6 +54,7 @@ Useful checks and build commands:
 
 ```bash
 npm run lint           # Check the code
+npm run check:content   # Validate tracker and editorial content
 npm run build:preview  # Build the Preview version
 npm run build          # Build the Production version
 npm run preview        # Serve the latest build locally
@@ -74,7 +75,7 @@ Changes go through Preview before reaching the public website:
 Normal workflow:
 
 1. Make a focused change on the `preview` branch.
-2. Run `npm run lint` and `npm run build:preview`.
+2. For content changes, complete the [data review checklist](docs/data-review-checklist.md), then run `npm run check:content`, `npm run lint`, and `npm run build:preview`.
 3. Push to `preview` and review the Preview website.
 4. Promote approved changes to `main` for Production.
 
@@ -85,6 +86,8 @@ Preview deploys through Vercel. Production deploys through GitHub Pages. Preview
 - [Product and audience](docs/product.md)
 - [Design guidance](docs/design.md)
 - [Data methodology](docs/data-methodology.md)
+- [Project research template](docs/project-research-template.md)
+- [Data review checklist](docs/data-review-checklist.md)
 - [SEO measurement after release](docs/seo-measurement.md)
 - [Known issues and next tasks](docs/backlog.md)
 - [Contributor and agent instructions](AGENTS.md)
@@ -96,6 +99,7 @@ These files are the project's source of truth for product intent, design decisio
 - Data updates and source checks are manual.
 - Project facts are maintained in the codebase rather than a content management system.
 - Most tracker interface code and styling currently live in one large `src/App.jsx` file.
-- Automated data-shape tests have not yet been added.
+- Automated content checks validate structure and consistency, but factual accuracy and live
+  source availability still require manual review.
 
 See the [backlog](docs/backlog.md) for the current list of known issues and recommended next tasks.

@@ -107,11 +107,12 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ### Add a production data review checklist
 
-- What needs to be done: Document a repeatable checklist for reviewing project data before promoting Preview to Production.
-- Why it matters: The tracker is manually curated, so a simple checklist helps prevent stale dates, broken source links, missing source context, or accidental unsourced claims.
-- Estimated difficulty: low
-- Risk level: low
-- Suggested first task: Add a checklist section to project documentation covering source URL, source date, milestone status, `LAST_UPDATED`, Preview review, and Production promotion.
+- Completed on 28 July 2026: `docs/data-review-checklist.md` now covers evidence,
+  `LAST_UPDATED`, BM copy, update-history decisions, source links, content validation, all four
+  routes, Preview review, and explicit approval before Production.
+- `docs/project-research-template.md` provides the reusable search, source-decision, confidence,
+  and new-project inclusion record.
+- `AGENTS.md` makes `docs/data-methodology.md` mandatory for tracker-data and editorial changes.
 
 ## 2. Should Improve Soon
 
@@ -130,11 +131,11 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ### Add basic data-shape tests
 
-- What needs to be done: Add a small automated check that every project has required fields such as `status`, `summary`, `milestones`, and `sources`.
-- Why it matters: A missing or malformed data field can break the UI or make a project card less trustworthy, and these mistakes are easy to miss in hand-maintained data.
-- Estimated difficulty: medium
-- Risk level: low
-- Suggested first task: Create a lightweight script that imports `src/trackerData.js` and validates required fields without adding a heavy test framework.
+- Completed on 28 July 2026: `npm run check:content` validates required project fields,
+  categories, statuses, unique identities, source URL structure, milestone ordering and wording,
+  completed-card consistency, `LAST_UPDATED`, BM coverage, and update-history sources.
+- Preview and Production GitHub Actions now run the content check, lint, and the matching build
+  before a release can proceed.
 
 ### Add automated source-link checking
 

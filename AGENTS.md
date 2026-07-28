@@ -10,6 +10,7 @@ This repository is the PCDS 2030 Project Tracker, a Vite and React static site.
 - Prefer the existing Vite and React conventions already used in the project.
 - Do not introduce new dependencies unless there is a clear maintenance benefit.
 - Treat `README.md`, `docs/product.md`, `docs/design.md`, and `docs/backlog.md` as the project memory.
+- Treat [the data methodology](docs/data-methodology.md) as mandatory, canonical guidance for any work that changes `src/trackerData.js`, `src/localization.js`, `src/updateHistory.js`, or adds a tracked project. Read it before editing and follow its evidence, identity, source-link, milestone, localisation, and review-record rules. Do not duplicate or override that methodology in other documents.
 
 ## Branch Workflow
 
@@ -28,6 +29,7 @@ This repository is the PCDS 2030 Project Tracker, a Vite and React static site.
 - Build production with `npm run build`.
 - Build preview with `npm run build:preview`.
 - Serve a built site with `npm run preview`.
+- Run `npm run check:content` for data or editorial-content changes.
 
 ## Documentation Expectations
 
@@ -36,6 +38,7 @@ This repository is the PCDS 2030 Project Tracker, a Vite and React static site.
 - Put visual and interaction guidance in `docs/design.md`.
 - Put known issues and recommended next tasks in `docs/backlog.md`.
 - Keep README focused on setup, workflow, and links to deeper docs.
+- Use [the project research template](docs/project-research-template.md) for project reviews and [the data review checklist](docs/data-review-checklist.md) before releasing evidence-based data changes.
 
 ## Current Architecture Notes
 
