@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   ECONOMIC_SECTOR_IDS,
@@ -23,7 +23,6 @@ import { applyDocumentTheme } from "./theme.js";
 
 const FONT_STACK = "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 const DEFAULT_ACCENT_COLOR = "#6b7280";
-const FILTER_ACTIVE_BRAND_COLOR = "#0d9488";
 
 const STATUS_CONFIG = {
   "Awaiting Decision": {
@@ -67,55 +66,13 @@ const INTRO_EMPHASIS = {
   ],
 };
 
-function getCategoryFilters(rows, copy) {
-  const filters = [
-    {
-      id: "all",
-      type: "all",
-      label: copy.filters.all,
-      count: rows.length,
-    },
+function getFilters(copy) {
+  return [
+    { id: "all", label: copy.filters.all },
+    { id: "planning", label: copy.filters.planning },
+    { id: "ongoing", label: copy.filters.ongoing },
+    { id: "completed", label: copy.filters.completed },
   ];
-
-  [
-    { kind: "sector", label: copy.filters.sectors },
-    { kind: "enabler", label: copy.filters.enablers },
-  ].forEach((group) => {
-    const groupRows = rows.filter((row) => row.kind === group.kind);
-
-    if (groupRows.length === 0) {
-      return;
-    }
-
-    filters.push({
-      id: `group:${group.kind}`,
-      type: "group",
-      kind: group.kind,
-      label: group.label,
-      count: groupRows.length,
-    });
-
-    const categories = new Map();
-    groupRows.forEach((row) => {
-      const current = categories.get(row.sectorId);
-      categories.set(row.sectorId, {
-        id: `category:${row.sectorId}`,
-        type: "category",
-        kind: group.kind,
-        sectorId: row.sectorId,
-        label: row.sectorName,
-        accentColor: row.sectorColor,
-        count: (current?.count || 0) + 1,
-      });
-    });
-
-    filters.push(...categories.values());
-  });
-
-  return filters.map((filter) => ({
-    ...filter,
-    accessibleLabel: copy.filters.show(filter.label, filter.count),
-  }));
 }
 
 function getStatusMeta(status, copy) {
@@ -142,16 +99,12 @@ function getPublicStatusMeta(status, milestones, copy) {
   return statusMeta;
 }
 
-function filterRowsByCategory(rows, filter) {
-  if (filter.type === "group") {
-    return rows.filter((row) => row.kind === filter.kind);
+function filterRowsByStatus(rows, filter) {
+  if (filter.id === "all") {
+    return rows;
   }
 
-  if (filter.type === "category") {
-    return rows.filter((row) => row.sectorId === filter.sectorId);
-  }
-
-  return rows;
+  return rows.filter((row) => row.statusMeta.group === filter.id);
 }
 
 function getMilestoneCountLabel(row, copy) {
@@ -174,48 +127,6 @@ function getAccentBadgeTone(color) {
 
 function getAccentTextColor(color) {
   return `color-mix(in srgb, ${color || DEFAULT_ACCENT_COLOR} 78%, var(--accent-text-mix))`;
-}
-
-function getAccessibleSolidAccent(color) {
-  const accent = color || DEFAULT_ACCENT_COLOR;
-  const match = accent.match(/^#([0-9a-f]{6})$/i);
-
-  if (!match) {
-    return `color-mix(in srgb, ${accent} 70%, #000000)`;
-  }
-
-  const channels = [0, 2, 4].map((offset) =>
-    Number.parseInt(match[1].slice(offset, offset + 2), 16)
-  );
-  const relativeLuminance = (rgb) =>
-    rgb
-      .map((channel) => channel / 255)
-      .map((channel) =>
-        channel <= 0.04045
-          ? channel / 12.92
-          : ((channel + 0.055) / 1.055) ** 2.4
-      )
-      .reduce(
-        (total, channel, index) =>
-          total + channel * [0.2126, 0.7152, 0.0722][index],
-        0
-      );
-  const contrastWithWhite = (rgb) =>
-    1.05 / (relativeLuminance(rgb) + 0.05);
-
-  if (contrastWithWhite(channels) >= 4.5) {
-    return accent;
-  }
-
-  for (let factor = 0.95; factor >= 0.5; factor -= 0.05) {
-    const darkened = channels.map((channel) => Math.round(channel * factor));
-
-    if (contrastWithWhite(darkened) >= 4.5) {
-      return `rgb(${darkened.join(" ")})`;
-    }
-  }
-
-  return `color-mix(in srgb, ${accent} 50%, #000000)`;
 }
 
 function getProjectRows(sectors, copy) {
@@ -439,189 +350,63 @@ function SummaryMetrics({ rows, copy }) {
   );
 }
 
-function CategoryFilterButton({
-  activeAccentColor,
-  activeFilter,
-  filter,
-  onFilter,
-  parentActive = false,
-}) {
-  if (!filter) {
-    return null;
-  }
-
+function FilterBar({ activeFilter, onFilter, filters = [] }) {
   return (
-    <button
-      className={`category-filter-button category-filter-button--${filter.type}${
-        parentActive ? " category-filter-button--parent-active" : ""
-      }`}
-      key={filter.id}
-      onClick={() => onFilter(filter.id)}
-      aria-label={filter.accessibleLabel}
-      aria-pressed={activeFilter === filter.id}
+    <div
       style={{
-        "--category-filter-accent":
-          activeAccentColor || filter.accentColor || "var(--brand)",
-        "--category-filter-solid": getAccessibleSolidAccent(
-          activeAccentColor || filter.accentColor || FILTER_ACTIVE_BRAND_COLOR
-        ),
+        display: "grid",
+        gap: "9px",
+        marginBottom: "16px",
       }}
     >
-      <span>{filter.label}</span>
-      <span className="category-filter-count" aria-hidden="true">
-        {filter.count}
-      </span>
-    </button>
-  );
-}
+      <div
+        className="filter-controls"
+        style={{
+          display: "inline-flex",
+          width: "fit-content",
+          maxWidth: "100%",
+          gap: "4px",
+          padding: "4px",
+          border: "1px solid var(--border)",
+          borderRadius: "999px",
+          backgroundColor: "var(--surface-subtle)",
+          flexWrap: "wrap",
+        }}
+      >
+        {filters.map((filter) => {
+          const active = activeFilter === filter.id;
 
-function FilterBar({ activeFilter, label, onFilter, filters = [] }) {
-  const scrollRef = useRef(null);
-  const scrollTrackRef = useRef(null);
-  const scrollThumbRef = useRef(null);
-  const allFilter = filters.find((filter) => filter.type === "all");
-  const groupRows = filters
-    .filter((filter) => filter.type === "group")
-    .map((group) => ({
-      group,
-      categories: filters.filter(
-        (filter) => filter.type === "category" && filter.kind === group.kind
-      ),
-    }));
-
-  useEffect(() => {
-    const scroller = scrollRef.current;
-    const track = scrollTrackRef.current;
-    const thumb = scrollThumbRef.current;
-    const scrollColumn = scroller?.parentElement;
-
-    if (!scroller || !track || !thumb || !scrollColumn) {
-      return undefined;
-    }
-
-    const updateIndicator = () => {
-      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
-      const scrollable = maxScroll > 1;
-      const atStart = !scrollable || scroller.scrollLeft <= 1;
-      const atEnd = !scrollable || scroller.scrollLeft >= maxScroll - 1;
-
-      track.hidden = !scrollable;
-      scrollColumn.classList.toggle(
-        "category-filter-scroll-column--scrollable",
-        scrollable
-      );
-      scrollColumn.classList.toggle(
-        "category-filter-scroll-column--at-start",
-        atStart
-      );
-      scrollColumn.classList.toggle(
-        "category-filter-scroll-column--at-end",
-        atEnd
-      );
-
-      if (!scrollable) {
-        return;
-      }
-
-      const trackWidth = track.clientWidth;
-      const thumbWidth = Math.max(
-        48,
-        trackWidth * (scroller.clientWidth / scroller.scrollWidth)
-      );
-      const scrollProgress = scroller.scrollLeft / maxScroll;
-      const thumbOffset = scrollProgress * (trackWidth - thumbWidth);
-
-      thumb.style.width = `${thumbWidth}px`;
-      thumb.style.transform = `translateX(${thumbOffset}px)`;
-    };
-
-    updateIndicator();
-    scroller.addEventListener("scroll", updateIndicator, { passive: true });
-    window.addEventListener("resize", updateIndicator);
-
-    const resizeObserver =
-      typeof ResizeObserver === "undefined"
-        ? null
-        : new ResizeObserver(updateIndicator);
-
-    resizeObserver?.observe(scroller);
-    if (scroller.firstElementChild) {
-      resizeObserver?.observe(scroller.firstElementChild);
-    }
-
-    return () => {
-      scroller.removeEventListener("scroll", updateIndicator);
-      window.removeEventListener("resize", updateIndicator);
-      resizeObserver?.disconnect();
-      scrollColumn.classList.remove(
-        "category-filter-scroll-column--scrollable",
-        "category-filter-scroll-column--at-start",
-        "category-filter-scroll-column--at-end"
-      );
-    };
-  }, [label]);
-
-  return (
-    <nav aria-label={label} style={{ marginBottom: "16px" }}>
-      <div className="category-filter-layout">
-        <CategoryFilterButton
-          activeFilter={activeFilter}
-          filter={allFilter}
-          onFilter={onFilter}
-        />
-        <div className="category-filter-group-labels">
-          {groupRows.map(({ group, categories }) => {
-            const selectedCategory = categories.find(
-              (filter) => filter.id === activeFilter
-            );
-
-            return (
-              <CategoryFilterButton
-                activeAccentColor={selectedCategory?.accentColor}
-                activeFilter={activeFilter}
-                filter={group}
-                key={group.id}
-                onFilter={onFilter}
-                parentActive={Boolean(selectedCategory)}
-              />
-            );
-          })}
-        </div>
-        <div className="category-filter-scroll-column">
-          <div className="category-filter-scroll" ref={scrollRef}>
-            <div className="category-filter-group-rows">
-              {groupRows.map(({ group, categories }) => (
-                <div
-                  className="category-filter-row"
-                  key={group.id}
-                  role="group"
-                  aria-label={group.label}
-                >
-                  {categories.map((filter) => (
-                    <CategoryFilterButton
-                      activeFilter={activeFilter}
-                      filter={filter}
-                      key={filter.id}
-                      onFilter={onFilter}
-                    />
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div
-            className="category-filter-scroll-indicator"
-            ref={scrollTrackRef}
-            aria-hidden="true"
-          >
-            <span
-              className="category-filter-scroll-thumb"
-              ref={scrollThumbRef}
-            />
-          </div>
-        </div>
+          return (
+            <button
+              key={filter.id}
+              onClick={() => onFilter(filter.id)}
+              aria-pressed={active}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "7px",
+                flexShrink: 0,
+                minHeight: "30px",
+                padding: "7px 10px",
+                border: active ? "1px solid color-mix(in srgb, var(--brand) 32%, transparent)" : "1px solid transparent",
+                borderRadius: "999px",
+                backgroundColor: active ? "var(--surface)" : "transparent",
+                color: active ? "var(--brand-strong)" : "var(--text-muted)",
+                boxShadow: active ? "0 1px 2px var(--control-shadow)" : "none",
+                cursor: "pointer",
+                fontFamily: FONT_STACK,
+                fontSize: "11px",
+                fontWeight: 800,
+                letterSpacing: "0",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <span>{filter.label}</span>
+            </button>
+          );
+        })}
       </div>
-    </nav>
+    </div>
   );
 }
 
@@ -1263,6 +1048,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
   const [expandedIds, setExpandedIds] = useState([]);
   const environment = getAppEnvironment();
   const copy = getUiCopy(language);
+  const filters = getFilters(copy);
   const lastUpdatedLabel = formatLastUpdated(LAST_UPDATED, language);
 
   useEffect(() => {
@@ -1283,9 +1069,8 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
 
   const localizedSectors = localizeSectors(SECTORS, language);
   const rows = sortProjectRows(getProjectRows(localizedSectors, copy), language);
-  const filters = getCategoryFilters(rows, copy);
   const selectedFilter = filters.find((filter) => filter.id === activeFilter) || filters[0];
-  const filteredRows = sortProjectRows(filterRowsByCategory(rows, selectedFilter), language);
+  const filteredRows = sortProjectRows(filterRowsByStatus(rows, selectedFilter), language);
 
   const toggleExpanded = (id) => {
     setExpandedIds((current) =>
@@ -1525,8 +1310,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
 
         <section>
           <FilterBar
-            activeFilter={selectedFilter.id}
-            label={copy.filters.label}
+            activeFilter={activeFilter}
             onFilter={setActiveFilter}
             filters={filters}
           />

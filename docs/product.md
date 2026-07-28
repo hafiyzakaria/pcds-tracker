@@ -26,11 +26,7 @@ The current product is a small static React site with:
 - Header: "Sarawak Development Monitor" and "PCDS 2030 Project Tracker".
 - Summary metrics for tracked projects, ongoing projects, planning projects, completed projects, and milestones.
 - Last updated indicator beneath the page description, sourced from `LAST_UPDATED` in `src/trackerData.js`.
-- A compact two-row category filter with project counts for all projects, all sectors, individual
-  sectors, all enablers, and individual enablers. `All` remains at the left of the first row, while
-  `Sectors` and `Enablers` begin at the same horizontal position on their respective rows.
-  Categories follow their first appearance in the status-sorted project view, keeping the filter
-  order aligned with the cards.
+- Status filters for all, planning, ongoing, and completed projects.
 - A compact `EN | BM` control that switches instantly after hydration while retaining normal links to separately pre-rendered English and BM routes. The BM presentation translates the interface, project summaries, facts, milestones, and editorial update history into Malaysian Bahasa Melayu while keeping the site identity and project titles in English and preserving canonical project identities and source links. The BM introduction and footer deliberately retain the quoted English phrase `'Project tracker'` as part of the site's identity.
 - An icon theme control that defaults to the reader's system preference, supports explicit light or dark selection, and remembers that selection locally.
 - The last-updated pill links directly to the editorial update history, which has a visible top-level pill back to the matching-language tracker.
