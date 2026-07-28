@@ -23,6 +23,26 @@ const updateDefinitions = [
       "https://dayakdaily.com/bintulu-port-officially-handed-over-to-sarawak-in-rm1-8-bil-deal/",
   },
   {
+    date: "2026-06-09",
+    projectName: "Green Hydrogen Economy — H2ornbill & H2biscus",
+    description: {
+      en: "The H2biscus and H2ornbill project scopes entered recalibration and were set to be scaled down because of immediate financial constraints.",
+      ms: "Skop projek H2biscus dan H2ornbill memasuki penyelarasan semula dan akan dikecilkan berikutan kekangan kewangan segera.",
+    },
+    sourceUrl:
+      "https://www.theborneopost.com/2026/06/09/sarawak-recalibrates-h2biscus-and-h2ornbill-hydrogen-projects-amid-financial-constraints/",
+  },
+  {
+    date: "2026-05-18",
+    projectName: "KUTS — Kuching Urban Transportation System",
+    description: {
+      en: "KUTS Phase 1 reached 38.2 percent physical progress by 30 April 2026. Pilot operations are scheduled for the fourth quarter of 2026 before full commercial operations in 2027.",
+      ms: "Fasa 1 KUTS mencapai kemajuan fizikal 38.2 peratus setakat 30 April 2026. Operasi rintis dijadualkan pada suku keempat 2026 sebelum operasi komersial penuh pada 2027.",
+    },
+    sourceUrl:
+      "https://www.thestar.com.my/news/nation/2026/05/18/kuching-urban-transportation-system-to-start-pilot-run-in-q4",
+  },
+  {
     date: "2026-05-12",
     projectName: "Bintulu-Samalaju Gas Pipeline",
     description: {
@@ -30,16 +50,6 @@ const updateDefinitions = [
       ms: "Lembaga Pelabuhan Bintulu mengeluarkan notis bagi aktiviti prapentauliahan saluran paip. Operasi komersial secara berperingkat dijangka bermula pada 2027.",
     },
     sourceUrl: "https://www.bpa.gov.my/web/home/notice_view/0/439/",
-  },
-  {
-    date: "2026-05-08",
-    projectName: "Miri Port Kuala Baram Capital Dredging",
-    description: {
-      en: "Dredging work on the Kuala Baram Delta access channel was reported to be in full swing, with completion targeted for the fourth quarter of 2026.",
-      ms: "Kerja pengorekan saluran akses Delta Kuala Baram dilaporkan sedang giat dijalankan, dengan penyiapan disasarkan pada suku keempat 2026.",
-    },
-    sourceUrl:
-      "https://www.dredgingtoday.com/2026/05/08/dredging-work-on-kuala-baram-delta-access-channel-in-full-swing/",
   },
   {
     date: "2026-04-27",
@@ -53,6 +63,16 @@ const updateDefinitions = [
       "https://dayakdaily.com/sarawak-delta-geopark-gets-unesco-approval/",
   },
   {
+    date: "2026-04-25",
+    projectName: "Miri Port Kuala Baram Capital Dredging",
+    description: {
+      en: "The Kuala Baram dredging project reached about 55 percent physical progress and remained ahead of schedule, with completion expected in October 2026.",
+      ms: "Projek pengorekan Kuala Baram mencapai kira-kira 55 peratus kemajuan fizikal dan kekal mendahului jadual, dengan penyiapan dijangka pada Oktober 2026.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/premier-miri-port-dredging-project-55-pct-complete-channel-extension-up-to-10km-under-study/",
+  },
+  {
     date: "2026-04-01",
     projectName: "PETRONAS Kasawari Carbon Capture and Storage Project",
     description: {
@@ -63,6 +83,16 @@ const updateDefinitions = [
       "https://www.thestar.com.my/business/business-news/2026/04/01/petronas-seeks-to-bring-forward-first-co2-injection-at-kasawari-to-2027",
   },
   {
+    date: "2026-02-10",
+    projectName:
+      "Environment (Reduction of Greenhouse Gases Emission) Ordinance 2023",
+    description: {
+      en: "NREB's Greenhouse Gas Management System Phase 1 commenced operations for carbon-emissions reporting and flaring and venting consent applications.",
+      ms: "Sistem Pengurusan Gas Rumah Hijau Fasa 1 NREB mula beroperasi bagi pelaporan pelepasan karbon serta permohonan kebenaran pembakaran dan pelepasan gas.",
+    },
+    sourceUrl: "https://www.nreb.gov.my/web/subpage/announcement_view/196",
+  },
+  {
     date: "2026-01-30",
     projectName: "Piasau Nature Reserve Discovery Centre",
     description: {
@@ -71,6 +101,36 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://www.theborneopost.com/2026/01/30/piasau-nature-reserve-discovery-centre-to-become-marine-eco-tourism-hub-with-rm30-mln-boost/",
+  },
+  {
+    date: "2025-11-24",
+    projectName: "Sarawak Agrotechnology Park",
+    description: {
+      en: "The Sarawak Budget 2026 allocated RM19.5 million to develop the Sarawak Agrotechnology Park sites at Semenggok and Tarat.",
+      ms: "Belanjawan Sarawak 2026 memperuntukkan RM19.5 juta untuk membangunkan tapak Taman Agroteknologi Sarawak di Semenggok dan Tarat.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/sarawak-budget-2026-nearly-rm300-mil-allocated-to-modernise-agriculture-boost-food-security/",
+  },
+  {
+    date: "2025-09-10",
+    projectName: "RM1 Billion Paddy Infrastructure Programme",
+    description: {
+      en: "The Sarawak Government reported a RM1 billion allocation for the Stumbin-Bijat paddy project, covering irrigation, drainage, farm roads, and related infrastructure.",
+      ms: "Kerajaan Sarawak melaporkan peruntukan RM1 bilion bagi projek padi Stumbin-Bijat yang meliputi pengairan, saliran, jalan ladang dan infrastruktur berkaitan.",
+    },
+    sourceUrl:
+      "https://premierdept.sarawak.gov.my/web/subpage/news_view/24582/UKAS",
+  },
+  {
+    date: "2025-06-16",
+    projectName: "Baleh Hydroelectric Project",
+    description: {
+      en: "Reservoir impoundment was scheduled to begin in 2027 and take about two years, with project completion and power generation expected by December 2029.",
+      ms: "Penakungan takungan dijadualkan bermula pada 2027 dan mengambil masa kira-kira dua tahun, dengan penyiapan projek serta penjanaan kuasa dijangka menjelang Disember 2029.",
+    },
+    sourceUrl:
+      "https://premierdept.sarawak.gov.my/web/subpage/news_view/19825/UKAS",
   },
 ];
 

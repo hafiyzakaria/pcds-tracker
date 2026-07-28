@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-07-16";
+export const LAST_UPDATED = "2026-07-28";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -74,6 +74,7 @@ export const SECTORS = [
           { date: "2030", text: "500,000-tonne annual rice output goal", done: false },
         ],
         sources: [
+          { label: "Office of the Premier / UKAS — Stumbin-Bijat paddy allocation (Sep 2025)", url: "https://premierdept.sarawak.gov.my/web/subpage/news_view/24582/UKAS" },
           { label: "DayakDaily — RM1B allocation (Jun 2024)", url: "https://dayakdaily.com/sarawak-allocates-rm1-bln-for-large-scale-paddy-cultivation-to-boost-rice-self-sufficiency/" },
           { label: "DayakDaily — Minister warns against misuse (Feb 2026)", url: "https://dayakdaily.com/rm1-bln-in-infra-at-stake-minister-warns-against-misuse-of-paddy-facilities-for-oil-palm/" },
           { label: "DayakDaily — 500K tonnes rice target (Aug 2025)", url: "https://dayakdaily.com/sarawak-ups-rice-output-target-to-500000-tonnes-by-2030-in-premiers-bold-food-security-push/" },
@@ -85,15 +86,17 @@ export const SECTORS = [
         status: "Planning",
         statusColor: "#4f46e5",
         lead: "Sarawak Government",
-        value: "RM5 million reported allocations",
+        value: "RM19.5 million (Sarawak Budget 2026)",
         summary:
-          "Proposed Sarawak Agro-Technology Park sites at Semenggok and Tarat intended to attract technology-based agriculture firms. Public reporting in November 2022 identified RM1 million for Semenggok and RM4 million for Tarat, but no later site-development update has been published.",
+          "Proposed Sarawak Agro-Technology Park sites at Semenggok and Tarat intended to attract technology-based agriculture firms. The Sarawak Budget 2026 allocated RM19.5 million for development of the two sites, but physical site work has not yet been publicly confirmed.",
         milestones: [
           { date: "2022-11-22", text: "Semenggok and Tarat allocations announced", done: true },
+          { date: "2025-11-24", text: "RM19.5M development allocation announced", done: true },
           { date: "TBD", text: "SARTECH site development", done: false },
         ],
         sources: [
           { label: "Sarawak Tribune — Semenggok and Tarat SARTECH allocations (Nov 2022)", url: "https://www.sarawaktribune.com/state-government-vigorously-pursuing-smart-agriculture-initiative/" },
+          { label: "DayakDaily — Sarawak Budget 2026 SARTECH allocation (Nov 2025)", url: "https://dayakdaily.com/sarawak-budget-2026-nearly-rm300-mil-allocated-to-modernise-agriculture-boost-food-security/" },
         ],
       },
       {
@@ -180,14 +183,15 @@ export const SECTORS = [
         lead: "Sarawak Government",
         value: "Not applicable",
         summary:
-          "Provides the state framework for regulating and managing greenhouse gas emissions. NREB reported in March 2026 that scheduled economic sectors must register and submit annual carbon emissions reports, supported by accredited external auditors and an integrated Greenhouse Gas Management System.",
+          "Provides the state framework for regulating and managing greenhouse gas emissions. NREB's Greenhouse Gas Management System Phase 1 began operating in February 2026. Scheduled economic sectors must register and submit annual carbon emissions reports supported by accredited external auditors.",
         milestones: [
           { date: "2023", text: "Ordinance enacted", done: true },
           { date: "2025", text: "Accredited external auditor rules established", done: true },
-          { date: "2026-03-12", text: "Integrated Greenhouse Gas Management System reported in place", done: true },
+          { date: "2026-02-10", text: "GHG-MS Phase 1 commenced operations", done: true },
           { date: "Annual", text: "Scheduled sectors submit verified emissions reports", done: false },
         ],
         sources: [
+          { label: "NREB — GHG-MS Phase 1 commenced operations (Feb 2026)", url: "https://www.nreb.gov.my/web/subpage/announcement_view/196" },
           { label: "Borneo Post — Climate governance implementation update (Mar 2026)", url: "https://www.theborneopost.com/2026/03/12/sarawak-intensifies-climate-governance-on-path-to-net-zero-2050/" },
           { label: "FULCRUM — Sarawak's low-carbon future", url: "https://fulcrum.sg/envisioning-a-low-carbon-future-sarawaks-journey-towards-sustainable-development/" },
         ],
@@ -559,16 +563,19 @@ export const SECTORS = [
         lead: "Miri Port Authority / Rimbun Prima-CCCC JV",
         value: "RM238 million contract",
         summary:
-          "Kuala Baram Delta dredging and training-bund project to deepen and stabilise the access channel to Miri Port. A RM238 million contract was awarded to the Rimbun Prima-CCCC joint venture in June 2024. Miri Port Authority reported work in full swing in May 2026, with completion targeted for Q4 2026.",
+          "Kuala Baram Delta dredging and training-bund project to deepen and stabilise the access channel to Miri Port. A RM238 million contract was awarded to the Rimbun Prima-CCCC joint venture in June 2024. Physical progress reached about 55 percent in April 2026, with completion targeted for October 2026.",
         milestones: [
           { date: "2024-06-19", text: "RM238M dredging contract awarded", done: true },
           { date: "2024-12-09", text: "Works reported ahead of schedule", done: true },
+          { date: "2026-04-25", text: "Physical progress reached about 55 percent", done: true },
           { date: "2026-05-08", text: "Dredging reported in full swing", done: true },
-          { date: "2026-Q4", text: "Targeted dredging completion", done: false },
+          { date: "2026-10", text: "Dredging completion", done: false },
         ],
         sources: [
           { label: "Dredging Today — Kuala Baram contract award (Jun 2024)", url: "https://www.dredgingtoday.com/2024/06/19/malaysian-chinese-jv-wins-miri-port-dredging-contract/" },
           { label: "Dredging Today — Miri Port progress update (Dec 2024)", url: "https://www.dredgingtoday.com/2024/12/09/miri-port-dredging-project-progressing-along-smoothly/" },
+          { label: "MIPD — Kuala Baram works ahead of schedule (Nov 2025)", url: "https://mipd.sarawak.gov.my/web/subpage/news_view/508" },
+          { label: "DayakDaily — Dredging reaches 55% progress (Apr 2026)", url: "https://dayakdaily.com/premier-miri-port-dredging-project-55-pct-complete-channel-extension-up-to-10km-under-study/" },
           { label: "Dredging Today — Dredging in full swing (May 2026)", url: "https://www.dredgingtoday.com/2026/05/08/dredging-work-on-kuala-baram-delta-access-channel-in-full-swing/" },
         ],
       },
@@ -598,13 +605,16 @@ export const SECTORS = [
         lead: "Sarawak Metro Sdn Bhd",
         value: "Multi-billion ringgit (phased)",
         summary:
-          "Southeast Asia's first hydrogen-powered Autonomous Rapid Transit (ART) system. Phase 1 covers three lines: Blue Line (Rembus\u2013Hikmah Exchange), Red Line, and Green Line. ART vehicles run on dedicated trackless lanes using rubber tyres.",
+          "Southeast Asia's first hydrogen-powered Autonomous Rapid Transit (ART) system. Phase 1 covers the Blue, Red and Green lines and reached 38.2 percent physical progress on April 30, 2026. Pilot operations are scheduled for Q4 2026 before full commercial operations in 2027.",
         milestones: [
           { date: "2025-12", text: "RM58M hydrogen plant relocation contract awarded", done: true },
           { date: "2026-Q1", text: "First two ART units arrived in Kuching", done: true },
           { date: "2026-04", text: "Dedicated frequency spectrum secured for ART operations", done: true },
-          { date: "2026-Q4", text: "Blue Line passenger service scheduled to begin", done: false },
+          { date: "2026-04-30", text: "Phase 1 reached 38.2 percent progress", done: true },
+          { date: "2026-Q4", text: "Pilot operations begin", done: false },
           { date: "2026-Q4", text: "Rembus hydrogen plant relocation scheduled for completion", done: false },
+          { date: "2027", text: "Full commercial operations begin", done: false },
+          { date: "2030-Q3", text: "Overall KUTS project completion", done: false },
           { date: "TBD", text: "Hydrogen-powered feeder bus network rollout", done: false },
         ],
         sources: [
@@ -613,6 +623,7 @@ export const SECTORS = [
           { label: "Sarawak Metro — KUTS official project page", url: "https://www.mysarawakmetro.com/what-we-do/kuching-urban-transportation-system" },
           { label: "Sarawak Tribune — ART pilot run target (Apr 2026)", url: "https://www.sarawaktribune.com/art-golden-trains-set-to-arrive-in-kuching-for-pilot-run-this-year/" },
           { label: "DayakDaily — Dedicated ART spectrum (Apr 2026)", url: "https://dayakdaily.com/sarawak-metro-first-in-msia-to-secure-dedicated-spectrum-for-art-operations/" },
+          { label: "The Star — KUTS Q4 pilot and 2027 commercial operations (May 2026)", url: "https://www.thestar.com.my/news/nation/2026/05/18/kuching-urban-transportation-system-to-start-pilot-run-in-q4" },
         ],
       },
       {
@@ -653,17 +664,17 @@ export const SECTORS = [
         lead: "Sarawak Energy Berhad",
         value: "~RM10 billion",
         summary:
-          "1,285MW hydroelectric dam on the Baleh River in Kapit Division, led by Sarawak Energy. Public sources describe Baleh HEP as a concrete-faced rockfill dam, with construction completion targeted in 2026, operational generation targeted by 2028, and the 1,285MW capacity expected to contribute to Sarawak's 2030 large-scale hydropower outlook.",
+          "1,285MW hydroelectric dam on the Baleh River in Kapit Division, led by Sarawak Energy. Official reporting schedules reservoir impoundment to begin in 2027 and take about two years, with project completion and power generation expected by December 2029.",
         milestones: [
           { date: "2025-08", text: "1,285MW dam scope publicly confirmed", done: true },
-          { date: "2026", text: "Dam construction completion", done: false },
-          { date: "2028", text: "Electricity generation begins", done: false },
-          { date: "2030", text: "1,285MW contribution to Sarawak's hydropower capacity", done: false },
+          { date: "2027", text: "Reservoir impoundment begins", done: false },
+          { date: "2029-12", text: "Project completion and power generation", done: false },
         ],
         sources: [
+          { label: "Office of the Premier / UKAS — Impoundment from 2027 (Jun 2025)", url: "https://premierdept.sarawak.gov.my/web/subpage/news_view/19825/UKAS" },
+          { label: "Sarawak Energy — Baleh HEP project page", url: "https://www.sarawakenergy.com/baleh-hep" },
           { label: "DayakDaily — Green revolution supercharging Sarawak energy (Aug 2025)", url: "https://dayakdaily.com/green-revolution-supercharging-sarawaks-energy-prowess/" },
           { label: "DayakDaily — ASEAN grid & Baleh 1,285MW by 2030 (Jan 2026)", url: "https://dayakdaily.com/sarawak-urges-asean-to-study-european-union-nordic-models-to-realise-regional-power-grid-dream/" },
-          { label: "RECODA — Annual Report page", url: "https://recoda.gov.my/annual-report/" },
         ],
       },
       {
@@ -693,16 +704,18 @@ export const SECTORS = [
         lead: "SEDC Energy / Gentari (Petronas)",
         value: "Multi-billion USD",
         summary:
-          "Large-scale green hydrogen production in Bintulu. Sarawak H2 Hub (JV between SEDC Energy and Gentari) to be sole developer/operator. The Rembus hydrogen plant relocation supports KUTS fuel supply, while H2ornbill and H2biscus target commercial hydrogen and derivatives production from 2028.",
+          "Large-scale green hydrogen projects in Bintulu led through the Sarawak H2 Hub. In 2026, the H2biscus and H2ornbill export projects entered scope recalibration and downscaling because of immediate financial constraints and uncertain demand or offtake. A revised commercial production schedule has not been published.",
         milestones: [
+          { date: "2026-06-09", text: "H2biscus and H2ornbill scopes entered recalibration", done: true },
           { date: "2026-Q4", text: "Rembus hydrogen plant relocation and upgrade", done: false },
-          { date: "2028", text: "Commercial production begins for H2ornbill and H2biscus", done: false },
-          { date: "2028+", text: "Large-scale hydrogen derivatives production and export", done: false },
+          { date: "TBD", text: "Revised commercial production schedule", done: false },
         ],
         sources: [
           { label: "DayakDaily — H2ornbill & H2biscus hydrogen economy (Aug 2025)", url: "https://dayakdaily.com/sarawak-powers-ahead-in-hydrogen-economy/" },
           { label: "DayakDaily — Bintulu low-carbon industrial push (Jan 2026)", url: "https://dayakdaily.com/bintulu-set-to-anchor-msias-low-carbon-industrial-push-as-swak-integrates-hydrogen-ccus-and-carbon-pricing/" },
           { label: "FULCRUM — Sarawak's green hydrogen ambitions", url: "https://fulcrum.sg/sarawaks-green-hydrogen-ambitions-what-it-means-for-southeast-asia/" },
+          { label: "Free Malaysia Today — Projects scaled down over weak demand (Apr 2026)", url: "https://www.freemalaysiatoday.com/category/nation/2026/04/08/sarawak-hydrogen-projects-scaled-down-over-weak-demand/" },
+          { label: "Borneo Post — Project scopes recalibrated (Jun 2026)", url: "https://www.theborneopost.com/2026/06/09/sarawak-recalibrates-h2biscus-and-h2ornbill-hydrogen-projects-amid-financial-constraints/" },
         ],
       },
       {

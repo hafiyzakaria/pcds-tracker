@@ -58,6 +58,10 @@ Collapsed desktop titles reserve a shared two-line, `44px` title area at the exi
 
 Milestone dates are stored as compact source values but formatted consistently in the interface. Full dates use day, full month, and year; month targets use full month and year; quarter targets use `Quarter # YYYY` in English and `Suku # YYYY` in BM; milestones without a published date omit the date label; and open-ended work displays as `Ongoing`. The next-milestone date is visually separated from its description so readers can scan timing and outcome independently.
 
+Segmented milestone indicators follow the milestone-array order. Completed segments must remain
+contiguous from the left, followed by open segments, so the visual sequence agrees with the
+completed count shown beside it.
+
 Collapsed desktop cards use a shared minimum height so every two-column row remains visually
 aligned even when titles or milestone copy vary. Mobile cards return to content-driven heights in
 the one-column layout, and their internal grid and flex rows must be allowed to shrink so narrow
