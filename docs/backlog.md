@@ -103,6 +103,21 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Release gate: Review all four routes on the deployed Preview site before any Production
   promotion. Search Console measurement begins only after Production deployment and crawling.
 
+### Migrate the legacy tracker hostname
+
+- Completed on 24 July 2026: `https://tracker.hafiy.my/` was restored through an isolated Vercel
+  redirect project. HTTP upgrades to HTTPS, and HTTPS permanently redirects to
+  `https://pcds2030.com/` while preserving paths and query parameters.
+- Search Console ownership for `hafiy.my` was verified, and a temporary prefix removal was
+  submitted for the legacy tracker hostname.
+- Retention gate: Keep the redirect and `tracker` CNAME active until at least 24 July 2027. Keep
+  the Google ownership-verification TXT record indefinitely.
+- Retirement review: A conditional review is scheduled for 24 July 2027 at 09:00 Asia/Kuching.
+  Remove the redirect only if Google no longer indexes the old hostname, Search Console shows no
+  meaningful activity, and no valuable incoming links or referrals still depend on it. Otherwise,
+  retain the redirect and schedule another review.
+- Detailed measurement and retirement criteria are documented in `docs/seo-measurement.md`.
+
 ## 1. Must Fix Before Production
 
 ### Add a production data review checklist
