@@ -367,6 +367,29 @@ export const SECTORS = [
         ],
       },
       {
+        name: "Kota Petra Green Technology Park",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Zecon Berhad",
+        value: "RM328 million Phase 1 EPCC contract",
+        summary:
+          "A 3,000-acre green technology development near Demak Laut Industrial Park and Senari Port, combining solar generation, battery storage and AI-ready data-centre sites. Phase 1 covers 300 acres and a 100MWac agrivoltaic solar facility. Site preparation was under way by May 2026, and a RM328 million EPCC contract was awarded in July 2026, with commercial operations scheduled for December 2027.",
+        milestones: [
+          { date: "2025-02", text: "300MW solar-generation licence obtained", done: true },
+          { date: "2025-10", text: "30-year power purchase agreement signed", done: true },
+          { date: "2026-05-16", text: "Phase 1 site preparation reached 150 cleared acres", done: true },
+          { date: "2026-07-24", text: "RM328M Phase 1 EPCC contract awarded", done: true },
+          { date: "2026-08", text: "Phase 1 site clearing completes", done: false },
+          { date: "2027-12", text: "Commercial operations begin", done: false },
+          { date: "2028-08", text: "Permanent Sungai Serai bridge completion", done: false },
+        ],
+        sources: [
+          { label: "Zecon - Kota Petra Green Technology Park", url: "https://zecon.com.my/project/kota-petra-green-technology-park/" },
+          { label: "UKAS - Kota Petra Phase 1 progress (May 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/41040" },
+          { label: "The Star - RM328M Phase 1 EPCC contract (Jul 2026)", url: "https://www.thestar.com.my/business/business-news/2026/07/24/zecon-unit-secures-contract-for-sarawak-solar-project" },
+        ],
+      },
+      {
         name: "PETRONAS Kasawari Carbon Capture and Storage Project",
         displayName: "Kasawari Carbon Capture and Storage Project",
         status: "In Progress",
@@ -649,6 +672,41 @@ export const SECTORS = [
           { label: "DayakDaily — Bintulu Port officially handed over to Sarawak (Jun 2026)", url: "https://dayakdaily.com/bintulu-port-officially-handed-over-to-sarawak-in-rm1-8-bil-deal/" },
         ],
       },
+      {
+        name: "New Kuching International Airport",
+        status: "Planning",
+        statusColor: "#4f46e5",
+        lead: "Sarawak Government / Ministry of Transport Sarawak",
+        value: "Not disclosed",
+        summary:
+          "Proposed new international airport at Tanjung Embang intended as a regional aviation and logistics hub. The site-verification and feasibility study was completed by May 2026 and found the location operationally and technically feasible. The Ministry of Transport Sarawak is proceeding with a federal Airport Development Request before land acquisition, site preparation, detailed design and physical construction.",
+        milestones: [
+          { date: "2026-01-30", text: "Airport concept and Tanjung Embang location publicly detailed", done: true },
+          { date: "2026-05-18", text: "Site-verification and feasibility study completed", done: true },
+          { date: "TBD", text: "Federal airport development approval", done: false },
+          { date: "TBD", text: "Physical construction begins", done: false },
+        ],
+        sources: [
+          { label: "Ministry of Transport Sarawak - Proposed new airport (Jan 2026)", url: "https://mot.sarawak.gov.my/web/subpage/news_view/813" },
+          { label: "Ministry of Transport Sarawak - Feasibility study and approval phase (May 2026)", url: "https://mot.sarawak.gov.my/web/subpage/news_view/881" },
+        ],
+      },
+      {
+        name: "Tanjung Embang Deep-Sea Port",
+        status: "Planning",
+        statusColor: "#4f46e5",
+        lead: "Sarawak Government / PETROS",
+        value: "Not disclosed",
+        summary:
+          "Proposed deep-sea port and gas terminal within the integrated Tanjung Embang development. Public reporting identifies the Sarawak Government and PETROS as development partners and schedules operations to begin in 2032. Detailed capacity, procurement and construction milestones have not yet been published.",
+        milestones: [
+          { date: "2026-05-12", text: "Port and gas-terminal schedule announced", done: true },
+          { date: "2032", text: "Port and gas-terminal operations begin", done: false },
+        ],
+        sources: [
+          { label: "DayakDaily - Port and gas terminal scheduled for 2032 operations (May 2026)", url: "https://dayakdaily.com/tanjung-embang-deep-sea-port-gas-terminal-set-for-2032-operations/" },
+        ],
+      },
     ],
   },
   {
@@ -741,6 +799,22 @@ export const SECTORS = [
           { label: "Sarawak Energy — Floating solar commissioning target (Jun 2024)", url: "https://www.sarawakenergy.com/media-info/media-releases/2024/sarawak-energys-first-floating-solar-farm-on-track-for-commissioning-by-october-2024" },
           { label: "MEESty Sarawak — Batang Ai floating solar December launch target (Aug 2025)", url: "https://meesty.sarawak.gov.my/web/subpage/news_view/54" },
           { label: "The Star — Sarawak solar expansion and Batang Ai capacity (Oct 2025)", url: "https://www.thestar.com.my/news/nation/2025/10/06/sarawak-expands-solar-capacity-in-push-for-renewable-energy-says-abang-johari" },
+        ],
+      },
+      {
+        name: "Baram Agrovoltaic Project",
+        status: "Planning",
+        statusColor: "#4f46e5",
+        lead: "Not disclosed",
+        value: "RM6 billion estimated investment",
+        summary:
+          "Proposed agrovoltaic development at Temala near Long Lama within the state-approved Baram Renewable Energy Economic Zone. The reported RM6 billion scope combines 1,500 hectares of modern agriculture, 500 hectares of paddy cultivation, a logistics hub, a 300MW power station and a supporting township. The implementing party and construction schedule have not been published.",
+        milestones: [
+          { date: "2026-03-29", text: "Project scope and RM6B estimate announced", done: true },
+          { date: "TBD", text: "Project implementation begins", done: false },
+        ],
+        sources: [
+          { label: "UKAS - Baram Agrovoltaic Project scope and estimate (Mar 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/37208" },
         ],
       },
     ],

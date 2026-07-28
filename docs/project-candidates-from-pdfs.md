@@ -11,8 +11,53 @@
 - `SarawakGovt PCDS2030 - Highlights 2023 Chapter 1.pdf` - reviewed; overlaps with the first chapter of the full Highlights report and is mostly framework/summary material.
 - `SarawakGovt PCDS2030 - Highlights 2023.pdf` - reviewed; yielded current progress evidence for several infrastructure, utilities, innovation, agriculture, transport, and renewable-energy candidates.
 - `Sarawak-Sustainability-Vision-2030-Datu-Dr.-Muhammad-Abdullah-Zaidel.pdf` - reviewed; July 2024 government presentation that yielded three energy candidates and context for existing renewable-energy, transport, SCORE, and carbon-governance cards.
+- `Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf` - reviewed; 48-page Economic Planning Unit Sarawak executive summary published in November 2025 and finalised in January 2026. It yielded named airport, port, renewable-energy-zone, and technology-park candidates, plus broader programme context.
 
 ## High-Confidence Candidate Projects
+
+### New Kuching International Airport
+
+- Project name: New Kuching International Airport
+- Why it is relevant: Major aviation and logistics infrastructure supporting the proposed Kuching Low-Carbon Hub.
+- Source PDF: `Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf`
+- Page/section: Pages 18 and 30, announced connectivity plans and HLS 2
+- Evidence: The report identifies a new international airport for Kuching. A January 2026 Ministry of Transport Sarawak release locates the proposed airport at Tanjung Embang. A May 2026 ministry update confirms that the site-verification and feasibility study was completed, found Tanjung Embang operationally and technically feasible, and moved the project to a federal Airport Development Request.
+- Possible tracker category: Transport
+- Possible milestones: Airport concept and location detailed in January 2026; site-verification and feasibility study completed in May 2026; federal development approval; physical construction.
+- Missing information: Airport-only monetary value, federal development approval, procurement packages, and confirmed construction award.
+
+### Tanjung Embang Deep-Sea Port
+
+- Project name: Tanjung Embang Deep-Sea Port
+- Why it is relevant: Major port and industrial-logistics infrastructure within the integrated Tanjung Embang development.
+- Source PDF: `Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf`
+- Page/section: Pages 18 and 30, announced connectivity plans and HLS 2
+- Evidence: The report announces a deep-sea port alongside the new Kuching airport. May 2026 reporting identifies the project as a deep-sea port and gas terminal developed by the Sarawak Government with PETROS and schedules operations for 2032.
+- Possible tracker category: Transport
+- Possible milestones: Port and gas-terminal schedule announced in May 2026; operations begin in 2032.
+- Missing information: Monetary value, detailed port capacity, procurement packages, and confirmed construction award.
+
+### Baram Agrovoltaic Project
+
+- Project name: Baram Agrovoltaic Project
+- Why it is relevant: Integrated renewable-energy and commercial-agriculture development within the Baram Renewable Energy Economic Zone.
+- Source PDF: `Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf`
+- Page/section: Page 30, HLS 2
+- Evidence: The report identifies the proposed Baram Renewable Energy Economic Zone. A March 2026 UKAS report identifies the Baram Agrovoltaic Project at Temala near Long Lama as part of that zone, reports an estimated RM6 billion investment, and describes agriculture, paddy, logistics, power-generation, and township components. The UKAS article states that the economic zone received state approval; it does not explicitly confirm a separate project implementation approval.
+- Possible tracker category: Renewable Energy
+- Possible milestones: State approval and project scope announced in March 2026; implementation commencement remains undated.
+- Missing information: Implementing company, construction contract, confirmed commencement date, and phased delivery schedule.
+
+### Kota Petra Green Technology Park
+
+- Project name: Kota Petra Green Technology Park
+- Why it is relevant: Large green-technology, renewable-energy, battery-storage, and data-centre development near Demak Laut and Senari Port.
+- Source PDF: `Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf`
+- Page/section: Page 30, HLS 2
+- Evidence: The report names Kota Petra Green Technology Park. Zecon describes a 3,000-acre PCDS-aligned masterplan with 300MW solar generation, 600MWh battery storage, and six AI-driven data-centre sites. UKAS reported in May 2026 that Phase 1 site preparation was under way, with 150 acres cleared, full clearing expected in August 2026, and commercial operations scheduled for December 2027. The Star reported a RM328 million Phase 1 EPCC contract award on 24 July 2026.
+- Possible tracker category: Innovation
+- Possible milestones: 300MW licence in February 2025; 30-year PPA in October 2025; Phase 1 site preparation in May 2026; RM328 million Phase 1 EPCC contract in July 2026; site clearing in August 2026; commercial operations in December 2027; permanent bridge completion in August 2028.
+- Missing information: Total-project monetary value, data-centre tenant commitments, and later-phase delivery schedule.
 
 ### Sejingkat Battery Energy Storage System
 
@@ -544,6 +589,10 @@
 - Efficient port services / port master plan / AtoN programme - useful programme context; specific physical deployments should be selected separately.
 - Digital/internal systems list - SIOC Phase 2, smart flood, smart traffic-light, digital certificate, digital government, and similar items appear too internal or granular for the current major-project tracker unless the product scope expands.
 - Education and social assistance schemes - TVET scholarship, STEM labs, outreach, cash assistance, and training programmes are valid policy/programme items but not project-specific dashboard cards.
+- Kuching Low-Carbon Hub Economic Zone and Baram Renewable Energy Economic Zone - strategic umbrella zones in the 13MP executive summary. The airport, port, and Baram Agrovoltaic Project are the trackable project-level components currently supported by public reporting.
+- Sarawak AI Centre and Sarawak Climate Change Centre - named institutional initiatives, but public implementation evidence is not yet sufficient for useful project cards.
+- Sarawak High Performance Sports Centre - the 13MP names the facility and June 2026 reporting confirms planning and site identification within the Sarawak Sports Complex. Keep under review until implementation timing and delivery details are firmer.
+- The 13MP JKR, Projek Rakyat, Rural Transformation Programme, water-project, JENDELA, and airport-upgrade totals - aggregate portfolios rather than individually identifiable projects.
 
 ## Rejected / Not Suitable
 
@@ -561,14 +610,17 @@
 - Data centre attraction in AIP Volume III - too generic and overlaps with the existing FutureData Kuching Data Centre Park tracker card.
 - BKSS, S-MM2H, SarawakID, S Pay Global, eLASIS, tourism campaigns, expos, roadshows, SCaT Fair, and similar programmes - not suitable as capital/infrastructure/economic development project cards under the current tracker scope.
 - `Facts  Figures 2025.pdf` SCORE tables - useful statistical context but not standalone project evidence.
+- KUTS, Baleh Hydroelectric Project, Sarawak Bioindustrial Park, Bintulu Port handover, the Paddy Infrastructure Programme, and the Sarawak River navigation system - repeated in the 13MP executive summary but already represented by existing tracker cards.
+- Sarawak Hydrogen Hub - strategic context for the existing H2biscus and H2ornbill card, not a separate project card.
 
 ## Summary
 
-1. Number of PDFs reviewed: 9
-2. Number of high-confidence candidates: 28
+1. Number of PDFs reviewed: 10
+2. Number of high-confidence candidates: 32
 3. Number of medium-confidence candidates: 18
-4. Number of programme-only items: 20
+4. Number of programme-only items: 24
 5. Recommended candidates for online validation:
+   - Sarawak High Performance Sports Centre
    - Batang Ai Floating Solar Farm
    - Bintulu-Samalaju Gas Pipeline
    - 500 MW Miri Combined Cycle Gas Turbine Power Plant

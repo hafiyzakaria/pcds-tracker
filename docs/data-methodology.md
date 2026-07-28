@@ -27,7 +27,7 @@ article and report titles are not misrepresented.
 Additional repository source material:
 
 - `audit/pcds-audit.json`: prior evidence-quality and trackability audit notes. This file is not rendered by the dashboard and some counts/status labels differ from current `src/trackerData.js`, so it should be treated as methodology context rather than active dashboard data.
-- `PCDS 2030/*.pdf`: local PCDS framework/report material, including the main Post COVID-19 Development Strategy PDF, PCDS 2030 final report volumes, AIP economic-sector and enabler volumes, Sarawak Government PCDS 2030 highlights, Facts & Figures 2025, and Sarawak innovative initiatives material. These PDFs are not automatically parsed by the app.
+- `docs/source-pdfs/*.pdf`: local PCDS framework and report material, including the main Post COVID-19 Development Strategy PDF, PCDS 2030 final report volumes, AIP economic-sector and enabler volumes, Sarawak Government PCDS 2030 highlights, Facts & Figures 2025, Sarawak innovative initiatives material, and the Sarawak 13th Malaysia Plan 2026-2030 executive summary. These PDFs are not automatically parsed by the app.
 - `README.md`, `docs/product.md`, `docs/design.md`, and `docs/backlog.md`: project memory and maintenance guidance.
 
 ## Current Data Fields
@@ -108,7 +108,7 @@ The current data uses these source types:
 - Official statements and official bodies: for example Sarawak Government source PDFs and UNESCO listing pages.
 - Government websites: for example `sarawak.gov.my`.
 - Agency/ministry pages: for example RECODA's official site and Business Events Sarawak's PCDS page.
-- Company announcements: none are directly encoded in the active source list; company or project-partner facts are currently supported through media or public reporting.
+- Company announcements and project pages: for example Zecon's Kota Petra Green Technology Park page and Sarawak Energy project announcements.
 - News reports: especially DayakDaily and The Edge Malaysia.
 - Industry media: Data Center Dynamics.
 - Other public sources: FULCRUM policy analysis pieces.
@@ -350,6 +350,16 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Mentarang Induk Hydroelectric Project - `In Progress`; US$2.6 billion, 1,375MW cross-border hydropower venture in North Kalimantan; groundbreaking and early works were reported in 2023, while current physical progress remains unclear; sources: Sarawak Energy, Office of the Premier, and PT Kayan Hydropower Nusantara.
 - Sarawak-Singapore Electricity Interconnection - `In Progress`; conditional approval obtained in October 2025 for around 1GW of renewable power exports, with further regulatory approvals and licences still required; source: Sarawak Energy.
 
+### Sarawak 13th Malaysia Plan Projects Added on 28 July 2026
+
+- New Kuching International Airport - `Planning`; proposed at Tanjung Embang. The site-verification and feasibility study was complete by May 2026, and the project moved into the federal Airport Development Request stage. The airport-only monetary value is not disclosed; sources: Ministry of Transport Sarawak.
+- Tanjung Embang Deep-Sea Port - `Planning`; separately tracked as the port and gas-terminal component of the integrated Tanjung Embang development. The Sarawak Government and PETROS were identified as development partners, with operations scheduled for 2032; source: DayakDaily.
+- Baram Agrovoltaic Project - `Planning`; proposed RM6 billion integrated agriculture and 300MW power-development scope at Temala near Long Lama. The Baram Renewable Energy Economic Zone has state approval, but the exact project's implementing party and construction schedule are not public; source: UKAS.
+- Kota Petra Green Technology Park - `In Progress`; 3,000-acre Zecon development near Demak Laut and Senari Port. Phase 1 site preparation was under way by May 2026, a RM328 million EPCC contract was awarded in July 2026, and commercial operations remain scheduled for December 2027; sources: Zecon, UKAS, and The Star.
+- PDF research basis: `docs/source-pdfs/Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf`, especially pages 18 and 30. The PDF confirms strategic inclusion and naming; every live-card claim is also supported by a project-specific public webpage.
+- Dated source and inclusion review: `docs/project-audits/2026-07-28-13mp-candidate-review.md`.
+- Not added: the Kuching Low-Carbon Hub and Baram Renewable Energy Economic Zone remain umbrella-zone context; Sarawak AI Centre, Sarawak Climate Change Centre, and Sarawak High Performance Sports Centre remain monitored candidates pending firmer public implementation evidence.
+
 ### PCDS 2030 - Overarching Framework
 
 - Current dashboard status: `Operational`
@@ -364,8 +374,8 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 The app derives display rows by flattening `SECTORS` into project rows and excluding the overview category:
 
-- Active rendered projects: 29.
-- Stored projects including overview: 30.
+- Active rendered projects: 34.
+- Stored projects including overview: 35.
 - PCDS economic sectors represented in data: 6.
 - PCDS enablers represented in data: 7.
 - Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, mining, social-services.
@@ -373,12 +383,12 @@ The app derives display rows by flattening `SECTORS` into project rows and exclu
 
 Current active dashboard status counts from `src/trackerData.js`:
 
-- `In Progress`: 15.
+- `In Progress`: 23.
 - `Awaiting Decision`: 0.
-- `Planning`: 6.
-- `Operational`: 5.
-- `Designated`: 2.
-- `Enacted`: 1.
+- `Planning`: 7.
+- `Operational`: 3.
+- `Designated`: 1.
+- `Enacted`: 0.
 
 The UI groups detailed statuses into public filter labels:
 
@@ -388,11 +398,11 @@ The UI groups detailed statuses into public filter labels:
 
 Current public display counts:
 
-- Tracked projects: 29.
-- Planning: 6.
-- Ongoing: 15.
-- Completed: 8.
-- Milestones: 63 completed out of 106 active-project milestones.
+- Tracked projects: 34.
+- Planning: 7.
+- Ongoing: 23.
+- Completed: 4.
+- Milestones: 85 completed out of 134 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 

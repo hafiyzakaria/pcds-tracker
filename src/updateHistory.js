@@ -3,6 +3,16 @@ import { localizeSectors } from "./localization.js";
 
 const updateDefinitions = [
   {
+    date: "2026-07-24",
+    projectName: "Kota Petra Green Technology Park",
+    description: {
+      en: "A RM328 million EPCC contract was awarded for the 100MWac agrivoltaic solar facility in Phase 1, marking the project's move from approvals and site preparation into execution.",
+      ms: "Kontrak EPCC RM328 juta dianugerahkan bagi kemudahan solar agrovoltaik 100MWac dalam Fasa 1, menandakan peralihan projek daripada kelulusan dan penyediaan tapak kepada pelaksanaan.",
+    },
+    sourceUrl:
+      "https://www.thestar.com.my/business/business-news/2026/07/24/zecon-unit-secures-contract-for-sarawak-solar-project",
+  },
+  {
     date: "2026-07-07",
     projectName: "Sarawak Cancer Centre",
     description: {
@@ -33,6 +43,15 @@ const updateDefinitions = [
       "https://www.theborneopost.com/2026/06/09/sarawak-recalibrates-h2biscus-and-h2ornbill-hydrogen-projects-amid-financial-constraints/",
   },
   {
+    date: "2026-05-19",
+    projectName: "New Kuching International Airport",
+    description: {
+      en: "The site-verification and feasibility study was completed, confirming Tanjung Embang as operationally and technically feasible. The project is proceeding to a federal Airport Development Request.",
+      ms: "Kajian pengesahan tapak dan kebolehlaksanaan selesai serta mengesahkan Tanjung Embang sesuai dari segi operasi dan teknikal. Projek kini diteruskan kepada Permohonan Pembangunan Lapangan Terbang persekutuan.",
+    },
+    sourceUrl: "https://mot.sarawak.gov.my/web/subpage/news_view/881",
+  },
+  {
     date: "2026-05-18",
     projectName: "KUTS — Kuching Urban Transportation System",
     description: {
@@ -41,6 +60,16 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://www.thestar.com.my/news/nation/2026/05/18/kuching-urban-transportation-system-to-start-pilot-run-in-q4",
+  },
+  {
+    date: "2026-05-12",
+    projectName: "Tanjung Embang Deep-Sea Port",
+    description: {
+      en: "The proposed deep-sea port and gas terminal were reported as a Sarawak Government and PETROS development, with operations scheduled to begin in 2032.",
+      ms: "Cadangan pelabuhan laut dalam dan terminal gas dilaporkan sebagai pembangunan Kerajaan Sarawak dan PETROS, dengan operasi dijadualkan bermula pada 2032.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/tanjung-embang-deep-sea-port-gas-terminal-set-for-2032-operations/",
   },
   {
     date: "2026-05-12",
@@ -81,6 +110,16 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://www.thestar.com.my/business/business-news/2026/04/01/petronas-seeks-to-bring-forward-first-co2-injection-at-kasawari-to-2027",
+  },
+  {
+    date: "2026-03-29",
+    projectName: "Baram Agrovoltaic Project",
+    description: {
+      en: "The proposed RM6 billion Baram Agrovoltaic Project scope was announced for Temala near Long Lama, combining renewable energy, commercial agriculture, logistics and township components.",
+      ms: "Skop cadangan Projek Agrovoltaik Baram bernilai RM6 bilion diumumkan bagi Temala berhampiran Long Lama, menggabungkan tenaga boleh baharu, pertanian komersial, logistik dan komponen perbandaran.",
+    },
+    sourceUrl:
+      "https://ukas.sarawak.gov.my/web/subpage/news_view/37208",
   },
   {
     date: "2026-02-10",

@@ -144,6 +144,30 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Risk level: medium
 - Suggested first task: Start with a simple script that extracts project source URLs and reports non-2xx or timeout responses without failing deployments yet.
 
+### Revisit monitored 13th Malaysia Plan candidates
+
+- Sarawak High Performance Sports Centre: Strongest next candidate. The 13th Malaysia Plan
+  names the facility on page 34, and June 2026 reporting confirms planning and a site within the
+  Sarawak Sports Complex. Recheck when a project value, procurement action, construction date,
+  or completion schedule is published. Resolve the conflict with older reporting that suggested
+  operations in 2025 before creating a card.
+- Sarawak AI Centre: The plan records Cabinet approval on page 13 and includes the centre in its
+  AI strategy on page 30, but the public record does not yet establish whether this is a facility,
+  institution, or programme. Recheck when an implementing body, location, budget, launch, or
+  operational milestone is officially published.
+- Sarawak Climate Change Centre: Page 35 describes its establishment in forward-looking terms.
+  Recheck after an official establishment announcement identifies its lead agency, location,
+  budget, or operational milestone.
+- Kuching Low-Carbon Hub Economic Zone: Keep as umbrella context for the new Kuching airport and
+  Tanjung Embang deep-sea port cards. Reconsider a separate card only after legal designation,
+  boundaries, a governing body, a masterplan, or zone-wide infrastructure delivery is confirmed.
+- Baram Renewable Energy Economic Zone: Keep as umbrella context for the Baram Agrovoltaic
+  Project. Reconsider a separate card when governance, boundaries, a masterplan, an investment
+  framework, or additional named projects are publicly confirmed.
+- Suggested first task: Review the sports-centre candidate first, then repeat the documented
+  project-research process for the institutional initiatives and economic zones when one of these
+  evidence triggers occurs.
+
 ## 3. Nice To Have
 
 ### Reconsider category-based filtering only if the simpler controls become insufficient
