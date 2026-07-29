@@ -66,6 +66,11 @@ const INTRO_EMPHASIS = {
   ],
 };
 
+const INTRO_NO_WRAP = new Set([
+  "rm282 billion by 2030",
+  "rm282 bilion menjelang 2030",
+]);
+
 function getFilters(copy) {
   return [
     { id: "all", label: copy.filters.all },
@@ -1052,8 +1057,17 @@ function EmphasizedText({ text, phrases }) {
   const pattern = new RegExp(`(${escaped.join("|")})`, "gi");
 
   return text.split(pattern).map((part, index) => {
-    const emphasized = phrases.some((phrase) => phrase.toLocaleLowerCase() === part.toLocaleLowerCase());
-    return emphasized ? <strong key={`${part}-${index}`}>{part}</strong> : part;
+    const normalizedPart = part.toLocaleLowerCase();
+    const emphasized = phrases.some((phrase) => phrase.toLocaleLowerCase() === normalizedPart);
+
+    return emphasized ? (
+      <strong
+        key={`${part}-${index}`}
+        style={INTRO_NO_WRAP.has(normalizedPart) ? { whiteSpace: "nowrap" } : undefined}
+      >
+        {part}
+      </strong>
+    ) : part;
   });
 }
 
