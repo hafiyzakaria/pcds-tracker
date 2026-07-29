@@ -48,9 +48,11 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 - Completed on Production: Collapsed desktop cards once again use the established shared minimum
   height, while one-column mobile cards remain content-driven.
-- QA completed: Current desktop cards align at one height; status filters preserve the
-  alignment; multiple cards can remain expanded; and narrow mobile cards have no clipping,
-  overlap, or horizontal overflow.
+- Completed locally for Preview review: The narrower two-column range now uses a taller shared
+  collapsed height so wrapped English and BM card content remains aligned.
+- QA completed: Current desktop and narrow two-column cards align at one height; status filters
+  preserve the alignment; multiple cards can remain expanded; and narrow mobile cards have no
+  clipping, overlap, or horizontal overflow.
 
 ### Align card behavior across environments
 
@@ -65,6 +67,8 @@ This backlog documents known issues and recommended next tasks for the next deve
   and optional `displayName` values while retaining canonical names for stable identity.
 - Completed on Preview: Milestone dates now use consistent reader-facing formats, with dates
   separated from milestone descriptions in collapsed cards.
+- Completed locally for Preview review: Undated entries render as compact bullet points beneath
+  the existing remaining-milestones heading, without a repeated date placeholder or second title.
 - Completed on Preview: Badges, filters, sorting, and summary counts now follow one public-status
   rule: a card is `Completed` only when every delivery milestone displayed on it is complete.
 - Completed on Preview: Routine operational work was removed from completion milestones, and the

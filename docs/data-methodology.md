@@ -34,7 +34,7 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-07-28`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-07-29`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
@@ -186,6 +186,9 @@ For each audit, record the audit date, query variants, candidate and accepted UR
 - Run an event-driven check after major budgets, legislative sittings, project-owner announcements, or reported status changes.
 - Compare each sweep with the previous dated audit so unchanged cards do not need to be researched from scratch.
 
+Latest full milestone review:
+`docs/project-audits/2026-07-29-full-milestone-audit.md`.
+
 ## Milestone Writing Standard
 
 - Use one canonical `text` value everywhere. Collapsed and expanded cards must not use different wording for the same milestone.
@@ -195,10 +198,13 @@ For each audit, record the audit date, query variants, candidate and accepted UR
 - Do not repeat the project name when the card title already provides the context.
 - Avoid `Target:` prefixes, slash-separated alternatives, vague `rollout` wording, and internal research tasks such as confirming a project's status.
 - Write completed milestones with a definitive past-tense outcome, such as `Construction officially began` or `Contract awarded`.
-- Write future milestones as concise outcomes or actions and keep `done: false` until completion is confirmed. Do not add `planned` when the milestone date and open state already communicate that the outcome is prospective.
+- Write future milestones as concise, public-facing outcomes and keep `done: false` until completion is confirmed. Prefer a concrete subject followed by an observable outcome, such as `Logistics hub enters operation`, over internal task wording such as `Develop logistics hub` or repetitive abstract wording such as `Completion of logistics hub`. Use an operating, commissioning, or completion outcome only when that stage is supported by the available evidence. Do not add `planned` when the milestone date and open state already communicate that the outcome is prospective.
+- Do not phrase an open milestone as though it has already happened. Avoid terminal past-participle wording such as `approval obtained`, `capacity added`, or `centre completed`. Use an active present-tense outcome such as `Federal authorities approve the request`, `capacity increases by 120MW`, or `centre reaches completion`. A pending event may use a concise noun phrase when that is clearer, such as `Announcement of updated project plan`.
 - Distinguish construction completion, commissioning, operations commencement, and commercial operation. These terms describe different project stages and must not be used interchangeably.
 - Keep completed milestones before the next open milestone in each project's array. The card's segmented progress indicator follows this order, so an open milestone placed before a completed milestone creates a misleading broken sequence.
 - Keep supporting context, uncertainty, and attribution in the project summary and sources rather than lengthening the milestone statement.
+- A non-completed capital project should continue to an evidence-supported delivery outcome such as construction completion, commissioning, service commencement, commercial operation, or first production. An intermediate announcement, approval, or design stage must not make the card appear fully complete. Do not invent missing lifecycle stages when public evidence does not identify them.
+- `npm run check:content` enforces the structural portion of this standard: non-completed cards retain an open milestone, completed milestones cannot use `TBD`, open milestones cannot end in selected completed-event wording, reported values must be monetary or use the approved unknown-value labels, public sources cannot be PDF links, and English and BM milestone counts must match.
 
 ## Selected Project Source Map
 
@@ -235,14 +241,14 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - [DayakDaily - Borneo's Cradle of Origin (Apr 2026)](https://dayakdaily.com/borneos-cradle-of-origin-puts-sarawak-delta-geopark-on-world-map-with-unesco-recognition/) - Publisher: DayakDaily; type: news report; date: Apr 2026; appears to support branding and designation context.
 - Gaps or uncertainty: no direct UNESCO page is encoded for the geopark. The card is scoped to the completed designation effort rather than open-ended tourism and community programmes.
 
-### Niah National Park - UNESCO World Heritage
+### The Archaeological Heritage of Niah National Park’s Caves Complex
 
-- Current dashboard status: `In Progress`
-- Current next milestone: Site conservation and visitor facility improvements
+- Current dashboard status: `Designated`
+- Current next milestone: none; UNESCO inscription is the tracked final outcome
 - Sources currently used:
 - [UNESCO - Niah World Heritage listing](https://whc.unesco.org/en/list/1014) - Publisher: UNESCO; type: official international body; date: not encoded in label; appears to support inscription/designation and heritage-site facts.
 - [DayakDaily - Bako & Lambir after Niah inscription (Aug 2025)](https://dayakdaily.com/sarawak-nominates-bako-bukit-lambir-as-asean-heritage-parks-to-elevate-global-conservation-status/) - Publisher: DayakDaily; type: news report; date: Aug 2025; appears to support post-inscription conservation/heritage context.
-- Gaps or uncertainty: no field-level source explicitly links to visitor-facility progress; ongoing management milestone is broad.
+- Identity decision: the canonical name follows UNESCO's official listed-property title. The shorter public display name is `Niah Caves Archaeological Heritage Site`. UNESCO identifies Sarawak Forestry Corporation and the Sarawak Museum Department as the main responsible government institutions.
 
 ### Greenhouse Gas Emission Ordinance 2023
 
@@ -289,7 +295,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 ### KUTS - Kuching Urban Transportation System
 
 - Current dashboard status: `In Progress`
-- Current next milestone: Pilot operations begin
+- Current next milestone: ART pilot service begins
 - Sources currently used:
 - [DayakDaily - ART Q4 2026 operations](https://dayakdaily.com/hydrogen-powered-art-to-begin-service-in-kuching-in-final-quarter-of-2026-premier/) - Publisher: DayakDaily; type: news report; date: not encoded in active label; appears to support Q4 2026 passenger-service target and ART system context.
 - [The Edge - KUTS hydrogen plant relocation](https://theedgemalaysia.com/node/786079) - Publisher: The Edge Malaysia; type: business/news media; date: not encoded in active label; appears to support the hydrogen plant relocation contract/milestone.
@@ -321,14 +327,18 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 ### Green Hydrogen Economy - H2ornbill & H2biscus
 
 - Current dashboard status: `Planning`
-- Current next milestone: Rembus hydrogen plant relocation and upgrade
+- Current next milestone: Announcement of updated project plan and production timeline
 - Sources currently used:
-- [DayakDaily - H2ornbill & H2biscus hydrogen economy (Aug 2025)](https://dayakdaily.com/sarawak-powers-ahead-in-hydrogen-economy/) - Publisher: DayakDaily; type: news report; date: Aug 2025; appears to support H2ornbill/H2biscus project framing and hydrogen economy context.
-- [DayakDaily - Bintulu low-carbon industrial push (Jan 2026)](https://dayakdaily.com/bintulu-set-to-anchor-msias-low-carbon-industrial-push-as-swak-integrates-hydrogen-ccus-and-carbon-pricing/) - Publisher: DayakDaily; type: news report; date: Jan 2026; appears to support Bintulu low-carbon/hydrogen integration context.
-- [FULCRUM - Sarawak's green hydrogen ambitions](https://fulcrum.sg/sarawaks-green-hydrogen-ambitions-what-it-means-for-southeast-asia/) - Publisher: FULCRUM; type: policy analysis/public source; date: not encoded in active label; appears to support broader regional hydrogen ambition context.
+- [Samsung E&A - H2biscus FEED project commenced (Nov 2023)](https://www.samsungena.com/en/newsroom/news/view?idx=15543) - Publisher: Samsung E&A; type: official company disclosure; date: 24 Nov 2023; supports the September 2022 renewable-power memorandum, the 23 November 2023 FEED commencement, the original design capacities, and the named H2biscus partners.
+- [Borneo Post - H2ornbill joint development agreement (Dec 2023)](https://www.theborneopost.com/2023/12/19/sedc-energy-sumitomo-and-eneos-fine-tuning-project-h2ornbill-details/) - Publisher: Borneo Post; type: news report based on a project news release; date: 19 Dec 2023; supports the October 2023 joint development agreement, SEDC Energy, ENEOS and Sumitomo as parties, and the project's planned FEED stage.
+- [MIDA - H2biscus joint development agreement (May 2024)](https://www.mida.gov.my/mida-news/sarawaks-new-energy-hub-to-receive-rm2-16-trillion-investment-by-2050-says-abang-johari/) - Publisher: Malaysian Investment Development Authority; type: official agency republication; date: 22 May 2024; supports the H2biscus joint development agreement and FEED context.
+- [MEESty - H2biscus and H2ornbill in FEED (Jun 2025)](https://meesty.sarawak.gov.my/web/subpage/news_view/40) - Publisher: Ministry of Energy and Environmental Sustainability Sarawak; type: official ministry news page republishing a Borneo Post report; source-news date: 9 Jun 2025; supports both projects having reached FEED and the combined planned production scope at that time.
 - [Free Malaysia Today - Projects scaled down over weak demand (Apr 2026)](https://www.freemalaysiatoday.com/category/nation/2026/04/08/sarawak-hydrogen-projects-scaled-down-over-weak-demand/) - Publisher: Free Malaysia Today; type: news report; date: 8 Apr 2026; supports the reported downscaling and demand or offtake constraint.
+- [Borneo Post - Original H2ornbill export concept suspended (May 2026)](https://www.theborneopost.com/2026/05/27/sarawaks-hydrogen-initiative-scaled-down-on-funding-constraints/) - Publisher: Borneo Post; type: news report quoting the SEDC Energy chairman; date: 27 May 2026; supports suspension of the original Japan-export concept while alternative hydrogen carriers are considered.
 - [Borneo Post - Project scopes recalibrated (Jun 2026)](https://www.theborneopost.com/2026/06/09/sarawak-recalibrates-h2biscus-and-h2ornbill-hydrogen-projects-amid-financial-constraints/) - Publisher: Borneo Post; type: news report; date: 9 Jun 2026; supports the scope-recalibration milestone and immediate financial constraint.
-- Gaps or uncertainty: no revised commercial production schedule has been published; the former definitive 2028 target has been removed.
+- Value decision: `Not disclosed`. The US$4.2 billion figure reported by The Edge in February 2024 covered the two export projects together with broader Sarawak Hydrogen Hub and Rembus facilities, and it predates the later capacity reductions. It is not treated as a current project-only value.
+- Gaps or uncertainty: no updated project plan, investment value, or production timeline has been published. Former 2027, 2028, 2029, and 2030 delivery targets are historical planning references and are not retained after the 2026 recalibration. Final investment decisions, construction, and commercial production remain undated open outcomes because the earlier official project sequence identifies these delivery stages but newer evidence does not provide replacement dates.
+- Editorial update-history decision: no new entry. The existing 9 June 2026 recalibration entry remains the latest material public development; the added milestones document earlier project stages.
 
 ### Provisional Additions Revalidated on 10 July 2026
 
@@ -337,7 +347,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Miri Port Kuala Baram Capital Dredging - `In Progress`; value: RM238 million contract; physical progress reached about 55 percent in April 2026; next milestone: dredging completion in October 2026; sources: MIPD, DayakDaily, and Dredging Today.
 - Bau Gold Project - `Planning`; Besra completed an independent technical review and received conditional Jugan mining-lease renewal progress; next milestone: finalised mining lease conditions; sources: Besra Gold company disclosures.
 - Bintulu-Samalaju Gas Pipeline - `In Progress`; value: RM1 billion committed; offshore work was reported complete in October 2025 and pre-commissioning activity was publicly notified in May 2026; next milestone: progressive commercial operations expected from 2027; sources: The Star, Bintulu Port Authority, and Sarawak Tribune.
-- Sarawak Agrotechnology Park - `Planning`; value: RM19.5 million allocated in the Sarawak Budget 2026 for Semenggok and Tarat; next milestone: SARTECH site development; sources: DayakDaily and Sarawak Tribune.
+- Sarawak Agrotechnology Park - `In Progress`; value: RM19.5 million allocated in the Sarawak Budget 2026 for Semenggok and Tarat. Official M-FICORD reporting confirms that a coral-shrimp farm at SARTECH Tarat has operated since 2022, while wider development of both sites remains incomplete; next milestone: completion of Semenggok and Tarat site development; sources: M-FICORD, DayakDaily, and Sarawak Tribune.
 - Sungai Baji Agropark - `In Progress`; value: RM180 million reported state funding. The PCDS 2030 action plan describes a 127-hectare agropark with infrastructure, utilities, IoT connectivity, farming plots and 32 greenhouse units. December 2025 reporting states that infrastructure and agricultural components were complete by October 2025 and that LCDA appointed an anchor company on 14 May 2025. Operations were expected in Q1 2026 and commercial production in Q3 2026, but neither milestone is marked complete without a confirming public update; sources: PCDS 2030 AIP Volume II, pages 31-32, DID Sarawak, TVS, UKAS, Sarawak Tribune, and DayakDaily.
 - Semenggoh Rainforest Discovery Centre - `In Progress`; value: RM30 million. The PCDS 2030 AIP Volume II Forestry initiative identifies three phases covering the Wildlife Centre, Entrance, and Botanical zones through 2030. Borneo Post reporting confirms the August 2020 foundation-laying ceremony, three-stage scope, and funding, but no newer public source confirms whether the June 2024 Phase 1 target was achieved; sources: PCDS 2030 AIP Volume II, pages 504-507, and Borneo Post.
 - Piasau Nature Reserve Discovery Centre - `In Progress`; value: RM30 million. The AIP identifies it as the second site under the discovery-centre initiative. Newer reporting confirms development commenced on 5 August 2025, describes its marine eco-tourism and national-park management functions, and gives an early August 2027 completion schedule; sources: PCDS 2030 AIP Volume II, pages 504 and 508, Borneo Post, and DayakDaily.
@@ -352,9 +362,9 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 ### Sarawak 13th Malaysia Plan Projects Added on 28 July 2026
 
-- New Kuching International Airport - `Planning`; proposed at Tanjung Embang. The site-verification and feasibility study was complete by May 2026, and the project moved into the federal Airport Development Request stage. The airport-only monetary value is not disclosed; sources: Ministry of Transport Sarawak.
-- Tanjung Embang Deep-Sea Port - `Planning`; separately tracked as the port and gas-terminal component of the integrated Tanjung Embang development. The Sarawak Government and PETROS were identified as development partners, with operations scheduled for 2032; source: DayakDaily.
-- Baram Agrovoltaic Project - `Planning`; proposed RM6 billion integrated agriculture and 300MW power-development scope at Temala near Long Lama. The Baram Renewable Energy Economic Zone has state approval, but the exact project's implementing party and construction schedule are not public; source: UKAS.
+- New Kuching International Airport - `Planning`; proposed at Tanjung Embang. The site-verification and feasibility study was complete by May 2026, the integrated KLCH master plan was being finalised, and state and federal transport officials were discussing the Airport Development Request in May 2026. No federal approval or airport construction start has been confirmed, and the airport-only monetary value is not disclosed; sources: Ministry of Transport Sarawak and UKAS.
+- Tanjung Embang Deep-Sea Port - `Planning`; separately tracked as the port and gas-terminal component of the integrated Tanjung Embang development. The Sarawak Government and PETROS were identified as development partners, with operations scheduled for 2032. July 2026 reporting added a technology-led port operating model and a wider development horizon of at least 15 years, but did not confirm procurement or construction; sources: DayakDaily, UKAS, and The Star.
+- Baram Agrovoltaic Project - `Planning`; proposed RM6 billion integrated agriculture and 300MW power-development scope at Temala near Long Lama. The exact UKAS report does not identify an implementing party, contracts, delivery sequence, or schedule. The separate RM2.32 billion Baram DeepTech Energy Programme uses different capacity, land, partner, and investment descriptions, so its agreements and parties are not used as evidence for this card; source: UKAS.
 - Kota Petra Green Technology Park - `In Progress`; 3,000-acre Zecon development near Demak Laut and Senari Port. Phase 1 site preparation was under way by May 2026, a RM328 million EPCC contract was awarded in July 2026, and commercial operations remain scheduled for December 2027; sources: Zecon, UKAS, and The Star.
 - PDF research basis: `docs/source-pdfs/Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf`, especially pages 18 and 30. The PDF confirms strategic inclusion and naming; every live-card claim is also supported by a project-specific public webpage.
 - Dated source and inclusion review: `docs/project-audits/2026-07-28-13mp-candidate-review.md`.
@@ -367,7 +377,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Rendering note: this record is stored in `src/trackerData.js` under the `overview` category, but `src/App.jsx` excludes `isOverview` rows from the active project grid.
 - Sources currently used:
 - [Business Events Sarawak - PCDS 2030](https://businesseventssarawak.com/about-sarawak/pcds2030/) - Publisher: Business Events Sarawak; type: government-linked/official tourism-business portal; date: not encoded in label; appears to support PCDS targets and framework summary.
-- [Sarawak Government - PCDS 2030 strategy PDF](https://sarawak.gov.my/media/attachments/PCDS_Compressed_22_July_2021.pdf) - Publisher: Sarawak Government; type: official government PDF; publication date in URL/label context: 2021; appears to support original framework, sectors/enablers, and headline targets.
+- [DayakDaily - Sarawak retains high-income status (Jul 2026)](https://dayakdaily.com/world-bank-sarawak-retains-high-income-state-status-with-gni-per-capita-of-rm70500-in-2025/) - Publisher: DayakDaily; type: news report; date: 7 Jul 2026; supports the completed high-income milestone and reports 2025 GNI per capita.
 - Gaps or uncertainty: overview targets are long-range framework outcomes; no annual checkpoint methodology is encoded.
 
 ## Derived Metrics

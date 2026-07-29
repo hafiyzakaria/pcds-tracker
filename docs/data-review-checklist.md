@@ -8,11 +8,14 @@ Use this checklist for a release that changes project facts, Bahasa Melayu proje
 - [ ] Every changed claim has a verified, project-specific public source link; discovery snippets and AI Overviews were not treated as evidence.
 - [ ] Source-page publication dates, exact project/phase/location identity, claim wording, and affected fields were checked.
 - [ ] Status, value, milestone completion, and completion language match the evidence strength; source conflicts and false positives are recorded.
+- [ ] Each non-completed card retains an evidence-supported open outcome, and an intermediate announcement, approval, agreement, design stage, or contract does not make the project appear fully complete.
+- [ ] Open milestones read as pending outcomes rather than completed events; completed milestones use definitive past-tense wording.
 - [ ] New project additions passed the template's stricter PCDS inclusion gate.
 - [ ] `LAST_UPDATED` in `src/trackerData.js` is updated when the dashboard data changed, and its methodology note remains accurate.
 - [ ] Required BM entries in `src/localization.js` faithfully reflect the English evidence; missing translations safely fall back to English.
 - [ ] The `src/updateHistory.js` decision is explicit: add an entry for a meaningful reflected public development, or record why none is needed.
 - [ ] Source labels and URLs are valid, relevant, non-duplicative where practical, and accurately describe the linked publisher/page.
+- [ ] Live-card sources are public webpages rather than PDF files; strategy and report PDFs remain in the research record only.
 - [ ] Content shape and field-level consistency pass `npm run check:content`.
 
 ## Technical and release checks

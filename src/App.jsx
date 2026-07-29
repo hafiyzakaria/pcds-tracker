@@ -703,33 +703,62 @@ function formatMilestoneDate(value, language = DEFAULT_LANGUAGE) {
 
 function MilestoneList({ milestones, language, color = "#0d9488" }) {
   return (
-    <div style={{ display: "grid", gap: "0" }}>
+    <div role="list" style={{ display: "grid", gap: "0" }}>
       {milestones.map((milestone, index) => {
         const formattedDate = formatMilestoneDate(milestone.date, language);
 
+        if (!formattedDate) {
+          return (
+            <div
+              role="listitem"
+              key={`${milestone.date}-${index}`}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "8px minmax(0, 1fr)",
+                alignItems: "start",
+                gap: "10px",
+                padding: "7px 0",
+              }}
+            >
+              <span
+                aria-hidden="true"
+                style={{
+                  width: "5px",
+                  height: "5px",
+                  marginTop: "7px",
+                  borderRadius: "50%",
+                  backgroundColor: getAccentTextColor(color),
+                }}
+              />
+              <span style={{ color: "var(--text-secondary)", fontSize: "13px", lineHeight: 1.45 }}>
+                {milestone.text}
+              </span>
+            </div>
+          );
+        }
+
         return (
           <div
+            role="listitem"
             key={`${milestone.date}-${index}`}
             style={{
               display: "grid",
-              gridTemplateColumns: formattedDate ? "118px minmax(0, 1fr)" : "1fr",
+              gridTemplateColumns: "118px minmax(0, 1fr)",
               gap: "12px",
               padding: "9px 0",
               borderTop: index === 0 ? "1px solid var(--border)" : "1px solid var(--border-faint)",
             }}
           >
-            {formattedDate && (
-              <span
-                style={{
-                  color: milestone.done ? getAccentTextColor(color) : "var(--text-faint)",
-                  fontFamily: FONT_STACK,
-                  fontSize: "11px",
-                  fontWeight: 700,
-                }}
-              >
-                {formattedDate}
-              </span>
-            )}
+            <span
+              style={{
+                color: milestone.done ? getAccentTextColor(color) : "var(--text-faint)",
+                fontFamily: FONT_STACK,
+                fontSize: "11px",
+                fontWeight: 700,
+              }}
+            >
+              {formattedDate}
+            </span>
             <span style={{ color: "var(--text-secondary)", fontSize: "13px", lineHeight: 1.45 }}>
               {milestone.text}
             </span>
@@ -1148,6 +1177,11 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
           }
           .accordion-reveal {
             transition: none !important;
+          }
+        }
+        @media (min-width: 761px) and (max-width: 980px) {
+          .project-card-button {
+            min-height: 295px !important;
           }
         }
         @media (max-width: 760px) {

@@ -43,10 +43,10 @@
 - Why it is relevant: Integrated renewable-energy and commercial-agriculture development within the Baram Renewable Energy Economic Zone.
 - Source PDF: `Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf`
 - Page/section: Page 30, HLS 2
-- Evidence: The report identifies the proposed Baram Renewable Energy Economic Zone. A March 2026 UKAS report identifies the Baram Agrovoltaic Project at Temala near Long Lama as part of that zone, reports an estimated RM6 billion investment, and describes agriculture, paddy, logistics, power-generation, and township components. The UKAS article states that the economic zone received state approval; it does not explicitly confirm a separate project implementation approval.
+- Evidence: The report identifies the proposed Baram Renewable Energy Economic Zone. A March 2026 UKAS report identifies the Baram Agrovoltaic Project at Temala near Long Lama as part of that zone, reports an estimated RM6 billion investment, and describes agriculture, paddy, logistics, power-generation, and township components. The UKAS article states that the economic zone received state approval; it does not explicitly confirm a separate project implementation approval. August 2025 DayakDaily and The Star reports identify Planet QEOS as lead for the associated Baram DeepTech Energy Programme, EFS Group as its agrovoltaic and food-security partner, and five named programme partners. Those reports do not explicitly assign responsibility for every component of the broader RM6 billion scope.
 - Possible tracker category: Renewable Energy
-- Possible milestones: State approval and project scope announced in March 2026; implementation commencement remains undated.
-- Missing information: Implementing company, construction contract, confirmed commencement date, and phased delivery schedule.
+- Possible milestones: Project scope and estimate announced in March 2026; the modern agriculture estate, logistics hub, 300MW power station, and supporting township remain undated open delivery outcomes.
+- Missing information: Exact responsibility of the programme partners across the full RM6 billion scope, construction contract, confirmed commencement date, and phased delivery schedule.
 
 ### Kota Petra Green Technology Park
 

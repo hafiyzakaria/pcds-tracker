@@ -116,27 +116,35 @@ URL below was opened and checked against the underlying page.
 | URL | Publication date | Supported claim |
 | --- | --- | --- |
 | [UKAS - project scope and estimate](https://ukas.sarawak.gov.my/web/subpage/news_view/37208) | 29 March 2026 | Names the project and location, links it to the Baram Renewable Energy Economic Zone, reports an estimated RM6 billion investment, and describes the agriculture, paddy, logistics, 300MW power, and township components. |
+| [DayakDaily - Baram DeepTech programme partners](https://dayakdaily.com/historic-rm2-32-bln-solar-plant-planet-qeos-signs-deals-with-cscec-sunlogy-efs-founder-hopewind/) | 11 August 2025 | Identifies Planet QEOS as lead for the associated Baram DeepTech Energy Programme, EFS Group as its agrovoltaic and food-security partner, and CSCEC, ES Sunlogy, Founder Group Consortium, and Hopewind as programme partners. |
+| [The Star - Planet QEOS programme agreements](https://www.thestar.com.my/business/business-news/2025/08/12/planet-qeos-seals-rm232bil-deal-for-malaysias-first-firm-solar-plant-in-baram) | 12 August 2025 | Independently confirms Planet QEOS, the RM2.32 billion programme agreements, and the five named partners. |
 
 ### Qualification and rejected evidence
 
 - The UKAS article says the Baram Renewable Energy Economic Zone received state approval. It
   does not explicitly say the exact agrovoltaic project received a separate implementation
   approval. The card therefore uses `Proposed` and does not claim project approval.
-- The article does not identify the implementing company or a construction date.
-- A broader DayakDaily Baram energy-programme link was removed because it was not needed to
-  support the exact project card and could not be verified as project-specific in this review.
+- The UKAS article does not identify the implementing company or a construction date.
+- The DayakDaily and The Star reports identify parties for the associated RM2.32 billion Baram
+  DeepTech Energy Programme. They do not explicitly state that those parties are responsible for
+  every component of the broader RM6 billion scope announced by UKAS in March 2026. The card
+  therefore identifies them as programme partners and retains this qualification in its summary.
 
 ### Field decision
 
-- `summary`: distinguish the state-approved zone from the proposed project.
-- `lead`: use `Not disclosed`.
+- `summary`: distinguish the state-approved zone and broader RM6 billion scope from the
+  associated Baram DeepTech programme and its named parties.
+- `lead`: use `Planet QEOS / EFS Group and programme partners`.
 - `value`: label RM6 billion as an estimated investment.
-- `milestones`: record the scope/estimate announcement; keep implementation open and undated.
-- `sources`: retain the single strong official UKAS page.
+- `milestones`: record the scope/estimate announcement, then use undated open outcomes for the
+  modern agriculture estate, logistics hub, 300MW power station, and supporting township named
+  by UKAS. Do not infer their delivery order or construction dates.
+- `sources`: retain UKAS and add the verified DayakDaily and The Star programme-partner reports.
 - `localization`: update BM wording and lead.
-- `updateHistory`: add the 29 March 2026 scope announcement.
-- Outcome: Include cautiously; review when an implementing party, contract, or delivery
-  schedule is published.
+- `updateHistory`: retain the 29 March 2026 scope announcement; no new entry is needed for this
+  evidence clarification because the partner agreements predate it.
+- Outcome: Include cautiously; review when the relationship between the programme parties and
+  the full RM6 billion scope, a construction contract, or a delivery schedule is published.
 
 ## Kota Petra Green Technology Park
 

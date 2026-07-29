@@ -56,16 +56,17 @@ Project titles use a short public-facing `displayName` when the canonical source
 
 Collapsed desktop titles reserve a shared two-line, `44px` title area at the existing `18px` size. This keeps status and milestone content aligned without making the project order depend on viewport-specific title wrapping. The All view sorts cards by the public status sequence `Planning`, `Ongoing`, then `Completed`, with titles alphabetised inside each group. Mobile remains a one-column layout.
 
-Milestone dates are stored as compact source values but formatted consistently in the interface. Full dates use day, full month, and year; month targets use full month and year; quarter targets use `Quarter # YYYY` in English and `Suku # YYYY` in BM; milestones without a published date omit the date label; and open-ended work displays as `Ongoing`. The next-milestone date is visually separated from its description so readers can scan timing and outcome independently.
+Milestone dates are stored as compact source values but formatted consistently in the interface. Full dates use day, full month, and year; month targets use full month and year; quarter targets use `Quarter # YYYY` in English and `Suku # YYYY` in BM; milestones without a published date render as compact bullet points under the existing `Remaining Milestones` heading; and open-ended work displays as `Ongoing`. Do not add a second title for undated milestone lists. The next-milestone date is visually separated from its description so readers can scan timing and outcome independently.
 
 Segmented milestone indicators follow the milestone-array order. Completed segments must remain
 contiguous from the left, followed by open segments, so the visual sequence agrees with the
 completed count shown beside it.
 
 Collapsed desktop cards use a shared minimum height so every two-column row remains visually
-aligned even when titles or milestone copy vary. Mobile cards return to content-driven heights in
-the one-column layout, and their internal grid and flex rows must be allowed to shrink so narrow
-screens do not clip card content.
+aligned even when titles or milestone copy vary. The narrower two-column range from `761px` to
+`980px` uses a slightly taller shared minimum to accommodate wrapped titles, milestone counts, and
+BM copy. Mobile cards return to content-driven heights in the one-column layout, and their internal
+grid and flex rows must be allowed to shrink so narrow screens do not clip card content.
 
 ## Typography
 

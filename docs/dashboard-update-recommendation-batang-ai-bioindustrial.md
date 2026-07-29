@@ -2,6 +2,12 @@
 
 Prepared: 2026-07-08
 
+Superseded for Batang Ai on 2026-07-29: a direct recheck of The Star's 6 October 2025 article
+verified its explicit retrospective statement that the 50MW facility was commissioned in
+December 2024. The current recommendation is recorded in
+`docs/project-audits/2026-07-29-full-milestone-audit.md`. The Sarawak Bioindustrial Park
+research below remains useful historical evidence.
+
 Scope: decide what the dashboard should show for the two newly added project cards, using current `src/trackerData.js`, `docs/manual-review-project-addition-plan.md`, `docs/latest-update-check-batang-ai-bioindustrial.md`, and the latest public evidence check.
 
 ## Batang Ai Floating Solar Farm

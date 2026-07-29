@@ -18,6 +18,9 @@ const ALLOWED_STATUSES = new Set([
 const OVERVIEW_ID = "overview";
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 const MILESTONE_DATE = /^(?:\d{4}(?:-\d{2}(?:-\d{2})?|-(?:Q[1-4]|\d{4}))?|Achieved|Annual|Ongoing|Official report|TBD)$/;
+const COMPLETED_STATUSES = new Set(["Operational", "Designated", "Enacted"]);
+const NON_MONETARY_VALUES = new Set(["Not disclosed", "Not applicable"]);
+const MONETARY_VALUE = /(?:RM|US\$|USD|\bringgit\b)/i;
 
 const errors = [];
 const warnings = [];
@@ -95,6 +98,18 @@ function checkMilestones(project, { isOverview = false } = {}) {
       error(`${milestoneLabel} done must be a boolean.`);
       continue;
     }
+    if (milestone.done && milestone.date === "TBD") {
+      error(`${milestoneLabel} is completed but still uses a TBD date.`);
+    }
+    if (
+      milestone.done === false &&
+      hasText(milestone.text) &&
+      /\b(?:achieved|added|announced|approved|awarded|commissioned|completed|obtained|published|scheduled|secured|signed)$/i.test(
+        milestone.text.trim()
+      )
+    ) {
+      error(`${milestoneLabel} is open but reads like a completed event: ${milestone.text}`);
+    }
     if (milestone.done && foundOpenMilestone) {
       error(`${label} has a completed milestone after an open milestone; completed milestones must come first.`);
     }
@@ -103,13 +118,16 @@ function checkMilestones(project, { isOverview = false } = {}) {
 
   // The overview card is a long-range strategy framework, not a completed delivery
   // project, so its 2030 targets are intentionally left open.
-  if (!isOverview && ["Operational", "Designated", "Enacted"].includes(project.status)) {
-    const hasOpenDeliveryMilestone = project.milestones.some(
-      (milestone) => milestone?.done === false
-    );
+  const hasOpenDeliveryMilestone = project.milestones.some(
+    (milestone) => milestone?.done === false
+  );
+  if (!isOverview && COMPLETED_STATUSES.has(project.status)) {
     if (hasOpenDeliveryMilestone) {
       error(`${label} is completed (${project.status}) but still has an open delivery milestone.`);
     }
+  }
+  if (!isOverview && !COMPLETED_STATUSES.has(project.status) && !hasOpenDeliveryMilestone) {
+    error(`${label} is not completed (${project.status}) but has no open milestone.`);
   }
 }
 
@@ -128,6 +146,13 @@ function checkSources(project) {
     }
     checkText(source.label, `${sourceLabel} label`);
     checkHttpsUrl(source.url, `${sourceLabel} URL`);
+    if (
+      hasText(source.url) &&
+      (/(?:^|\/)docs\/source-pdfs\//i.test(source.url) ||
+        /\.pdf(?:$|[?#])/i.test(source.url))
+    ) {
+      error(`${sourceLabel} must link to a public webpage rather than a PDF: ${source.url}`);
+    }
   }
 }
 
@@ -192,6 +217,13 @@ for (const { sector, project } of canonicalProjects) {
     error(`${label} in the overview category must be Operational.`);
   }
   for (const field of ["lead", "value", "summary"]) checkText(project?.[field], `${label} ${field}`);
+  if (
+    hasText(project?.value) &&
+    !NON_MONETARY_VALUES.has(project.value.trim()) &&
+    !MONETARY_VALUE.test(project.value)
+  ) {
+    error(`${label} value must be monetary, Not disclosed, or Not applicable: ${project.value}`);
+  }
   checkMilestones(project, { isOverview: sector.id === OVERVIEW_ID });
   checkSources(project);
 }

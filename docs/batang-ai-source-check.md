@@ -2,6 +2,13 @@
 
 Prepared: 2026-07-08
 
+Update, 2026-07-29: The Star page was opened again and its retrospective claim was verified
+directly: the 50MW floating solar farm "was commissioned in December last year." Because the
+article is dated 6 October 2025, this supports a December 2024 commissioning milestone. The
+earlier conservative recommendation below is superseded by
+`docs/project-audits/2026-07-29-full-milestone-audit.md`. The card remains `In Progress` because
+the additional 120MW expansion is not confirmed complete.
+
 Scope: review two user-provided sources for Batang Ai Floating Solar Farm and decide whether they support updating the dashboard card in `src/trackerData.js`.
 
 ## Sources Reviewed
