@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-07-29";
+export const LAST_UPDATED = "2026-07-30";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -84,19 +84,19 @@ export const SECTORS = [
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Sarawak Government",
-        value: "RM19.5 million (Sarawak Budget 2026)",
+        value: "RM19.5 million 2026 allocation",
         summary:
           "Sarawak Agro-Technology Park sites at Semenggok and Tarat are intended to attract technology-based agriculture firms. Official M-FICORD reporting says a coral shrimp farm at SARTECH Tarat has operated since 2022, while the Sarawak Budget 2026 allocated RM19.5 million for further development of both sites. Completion of the wider site development has not been publicly confirmed.",
         milestones: [
           { date: "2022", text: "Coral shrimp farm began operating at SARTECH Tarat", done: true },
-          { date: "2022-11-22", text: "Semenggok and Tarat allocations announced", done: true },
+          { date: "2022-11-22", text: "RM5M allocated to Semenggok and Tarat", done: true },
           { date: "2025-11-24", text: "RM19.5M development allocation announced", done: true },
           { date: "TBD", text: "Semenggok and Tarat site development reaches completion", done: false },
         ],
         sources: [
           { label: "M-FICORD - Operating agriculture at SARTECH Tarat (May 2024)", url: "https://mficord.sarawak.gov.my/web/subpage/news_view/1370" },
           { label: "Sarawak Tribune — Semenggok and Tarat SARTECH allocations (Nov 2022)", url: "https://www.sarawaktribune.com/state-government-vigorously-pursuing-smart-agriculture-initiative/" },
-          { label: "DayakDaily — Sarawak Budget 2026 SARTECH allocation (Nov 2025)", url: "https://dayakdaily.com/sarawak-budget-2026-nearly-rm300-mil-allocated-to-modernise-agriculture-boost-food-security/" },
+          { label: "DayakDaily — RM19.5M SARTECH allocation in Budget 2026 (Nov 2025)", url: "https://dayakdaily.com/sarawak-budget-2026-nearly-rm300-mil-allocated-to-modernise-agriculture-boost-food-security/" },
         ],
       },
       {
@@ -104,11 +104,10 @@ export const SECTORS = [
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Ministry of Food Industry, Commodity and Regional Development / LCDA",
-        value: "RM180 million",
+        value: "Not disclosed",
         summary:
-          "Modern commercial-agriculture development on a 127-hectare site at Sungai Baji, Sarikei. The PCDS 2030 action plan provides for infrastructure, utilities, IoT connectivity, farming plots and 32 greenhouse units. Official reporting said the infrastructure and agricultural components were completed by October 2025, with LCDA appointing an anchor company in May 2025. Operations and commercial production remain the next public milestones.",
+          "Commercial-agriculture development at Sungai Baji, Sarikei. Official reporting said the infrastructure and agricultural components were completed by October 2025, with LCDA appointing an anchor company in May 2025. Operations and commercial production remain the next public milestones.",
         milestones: [
-          { date: "2023-06-24", text: "127-hectare agropark site proposed", done: true },
           { date: "2025-05-14", text: "LCDA appointed the anchor company", done: true },
           { date: "2025-10", text: "Infrastructure and agricultural components completed", done: true },
           { date: "TBD", text: "Agropark operations commence", done: false },
@@ -117,9 +116,6 @@ export const SECTORS = [
         sources: [
           { label: "DID Sarawak — Sungai Baji infrastructure completion and operating timeline (Dec 2025)", url: "https://did.sarawak.gov.my/web/subpage/news_view/897" },
           { label: "TVS — Agropark and smart-farming progress update (Dec 2025)", url: "https://www.tvsarawak.my/2025/12/02/dun-sarawak-agropark-dan-pertanian-pintar-perkasa-tanaman-komersial-sarawak/" },
-          { label: "UKAS — Sungai Baji Agropark progress update", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/43673" },
-          { label: "Sarawak Tribune — Central Region modern-agriculture projects (May 2025)", url: "https://www.sarawaktribune.com/three-major-infrastructure-projects-approved-in-central-region/" },
-          { label: "DayakDaily — Proposed Sungai Baji agropark site (Jun 2023)", url: "https://dayakdaily.com/algae-farming-viable-option-for-proposed-sungai-baji-agro-park/" },
         ],
       },
     ],
@@ -164,7 +160,6 @@ export const SECTORS = [
         ],
         sources: [
           { label: "UNESCO — Niah World Heritage listing", url: "https://whc.unesco.org/en/list/1014" },
-          { label: "DayakDaily — Bako & Lambir after Niah inscription (Aug 2025)", url: "https://dayakdaily.com/sarawak-nominates-bako-bukit-lambir-as-asean-heritage-parks-to-elevate-global-conservation-status/" },
         ],
       },
     ],
@@ -228,7 +223,6 @@ export const SECTORS = [
         ],
         sources: [
           { label: "Borneo Post — Piasau discovery centre RM30M development (Jan 2026)", url: "https://www.theborneopost.com/2026/01/30/piasau-nature-reserve-discovery-centre-to-become-marine-eco-tourism-hub-with-rm30-mln-boost/" },
-          { label: "DayakDaily — Piasau included in 2026 eco-tourism programme (Nov 2025)", url: "https://dayakdaily.com/sarawak-to-pump-rm347-mln-into-tourism-eco-tourism-and-global-promotion-in-2026/" },
         ],
       },
     ],
@@ -287,8 +281,6 @@ export const SECTORS = [
           { label: "DayakDaily — RM1.52B preliminary estimate (Dec 2025)", url: "https://dayakdaily.com/sarawak-cancer-centre-construction-to-start-by-2026-with-rm1-52-bln-preliminary-estimate-cost/" },
           { label: "DayakDaily — PM tells JKR to expedite (Dec 2025)", url: "https://dayakdaily.com/pm-tells-jkr-to-expedite-swak-cancer-centre-project-to-be-tendered-in-q1-2026-operational-before-2031/" },
           { label: "DayakDaily — RM500M medical equipment fronted (Dec 2025)", url: "https://dayakdaily.com/patients-cannot-wait-sarawak-fronts-rm500-mln-for-cancer-centre-medical-equipment/" },
-          { label: "DayakDaily — Arden City construction & Samarahan health hub (Feb 2026)", url: "https://dayakdaily.com/arden-city-construction-gathers-pace-amid-healthcare-education-boom-in-kota-samarahan/" },
-          { label: "DayakDaily — RM40B healthcare boost in 13MP (Jul 2025)", url: "https://dayakdaily.com/sarawak-cancer-centre-among-5-key-projects-under-rm40-bln-healthcare-boost-in-13mp/" },
           { label: "Sarawak Tribune — Tender stage (May 2026)", url: "https://www.sarawaktribune.com/sarawak-cancer-centre-enters-tender-stage/" },
           { label: "DayakDaily — Tender begins, 2032 completion target (Jul 2026)", url: "https://dayakdaily.com/sarawak-cancer-centre-targets-2032-completion-as-design-and-build-tender-process-begins/" },
         ],
@@ -317,7 +309,6 @@ export const SECTORS = [
         ],
         sources: [
           { label: "DCD — FutureData first off-taker (2025)", url: "https://www.datacenterdynamics.com/en/news/futuredata-announces-first-off-taker-at-500mw-malaysian-data-center-park-in-sarawak/" },
-          { label: "The Edge — FutureData 135-acre park in Kuching (Aug 2025)", url: "https://theedgemalaysia.com/node/767538" },
         ],
       },
     ],
@@ -358,7 +349,6 @@ export const SECTORS = [
           { date: "TBD", text: "Park operations begin", done: false },
         ],
         sources: [
-          { label: "SBC - BioVerde commercialisation mandate (Apr 2026)", url: "https://www.sbc.org.my/commercialisation/bioverde-technologies-sdn-bhd" },
           { label: "BioVerde — Sarawak Bioindustrial Park under development", url: "https://www.bioverde.com.my/sbp" },
           { label: "BioVerde — About BioVerde Technologies", url: "https://www.bioverde.com.my/about" },
         ],
@@ -556,13 +546,13 @@ export const SECTORS = [
         summary:
           "Proposed cross-border interconnection to export around 1GW of renewable electricity from Sarawak to Singapore. Singapore's Energy Market Authority granted conditional approval in October 2025, allowing the project to proceed toward further regulatory approvals and licences, with electricity flow expected around 2035 or earlier.",
         milestones: [
-          { date: "2023", text: "Techno-commercial study commenced", done: true },
+          { date: "2023-03-04", text: "Techno-commercial study was under way", done: true },
           { date: "2025-10-17", text: "Conditional approval obtained", done: true },
           { date: "TBD", text: "Project secures further regulatory approvals and licences", done: false },
           { date: "2035", text: "Electricity exports begin", done: false },
         ],
         sources: [
-          { label: "Sarawak Energy — Interconnection study (Mar 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/sarawak-moves-closer-to-regional-powerhouse-aspiration-through-hydropower-venture-in-indonesia" },
+          { label: "Sarawak Energy — Techno-commercial study under way (Mar 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/sarawak-moves-closer-to-regional-powerhouse-aspiration-through-hydropower-venture-in-indonesia" },
           { label: "Sarawak Energy — Conditional approval (Oct 2025)", url: "https://www.sarawakenergy.com/media-info/media-releases/2025/sarawak-singapore-interconnection-project-receives-conditional-approval-from-energy-market-authority-of-singapore-to-proceed-to-next-phase" },
         ],
       },
@@ -683,7 +673,6 @@ export const SECTORS = [
         sources: [
           { label: "Ministry of Transport Sarawak - Proposed new airport (Jan 2026)", url: "https://mot.sarawak.gov.my/web/subpage/news_view/813" },
           { label: "Ministry of Transport Sarawak - Feasibility study and approval phase (May 2026)", url: "https://mot.sarawak.gov.my/web/subpage/news_view/881" },
-          { label: "UKAS - Integrated Tanjung Embang master plan (May 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/41055" },
           { label: "Ministry of Transport Sarawak - Federal airport discussions (Jun 2026)", url: "https://mot.sarawak.gov.my/web/subpage/news_view/889" },
         ],
       },
@@ -692,14 +681,20 @@ export const SECTORS = [
         status: "Planning",
         statusColor: "#4f46e5",
         lead: "Sarawak Government / PETROS",
-        value: "Not disclosed",
+        value: "Estimated RM25-30 billion",
         summary:
-          "Proposed deep-sea port and gas terminal within the integrated Tanjung Embang development. Public reporting identifies the Sarawak Government and PETROS as development partners and schedules operations to begin in 2032. July 2026 reporting describes a technology-led port operating model and says the wider Tanjung Embang development will take at least 15 years, but no procurement or construction start has been confirmed.",
+          "Proposed deep-sea port and gas terminal within the integrated Tanjung Embang development, with an estimated cost of RM25 billion to RM30 billion. The port master-plan design was in its final stage by April 2025, while May 2025 reporting confirmed that detailed technical and economic feasibility work was under way. Public reporting identifies the Sarawak Government and PETROS as development partners and schedules operations to begin in 2032, but no procurement or construction start has been confirmed.",
         milestones: [
+          { date: "2025-04-20", text: "Port master-plan design reached its final stage", done: true },
+          { date: "2025-05-28", text: "Technical and economic feasibility study was under way", done: true },
           { date: "2026-05-12", text: "Port and gas-terminal schedule announced", done: true },
           { date: "2032", text: "Port and gas-terminal operations begin", done: false },
         ],
         sources: [
+          { label: "The Edge Malaysia - Estimated RM25-30 billion port cost (Nov 2024)", url: "https://theedgemalaysia.com/node/734490" },
+          { label: "CIDB Malaysia - Tanjung Embang port estimate and scope (Jan 2025)", url: "https://www.cidb.gov.my/eng/sarawak-embarking-two-mega-projects-at-once/" },
+          { label: "Sarawak Premier's Department - Port master-plan design in final stage (Apr 2025)", url: "https://premierdept.sarawak.gov.my/web/subpage/news_view/16589" },
+          { label: "DayakDaily - Tanjung Embang feasibility study under way (May 2025)", url: "https://dayakdaily.com/feasibility-study-underway-for-tanjung-embang-deep-sea-port-project/" },
           { label: "DayakDaily - Port and gas terminal scheduled for 2032 operations (May 2026)", url: "https://dayakdaily.com/tanjung-embang-deep-sea-port-gas-terminal-set-for-2032-operations/" },
           { label: "UKAS - Integrated Tanjung Embang master plan (May 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/41055" },
           { label: "The Star - Technology-led port development scope (Jul 2026)", url: "https://www.thestar.com.my/news/nation/2026/07/08/tanjung-embang-deep-sea-port-to-anchor-sarawak039s-transformation-beyond-2030" },
@@ -718,19 +713,23 @@ export const SECTORS = [
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Sarawak Energy Berhad",
-        value: "~RM10 billion",
+        value: "About RM8 billion (2017 construction estimate)",
         summary:
-          "1,285MW hydroelectric dam on the Baleh River in Kapit Division, led by Sarawak Energy. Official reporting schedules reservoir impoundment to begin in 2027 and take about two years, with project completion and power generation expected by December 2029.",
+          "1,285MW hydroelectric dam on the Baleh River in Kapit Division, led by Sarawak Energy. The diversion tunnel was completed in September 2020, river diversion began in October 2020, and dam rockfill began in May 2025. Sarawak Energy schedules reservoir impoundment for September 2027, first-unit generation for December 2029, and full generation for June 2030.",
         milestones: [
-          { date: "2025-08", text: "1,285MW dam scope publicly confirmed", done: true },
-          { date: "2027", text: "Reservoir impoundment begins", done: false },
-          { date: "2029-12", text: "Project reaches completion and begins power generation", done: false },
+          { date: "2020-09", text: "Diversion tunnel completed", done: true },
+          { date: "2020-10", text: "River diversion began", done: true },
+          { date: "2025-05", text: "Dam rockfill began", done: true },
+          { date: "2027-09", text: "Reservoir impoundment begins", done: false },
+          { date: "2029-09", text: "Reservoir reaches minimum operating level", done: false },
+          { date: "2029-12", text: "First generating unit begins operation", done: false },
+          { date: "2030-06", text: "Full power generation begins", done: false },
         ],
         sources: [
           { label: "Office of the Premier / UKAS — Impoundment from 2027 (Jun 2025)", url: "https://premierdept.sarawak.gov.my/web/subpage/news_view/19825/UKAS" },
           { label: "Sarawak Energy — Baleh HEP project page", url: "https://www.sarawakenergy.com/baleh-hep" },
-          { label: "DayakDaily — Green revolution supercharging Sarawak energy (Aug 2025)", url: "https://dayakdaily.com/green-revolution-supercharging-sarawaks-energy-prowess/" },
-          { label: "DayakDaily — ASEAN grid & Baleh 1,285MW by 2030 (Jan 2026)", url: "https://dayakdaily.com/sarawak-urges-asean-to-study-european-union-nordic-models-to-realise-regional-power-grid-dream/" },
+          { label: "Sarawak Energy — Baleh HEP key milestones", url: "https://www.sarawakenergy.com/baleh-hep/baleh-hep-project-key-milestones" },
+          { label: "Borneo Post - About RM8B construction cost (Aug 2017)", url: "https://www.theborneopost.com/2017/08/03/construction-of-baleh-hep-to-cost-rm8-bln-seb/" },
         ],
       },
       {

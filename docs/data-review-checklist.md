@@ -7,7 +7,9 @@ Use this checklist for a release that changes project facts, Bahasa Melayu proje
 - [ ] Read and followed `docs/data-methodology.md`; completed a dated record using the [project research template](project-research-template.md).
 - [ ] Every changed claim has a verified, project-specific public source link; discovery snippets and AI Overviews were not treated as evidence.
 - [ ] Source-page publication dates, exact project/phase/location identity, claim wording, and affected fields were checked.
+- [ ] Each live source contains a visible, attributable claim that names the exact project and directly supports a displayed field; broader speeches, releases, and reports were accepted when their project-specific passage carries evidence, while mere name-drops and unsupported context were excluded.
 - [ ] Status, value, milestone completion, and completion language match the evidence strength; source conflicts and false positives are recorded.
+- [ ] Historical estimates identify their year and value type; image-only official milestone evidence was inspected directly; supported and superseded claims from the same source were evaluated separately.
 - [ ] Each non-completed card retains an evidence-supported open outcome, and an intermediate announcement, approval, agreement, design stage, or contract does not make the project appear fully complete.
 - [ ] Open milestones read as pending outcomes rather than completed events; completed milestones use definitive past-tense wording.
 - [ ] New project additions passed the template's stricter PCDS inclusion gate.

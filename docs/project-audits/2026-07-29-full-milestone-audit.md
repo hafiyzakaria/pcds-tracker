@@ -76,8 +76,8 @@ content validator now enforces the structural rules above.
 | KUTS | Wording | Distinguish ART pilot service, ART commercial service, overall project completion, and feeder-bus service. |
 | Bintulu Port Handover to Sarawak | Keep | Agreements and the completed handover already form a definitive sequence. |
 | New Kuching International Airport | Source enhancement | Keep federal approval and construction open; add official KLCH master-plan and federal-discussion sources without attributing the wider 2027 works target to the airport alone. |
-| Tanjung Embang Deep-Sea Port | Source enhancement | Retain the 2032 operations outcome and add verified July 2026 technology and wider-development context without inventing procurement or construction milestones. |
-| Baleh Hydroelectric Project | Keep | Dam scope, reservoir impoundment, and power-generation completion remain the verified lifecycle. |
+| Tanjung Embang Deep-Sea Port | Revise | Add the verified final-stage port master-plan design and detailed feasibility-study commencement before the 2032 operations outcome. Do not invent procurement or construction milestones. |
+| Baleh Hydroelectric Project | Revise | Replace the generic scope milestone with Sarawak Energy's physical lifecycle: diversion tunnel, river diversion, dam rockfill, reservoir impoundment, minimum operating level, first-unit generation, and full generation. |
 | Mentarang Induk Hydroelectric Project | Keep | Groundbreaking, early works, and first power are the limit of current evidence. |
 | H2biscus and H2ornbill | Revise | Restore the agreement and FEED sequence, record suspension of H2ornbill's original Japan-export concept, retain recalibration, and continue through investment decisions, construction, and commercial production. |
 | Batang Ai Floating Solar Farm | Revise | Record the 50MW facility's December 2024 commissioning and retain the 120MW expansion as open. |
@@ -116,7 +116,7 @@ used only to locate candidate pages.
 | Bau Gold Project | Besra Gold, 13 May 2026 | Keep `Planning`. Conditional lease terms do not establish final tenure, financing, construction, or production. |
 | Sarawak Bioindustrial Park | SBC and BioVerde public pages reviewed 29 Jul 2026 | Keep `Planning`. Partner selection and facilities remain under development without a completed construction or operations claim. |
 | New Kuching International Airport | Ministry of Transport Sarawak, 5 Jun 2026 | Keep `Planning`. Federal discussions continue, but the Airport Development Request has not been approved. |
-| Tanjung Embang Deep-Sea Port | The Star, 8 Jul 2026 | Keep `Planning`. The operating model and wider development horizon are clearer, but procurement and construction remain unconfirmed. |
+| Tanjung Embang Deep-Sea Port | Sarawak Premier's Department, 20 Apr 2025; DayakDaily, 28 May 2025; The Star, 8 Jul 2026 | Keep `Planning`. Design and feasibility work are evidenced, but procurement and construction remain unconfirmed. |
 | H2biscus and H2ornbill | Borneo Post, 27 May and 9 Jun 2026 | Keep `Planning`. The original H2ornbill Japan-export concept was suspended and both scopes remain under recalibration. |
 | Baram Agrovoltaic Project | UKAS, 29 Mar 2026 | Keep `Planning`. The exact RM6 billion project has no named implementing party or schedule; separate DeepTech agreements are excluded. |
 
@@ -124,6 +124,34 @@ No completed lifecycle flag was inferred from a target, discussion, allocation, 
 or planning announcement. No new update-history entry was added because the current history already
 records the latest material reflected events for SARTECH, the airport, port, hydrogen projects, and
 Baram.
+
+### Tanjung Embang Deep-Sea Port follow-up
+
+- Review date: 29 July 2026
+- Queries included the exact project name with `value`, `cost`, `investment`, `tender`,
+  `construction`, `feasibility`, `design`, and official-domain variants.
+- The [Sarawak Premier's Department report](https://premierdept.sarawak.gov.my/web/subpage/news_view/16589)
+  dated 20 April 2025 confirms that the port master-plan design had reached its final stage.
+- The project-specific [DayakDaily report](https://dayakdaily.com/feasibility-study-underway-for-tanjung-embang-deep-sea-port-project/)
+  dated 28 May 2025 confirms that the technical and economic feasibility study was under way. Its
+  scope includes site investigation, bathymetric and soil surveys, tidal and current measurements,
+  and environmental-impact assessment.
+- The InvestSarawak page carrying the same paragraph is retained as research context only. Its main
+  subject and title concern the Bintulu Port takeover, so it is not used as a live-card source.
+- The existing [DayakDaily report](https://dayakdaily.com/tanjung-embang-deep-sea-port-gas-terminal-set-for-2032-operations/)
+  retains the Sarawak Government and PETROS partnership and the 2032 operations target.
+- [The Edge Malaysia](https://theedgemalaysia.com/node/734490) reported on 25 November 2024
+  that the Kuching deep-sea port with LNG facilities was estimated at RM25 billion to RM30 billion.
+  [CIDB Malaysia](https://www.cidb.gov.my/eng/sarawak-embarking-two-mega-projects-at-once/)
+  connected the same estimate specifically to the Tanjung Embang deep-sea port and gas terminal
+  on 27 January 2025. The card therefore uses `Estimated RM25-30 billion`.
+- The RM100 billion figure combines the port and airport, while RM300 billion refers to the wider
+  Sarawak Gas Roadmap. Neither is used as the port's reported value.
+- Status remains `Planning`. No accepted source confirms procurement, construction commencement,
+  commissioning, or operations.
+- Outcome: update the summary, milestones, sources, and BM rendering. No new update-history entry is
+  needed because the audit clarifies earlier lifecycle evidence rather than recording a newer
+  material event.
 
 ## Changed-Card Evidence
 
@@ -217,7 +245,9 @@ Baram.
 - SMD Semiconductor:
   [DayakDaily IP pathway](https://dayakdaily.com/sarawak-designed-keteq-ai-chip-set-to-secure-global-ip-rights-by-early-2026/)
 - Sarawak Agrotechnology Park:
-  [M-FICORD operating agriculture at SARTECH Tarat](https://mficord.sarawak.gov.my/web/subpage/news_view/1370)
+  [M-FICORD operating agriculture at SARTECH Tarat](https://mficord.sarawak.gov.my/web/subpage/news_view/1370),
+  [Sarawak Tribune 2023 allocations](https://www.sarawaktribune.com/state-government-vigorously-pursuing-smart-agriculture-initiative/),
+  [DayakDaily Budget 2026 allocation](https://dayakdaily.com/sarawak-budget-2026-nearly-rm300-mil-allocated-to-modernise-agriculture-boost-food-security/)
 - Paddy programme:
   [Office of the Premier / UKAS](https://premierdept.sarawak.gov.my/web/subpage/news_view/24582/UKAS),
   [DayakDaily allocation](https://dayakdaily.com/sarawak-allocates-rm1-bln-for-large-scale-paddy-cultivation-to-boost-rice-self-sufficiency/),
@@ -237,7 +267,8 @@ Baram.
   [Bintulu Port Authority](https://www.bpa.gov.my/web/home/notice_view/0/439/),
   [Sarawak Tribune](https://www.sarawaktribune.com/samalaju-power-pipeline-ready-by-2027/)
 - Sarawak-Singapore interconnection:
-  [Sarawak Energy](https://www.sarawakenergy.com/media-info/media-releases/2025/sarawak-singapore-interconnection-project-receives-conditional-approval-from-energy-market-authority-of-singapore-to-proceed-to-next-phase)
+  [Sarawak Energy techno-commercial study](https://www.sarawakenergy.com/media-info/media-releases/2023/sarawak-moves-closer-to-regional-powerhouse-aspiration-through-hydropower-venture-in-indonesia),
+  [Sarawak Energy conditional approval](https://www.sarawakenergy.com/media-info/media-releases/2025/sarawak-singapore-interconnection-project-receives-conditional-approval-from-energy-market-authority-of-singapore-to-proceed-to-next-phase)
 - Miri Port dredging:
   [MIPD](https://mipd.sarawak.gov.my/web/subpage/news_view/508),
   [DayakDaily](https://dayakdaily.com/premier-miri-port-dredging-project-55-pct-complete-channel-extension-up-to-10km-under-study/)
@@ -247,17 +278,74 @@ Baram.
 - New Kuching International Airport:
   [Ministry of Transport Sarawak, January 2026](https://mot.sarawak.gov.my/web/subpage/news_view/813),
   [Ministry of Transport Sarawak, May 2026](https://mot.sarawak.gov.my/web/subpage/news_view/881),
-  [UKAS integrated master plan, May 2026](https://ukas.sarawak.gov.my/web/subpage/news_view/41055),
   [Ministry of Transport Sarawak, June 2026](https://mot.sarawak.gov.my/web/subpage/news_view/889)
 - Tanjung Embang Deep-Sea Port:
   [DayakDaily, May 2026](https://dayakdaily.com/tanjung-embang-deep-sea-port-gas-terminal-set-for-2032-operations/),
   [UKAS integrated master plan, May 2026](https://ukas.sarawak.gov.my/web/subpage/news_view/41055),
   [The Star, July 2026](https://www.thestar.com.my/news/nation/2026/07/08/tanjung-embang-deep-sea-port-to-anchor-sarawak039s-transformation-beyond-2030)
+
+## Claim-Level Source Audit
+
+- Review date: 30 July 2026
+- Scope: 103 live source entries across 33 cards. The seven Tanjung Embang port sources were
+  excluded because that card received the same relevance review on 29 July.
+- Method: every page was opened in the connected browser. The title, visible body, exact project
+  identity, field supported, and source-label accuracy were checked. One Bintulu Port Authority
+  page timed out initially and passed after a successful retry.
+- Outcome after claim-level re-evaluation: 91 source entries were retained and 12 were removed
+  across eight cards. No status changed.
+- Claim-level correction on 30 July 2026: a broader article is not disqualified when a visible,
+  attributable passage names the exact project and directly supports a displayed field. The
+  Sarawak Energy passage confirming that the Sarawak-Singapore techno-commercial study was under
+  way and the DayakDaily Budget 2026 line allocating RM19.5 million to SARTECH were restored,
+  together with their milestones. The SARTECH update-history entry was also retained.
+- The other removals are editorial evidence corrections rather than new public developments.
+
+| Project | Removed source | Reason and field effect |
+| --- | --- | --- |
+| Sungai Baji Agropark | [Unrelated UKAS page](https://ukas.sarawak.gov.my/web/subpage/news_view/43673) | The visible article concerns bridge and education projects, not Sungai Baji. |
+| Sungai Baji Agropark | [Sarawak Tribune central-region article](https://www.sarawaktribune.com/three-major-infrastructure-projects-approved-in-central-region/) | Sungai Baji appears only as a comparison in an article about other infrastructure proposals. |
+| Sungai Baji Agropark | [Paywalled DayakDaily proposal](https://dayakdaily.com/algae-farming-viable-option-for-proposed-sungai-baji-agro-park/) | The title is project-specific, but the body needed to verify the 127-hectare and RM180 million claims is not publicly visible. The card now uses `Not disclosed` and begins with the verified 2025 delivery events. |
+| Niah Caves Archaeological Heritage Site | [DayakDaily Bako and Bukit Lambir article](https://dayakdaily.com/sarawak-nominates-bako-bukit-lambir-as-asean-heritage-parks-to-elevate-global-conservation-status/) | Niah is a passing reference; the dedicated UNESCO listing remains. |
+| Piasau Nature Reserve Discovery Centre | [DayakDaily statewide tourism roundup](https://dayakdaily.com/sarawak-to-pump-rm347-mln-into-tourism-eco-tourism-and-global-promotion-in-2026/) | Piasau appears as one item in a programme list; the dedicated Borneo Post project report remains. |
+| Sarawak Cancer Centre | [DayakDaily Arden City article](https://dayakdaily.com/arden-city-construction-gathers-pace-amid-healthcare-education-boom-in-kota-samarahan/) | The article is centred on another development; five dedicated cancer-centre sources remain. |
+| Sarawak Cancer Centre | [DayakDaily five-project healthcare roundup](https://dayakdaily.com/sarawak-cancer-centre-among-5-key-projects-under-rm40-bln-healthcare-boost-in-13mp/) | The page is a national project roundup and does not support a unique current card field. |
+| FutureData Kuching Data Centre Park | [The Edge industrial-market article](https://theedgemalaysia.com/node/767538) | FutureData appears in one market-overview paragraph; the dedicated Data Center Dynamics report supports the displayed fields. |
+| Sarawak Bioindustrial Park | [SBC BioVerde mandate page](https://www.sbc.org.my/commercialisation/bioverde-technologies-sdn-bhd) | The page explains BioVerde's corporate mandate but does not mention the park; BioVerde's dedicated park and company pages remain. |
+| New Kuching International Airport | [UKAS KLCH master-plan article](https://ukas.sarawak.gov.my/web/subpage/news_view/41055) | The page concerns the wider low-carbon hub. Three dedicated Ministry of Transport airport pages support all displayed airport fields. |
+| Baleh Hydroelectric Project | [DayakDaily energy overview](https://dayakdaily.com/green-revolution-supercharging-sarawaks-energy-prowess/) | The broader energy feature carries an older 2026 and 2028 sequence that conflicts with the newer official December 2029 schedule. |
+| Baleh Hydroelectric Project | [DayakDaily ASEAN-grid article](https://dayakdaily.com/sarawak-urges-asean-to-study-european-union-nordic-models-to-realise-regional-power-grid-dream/) | Baleh appears in one contextual paragraph and does not support a project value. The unsupported `~RM10 billion` figure remains excluded; a separate project-specific Borneo Post report supports the card's qualified 2017 construction estimate. |
+
+### Baleh HEP milestone refinement
+
+- Review date: 30 July 2026
+- Source: [Sarawak Energy - Baleh HEP key milestones](https://www.sarawakenergy.com/baleh-hep/baleh-hep-project-key-milestones)
+- The official milestone graphic records diversion-tunnel completion in September 2020, river
+  diversion commencement in October 2020, and dam rockfill commencement in May 2025.
+- It schedules reservoir impoundment for September 2027, the reservoir reaching minimum operating
+  level in September 2029, first-unit generation in December 2029, and full generation in June
+  2030. These future events remain open.
+- The November 2018 explosive-magazine inspection milestone and July 2020 diversion-tunnel gate
+  installation are retained as source context but omitted from the public card to keep the lifecycle
+  focused on major physical delivery stages.
+- [Borneo Post reporting from August 2017](https://www.theborneopost.com/2017/08/03/construction-of-baleh-hep-to-cost-rm8-bln-seb/)
+  quotes Sarawak Energy's group chief executive officer stating that the total construction cost was
+  about RM8 billion, including financing. The card labels this as a 2017 construction estimate rather
+  than a current final cost.
+- Status remains `In Progress`; value is `About RM8 billion (2017 construction estimate)`.
+- No update-history entry was added because this change refines the lifecycle from an official
+  project page and adds historical cost evidence rather than recording a newly published development.
+
 ## Residual Risks
 
 - Public confirmation is still missing for SMD's IP registration, Sungai Baji operations and
   production, Semenggoh Phase 1 completion, Pan Borneo Work Package 11, and the Batang Ai 120MW
   expansion.
+- The Kuala Baram dredging card displays the RM238 million contract award, while later official
+  progress reporting describes the development as RM208.9 million. The contract label is retained,
+  but the two monetary scopes should be reconciled if a contract variation or official award notice
+  becomes public.
+- Public project-specific monetary values remain unavailable for Sungai Baji and Baleh.
 - Baram's components are identifiable, but the delivery order, contracts, dates, and party
   responsibility across the broader RM6 billion scope remain unclear.
 - H2biscus and H2ornbill have no published post-recalibration project plan, value, FEED outcome,
