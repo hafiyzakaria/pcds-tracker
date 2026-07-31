@@ -22,13 +22,16 @@ Copy the template below into the dated research record, issue, or pull request. 
 | Search type | Exact query or official domain | Findings / candidate URLs |
 | --- | --- | --- |
 | Exact-name | `"[project name]" update [current year]` | |
-| Value | `"[project name]" value cost investment contract allocation` | |
+| Value | `"[project name]" value cost "project cost" "estimated cost" investment allocation contract funding financing` | |
+| Value in BM | `"[project name]" kos "nilai projek" anggaran peruntukan pelaburan juta bilion` | |
+| Value by identity | `"[alias/location/phase/lead]" cost investment allocation contract` | |
+| Numeric follow-up | `"[project name]" "[amount/currency/quoted phrase]"` | |
 | Status | `"[project name]" latest status progress [current year]` | |
 | Milestones | `"[project name]" approval design tender construction commissioning operations completion` | |
 | Lead / parties | `"[project name]" owner developer implementing agency operator contractor investor partners` | |
 | Counter-search | `"[project name]" revised delayed suspended cancelled completed [current year]` | |
 | Official-domain | `site:[official domain] [project/alias]` | |
-| AI Overview / semantic search | Record generated claim and cited links; discovery only | |
+| AI Overview / semantic search | Record generated claim and expand every cited or hidden `+n` link; discovery only | |
 
 ## Candidate-source log
 
@@ -46,6 +49,21 @@ Copy the template below into the dated research record, issue, or pull request. 
 | `lead` / parties | | | | Owner / developer / agency / operator / contractor / investor / regulator / partner | | |
 | `summary` | | | | | | |
 | `sources` | | | | Primary / official / company / reputable news / context only | | |
+
+## Value-search exhaustion log
+
+Complete this section before retaining `Not disclosed`. Rejecting one aggregate or unsuitable
+amount does not complete the value search.
+
+| Amount | Date | Exact project scope | Value type | Exact qualifier | Source | Accept / reject and reason |
+| --- | --- | --- | --- | --- | --- | --- |
+| | | | Total cost / estimate / investment / allocation / study funding / contract / financing / combined package / resource valuation / economic impact | About / up to / over / range / allocated / committed | | |
+
+- AI Overview and search-summary citation groups fully expanded:
+- Exact-number, currency, and quoted-phrase follow-up searches completed:
+- English, BM, alias, location, phase, lead-party, and official-domain variants completed:
+- Newer project-specific value checked:
+- Basis for `Not disclosed`, if retained:
 
 ## Accepted evidence and proposed effect
 
@@ -81,6 +99,7 @@ Copy the template below into the dated research record, issue, or pull request. 
 - [ ] Exact identity, phase/package, location, lead/delivery body, and scope are resolved; close-name projects and umbrella programmes have been excluded.
 - [ ] At least one live, public, project-specific webpage independently supports the proposed card. A PCDS PDF alone is insufficient for a live card.
 - [ ] The source evidence supports each proposed status, milestone, value, and completion claim; unknown monetary values use `Not disclosed` or `Not applicable` as the methodology requires.
+- [ ] Any `Not disclosed` value is supported by a completed value-search exhaustion log rather than by rejection of only one unsuitable amount.
 - [ ] The addition has a meaningful public milestone or outcome to track, rather than a speculative future possibility.
 - [ ] A stronger primary source, or two independent reputable reports, supports any consequential status claim.
 - [ ] Proposed English facts, BM rendering/fallback, sources, and any editorial-history entry comply with the methodology.

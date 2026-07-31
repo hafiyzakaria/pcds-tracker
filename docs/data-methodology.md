@@ -53,8 +53,19 @@ AI-assisted discovery standard:
 - Use Google AI Overviews, other search summaries, snippets, and semantic search results as discovery tools when available. They are not evidence and must not be cited as live-card sources.
 - For every reviewed card, run separate searches for value, status, lifecycle milestones, and lead or party roles. Search exact names, aliases, locations, phases, delivery bodies, current-year terms, and likely official domains.
 - Capture the links cited by an AI Overview or search summary, then open each underlying page and compare its visible wording with the generated claim before accepting it.
+- Expand every available AI Overview or search-summary citation group, including links hidden behind `+n`, `view related links`, or equivalent controls. A visible first citation is not a complete citation review.
 - Record when an AI-generated synthesis narrows, combines, converts, or otherwise changes the scope of the underlying source. Do not use generated currency conversions unless an accepted source publishes that conversion.
+- Preserve monetary qualifiers exactly. `About` or `around` is an approximation, `up to` is a ceiling, `over` or `more than` is a lower bound, `between` is a range, and `allocated` is funding rather than total project cost. Do not strengthen or change these qualifiers when converting source wording into the amount-only display.
 - Run a counter-search for newer completion, delay, suspension, cancellation, scope reduction, revised cost, ownership, or delivery evidence before accepting an older claim.
+
+Value-search exhaustion standard:
+
+- Rejecting one unsuitable amount does not establish that no project-specific value exists. Continue searching after excluding an aggregate, allocation, contract, adjacent-project amount, resource valuation, capacity figure, or economic-impact estimate.
+- Before using `Not disclosed`, search the exact project name, aliases, location, phase, and delivery body with `value`, `cost`, `project cost`, `estimated cost`, `investment`, `allocation`, `contract`, `funding`, and `financing`.
+- Repeat value searches using likely official domains and Malaysian terminology such as `kos`, `nilai projek`, `anggaran`, `peruntukan`, `pelaburan`, `juta`, and `bilion`.
+- Follow up any discovered number with exact-number, currency, and quoted-phrase searches. Open every cited underlying page and search for a newer project-specific amount.
+- Classify each monetary candidate as total project cost, preliminary estimate, investment commitment, government allocation, study or consultancy funding, contract value, financing package, combined-package value, resource valuation, or economic impact.
+- Record candidate amounts chronologically with their date, scope, value type, exact source qualifier, and acceptance decision. Use `Not disclosed` only when that completed record contains no defensible amount for the tracked unit.
 
 Card-scope and aggregation standard:
 
