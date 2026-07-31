@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-07-30";
+export const LAST_UPDATED = "2026-07-31";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -104,9 +104,9 @@ export const SECTORS = [
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Ministry of Food Industry, Commodity and Regional Development / LCDA",
-        value: "Not disclosed",
+        value: "RM180 million",
         summary:
-          "Commercial-agriculture development at Sungai Baji, Sarikei. Official reporting said the infrastructure and agricultural components were completed by October 2025, with LCDA appointing an anchor company in May 2025. Operations and commercial production remain the next public milestones.",
+          "Commercial-agriculture development at Sungai Baji, Sarikei. The PCDS 2030 action plan recorded RM180 million in planned state funding, comprising RM29 million approved under RMK-12 and an estimated RM151 million for the remaining area. Official reporting said the infrastructure and agricultural components were completed by October 2025, with LCDA appointing an anchor company in May 2025. Operations and commercial production remain the next public milestones.",
         milestones: [
           { date: "2025-05-14", text: "LCDA appointed the anchor company", done: true },
           { date: "2025-10", text: "Infrastructure and agricultural components completed", done: true },
@@ -325,31 +325,41 @@ export const SECTORS = [
         status: "Operational",
         statusColor: "#16a34a",
         lead: "CHITOSE Group / Sarawak Energy / Sarawak Biodiversity Centre",
-        value: "Not disclosed",
+        value: "USD18.3 million",
         summary:
-          "Industrial microalgae production and carbon capture research facility at Sarawak Energy's Sejingkat coal-fired power plant. C4 Sarawak captures CO2 from flue gas for microalgae cultivation, with expected annual output of 450 tonnes of CO2 captured and 300 tonnes of dried biomass.",
+          "Industrial microalgae production and carbon capture facility at Sarawak Energy's Sejingkat coal-fired power plant. The five-hectare C4 Sarawak facility received over USD18.3 million in Japanese government funding and uses flue gas to cultivate microalgae for biomass and carbon capture.",
         milestones: [
           { date: "2020", text: "Microalgae carbon-capture project began", done: true },
           { date: "2023-05-10", text: "Industrial microalgae facility officially launched", done: true },
         ],
         sources: [
           { label: "Sarawak Energy — C4 Sarawak launch (May 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/official-launching-of-sarawaks-first-industrial-microalgae-production-facility-chitose-carbon-capture-central-sarawak" },
+          { label: "DayakDaily — Japanese funding for C4 Sarawak (Dec 2025)", url: "https://dayakdaily.com/the-algae-revolution-sarawaks-eco-innovative-climate-solution/" },
         ],
       },
       {
         name: "Sarawak Bioindustrial Park",
-        status: "Planning",
-        statusColor: "#4f46e5",
+        status: "In Progress",
+        statusColor: "#d97706",
         lead: "Sarawak Biodiversity Centre / BioVerde Technologies",
-        value: "Not disclosed",
+        value: "RM10 million",
         summary:
-          "Bioindustry and commercialisation hub intended to turn Sarawak biodiversity research into scalable bio-based production. Official and public sources describe a 100-acre park with industrial plots, pilot bioprocessing, analytical laboratories, and GMP manufacturing; BioVerde describes the park as under development and says anchor and research partners are being selected.",
+          "A 100-acre, four-phase bioindustrial hub in Kota Samarahan and the anchor project for a current delivery package that also includes the associated SBC Bioprocess Commercial Centre. The state allocated RM10 million to both facilities under Budget 2026, and JKR Sarawak awarded their combined tender in June 2026. BioVerde manages, develops and will operate the park, while SBC groups both facilities under its Innovation and Commercialisation division.",
         milestones: [
+          { date: "2024-05-30", text: "Four-phase Bioindustrial Park development plan announced", done: true },
+          { date: "2025", text: "BioVerde established with park management mandate", done: true },
+          { date: "2025-11-24", text: "RM10M combined Budget 2026 allocation announced", done: true },
+          { date: "2026-06-15", text: "Combined delivery-package tender awarded", done: true },
           { date: "TBD", text: "Anchor and research partner selection", done: false },
-          { date: "TBD", text: "Pilot bioprocessing, laboratory and GMP facilities reach completion", done: false },
-          { date: "TBD", text: "Park operations begin", done: false },
+          { date: "TBD", text: "Phase 1 central hub and Bioprocess Commercial Centre reach completion", done: false },
+          { date: "TBD", text: "Combined facilities begin operations", done: false },
         ],
         sources: [
+          { label: "UKAS — Four-phase development plan and Phase 1 scope (May 2024)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/2352" },
+          { label: "UKAS — Biopharma consultations for park development (Oct 2025)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/26099" },
+          { label: "Office of the Premier — RM10M combined Budget 2026 allocation (Nov 2025)", url: "https://premier.sarawak.gov.my/web/subpage/news_view/5780" },
+          { label: "SBC — Organisational grouping of both facilities (Feb 2026)", url: "https://sbc.org.my/index.php/about-sbc/organisation-chart" },
+          { label: "JKR Sarawak — Combined delivery-package tender award (Jun 2026)", url: "https://jkr.sarawak.gov.my/web/subpage/webpage_view/403" },
           { label: "BioVerde — Sarawak Bioindustrial Park under development", url: "https://www.bioverde.com.my/sbp" },
           { label: "BioVerde — About BioVerde Technologies", url: "https://www.bioverde.com.my/about" },
         ],
@@ -383,15 +393,16 @@ export const SECTORS = [
         status: "In Progress",
         statusColor: "#d97706",
         lead: "PETRONAS / MMHE",
-        value: "Not disclosed",
+        value: "RM4.5 billion",
         summary:
-          "Offshore carbon capture and storage project associated with PETRONAS' Kasawari Field. MMHE received the EPCIC contract in November 2022 for the capture platform and related infrastructure. PETRONAS said in April 2026 that it was examining whether first CO2 injection could be brought forward to 2027.",
+          "RM4.5 billion Phase 2 carbon capture and storage project associated with PETRONAS' offshore Kasawari Field. The 2022 project estimate covers the CCS platform and its connection to the Phase 1 central processing platform. MMHE received the EPCIC contract in November 2022, and PETRONAS said in April 2026 that it was examining whether first CO2 injection could be brought forward to 2027.",
         milestones: [
           { date: "2022-11-29", text: "MMHE awarded Kasawari CCS EPCIC contract", done: true },
           { date: "2026-04-01", text: "Earlier CO2 injection plan announced", done: true },
           { date: "2027", text: "First CO2 injection", done: false },
         ],
         sources: [
+          { label: "The Edge Malaysia - RM4.5B Kasawari CCS Phase 2 project (Dec 2022)", url: "https://theedgemalaysia.com/article/special-report-kasawari-ccs-project-marks-new-chapter-offshore-sector" },
           { label: "The Sun — MMHE awarded Kasawari CCS EPCIC contract (Nov 2022)", url: "https://thesun.my/news/m-sia-marine-and-heavy-engineering-unit-secures-kasawari-capture-storage-project-off-s-wak-dk10293145/" },
           { label: "The Star — PETRONAS explores 2027 first CO2 injection (Apr 2026)", url: "https://www.thestar.com.my/business/business-news/2026/04/01/petronas-seeks-to-bring-forward-first-co2-injection-at-kasawari-to-2027" },
         ],
@@ -410,9 +421,9 @@ export const SECTORS = [
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Yayasan Sarawak / Sarawak Government",
-        value: "Not disclosed",
+        value: "RM120-135 million",
         summary:
-          "State-backed international secondary school network intended to expand access to international-syllabus education for low-income and rural students. Petra Jaya began operations in 2022, the official site lists Petra Jaya, Kuching 12th Mile, and Sibu campuses, and public reporting says three more schools are targeted for completion within two to three years.",
+          "State-backed international secondary school network intended to expand access to international-syllabus education for low-income and rural students. Public reporting in September 2025 said three of six schools had been built and three remained for completion. Applying the reported 2022 implementation estimate of RM40 million to RM45 million per school gives a derived RM120 million to RM135 million estimate for the remaining three-school expansion, not an announced contract or network total.",
         milestones: [
           { date: "2022-04-03", text: "Petra Jaya campus began operations", done: true },
           { date: "2025-09", text: "Three campuses completed statewide", done: true },
@@ -423,6 +434,7 @@ export const SECTORS = [
           { label: "YSISS — Official site", url: "https://ysiss.edu.my/" },
           { label: "YSISS — About YSISS", url: "https://ysiss.edu.my/about-ysiss/" },
           { label: "YSISS — Campus contacts", url: "https://ysiss.edu.my/contact-us/" },
+          { label: "Rakan Sarawak - RM40-45M implementation estimate per school (Apr 2022)", url: "https://www.rakansarawak.com/know-more-about-the-sarawak-owned-international-schools/" },
           { label: "Borneo Post — YSISS Sibu first class (Sep 2025)", url: "https://www.theborneopost.com/2025/09/29/yayasan-sarawak-international-secondary-school-sibu-to-run-first-class-on-oct-1/" },
           { label: "Borneo Post — Six-school YSISS network (Sep 2025)", url: "https://www.theborneopost.com/2025/09/07/dr-annuar-ysiss-established-to-uplift-rural-low-income-students/" },
         ],
@@ -526,15 +538,16 @@ export const SECTORS = [
         status: "Operational",
         statusColor: "#16a34a",
         lead: "Sarawak Energy",
-        value: "Not disclosed",
+        value: "RM128 million",
         summary:
-          "Malaysia's first utility-scale battery energy storage system, located at Sejingkat Power Plant in Kuching. The 60MW/82MWh facility was energised in December 2024 and provides spinning reserve, voltage and frequency regulation, and peak-demand management for Sarawak's power grid.",
+          "Malaysia's first utility-scale battery energy storage system, located at Sejingkat Power Plant in Kuching. Sarawak Energy invested RM128 million in the 22-container, 60MW/82MWh facility, which was energised in December 2024 and supports grid reserves, regulation and peak-demand management.",
         milestones: [
           { date: "2024-12", text: "60MW/82MWh system energised", done: true },
           { date: "2025-02-14", text: "Utility-scale BESS commissioning announced", done: true },
         ],
         sources: [
           { label: "Sarawak Energy — Sejingkat BESS commissioned (Feb 2025)", url: "https://www.sarawakenergy.com/media-info/media-releases/2025/sarawak-energy-strengthens-grid-resilience-with-battery-energy-storage-system" },
+          { label: "Malay Mail — RM128M Sarawak Energy investment (Feb 2025)", url: "https://www.malaymail.com/news/malaysia/2025/02/15/sarawak-leads-green-energy-revolution-with-malaysias-first-utility-scale-battery-system/166714" },
         ],
       },
       {
@@ -593,15 +606,16 @@ export const SECTORS = [
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Sarawak Rivers Board / Ministry of Transport Sarawak",
-        value: "Not disclosed",
+        value: "RM30 million",
         summary:
-          "This card currently tracks the operational Sarawak River navigation-safety system together with the related Miri River system under construction. The Transport Minister reported in December 2025 that the Sungai Sarawak VTMS was fully operational and the Sungai Miri system was targeted for completion in Q3 2027.",
+          "This card tracks the operational Sarawak River navigation-safety system together with the related Miri River system under construction. The reported RM30 million value covers the first-phase Vessel Traffic Management System at Senari on the Sarawak River, not the later Miri system. The Sungai Miri system remains targeted for completion in Q3 2027.",
         milestones: [
           { date: "2023-04-27", text: "First-phase installation commenced", done: true },
           { date: "2025-10-31", text: "Sarawak River VTMS fully operational", done: true },
           { date: "2027-Q3", text: "Miri River system reaches completion", done: false },
         ],
         sources: [
+          { label: "DayakDaily — RM30M Senari VTMS (Mar 2023)", url: "https://dayakdaily.com/rm30-mln-vessel-monitoring-system-for-senari-port-ready-by-may-rm56-9-mln-vehicle-yard-ahead-of-schedule/" },
           { label: "Borneo Post — Sarawak River VTMS fully operational (Dec 2025)", url: "https://www.theborneopost.com/2025/12/02/lee-sarawak-rivers-board-installs-65-new-navigation-aids-to-boost-safety/" },
         ],
       },
@@ -611,9 +625,9 @@ export const SECTORS = [
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Sarawak Metro Sdn Bhd",
-        value: "Not disclosed",
+        value: "RM6 billion",
         summary:
-          "Southeast Asia's first hydrogen-powered Autonomous Rapid Transit (ART) system, publicly described as a phased multi-billion-ringgit programme without an exact total value. Phase 1 covers the Blue, Red and Green lines and reached 38.2 percent physical progress on April 30, 2026. Pilot operations are scheduled for Q4 2026 before full commercial operations in 2027.",
+          "Southeast Asia's first hydrogen-powered Autonomous Rapid Transit (ART) system, backed by a reported RM6 billion state allocation. Phase 1 covers the Blue, Red and Green lines and reached 38.2 percent physical progress on April 30, 2026. Pilot operations are scheduled for Q4 2026 before full commercial operations in 2027.",
         milestones: [
           { date: "2025-12", text: "RM58M hydrogen plant relocation contract awarded", done: true },
           { date: "2026-Q1", text: "First two ART units arrived in Kuching", done: true },
@@ -632,6 +646,7 @@ export const SECTORS = [
           { label: "Sarawak Tribune — ART pilot run target (Apr 2026)", url: "https://www.sarawaktribune.com/art-golden-trains-set-to-arrive-in-kuching-for-pilot-run-this-year/" },
           { label: "DayakDaily — Dedicated ART spectrum (Apr 2026)", url: "https://dayakdaily.com/sarawak-metro-first-in-msia-to-secure-dedicated-spectrum-for-art-operations/" },
           { label: "The Star — KUTS Q4 pilot and 2027 commercial operations (May 2026)", url: "https://www.thestar.com.my/news/nation/2026/05/18/kuching-urban-transportation-system-to-start-pilot-run-in-q4" },
+          { label: "New Straits Times — RM6B KUTS allocation (May 2025)", url: "https://www.nst.com.my/news/nation/2025/05/1221758/rm6-billion-allocated-kuching-urban-transportation-system" },
         ],
       },
       {
@@ -793,9 +808,9 @@ export const SECTORS = [
         status: "In Progress",
         statusColor: "#d97706",
         lead: "Sarawak Energy / China Power International Holdings / Trina Solar",
-        value: "Not disclosed",
+        value: "RM184 million",
         summary:
-          "Sarawak Energy's first floating solar farm on the Batang Ai HEP reservoir, developed with China Power International Holdings and Trina Solar. The 50MW hydro-solar hybrid facility was commissioned in December 2024. Sarawak Energy is also planning an additional 120MW expansion at Batang Ai.",
+          "Sarawak Energy's RM184 million floating solar farm on the Batang Ai HEP reservoir, developed with China Power International Holdings and Trina Solar. The 50MW hydro-solar hybrid facility was commissioned in December 2024. Sarawak Energy is also planning an additional 120MW expansion at Batang Ai.",
         milestones: [
           { date: "2023-06-20", text: "Construction officially began", done: true },
           { date: "2024-06-20", text: "Construction reached 35 percent completion", done: true },
@@ -810,6 +825,7 @@ export const SECTORS = [
           { label: "Sarawak Energy — Floating solar commissioning target (Jun 2024)", url: "https://www.sarawakenergy.com/media-info/media-releases/2024/sarawak-energys-first-floating-solar-farm-on-track-for-commissioning-by-october-2024" },
           { label: "MEESty Sarawak — Batang Ai floating solar December launch target (Aug 2025)", url: "https://meesty.sarawak.gov.my/web/subpage/news_view/54" },
           { label: "The Star — Sarawak solar expansion and Batang Ai capacity (Oct 2025)", url: "https://www.thestar.com.my/news/nation/2025/10/06/sarawak-expands-solar-capacity-in-push-for-renewable-energy-says-abang-johari" },
+          { label: "New Straits Times — RM184M Batang Ai investment (Dec 2025)", url: "https://www.nst.com.my/news/nation/2025/12/1344427/strategic-investments-boost-sarawaks-growth-pm" },
         ],
       },
       {

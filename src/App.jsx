@@ -531,12 +531,15 @@ function CollapsedMilestoneSummary({ row, copy }) {
 }
 
 function FactList({ row, copy }) {
+  const undisclosedValues = new Set(["Not disclosed", "Tidak didedahkan"]);
+  const hasReportedValue = row.value && row.value !== "—" && !undisclosedValues.has(row.value);
+
   return (
     <div
       className="project-facts"
       style={{
         display: "grid",
-        gridTemplateColumns: row.value && row.value !== "—" ? "repeat(2, minmax(0, 1fr))" : "1fr",
+        gridTemplateColumns: hasReportedValue ? "repeat(2, minmax(0, 1fr))" : "1fr",
         border: "1px solid var(--border)",
         borderRadius: "6px",
         backgroundColor: "var(--surface)",
@@ -564,7 +567,7 @@ function FactList({ row, copy }) {
         </span>
         <span style={{ color: "var(--text-body)", fontSize: "12px", fontWeight: 750, lineHeight: 1.35, overflowWrap: "anywhere" }}>{row.lead}</span>
       </div>
-      {row.value && row.value !== "—" && (
+      {hasReportedValue && (
         <div
           className="project-facts-value"
           style={{

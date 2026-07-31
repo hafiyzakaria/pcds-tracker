@@ -61,7 +61,7 @@ content validator now enforces the structural rules above.
 | Sarawak Cancer Centre | Keep | The cost, procurement, construction, and completion sequence reflects the latest July 2026 evidence. |
 | FutureData Kuching Data Centre Park | Keep | Construction and first-facility operations remain the supported lifecycle. |
 | CHITOSE Carbon Capture Central Sarawak | Keep | Project commencement and facility launch complete the delivery sequence. |
-| Sarawak Bioindustrial Park | Revise | Replace PDF-only dates with web-supported partner-selection, facility-completion, and park-operation outcomes. |
+| Sarawak Bioindustrial Park | Revise | Keep the authoritative PCDS project name as the card anchor, include the associated SBC Bioprocess Commercial Centre in the current delivery-package scope, use the RM10 million joint Budget 2026 allocation, and move to `In Progress` after the combined tender award. |
 | Kota Petra Green Technology Park | Keep | Licence, agreement, site, contract, operations, and bridge milestones are specific and current. |
 | PETRONAS Kasawari CCS Project | Keep | Contract, revised injection plan, and first injection remain the supported sequence. |
 | Yayasan Sarawak International Secondary Schools Expansion | Keep | Existing campus openings and remaining-campus completion are supported. |
@@ -114,7 +114,7 @@ used only to locate candidate pages.
 | --- | --- | --- |
 | Sarawak Agrotechnology Park | M-FICORD, 24 May 2024; Sarawak Budget reporting, 24 Nov 2025 | Change to `In Progress`. An operating Tarat farm is confirmed, while wider site development remains open. |
 | Bau Gold Project | DayakDaily, 23 Nov 2024; Besra Gold, 13 May 2026 | Keep `Planning`. Use `RM1.38 billion` as the amount-only reported value and identify it in the summary as the PCDS 2023 projection of upstream investment; exclude the RM24.3 billion in-ground resource valuation. Conditional lease terms do not establish final tenure, financing, construction, or production. |
-| Sarawak Bioindustrial Park | SBC and BioVerde public pages reviewed 29 Jul 2026 | Keep `Planning`. Partner selection and facilities remain under development without a completed construction or operations claim. |
+| Sarawak Bioindustrial Park | Office of the Premier, 24 Nov 2025; SBC, 4 Feb 2026; JKR Sarawak, 15 Jun 2026 | Change to `In Progress`. Keep the PCDS project name as the card anchor; the state funded it with the associated Bioprocess Commercial Centre and JKR awarded one combined delivery-package tender. Completion and operations remain open. |
 | New Kuching International Airport | Ministry of Transport Sarawak, 5 Jun 2026 | Keep `Planning`. Federal discussions continue, but the Airport Development Request has not been approved. |
 | Tanjung Embang Deep-Sea Port | Sarawak Premier's Department, 20 Apr 2025; DayakDaily, 28 May 2025; The Star, 8 Jul 2026 | Keep `Planning`. Design and feasibility work are evidenced, but procurement and construction remain unconfirmed. |
 | H2biscus and H2ornbill | Borneo Post, 27 May and 9 Jun 2026 | Keep `Planning`. The original H2ornbill Japan-export concept was suspended and both scopes remain under recalibration. |
@@ -199,17 +199,74 @@ Baram.
 
 ### Sarawak Bioindustrial Park
 
-- The PCDS 2030 Highlights 2023 report remains research context only. Page 88 gives Q3 2027 for
-  Phase 1 construction and 2035 for full operations, while page 89 separately refers to Phase 1
-  completion in 2026. No current project-specific webpage independently confirms those dates, so
-  they are not shown on the live card.
+Focused value, lifecycle, lead-party and source audit updated 31 July 2026.
+
+- The authoritative card identity remains `Sarawak Bioindustrial Park`. PCDS 2030 Highlights 2023,
+  printed pages 88-89, uses `SARAWAK BIOINDUSTRIAL PARK` as the project heading, while the Sarawak
+  Innovative Initiatives book, page 31, uses `Sarawak Bioindustrial Park (SBP), Kota Samarahan`.
+  The PCDS AIP innovation initiative similarly identifies `BioIndustrial Park` with SBC as the
+  implementing agency. None of the reviewed source PDFs names the Bioprocess Commercial Centre as
+  a separate PCDS project.
+- The tracked unit uses Sarawak Bioindustrial Park as the anchor project and includes the associated
+  SBC Bioprocess Commercial Centre within the current funded and tendered Samarahan delivery-package
+  scope. The card does not claim that the centre is legally subordinate to, or physically contained
+  within, the park.
+- [UKAS, 30 May 2024](https://ukas.sarawak.gov.my/web/subpage/news_view/2352) records a four-phase
+  development plan. It describes Phase 1 as a 25-acre central hub and five industrial plots.
+- [UKAS, 4 October 2025](https://ukas.sarawak.gov.my/web/subpage/news_view/26099) reports that the
+  Sarawak Biodiversity Council was using international biopharma consultations to accelerate the
+  park's development. The consultations do not establish a construction start or completion.
 - [BioVerde](https://www.bioverde.com.my/sbp) describes the park as under development, says anchor
   and research partners are being selected, and identifies pilot bioprocessing, analytical
   laboratory, and GMP manufacturing facilities.
-- [BioVerde's company page](https://www.bioverde.com.my/about) identifies park development and
-  operations as part of its mandate.
-- The card therefore remains `Planning`. Partner selection, facility completion, and park
-  operations remain open `TBD` outcomes with `done: false`.
+- [BioVerde's company page](https://www.bioverde.com.my/about) states that BioVerde was established
+  in 2025 as a Sarawak Biodiversity Council subsidiary and manages, develops and will operate the
+  park.
+- The [SBC organisation page](https://sbc.org.my/index.php/about-sbc/organisation-chart), updated
+  4 February 2026, groups the Bioindustrial Park and Bioprocess Commercial Centre together under
+  SBC's Innovation and Commercialisation division. This supports SBC's role for the combined card,
+  but does not establish that one facility is formally part of the other.
+- The [Office of the Premier, 24 November 2025](https://premier.sarawak.gov.my/web/subpage/news_view/5780)
+  reports a RM10 million Budget 2026 allocation for the Bio Industrial Park and SBC Bioprocesses
+  Commercial Centre in Samarahan. This is a combined allocation, not a disclosed total cost or a
+  park-only amount.
+- [JKR Sarawak's tender results](https://jkr.sarawak.gov.my/web/subpage/webpage_view/403) record a
+  15 June 2026 award to EPR (Kuching) Sdn. Bhd. for `Bioindustrial Park And SBC Bioprocess
+  Commercial Centre At Samarahan`. This is consequential implementation evidence for the combined
+  package, so the card changes from `Planning` to `In Progress`.
+- The official [18 May 2026 Sarawak DUN record](https://duns.sarawak.gov.my/web/attachment/show/?docid=ODZEbmF6NWdkcmw2b0J4eTJoVU55QT09Ojq97ZPYImX90bLzbckAGH7l)
+  schedules an August 2026 earth-breaking ceremony. It remains research and monitoring context
+  because the evidence is PDF-only; the live card does not display that target until a qualifying
+  public webpage supports it.
+- The PCDS 2030 Highlights 2023 report remains research context only. Its 2026, Q3 2027 and 2035
+  schedule references conflict and are superseded by the newer DUN target.
+- Completed milestones now cover the May 2024 park plan, BioVerde's 2025 establishment, the
+  November 2025 combined allocation and the June 2026 tender award. Partner selection, completion
+  of the Phase 1 central hub and Bioprocess Commercial Centre, and operations remain open.
+
+#### Reported-value exhaustion
+
+| Candidate amount | Scope and type | Decision |
+| --- | --- | --- |
+| RM10 million | Budget 2026 allocation for the Bio Industrial Park and SBC Bioprocesses Commercial Centre in Samarahan | Accepted for the combined card; summary identifies it as a joint allocation rather than total project cost |
+| RM403.25 million | State allocation for 15 industrial parks and 15 Anjung Usahawan projects under the 13MP | Rejected; statewide programme allocation with no park-level split |
+| Over RM14 billion | Expected private investment across Sarawak Bioindustrial Park and Kota Petra Green Technology Park | Rejected; combined-project estimate with no park-level split |
+| RM574 million | Approved investment across 22 BioNexus and BBA companies in Sarawak's bio-based industry | Rejected; statewide portfolio investment |
+| RM1 billion | Proposed Sabah partnership surfaced through a false-positive search snippet | Rejected; different state and project |
+| RM10 billion | Unrelated renewable-energy and enabler figures combined by Google AI Overview | Rejected; no underlying source attributes the amount to this park |
+
+- Searches covered the exact English and Malay project names, BioVerde, Sarawak Biodiversity
+  Council and Centre, Kota Samarahan, official domains, and the terms `cost`, `project cost`,
+  `investment`, `allocation`, `contract`, `funding`, `financing`, `kos`, `nilai projek`,
+  `anggaran`, `peruntukan`, `pelaburan`, `juta`, and `bilion`.
+- Google's AI Overview claimed RM14 billion and RM10 billion. All four cited links were expanded
+  and checked; the generated summary changed broader and unrelated figures into project values.
+- The previous `Not disclosed` decision applied to the park-only tracked unit. Expanding the card
+  to the officially funded and tendered combined package makes the RM10 million allocation an
+  exact scope match. The value field therefore shows `RM10 million`, while the summary preserves
+  its Budget 2026 allocation meaning.
+- `src/updateHistory.js` receives a 15 June 2026 entry because the combined tender award is a
+  meaningful public implementation event and supports the status change to `In Progress`.
 
 ### H2biscus and H2ornbill Hydrogen Projects
 
@@ -313,13 +370,13 @@ Baram.
 | --- | --- | --- |
 | Sungai Baji Agropark | [Unrelated UKAS page](https://ukas.sarawak.gov.my/web/subpage/news_view/43673) | The visible article concerns bridge and education projects, not Sungai Baji. |
 | Sungai Baji Agropark | [Sarawak Tribune central-region article](https://www.sarawaktribune.com/three-major-infrastructure-projects-approved-in-central-region/) | Sungai Baji appears only as a comparison in an article about other infrastructure proposals. |
-| Sungai Baji Agropark | [Paywalled DayakDaily proposal](https://dayakdaily.com/algae-farming-viable-option-for-proposed-sungai-baji-agro-park/) | The title is project-specific, but the body needed to verify the 127-hectare and RM180 million claims is not publicly visible. The card now uses `Not disclosed` and begins with the verified 2025 delivery events. |
+| Sungai Baji Agropark | [Paywalled DayakDaily proposal](https://dayakdaily.com/algae-farming-viable-option-for-proposed-sungai-baji-agro-park/) | The title is project-specific, but the body needed to verify the 127-hectare and RM180 million claims is not publicly visible. The article remains excluded; the card retains the user-approved RM180 million PCDS AIP figure pending an accessible online value source. |
 | Niah Caves Archaeological Heritage Site | [DayakDaily Bako and Bukit Lambir article](https://dayakdaily.com/sarawak-nominates-bako-bukit-lambir-as-asean-heritage-parks-to-elevate-global-conservation-status/) | Niah is a passing reference; the dedicated UNESCO listing remains. |
 | Piasau Nature Reserve Discovery Centre | [DayakDaily statewide tourism roundup](https://dayakdaily.com/sarawak-to-pump-rm347-mln-into-tourism-eco-tourism-and-global-promotion-in-2026/) | Piasau appears as one item in a programme list; the dedicated Borneo Post project report remains. |
 | Sarawak Cancer Centre | [DayakDaily Arden City article](https://dayakdaily.com/arden-city-construction-gathers-pace-amid-healthcare-education-boom-in-kota-samarahan/) | The article is centred on another development; five dedicated cancer-centre sources remain. |
 | Sarawak Cancer Centre | [DayakDaily five-project healthcare roundup](https://dayakdaily.com/sarawak-cancer-centre-among-5-key-projects-under-rm40-bln-healthcare-boost-in-13mp/) | The page is a national project roundup and does not support a unique current card field. |
 | FutureData Kuching Data Centre Park | [The Edge industrial-market article](https://theedgemalaysia.com/node/767538) | FutureData appears in one market-overview paragraph; the dedicated Data Center Dynamics report supports the displayed fields. |
-| Sarawak Bioindustrial Park | [SBC BioVerde mandate page](https://www.sbc.org.my/commercialisation/bioverde-technologies-sdn-bhd) | The page explains BioVerde's corporate mandate but does not mention the park; BioVerde's dedicated park and company pages remain. |
+| Sarawak Bioindustrial Park | [SBC BioVerde mandate page](https://www.sbc.org.my/commercialisation/bioverde-technologies-sdn-bhd) | The page explains BioVerde's corporate mandate but does not mention either the anchor project or its associated delivery-package facility; the dedicated BioVerde, SBC, funding and tender pages support the displayed fields. |
 | New Kuching International Airport | [UKAS KLCH master-plan article](https://ukas.sarawak.gov.my/web/subpage/news_view/41055) | The page concerns the wider low-carbon hub. Three dedicated Ministry of Transport airport pages support all displayed airport fields. |
 | Baleh Hydroelectric Project | [DayakDaily energy overview](https://dayakdaily.com/green-revolution-supercharging-sarawaks-energy-prowess/) | The broader energy feature carries an older 2026 and 2028 sequence that conflicts with the newer official December 2029 schedule. |
 | Baleh Hydroelectric Project | [DayakDaily ASEAN-grid article](https://dayakdaily.com/sarawak-urges-asean-to-study-european-union-nordic-models-to-realise-regional-power-grid-dream/) | Baleh appears in one contextual paragraph and does not support a project value. The unsupported `~RM10 billion` figure remains excluded; a separate project-specific Borneo Post report supports the card's qualified 2017 construction estimate. |
@@ -372,6 +429,27 @@ construction stages, but is not added to the card because the ministry page alre
 same evidence. No update-history entry is needed because this audit improves the historical
 lifecycle and value context rather than recording a newly published development.
 
+## Reported-value audit update
+
+Focused review completed 31 July 2026 for cards that still used `Not disclosed`.
+
+| Project | Accepted or rejected evidence | Decision |
+| --- | --- | --- |
+| KUTS | [New Straits Times, 26 May 2025](https://www.nst.com.my/news/nation/2025/05/1221758/rm6-billion-allocated-kuching-urban-transportation-system) attributes a RM6 billion state allocation directly to KUTS. The PCDS 2030 Highlights 2023 report separately describes an estimated RM6 billion project. | Use `RM6 billion`; summary identifies the figure as a state allocation. |
+| Sarawak River Navigation and Surveillance System | [DayakDaily, 24 March 2023](https://dayakdaily.com/rm30-mln-vessel-monitoring-system-for-senari-port-ready-by-may-rm56-9-mln-vehicle-yard-ahead-of-schedule/) attributes RM30 million to the Senari VTMS. The PCDS highlights groups the VTMS with the first-phase Sarawak River navigation initiative. | Use `RM30 million`; summary limits it to the first-phase Sarawak River VTMS and excludes the later Miri system. |
+| Sungai Baji Agropark | PCDS AIP Volume II, page 32, records RM180 million in state funding for the 127-hectare agropark, comprising RM29 million approved under RMK-12 and an estimated RM151 million for the remaining area. | Retain `RM180 million` as a user-approved PDF reference pending an accessible online value source. |
+| CHITOSE Carbon Capture Central Sarawak | [DayakDaily, 8 December 2025](https://dayakdaily.com/the-algae-revolution-sarawaks-eco-innovative-climate-solution/) reports that the five-hectare C4 Sarawak facility received over USD18.3 million from the Japanese government. | Use `USD18.3 million`; summary identifies the figure as government funding. |
+| Batang Ai Floating Solar Farm | [New Straits Times, 25 December 2025](https://www.nst.com.my/news/nation/2025/12/1344427/strategic-investments-boost-sarawaks-growth-pm) identifies the Batang Ai Floating Solar project as RM184 million. | Use `RM184 million`. |
+| Sejingkat Battery Energy Storage System | [Malay Mail, 15 February 2025](https://www.malaymail.com/news/malaysia/2025/02/15/sarawak-leads-green-energy-revolution-with-malaysias-first-utility-scale-battery-system/166714) reports that Sarawak Energy invested RM128 million in the 22-container system. | Use `RM128 million`; summary identifies the figure as Sarawak Energy's investment. |
+| YSISS Expansion | [Rakan Sarawak, 7 April 2022](https://www.rakansarawak.com/know-more-about-the-sarawak-owned-international-schools/) reports RM40 million to RM45 million to implement each school. [Borneo Post, 7 September 2025](https://www.theborneopost.com/2025/09/07/dr-annuar-ysiss-established-to-uplift-rural-low-income-students/) confirms that three of six schools had been built and three remained. The PCDS AIP separately contains conflicting RM300 million and RM1.5 billion references for a five-school scope. | Use a derived `RM120-135 million` estimate for the remaining three-school expansion: three multiplied by RM40-45 million. The summary identifies the source years and states that this is not an announced contract or network total. |
+| Kasawari CCS | [The Edge Malaysia, 28 December 2022](https://theedgemalaysia.com/article/special-report-kasawari-ccs-project-marks-new-chapter-offshore-sector) explicitly reports RM4.5 billion for the Kasawari Phase 2 CCS project, including the CCS platform and bridge to the Phase 1 processing platform. The supplied Malaysian Reserve page concerns PETRONAS' wider national CCS capacity, while the RM6.6 billion in The Sun is MHB's company-wide order book. | Use `RM4.5 billion`; summary preserves the Phase 2 scope and 2022 estimate year. |
+| Sarawak-Singapore Interconnection, Sarawak Delta UNESCO Global Geopark and Niah Caves World Heritage Site | No defensible project-specific monetary figure was identified. The two heritage entries are designations rather than defined capital projects. | Keep the internal `Not disclosed` evidence state; the public card now omits the reported-value column. |
+
+The same presentation rule applies site-wide: cards with `Not disclosed` do not render a public
+reported-value placeholder. The column appears automatically when the underlying value changes to
+a verified monetary figure. No update-history entry is added because this batch improves evidence
+and presentation rather than recording one new project-development event.
+
 ## Residual Risks
 
 - Public confirmation is still missing for SMD's IP registration, Sungai Baji operations and
@@ -381,7 +459,8 @@ lifecycle and value context rather than recording a newly published development.
   progress reporting describes the development as RM208.9 million. The contract label is retained,
   but the two monetary scopes should be reconciled if a contract variation or official award notice
   becomes public.
-- Public project-specific monetary values remain unavailable for Sungai Baji and Baleh.
+- An accessible online source is still needed to corroborate Sungai Baji's retained RM180 million
+  PCDS AIP funding figure.
 - Baram's components are identifiable, but the delivery order, contracts, dates, and party
   responsibility across the broader RM6 billion scope remain unclear.
 - H2biscus and H2ornbill have no published post-recalibration project plan, value, FEED outcome,

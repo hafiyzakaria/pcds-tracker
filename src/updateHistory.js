@@ -33,6 +33,15 @@ const updateDefinitions = [
       "https://dayakdaily.com/bintulu-port-officially-handed-over-to-sarawak-in-rm1-8-bil-deal/",
   },
   {
+    date: "2026-06-15",
+    projectName: "Sarawak Bioindustrial Park",
+    description: {
+      en: "JKR Sarawak awarded the combined delivery-package tender for the Sarawak Bioindustrial Park and SBC Bioprocess Commercial Centre, moving the bundled project into implementation.",
+      ms: "JKR Sarawak menganugerahkan tender pakej pelaksanaan gabungan bagi Taman Bioindustri Sarawak dan Pusat Komersial Bioproses SBC, sekali gus membawa projek gabungan itu ke peringkat pelaksanaan.",
+    },
+    sourceUrl: "https://jkr.sarawak.gov.my/web/subpage/webpage_view/403",
+  },
+  {
     date: "2026-06-09",
     projectName: "Green Hydrogen Economy — H2ornbill & H2biscus",
     description: {
