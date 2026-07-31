@@ -129,15 +129,15 @@ Project fields:
 
 Milestone fields:
 
-- `date`: display date, phase, target, or placeholder such as `Ongoing`, `TBD`, or `Before 2031`.
+- `date`: display date, phase, target, or placeholder such as `TBD` or `Before 2031`.
 - `text`: canonical milestone statement rendered in both collapsed and expanded card states.
 - `done`: boolean used to count completed milestones, draw progress indicators, split completed and remaining milestones, and select the next open milestone.
 
 Milestone date display standard:
 
 - Keep source values compact and sortable where possible: `YYYY-MM-DD`, `YYYY-MM`, `YYYY-Q#`, or `YYYY`.
-- Use `TBD` only when no reliable date has been published; the UI omits the date label.
-- Use `Ongoing` only for continuous activity without a single completion date.
+- Use `TBD` when no reliable date has been published or continuous work has no single completion date; the UI omits the date label.
+- Reserve `Ongoing` for the public project-status label rather than displaying it as a milestone date.
 - The UI formats full dates, month targets, quarter targets, ranges, and open-ended years consistently rather than exposing the compact source syntax directly.
 
 Legacy `shortText` aliases have been removed. Milestones now use one canonical `text` value in every card state.

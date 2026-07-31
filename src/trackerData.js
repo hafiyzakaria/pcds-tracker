@@ -458,8 +458,8 @@ export const SECTORS = [
           "Major economic corridor spanning Samalaju Industrial Park, Tanjung Manis, Mukah, Baram, and Tunoh growth nodes. SCORE has reported RM125B in investment and 53,000 jobs created. RECODA also oversees URDA, HDA, and NRDA for rural/interior development.",
         milestones: [
           { date: "2025-05-10", text: "RM125B investment and 53,000 jobs reported", done: true },
-          { date: "Ongoing", text: "Industrial park expansion and investor support", done: false },
-          { date: "Ongoing", text: "Rural infrastructure delivery through URDA, HDA, and NRDA", done: false },
+          { date: "TBD", text: "Industrial park expansion and investor support", done: false },
+          { date: "TBD", text: "Rural infrastructure delivery through URDA, HDA, and NRDA", done: false },
         ],
         sources: [
           { label: "DayakDaily — SCORE: RM125B investment, 53K jobs (May 2025)", url: "https://dayakdaily.com/score-fuels-sarawaks-economic-growth-with-rm125-bln-investment-53000-jobs-created/" },
