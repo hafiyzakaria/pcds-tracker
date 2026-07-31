@@ -13,6 +13,7 @@ Copy the template below into the dated research record, issue, or pull request. 
 - Reviewer:
 - Review type: routine / milestone trigger / event-driven / new-project proposal
 - Current dashboard identity: category; canonical name; status; next open milestone
+- Tracked unit: single asset / phase or package / combined card / shared system / programme / designation / policy implementation
 - Project identity checked: exact project, phase/package, location, delivery body/lead
 - Name variants checked: acronym; aliases; former names; alternate spelling; lead organisation
 
@@ -21,17 +22,30 @@ Copy the template below into the dated research record, issue, or pull request. 
 | Search type | Exact query or official domain | Findings / candidate URLs |
 | --- | --- | --- |
 | Exact-name | `"[project name]" update [current year]` | |
-| Alias / lead | | |
-| Milestone / phase | | |
-| Current-year development | | |
+| Value | `"[project name]" value cost investment contract allocation` | |
+| Status | `"[project name]" latest status progress [current year]` | |
+| Milestones | `"[project name]" approval design tender construction commissioning operations completion` | |
+| Lead / parties | `"[project name]" owner developer implementing agency operator contractor investor partners` | |
+| Counter-search | `"[project name]" revised delayed suspended cancelled completed [current year]` | |
 | Official-domain | `site:[official domain] [project/alias]` | |
-| AI Overview / snippets | Discovery candidates only; not evidence | |
+| AI Overview / semantic search | Record generated claim and cited links; discovery only | |
 
 ## Candidate-source log
 
-| URL | Publisher/domain | Publication date | Identity and claim checked | Decision | Reason |
-| --- | --- | --- | --- | --- | --- |
-| | | | | Accepted / rejected / monitor | |
+| URL | Discovery origin | Publisher/domain | Publication date | Identity and visible claim checked | Decision | Reason |
+| --- | --- | --- | --- | --- | --- | --- |
+| | Direct / AI citation / search result | | | | Accepted / rejected / monitor | |
+
+## Field-by-field claim matrix
+
+| Field | Current value | Candidate claim | Source scope | Role or value type | Newer evidence checked | Decision |
+| --- | --- | --- | --- | --- | --- | --- |
+| `value` | | | Project-only / combined-card / shared infrastructure / programme / portfolio / economic impact | Cost / estimate / allocation / investment / contract / financing | | |
+| `milestones` | | | | Achieved / targeted / revised / delayed / suspended | | |
+| `status` | | | | Latest achieved lifecycle stage | | |
+| `lead` / parties | | | | Owner / developer / agency / operator / contractor / investor / regulator / partner | | |
+| `summary` | | | | | | |
+| `sources` | | | | Primary / official / company / reputable news / context only | | |
 
 ## Accepted evidence and proposed effect
 
@@ -41,8 +55,13 @@ Copy the template below into the dated research record, issue, or pull request. 
 
 - Publication dates verified on source pages:
 - Exact identity conclusion (project, phase/package, location):
+- Card-scope conclusion and accepted aggregation level:
+- AI or search-summary claim compared with underlying source wording:
 - Monetary-figure meaning, if applicable (cost/allocation/investment/estimate/contract):
+- Currency conversion published by an accepted source, if used:
+- Lead-and-party roles resolved:
 - Current milestone outcome (achieved, commenced, approved, targeted, expected, proposed, delayed, reduced, discussed):
+- Newer or superseding evidence checked:
 - False positives or name collisions found:
 - Source conflicts or unresolved uncertainty:
 
@@ -69,4 +88,4 @@ Copy the template below into the dated research record, issue, or pull request. 
 - Gate rationale and evidence URLs:
 ```
 
-AI Overviews, snippets, and result previews may be recorded above only as discovery aids. Open and assess the underlying page before accepting a claim or URL.
+AI Overviews, snippets, and result previews may be recorded above only as discovery aids. Open every accepted underlying page, compare its visible wording with the generated synthesis, and record any scope, date, role, or currency differences.

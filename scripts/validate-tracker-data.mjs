@@ -20,7 +20,9 @@ const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 const MILESTONE_DATE = /^(?:\d{4}(?:-\d{2}(?:-\d{2})?|-(?:Q[1-4]|\d{4}))?|Achieved|Annual|Ongoing|Official report|TBD)$/;
 const COMPLETED_STATUSES = new Set(["Operational", "Designated", "Enacted"]);
 const NON_MONETARY_VALUES = new Set(["Not disclosed", "Not applicable"]);
-const MONETARY_VALUE = /(?:RM|US\$|USD|\bringgit\b)/i;
+const LOCALIZED_NON_MONETARY_VALUES = new Set(["Tidak didedahkan", "Tidak berkenaan"]);
+const MONETARY_VALUE = /^(?:RM|US\$|USD)\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)? (?:million|billion)$/;
+const LOCALIZED_MONETARY_VALUE = /^(?:RM|US\$|USD)\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)? (?:juta|bilion)$/;
 
 const errors = [];
 const warnings = [];
@@ -181,6 +183,15 @@ function checkLocalization(canonicalProjects) {
     for (const field of ["lead", "value", "summary"]) {
       checkText(localized[field], `${projectLabel(project)} Bahasa Melayu ${field}`);
     }
+    if (
+      hasText(localized.value) &&
+      !LOCALIZED_NON_MONETARY_VALUES.has(localized.value.trim()) &&
+      !LOCALIZED_MONETARY_VALUE.test(localized.value)
+    ) {
+      error(
+        `${projectLabel(project)} Bahasa Melayu value must be an amount-only monetary figure, Tidak didedahkan, or Tidak berkenaan: ${localized.value}`
+      );
+    }
     if (!Array.isArray(localized.milestones) || localized.milestones.length !== project.milestones.length) {
       error(`${projectLabel(project)} Bahasa Melayu milestones must match the canonical milestone count.`);
       continue;
@@ -222,7 +233,7 @@ for (const { sector, project } of canonicalProjects) {
     !NON_MONETARY_VALUES.has(project.value.trim()) &&
     !MONETARY_VALUE.test(project.value)
   ) {
-    error(`${label} value must be monetary, Not disclosed, or Not applicable: ${project.value}`);
+    error(`${label} value must be an amount-only monetary figure, Not disclosed, or Not applicable: ${project.value}`);
   }
   checkMilestones(project, { isOverview: sector.id === OVERVIEW_ID });
   checkSources(project);

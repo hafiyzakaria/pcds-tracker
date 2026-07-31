@@ -5,11 +5,16 @@ Use this checklist for a release that changes project facts, Bahasa Melayu proje
 ## Evidence and content
 
 - [ ] Read and followed `docs/data-methodology.md`; completed a dated record using the [project research template](project-research-template.md).
-- [ ] Every changed claim has a verified, project-specific public source link; discovery snippets and AI Overviews were not treated as evidence.
+- [ ] Separate discovery searches covered value, status, milestones, lead or party roles, and newer contradictory evidence; AI Overview citations were collected when available.
+- [ ] Every changed claim has a verified public source link; discovery snippets and AI Overviews were not treated as evidence, and every accepted underlying page was opened.
+- [ ] AI-generated claims were compared with the visible source wording; generated scope changes, combinations, role assignments, dates, and currency conversions were not copied without source support.
 - [ ] Source-page publication dates, exact project/phase/location identity, claim wording, and affected fields were checked.
+- [ ] The card's tracked unit and every monetary claim's scope were classified as project-only, combined-card, shared infrastructure, programme, portfolio, or economic impact before acceptance.
 - [ ] Each live source contains a visible, attributable claim that names the exact project and directly supports a displayed field; broader speeches, releases, and reports were accepted when their project-specific passage carries evidence, while mere name-drops and unsupported context were excluded.
 - [ ] Status, value, milestone completion, and completion language match the evidence strength; source conflicts and false positives are recorded.
-- [ ] Historical estimates identify their year and value type; image-only official milestone evidence was inspected directly; supported and superseded claims from the same source were evaluated separately.
+- [ ] The reported-value field contains only a compact monetary figure, or the approved unknown label; estimate, allocation, investment, contract, phase, commitment, and year qualifiers appear in the summary or source label.
+- [ ] Historical estimates identify their year and value type in the summary or source record; image-only official milestone evidence was inspected directly; supported and superseded claims from the same source were evaluated separately.
+- [ ] Owner, developer, implementing agency, operator, contractor, investor, regulator, and partner roles were distinguished; the lead field does not infer responsibility from an announcement or passing association.
 - [ ] Each non-completed card retains an evidence-supported open outcome, and an intermediate announcement, approval, agreement, design stage, or contract does not make the project appear fully complete.
 - [ ] Open milestones read as pending outcomes rather than completed events; completed milestones use definitive past-tense wording.
 - [ ] New project additions passed the template's stricter PCDS inclusion gate.

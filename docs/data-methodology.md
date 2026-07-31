@@ -41,11 +41,35 @@ Global fields:
 
 Reported-value standard:
 
-- `value` is reserved for a monetary project cost, allocation, investment, estimate, commitment, or other clearly labelled monetary figure.
+- `value` is reserved for the monetary figure only, using a compact display such as `RM1.38 billion`, `RM25-30 billion`, or `USD130 million`.
+- Put the figure's meaning and qualifiers, such as estimated cost, allocation, investment, commitment, contract, phase, or source year, in the project summary and source label rather than the `value` field.
 - Capacity, distance, site area, output, and network size belong in the summary or milestones, not the reported-value field.
-- An older project-specific estimate may be retained when its source clearly attributes the amount and value type. Include the estimate year in the displayed value, check for a newer project-specific figure, and do not present the historical estimate as a current final cost.
+- An older project-specific estimate may be retained when its source clearly attributes the amount and value type. Keep the displayed value amount-only, identify the estimate year and value type in the summary, check for a newer project-specific figure, and do not present the historical estimate as a current final cost.
 - Use `Not disclosed` when no reliable public monetary figure is available.
 - Use `Not applicable` only for non-capital policy or legislative entries where a project value is not meaningful.
+
+AI-assisted discovery standard:
+
+- Use Google AI Overviews, other search summaries, snippets, and semantic search results as discovery tools when available. They are not evidence and must not be cited as live-card sources.
+- For every reviewed card, run separate searches for value, status, lifecycle milestones, and lead or party roles. Search exact names, aliases, locations, phases, delivery bodies, current-year terms, and likely official domains.
+- Capture the links cited by an AI Overview or search summary, then open each underlying page and compare its visible wording with the generated claim before accepting it.
+- Record when an AI-generated synthesis narrows, combines, converts, or otherwise changes the scope of the underlying source. Do not use generated currency conversions unless an accepted source publishes that conversion.
+- Run a counter-search for newer completion, delay, suspension, cancellation, scope reduction, revised cost, ownership, or delivery evidence before accepting an older claim.
+
+Card-scope and aggregation standard:
+
+- Define the card's tracked unit before evaluating evidence: a single asset, phase or package, combined project card, shared enabling system, programme, designation, or policy implementation.
+- Classify each candidate claim as project-only, combined-card, shared-infrastructure, umbrella-programme, statewide or portfolio aggregate, or economic-impact evidence.
+- A combined or historical figure may be displayed when the card genuinely represents that combined scope, the source names the included components, and the summary explains the scope, date, value type, and absence of any project-level split.
+- Do not assign a wider programme, adjacent project, statewide portfolio, economic-impact, capacity, distance, or land-area figure to a narrower card merely because the named project appears in the same article.
+- When evidence spans a broader package than the current card, either keep the value undisclosed or explicitly revise and document the card scope. Never silently present a package aggregate as a standalone project cost.
+
+Lead-and-party standard:
+
+- Search and record roles separately: owner, lead developer, implementing agency, operator, contractor, investor or financier, regulator, technology provider, and development partner.
+- The `lead` field should identify the owner, principal developer, implementing agency, or operator most responsible for delivery. Other evidenced roles may appear in the summary or sources.
+- Do not promote a minister, announcing body, regulator, funder, contractor, or one-package partner to project lead unless the source explicitly assigns that responsibility.
+- When sources use broad terms such as partner or stakeholder, preserve the narrower wording instead of inferring ownership, operation, or delivery control.
 
 Public-source-link standard:
 
@@ -60,6 +84,14 @@ Public-source-link standard:
 - Not every qualifying mention needs to be retained. Prefer the smallest set of sources that collectively supports the displayed fields, but do not remove the only public evidence for a milestone merely because the article has a broader subject.
 - If no public project-specific source can be found, keep the card explicitly provisional and avoid unsupported values, completion claims, or detailed schedules.
 - `POPULATED_ECONOMIC` and `POPULATED_ENABLERS`: exported sets that identify categories with projects. They are not currently used by the dashboard UI.
+
+Field-verification standard:
+
+- Build a field-level evidence map for `status`, `summary`, `lead`, `value`, `milestones`, and `sources`; one page does not need to support every field.
+- Verify milestones across the full public lifecycle: approval or agreement, study or design, procurement or contract, construction or implementation, commissioning, service or production commencement, and completion.
+- Treat targeted, planned, expected, proposed, discussed, or scheduled events as open. Mark a milestone complete only when an accepted source states that the event happened.
+- Derive status from the latest achieved lifecycle evidence and remaining delivery outcomes, not from an AI-generated status label or an isolated target date.
+- When newer evidence supersedes an older cost, party, schedule, or scope, keep the older claim only as clearly labelled historical context.
 
 Category fields inside `SECTORS`:
 
@@ -213,7 +245,7 @@ Latest full milestone review:
 - Keep completed milestones before the next open milestone in each project's array. The card's segmented progress indicator follows this order, so an open milestone placed before a completed milestone creates a misleading broken sequence.
 - Keep supporting context, uncertainty, and attribution in the project summary and sources rather than lengthening the milestone statement.
 - A non-completed capital project should continue to an evidence-supported delivery outcome such as construction completion, commissioning, service commencement, commercial operation, or first production. An intermediate announcement, approval, or design stage must not make the card appear fully complete. Do not invent missing lifecycle stages when public evidence does not identify them.
-- `npm run check:content` enforces the structural portion of this standard: non-completed cards retain an open milestone, completed milestones cannot use `TBD`, open milestones cannot end in selected completed-event wording, reported values must be monetary or use the approved unknown-value labels, public sources cannot be PDF links, and English and BM milestone counts must match.
+- `npm run check:content` enforces the structural portion of this standard: non-completed cards retain an open milestone, completed milestones cannot use `TBD`, open milestones cannot end in selected completed-event wording, reported values must be amount-only monetary figures or use the approved unknown-value labels, public sources cannot be PDF links, and English and BM milestone counts must match.
 
 ## Selected Project Source Map
 
@@ -327,7 +359,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - [Sarawak Energy - Baleh HEP project page](https://www.sarawakenergy.com/baleh-hep) - Publisher: Sarawak Energy; type: official project-owner page; date: not encoded in active label; supports the 1,285MW project scope and project context.
 - [Sarawak Energy - Baleh HEP key milestones](https://www.sarawakenergy.com/baleh-hep/baleh-hep-project-key-milestones) - Publisher: Sarawak Energy; type: official project-owner milestone page; date: not encoded on the page. Its milestone graphic supports diversion-tunnel completion in September 2020, river diversion in October 2020, dam rockfill commencement in May 2025, reservoir impoundment in September 2027, minimum operating level in September 2029, first-unit generation in December 2029, and full generation in June 2030.
 - [Borneo Post - About RM8B construction cost (Aug 2017)](https://www.theborneopost.com/2017/08/03/construction-of-baleh-hep-to-cost-rm8-bln-seb/) - Publisher: Borneo Post; type: reputable Sarawak news report; date: 3 Aug 2017. It quotes Sarawak Energy's group chief executive officer stating that the total construction cost was about RM8 billion, including financing.
-- Value decision: `About RM8 billion (2017 construction estimate)`. The source directly attributes this project-specific estimate to Sarawak Energy, while the date and estimate qualifier prevent it from being presented as a current final cost. The earlier `~RM10 billion` display remains unsupported.
+- Value decision: `RM8 billion`. The source directly attributes this project-specific estimate to Sarawak Energy. The summary carries the 2017 date, estimate qualifier, and inclusion of financing so the amount is not presented as a current final cost. The earlier `~RM10 billion` display remains unsupported.
 - Gaps or uncertainty: the dated future milestones remain targets. The card does not mark impoundment, minimum operating level, first-unit generation, or full generation complete without later confirmation.
 
 ### Green Hydrogen Economy - H2ornbill & H2biscus
@@ -337,12 +369,14 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Sources currently used:
 - [Samsung E&A - H2biscus FEED project commenced (Nov 2023)](https://www.samsungena.com/en/newsroom/news/view?idx=15543) - Publisher: Samsung E&A; type: official company disclosure; date: 24 Nov 2023; supports the September 2022 renewable-power memorandum, the 23 November 2023 FEED commencement, the original design capacities, and the named H2biscus partners.
 - [Borneo Post - H2ornbill joint development agreement (Dec 2023)](https://www.theborneopost.com/2023/12/19/sedc-energy-sumitomo-and-eneos-fine-tuning-project-h2ornbill-details/) - Publisher: Borneo Post; type: news report based on a project news release; date: 19 Dec 2023; supports the October 2023 joint development agreement, SEDC Energy, ENEOS and Sumitomo as parties, and the project's planned FEED stage.
+- [The Edge Malaysia - US$4.2B hydrogen partnership package (Feb 2024)](https://theedgemalaysia.com/node/702237) - Publisher: The Edge Malaysia; type: news report; date: 26 Feb 2024; supports the combined partnership-package value and identifies H2biscus, H2ornbill, shared Sarawak Hydrogen Hub infrastructure, and the Rembus Depot within its scope.
 - [MIDA - H2biscus joint development agreement (May 2024)](https://www.mida.gov.my/mida-news/sarawaks-new-energy-hub-to-receive-rm2-16-trillion-investment-by-2050-says-abang-johari/) - Publisher: Malaysian Investment Development Authority; type: official agency republication; date: 22 May 2024; supports the H2biscus joint development agreement and FEED context.
 - [MEESty - H2biscus and H2ornbill in FEED (Jun 2025)](https://meesty.sarawak.gov.my/web/subpage/news_view/40) - Publisher: Ministry of Energy and Environmental Sustainability Sarawak; type: official ministry news page republishing a Borneo Post report; source-news date: 9 Jun 2025; supports both projects having reached FEED and the combined planned production scope at that time.
+- [DayakDaily - USD4.2B hydrogen partnership package (Dec 2025)](https://dayakdaily.com/sarawak-is-open-for-business/) - Publisher: DayakDaily; type: Sarawak news feature; date: 6 Dec 2025; attributes the USD4.2 billion strategic-partnership value as of 21 Sep 2024 and states that the package encompasses H2ornbill, H2biscus, the Sarawak Hydrogen Hub, and the Rembus Depot.
 - [Free Malaysia Today - Projects scaled down over weak demand (Apr 2026)](https://www.freemalaysiatoday.com/category/nation/2026/04/08/sarawak-hydrogen-projects-scaled-down-over-weak-demand/) - Publisher: Free Malaysia Today; type: news report; date: 8 Apr 2026; supports the reported downscaling and demand or offtake constraint.
 - [Borneo Post - Original H2ornbill export concept suspended (May 2026)](https://www.theborneopost.com/2026/05/27/sarawaks-hydrogen-initiative-scaled-down-on-funding-constraints/) - Publisher: Borneo Post; type: news report quoting the SEDC Energy chairman; date: 27 May 2026; supports suspension of the original Japan-export concept while alternative hydrogen carriers are considered.
 - [Borneo Post - Project scopes recalibrated (Jun 2026)](https://www.theborneopost.com/2026/06/09/sarawak-recalibrates-h2biscus-and-h2ornbill-hydrogen-projects-amid-financial-constraints/) - Publisher: Borneo Post; type: news report; date: 9 Jun 2026; supports the scope-recalibration milestone and immediate financial constraint.
-- Value decision: `Not disclosed`. The US$4.2 billion figure reported by The Edge in February 2024 covered the two export projects together with broader Sarawak Hydrogen Hub and Rembus facilities, and it predates the later capacity reductions. It is not treated as a current project-only value.
+- Value decision: `USD4.2 billion`. The amount is displayed as a historical combined strategic-partnership-package value covering H2biscus, H2ornbill, shared Sarawak Hydrogen Hub infrastructure, and the Rembus Depot, not as a project-level split or current final cost. The summary states that no revised investment value has been published following the 2026 capacity reductions and scope recalibration.
 - Gaps or uncertainty: no updated project plan, investment value, or production timeline has been published. Former 2027, 2028, 2029, and 2030 delivery targets are historical planning references and are not retained after the 2026 recalibration. Final investment decisions, construction, and commercial production remain undated open outcomes because the earlier official project sequence identifies these delivery stages but newer evidence does not provide replacement dates.
 - Editorial update-history decision: no new entry. The existing 9 June 2026 recalibration entry remains the latest material public development; the added milestones document earlier project stages.
 
@@ -351,7 +385,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Pan Borneo Highway Sarawak Phase 1 - `In Progress`; value: RM16.5 billion construction cost; next milestone: Work Package 11 completion; sources: The Edge Malaysia and Sarawak Tribune.
 - Sarawak-Sabah Link Road - `In Progress`; Phase 1 reached 70.05 percent and Phase 2 reached 10.55 percent in April 2026; next milestone: expected Phase 1 completion in 2027; sources: The Star and DayakDaily.
 - Miri Port Kuala Baram Capital Dredging - `In Progress`; value: RM238 million contract; physical progress reached about 55 percent in April 2026; next milestone: dredging completion in October 2026; sources: MIPD, DayakDaily, and Dredging Today.
-- Bau Gold Project - `Planning`; Besra completed an independent technical review and received conditional Jugan mining-lease renewal progress; next milestone: finalised mining lease conditions; sources: Besra Gold company disclosures.
+- Bau Gold Project - `Planning`; value: RM1.38 billion projected upstream investment in the PCDS 2030 Highlights 2023 report, corroborated by DayakDaily in November 2024. The separate RM24.3 billion in-ground gold value is a resource valuation and is excluded from the reported-value field. Besra completed an independent technical review and received conditional Jugan mining-lease renewal progress; next milestone: finalised mining lease conditions; sources: DayakDaily and Besra Gold company disclosures.
 - Bintulu-Samalaju Gas Pipeline - `In Progress`; value: RM1 billion committed; offshore work was reported complete in October 2025 and pre-commissioning activity was publicly notified in May 2026; next milestone: progressive commercial operations expected from 2027; sources: The Star, Bintulu Port Authority, and Sarawak Tribune.
 - Sarawak Agrotechnology Park - `In Progress`; value: RM19.5 million Budget 2026 allocation for further development of Semenggok and Tarat. Official M-FICORD reporting confirms that a coral-shrimp farm at SARTECH Tarat has operated since 2022, while wider development of both sites remains incomplete; next milestone: completion of Semenggok and Tarat site development; sources: M-FICORD, Sarawak Tribune, and DayakDaily. The DayakDaily budget article is broader than SARTECH but contains an exact project-specific allocation line.
 - Sungai Baji Agropark - `In Progress`; value: `Not disclosed`. December 2025 reporting states that infrastructure and agricultural components were complete by October 2025 and that LCDA appointed an anchor company on 14 May 2025. Operations were expected in Q1 2026 and commercial production in Q3 2026, but neither milestone is marked complete without a confirming public update; sources: DID Sarawak and TVS. The PDF-only 127-hectare scope, RM180 million figure, unrelated UKAS page, passing Sarawak Tribune mention, and paywalled DayakDaily body are retained as research context rather than live-card evidence.

@@ -536,7 +536,7 @@ function FactList({ row, copy }) {
       className="project-facts"
       style={{
         display: "grid",
-        gridTemplateColumns: row.value && row.value !== "—" ? "minmax(0, 1fr) minmax(136px, auto)" : "1fr",
+        gridTemplateColumns: row.value && row.value !== "—" ? "repeat(2, minmax(0, 1fr))" : "1fr",
         border: "1px solid var(--border)",
         borderRadius: "6px",
         backgroundColor: "var(--surface)",
@@ -548,6 +548,7 @@ function FactList({ row, copy }) {
           display: "grid",
           gap: "4px",
           padding: "8px 10px",
+          minWidth: 0,
         }}
       >
         <span
@@ -561,7 +562,7 @@ function FactList({ row, copy }) {
         >
           {copy.facts.lead}
         </span>
-        <span style={{ color: "var(--text-body)", fontSize: "12px", fontWeight: 750, lineHeight: 1.35 }}>{row.lead}</span>
+        <span style={{ color: "var(--text-body)", fontSize: "12px", fontWeight: 750, lineHeight: 1.35, overflowWrap: "anywhere" }}>{row.lead}</span>
       </div>
       {row.value && row.value !== "—" && (
         <div
@@ -571,6 +572,7 @@ function FactList({ row, copy }) {
             gap: "4px",
             padding: "8px 10px",
             borderLeft: "1px solid var(--border)",
+            minWidth: 0,
           }}
         >
           <span
@@ -584,7 +586,7 @@ function FactList({ row, copy }) {
           >
             {copy.facts.value}
           </span>
-          <span style={{ color: getAccentTextColor(row.sectorColor), fontSize: "12px", fontWeight: 850, lineHeight: 1.35 }}>{row.value}</span>
+          <span style={{ color: getAccentTextColor(row.sectorColor), fontSize: "12px", fontWeight: 850, lineHeight: 1.35, overflowWrap: "anywhere" }}>{row.value}</span>
         </div>
       )}
     </div>

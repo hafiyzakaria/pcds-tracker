@@ -113,7 +113,7 @@ used only to locate candidate pages.
 | Project | Latest accepted evidence | Lifecycle decision |
 | --- | --- | --- |
 | Sarawak Agrotechnology Park | M-FICORD, 24 May 2024; Sarawak Budget reporting, 24 Nov 2025 | Change to `In Progress`. An operating Tarat farm is confirmed, while wider site development remains open. |
-| Bau Gold Project | Besra Gold, 13 May 2026 | Keep `Planning`. Conditional lease terms do not establish final tenure, financing, construction, or production. |
+| Bau Gold Project | DayakDaily, 23 Nov 2024; Besra Gold, 13 May 2026 | Keep `Planning`. Use `RM1.38 billion` as the amount-only reported value and identify it in the summary as the PCDS 2023 projection of upstream investment; exclude the RM24.3 billion in-ground resource valuation. Conditional lease terms do not establish final tenure, financing, construction, or production. |
 | Sarawak Bioindustrial Park | SBC and BioVerde public pages reviewed 29 Jul 2026 | Keep `Planning`. Partner selection and facilities remain under development without a completed construction or operations claim. |
 | New Kuching International Airport | Ministry of Transport Sarawak, 5 Jun 2026 | Keep `Planning`. Federal discussions continue, but the Airport Development Request has not been approved. |
 | Tanjung Embang Deep-Sea Port | Sarawak Premier's Department, 20 Apr 2025; DayakDaily, 28 May 2025; The Star, 8 Jul 2026 | Keep `Planning`. Design and feasibility work are evidenced, but procurement and construction remain unconfirmed. |
@@ -144,7 +144,8 @@ Baram.
   that the Kuching deep-sea port with LNG facilities was estimated at RM25 billion to RM30 billion.
   [CIDB Malaysia](https://www.cidb.gov.my/eng/sarawak-embarking-two-mega-projects-at-once/)
   connected the same estimate specifically to the Tanjung Embang deep-sea port and gas terminal
-  on 27 January 2025. The card therefore uses `Estimated RM25-30 billion`.
+  on 27 January 2025. The card therefore uses the amount-only value `RM25-30 billion`, while the
+  summary identifies it as an estimate.
 - The RM100 billion figure combines the port and airport, while RM300 billion refers to the wider
   Sarawak Gas Roadmap. Neither is used as the port's reported value.
 - Status remains `Planning`. No accepted source confirms procurement, construction commencement,
@@ -218,11 +219,17 @@ Baram.
 - [Borneo Post, 19 December 2023](https://www.theborneopost.com/2023/12/19/sedc-energy-sumitomo-and-eneos-fine-tuning-project-h2ornbill-details/)
   confirms the October 2023 H2ornbill joint development agreement among SEDC Energy, ENEOS,
   and Sumitomo.
+- [The Edge Malaysia, 26 February 2024](https://theedgemalaysia.com/node/702237) reports a
+  US$4.2 billion combined strategic-partnership package encompassing H2biscus, H2ornbill,
+  shared Sarawak Hydrogen Hub infrastructure, and the Rembus Depot.
 - [MIDA, 22 May 2024](https://www.mida.gov.my/mida-news/sarawaks-new-energy-hub-to-receive-rm2-16-trillion-investment-by-2050-says-abang-johari/)
   confirms the H2biscus joint development agreement and the project's FEED scope.
 - [MEESty, source-news date 9 June 2025](https://meesty.sarawak.gov.my/web/subpage/news_view/40)
   records that both projects had reached FEED. The page's older production and FEED-completion
   targets are not retained after later scope reductions.
+- [DayakDaily, 6 December 2025](https://dayakdaily.com/sarawak-is-open-for-business/) attributes
+  the USD4.2 billion strategic-partnership value as of 21 September 2024 and identifies the same
+  combined scope.
 - [Free Malaysia Today, 8 April 2026](https://www.freemalaysiatoday.com/category/nation/2026/04/08/sarawak-hydrogen-projects-scaled-down-over-weak-demand/)
   reports that both projects reduced planned production capacity because of weak demand and
   uncertain offtake.
@@ -236,9 +243,10 @@ Baram.
   commercial production remain open and undated.
 - The lead is narrowed to SEDC Energy. Gentari is a partner in the hub's common facilities, not
   the verified lead for both export projects.
-- The reported value is changed to `Not disclosed`. The February 2024 US$4.2 billion report
-  covered the export projects together with wider hub and Rembus facilities and predates the
-  later capacity reductions.
+- The reported value uses the amount-only display `USD4.2 billion`. It is a historical combined
+  package value rather than a project-level split or current final cost. The card summary records
+  the wider hub and Rembus scope and states that no revised investment value has been published
+  after the 2026 capacity reductions.
 
 ### Other Revised Cards
 
@@ -335,6 +343,34 @@ Baram.
 - Status remains `In Progress`; value is `About RM8 billion (2017 construction estimate)`.
 - No update-history entry was added because this change refines the lifecycle from an official
   project page and adds historical cost evidence rather than recording a newly published development.
+
+### New Kuching International Airport field-by-field audit
+
+- Review date: 30 July 2026
+- Discovery searches separately covered project value, current status, approval and construction
+  stages, lead and party roles, and newer completion or delay evidence. Google AI Overview and
+  search snippets were used only to locate candidate pages.
+- Card scope: the proposed new international airport at Tanjung Embang. Wider figures covering the
+  airport, deep-sea port, low-carbon hub, urban links, or other integrated infrastructure are not
+  airport-only values.
+
+| Field | Accepted evidence and decision |
+| --- | --- |
+| Reported value | Use the amount-only value `RM10 billion`. [Sarawak Premier's Department, 26 August 2025](https://premierdept.sarawak.gov.my/web/subpage/news_view/23808) quotes the Premier saying the airport may cost about RM10 billion. The summary identifies this as an approximate 2025 project estimate rather than a final cost. [DayakDaily, 20 August 2025](https://dayakdaily.com/nearly-20-years-on-no-jumbo-flights-to-kia-proof-runway-under-used-no-need-for-rm10-bln-new-airport/) independently describes a state RM10 billion airport plan, although the report is framed through an opposition critique. The separate RM100 billion figure is excluded because [Ministry of Transport Sarawak, 30 January 2026](https://mot.sarawak.gov.my/web/subpage/news_view/813) states that it extends beyond the airport to supporting infrastructure. The RM6 million study allocation is also not treated as total project value. |
+| Status | Keep `Planning`. The latest accepted [ministry update, 5 June 2026](https://mot.sarawak.gov.my/web/subpage/news_view/889) records federal discussions about submitting the Aerodrome Development Request, not approval, procurement, or physical construction. |
+| Lead and parties | Keep `Sarawak Government / Ministry of Transport Sarawak`. The state is the project sponsor and the ministry coordinates the approval process. [Sarawak Premier's Department, 26 May 2025](https://premierdept.sarawak.gov.my/web/subpage/news_view/18668/UKAS) identifies NACO Netherlands Airport Consultants as feasibility-study lead consultant and Jurutera Jasa (Sarawak) as local partner; neither role is promoted to project lead. No airport operator or construction contractor has been announced. |
+| Milestones | Replace the weaker public-concept milestone with the consultants' completed appointment on 21 May 2025, as recorded by the ministry on 27 May. Retain the completed site-verification and feasibility study. Keep federal approval and physical construction open and undated because [Ministry of Transport Sarawak, 19 May 2026](https://mot.sarawak.gov.my/web/subpage/news_view/881) describes them as future stages. |
+| Sources | Add the official Ministry of Transport Sarawak page recording the 21 May consultant appointment and then-undetermined cost. Retain the other three ministry pages because they collectively support project scope, aggregate-value exclusion, the completed study, the pending federal approval, and the latest discussions. The Premier's Department page remains corroborating audit evidence for the consultant roles. |
+
+Google AI Overview's `over RM10 billion` wording was normalised to `RM10 billion` because the
+official source says `around` and `about`, not `over`. Generated claims about a 2030 completion
+date, construction after 2030, two runways, a confirmed public-private partnership, state-only
+funding, and 60-million-passenger capacity were not added. The opened underlying pages did not
+consistently establish those claims for the current project scope and schedule. The Star's 18 May
+2026 report independently confirms the completed study and future approval, land, design, and
+construction stages, but is not added to the card because the ministry page already carries the
+same evidence. No update-history entry is needed because this audit improves the historical
+lifecycle and value context rather than recording a newly published development.
 
 ## Residual Risks
 
