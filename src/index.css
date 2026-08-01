@@ -80,12 +80,51 @@ a:focus-visible {
   background-color: var(--surface-subtle);
   color: var(--text-muted);
   text-decoration: none;
+  transform: translateY(0);
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
 }
 
 .navigation-pill-link:hover,
 .navigation-pill-link:focus-visible {
   color: var(--brand-strong);
   opacity: 1;
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--brand) 32%, transparent);
+  background-color: color-mix(in srgb, var(--brand) 8%, var(--surface));
+  box-shadow: 0 2px 5px var(--control-shadow);
+}
+
+.navigation-pill-link:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.navigation-pill-link.tracker-updates-link:hover .navigation-pill-link-inner,
+.navigation-pill-link.tracker-updates-link:focus-visible .navigation-pill-link-inner {
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.tracker-updates-link {
+  min-height: 30px;
+  padding: 6px 10px;
+  border-color: color-mix(in srgb, var(--brand) 32%, var(--border));
+  background-color: var(--surface);
+  color: var(--brand-strong);
+}
+
+.tracker-updates-link .navigation-pill-link-inner {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  box-shadow: none;
+  transition: none;
 }
 
 .navigation-pill-link-inner {
@@ -110,6 +149,102 @@ a:focus-visible {
   border-color: color-mix(in srgb, var(--brand) 32%, transparent);
   background-color: var(--surface);
   box-shadow: 0 1px 2px var(--control-shadow);
+}
+
+.language-toggle-option {
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--text-muted);
+  box-shadow: none;
+  transform: translateY(0);
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.language-toggle-option--active {
+  border-color: color-mix(in srgb, var(--brand) 32%, transparent);
+  background-color: var(--surface);
+  color: var(--brand-strong);
+  box-shadow: 0 1px 2px var(--control-shadow);
+}
+
+.language-toggle-option:hover,
+.language-toggle-option:focus-visible {
+  opacity: 1;
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--brand) 32%, transparent);
+  background-color: color-mix(in srgb, var(--brand) 8%, var(--surface));
+  color: var(--brand-strong);
+  box-shadow: 0 2px 5px var(--control-shadow);
+}
+
+.language-toggle:has(.language-toggle-option:not(.language-toggle-option--active):hover)
+  .language-toggle-option--active,
+.language-toggle:has(.language-toggle-option:not(.language-toggle-option--active):focus-visible)
+  .language-toggle-option--active {
+  transform: translateY(0);
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--text-muted);
+  box-shadow: none;
+}
+
+.language-toggle-option:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.filter-option,
+.classification-clear-button {
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--text-muted);
+  box-shadow: none;
+  transform: translateY(0);
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.filter-option--active {
+  border-color: color-mix(in srgb, var(--brand) 32%, transparent);
+  background-color: var(--surface);
+  color: var(--brand-strong);
+  box-shadow: 0 1px 2px var(--control-shadow);
+}
+
+.filter-option:hover,
+.filter-option:focus-visible,
+.classification-clear-button:hover,
+.classification-clear-button:focus-visible {
+  opacity: 1;
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--brand) 32%, transparent);
+  background-color: color-mix(in srgb, var(--brand) 8%, var(--surface));
+  color: var(--brand-strong);
+  box-shadow: 0 2px 5px var(--control-shadow);
+}
+
+.filter-controls:has(.filter-option:not(.filter-option--active):hover)
+  .filter-option--active,
+.filter-controls:has(.filter-option:not(.filter-option--active):focus-visible)
+  .filter-option--active {
+  transform: translateY(0);
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--text-muted);
+  box-shadow: none;
+}
+
+.filter-option:active,
+.classification-clear-button:active {
+  transform: translateY(0) scale(0.97);
 }
 
 .project-classification--interactive {
@@ -232,6 +367,11 @@ a:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .navigation-pill-link,
+  .navigation-pill-link-inner,
+  .language-toggle-option,
+  .filter-option,
+  .classification-clear-button,
   .project-classification-button,
   .project-card-details-pill {
     transition: none;
@@ -258,14 +398,61 @@ a:focus-visible {
   border: 0;
 }
 
-.theme-icon-sun,
-.theme-icon-moon {
-  display: none;
+.theme-toggle {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--surface-subtle);
+  color: var(--text-body);
+  transform: translateY(0);
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    color 220ms ease;
 }
 
-html[data-theme="light"] .theme-icon-moon,
-html[data-theme="dark"] .theme-icon-sun {
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  opacity: 1;
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--brand) 32%, transparent);
+  background-color: color-mix(in srgb, var(--brand) 8%, var(--surface));
+  box-shadow: 0 2px 5px var(--control-shadow);
+}
+
+.theme-toggle:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.theme-icon-sun,
+.theme-icon-moon {
+  position: absolute;
   display: block;
+  opacity: 0;
+  transform: rotate(35deg) scale(0.7);
+  transition:
+    opacity 240ms ease,
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html[data-theme="light"] .theme-icon-moon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+html[data-theme="dark"] .theme-icon-sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-icon-sun,
+  .theme-icon-moon {
+    transition: none;
+  }
 }
 
 html[data-theme="dark"] .tracker-description strong {

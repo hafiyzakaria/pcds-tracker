@@ -161,6 +161,7 @@ export function LanguageToggle({
 
   return (
     <div
+      className="language-toggle"
       role="group"
       aria-label={copy.languageControl.label}
       style={{
@@ -187,6 +188,7 @@ export function LanguageToggle({
             </span>
           )}
           <a
+            className={`language-toggle-option${language === option.id ? " language-toggle-option--active" : ""}`}
             href={getRouteHref(option.routeId)}
             hrefLang={option.id === "en" ? "en" : "ms"}
             lang={option.id === "en" ? "en" : "ms"}
@@ -199,21 +201,7 @@ export function LanguageToggle({
               minWidth: "38px",
               minHeight: "var(--pill-control-inner-height)",
               padding: "5px 8px",
-              border:
-                language === option.id
-                  ? "1px solid color-mix(in srgb, var(--brand) 32%, transparent)"
-                  : "1px solid transparent",
               borderRadius: "var(--pill-control-radius)",
-              backgroundColor:
-                language === option.id ? "var(--surface)" : "transparent",
-              color:
-                language === option.id
-                  ? "var(--brand-strong)"
-                  : "var(--text-muted)",
-              boxShadow:
-                language === option.id
-                  ? "0 1px 2px var(--control-shadow)"
-                  : "none",
               cursor: "pointer",
               fontSize: "var(--pill-control-font-size)",
               fontWeight: 850,
@@ -276,10 +264,7 @@ export function ThemeToggle({ onThemeToggle, copy }) {
         width: "var(--pill-control-height)",
         height: "var(--pill-control-height)",
         padding: 0,
-        border: "1px solid var(--border)",
         borderRadius: "var(--pill-control-radius)",
-        backgroundColor: "var(--surface-subtle)",
-        color: "var(--text-body)",
         cursor: "pointer",
       }}
     >

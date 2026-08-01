@@ -27,13 +27,16 @@ The current product is a small static React site with:
 - Summary metrics for tracked projects, ongoing projects, planning projects, completed projects, and milestones.
 - Last updated indicator beneath the page description, sourced from `LAST_UPDATED` in `src/trackerData.js`.
 - Status filters for all, planning, ongoing, and completed projects.
-- Joined classification pills on project cards that morph into two controls on hover or keyboard
-  focus. The first filters by all Sectors or Enablers, while the second filters by the specific
-  category. Classification and status filters can be combined, and an active classification pill
-  above the grid provides a persistent clear action.
-- A compact `EN | BM` control that switches instantly after hydration while retaining normal links to separately pre-rendered English and BM routes. The BM presentation translates the interface, project summaries, facts, milestones, and editorial update history into Malaysian Bahasa Melayu while keeping the site identity and project titles in English and preserving canonical project identities and source links. The BM introduction and footer deliberately retain the quoted English phrase `'Project tracker'` as part of the site's identity.
-- An icon theme control that defaults to the reader's system preference, supports explicit light or dark selection, and remembers that selection locally.
-- The last-updated pill links directly to the editorial update history, which has a visible top-level pill back to the matching-language tracker.
+- Joined classification pills on project cards morph into two controls on hover or keyboard focus.
+  The first filters by all Sectors or Enablers, while the second filters by the specific category.
+  Classification and status filters can be combined, and an active classification pill above the
+  grid provides a persistent clear action.
+- A compact `EN | BM` control that switches instantly after hydration while retaining normal links to separately pre-rendered English and BM routes. Language options provide a restrained hover, focus, and press response; the selected option temporarily flattens when the alternate option is being explored. The BM presentation translates the interface, project summaries, facts, milestones, and editorial update history into Malaysian Bahasa Melayu while keeping the site identity and project titles in English and preserving canonical project identities and source links. The BM introduction and footer deliberately retain the quoted English phrase `'Project tracker'` as part of the site's identity.
+- An icon theme control that defaults to the reader's system preference, supports explicit light or dark selection, remembers that selection locally, and animates its icon, hover surface, and press state when toggled.
+- Status filters and the active classification-clear control use a restrained hover tint, lift,
+  shadow, and press response. The active status temporarily flattens when another status is
+  being explored. Card detail pills retain their category-colour hover treatment.
+- The last-updated pill links directly to the editorial update history, which has a visible top-level pill back to the matching-language tracker and the same restrained hover treatment.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
 - Two short introductory paragraphs explaining the strategy, its central Sarawak GDP target, and
   the project tracker purpose without adding a separate promotional About section.

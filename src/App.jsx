@@ -420,6 +420,7 @@ function FilterBar({
           return (
             <button
               key={filter.id}
+              className={`filter-option${active ? " filter-option--active" : ""}`}
               onClick={() => onFilter(filter.id)}
               aria-pressed={active}
               style={{
@@ -429,11 +430,7 @@ function FilterBar({
                 flexShrink: 0,
                 minHeight: "30px",
                 padding: "7px 10px",
-                border: active ? "1px solid color-mix(in srgb, var(--brand) 32%, transparent)" : "1px solid transparent",
                 borderRadius: "999px",
-                backgroundColor: active ? "var(--surface)" : "transparent",
-                color: active ? "var(--brand-strong)" : "var(--text-muted)",
-                boxShadow: active ? "0 1px 2px var(--control-shadow)" : "none",
                 cursor: "pointer",
                 fontFamily: FONT_STACK,
                 fontSize: "11px",
@@ -449,6 +446,7 @@ function FilterBar({
       </div>
       {activeClassificationLabel && (
         <button
+          className="classification-clear-button"
           type="button"
           onClick={onClearClassification}
           aria-label={copy.categoryFilters.clearActive(activeClassificationLabel)}
@@ -459,10 +457,7 @@ function FilterBar({
             gap: "7px",
             minHeight: "30px",
             padding: "6px 10px",
-            border: "1px solid color-mix(in srgb, var(--brand) 32%, var(--border))",
             borderRadius: "999px",
-            backgroundColor: "var(--surface)",
-            color: "var(--brand-strong)",
             cursor: "pointer",
             fontFamily: FONT_STACK,
             fontSize: "11px",
@@ -1020,7 +1015,7 @@ function ProjectCard({
             display: "flex",
             justifyContent: "space-between",
             gap: "12px",
-            alignItems: "flex-start",
+            alignItems: "center",
             minWidth: 0,
           }}
         >

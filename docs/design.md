@@ -38,7 +38,9 @@ below the project grid.
 The introduction uses a maximum reading width of about `720px`. This keeps the text visually
 connected to the compact title block and avoids an overly wide paragraph slab on desktop.
 
-Filter controls provide simple status navigation before readers scan the project cards.
+Filter controls provide simple status navigation before readers scan the project cards. Filter
+options and the active classification-clear chip use the same restrained lift, tint, shadow, and
+press response as the header controls.
 
 The language, theme, and navigation pills use one shared physical system: a fully rounded capsule,
 an `11px` label, and a `36px` total height on desktop. The language control retains its segmented
@@ -139,23 +141,33 @@ Current interactions:
 
 - `EN | BM` controls switch the hydrated presentation without a document reload and retain real
   route links for direct navigation and fallback. The same pill treatment appears on the tracker
-  and update-history pages. The site
+  and update-history pages. Each language option gently lifts and gains a tinted surface on
+  hover or keyboard focus, with a small press response. When the alternate option is being
+  hovered or focused, the selected option temporarily flattens so attention follows the
+  alternate choice. The site
   kicker, main title, and project titles remain in English in both modes so the identity and project
   names stay consistent across the tracker and its sources. In BM copy, the borrowed English phrase
   `'Project tracker'` is enclosed in single quotation marks in the introduction and footer, while
   the category label `Enabler` is presented as `Pemboleh`.
-- The icon theme button switches between light and dark modes and remembers the selection.
-- Status filter buttons change the visible cards.
+- The icon theme button switches between light and dark modes and remembers the selection. Its
+  icon crossfades and rotates between moon and sun states, while the button lifts into a soft
+  tinted surface with a subtle shadow on hover or keyboard focus and gives a small press response.
+- Status filter buttons change the visible cards and use the same restrained hover tint, lift,
+  shadow, and press response. When an alternate status is being explored, the active status
+  temporarily flattens so attention follows the alternate choice.
 - Each project card's joined classification pill morphs into two separated filter buttons on hover
   or keyboard focus. The solid `Sector` or `Enabler` half filters the broad group, while the named
-  half filters the specific category. The transformation changes spacing and button treatment
-  without moving the card grid, and it is disabled when reduced motion is requested. A compact
-  active-filter pill remains above the grid so a classification filter can always be cleared,
-  including when its combination with a status filter returns no cards.
+  half filters the specific category. Spacing and button treatment change without moving the card
+  grid, and the interaction is disabled when reduced motion is requested. A compact active-filter
+  pill remains above the grid so a classification filter can always be cleared, including when its
+  combination with a status filter returns no cards.
 - Project cards expand and collapse. Their `View details` pill fills with the card's category accent
-  and lifts slightly when the pill is hovered or the card button receives keyboard focus.
+  and lifts slightly when the pill is hovered or the card button receives keyboard focus. The
+  card-header classification and detail pills stay visually centered even though their heights
+  differ.
 - Source links open in a new tab.
-- The linked last-updated pill opens the matching-language update history. Each update page keeps
+- The linked last-updated pill opens the matching-language update history and uses the same soft
+  tint, shadow, lift, and press response as the filter controls. Each update page keeps
   a visible top-left link back to its matching-language tracker, while entries link only to their
   supporting public sources.
 - The last-updated pill uses the text-presentation sequence `U+2197 U+FE0E` for its `↗︎` symbol so
