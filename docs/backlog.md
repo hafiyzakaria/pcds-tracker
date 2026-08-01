@@ -54,6 +54,17 @@ This backlog documents known issues and recommended next tasks for the next deve
   preserve the alignment; multiple cards can remain expanded; and narrow mobile cards have no
   clipping, overlap, or horizontal overflow.
 
+### Add compact category filtering through project-card pills
+
+- Completed for Preview review: The joined `Sector` or `Enabler` classification badge now
+  morphs into separate group and category filter buttons on hover or keyboard focus. Touch layouts
+  keep both controls separated, and an active-filter pill provides a persistent clear action.
+- The existing status controls remain the default top-level filters and can be combined with the
+  card-level classification filters. This avoids restoring the previous two-row category control,
+  counts, and horizontal scrolling.
+- Preserved reference: The earlier experiment remains in Git history through `97e2ba8`, `989cc63`,
+  `42f61f2`, and `03dffa8`; `21fc60c` restored the simpler status filters.
+
 ### Align card behavior across environments
 
 - Completed on Production: Development, Preview, and Production now use the same neutral card
@@ -189,19 +200,6 @@ This backlog documents known issues and recommended next tasks for the next deve
   evidence triggers occurs.
 
 ## 3. Nice To Have
-
-### Reconsider category-based filtering only if the simpler controls become insufficient
-
-- Current decision: Keep the compact `All`, `Planning`, `Ongoing`, and `Completed` status filters.
-  The two-row `Sectors` and `Enablers` experiment was paused because its hierarchy, counts,
-  horizontal scrolling, and active-category treatments made the dashboard feel more complicated.
-- Preserved reference: The experiment remains available in Git history through `97e2ba8`,
-  `989cc63`, `42f61f2`, and `03dffa8`; `21fc60c` restored the simpler status filters while
-  retaining the approved shared pill sizing for language, theme, and navigation controls.
-- Reconsideration gate: Revisit the concept only when reader feedback or a larger project set shows
-  that status filtering alone no longer supports useful discovery.
-- Suggested first task: Test a separate optional advanced-filter control or compact menu before
-  replacing the default status filters again.
 
 ### Add an automated visual regression check
 

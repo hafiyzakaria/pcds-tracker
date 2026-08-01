@@ -112,6 +112,34 @@ function filterRowsByStatus(rows, filter) {
   return rows.filter((row) => row.statusMeta.group === filter.id);
 }
 
+function filterRowsByClassification(rows, filterId) {
+  if (filterId.startsWith("group:")) {
+    return rows.filter((row) => row.kind === filterId.slice("group:".length));
+  }
+
+  if (filterId.startsWith("category:")) {
+    return rows.filter((row) => row.sectorId === filterId.slice("category:".length));
+  }
+
+  return rows;
+}
+
+function getClassificationFilterLabel(rows, filterId, copy) {
+  if (filterId === "group:sector") {
+    return copy.categoryFilters.sectors;
+  }
+
+  if (filterId === "group:enabler") {
+    return copy.categoryFilters.enablers;
+  }
+
+  if (filterId.startsWith("category:")) {
+    return rows.find((row) => row.sectorId === filterId.slice("category:".length))?.sectorName || null;
+  }
+
+  return null;
+}
+
 function getMilestoneCountLabel(row, copy) {
   if (row.totalMilestones === 0) {
     return copy.milestones.none;
@@ -355,7 +383,15 @@ function SummaryMetrics({ rows, copy }) {
   );
 }
 
-function FilterBar({ activeFilter, onFilter, filters = [] }) {
+function FilterBar({
+  activeClassificationLabel,
+  activeFilter,
+  copy,
+  filters = [],
+  onClearClassification,
+  onFilter,
+  resultCount,
+}) {
   return (
     <div
       style={{
@@ -411,6 +447,38 @@ function FilterBar({ activeFilter, onFilter, filters = [] }) {
           );
         })}
       </div>
+      {activeClassificationLabel && (
+        <button
+          type="button"
+          onClick={onClearClassification}
+          aria-label={copy.categoryFilters.clearActive(activeClassificationLabel)}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            justifySelf: "start",
+            gap: "7px",
+            minHeight: "30px",
+            padding: "6px 10px",
+            border: "1px solid color-mix(in srgb, var(--brand) 32%, var(--border))",
+            borderRadius: "999px",
+            backgroundColor: "var(--surface)",
+            color: "var(--brand-strong)",
+            cursor: "pointer",
+            fontFamily: FONT_STACK,
+            fontSize: "11px",
+            fontWeight: 800,
+          }}
+        >
+          <span style={{ color: "var(--text-muted)", fontWeight: 700 }}>
+            {copy.categoryFilters.filteredBy}
+          </span>
+          <span>{activeClassificationLabel}</span>
+          <span aria-hidden="true" style={{ fontSize: "14px", lineHeight: 1 }}>×</span>
+        </button>
+      )}
+      <span className="visually-hidden" aria-live="polite">
+        {copy.categoryFilters.results(resultCount)}
+      </span>
     </div>
   );
 }
@@ -874,8 +942,19 @@ function NextMilestoneCallout({ row, expanded, copy, language }) {
   );
 }
 
-function ProjectCard({ row, expanded, onToggle, copy, language }) {
+function ProjectCard({
+  activeClassificationFilter,
+  row,
+  expanded,
+  onCategoryFilter,
+  onKindFilter,
+  onToggle,
+  copy,
+  language,
+}) {
   const cardBorderColor = "var(--border-strong)";
+  const kindFilterId = `group:${row.kind}`;
+  const categoryFilterId = `category:${row.sectorId}`;
 
   return (
     <article
@@ -883,6 +962,7 @@ function ProjectCard({ row, expanded, onToggle, copy, language }) {
       className="project-card"
       data-expanded={expanded ? "true" : "false"}
       style={{
+        position: "relative",
         border: `1px solid ${cardBorderColor}`,
         borderTop: `1px solid ${cardBorderColor}`,
         borderRadius: "8px",
@@ -891,6 +971,28 @@ function ProjectCard({ row, expanded, onToggle, copy, language }) {
         transition: "background-color 0.15s ease, border-color 0.15s ease",
       }}
     >
+      <div
+        className="project-classification-slot"
+        style={{
+          position: "absolute",
+          top: "18px",
+          left: "18px",
+          zIndex: 2,
+          display: "flex",
+          maxWidth: "calc(100% - 158px)",
+        }}
+      >
+        <ProjectClassificationBadge
+          activeCategory={activeClassificationFilter === categoryFilterId}
+          activeKind={activeClassificationFilter === kindFilterId}
+          color={row.sectorColor}
+          copy={copy}
+          kind={row.kind}
+          name={row.sectorName}
+          onCategoryFilter={() => onCategoryFilter(row.sectorId)}
+          onKindFilter={() => onKindFilter(row.kind)}
+        />
+      </div>
       <button
         className="project-card-button"
         type="button"
@@ -922,16 +1024,12 @@ function ProjectCard({ row, expanded, onToggle, copy, language }) {
             minWidth: 0,
           }}
         >
-          <ProjectClassificationBadge
-            color={row.sectorColor}
-            copy={copy}
-            kind={row.kind}
-            maxWidth="calc(100% - 122px)"
-            name={row.sectorName}
-          />
+          <span aria-hidden="true" style={{ minHeight: "28px", minWidth: 0 }} />
           <span
             aria-hidden="true"
+            className="project-card-details-pill"
             style={{
+              "--project-card-accent": row.sectorColor,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
@@ -1032,7 +1130,16 @@ function ProjectCard({ row, expanded, onToggle, copy, language }) {
   );
 }
 
-function ProjectGrid({ rows, expandedIds, onToggle, copy, language }) {
+function ProjectGrid({
+  activeClassificationFilter,
+  rows,
+  expandedIds,
+  onCategoryFilter,
+  onKindFilter,
+  onToggle,
+  copy,
+  language,
+}) {
   return (
     <section
       className="project-card-grid"
@@ -1045,9 +1152,12 @@ function ProjectGrid({ rows, expandedIds, onToggle, copy, language }) {
     >
       {rows.map((row) => (
         <ProjectCard
+          activeClassificationFilter={activeClassificationFilter}
           key={row.id}
           row={row}
           expanded={expandedIds.includes(row.id)}
+          onCategoryFilter={onCategoryFilter}
+          onKindFilter={onKindFilter}
           onToggle={() => onToggle(row.id)}
           copy={copy}
           language={language}
@@ -1093,6 +1203,7 @@ function HeaderControls({ language, onNavigate, onThemeToggle, copy }) {
 
 export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [activeClassificationFilter, setActiveClassificationFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
   const environment = getAppEnvironment();
   const copy = getUiCopy(language);
@@ -1118,12 +1229,31 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
   const localizedSectors = localizeSectors(SECTORS, language);
   const rows = sortProjectRows(getProjectRows(localizedSectors, copy), language);
   const selectedFilter = filters.find((filter) => filter.id === activeFilter) || filters[0];
-  const filteredRows = sortProjectRows(filterRowsByStatus(rows, selectedFilter), language);
+  const filteredRows = sortProjectRows(
+    filterRowsByClassification(
+      filterRowsByStatus(rows, selectedFilter),
+      activeClassificationFilter
+    ),
+    language
+  );
+  const activeClassificationLabel = getClassificationFilterLabel(
+    rows,
+    activeClassificationFilter,
+    copy
+  );
 
   const toggleExpanded = (id) => {
     setExpandedIds((current) =>
       current.includes(id) ? current.filter((expandedId) => expandedId !== id) : [...current, id]
     );
+  };
+  const toggleKindFilter = (kind) => {
+    const filterId = `group:${kind}`;
+    setActiveClassificationFilter((current) => current === filterId ? "all" : filterId);
+  };
+  const toggleCategoryFilter = (sectorId) => {
+    const filterId = `category:${sectorId}`;
+    setActiveClassificationFilter((current) => current === filterId ? "all" : filterId);
   };
   const toggleTheme = () => {
     const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
@@ -1363,13 +1493,20 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
 
         <section>
           <FilterBar
+            activeClassificationLabel={activeClassificationLabel}
             activeFilter={activeFilter}
+            copy={copy}
+            onClearClassification={() => setActiveClassificationFilter("all")}
             onFilter={setActiveFilter}
             filters={filters}
+            resultCount={filteredRows.length}
           />
           <ProjectGrid
+            activeClassificationFilter={activeClassificationFilter}
             rows={filteredRows}
             expandedIds={expandedIds}
+            onCategoryFilter={toggleCategoryFilter}
+            onKindFilter={toggleKindFilter}
             onToggle={toggleExpanded}
             copy={copy}
             language={language}

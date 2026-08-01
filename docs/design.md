@@ -146,7 +146,14 @@ Current interactions:
   the category label `Enabler` is presented as `Pemboleh`.
 - The icon theme button switches between light and dark modes and remembers the selection.
 - Status filter buttons change the visible cards.
-- Project cards expand and collapse.
+- Each project card's joined classification pill morphs into two separated filter buttons on hover
+  or keyboard focus. The solid `Sector` or `Enabler` half filters the broad group, while the named
+  half filters the specific category. The transformation changes spacing and button treatment
+  without moving the card grid, and it is disabled when reduced motion is requested. A compact
+  active-filter pill remains above the grid so a classification filter can always be cleared,
+  including when its combination with a status filter returns no cards.
+- Project cards expand and collapse. Their `View details` pill fills with the card's category accent
+  and lifts slightly when the pill is hovered or the card button receives keyboard focus.
 - Source links open in a new tab.
 - The linked last-updated pill opens the matching-language update history. Each update page keeps
   a visible top-left link back to its matching-language tracker, while entries link only to their
@@ -175,13 +182,16 @@ Current mobile changes:
 - Project fact blocks stack vertically.
 - At widths up to `760px`, the shared language, theme, and navigation pill height increases to
   `40px`. This improves touch comfort while keeping their visual rhythm consistent.
+- On touch or coarse-pointer devices, project-card classification controls stay separated so both
+  filter targets remain discoverable without relying on hover.
 
 The update history uses a date column and content column on desktop, then becomes a single-column
 entry list below `760px`. It uses the same neutral surfaces, typography, theme control, and
 environment badge as the tracker without reproducing the dashboard metrics or filters. Its return
 link uses the same two-layer pill language as the header controls: neutral at rest, with the inner
 selected treatment and brand text colour appearing on hover or keyboard focus. Every update reuses
-the tracker card's joined classification badge for `Sector` or `Enabler` and the specific area.
+the tracker card's joined classification badge for `Sector` or `Enabler` and the specific area, but
+keeps it non-interactive because filtering is scoped to the tracker grid.
 
 ## Environment Indicators
 

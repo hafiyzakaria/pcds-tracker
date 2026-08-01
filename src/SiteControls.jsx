@@ -22,17 +22,77 @@ export function NavigationPillLink({
 }
 
 export function ProjectClassificationBadge({
+  activeCategory = false,
+  activeKind = false,
   color,
   copy,
   kind,
   maxWidth = "100%",
   name,
+  onCategoryFilter,
+  onKindFilter,
 }) {
   const label = kind === "sector" ? copy.card.sector : copy.card.enabler;
+  const groupLabel = kind === "sector"
+    ? copy.categoryFilters.sectors
+    : copy.categoryFilters.enablers;
+  const interactive = Boolean(onCategoryFilter && onKindFilter);
+
+  if (interactive) {
+    const kindActionLabel = activeKind
+      ? copy.categoryFilters.clearGroup(groupLabel)
+      : copy.categoryFilters.showGroup(groupLabel);
+    const categoryActionLabel = activeCategory
+      ? copy.categoryFilters.clearCategory(name)
+      : copy.categoryFilters.showCategory(name);
+    const handleFilterClick = (event, action) => {
+      action();
+
+      if (event.detail > 0) {
+        event.currentTarget.blur();
+      }
+    };
+
+    return (
+      <div
+        className="project-classification project-classification--interactive"
+        role="group"
+        aria-label={copy.categoryFilters.label(label, name)}
+        style={{
+          "--project-classification-accent": color,
+          "--project-classification-label-space": kind === "sector" ? "68px" : "78px",
+          maxWidth,
+        }}
+      >
+        <button
+          className="project-classification-button project-classification-kind"
+          type="button"
+          onClick={(event) => handleFilterClick(event, onKindFilter)}
+          aria-label={kindActionLabel}
+          aria-pressed={activeKind}
+          title={kindActionLabel}
+        >
+          {label}
+        </button>
+        <button
+          className="project-classification-button project-classification-name"
+          type="button"
+          onClick={(event) => handleFilterClick(event, onCategoryFilter)}
+          aria-label={categoryActionLabel}
+          aria-pressed={activeCategory}
+          title={categoryActionLabel}
+        >
+          <span>{name}</span>
+        </button>
+      </div>
+    );
+  }
 
   return (
     <span
+      className="project-classification"
       style={{
+        "--project-classification-accent": color,
         display: "inline-flex",
         alignItems: "center",
         position: "relative",
@@ -49,9 +109,9 @@ export function ProjectClassificationBadge({
           zIndex: 2,
           minHeight: "28px",
           padding: "7px 10px",
-          border: `1px solid ${color}`,
+          border: "1px solid var(--project-classification-accent)",
           borderRadius: "999px",
-          backgroundColor: color,
+          backgroundColor: "var(--project-classification-accent)",
           color: "#ffffff",
           fontFamily: FONT_STACK,
           fontSize: "11px",
@@ -68,10 +128,10 @@ export function ProjectClassificationBadge({
           minWidth: 0,
           minHeight: "28px",
           padding: `7px 11px 7px ${kind === "sector" ? "68px" : "78px"}`,
-          border: `1px solid ${color}`,
+          border: "1px solid var(--project-classification-accent)",
           borderRadius: "999px",
           backgroundColor: "var(--surface)",
-          color: `color-mix(in srgb, ${color} 78%, var(--accent-text-mix))`,
+          color: "color-mix(in srgb, var(--project-classification-accent) 78%, var(--accent-text-mix))",
           fontFamily: FONT_STACK,
           fontSize: "11px",
           fontWeight: 800,
