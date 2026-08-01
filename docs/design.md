@@ -158,9 +158,10 @@ Current interactions:
 - Each project card's joined classification pill morphs into two separated filter buttons on hover
   or keyboard focus. The solid `Sector` or `Enabler` half filters the broad group, while the named
   half filters the specific category. Spacing and button treatment change without moving the card
-  grid, and the interaction is disabled when reduced motion is requested. A compact active-filter
-  pill remains above the grid so a classification filter can always be cleared, including when its
-  combination with a status filter returns no cards.
+  grid, while touch layouts keep the joined geometry for the same two targets. The interaction is
+  disabled when reduced motion is requested. A compact active-filter pill remains above the grid so
+  a classification filter can always be cleared, including when its combination with a status filter
+  returns no cards.
 - Project cards expand and collapse. Their `View details` pill fills with the card's category accent
   and lifts slightly when the pill is hovered or the card button receives keyboard focus. The
   card-header classification and detail pills stay visually centered even though their heights

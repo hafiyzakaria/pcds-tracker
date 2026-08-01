@@ -355,14 +355,14 @@ a:focus-visible {
 }
 
 @media (hover: none), (pointer: coarse) {
-  .project-classification--interactive .project-classification-kind {
-    position: relative;
-    inset: auto;
+  .project-classification--interactive:focus-within .project-classification-kind {
+    position: absolute;
+    inset: 0 auto 0 0;
   }
 
-  .project-classification--interactive .project-classification-name {
-    margin-left: 4px;
-    padding: 7px 10px;
+  .project-classification--interactive:focus-within .project-classification-name {
+    margin-left: 0;
+    padding: 7px 11px 7px var(--project-classification-label-space);
   }
 }
 

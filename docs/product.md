@@ -29,8 +29,9 @@ The current product is a small static React site with:
 - Status filters for all, planning, ongoing, and completed projects.
 - Joined classification pills on project cards morph into two controls on hover or keyboard focus.
   The first filters by all Sectors or Enablers, while the second filters by the specific category.
-  Classification and status filters can be combined, and an active classification pill above the
-  grid provides a persistent clear action.
+  Touch layouts keep the joined geometry while preserving both targets. Classification and status
+  filters can be combined, and an active classification pill above the grid provides a persistent
+  clear action.
 - A compact `EN | BM` control that switches instantly after hydration while retaining normal links to separately pre-rendered English and BM routes. Language options provide a restrained hover, focus, and press response; the selected option temporarily flattens when the alternate option is being explored. The BM presentation translates the interface, project summaries, facts, milestones, and editorial update history into Malaysian Bahasa Melayu while keeping the site identity and project titles in English and preserving canonical project identities and source links. The BM introduction and footer deliberately retain the quoted English phrase `'Project tracker'` as part of the site's identity.
 - An icon theme control that defaults to the reader's system preference, supports explicit light or dark selection, remembers that selection locally, and animates its icon, hover surface, and press state when toggled.
 - Status filters and the active classification-clear control use a restrained hover tint, lift,
