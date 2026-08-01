@@ -113,9 +113,9 @@ a:focus-visible {
 .tracker-updates-link {
   min-height: 30px;
   padding: 6px 10px;
-  border-color: color-mix(in srgb, var(--brand) 32%, var(--border));
-  background-color: var(--surface);
-  color: var(--brand-strong);
+  border-color: var(--border);
+  background-color: var(--surface-subtle);
+  color: var(--text-muted);
 }
 
 .tracker-updates-link .navigation-pill-link-inner {

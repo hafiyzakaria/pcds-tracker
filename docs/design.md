@@ -166,8 +166,8 @@ Current interactions:
   card-header classification and detail pills stay visually centered even though their heights
   differ.
 - Source links open in a new tab.
-- The linked last-updated pill opens the matching-language update history and uses the same soft
-  tint, shadow, lift, and press response as the filter controls. Each update page keeps
+- The linked last-updated pill rests as a neutral single-layer pill, then uses the same soft tint,
+  shadow, lift, and press response as the filter controls when hovered or focused. Each update page keeps
   a visible top-left link back to its matching-language tracker, while entries link only to their
   supporting public sources.
 - The last-updated pill uses the text-presentation sequence `U+2197 U+FE0E` for its `↗︎` symbol so

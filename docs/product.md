@@ -36,7 +36,7 @@ The current product is a small static React site with:
 - Status filters and the active classification-clear control use a restrained hover tint, lift,
   shadow, and press response. The active status temporarily flattens when another status is
   being explored. Card detail pills retain their category-colour hover treatment.
-- The last-updated pill links directly to the editorial update history, which has a visible top-level pill back to the matching-language tracker and the same restrained hover treatment.
+- The last-updated pill rests neutrally, then links directly to the editorial update history with the same restrained hover treatment. The update history has a visible top-level pill back to the matching-language tracker.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
 - Two short introductory paragraphs explaining the strategy, its central Sarawak GDP target, and
   the project tracker purpose without adding a separate promotional About section.
