@@ -24,7 +24,8 @@ Current layout order:
 
 1. Kicker with compact language and theme controls, followed by the title.
 2. Two short introductory paragraphs covering the strategy and tracker purpose.
-3. Linked last-updated pill with a `↗` symbol, which opens the matching-language update history.
+3. Data-freshness link immediately above the summary metrics, with a subtle `↗` cue that opens the
+   matching-language update history.
 4. Summary metrics.
 5. Status filter buttons.
 6. Two-column project-card grid on desktop.
@@ -110,7 +111,7 @@ Project-card status badges display the project state, but their colour follows t
 
 Sector colors are stored in `src/trackerData.js` and appear on card accents, category pills, project-card status badges, milestone indicators, completed milestone dates, and source badges.
 
-Category colour should be strongest on project identity and progress signals, especially category pills and milestone bars. Supporting elements such as status pills, next milestone surfaces, source badges, summary metric accents, and expand controls should use lighter tints, outlines, or thinner accents so the dashboard stays credible and scan-first.
+Category colour should be strongest on project identity and progress signals, especially category pills and milestone bars. Supporting elements such as status pills, next milestone surfaces, source badges, and expand controls should use lighter tints, outlines, or thinner accents so the dashboard stays credible and scan-first. Summary metrics use separate neutral surfaces, modest gaps, and quiet borders so the dashboard hierarchy stays calm and scan-first.
 
 ## Components
 
@@ -168,10 +169,12 @@ Current interactions:
   card-header classification and detail pills stay visually centered even though their heights
   differ.
 - Source links open in a new tab.
-- The linked last-updated pill rests as a neutral single-layer pill, then uses the same soft tint,
-  shadow, lift, and press response as the filter controls when hovered or focused. Each update page keeps
-  a visible top-left link back to its matching-language tracker, while entries link only to their
-  supporting public sources.
+- The linked last-updated control rests as plain metadata in the standard muted text colour, aligned with
+  the hero text. Hover or keyboard focus reveals one soft tinted pill aligned with the summary metrics and
+  filters while its label eases slightly right into the pill. The low-opacity `↗︎` cue becomes fully
+  visible on hover or focus. The fixed hit area prevents flicker, resizing, or a nested inner surface.
+  Each update page keeps a visible top-left link back to its matching-language tracker, while entries
+  link only to their supporting public sources.
 - The last-updated pill uses the text-presentation sequence `U+2197 U+FE0E` for its `↗︎` symbol so
   mobile platforms do not substitute an emoji glyph.
 - The BM introduction and footer quote the borrowed phrase `'Project tracker'`, while navigation

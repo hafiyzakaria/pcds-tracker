@@ -252,15 +252,14 @@ function StatusBadge({ statusMeta, accentColor }) {
   );
 }
 
-function Metric({ value, label, accent = "#0d9488" }) {
+function Metric({ value, label }) {
   return (
     <div
       style={{
         minHeight: "78px",
         padding: "13px 15px 14px",
-        borderTop: `2px solid ${accent}66`,
-        borderRight: "1px solid var(--border-soft)",
-        borderBottom: "1px solid var(--border-soft)",
+        border: "1px solid var(--border-soft)",
+        borderRadius: "8px",
         backgroundColor: "var(--surface)",
       }}
     >
@@ -308,15 +307,15 @@ function SummaryMetrics({ rows, copy }) {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(132px, 1fr))",
-          borderLeft: "1px solid var(--border-soft)",
+          gap: "10px",
         }}
       >
-        <Metric value={rows.length} label={copy.metrics.trackedProjects} accent="#0d9488" />
-        <Metric value={planning} label={copy.metrics.planning} accent="#4f46e5" />
-        <Metric value={ongoing} label={copy.metrics.ongoing} accent="#d97706" />
-        <Metric value={completeLike} label={copy.metrics.completed} accent="#16a34a" />
+        <Metric value={rows.length} label={copy.metrics.trackedProjects} />
+        <Metric value={planning} label={copy.metrics.planning} />
+        <Metric value={ongoing} label={copy.metrics.ongoing} />
+        <Metric value={completeLike} label={copy.metrics.completed} />
         <div className="desktop-milestone-metric">
-          <Metric value={`${doneMilestones}/${totalMilestones}`} label={copy.metrics.milestones} accent="#1d4ed8" />
+          <Metric value={`${doneMilestones}/${totalMilestones}`} label={copy.metrics.milestones} />
         </div>
       </div>
       <div
@@ -325,7 +324,8 @@ function SummaryMetrics({ rows, copy }) {
           display: "none",
           padding: "16px 18px",
           border: "1px solid var(--border-soft)",
-          borderTop: 0,
+          borderRadius: "8px",
+          marginTop: "10px",
           backgroundColor: "var(--surface)",
         }}
       >
@@ -1390,7 +1390,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
       <main style={{ maxWidth: "1040px", margin: "0 auto", padding: "40px 24px 80px" }}>
         <header
           style={{
-            marginBottom: "28px",
+            marginBottom: "14px",
           }}
         >
           <div
@@ -1454,33 +1454,38 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
               </p>
             ))}
           </div>
-          <p
-            className="tracker-last-updated"
-            style={{
-              margin: "14px 0 0",
-              color: "var(--text-muted)",
-              fontSize: "12px",
-              fontWeight: 600,
-              lineHeight: 1.4,
-            }}
-          >
-            <NavigationPillLink
-              className="tracker-updates-link"
-              href={getRouteHref(language === "ms" ? "updates-ms" : "updates")}
-              onClick={(event) =>
-                onNavigate(
-                  event,
-                  language === "ms" ? "updates-ms" : "updates"
-                )
-              }
-            >
-              {copy.header.lastUpdated} {lastUpdatedLabel}
-              <span aria-hidden="true" style={{ marginLeft: "5px" }}>
-                {"\u2197\uFE0E"}
-              </span>
-            </NavigationPillLink>
-          </p>
         </header>
+
+        <p
+          className="tracker-last-updated"
+          style={{
+            margin: "0 0 14px",
+            color: "var(--text-muted)",
+            fontSize: "12px",
+            fontWeight: 600,
+            lineHeight: 1.4,
+          }}
+        >
+          <NavigationPillLink
+            className="tracker-updates-link"
+            href={getRouteHref(language === "ms" ? "updates-ms" : "updates")}
+            onClick={(event) =>
+              onNavigate(
+                event,
+                language === "ms" ? "updates-ms" : "updates"
+              )
+            }
+          >
+            {copy.header.lastUpdated} {lastUpdatedLabel}
+            <span
+              className="tracker-updates-link-arrow"
+              aria-hidden="true"
+              style={{ marginLeft: "5px" }}
+            >
+              {"\u2197\uFE0E"}
+            </span>
+          </NavigationPillLink>
+        </p>
 
         <div style={{ marginBottom: "24px" }}>
           <SummaryMetrics rows={rows} copy={copy} />
