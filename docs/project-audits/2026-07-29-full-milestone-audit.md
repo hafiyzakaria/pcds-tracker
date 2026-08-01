@@ -59,11 +59,11 @@ content validator now enforces the structural rules above.
 | Piasau Nature Reserve Discovery Centre | Revise | Keep development commencement and centre completion; remove programme and funding context from the milestone sequence. |
 | Bau Gold Project | Keep | The technical and lease milestones are specific; no safe financing or construction event is public. |
 | Sarawak Cancer Centre | Keep | The cost, procurement, construction, and completion sequence reflects the latest July 2026 evidence. |
-| FutureData Kuching Data Centre Park | Keep | Construction and first-facility operations remain the supported lifecycle. |
-| CHITOSE Carbon Capture Central Sarawak | Keep | Project commencement and facility launch complete the delivery sequence. |
+| FutureData Kuching Data Centre Park | Revise | Remove the unsupported completed construction claim, change status to `Planning`, and add the park announcement, first off-taker, undated construction, and first-facility operations stages. |
+| CHITOSE Carbon Capture Central Sarawak | Revise | Add CHITOSE's official construction-completion and production-start milestones before the May 2023 launch. |
 | Sarawak Bioindustrial Park | Revise | Keep the authoritative PCDS project name as the card anchor, include the associated SBC Bioprocess Commercial Centre in the current delivery-package scope, use the RM10 million joint Budget 2026 allocation, and move to `In Progress` after the combined tender award. |
 | Kota Petra Green Technology Park | Keep | Licence, agreement, site, contract, operations, and bridge milestones are specific and current. |
-| PETRONAS Kasawari CCS Project | Keep | Contract, revised injection plan, and first injection remain the supported sequence. |
+| PETRONAS Kasawari CCS Project | Revise | Add the final investment decision, correct the EPCIC award date, and describe the 2026 item as a schedule review rather than a confirmed injection plan. |
 | Yayasan Sarawak International Secondary Schools Expansion | Keep | Existing campus openings and remaining-campus completion are supported. |
 | SCORE | Keep | Retain the current programme milestones pending a future review of measurable delivery targets. |
 | Pan Borneo Highway Sarawak Phase 1 | Keep | Ten packages are complete; Work Package 11 completion remains unconfirmed. |
@@ -78,7 +78,7 @@ content validator now enforces the structural rules above.
 | New Kuching International Airport | Source enhancement | Keep federal approval and construction open; add official KLCH master-plan and federal-discussion sources without attributing the wider 2027 works target to the airport alone. |
 | Tanjung Embang Deep-Sea Port | Revise | Add the verified final-stage port master-plan design and detailed feasibility-study commencement before the 2032 operations outcome. Do not invent procurement or construction milestones. |
 | Baleh Hydroelectric Project | Revise | Replace the generic scope milestone with Sarawak Energy's physical lifecycle: diversion tunnel, river diversion, dam rockfill, reservoir impoundment, minimum operating level, first-unit generation, and full generation. |
-| Mentarang Induk Hydroelectric Project | Keep | Groundbreaking, early works, and first power are the limit of current evidence. |
+| Mentarang Induk Hydroelectric Project | Source cleanup | Keep the three-stage lifecycle and remove the project-page citation that renders an error shell; two official sources retain full field coverage. |
 | H2biscus and H2ornbill | Revise | Restore the agreement and FEED sequence, record suspension of H2ornbill's original Japan-export concept, retain recalibration, and continue through investment decisions, construction, and commercial production. |
 | Batang Ai Floating Solar Farm | Revise | Record the 50MW facility's December 2024 commissioning and retain the 120MW expansion as open. |
 | Baram Agrovoltaic Project | Revise | Keep the undated component outcomes and remove the separate Baram DeepTech programme's parties, agreements, and sources from the RM6 billion project card. |
@@ -449,6 +449,91 @@ The same presentation rule applies site-wide: cards with `Not disclosed` do not 
 reported-value placeholder. The column appears automatically when the underlying value changes to
 a verified monetary figure. No update-history entry is added because this batch improves evidence
 and presentation rather than recording one new project-development event.
+
+## 1 August 2026 Milestone-Depth Follow-Up
+
+This follow-up tested the concern that two- or three-stage cards can understate a project's scale.
+For active capital projects, fewer than four milestones now triggers a deeper lifecycle search, but
+four milestones is not a publication requirement. Piasau Nature Reserve Discovery Centre and the
+completed Sejingkat Battery Energy Storage System remain at two milestones because no additional
+distinct delivery stage is supported by the reviewed public evidence.
+
+### FutureData Kuching Data Centre Park
+
+- Accepted evidence: [TSG Group, 9 October 2024](https://tsggroup.my/2024/10/09/sarawaks-futuredata-welcomes-1st-offtaker-a-17mw-data-center/)
+  states that the 500MW park was first announced in June 2023, names Global Telecommunications as
+  the first off-taker, and reports an investment above USD130 million for the first 17MW facility.
+  It says construction `shall commence` in Q2 2025 and the facility would be online in 2026.
+  [InvestSarawak](https://investsarawak.gov.my/global-telecommunications-first-off-taker-for-kuchings-futuredata-park/)
+  independently repeats the value, capacity, construction target, and 2026 online target.
+- Decision: change status from `In Progress` to `Planning`; use four milestones covering the park
+  announcement, first off-taker, construction start, and first-facility operations. Construction
+  is open and undated because no reviewed source confirms that the Q2 2025 target was achieved.
+- Rejected inference: the future-tense construction target is not evidence that construction began.
+  The above-USD130-million amount is not the value of the full 500MW park or an undefined Phase 1.
+- Confidence and residual risk: high confidence in the correction; the 2026 online target now needs
+  an event-driven check for construction, commissioning, delay, or operations evidence.
+
+### CHITOSE Carbon Capture Central Sarawak
+
+- Accepted evidence: [CHITOSE Group, 20 March 2023](https://chitose-bio.com/news/5155/) states that
+  construction of the five-hectare C4 facility was completed and microalgae production had begun.
+  The existing Sarawak Energy source supports the separate official launch on 10 May 2023.
+- Decision: retain `Operational` and add construction completion and production commencement
+  between the 2020 project start and May 2023 launch, giving four completed lifecycle milestones.
+- Rejected inference: CHITOSE's longer-term 2,000-hectare expansion ambition is not a delivered
+  phase of the five-hectare C4 facility and is not added as a milestone.
+- Confidence and residual risk: high confidence; no verified post-launch performance or expansion
+  delivery event was found for the current card scope.
+
+### PETRONAS Kasawari Carbon Capture and Storage Project
+
+- Accepted evidence: [PETRONAS, 29 November 2022](https://www.petronas.com/media/media-releases/petronas-carigali-reaches-final-investment-decision-kasawari-ccs-project)
+  states that the final investment decision was approved on 20 October 2022 and the EPCIC contract
+  was awarded to MMHE on 3 November 2022. The existing 1 April 2026 report says PETRONAS was
+  examining whether first CO2 injection could be brought forward to 2027.
+- Decision: add the final investment decision, correct the contract date from the press-release date
+  to the stated award date, and describe the 2026 milestone as an earlier-injection schedule review.
+- Rejected inference: the April 2026 review did not confirm that injection occurred or make the 2027
+  target certain. The RM6.6 billion figure remains excluded because it is MHB's wider order book.
+- Confidence and residual risk: high confidence in the 2022 dates; the 2027 injection date remains
+  an open target and requires confirmation.
+
+### Mentarang Induk Hydroelectric Project
+
+- Accepted evidence: Sarawak Energy supports the US$2.6 billion value, 1,375MW scope, March 2023
+  groundbreaking, and end-2029 first-power target. The Office of the Premier supports early works
+  being under way by October 2023.
+- Decision: keep the three supported milestones and remove the PT Kayan Hydropower Nusantara page
+  from the live card because its current response renders an error shell and adds no unique evidence.
+- Rejected inference: no fourth procurement, financial-close, main-construction, or commissioning
+  milestone is added without a public achieved-event source.
+- Confidence and residual risk: medium-high confidence in the retained sequence; current physical
+  progress remains unclear and should be reviewed when a newer owner or government update appears.
+
+Editorial update-history decision: no entry was added to `src/updateHistory.js`. These changes
+correct historical evidence, scope, dates, and lifecycle wording rather than record newly reported
+public developments.
+
+## 1 August 2026 Project-Summary Follow-Up
+
+The remaining 31 visible project summaries were approved for a site-wide project-profile rewrite.
+FutureData Kuching Data Centre Park, CHITOSE Carbon Capture Central Sarawak, and the PETRONAS
+Kasawari Carbon Capture and Storage Project had already been revised during the preceding
+card-level audit, so this follow-up retained those versions.
+
+- Each summary now introduces what the project is, its location and defining scale or capacity,
+  its purpose, and why it matters.
+- Monetary figures are included only when they help explain project scale, funding, or delivery
+  scope. The prose states each figure naturally and preserves whether it is an estimate, allocation,
+  investment, commitment, contract, derived estimate, or historical combined package.
+- Milestone chronology, progress percentages, target dates, completion claims, audit caveats, and
+  missing-evidence notes remain outside the summary.
+- The accepted project identities, values, leads, milestones, sources, and statuses did not change
+  in this editorial pass. English and Bahasa Melayu summaries were updated together.
+
+Editorial update-history decision: no entry was added to `src/updateHistory.js` because the rewrite
+clarifies the presentation of already accepted facts rather than recording a new public development.
 
 ## Residual Risks
 

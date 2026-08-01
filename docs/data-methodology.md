@@ -34,7 +34,7 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-07-31`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-01`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
@@ -243,6 +243,15 @@ For each audit, record the audit date, query variants, candidate and accepted UR
 Latest full milestone review:
 `docs/project-audits/2026-07-29-full-milestone-audit.md`.
 
+## Project Summary Writing Standard
+
+- Write each summary as a concise introduction to what the project is, where it is, its defining scope or capacity, its purpose, and why it matters. Two short sentences are usually enough.
+- Include a monetary figure when it materially helps the reader understand the project's scale, funding, or delivery scope. State the number naturally rather than using editorial phrases such as `the reported value is`.
+- Preserve the accepted value type and qualifier in the prose, such as `estimated cost`, `allocation`, `investment`, `commitment`, `contract`, `derived estimate`, or `historical combined package`. A historical, derived, phase-specific, or combined figure must remain clearly scoped without turning the summary into an audit note.
+- Include a lead party or partner only when it helps define the project. Do not use the summary to reproduce every delivery role already represented by the lead field or sources.
+- Do not duplicate milestone chronology, progress percentages, target dates, completion claims, audit caveats, missing-evidence notes, or review history. Keep those details in milestones, sources, the source map, or audit documentation.
+- Use only facts already supported for the card's exact tracked scope. A concise introduction must not strengthen an estimate, allocation, package value, or relationship beyond its accepted evidence.
+
 ## Milestone Writing Standard
 
 - Use one canonical `text` value everywhere. Collapsed and expanded cards must not use different wording for the same milestone.
@@ -256,8 +265,8 @@ Latest full milestone review:
 - Do not phrase an open milestone as though it has already happened. Avoid terminal past-participle wording such as `approval obtained`, `capacity added`, or `centre completed`. Use an active present-tense outcome such as `Federal authorities approve the request`, `capacity increases by 120MW`, or `centre reaches completion`. A pending event may use a concise noun phrase when that is clearer, such as `Announcement of updated project plan`.
 - Distinguish construction completion, commissioning, operations commencement, and commercial operation. These terms describe different project stages and must not be used interchangeably.
 - Keep completed milestones before the next open milestone in each project's array. The card's segmented progress indicator follows this order, so an open milestone placed before a completed milestone creates a misleading broken sequence.
-- Keep supporting context, uncertainty, and attribution in the project summary and sources rather than lengthening the milestone statement.
 - A non-completed capital project should continue to an evidence-supported delivery outcome such as construction completion, commissioning, service commencement, commercial operation, or first production. An intermediate announcement, approval, or design stage must not make the card appear fully complete. Do not invent missing lifecycle stages when public evidence does not identify them.
+- For an active capital project, fewer than four milestones is a trigger for a deeper lifecycle search across approval, design, procurement, construction, commissioning, and operations. Four to seven milestones is a useful editorial range only when those stages are supported by public evidence. It is not a publication quota: a card may remain below four when the available sources do not support more distinct stages, and no standard stage may be invented merely to increase the count.
 - `npm run check:content` enforces the structural portion of this standard: non-completed cards retain an open milestone, completed milestones cannot use `TBD`, open milestones cannot end in selected completed-event wording, reported values must be amount-only monetary figures or use the approved unknown-value labels, public sources cannot be PDF links, and English and BM milestone counts must match.
 
 ## Selected Project Source Map
@@ -327,11 +336,13 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 ### FutureData - Kuching Data Centre Park
 
-- Current dashboard status: `In Progress`
-- Current next milestone: First 17MW data centre expected to begin operations
+- Current dashboard status: `Planning`
+- Current next milestone: Construction of first 17MW facility begins
 - Sources currently used:
-- [DCD - FutureData first off-taker (2025)](https://www.datacenterdynamics.com/en/news/futuredata-announces-first-off-taker-at-500mw-malaysian-data-center-park-in-sarawak/) - Publisher: Data Center Dynamics; type: industry media; date: 2025; appears to support off-taker, 500MW park, and 17MW facility context.
-- Gaps or uncertainty: no direct FutureData, TSG, or government source is encoded; construction progress after the cited reporting is not represented.
+- [TSG Group - First 17MW FutureData off-taker (Oct 2024)](https://tsggroup.my/2024/10/09/sarawaks-futuredata-welcomes-1st-offtaker-a-17mw-data-center/) - Publisher: TSG Group; type: project-developer announcement; date: 9 Oct 2024. It supports the June 2023 park announcement, Global Telecommunications as first off-taker, above-USD130-million investment for the first 17MW facility, the then-future Q2 2025 construction target, and the 2026 online target.
+- [InvestSarawak - FutureData first off-taker and schedule (Oct 2024)](https://investsarawak.gov.my/global-telecommunications-first-off-taker-for-kuchings-futuredata-park/) - Publisher: InvestSarawak; type: official investment-promotion portal; date: Oct 2024. It independently repeats the project-specific value, capacity, construction target, and online target.
+- [DCD - FutureData first off-taker (2025)](https://www.datacenterdynamics.com/en/news/futuredata-announces-first-off-taker-at-500mw-malaysian-data-center-park-in-sarawak/) - Publisher: Data Center Dynamics; type: industry media; date: 2025; supports the off-taker, 500MW park, and first 17MW facility context.
+- Gaps or uncertainty: no reviewed source confirms that construction began after the Q2 2025 target passed. Construction therefore remains open and undated, the value is limited to the first 17MW facility, and the status is `Planning` rather than `In Progress`.
 
 ### SCORE - Sarawak Corridor of Renewable Energy
 
@@ -404,14 +415,14 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Sungai Baji Agropark - `In Progress`; value: `RM180 million`, retained from the PCDS 2030 AIP as a user-approved planned state-funding figure comprising RM29 million approved under RMK-12 and an estimated RM151 million for the remaining area, pending an accessible online value source. December 2025 reporting states that infrastructure and agricultural components were complete by October 2025 and that LCDA appointed an anchor company on 14 May 2025. Operations were expected in Q1 2026 and commercial production in Q3 2026, but neither milestone is marked complete without a confirming public update; live sources: DID Sarawak and TVS.
 - Semenggoh Rainforest Discovery Centre - `In Progress`; value: RM30 million. The PCDS 2030 AIP Volume II Forestry initiative identifies three phases covering the Wildlife Centre, Entrance, and Botanical zones through 2030. Borneo Post reporting confirms the August 2020 foundation-laying ceremony, three-stage scope, and funding, but no newer public source confirms whether the June 2024 Phase 1 target was achieved; sources: PCDS 2030 AIP Volume II, pages 504-507, and Borneo Post.
 - Piasau Nature Reserve Discovery Centre - `In Progress`; value: RM30 million. The AIP identifies it as the second site under the discovery-centre initiative. Newer reporting confirms development commenced on 5 August 2025, describes its marine eco-tourism and national-park management functions, and gives an early August 2027 completion schedule; sources: PCDS 2030 AIP Volume II, pages 504 and 508, and Borneo Post.
-- PETRONAS Kasawari Carbon Capture and Storage Project - `In Progress`; value: `RM4.5 billion`, reported in 2022 for the Phase 2 CCS platform and its connection to the Phase 1 central processing platform. MMHE holds the EPCIC contract and PETRONAS is examining a 2027 first-injection date; sources: The Edge Malaysia, The Sun, and The Star.
+- PETRONAS Kasawari Carbon Capture and Storage Project - `In Progress`; value: `RM4.5 billion`, reported in 2022 for the Phase 2 CCS platform and its connection to the Phase 1 central processing platform. PETRONAS approved the final investment decision on 20 October 2022 and awarded MMHE the EPCIC contract on 3 November 2022. PETRONAS is examining a 2027 first-injection date; sources: PETRONAS, The Edge Malaysia, The Sun, and The Star.
 - Yayasan Sarawak International Secondary Schools Expansion - `In Progress`; value: `RM120-135 million`, a derived estimate for the three remaining schools based on the 2022 implementation estimate of RM40 million to RM45 million per school and September 2025 confirmation that three of six schools remained. This is not an announced contract or six-school network total; sources: Rakan Sarawak, YSISS, and Borneo Post.
 - Sarawak River Aids to Navigation and Surveillance System - `In Progress` as an interim combined card; value: `RM30 million` for the first-phase Senari VTMS on the Sarawak River, excluding the later Miri system. Sarawak River VTMS was reported fully operational in December 2025, while Miri River system completion remains scheduled for Q3 2027. The PCDS 2030 Highlights 2023 report identifies Sarawak River as the first project under a wider river-management initiative and describes similar systems for Miri River and Kuala Baram as later plans. The scopes should ultimately be separated, but the combined card remains `Ongoing` while the Miri milestone is open; sources: DayakDaily, Borneo Post, and PCDS 2030 Highlights 2023, PDF page 121 (printed page 120).
 
 ### Sustainability Vision 2030 Energy Projects Added on 13 July 2026
 
 - Sejingkat Battery Energy Storage System - `Operational`; 60MW/82MWh facility energised in December 2024 and publicly announced as commissioned in February 2025. Routine grid services and performance monitoring are operational activities rather than open delivery milestones, so the commissioned facility displays as `Completed`; source: Sarawak Energy.
-- Mentarang Induk Hydroelectric Project - `In Progress`; US$2.6 billion, 1,375MW cross-border hydropower venture in North Kalimantan; groundbreaking and early works were reported in 2023, while current physical progress remains unclear; sources: Sarawak Energy, Office of the Premier, and PT Kayan Hydropower Nusantara.
+- Mentarang Induk Hydroelectric Project - `In Progress`; US$2.6 billion, 1,375MW cross-border hydropower venture in North Kalimantan; groundbreaking and early works were reported in 2023, while current physical progress remains unclear. Sarawak Energy supports the value, identity, groundbreaking and 2029 first-power target, while the Office of the Premier supports early works; the PT Kayan Hydropower Nusantara page was removed from the live card because it currently renders an error shell and adds no unique field evidence.
 - Sarawak-Singapore Electricity Interconnection - `In Progress`; Sarawak Energy confirmed that a techno-commercial study with Sembcorp and Singapore Power was under way in March 2023. Conditional approval was obtained in October 2025 for around 1GW of renewable power exports, with further regulatory approvals and licences still required; sources: Sarawak Energy.
 
 ### Sarawak 13th Malaysia Plan Projects Added on 28 July 2026
@@ -449,9 +460,9 @@ Current active dashboard status counts from `src/trackerData.js`:
 
 - `In Progress`: 23.
 - `Awaiting Decision`: 0.
-- `Planning`: 7.
+- `Planning`: 6.
 - `Operational`: 3.
-- `Designated`: 1.
+- `Designated`: 2.
 - `Enacted`: 0.
 
 The UI groups detailed statuses into public filter labels:
@@ -463,10 +474,10 @@ The UI groups detailed statuses into public filter labels:
 Current public display counts:
 
 - Tracked projects: 34.
-- Planning: 7.
+- Planning: 6.
 - Ongoing: 23.
-- Completed: 4.
-- Milestones: 85 completed out of 134 active-project milestones.
+- Completed: 5.
+- Milestones: 93 completed out of 150 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 

@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-07-31";
+export const LAST_UPDATED = "2026-08-01";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -38,7 +38,7 @@ export const SECTORS = [
         lead: "SMD Semiconductor (State-owned)",
         value: "Not disclosed",
         summary:
-          "Sarawak's state-owned semiconductor venture developing compound semiconductor chips based on Gallium Nitride (GaN), enhanced by AI. The keteq.GaN and keteq.ai platforms have been publicly unveiled, with global IP registration and commercialisation still the next visible proof points.",
+          "A state-owned semiconductor venture developing AI-enhanced gallium nitride (GaN) chips through its keteq.GaN and keteq.ai platforms. It aims to build Sarawak's semiconductor capability and support the state's technology sector.",
         milestones: [
           { date: "2026-Q1", text: "Premier announced GaN chip development success", done: true },
           { date: "TBD", text: "Global IP registration", done: false },
@@ -65,7 +65,7 @@ export const SECTORS = [
         statusColor: "#d97706",
         lead: "Sarawak Government / Department of Agriculture",
         value: "RM1 billion",
-        summary: "Statewide paddy irrigation, drainage, and farm road programme to boost rice self-sufficiency. RM1B has been allocated, with implementation guardrails to keep infrastructure dedicated to paddy and support Sarawak's 500,000-tonne 2030 rice output target.",
+        summary: "A statewide programme for paddy irrigation, drainage and farm roads, backed by a RM1 billion allocation. It is intended to strengthen rice production and support Sarawak's food security and rice self-sufficiency.",
         milestones: [
           { date: "2024-06", text: "RM1B allocation announced for paddy cultivation", done: true },
           { date: "2026", text: "Farmer clustering and paddy land leasing", done: false },
@@ -86,7 +86,7 @@ export const SECTORS = [
         lead: "Sarawak Government",
         value: "RM19.5 million",
         summary:
-          "Sarawak Agro-Technology Park sites at Semenggok and Tarat are intended to attract technology-based agriculture firms. Official M-FICORD reporting says a coral shrimp farm at SARTECH Tarat has operated since 2022, while the Sarawak Budget 2026 allocated RM19.5 million for further development of both sites. Completion of the wider site development has not been publicly confirmed.",
+          "Technology-based agriculture sites at Semenggok and Tarat, including a coral-shrimp farm at SARTECH Tarat. Budget 2026 allocates RM19.5 million for further development of both sites to support agricultural innovation and commercialisation.",
         milestones: [
           { date: "2022", text: "Coral shrimp farm began operating at SARTECH Tarat", done: true },
           { date: "2022-11-22", text: "RM5M allocated to Semenggok and Tarat", done: true },
@@ -106,7 +106,7 @@ export const SECTORS = [
         lead: "Ministry of Food Industry, Commodity and Regional Development / LCDA",
         value: "RM180 million",
         summary:
-          "Commercial-agriculture development at Sungai Baji, Sarikei. The PCDS 2030 action plan recorded RM180 million in planned state funding, comprising RM29 million approved under RMK-12 and an estimated RM151 million for the remaining area. Official reporting said the infrastructure and agricultural components were completed by October 2025, with LCDA appointing an anchor company in May 2025. Operations and commercial production remain the next public milestones.",
+          "A commercial-agriculture development in Sungai Baji, Sarikei. Planned state funding totals RM180 million, comprising RM29 million approved under RMK-12 and an estimated RM151 million for the remaining area, to support agricultural production and investment.",
         milestones: [
           { date: "2025-05-14", text: "LCDA appointed the anchor company", done: true },
           { date: "2025-10", text: "Infrastructure and agricultural components completed", done: true },
@@ -133,7 +133,7 @@ export const SECTORS = [
         statusColor: "#16a34a",
         lead: "Sarawak Government / UNESCO",
         value: "Not disclosed",
-        summary: "3,112 km\u00b2 geopark covering Kuching-Santubong-Bako region. Officially recognised as UNESCO Global Geopark on April 27, 2026 \u2014 Malaysia's 3rd after Langkawi and Kinabalu. Branded \u201cBorneo's Cradle of Origin\u201d for unique geological heritage.",
+        summary: "A 3,112 km² UNESCO Global Geopark across Kuching, Santubong and Bako, recognised for its geological significance. Known as Borneo's Cradle of Origin, it supports conservation, education and geotourism around Sarawak's natural heritage.",
         milestones: [
           { date: "2024-10", text: "Geopark nomination dossier prepared", done: true },
           { date: "2025-06", text: "UNESCO field evaluation completed", done: true },
@@ -153,7 +153,7 @@ export const SECTORS = [
         statusColor: "#16a34a",
         lead: "Sarawak Forestry Corporation / Sarawak Museum Department",
         value: "Not disclosed",
-        summary: "The Niah Caves complex within Niah National Park preserves at least 50,000 years of human interaction with rainforest environments. UNESCO inscribed the property as a World Heritage Site in 2024 under the official name The Archaeological Heritage of Niah National Park’s Caves Complex.",
+        summary: "A UNESCO World Heritage property in Niah National Park centred on a caves complex that preserves at least 50,000 years of human interaction with rainforest environments. It safeguards evidence of a long human and environmental history in Sarawak.",
         milestones: [
           { date: "2019", text: "Nominated for UNESCO World Heritage listing", done: true },
           { date: "2024", text: "Inscribed as UNESCO World Heritage Site", done: true },
@@ -178,7 +178,7 @@ export const SECTORS = [
         lead: "Sarawak Government",
         value: "Not applicable",
         summary:
-          "Provides the state framework for regulating and managing greenhouse gas emissions. NREB's Greenhouse Gas Management System Phase 1 began operating in February 2026. Scheduled economic sectors must register and submit annual carbon emissions reports supported by accredited external auditors.",
+          "A state ordinance for regulating and managing greenhouse gas emissions. It requires scheduled sectors to register and submit annual emissions reports supported by accredited external auditors, strengthening Sarawak's climate governance and emissions accountability.",
         milestones: [
           { date: "2023", text: "Ordinance enacted", done: true },
           { date: "2025", text: "Accredited external auditor rules established", done: true },
@@ -198,7 +198,7 @@ export const SECTORS = [
         lead: "Ministry of Urban Development and Natural Resources / Sarawak Forestry Corporation",
         value: "RM30 million",
         summary:
-          "Three-stage ecotourism and biodiversity-research development within Semenggoh Nature Reserve. The project integrates upgrades to the wildlife-centre entrance, visitor facilities, botanical gardens and research infrastructure. RM30 million and a foundation-laying ceremony were reported in August 2020.",
+          "A three-stage ecotourism and biodiversity-research development in Semenggoh Nature Reserve, covering the Wildlife Centre entrance, visitor facilities, botanical gardens and research infrastructure. It has a RM30 million allocation to strengthen conservation, visitor access and research.",
         milestones: [
           { date: "2020-08-19", text: "Foundation ceremony and RM30M allocation announced", done: true },
           { date: "TBD", text: "Phase 1 Wildlife Centre Zone reaches completion", done: false },
@@ -216,7 +216,7 @@ export const SECTORS = [
         lead: "Sarawak Forestry Corporation / Sarawak Government",
         value: "RM30 million",
         summary:
-          "Marine eco-tourism and conservation facility at Piasau Nature Reserve in Miri. The development will add an interpretation centre and offices supporting management of Miri-Sibuti Coral Reefs National Park and Luconia Shoal National Park. Construction began in August 2025 and completion is scheduled for early August 2027.",
+          "A RM30 million marine ecotourism and conservation facility at Piasau Nature Reserve in Miri. It combines an interpretation centre and offices supporting the Miri-Sibuti Coral Reefs and Luconia Shoal national parks, connecting visitors with marine conservation.",
         milestones: [
           { date: "2025-08-05", text: "Discovery centre development commenced", done: true },
           { date: "2027-08", text: "Discovery centre reaches completion", done: false },
@@ -240,7 +240,7 @@ export const SECTORS = [
         lead: "Besra Gold Inc / North Borneo Gold Sdn Bhd",
         value: "RM1.38 billion",
         summary:
-          "Gold exploration and development project in Bau led by Besra Gold through North Borneo Gold. The PCDS 2030 Highlights 2023 report projected RM1.38 billion in upstream investment. An independent review in November 2025 identified tenure and further technical studies as critical, while 2026 announcements record conditional progress on renewal of the Jugan mining lease. Commercial development timing remains unconfirmed.",
+          "A gold exploration and development project in Bau led by Besra Gold through North Borneo Gold. PCDS 2030 Highlights 2023 projects RM1.38 billion in upstream investment, supporting Sarawak's mining and resource-development sector.",
         milestones: [
           { date: "2025-11-13", text: "Independent technical review completed", done: true },
           { date: "2026-02-25", text: "Jugan mining lease renewal conditionally approved", done: true },
@@ -269,7 +269,7 @@ export const SECTORS = [
         lead: "JKR / Sarawak Government",
         value: "RM1.52 billion",
         summary:
-          "Sarawak's first dedicated cancer centre in Kota Samarahan, with a preliminary project estimate of RM1.52 billion. Sarawak fronted RM500M for medical equipment, and the project entered design-and-build procurement in July 2026. Construction is targeted to start in January 2027, with completion expected by 2032.",
+          "A planned specialist cancer centre in Kota Samarahan with a preliminary project estimate of RM1.52 billion. It is intended to expand access to dedicated cancer care in Sarawak.",
         milestones: [
           { date: "2025-12-03", text: "Preliminary RM1.52B cost estimate announced", done: true },
           { date: "2025-12-16", text: "Prime Minister directed expedited Q1 2026 tendering", done: true },
@@ -298,17 +298,21 @@ export const SECTORS = [
       {
         name: "FutureData — Kuching Data Centre Park",
         displayName: "Kuching Data Centre Park",
-        status: "In Progress",
-        statusColor: "#d97706",
+        status: "Planning",
+        statusColor: "#4f46e5",
         lead: "TSG Group / Global Telecommunications Group",
         value: "USD130 million",
         summary:
-          "500MW data centre park in Kuching, with USD130 million reported for Phase 1. The first facility has 17MW IT capacity for Global Telecommunications Group. Aligned with Sarawak Digital Economy Blueprint 2030. Sarawak's abundant hydropower makes it attractive for energy-intensive data centre operations, with first operations targeted in 2026.",
+          "A planned 500MW data centre park in Kuching, with its first 17MW facility intended for Global Telecommunications Group. The first facility represents an investment above USD130 million and supports Sarawak's digital-economy and renewable-energy ambitions.",
         milestones: [
-          { date: "2025-Q2", text: "Construction began on first facility", done: true },
+          { date: "2023-06", text: "FutureData Park announced", done: true },
+          { date: "2024-10-09", text: "Global Telecommunications named first off-taker", done: true },
+          { date: "TBD", text: "Construction of first 17MW facility begins", done: false },
           { date: "2026", text: "First 17MW data centre begins operations", done: false },
         ],
         sources: [
+          { label: "TSG Group — First 17MW FutureData off-taker (Oct 2024)", url: "https://tsggroup.my/2024/10/09/sarawaks-futuredata-welcomes-1st-offtaker-a-17mw-data-center/" },
+          { label: "InvestSarawak — FutureData first off-taker and schedule (Oct 2024)", url: "https://investsarawak.gov.my/global-telecommunications-first-off-taker-for-kuchings-futuredata-park/" },
           { label: "DCD — FutureData first off-taker (2025)", url: "https://www.datacenterdynamics.com/en/news/futuredata-announces-first-off-taker-at-500mw-malaysian-data-center-park-in-sarawak/" },
         ],
       },
@@ -330,9 +334,12 @@ export const SECTORS = [
           "Industrial microalgae production and carbon capture facility at Sarawak Energy's Sejingkat coal-fired power plant. The five-hectare C4 Sarawak facility received over USD18.3 million in Japanese government funding and uses flue gas to cultivate microalgae for biomass and carbon capture.",
         milestones: [
           { date: "2020", text: "Microalgae carbon-capture project began", done: true },
+          { date: "2023-03-20", text: "Five-hectare C4 facility construction completed", done: true },
+          { date: "2023-03-20", text: "Industrial microalgae production began", done: true },
           { date: "2023-05-10", text: "Industrial microalgae facility officially launched", done: true },
         ],
         sources: [
+          { label: "CHITOSE Group — C4 construction completed and production began (Mar 2023)", url: "https://chitose-bio.com/news/5155/" },
           { label: "Sarawak Energy — C4 Sarawak launch (May 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/official-launching-of-sarawaks-first-industrial-microalgae-production-facility-chitose-carbon-capture-central-sarawak" },
           { label: "DayakDaily — Japanese funding for C4 Sarawak (Dec 2025)", url: "https://dayakdaily.com/the-algae-revolution-sarawaks-eco-innovative-climate-solution/" },
         ],
@@ -344,7 +351,7 @@ export const SECTORS = [
         lead: "Sarawak Biodiversity Centre / BioVerde Technologies",
         value: "RM10 million",
         summary:
-          "A 100-acre, four-phase bioindustrial hub in Kota Samarahan and the anchor project for a current delivery package that also includes the associated SBC Bioprocess Commercial Centre. The state allocated RM10 million to both facilities under Budget 2026, and JKR Sarawak awarded their combined tender in June 2026. BioVerde manages, develops and will operate the park, while SBC groups both facilities under its Innovation and Commercialisation division.",
+          "A 100-acre, four-phase bioindustrial hub in Kota Samarahan for bio-commercialisation. Budget 2026 provides a joint RM10 million allocation for the park and the SBC Bioprocess Commercial Centre, supporting facilities for turning biodiversity research into commercial applications.",
         milestones: [
           { date: "2024-05-30", text: "Four-phase Bioindustrial Park development plan announced", done: true },
           { date: "2025", text: "BioVerde established with park management mandate", done: true },
@@ -371,7 +378,7 @@ export const SECTORS = [
         lead: "Zecon Berhad",
         value: "RM328 million",
         summary:
-          "A 3,000-acre green technology development near Demak Laut Industrial Park and Senari Port, combining solar generation, battery storage and AI-ready data-centre sites. Phase 1 covers 300 acres and a 100MWac agrivoltaic solar facility. Site preparation was under way by May 2026, and a RM328 million EPCC contract was awarded in July 2026, with commercial operations scheduled for December 2027.",
+          "A 3,000-acre green-technology development near Demak Laut and Senari, combining solar generation, battery storage and AI-ready data centres. Phase 1 covers 300 acres and a 100MWac facility under a RM328 million EPCC contract, supporting Sarawak's digital and clean-energy infrastructure.",
         milestones: [
           { date: "2025-02", text: "300MW solar-generation licence obtained", done: true },
           { date: "2025-10", text: "30-year power purchase agreement signed", done: true },
@@ -395,13 +402,15 @@ export const SECTORS = [
         lead: "PETRONAS / MMHE",
         value: "RM4.5 billion",
         summary:
-          "RM4.5 billion Phase 2 carbon capture and storage project associated with PETRONAS' offshore Kasawari Field. The 2022 project estimate covers the CCS platform and its connection to the Phase 1 central processing platform. MMHE received the EPCIC contract in November 2022, and PETRONAS said in April 2026 that it was examining whether first CO2 injection could be brought forward to 2027.",
+          "A Phase 2 carbon capture and storage development associated with PETRONAS' offshore Kasawari Field. A 2022 estimate placed the project at RM4.5 billion for a dedicated CCS platform and its connection to the Phase 1 central processing platform.",
         milestones: [
-          { date: "2022-11-29", text: "MMHE awarded Kasawari CCS EPCIC contract", done: true },
-          { date: "2026-04-01", text: "Earlier CO2 injection plan announced", done: true },
+          { date: "2022-10-20", text: "Final investment decision approved", done: true },
+          { date: "2022-11-03", text: "MMHE awarded Kasawari CCS EPCIC contract", done: true },
+          { date: "2026-04-01", text: "PETRONAS announced earlier-injection schedule review", done: true },
           { date: "2027", text: "First CO2 injection", done: false },
         ],
         sources: [
+          { label: "PETRONAS — Kasawari FID and EPCIC award dates (Nov 2022)", url: "https://www.petronas.com/media/media-releases/petronas-carigali-reaches-final-investment-decision-kasawari-ccs-project" },
           { label: "The Edge Malaysia - RM4.5B Kasawari CCS Phase 2 project (Dec 2022)", url: "https://theedgemalaysia.com/article/special-report-kasawari-ccs-project-marks-new-chapter-offshore-sector" },
           { label: "The Sun — MMHE awarded Kasawari CCS EPCIC contract (Nov 2022)", url: "https://thesun.my/news/m-sia-marine-and-heavy-engineering-unit-secures-kasawari-capture-storage-project-off-s-wak-dk10293145/" },
           { label: "The Star — PETRONAS explores 2027 first CO2 injection (Apr 2026)", url: "https://www.thestar.com.my/business/business-news/2026/04/01/petronas-seeks-to-bring-forward-first-co2-injection-at-kasawari-to-2027" },
@@ -423,7 +432,7 @@ export const SECTORS = [
         lead: "Yayasan Sarawak / Sarawak Government",
         value: "RM120-135 million",
         summary:
-          "State-backed international secondary school network intended to expand access to international-syllabus education for low-income and rural students. Public reporting in September 2025 said three of six schools had been built and three remained for completion. Applying the reported 2022 implementation estimate of RM40 million to RM45 million per school gives a derived RM120 million to RM135 million estimate for the remaining three-school expansion, not an announced contract or network total.",
+          "A state-backed international secondary school expansion intended to improve access to international-syllabus education for rural and low-income students. Based on the 2022 estimate of RM40 million to RM45 million per school, the remaining three-school expansion has a derived estimate of RM120 million to RM135 million.",
         milestones: [
           { date: "2022-04-03", text: "Petra Jaya campus began operations", done: true },
           { date: "2025-09", text: "Three campuses completed statewide", done: true },
@@ -455,7 +464,7 @@ export const SECTORS = [
         lead: "RECODA",
         value: "RM125 billion",
         summary:
-          "Major economic corridor spanning Samalaju Industrial Park, Tanjung Manis, Mukah, Baram, and Tunoh growth nodes. SCORE has reported RM125B in investment and 53,000 jobs created. RECODA also oversees URDA, HDA, and NRDA for rural/interior development.",
+          "An economic corridor linking the Samalaju, Tanjung Manis, Mukah, Baram and Tunoh growth nodes. With RM125 billion in cumulative investment, SCORE supports industrial development and rural and interior delivery through RECODA, URDA, HDA and NRDA.",
         milestones: [
           { date: "2025-05-10", text: "RM125B investment and 53,000 jobs reported", done: true },
           { date: "TBD", text: "Industrial park expansion and investor support", done: false },
@@ -473,7 +482,7 @@ export const SECTORS = [
         lead: "Federal Government / JKR",
         value: "RM16.5 billion",
         summary:
-          "A 786 km dual-carriageway upgrade from Telok Melano to Miri delivered through 11 work packages, with a reported construction cost of RM16.5 billion. The Works Minister reported 99.98 percent progress in October 2025, with ten packages completed and opened in stages. Work Package 11 in Miri remained unfinished because LAKU water pipes had to be replaced before road works could proceed.",
+          "A 786 km dual-carriageway highway from Telok Melano to Miri, delivered through 11 work packages at a RM16.5 billion construction cost. It is intended to improve road connectivity across Sarawak and link communities, towns and economic centres.",
         milestones: [
           { date: "2016", text: "Phase 1 construction commenced", done: true },
           { date: "2023-12", text: "Phase 1 reached 98.6 percent completion", done: true },
@@ -492,7 +501,7 @@ export const SECTORS = [
         lead: "Federal Government / JKR",
         value: "RM7.6 billion",
         summary:
-          "Interior road link connecting northern Sarawak and Sabah without transit through Brunei. Phase 1 from Lawas to Long Luping reached 70.05 percent physical progress in April 2026 and is expected to complete in 2027. Phase 2, valued at RM7.6 billion, was launched in September 2025, reached 10.55 percent progress by April 2026, and is scheduled to complete in 2029.",
+          "A two-phase road link connecting Sarawak and Sabah without transit through Brunei. The RM7.6 billion value applies to Phase 2 only; together, the phases are intended to improve rural and interior connectivity.",
         milestones: [
           { date: "2021", text: "Phase 1 construction commenced", done: true },
           { date: "2025-09-11", text: "Phase 2 officially launched", done: true },
@@ -520,7 +529,7 @@ export const SECTORS = [
         lead: "PETROS / Sarawak Government",
         value: "RM1 billion",
         summary:
-          "Approximately 70 km gas pipeline backed by a reported RM1 billion commitment to supply Samalaju Industrial Park and a Bintulu combined-cycle power station. The offshore section was reported completed in October 2025, and Bintulu Port Authority published a notice for pipeline pre-commissioning activities in May 2026. Progressive commercial operations are now expected from 2027.",
+          "An approximately 70 km gas pipeline backed by a RM1 billion commitment to supply Samalaju Industrial Park and a Bintulu combined-cycle power station. It supports industrial energy demand and electricity generation in the Bintulu-Samalaju corridor.",
         milestones: [
           { date: "2024-11-04", text: "RM1B commitment and pipe manufacturing reported", done: true },
           { date: "2025-10", text: "Offshore pipeline section completed", done: true },
@@ -540,7 +549,7 @@ export const SECTORS = [
         lead: "Sarawak Energy",
         value: "RM128 million",
         summary:
-          "Malaysia's first utility-scale battery energy storage system, located at Sejingkat Power Plant in Kuching. Sarawak Energy invested RM128 million in the 22-container, 60MW/82MWh facility, which was energised in December 2024 and supports grid reserves, regulation and peak-demand management.",
+          "A 60MW/82MWh battery energy storage system at Sejingkat Power Plant in Kuching, housed in 22 containers. Sarawak Energy invested RM128 million in the facility to provide grid reserve, regulation and peak-demand support.",
         milestones: [
           { date: "2024-12", text: "60MW/82MWh system energised", done: true },
           { date: "2025-02-14", text: "Utility-scale BESS commissioning announced", done: true },
@@ -558,7 +567,7 @@ export const SECTORS = [
         lead: "Sarawak Energy / Sembcorp Utilities",
         value: "Not disclosed",
         summary:
-          "Proposed cross-border interconnection to export around 1GW of renewable electricity from Sarawak to Singapore. Singapore's Energy Market Authority granted conditional approval in October 2025, allowing the project to proceed toward further regulatory approvals and licences, with electricity flow expected around 2035 or earlier.",
+          "A proposed cross-border electricity link to export around 1GW of renewable power from Sarawak to Singapore. It is intended to support regional energy trade and connect Sarawak's renewable resources with Singapore's electricity market.",
         milestones: [
           { date: "2023-03-04", text: "Techno-commercial study was under way", done: true },
           { date: "2025-10-17", text: "Conditional approval obtained", done: true },
@@ -586,7 +595,7 @@ export const SECTORS = [
         lead: "Miri Port Authority / Rimbun Prima-CCCC JV",
         value: "RM238 million",
         summary:
-          "Kuala Baram Delta dredging and training-bund project to deepen and stabilise the access channel to Miri Port. A RM238 million contract was awarded to the Rimbun Prima-CCCC joint venture in June 2024. Physical progress reached about 55 percent in April 2026, with completion targeted for October 2026.",
+          "A dredging and training-bund project at Kuala Baram to deepen and stabilise the access channel to Miri Port. The RM238 million contract supports safer, more reliable maritime access for the port.",
         milestones: [
           { date: "2024-06-19", text: "RM238M dredging contract awarded", done: true },
           { date: "2026-04-25", text: "Physical progress reached about 55 percent", done: true },
@@ -608,7 +617,7 @@ export const SECTORS = [
         lead: "Sarawak Rivers Board / Ministry of Transport Sarawak",
         value: "RM30 million",
         summary:
-          "This card tracks the operational Sarawak River navigation-safety system together with the related Miri River system under construction. The reported RM30 million value covers the first-phase Vessel Traffic Management System at Senari on the Sarawak River, not the later Miri system. The Sungai Miri system remains targeted for completion in Q3 2027.",
+          "A navigation safety and monitoring system covering the Sarawak River and the related Miri River scope. The RM30 million value covers only the first-phase Vessel Traffic Management System at Senari on the Sarawak River, supporting safer river navigation.",
         milestones: [
           { date: "2023-04-27", text: "First-phase installation commenced", done: true },
           { date: "2025-10-31", text: "Sarawak River VTMS fully operational", done: true },
@@ -627,7 +636,7 @@ export const SECTORS = [
         lead: "Sarawak Metro Sdn Bhd",
         value: "RM6 billion",
         summary:
-          "Southeast Asia's first hydrogen-powered Autonomous Rapid Transit (ART) system, backed by a reported RM6 billion state allocation. Phase 1 covers the Blue, Red and Green lines and reached 38.2 percent physical progress on April 30, 2026. Pilot operations are scheduled for Q4 2026 before full commercial operations in 2027.",
+          "A hydrogen-powered Autonomous Rapid Transit public transport system for Kuching. Phase 1 covers the Blue, Red and Green lines and has a RM6 billion state allocation, intended to improve urban mobility and connectivity.",
         milestones: [
           { date: "2025-12", text: "RM58M hydrogen plant relocation contract awarded", done: true },
           { date: "2026-Q1", text: "First two ART units arrived in Kuching", done: true },
@@ -657,7 +666,7 @@ export const SECTORS = [
         lead: "Sarawak Government / Federal Government",
         value: "RM1.8 billion",
         summary:
-          "Return of Bintulu Port to Sarawak state control from the federal government under MA63 devolution. Takeover valued at RM1.8B, agreed in principle Feb 2026, with Tripartite and Completion Agreements signed on Jun 21, 2026. Will serve as Sarawak's main port for LNG exports and SCORE corridor.",
+          "The transfer of Bintulu Port to Sarawak control under MA63, with a RM1.8 billion valuation. The port is central to LNG exports and the SCORE corridor, supporting Sarawak's industrial and trade role.",
         milestones: [
           { date: "2025-01-01", text: "12-month extension agreement signed for transition", done: true },
           { date: "2026-02-04", text: "RM1.8B takeover agreed in principle", done: true },
@@ -679,7 +688,7 @@ export const SECTORS = [
         lead: "Sarawak Government / Ministry of Transport Sarawak",
         value: "RM10 billion",
         summary:
-          "Proposed new international airport at Tanjung Embang intended as a regional aviation and logistics hub. In August 2025, the Sarawak Premier described RM10 billion as an approximate project cost. The site-verification and feasibility study was completed by May 2026 and found the location operationally and technically feasible. The Ministry of Transport Sarawak is proceeding with a federal Airport Development Request before land acquisition, site preparation, detailed design and physical construction.",
+          "A proposed regional aviation and logistics hub at Tanjung Embang. The project had an approximate RM10 billion estimate in 2025 and is intended to strengthen Sarawak's air connectivity, freight capacity and regional links.",
         milestones: [
           { date: "2025-05-21", text: "Feasibility-study consultants appointed", done: true },
           { date: "2026-05-18", text: "Site-verification and feasibility study completed", done: true },
@@ -701,7 +710,7 @@ export const SECTORS = [
         lead: "Sarawak Government / PETROS",
         value: "RM25-30 billion",
         summary:
-          "Proposed deep-sea port and gas terminal within the integrated Tanjung Embang development, with an estimated cost of RM25 billion to RM30 billion. The port master-plan design was in its final stage by April 2025, while May 2025 reporting confirmed that detailed technical and economic feasibility work was under way. Public reporting identifies the Sarawak Government and PETROS as development partners and schedules operations to begin in 2032, but no procurement or construction start has been confirmed.",
+          "A proposed marine and energy infrastructure project within the integrated Tanjung Embang development, with an estimated cost of RM25 billion to RM30 billion. It combines a deep-sea port and gas terminal intended to support maritime logistics, gas exports and regional trade.",
         milestones: [
           { date: "2025-04-20", text: "Port master-plan design reached its final stage", done: true },
           { date: "2025-05-28", text: "Technical and economic feasibility study was under way", done: true },
@@ -733,7 +742,7 @@ export const SECTORS = [
         lead: "Sarawak Energy Berhad",
         value: "RM8 billion",
         summary:
-          "1,285MW hydroelectric dam on the Baleh River in Kapit Division, led by Sarawak Energy. A 2017 estimate placed total construction cost at about RM8 billion, including financing. The diversion tunnel was completed in September 2020, river diversion began in October 2020, and dam rockfill began in May 2025. Sarawak Energy schedules reservoir impoundment for September 2027, first-unit generation for December 2029, and full generation for June 2030.",
+          "A 1,285MW hydroelectric dam on the Baleh River in Kapit, developed by Sarawak Energy. A 2017 construction estimate placed the cost at about RM8 billion, including financing, to add renewable generation and strengthen the state grid.",
         milestones: [
           { date: "2020-09", text: "Diversion tunnel completed", done: true },
           { date: "2020-10", text: "River diversion began", done: true },
@@ -757,7 +766,7 @@ export const SECTORS = [
         lead: "PT Kayan Hydropower Nusantara / Sarawak Energy-led consortium",
         value: "US$2.6 billion",
         summary:
-          "A 1,375MW hydropower project in North Kalimantan developed by PT Kayan Hydropower Nusantara, a joint venture involving Sarawak Energy, Adaro Energy Indonesia, and Kayan Patria Pratama. Groundbreaking was held in March 2023 and early works were reported underway later that year; current physical-construction progress remains publicly unclear.",
+          "A US$2.6 billion, 1,375MW hydropower project in North Kalimantan developed by PT Kayan Hydropower Nusantara, a joint venture involving Sarawak Energy, Adaro Energy Indonesia and Kayan Patria Pratama. It is intended to support regional power supply and cross-border energy development.",
         milestones: [
           { date: "2023-03-01", text: "Groundbreaking ceremony held", done: true },
           { date: "2023-10-31", text: "Early works reported underway", done: true },
@@ -766,7 +775,6 @@ export const SECTORS = [
         sources: [
           { label: "Sarawak Energy — Mentarang Induk groundbreaking (Mar 2023)", url: "https://www.sarawakenergy.com/media-info/media-releases/2023/sarawak-moves-closer-to-regional-powerhouse-aspiration-through-hydropower-venture-in-indonesia" },
           { label: "Office of the Premier — Early works underway (Oct 2023)", url: "https://premier.sarawak.gov.my/web/subpage/news_view/5662" },
-          { label: "PT Kayan Hydropower Nusantara — MIHEP project page", url: "https://www.ptkhn.com/projects/mentarang-induk-hydroelectric-project-mihep-" },
         ],
       },
       {
@@ -777,7 +785,7 @@ export const SECTORS = [
         lead: "SEDC Energy",
         value: "USD4.2 billion",
         summary:
-          "Two proposed export-scale green hydrogen developments at the Sarawak H2 Hub in Bintulu. A 2024 report valued the wider strategic partnership package encompassing H2biscus, H2ornbill, shared Sarawak Hydrogen Hub infrastructure and the Rembus Depot at USD4.2 billion. This is a historical combined package figure, not a project-level split. H2biscus entered front-end engineering design with Korean partners, while H2ornbill proceeded under a joint development agreement with ENEOS and Sumitomo. Both projects reached the engineering-design stage before their planned capacities were reduced. H2ornbill's original Japan-export concept was suspended, and both project scopes entered recalibration because of financing and offtake uncertainty. An updated project plan, revised investment value, and production timeline have not been published.",
+          "Two export-scale green hydrogen projects at the Sarawak H2 Hub in Bintulu. A 2024 strategic partnership package of USD4.2 billion covers H2biscus, H2ornbill, shared hub infrastructure and the Rembus Depot, with no project-level split, supporting Sarawak's hydrogen-export ambitions.",
         milestones: [
           { date: "2022-09", text: "H2biscus renewable power memorandum signed", done: true },
           { date: "2023-10", text: "H2ornbill joint development agreement signed", done: true },
@@ -810,7 +818,7 @@ export const SECTORS = [
         lead: "Sarawak Energy / China Power International Holdings / Trina Solar",
         value: "RM184 million",
         summary:
-          "Sarawak Energy's RM184 million floating solar farm on the Batang Ai HEP reservoir, developed with China Power International Holdings and Trina Solar. The 50MW hydro-solar hybrid facility was commissioned in December 2024. Sarawak Energy is also planning an additional 120MW expansion at Batang Ai.",
+          "A RM184 million, 50MW hydro-solar hybrid floating farm on the Batang Ai HEP reservoir, developed by Sarawak Energy with China Power International Holdings and Trina Solar. It adds renewable electricity generation by combining floating solar with hydropower infrastructure.",
         milestones: [
           { date: "2023-06-20", text: "Construction officially began", done: true },
           { date: "2024-06-20", text: "Construction reached 35 percent completion", done: true },
@@ -835,7 +843,7 @@ export const SECTORS = [
         lead: "Not disclosed",
         value: "RM6 billion",
         summary:
-          "Proposed agrovoltaic development at Temala near Long Lama within the state-approved Baram Renewable Energy Economic Zone. The reported RM6 billion scope combines 1,500 hectares of modern agriculture, 500 hectares of paddy cultivation, a logistics hub, a 300MW power station and a supporting township. The official project report does not identify the implementing parties, contracts, delivery sequence or schedule.",
+          "A proposed integrated agrovoltaic development at Temala near Long Lama in the Baram Renewable Energy Economic Zone, estimated at RM6 billion. Its scope includes 1,500 hectares of modern agriculture, 500 hectares of paddy, a logistics hub, a 300MW power station and a supporting township.",
         milestones: [
           { date: "2026-03-29", text: "Project scope and estimate announced", done: true },
           { date: "TBD", text: "Agriculture and paddy components enter operation", done: false },
