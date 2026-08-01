@@ -83,7 +83,9 @@ Current type style:
 - Small uppercase labels for metadata.
 - Compact body text for project summaries and milestones.
 - Introductory copy at `16px` with a `1.6` line height and restrained dark-gray emphasis on only
-  the most important strategy facts and the `project tracker` phrase.
+  the most important strategy facts, including the explicitly named Sarawak GDP-growth target,
+  and the `project tracker` phrase. When emphasized copy changes, update the exact emphasis phrase
+  mappings in `src/App.jsx` for both English and Bahasa Melayu so the treatment remains aligned.
 - A compact `11px` linked last-updated pill so freshness metadata remains visible without competing
   with the introduction.
 - No decorative display font.

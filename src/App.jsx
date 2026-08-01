@@ -54,13 +54,13 @@ const STATUS_CONFIG = {
 const INTRO_EMPHASIS = {
   en: [
     "10-year Post COVID-19 Development Strategy",
-    "8% annual growth",
+    "Sarawak's GDP by 8% a year",
     "RM282 billion by 2030",
     "project tracker",
   ],
   ms: [
     "Strategi Pembangunan Pasca COVID-19 Kerajaan Sarawak selama 10 tahun",
-    "pertumbuhan tahunan 8%",
+    "pertumbuhan KDNK Sarawak sebanyak 8% setahun",
     "RM282 bilion menjelang 2030",
     "Project tracker",
   ],

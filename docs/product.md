@@ -31,9 +31,9 @@ The current product is a small static React site with:
 - An icon theme control that defaults to the reader's system preference, supports explicit light or dark selection, and remembers that selection locally.
 - The last-updated pill links directly to the editorial update history, which has a visible top-level pill back to the matching-language tracker.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
-- Two short introductory paragraphs explaining the strategy, its central economic target, and
+- Two short introductory paragraphs explaining the strategy, its central Sarawak GDP target, and
   the project tracker purpose without adding a separate promotional About section.
-- Restrained emphasis on the 10-year strategy, 8% annual-growth target, RM282 billion 2030 target,
+- Restrained emphasis on the 10-year strategy, 8% annual Sarawak GDP-growth target, RM282 billion 2030 target,
   and project-tracker purpose so readers can scan the key points quickly.
 - Plain-language source wording that promises links to publicly available sources rather than
   referring abstractly to "supporting public evidence".
