@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .local-preview.pid
+.playwright-cli/
 
 # Editor directories and files
 .vscode/*
