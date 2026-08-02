@@ -26,11 +26,10 @@ Current layout order:
 2. Two short introductory paragraphs covering the strategy and tracker purpose.
 3. Data-freshness link immediately above the summary metrics, with a subtle `↗` cue that opens the
    matching-language update history.
-4. Summary metrics.
-5. Status filter buttons.
-6. Two-column project-card grid on desktop.
-7. One-column project-card grid on mobile.
-8. Footer disclaimer and source-methodology note.
+4. Summary metrics, which also provide the primary status filters.
+5. Two-column project-card grid on desktop.
+6. One-column project-card grid on mobile.
+7. Footer disclaimer and source-methodology note.
 
 The PCDS context belongs near the title so readers understand the dashboard at first glance.
 Keep it succinct and integrated with the introduction rather than placing a separate About section
@@ -39,14 +38,15 @@ below the project grid.
 The introduction uses a maximum reading width of about `720px`. This keeps the text visually
 connected to the compact title block and avoids an overly wide paragraph slab on desktop.
 
-Filter controls provide simple status navigation before readers scan the project cards. Filter
-options and the active classification-clear chip use the same restrained lift, tint, shadow, and
-press response as the header controls.
+Summary metric boxes provide simple status navigation before readers scan the project cards. Their
+active, hover, focus, and press states make the filtering behavior discoverable without duplicating
+the same choices in a second pill group. The active classification-clear chip remains separate because
+category filters originate inside the project cards.
 
 The language, theme, and navigation pills use one shared physical system: a fully rounded capsule,
 an `11px` label, and a `36px` total height on desktop. The language control retains its segmented
-outer shell. The status filters keep their established compact grouped treatment so they remain
-visually secondary to the dashboard summary.
+outer shell. Status filtering belongs to the summary metrics, while the Milestones metric resets
+filters and provides a bulk expand/collapse control for all projects.
 
 The update history uses the existing last-updated pill as its entry point. Do not add a separate
 navigation line beneath it or let the link compete with the project summary metrics.
@@ -107,11 +107,16 @@ Main interface colors:
 - Development environment: orange `#f97316`.
 - Preview environment: purple `#7c3aed`.
 
-Project-card status badges display the project state, but their colour follows the project sector/enabler accent rather than an independent status colour.
+Project-card status badges display the project state using the shared neutral treatment. Category colour is
+reserved for the classification pill so the filterable identity remains easy to scan.
 
-Sector colors are stored in `src/trackerData.js` and appear on card accents, category pills, project-card status badges, milestone indicators, completed milestone dates, and source badges.
+Sector colors are stored in `src/trackerData.js` and appear primarily on the classification pills and
+their interactive filter states.
 
-Category colour should be strongest on project identity and progress signals, especially category pills and milestone bars. Supporting elements such as status pills, next milestone surfaces, source badges, and expand controls should use lighter tints, outlines, or thinner accents so the dashboard stays credible and scan-first. Summary metrics use separate neutral surfaces, modest gaps, and quiet borders so the dashboard hierarchy stays calm and scan-first.
+Category colour should be reserved for project identity and filtering, especially the joined classification
+pill. Status badges, milestone indicators, dates, next milestone surfaces, source badges, and expand
+controls use a shared neutral palette so the dashboard stays credible and scan-first. Summary metrics
+use separate neutral surfaces, modest gaps, and quiet borders so the dashboard hierarchy stays calm.
 
 ## Components
 
@@ -153,9 +158,21 @@ Current interactions:
 - The icon theme button switches between light and dark modes and remembers the selection. Its
   icon crossfades and rotates between moon and sun states, while the button lifts into a soft
   tinted surface with a subtle shadow on hover or keyboard focus and gives a small press response.
-- Status filter buttons change the visible cards and use the same restrained hover tint, lift,
-  shadow, and press response. When an alternate status is being explored, the active status
-  temporarily flattens so attention follows the alternate choice.
+- The `Projects`, `Planning`, `Ongoing`, and `Completed` summary metrics are interactive status
+  filters. They use `aria-pressed`, a restrained hover/focus lift, and a persistent active treatment;
+  the active `Projects` metric stays neutral and flat, while the narrower status metrics retain the
+  pressed treatment. Hovering another metric temporarily flattens the selected metric so attention
+  follows the target.
+  On initial load or refresh, metric values count up with a short eased reveal; reduced-motion
+  preferences show the final values immediately.
+  The `Milestones` metric uses `aria-expanded` to reset status and category filters, show all projects,
+  and expand their details; clicking it again collapses all projects. While it is active, the status
+  metrics remain available but are visually unselected. Choosing another status or category filter
+  collapses expanded cards before applying the new filter. The separate status pill
+  group is intentionally omitted so the dashboard has one primary status-filtering path. Applying a
+  status or category filter briefly fades the current card grid out, then reveals the filtered cards
+  with a short lead-in, a row-aware stagger, and a restrained scale transition; reduced-motion
+  preferences bypass this transition.
 - Each project card's joined classification pill morphs into two separated filter buttons on hover
   or keyboard focus. The solid `Sector` or `Enabler` half filters the broad group, while the named
   half filters the specific category. The two halves stay in flow and ease through their overlap
@@ -164,10 +181,13 @@ Current interactions:
   disabled when reduced motion is requested. A compact active-filter pill remains above the grid so a
   classification filter can always be cleared, including when its combination with a status filter
   returns no cards.
-- Project cards expand and collapse. Their `View details` pill fills with the card's category accent
-  and lifts slightly when the pill is hovered or the card button receives keyboard focus. The
-  card-header classification and detail pills stay visually centered even though their heights
-  differ.
+- Project cards expand and collapse. A collapsed card's `View details` control rests as a bare down
+  chevron inside a fixed hit area; expanded cards use the same control with an up chevron. Hover or
+  keyboard focus, including hovering the card itself, reveals a soft neutral rounded-square surface
+  and slight lift without changing the control's size, while the parent card button preserves the
+  localized accessible expand/collapse label.
+- Whole cards use a restrained neutral hover/focus treatment: a small lift, stronger neutral border,
+  and soft shadow while their white surface and category classification colours remain unchanged.
 - Source links open in a new tab.
 - The linked last-updated control rests as plain metadata in the standard muted text colour, aligned with
   the hero text. Hover or keyboard focus reveals one soft tinted pill aligned with the summary metrics and

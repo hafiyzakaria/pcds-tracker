@@ -77,7 +77,7 @@ a:focus-visible {
   padding: 3px;
   border: 1px solid var(--border);
   border-radius: var(--pill-control-radius);
-  background-color: var(--surface-subtle);
+  background-color: var(--surface);
   color: var(--text-muted);
   text-decoration: none;
   transform: translateY(0);
@@ -215,7 +215,74 @@ a:focus-visible {
   transform: translateY(0) scale(0.97);
 }
 
-.filter-option,
+.summary-metric {
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  background-color: var(--surface);
+  color: inherit;
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.summary-metric--interactive {
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.summary-metric--active {
+  border-color: color-mix(in srgb, var(--brand) 32%, transparent);
+  background-color: color-mix(in srgb, var(--brand) 5%, var(--surface));
+  box-shadow: 0 1px 2px var(--control-shadow);
+}
+
+.summary-metric--active > div:first-child {
+  color: var(--brand-strong) !important;
+}
+
+.summary-metric--flat-active.summary-metric--active {
+  border-color: var(--border-soft);
+  background-color: var(--surface);
+  box-shadow: none;
+}
+
+.summary-metric--flat-active.summary-metric--active > div:first-child {
+  color: var(--text-strong) !important;
+}
+
+.summary-metric--interactive:hover,
+.summary-metric--interactive:focus-visible {
+  opacity: 1;
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--brand) 32%, transparent);
+  background-color: color-mix(in srgb, var(--brand) 8%, var(--surface));
+  box-shadow: 0 2px 5px var(--control-shadow);
+}
+
+.summary-metric--interactive:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.summary-wrap:has(.summary-metric--interactive:not(.summary-metric--active):hover)
+  .summary-metric--active,
+.summary-wrap:has(.summary-metric--interactive:not(.summary-metric--active):focus-visible)
+  .summary-metric--active {
+  transform: translateY(0);
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.summary-wrap:has(.summary-metric--interactive:not(.summary-metric--active):hover)
+  .summary-metric--active > div:first-child,
+.summary-wrap:has(.summary-metric--interactive:not(.summary-metric--active):focus-visible)
+  .summary-metric--active > div:first-child {
+  color: var(--text-muted) !important;
+}
+
 .classification-clear-button {
   border: 1px solid transparent;
   background-color: transparent;
@@ -230,15 +297,6 @@ a:focus-visible {
     color 180ms ease;
 }
 
-.filter-option--active {
-  border-color: color-mix(in srgb, var(--brand) 32%, transparent);
-  background-color: var(--surface);
-  color: var(--brand-strong);
-  box-shadow: 0 1px 2px var(--control-shadow);
-}
-
-.filter-option:hover,
-.filter-option:focus-visible,
 .classification-clear-button:hover,
 .classification-clear-button:focus-visible {
   opacity: 1;
@@ -249,18 +307,6 @@ a:focus-visible {
   box-shadow: 0 2px 5px var(--control-shadow);
 }
 
-.filter-controls:has(.filter-option:not(.filter-option--active):hover)
-  .filter-option--active,
-.filter-controls:has(.filter-option:not(.filter-option--active):focus-visible)
-  .filter-option--active {
-  transform: translateY(0);
-  border-color: transparent;
-  background-color: transparent;
-  color: var(--text-muted);
-  box-shadow: none;
-}
-
-.filter-option:active,
 .classification-clear-button:active {
   transform: translateY(0) scale(0.97);
 }
@@ -350,6 +396,18 @@ a:focus-visible {
 }
 
 .project-card-details-pill {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  min-height: 28px !important;
+  padding: 0 !important;
+  border: 1px solid transparent !important;
+  border-radius: 6px !important;
+  background-color: transparent !important;
+  color: var(--text-secondary) !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+  overflow: visible;
   transition:
     transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
     background-color 160ms ease,
@@ -358,13 +416,60 @@ a:focus-visible {
     color 160ms ease;
 }
 
+.project-card-details-pill::after {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 160ms ease;
+}
+
+.project-card-details-pill[data-expanded="true"]::after {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+@keyframes project-card-filter-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.project-card-grid--filter-exit .project-card {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px) scale(0.985);
+  transition: opacity 240ms ease, transform 240ms ease !important;
+}
+
+.project-card-grid--filter-enter .project-card {
+  animation: project-card-filter-enter 350ms cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  animation-delay: var(--project-filter-delay, 0ms);
+}
+
 .project-card-details-pill:hover,
-.project-card-button:focus-visible .project-card-details-pill {
+.project-card-button:focus-visible .project-card-details-pill,
+.project-card:hover .project-card-details-pill {
   transform: translateY(-1px);
-  border-color: var(--project-card-accent) !important;
-  background-color: var(--project-card-accent) !important;
-  color: #ffffff !important;
-  box-shadow: 0 3px 8px color-mix(in srgb, var(--project-card-accent) 24%, transparent);
+  border-color: var(--border-soft) !important;
+  background-color: var(--surface-subtle) !important;
+  color: var(--text-strong) !important;
+  box-shadow: 0 2px 5px var(--control-shadow);
+}
+
+.project-card:hover,
+.project-card:has(.project-card-button:focus-visible) {
+  transform: translateY(-2px);
+  border-color: var(--border-strong) !important;
+  box-shadow: 0 8px 18px var(--control-shadow);
 }
 
 @media (hover: none), (pointer: coarse) {
@@ -385,11 +490,20 @@ a:focus-visible {
   .tracker-updates-link-arrow,
   .navigation-pill-link-inner,
   .language-toggle-option,
-  .filter-option,
+  .summary-metric,
   .classification-clear-button,
   .project-classification-button,
-  .project-card-details-pill {
+  .project-card-details-pill,
+  .project-card-details-pill::after {
     transition: none;
+  }
+
+  .project-card-grid--filter-exit .project-card,
+  .project-card-grid--filter-enter .project-card {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    transition: none !important;
   }
 }
 
@@ -417,7 +531,7 @@ a:focus-visible {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--border);
-  background-color: var(--surface-subtle);
+  background-color: var(--surface);
   color: var(--text-body);
   transform: translateY(0);
   transition:

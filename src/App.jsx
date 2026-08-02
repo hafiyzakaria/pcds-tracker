@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
   ECONOMIC_SECTOR_IDS,
@@ -22,7 +22,11 @@ import {
 import { applyDocumentTheme } from "./theme.js";
 
 const FONT_STACK = "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
-const DEFAULT_ACCENT_COLOR = "#6b7280";
+const FILTER_EXIT_DURATION_MS = 240;
+const FILTER_ENTER_SETTLE_MS = 1500;
+const FILTER_ENTER_LEAD_MS = 100;
+const FILTER_ENTER_STAGGER_MS = 72;
+const FILTER_ENTER_MAX_STAGGER_INDEX = 14;
 
 const STATUS_CONFIG = {
   "Awaiting Decision": {
@@ -148,20 +152,6 @@ function getMilestoneCountLabel(row, copy) {
   return copy.milestones.count(row.doneMilestones, row.totalMilestones);
 }
 
-function getAccentBadgeTone(color) {
-  const accent = color || DEFAULT_ACCENT_COLOR;
-
-  return {
-    bg: `color-mix(in srgb, ${accent} 9%, var(--surface))`,
-    border: `color-mix(in srgb, ${accent} 28%, var(--surface))`,
-    text: `color-mix(in srgb, ${accent} 78%, var(--accent-text-mix))`,
-  };
-}
-
-function getAccentTextColor(color) {
-  return `color-mix(in srgb, ${color || DEFAULT_ACCENT_COLOR} 78%, var(--accent-text-mix))`;
-}
-
 function getProjectRows(sectors, copy) {
   return sectors.filter((sector) => !sector.isOverview).flatMap((sector) => {
     const kind = ECONOMIC_SECTOR_IDS.has(sector.id) ? "sector" : "enabler";
@@ -219,9 +209,68 @@ function formatLastUpdated(value, language = DEFAULT_LANGUAGE) {
   }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
-function StatusBadge({ statusMeta, accentColor }) {
-  const tone = getAccentBadgeTone(accentColor);
+function useCountUp(target, duration = 1400) {
+  const [displayValue, setDisplayValue] = useState(0);
 
+  useEffect(() => {
+    if (!Number.isFinite(target) || target === 0 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const frameId = window.requestAnimationFrame(() => setDisplayValue(Number.isFinite(target) ? target : 0));
+      return () => window.cancelAnimationFrame(frameId);
+    }
+
+    let frameId = null;
+    let startTime = null;
+    const animate = (timestamp) => {
+      if (startTime === null) {
+        startTime = timestamp;
+      }
+
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      setDisplayValue(Math.round(target * easedProgress));
+
+      if (progress < 1) {
+        frameId = window.requestAnimationFrame(animate);
+      }
+    };
+
+    frameId = window.requestAnimationFrame(animate);
+
+    return () => {
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
+    };
+  }, [duration, target]);
+
+  return displayValue;
+}
+
+function AnimatedMetricNumber({ value }) {
+  const displayValue = useCountUp(value);
+
+  return <span>{displayValue}</span>;
+}
+
+function AnimatedMetricValue({ value }) {
+  const segments = String(value).split(/(\d+)/);
+
+  return (
+    <span aria-hidden="true">
+      {segments.map((segment, index) => {
+        if (!segment) {
+          return null;
+        }
+
+        return /^\d+$/.test(segment)
+          ? <AnimatedMetricNumber key={`${segment}-${index}`} value={Number(segment)} />
+          : <span key={`${segment}-${index}`}>{segment}</span>;
+      })}
+    </span>
+  );
+}
+
+function StatusBadge({ statusMeta }) {
   return (
     <span
       title={statusMeta.description}
@@ -235,9 +284,9 @@ function StatusBadge({ statusMeta, accentColor }) {
         minHeight: "24px",
         padding: "4px 9px",
         borderRadius: "3px",
-        border: `1px solid ${tone.border}`,
-        backgroundColor: tone.bg,
-        color: tone.text,
+        border: "1px solid var(--border)",
+        backgroundColor: "var(--surface)",
+        color: "var(--text-secondary)",
         fontSize: "10px",
         fontWeight: 850,
         letterSpacing: "0.08em",
@@ -252,15 +301,27 @@ function StatusBadge({ statusMeta, accentColor }) {
   );
 }
 
-function Metric({ value, label }) {
+function Metric({ value, label, active = false, flatActive = false, ariaLabel, expanded, onClick }) {
+  const interactive = typeof onClick === "function";
+  const MetricElement = interactive ? "button" : "div";
+  const interactionProps = interactive
+    ? {
+        type: "button",
+        onClick,
+        "aria-label": ariaLabel || `${label}: ${value}`,
+        ...(expanded === undefined ? { "aria-pressed": active } : { "aria-expanded": expanded }),
+      }
+    : {};
+
   return (
-    <div
+    <MetricElement
+      {...interactionProps}
+      className={`summary-metric${interactive ? " summary-metric--interactive" : ""}${active ? " summary-metric--active" : ""}${flatActive ? " summary-metric--flat-active" : ""}`}
       style={{
         minHeight: "78px",
         padding: "13px 15px 14px",
-        border: "1px solid var(--border-soft)",
-        borderRadius: "8px",
-        backgroundColor: "var(--surface)",
+        width: "100%",
+        textAlign: "left",
       }}
     >
       <div
@@ -269,10 +330,11 @@ function Metric({ value, label }) {
           fontFamily: FONT_STACK,
           fontSize: "23px",
           fontWeight: 800,
+          fontVariantNumeric: "tabular-nums",
           lineHeight: 1,
         }}
       >
-        {value}
+        <AnimatedMetricValue value={value} />
       </div>
       <div
         style={{
@@ -288,17 +350,23 @@ function Metric({ value, label }) {
       >
         {label}
       </div>
-    </div>
+    </MetricElement>
   );
 }
 
-function SummaryMetrics({ rows, copy }) {
+function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAll, rows, copy }) {
   const planning = rows.filter((row) => row.statusMeta.group === "planning").length;
   const ongoing = rows.filter((row) => row.statusMeta.group === "ongoing").length;
   const completeLike = rows.filter((row) => row.statusMeta.group === "completed").length;
   const doneMilestones = rows.reduce((sum, row) => sum + row.doneMilestones, 0);
   const totalMilestones = rows.reduce((sum, row) => sum + row.totalMilestones, 0);
   const milestoneProgress = totalMilestones ? (doneMilestones / totalMilestones) * 100 : 0;
+  const statusMetrics = [
+    { id: "all", value: rows.length, label: copy.metrics.trackedProjects },
+    { id: "planning", value: planning, label: copy.metrics.planning },
+    { id: "ongoing", value: ongoing, label: copy.metrics.ongoing },
+    { id: "completed", value: completeLike, label: copy.metrics.completed },
+  ];
 
   return (
     <section className="summary-wrap">
@@ -310,23 +378,39 @@ function SummaryMetrics({ rows, copy }) {
           gap: "10px",
         }}
       >
-        <Metric value={rows.length} label={copy.metrics.trackedProjects} />
-        <Metric value={planning} label={copy.metrics.planning} />
-        <Metric value={ongoing} label={copy.metrics.ongoing} />
-        <Metric value={completeLike} label={copy.metrics.completed} />
+        {statusMetrics.map((metric) => (
+          <Metric
+            flatActive={metric.id === "all"}
+            key={metric.id}
+            active={!allVisibleExpanded && activeFilter === metric.id}
+            label={metric.label}
+            onClick={() => onFilter(metric.id)}
+            value={metric.value}
+          />
+        ))}
         <div className="desktop-milestone-metric">
-          <Metric value={`${doneMilestones}/${totalMilestones}`} label={copy.metrics.milestones} />
+          <Metric
+            active={allVisibleExpanded}
+            ariaLabel={allVisibleExpanded ? copy.card.collapseAll : copy.card.expandAll}
+            expanded={allVisibleExpanded}
+            label={copy.metrics.milestones}
+            onClick={onToggleAll}
+            value={`${doneMilestones}/${totalMilestones}`}
+          />
         </div>
       </div>
-      <div
-        className="mobile-milestone-summary"
+      <button
+        type="button"
+        className={`mobile-milestone-summary summary-metric summary-metric--interactive${allVisibleExpanded ? " summary-metric--active" : ""}`}
+        onClick={onToggleAll}
+        aria-expanded={allVisibleExpanded}
+        aria-label={allVisibleExpanded ? copy.card.collapseAll : copy.card.expandAll}
         style={{
           display: "none",
           padding: "16px 18px",
-          border: "1px solid var(--border-soft)",
-          borderRadius: "8px",
           marginTop: "10px",
-          backgroundColor: "var(--surface)",
+          width: "100%",
+          textAlign: "left",
         }}
       >
         <div
@@ -353,10 +437,11 @@ function SummaryMetrics({ rows, copy }) {
               color: "var(--text-strong)",
               fontSize: "22px",
               fontWeight: 800,
+              fontVariantNumeric: "tabular-nums",
               lineHeight: 1,
             }}
           >
-            {doneMilestones}/{totalMilestones}
+            <AnimatedMetricValue value={`${doneMilestones}/${totalMilestones}`} />
           </div>
         </div>
         <div
@@ -378,72 +463,25 @@ function SummaryMetrics({ rows, copy }) {
             }}
           />
         </div>
-      </div>
+      </button>
     </section>
   );
 }
 
 function FilterBar({
   activeClassificationLabel,
-  activeFilter,
   copy,
-  filters = [],
   onClearClassification,
-  onFilter,
   resultCount,
 }) {
   return (
     <div
       style={{
-        display: "grid",
+        display: activeClassificationLabel ? "grid" : "block",
         gap: "9px",
-        marginBottom: "16px",
+        marginBottom: activeClassificationLabel ? "16px" : 0,
       }}
     >
-      <div
-        className="filter-controls"
-        style={{
-          display: "inline-flex",
-          width: "fit-content",
-          maxWidth: "100%",
-          gap: "4px",
-          padding: "4px",
-          border: "1px solid var(--border)",
-          borderRadius: "999px",
-          backgroundColor: "var(--surface-subtle)",
-          flexWrap: "wrap",
-        }}
-      >
-        {filters.map((filter) => {
-          const active = activeFilter === filter.id;
-
-          return (
-            <button
-              key={filter.id}
-              className={`filter-option${active ? " filter-option--active" : ""}`}
-              onClick={() => onFilter(filter.id)}
-              aria-pressed={active}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "7px",
-                flexShrink: 0,
-                minHeight: "30px",
-                padding: "7px 10px",
-                borderRadius: "999px",
-                cursor: "pointer",
-                fontFamily: FONT_STACK,
-                fontSize: "11px",
-                fontWeight: 800,
-                letterSpacing: "0",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span>{filter.label}</span>
-            </button>
-          );
-        })}
-      </div>
       {activeClassificationLabel && (
         <button
           className="classification-clear-button"
@@ -537,7 +575,7 @@ function MilestoneIndicator({ row, copy }) {
               width: "18px",
               height: "6px",
               borderRadius: "999px",
-              backgroundColor: milestone.done ? row.sectorColor : "var(--border)",
+              backgroundColor: milestone.done ? "var(--text-icon)" : "var(--border)",
               opacity: milestone.done ? 1 : 0.95,
             }}
           />
@@ -583,7 +621,7 @@ function CollapsedMilestoneSummary({ row, copy }) {
               width: "15px",
               height: "5px",
               borderRadius: "999px",
-              backgroundColor: milestone.done ? row.sectorColor : "var(--border)",
+              backgroundColor: milestone.done ? "var(--text-icon)" : "var(--border)",
               opacity: milestone.done ? 1 : 0.95,
             }}
           />
@@ -652,14 +690,14 @@ function FactList({ row, copy }) {
           >
             {copy.facts.value}
           </span>
-          <span style={{ color: getAccentTextColor(row.sectorColor), fontSize: "12px", fontWeight: 850, lineHeight: 1.35, overflowWrap: "anywhere" }}>{row.value}</span>
+          <span style={{ color: "var(--text-body)", fontSize: "12px", fontWeight: 850, lineHeight: 1.35, overflowWrap: "anywhere" }}>{row.value}</span>
         </div>
       )}
     </div>
   );
 }
 
-function SourceLinks({ sources, color, interactive = true }) {
+function SourceLinks({ sources, interactive = true }) {
   return (
     <div style={{ display: "grid", gap: "7px" }}>
       {sources.map((source, index) => (
@@ -695,8 +733,8 @@ function SourceLinks({ sources, color, interactive = true }) {
               width: "20px",
               height: "20px",
               borderRadius: "50%",
-              border: `1px solid ${color}1f`,
-              backgroundColor: `${color}0d`,
+              border: "1px solid var(--border-soft)",
+              backgroundColor: "var(--surface)",
               color: "var(--text-icon)",
               fontSize: "9px",
               fontWeight: 800,
@@ -774,7 +812,7 @@ function formatMilestoneDate(value, language = DEFAULT_LANGUAGE) {
   return date;
 }
 
-function MilestoneList({ milestones, language, color = "#0d9488" }) {
+function MilestoneList({ milestones, language }) {
   return (
     <div role="list" style={{ display: "grid", gap: "0" }}>
       {milestones.map((milestone, index) => {
@@ -800,7 +838,7 @@ function MilestoneList({ milestones, language, color = "#0d9488" }) {
                   height: "5px",
                   marginTop: "7px",
                   borderRadius: "50%",
-                  backgroundColor: getAccentTextColor(color),
+                  backgroundColor: "var(--text-icon)",
                 }}
               />
               <span style={{ color: "var(--text-secondary)", fontSize: "13px", lineHeight: 1.45 }}>
@@ -824,7 +862,7 @@ function MilestoneList({ milestones, language, color = "#0d9488" }) {
           >
             <span
               style={{
-                color: milestone.done ? getAccentTextColor(color) : "var(--text-faint)",
+                color: milestone.done ? "var(--text-secondary)" : "var(--text-faint)",
                 fontFamily: FONT_STACK,
                 fontSize: "11px",
                 fontWeight: 700,
@@ -851,7 +889,7 @@ function CompletedMilestoneRows({ row, language }) {
     return null;
   }
 
-  return <MilestoneList milestones={visibleMilestones} language={language} color={row.sectorColor} />;
+  return <MilestoneList milestones={visibleMilestones} language={language} />;
 }
 
 function FollowingMilestones({ row, copy, language }) {
@@ -863,7 +901,7 @@ function FollowingMilestones({ row, copy, language }) {
 
   return (
     <DetailSection title={copy.milestones.remaining}>
-      <MilestoneList milestones={followingMilestones} language={language} color={row.sectorColor} />
+      <MilestoneList milestones={followingMilestones} language={language} />
     </DetailSection>
   );
 }
@@ -889,15 +927,15 @@ function NextMilestoneCallout({ row, expanded, copy, language }) {
         display: "grid",
         gap: "5px",
         padding: expanded ? "10px 12px" : "9px 11px",
-        border: `1px solid ${row.sectorColor}30`,
+        border: "1px solid var(--border)",
         borderRadius: "6px",
-        backgroundColor: `color-mix(in srgb, ${row.sectorColor} 6%, var(--surface))`,
+        backgroundColor: "var(--surface)",
       }}
     >
       <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "12px" }}>
         <span
           style={{
-            color: getAccentTextColor(row.sectorColor),
+            color: "var(--text-secondary)",
             fontFamily: FONT_STACK,
             fontSize: "10px",
             fontWeight: 850,
@@ -939,6 +977,7 @@ function NextMilestoneCallout({ row, expanded, copy, language }) {
 
 function ProjectCard({
   activeClassificationFilter,
+  filterIndex = 0,
   row,
   expanded,
   onCategoryFilter,
@@ -957,13 +996,14 @@ function ProjectCard({
       className="project-card"
       data-expanded={expanded ? "true" : "false"}
       style={{
+        "--project-filter-delay": `${FILTER_ENTER_LEAD_MS + filterIndex * FILTER_ENTER_STAGGER_MS}ms`,
         position: "relative",
         border: `1px solid ${cardBorderColor}`,
         borderTop: `1px solid ${cardBorderColor}`,
         borderRadius: "8px",
-        backgroundColor: expanded ? "var(--surface-subtle)" : "var(--surface)",
+        backgroundColor: "var(--surface)",
         overflow: "hidden",
-        transition: "background-color 0.15s ease, border-color 0.15s ease",
+        transition: "background-color 0.15s ease, border-color 180ms ease, transform 180ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 180ms ease",
       }}
     >
       <div
@@ -1023,18 +1063,18 @@ function ProjectCard({
           <span
             aria-hidden="true"
             className="project-card-details-pill"
+            data-expanded={expanded ? "true" : "false"}
             style={{
-              "--project-card-accent": row.sectorColor,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
               flexShrink: 0,
               minHeight: "24px",
               padding: "5px 8px",
-              border: `1px solid ${row.sectorColor}24`,
+              border: "1px solid var(--border)",
               borderRadius: "999px",
-              backgroundColor: `${row.sectorColor}08`,
-              color: getAccentTextColor(row.sectorColor),
+              backgroundColor: "var(--surface)",
+              color: "var(--text-secondary)",
               fontFamily: FONT_STACK,
               fontSize: "11px",
               fontWeight: 800,
@@ -1074,7 +1114,7 @@ function ProjectCard({
               marginTop: expanded ? "12px" : "10px",
             }}
           >
-            <StatusBadge statusMeta={row.statusMeta} accentColor={row.sectorColor} />
+            <StatusBadge statusMeta={row.statusMeta} />
             {!expanded && <CollapsedMilestoneSummary row={row} copy={copy} />}
           </div>
           <AccordionReveal expanded={expanded} className="project-card-intro-reveal">
@@ -1117,7 +1157,7 @@ function ProjectCard({
           }}
         >
           <DetailSection title={copy.facts.sources}>
-            <SourceLinks sources={row.sources} color={row.sectorColor} interactive={expanded} />
+            <SourceLinks sources={row.sources} interactive={expanded} />
           </DetailSection>
         </div>
       </AccordionReveal>
@@ -1127,6 +1167,7 @@ function ProjectCard({
 
 function ProjectGrid({
   activeClassificationFilter,
+  filterPhase,
   rows,
   expandedIds,
   onCategoryFilter,
@@ -1135,9 +1176,12 @@ function ProjectGrid({
   copy,
   language,
 }) {
+  const maxFilterIndex = Math.min(Math.max(rows.length - 1, 0), FILTER_ENTER_MAX_STAGGER_INDEX);
+  const filterIndexDenominator = Math.max(rows.length - 1, 1);
+
   return (
     <section
-      className="project-card-grid"
+      className={`project-card-grid${filterPhase ? ` project-card-grid--filter-${filterPhase}` : ""}`}
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
@@ -1145,9 +1189,10 @@ function ProjectGrid({
         gap: "14px",
       }}
     >
-      {rows.map((row) => (
+      {rows.map((row, index) => (
         <ProjectCard
           activeClassificationFilter={activeClassificationFilter}
+          filterIndex={Math.round((index / filterIndexDenominator) * maxFilterIndex)}
           key={row.id}
           row={row}
           expanded={expandedIds.includes(row.id)}
@@ -1200,6 +1245,9 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeClassificationFilter, setActiveClassificationFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
+  const [filterPhase, setFilterPhase] = useState(null);
+  const filterExitTimerRef = useRef(null);
+  const filterEnterTimerRef = useRef(null);
   const environment = getAppEnvironment();
   const copy = getUiCopy(language);
   const filters = getFilters(copy);
@@ -1221,6 +1269,15 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
     return () => preference.removeEventListener("change", followSystemTheme);
   }, []);
 
+  useEffect(() => () => {
+    if (filterExitTimerRef.current) {
+      window.clearTimeout(filterExitTimerRef.current);
+    }
+    if (filterEnterTimerRef.current) {
+      window.clearTimeout(filterEnterTimerRef.current);
+    }
+  }, []);
+
   const localizedSectors = localizeSectors(SECTORS, language);
   const rows = sortProjectRows(getProjectRows(localizedSectors, copy), language);
   const selectedFilter = filters.find((filter) => filter.id === activeFilter) || filters[0];
@@ -1237,18 +1294,80 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
     copy
   );
 
+  const transitionFilter = (updateFilter) => {
+    if (filterExitTimerRef.current) {
+      window.clearTimeout(filterExitTimerRef.current);
+    }
+    if (filterEnterTimerRef.current) {
+      window.clearTimeout(filterEnterTimerRef.current);
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      updateFilter();
+      setFilterPhase(null);
+      return;
+    }
+
+    setFilterPhase("exit");
+    filterExitTimerRef.current = window.setTimeout(() => {
+      updateFilter();
+      setFilterPhase("enter");
+      filterExitTimerRef.current = null;
+      filterEnterTimerRef.current = window.setTimeout(() => {
+        setFilterPhase(null);
+        filterEnterTimerRef.current = null;
+      }, FILTER_ENTER_SETTLE_MS);
+    }, FILTER_EXIT_DURATION_MS);
+  };
+
   const toggleExpanded = (id) => {
     setExpandedIds((current) =>
       current.includes(id) ? current.filter((expandedId) => expandedId !== id) : [...current, id]
     );
   };
+  const handleStatusFilter = (filterId) => {
+    setExpandedIds([]);
+    transitionFilter(() => setActiveFilter(filterId));
+  };
   const toggleKindFilter = (kind) => {
     const filterId = `group:${kind}`;
-    setActiveClassificationFilter((current) => current === filterId ? "all" : filterId);
+    setExpandedIds([]);
+    transitionFilter(() => {
+      setActiveClassificationFilter((current) => current === filterId ? "all" : filterId);
+    });
   };
   const toggleCategoryFilter = (sectorId) => {
     const filterId = `category:${sectorId}`;
-    setActiveClassificationFilter((current) => current === filterId ? "all" : filterId);
+    setExpandedIds([]);
+    transitionFilter(() => {
+      setActiveClassificationFilter((current) => current === filterId ? "all" : filterId);
+    });
+  };
+  const clearClassificationFilter = () => {
+    setExpandedIds([]);
+    transitionFilter(() => setActiveClassificationFilter("all"));
+  };
+  const allProjectIds = rows.map((row) => row.id);
+  const allProjectsVisible = activeFilter === "all" && activeClassificationFilter === "all";
+  const allProjectsExpanded = allProjectIds.length > 0 && allProjectIds.every((id) => expandedIds.includes(id));
+  const allVisibleExpanded = allProjectsVisible && allProjectsExpanded;
+  const toggleAllVisible = () => {
+    if (allVisibleExpanded) {
+      setExpandedIds([]);
+      return;
+    }
+
+    if (!allProjectsVisible) {
+      setExpandedIds([]);
+      transitionFilter(() => {
+        setActiveFilter("all");
+        setActiveClassificationFilter("all");
+        setExpandedIds(allProjectIds);
+      });
+      return;
+    }
+
+    setExpandedIds(allProjectIds);
   };
   const toggleTheme = () => {
     const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
@@ -1488,21 +1607,26 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
         </p>
 
         <div style={{ marginBottom: "24px" }}>
-          <SummaryMetrics rows={rows} copy={copy} />
+          <SummaryMetrics
+            activeFilter={activeFilter}
+            allVisibleExpanded={allVisibleExpanded}
+            onFilter={handleStatusFilter}
+            onToggleAll={toggleAllVisible}
+            rows={rows}
+            copy={copy}
+          />
         </div>
 
         <section>
           <FilterBar
             activeClassificationLabel={activeClassificationLabel}
-            activeFilter={activeFilter}
             copy={copy}
-            onClearClassification={() => setActiveClassificationFilter("all")}
-            onFilter={setActiveFilter}
-            filters={filters}
+            onClearClassification={clearClassificationFilter}
             resultCount={filteredRows.length}
           />
           <ProjectGrid
             activeClassificationFilter={activeClassificationFilter}
+            filterPhase={filterPhase}
             rows={filteredRows}
             expandedIds={expandedIds}
             onCategoryFilter={toggleCategoryFilter}

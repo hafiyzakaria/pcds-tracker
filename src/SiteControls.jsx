@@ -171,7 +171,7 @@ export function LanguageToggle({
         padding: "3px",
         border: "1px solid var(--border)",
         borderRadius: "var(--pill-control-radius)",
-        backgroundColor: "var(--surface-subtle)",
+        backgroundColor: "var(--surface)",
       }}
     >
       {options.map((option, index) => (
