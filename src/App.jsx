@@ -548,6 +548,7 @@ function DetailSection({ title, children }) {
 function MilestoneIndicator({ row, copy }) {
   return (
     <div
+      className="project-milestone-indicator"
       style={{
         display: "flex",
         alignItems: "center",
@@ -556,6 +557,7 @@ function MilestoneIndicator({ row, copy }) {
       }}
     >
       <span
+        className="project-milestone-label"
         style={{
           color: "var(--text-faint)",
           fontFamily: FONT_STACK,
@@ -567,9 +569,10 @@ function MilestoneIndicator({ row, copy }) {
       >
         {copy.milestones.label}
       </span>
-      <div style={{ display: "flex", alignItems: "center", gap: "4px" }} aria-hidden="true">
+      <div className="project-milestone-bars" style={{ display: "flex", alignItems: "center", gap: "4px" }} aria-hidden="true">
         {row.milestones.map((milestone, index) => (
           <span
+            className="project-milestone-segment"
             key={`${row.id}-indicator-${index}`}
             style={{
               width: "18px",
@@ -582,6 +585,7 @@ function MilestoneIndicator({ row, copy }) {
         ))}
       </div>
       <span
+        className="project-milestone-count"
         style={{
           color: "var(--text-muted)",
           fontFamily: FONT_STACK,
@@ -1496,6 +1500,27 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
             overflow: visible;
             text-overflow: clip;
             white-space: normal;
+          }
+          .project-milestone-indicator {
+            flex-wrap: nowrap !important;
+            gap: 6px !important;
+          }
+          .project-milestone-indicator .project-milestone-label,
+          .project-milestone-indicator .project-milestone-bars {
+            flex: 0 0 auto;
+          }
+          .project-milestone-indicator .project-milestone-bars {
+            gap: 3px !important;
+          }
+          .project-milestone-indicator .project-milestone-segment {
+            width: 15px !important;
+          }
+          .project-milestone-indicator .project-milestone-count {
+            min-width: 0;
+            flex: 1 1 auto;
+            white-space: normal !important;
+            font-size: 10px !important;
+            line-height: 1.2 !important;
           }
           .tracker-title {
             font-size: 36px !important;

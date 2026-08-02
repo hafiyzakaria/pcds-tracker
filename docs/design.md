@@ -68,7 +68,9 @@ Milestone dates are stored as compact source values but formatted consistently i
 
 Segmented milestone indicators follow the milestone-array order. Completed segments must remain
 contiguous from the left, followed by open segments, so the visual sequence agrees with the
-completed count shown beside it.
+completed count shown beside it. On mobile, the count stays beside the label and segments, shrinking
+the segments slightly and wrapping within the remaining inline space instead of dropping below the
+indicator row.
 
 Collapsed desktop cards use a shared minimum height so every two-column row remains visually
 aligned even when titles or milestone copy vary. The narrower two-column range from `761px` to
