@@ -81,7 +81,7 @@ content validator now enforces the structural rules above.
 | Mentarang Induk Hydroelectric Project | Source cleanup | Keep the three-stage lifecycle and remove the project-page citation that renders an error shell; two official sources retain full field coverage. |
 | H2biscus and H2ornbill | Revise | Restore the agreement and FEED sequence, record suspension of H2ornbill's original Japan-export concept, retain recalibration, and continue through investment decisions, construction, and commercial production. |
 | Batang Ai Floating Solar Farm | Revise | Record the 50MW facility's December 2024 commissioning and retain the 120MW expansion as open. |
-| Baram Agrovoltaic Project | Revise | Keep the undated component outcomes and remove the separate Baram DeepTech programme's parties, agreements, and sources from the RM6 billion project card. |
+| Baram Agrovoltaic Project | Revise | Keep the undated component outcomes, accept Planet QEOS as the principal proponent and coordinating party for the evolving Baram programme, and retain the broader-scope qualification. |
 | PCDS 2030 Overarching Framework | Source enhancement | Keep the strategy outcomes, replace the live PDF source with public webpages, and retain the PDF only as research context. |
 
 ## Implemented Site-Wide Wording Corrections
@@ -118,7 +118,7 @@ used only to locate candidate pages.
 | New Kuching International Airport | Ministry of Transport Sarawak, 5 Jun 2026 | Keep `Planning`. Federal discussions continue, but the Airport Development Request has not been approved. |
 | Tanjung Embang Deep-Sea Port | Sarawak Premier's Department, 20 Apr 2025; DayakDaily, 28 May 2025; The Star, 8 Jul 2026 | Keep `Planning`. Design and feasibility work are evidenced, but procurement and construction remain unconfirmed. |
 | H2biscus and H2ornbill | Borneo Post, 27 May and 9 Jun 2026 | Keep `Planning`. The original H2ornbill Japan-export concept was suspended and both scopes remain under recalibration. |
-| Baram Agrovoltaic Project | UKAS, 29 Mar 2026 | Keep `Planning`. The exact RM6 billion project has no named implementing party or schedule; separate DeepTech agreements are excluded. |
+| Baram Agrovoltaic Project | UKAS, 29 Mar 2026; Borneo Post, 25 Jul 2024; DayakDaily and Digital News Asia, Aug 2025 | Keep `Planning`. Planet QEOS is accepted as the principal proponent and coordinating party for the evolving Baram agrovoltaic programme, but contracts, delivery sequence, schedule, and responsibility for every RM6 billion component remain unconfirmed. |
 
 No completed lifecycle flag was inferred from a target, discussion, allocation, feasibility result,
 or planning announcement. No new update-history entry was added because the current history already
@@ -182,10 +182,12 @@ Baram.
   300MW power station, and supporting township. It does not publish construction or operating dates.
 - The four component outcomes therefore remain `done: false` with `TBD` dates.
 - The 2024 Planet QEOS proposal and the 2025 Baram DeepTech Energy Programme announcements describe
-  different capacities, land areas, investments, and partner scopes. They are not accepted as proof
-  that those parties implement the exact RM6 billion project.
-- The lead remains `Not disclosed`, and the separate programme's agreement milestone and sources
-  were removed from the live card.
+  different capacities, land areas, investments, and partner scopes. They are accepted as evidence
+  of Planet QEOS's proponent and coordinating role in the evolving Baram programme, but not as proof
+  that Planet QEOS or its partners own or operate every component of the RM6 billion scope.
+- A 2 August 2026 follow-up therefore changes the live lead field to `Planet QEOS Sdn Bhd` while keeping the
+  status, value, milestones, and current UKAS scope unchanged. The partner agreements remain source
+  context rather than separate lead assignments.
 
 ### Batang Ai Floating Solar Farm
 

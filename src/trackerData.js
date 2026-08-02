@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-08-01";
+export const LAST_UPDATED = "2026-08-02";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -840,7 +840,7 @@ export const SECTORS = [
         name: "Baram Agrovoltaic Project",
         status: "Planning",
         statusColor: "#4f46e5",
-        lead: "Not disclosed",
+        lead: "Planet QEOS Sdn Bhd",
         value: "RM6 billion",
         summary:
           "A proposed integrated agrovoltaic development at Temala near Long Lama in the Baram Renewable Energy Economic Zone, estimated at RM6 billion. Its scope includes 1,500 hectares of modern agriculture, 500 hectares of paddy, a logistics hub, a 300MW power station and a supporting township.",
@@ -853,6 +853,9 @@ export const SECTORS = [
         ],
         sources: [
           { label: "UKAS - Baram Agrovoltaic Project scope and estimate (Mar 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/37208" },
+          { label: "Borneo Post - Planet QEOS Baram initiative approval (Jul 2024)", url: "https://www.theborneopost.com/2024/07/25/swak-gives-in-principle-approval-to-baram-solar-agrovoltaic-initiative/" },
+          { label: "DayakDaily - Planet QEOS Baram DeepTech programme partners (Aug 2025)", url: "https://dayakdaily.com/historic-rm2-32-bln-solar-plant-planet-qeos-signs-deals-with-cscec-sunlogy-efs-founder-hopewind/" },
+          { label: "Digital News Asia - Planet QEOS Baram DeepTech programme (Aug 2025)", url: "https://www.digitalnewsasia.com/business/us548mil-deals-ignite-malaysias-first-247-solar-power-plant-sarawak" },
         ],
       },
     ],

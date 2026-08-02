@@ -132,6 +132,9 @@ URL below was opened and checked against the underlying page.
 
 ### Field decision
 
+> Superseded by the 2 August 2026 role follow-up recorded in the full milestone audit. The current
+> live lead field uses `Planet QEOS Sdn Bhd`; the programme partners remain role-specific source context.
+
 - `summary`: distinguish the state-approved zone and broader RM6 billion scope from the
   associated Baram DeepTech programme and its named parties.
 - `lead`: use `Planet QEOS / EFS Group and programme partners`.
