@@ -183,11 +183,14 @@ Current interactions:
   returns no cards.
 - Project cards expand and collapse. A collapsed card's `View details` control rests as a bare down
   chevron inside a fixed hit area; expanded cards use the same control with an up chevron. Hover or
-  keyboard focus, including hovering the card itself, reveals a soft neutral rounded-square surface
-  and slight lift without changing the control's size, while the parent card button preserves the
-  localized accessible expand/collapse label.
-- Whole cards use a restrained neutral hover/focus treatment: a small lift, stronger neutral border,
-  and soft shadow while their white surface and category classification colours remain unchanged.
+  keyboard focus on hover-capable devices, including hovering the card itself, reveals a soft neutral
+  rounded-square surface and slight lift without changing the control's size. On touch devices, the
+  same control treatment appears briefly while the card is pressed, while the parent card button
+  preserves the localized accessible expand/collapse label.
+- Whole cards use a restrained neutral hover/focus treatment on pointer devices: a small lift, stronger
+  neutral border, and soft shadow while their white surface and category classification colours remain
+  unchanged. Touch presses mirror that lift and shadow for immediate feedback, then return to the
+  resting state after release instead of retaining a browser-dependent hover state.
 - Source links open in a new tab.
 - The linked last-updated control rests as plain metadata in the standard muted text colour, aligned with
   the hero text. Hover or keyboard focus reveals one soft tinted pill aligned with the summary metrics and

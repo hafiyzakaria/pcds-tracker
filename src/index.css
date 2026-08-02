@@ -455,9 +455,7 @@ a:focus-visible {
   animation-delay: var(--project-filter-delay, 0ms);
 }
 
-.project-card-details-pill:hover,
-.project-card-button:focus-visible .project-card-details-pill,
-.project-card:hover .project-card-details-pill {
+.project-card-button:focus-visible .project-card-details-pill {
   transform: translateY(-1px);
   border-color: var(--border-soft) !important;
   background-color: var(--surface-subtle) !important;
@@ -465,11 +463,41 @@ a:focus-visible {
   box-shadow: 0 2px 5px var(--control-shadow);
 }
 
-.project-card:hover,
 .project-card:has(.project-card-button:focus-visible) {
   transform: translateY(-2px);
   border-color: var(--border-strong) !important;
   box-shadow: 0 8px 18px var(--control-shadow);
+}
+
+.project-card:has(.project-card-button:active) {
+  transform: translateY(-2px) scale(0.995);
+  border-color: var(--border-strong) !important;
+  box-shadow: 0 8px 18px var(--control-shadow);
+}
+
+.project-card-button:active .project-card-details-pill {
+  transform: translateY(-1px);
+  border-color: var(--border-soft) !important;
+  background-color: var(--surface-subtle) !important;
+  color: var(--text-strong) !important;
+  box-shadow: 0 2px 5px var(--control-shadow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card-details-pill:hover,
+  .project-card:hover .project-card-details-pill {
+    transform: translateY(-1px);
+    border-color: var(--border-soft) !important;
+    background-color: var(--surface-subtle) !important;
+    color: var(--text-strong) !important;
+    box-shadow: 0 2px 5px var(--control-shadow);
+  }
+
+  .project-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-strong) !important;
+    box-shadow: 0 8px 18px var(--control-shadow);
+  }
 }
 
 @media (hover: none), (pointer: coarse) {
