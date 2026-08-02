@@ -177,10 +177,11 @@ Current interactions:
   or keyboard focus. The solid `Sector` or `Enabler` half filters the broad group, while the named
   half filters the specific category. The two halves stay in flow and ease through their overlap
   over `440ms`, creating a small separation without an abrupt positioning reflow. The card grid does
-  not move, while touch layouts keep the joined geometry for the same two targets. The interaction is
-  disabled when reduced motion is requested. A compact active-filter pill remains above the grid so a
-  classification filter can always be cleared, including when its combination with a status filter
-  returns no cards.
+  not move, while touch layouts keep the joined geometry for the same two targets. Mobile cards reserve
+  only the chevron's space for this control and let long category labels wrap inside the pill rather
+  than hiding them behind an ellipsis. The interaction is disabled when reduced motion is requested. A
+  compact active-filter pill remains above the grid so a classification filter can always be cleared,
+  including when its combination with a status filter returns no cards.
 - Project cards expand and collapse. A collapsed card's `View details` control rests as a bare down
   chevron inside a fixed hit area; expanded cards use the same control with an up chevron. Hover or
   keyboard focus on hover-capable devices, including hovering the card itself, reveals a soft neutral

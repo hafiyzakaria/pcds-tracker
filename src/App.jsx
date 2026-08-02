@@ -1483,6 +1483,20 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
           .project-card-button {
             min-height: 0 !important;
           }
+          .project-classification-slot {
+            max-width: calc(100% - 58px) !important;
+          }
+          .project-classification-slot .project-classification--interactive {
+            max-width: 100%;
+          }
+          .project-classification-slot .project-classification-name {
+            white-space: normal;
+          }
+          .project-classification-slot .project-classification-name span {
+            overflow: visible;
+            text-overflow: clip;
+            white-space: normal;
+          }
           .tracker-title {
             font-size: 36px !important;
           }
