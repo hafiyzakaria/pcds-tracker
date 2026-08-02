@@ -55,26 +55,6 @@ const STATUS_CONFIG = {
   },
 };
 
-const INTRO_EMPHASIS = {
-  en: [
-    "10-year Post COVID-19 Development Strategy",
-    "Sarawak's GDP by 8% a year",
-    "RM282 billion by 2030",
-    "project tracker",
-  ],
-  ms: [
-    "Strategi Pembangunan Pasca COVID-19 Kerajaan Sarawak selama 10 tahun",
-    "pertumbuhan KDNK Sarawak sebanyak 8% setahun",
-    "RM282 bilion menjelang 2030",
-    "Project tracker",
-  ],
-};
-
-const INTRO_NO_WRAP = new Set([
-  "rm282 billion by 2030",
-  "rm282 bilion menjelang 2030",
-]);
-
 function getFilters(copy) {
   return [
     { id: "all", label: copy.filters.all },
@@ -1019,7 +999,7 @@ function ProjectCard({
         borderRadius: "8px",
         backgroundColor: "var(--surface)",
         overflow: "hidden",
-        transition: "background-color 0.15s ease, border-color 180ms ease, transform 180ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 180ms ease",
+        transition: "background-color 0.15s ease, border-color 200ms ease, transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms ease",
       }}
     >
       <div
@@ -1221,25 +1201,6 @@ function ProjectGrid({
       ))}
     </section>
   );
-}
-
-function EmphasizedText({ text, phrases }) {
-  const escaped = phrases.map((phrase) => phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-  const pattern = new RegExp(`(${escaped.join("|")})`, "gi");
-
-  return text.split(pattern).map((part, index) => {
-    const normalizedPart = part.toLocaleLowerCase();
-    const emphasized = phrases.some((phrase) => phrase.toLocaleLowerCase() === normalizedPart);
-
-    return emphasized ? (
-      <strong
-        key={`${part}-${index}`}
-        style={INTRO_NO_WRAP.has(normalizedPart) ? { whiteSpace: "nowrap" } : undefined}
-      >
-        {part}
-      </strong>
-    ) : part;
-  });
 }
 
 function HeaderControls({ language, onNavigate, onThemeToggle, copy }) {
@@ -1619,7 +1580,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
           >
             {copy.header.intro.map((paragraph, index) => (
               <p key={paragraph} style={{ margin: index === 0 ? 0 : "10px 0 0" }}>
-                <EmphasizedText text={paragraph} phrases={INTRO_EMPHASIS[language]} />
+                {paragraph}
               </p>
             ))}
           </div>

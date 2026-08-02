@@ -39,10 +39,10 @@ The current product is a small static React site with:
   being explored. Card detail pills retain their category-colour hover treatment.
 - The last-updated pill rests neutrally, then links directly to the editorial update history with the same restrained hover treatment. The update history has a visible top-level pill back to the matching-language tracker.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
-- Two short introductory paragraphs explaining the strategy, its central Sarawak GDP target, and
-  the project tracker purpose without adding a separate promotional About section.
-- Restrained emphasis on the 10-year strategy, 8% annual Sarawak GDP-growth target, RM282 billion 2030 target,
-  and project-tracker purpose so readers can scan the key points quickly.
+- Two short introductory paragraphs explaining what the tracker covers and its source basis without
+  adding a separate promotional About section.
+- Plain, direct hero copy that foregrounds the tracker’s public-source value; strategy targets remain
+  available in the project and methodology content rather than competing with the first-glance purpose.
 - Plain-language source wording that promises links to publicly available sources rather than
   referring abstractly to "supporting public evidence".
 - Footer attribution linking to hafiy.my and stating that the tracker is not affiliated with the Sarawak Government. The BM version begins with `'Project tracker' dibangunkan oleh — hafiy.my`, while the English version additionally describes the tracker as independent.

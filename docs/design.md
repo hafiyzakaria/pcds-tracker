@@ -23,7 +23,7 @@ The page uses one centered column with a maximum width of about `1040px`.
 Current layout order:
 
 1. Kicker with compact language and theme controls, followed by the title.
-2. Two short introductory paragraphs covering the strategy and tracker purpose.
+2. Two short introductory paragraphs covering the tracker purpose and public-source basis.
 3. Data-freshness link immediately above the summary metrics, with a subtle `↗` cue that opens the
    matching-language update history.
 4. Summary metrics, which also provide the primary status filters.
@@ -88,10 +88,8 @@ Current type style:
 - Strong bold headings.
 - Small uppercase labels for metadata.
 - Compact body text for project summaries and milestones.
-- Introductory copy at `16px` with a `1.6` line height and restrained dark-gray emphasis on only
-  the most important strategy facts, including the explicitly named Sarawak GDP-growth target,
-  and the `project tracker` phrase. When emphasized copy changes, update the exact emphasis phrase
-  mappings in `src/App.jsx` for both English and Bahasa Melayu so the treatment remains aligned.
+- Introductory copy at `16px` with a `1.6` line height. Keep the hero language plain and direct,
+  with no inline emphasis treatment, so the tracker purpose and source basis remain easy to scan.
 - A compact `11px` linked last-updated pill so freshness metadata remains visible without competing
   with the introduction.
 - No decorative display font.
@@ -104,8 +102,6 @@ Main interface colors:
 - Dark theme: charcoal `#121212` page background with lighter neutral surfaces, high-contrast
   slate, and near-white text. The neutral base keeps the teal brand and project category colours
   clear while retaining comfortable separation between the page and raised surfaces.
-- Emphasized phrases in the introductory copy use white in dark mode so the key strategy facts
-  remain visibly distinct from the muted body text.
 - Brand/accent: teal `#0d9488` in light mode and a brighter teal treatment in dark mode.
 - Development environment: orange `#f97316`.
 - Preview environment: purple `#7c3aed`.
@@ -148,6 +144,8 @@ rules in the inline `<style>` block in `App`.
 
 Current interactions:
 
+- Refreshing any site route returns the document to the top. This reset is limited to reloads so
+  browser back/forward restoration and deliberate in-page anchor navigation keep their existing behavior.
 - `EN | BM` controls switch the hydrated presentation without a document reload and retain real
   route links for direct navigation and fallback. The same pill treatment appears on the tracker
   and update-history pages. Each language option gently lifts and gains a tinted surface on
@@ -197,10 +195,11 @@ Current interactions:
   rounded-square surface and slight lift without changing the control's size. On touch devices, the
   same control treatment appears briefly while the card is pressed, while the parent card button
   preserves the localized accessible expand/collapse label.
-- Whole cards use a restrained neutral hover/focus treatment on pointer devices: a small lift, stronger
-  neutral border, and soft shadow while their white surface and category classification colours remain
-  unchanged. Touch presses mirror that lift and shadow for immediate feedback, then return to the
-  resting state after release instead of retaining a browser-dependent hover state.
+- Whole cards use a restrained neutral hover/focus treatment on pointer devices: a `3px` lift, firmer
+  neutral border, and layered neutral shadow while their white surface and category classification colours
+  remain unchanged. Touch presses mirror that depth cue for immediate feedback, then return to the
+  resting state after release instead of retaining a browser-dependent hover state. Reduced-motion
+  preferences keep the stronger border and shadow but omit the physical lift.
 - Source links open in a new tab.
 - The linked last-updated control rests as plain metadata in the standard muted text colour, aligned with
   the hero text. Hover or keyboard focus reveals one soft tinted pill aligned with the summary metrics and
