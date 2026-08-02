@@ -149,7 +149,7 @@ function getMilestoneCountLabel(row, copy) {
     return copy.milestones.none;
   }
 
-  return copy.milestones.count(row.doneMilestones, row.totalMilestones);
+  return copy.milestones.progressShort(row.doneMilestones, row.totalMilestones);
 }
 
 function getProjectRows(sectors, copy) {
@@ -594,7 +594,12 @@ function MilestoneIndicator({ row, copy }) {
           whiteSpace: "nowrap",
         }}
       >
-        {copy.milestones.progress(row.doneMilestones, row.totalMilestones)}
+        <span aria-hidden="true">
+          {copy.milestones.progressShort(row.doneMilestones, row.totalMilestones)}
+        </span>
+        <span className="visually-hidden">
+          {copy.milestones.progress(row.doneMilestones, row.totalMilestones)}
+        </span>
       </span>
     </div>
   );
@@ -616,7 +621,14 @@ function CollapsedMilestoneSummary({ row, copy }) {
         whiteSpace: "nowrap",
       }}
     >
-      <span>{getMilestoneCountLabel(row, copy)}</span>
+      <span aria-hidden={row.totalMilestones > 0 ? "true" : undefined}>
+        {getMilestoneCountLabel(row, copy)}
+      </span>
+      {row.totalMilestones > 0 && (
+        <span className="visually-hidden">
+          {copy.milestones.progress(row.doneMilestones, row.totalMilestones)}
+        </span>
+      )}
       <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }} aria-hidden="true">
         {row.milestones.map((milestone, index) => (
           <span

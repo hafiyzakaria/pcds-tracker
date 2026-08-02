@@ -70,7 +70,8 @@ Segmented milestone indicators follow the milestone-array order. Completed segme
 contiguous from the left, followed by open segments, so the visual sequence agrees with the
 completed count shown beside it. On mobile, the count stays beside the label and segments, shrinking
 the segments slightly and wrapping within the remaining inline space instead of dropping below the
-indicator row.
+indicator row. Both collapsed and expanded cards use the readable `1 of 5 completed` form beside
+the indicator. Expanded cards retain the `Milestones` label and detailed timeline for added context.
 
 Collapsed desktop cards use a shared minimum height so every two-column row remains visually
 aligned even when titles or milestone copy vary. The narrower two-column range from `761px` to
