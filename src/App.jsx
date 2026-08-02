@@ -149,7 +149,7 @@ function getMilestoneCountLabel(row, copy) {
     return copy.milestones.none;
   }
 
-  return copy.milestones.progressShort(row.doneMilestones, row.totalMilestones);
+  return copy.milestones.count(row.doneMilestones, row.totalMilestones);
 }
 
 function getProjectRows(sectors, copy) {
@@ -595,7 +595,7 @@ function MilestoneIndicator({ row, copy }) {
         }}
       >
         <span aria-hidden="true">
-          {copy.milestones.progressShort(row.doneMilestones, row.totalMilestones)}
+          {copy.milestones.count(row.doneMilestones, row.totalMilestones)}
         </span>
         <span className="visually-hidden">
           {copy.milestones.progress(row.doneMilestones, row.totalMilestones)}

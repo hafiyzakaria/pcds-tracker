@@ -164,8 +164,11 @@ Current interactions:
 - The `Projects`, `Planning`, `Ongoing`, and `Completed` summary metrics are interactive status
   filters. They use `aria-pressed`, a restrained hover/focus lift, and a persistent active treatment;
   the active `Projects` metric stays neutral and flat, while the narrower status metrics retain the
-  pressed treatment. Hovering another metric temporarily flattens the selected metric so attention
-  follows the target.
+  pressed treatment. Hovering another metric temporarily flattens the selected status metric so
+  attention follows the target. The active `Projects` metric stays flat with its normal text colour
+  so it remains easy to track. Card milestone indicators mirror the dashboard metric format with a
+  compact `1/5 complete` count; expanded cards retain the `Milestones` label and the full accessible
+  wording.
   On initial load or refresh, metric values count up with a short eased reveal; reduced-motion
   preferences show the final values immediately.
   The `Milestones` metric uses `aria-expanded` to reset status and category filters, show all projects,

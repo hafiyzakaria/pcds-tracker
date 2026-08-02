@@ -267,9 +267,9 @@ a:focus-visible {
 }
 
 .summary-wrap:has(.summary-metric--interactive:not(.summary-metric--active):hover)
-  .summary-metric--active,
+  .summary-metric--active:not(.summary-metric--flat-active),
 .summary-wrap:has(.summary-metric--interactive:not(.summary-metric--active):focus-visible)
-  .summary-metric--active {
+  .summary-metric--active:not(.summary-metric--flat-active) {
   transform: translateY(0);
   border-color: transparent;
   background-color: transparent;
@@ -277,9 +277,9 @@ a:focus-visible {
 }
 
 .summary-wrap:has(.summary-metric--interactive:not(.summary-metric--active):hover)
-  .summary-metric--active > div:first-child,
+  .summary-metric--active:not(.summary-metric--flat-active) > div:first-child,
 .summary-wrap:has(.summary-metric--interactive:not(.summary-metric--active):focus-visible)
-  .summary-metric--active > div:first-child {
+  .summary-metric--active:not(.summary-metric--flat-active) > div:first-child {
   color: var(--text-muted) !important;
 }
 
