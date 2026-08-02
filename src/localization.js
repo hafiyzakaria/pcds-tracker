@@ -38,7 +38,7 @@ const EN = {
     results: (count) => `${count} ${count === 1 ? "project" : "projects"} shown`,
   },
   metrics: { trackedProjects: "Projects", planning: "Planning", ongoing: "Ongoing", completed: "Completed", milestones: "Milestones" },
-  milestones: { label: "Milestones", remaining: "Remaining Milestones", next: "Next Milestone", completed: "Completed", noOpen: "No open milestone", none: "No milestones", count: (done, total) => `${done}/${total} complete`, progress: (done, total) => `${done} of ${total} milestones completed` },
+  milestones: { label: "Milestones", remaining: "Remaining Milestones", next: "Next Milestone", final: "Final milestone", noOpen: "No open milestone", none: "No milestones", count: (done, total, statusGroup) => statusGroup === "completed" ? `${done}/${total}` : `${done}/${total} complete`, progress: (done, total) => `${done} of ${total} milestones completed` },
   facts: { lead: "Lead / parties", value: "Reported value", sources: "Sources" },
   card: { sector: "Sector", enabler: "Enabler", viewDetails: "View details +", hideDetails: "Hide details −", expand: (name) => `View details for ${name}`, collapse: (name) => `Hide details for ${name}`, expandAll: "Show details for all projects", collapseAll: "Hide details for all projects" },
   header: {
@@ -85,7 +85,7 @@ const MS = {
     results: (count) => `${count} projek dipaparkan`,
   },
   metrics: { trackedProjects: "Projek", planning: "Perancangan", ongoing: "Pelaksanaan", completed: "Selesai", milestones: "Pencapaian" },
-  milestones: { label: "Pencapaian Utama", remaining: "Pencapaian Utama yang Baki", next: "Pencapaian Seterusnya", completed: "Selesai", noOpen: "Tiada pencapaian utama yang belum selesai", none: "Tiada pencapaian utama", count: (done, total) => `${done}/${total} selesai`, progress: (done, total) => `${done} daripada ${total} pencapaian utama selesai` },
+  milestones: { label: "Pencapaian Utama", remaining: "Pencapaian Utama yang Baki", next: "Pencapaian Seterusnya", final: "Pencapaian Akhir", noOpen: "Tiada pencapaian utama yang belum selesai", none: "Tiada pencapaian utama", count: (done, total, statusGroup) => statusGroup === "completed" ? `${done}/${total}` : `${done}/${total} selesai`, progress: (done, total) => `${done} daripada ${total} pencapaian utama selesai` },
   facts: { lead: "Peneraju / pihak terlibat", value: "Nilai dilaporkan", sources: "Sumber" },
   card: { sector: "Sektor", enabler: "Pemboleh", viewDetails: "Lihat butiran +", hideDetails: "Sembunyikan butiran −", expand: (name) => `Lihat butiran ${name}`, collapse: (name) => `Sembunyikan butiran ${name}`, expandAll: "Tunjukkan butiran semua projek", collapseAll: "Sembunyikan butiran semua projek" },
   header: {

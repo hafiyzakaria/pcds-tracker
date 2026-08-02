@@ -129,7 +129,7 @@ function getMilestoneCountLabel(row, copy) {
     return copy.milestones.none;
   }
 
-  return copy.milestones.count(row.doneMilestones, row.totalMilestones);
+  return copy.milestones.count(row.doneMilestones, row.totalMilestones, row.statusMeta.group);
 }
 
 function getProjectRows(sectors, copy) {
@@ -578,7 +578,7 @@ function MilestoneIndicator({ row, copy }) {
         }}
       >
         <span aria-hidden="true">
-          {copy.milestones.count(row.doneMilestones, row.totalMilestones)}
+          {copy.milestones.count(row.doneMilestones, row.totalMilestones, row.statusMeta.group)}
         </span>
         <span className="visually-hidden">
           {copy.milestones.progress(row.doneMilestones, row.totalMilestones)}
@@ -942,7 +942,7 @@ function NextMilestoneCallout({ row, expanded, copy, language }) {
             textTransform: "uppercase",
           }}
         >
-          {isComplete ? copy.milestones.completed : copy.milestones.next}
+          {isComplete ? copy.milestones.final : copy.milestones.next}
         </span>
         {content.date && (
           <span

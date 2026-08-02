@@ -73,8 +73,11 @@ Segmented milestone indicators follow the milestone-array order. Completed segme
 contiguous from the left, followed by open segments, so the visual sequence agrees with the
 completed count shown beside it. On mobile, the count stays beside the label and segments, shrinking
 the segments slightly and wrapping within the remaining inline space instead of dropping below the
-indicator row. Both collapsed and expanded cards use the readable `1 of 5 completed` form beside
-the indicator. Expanded cards retain the `Milestones` label and detailed timeline for added context.
+indicator row. Active projects use a compact `1/5 complete` count; cards already marked `Completed`
+use only the ratio, such as `4/4`, because the status badge already supplies the meaning. The full
+milestone wording remains available to assistive technology. A completed card's final callout uses
+`Final milestone` in English and `Pencapaian Akhir` in BM so it does not repeat the project status.
+Expanded cards retain the `Milestones` label and detailed timeline for added context.
 
 Collapsed desktop cards use a shared minimum height so every two-column row remains visually
 aligned even when titles or milestone copy vary. The narrower two-column range from `761px` to
