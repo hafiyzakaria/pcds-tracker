@@ -179,15 +179,18 @@ Current interactions:
   status or category filter briefly fades the current card grid out, then reveals the filtered cards
   with a short lead-in, a row-aware stagger, and a restrained scale transition; reduced-motion
   preferences bypass this transition.
-- Each project card's joined classification pill morphs into two separated filter buttons on hover
-  or keyboard focus. The solid `Sector` or `Enabler` half filters the broad group, while the named
-  half filters the specific category. The two halves stay in flow and ease through their overlap
-  over `440ms`, creating a small separation without an abrupt positioning reflow. The card grid does
-  not move, while touch layouts keep the joined geometry for the same two targets. Mobile cards reserve
-  only the chevron's space for this control and let long category labels wrap inside the pill rather
-  than hiding them behind an ellipsis. The interaction is disabled when reduced motion is requested. A
-  compact active-filter pill remains above the grid so a classification filter can always be cleared,
-  including when its combination with a status filter returns no cards.
+- Each project card's joined classification pill keeps one stable two-tone silhouette. The `Sector`
+  or `Enabler` segment filters the broad group, while the named segment filters the specific category.
+  A single shared accent surface uses the SmoothUI Animated Tabs motion pattern to slide between the
+  two fixed segments over `250ms` on hover, keyboard focus, and selection; no width, padding, overlap,
+  or card geometry changes during the animation. Touch layouts keep the same joined geometry and show
+  the selected accent after a press. Mobile cards reserve only the chevron's space for this control
+  and let long category labels wrap inside the pill rather than hiding them behind an ellipsis. The
+  interaction remains self-contained, with the hover and focus motion providing the affordance without
+  a duplicate tooltip. The pill interaction respects reduced-motion preferences. A compact active-filter
+  pill remains above the
+  grid so a classification filter can always be cleared, including when its combination with a status
+  filter returns no cards.
 - Project cards expand and collapse. A collapsed card's `View details` control rests as a bare down
   chevron inside a fixed hit area; expanded cards use the same control with an up chevron. Hover or
   keyboard focus on hover-capable devices, including hovering the card itself, reveals a soft neutral
@@ -229,8 +232,9 @@ Current mobile changes:
 - Project fact blocks stack vertically.
 - At widths up to `760px`, the shared language, theme, and navigation pill height increases to
   `40px`. This improves touch comfort while keeping their visual rhythm consistent.
-- On touch or coarse-pointer devices, project-card classification controls stay separated so both
-  filter targets remain discoverable without relying on hover.
+- On touch or coarse-pointer devices, project-card classification controls stay joined and expose
+  both filter targets through the same press and focus states. The selected classification keeps the
+  active accent surface visible after the press so the filter state is not lost.
 
 The update history uses a date column and content column on desktop, then becomes a single-column
 entry list below `760px`. It uses the same neutral surfaces, typography, theme control, and

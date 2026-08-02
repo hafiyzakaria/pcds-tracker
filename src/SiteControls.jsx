@@ -1,8 +1,12 @@
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { shouldShowEnvironmentBadge } from "./environment.js";
 import { getRouteHref } from "./routes.js";
 
 const FONT_STACK =
   "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+
+const useIsomorphicLayoutEffect =
+  typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 export function NavigationPillLink({
   children,
@@ -37,6 +41,58 @@ export function ProjectClassificationBadge({
     ? copy.categoryFilters.sectors
     : copy.categoryFilters.enablers;
   const interactive = Boolean(onCategoryFilter && onKindFilter);
+  const classificationRef = useRef(null);
+  const kindRef = useRef(null);
+  const nameRef = useRef(null);
+  const [indicatorMetrics, setIndicatorMetrics] = useState(null);
+
+  useIsomorphicLayoutEffect(() => {
+    if (!interactive) {
+      return undefined;
+    }
+
+    const updateIndicatorMetrics = () => {
+      const root = classificationRef.current;
+      const kindButton = kindRef.current;
+      const nameButton = nameRef.current;
+
+      if (!root || !kindButton || !nameButton) {
+        return;
+      }
+
+      const rootRect = root.getBoundingClientRect();
+      const rootStyles = window.getComputedStyle(root);
+      const rootBorderLeft = Number.parseFloat(rootStyles.borderLeftWidth) || 0;
+      const getMetrics = (element) => {
+        const rect = element.getBoundingClientRect();
+        return {
+          left: rect.left - rootRect.left - rootBorderLeft,
+          width: rect.width,
+        };
+      };
+
+      setIndicatorMetrics({
+        kind: getMetrics(kindButton),
+        name: getMetrics(nameButton),
+      });
+    };
+
+    updateIndicatorMetrics();
+
+    const resizeObserver = typeof ResizeObserver === "undefined"
+      ? null
+      : new ResizeObserver(updateIndicatorMetrics);
+
+    [classificationRef.current, kindRef.current, nameRef.current].forEach((element) => {
+      resizeObserver?.observe(element);
+    });
+    window.addEventListener("resize", updateIndicatorMetrics);
+
+    return () => {
+      resizeObserver?.disconnect();
+      window.removeEventListener("resize", updateIndicatorMetrics);
+    };
+  }, [interactive, kind, label, maxWidth, name]);
 
   if (interactive) {
     const kindActionLabel = activeKind
@@ -56,23 +112,30 @@ export function ProjectClassificationBadge({
     return (
       <div
         className="project-classification project-classification--interactive"
+        data-active-target={activeCategory ? "name" : "kind"}
+        data-indicator-ready={indicatorMetrics ? "true" : "false"}
         role="group"
         aria-label={copy.categoryFilters.label(label, name)}
+        ref={classificationRef}
         style={{
           "--project-classification-accent": color,
-          "--project-classification-label-space": kind === "sector" ? "68px" : "78px",
+          "--project-classification-kind-left": `${indicatorMetrics?.kind.left ?? 0}px`,
+          "--project-classification-kind-width": `${indicatorMetrics?.kind.width ?? 0}px`,
+          "--project-classification-name-left": `${indicatorMetrics?.name.left ?? 0}px`,
+          "--project-classification-name-width": `${indicatorMetrics?.name.width ?? 0}px`,
           maxWidth,
         }}
       >
+        <span className="project-classification-indicator" aria-hidden="true" />
         <button
           className="project-classification-button project-classification-kind"
           type="button"
           onClick={(event) => handleFilterClick(event, onKindFilter)}
           aria-label={kindActionLabel}
           aria-pressed={activeKind}
-          title={kindActionLabel}
+          ref={kindRef}
         >
-          {label}
+          <span>{label}</span>
         </button>
         <button
           className="project-classification-button project-classification-name"
@@ -80,7 +143,7 @@ export function ProjectClassificationBadge({
           onClick={(event) => handleFilterClick(event, onCategoryFilter)}
           aria-label={categoryActionLabel}
           aria-pressed={activeCategory}
-          title={categoryActionLabel}
+          ref={nameRef}
         >
           <span>{name}</span>
         </button>
