@@ -1218,6 +1218,22 @@ function HeaderControls({ language, onNavigate, onThemeToggle, copy }) {
   );
 }
 
+function renderIntroParagraph(paragraph, programmeName) {
+  const programmeNameStart = paragraph.indexOf(programmeName);
+
+  if (programmeNameStart === -1) {
+    return paragraph;
+  }
+
+  return (
+    <>
+      {paragraph.slice(0, programmeNameStart)}
+      <span className="tracker-programme-name">{programmeName}</span>
+      {paragraph.slice(programmeNameStart + programmeName.length)}
+    </>
+  );
+}
+
 export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeClassificationFilter, setActiveClassificationFilter] = useState("all");
@@ -1507,6 +1523,9 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
             color: var(--text-body);
             font-weight: 700;
           }
+          .tracker-programme-name {
+            white-space: normal;
+          }
           .project-facts {
             grid-template-columns: 1fr !important;
           }
@@ -1580,7 +1599,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
           >
             {copy.header.intro.map((paragraph, index) => (
               <p key={paragraph} style={{ margin: index === 0 ? 0 : "10px 0 0" }}>
-                {paragraph}
+                {renderIntroParagraph(paragraph, copy.header.programmeName)}
               </p>
             ))}
           </div>

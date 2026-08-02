@@ -23,7 +23,8 @@ The page uses one centered column with a maximum width of about `1040px`.
 Current layout order:
 
 1. Kicker with compact language and theme controls, followed by the title.
-2. Two short introductory paragraphs covering the tracker purpose and public-source basis.
+2. Two short introductory paragraphs covering the tracker purpose, independence, status and
+   milestone content, and public-source links.
 3. Data-freshness link immediately above the summary metrics, with a subtle `↗` cue that opens the
    matching-language update history.
 4. Summary metrics, which also provide the primary status filters.
@@ -37,6 +38,8 @@ below the project grid.
 
 The introduction uses a maximum reading width of about `720px`. This keeps the text visually
 connected to the compact title block and avoids an overly wide paragraph slab on desktop.
+The full strategy name is kept together as one typographic phrase above the mobile breakpoint.
+Below `760px`, it returns to normal wrapping so long English and BM names cannot overflow.
 
 Summary metric boxes provide simple status navigation before readers scan the project cards. Their
 active, hover, focus, and press states make the filtering behavior discoverable without duplicating
@@ -153,9 +156,9 @@ Current interactions:
   hovered or focused, the selected option temporarily flattens so attention follows the
   alternate choice. The site
   kicker, main title, and project titles remain in English in both modes so the identity and project
-  names stay consistent across the tracker and its sources. In BM copy, the borrowed English phrase
-  `'Project tracker'` is enclosed in single quotation marks in the introduction and footer, while
-  the category label `Enabler` is presented as `Pemboleh`.
+  names stay consistent across the tracker and its sources. The BM introduction uses the idiomatic
+  phrase `platform pemantauan bebas`; the footer retains the quoted English phrase `'Project tracker'`,
+  while the category label `Enabler` is presented as `Pemboleh`.
 - The icon theme button switches between light and dark modes and remembers the selection. Its
   icon crossfades and rotates between moon and sun states, while the button lifts into a soft
   tinted surface with a subtle shadow on hover or keyboard focus and gives a small press response.
@@ -209,8 +212,8 @@ Current interactions:
   link only to their supporting public sources.
 - The last-updated pill uses the text-presentation sequence `U+2197 U+FE0E` for its `↗︎` symbol so
   mobile platforms do not substitute an emoji glyph.
-- The BM introduction and footer quote the borrowed phrase `'Project tracker'`, while navigation
-  pills use the unquoted label `Project tracker`.
+- The BM introduction uses `platform pemantauan bebas`, the footer quotes the borrowed phrase
+  `'Project tracker'`, and navigation pills use the unquoted label `Project tracker`.
 - Environment badge is fixed at the bottom-right in non-production environments.
 
 The expansion animation respects `prefers-reduced-motion`.

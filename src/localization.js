@@ -43,7 +43,8 @@ const EN = {
   card: { sector: "Sector", enabler: "Enabler", viewDetails: "View details +", hideDetails: "Hide details −", expand: (name) => `View details for ${name}`, collapse: (name) => `Hide details for ${name}`, expandAll: "Show details for all projects", collapseAll: "Hide details for all projects" },
   header: {
     kicker: "Sarawak Development Monitor", title: "Project Tracker", lastUpdated: "Last updated:",
-    intro: ["Major projects under Sarawak's Post COVID-19 Development Strategy 2030, in one place.", "A source-linked public tracker based on publicly available information."],
+    programmeName: "Sarawak's Post COVID-19 Development Strategy 2030",
+    intro: ["Major projects under Sarawak's Post COVID-19 Development Strategy 2030, in one place.", "An independent tracker with milestones, current status, and links to public sources."],
   },
   footer: { independent: "Built by hafiy.my — an independent tracker. Not affiliated with the Sarawak Government.", methodology: "Data sourced from public reports, news outlets, and official announcements. Milestone statuses are best-effort based on available information." },
   accessibility: { environment: (name) => `${name} environment` },
@@ -89,7 +90,8 @@ const MS = {
   card: { sector: "Sektor", enabler: "Pemboleh", viewDetails: "Lihat butiran +", hideDetails: "Sembunyikan butiran −", expand: (name) => `Lihat butiran ${name}`, collapse: (name) => `Sembunyikan butiran ${name}`, expandAll: "Tunjukkan butiran semua projek", collapseAll: "Sembunyikan butiran semua projek" },
   header: {
     kicker: "Sarawak Development Monitor", title: "Project Tracker", lastUpdated: "Kemas kini terakhir:",
-    intro: ["Projek utama di bawah Strategi Pembangunan Pasca COVID-19 2030 Sarawak, di satu tempat.", "Project tracker awam dengan pautan sumber, berasaskan maklumat yang tersedia kepada umum."],
+    programmeName: "Strategi Pembangunan Pasca COVID-19 2030 Sarawak",
+    intro: ["Projek utama di bawah Strategi Pembangunan Pasca COVID-19 2030 Sarawak, di satu tempat.", "Platform pemantauan bebas yang memaparkan pencapaian utama, status semasa dan pautan kepada sumber awam."],
   },
   footer: { independent: "'Project tracker' dibangunkan oleh — hafiy.my. Tidak berafiliasi dengan Kerajaan Sarawak.", methodology: "Data diperoleh daripada laporan awam, portal berita dan pengumuman rasmi. Status pencapaian utama ialah rumusan terbaik berdasarkan maklumat yang tersedia." },
   accessibility: { environment: (name) => `persekitaran ${{ development: "pembangunan", preview: "pratonton", production: "produksi" }[name] || name}` },

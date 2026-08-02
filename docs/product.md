@@ -32,15 +32,17 @@ The current product is a small static React site with:
   Touch layouts keep the joined geometry while preserving both targets. Classification and status
   filters can be combined, and an active classification pill above the grid provides a persistent
   clear action.
-- A compact `EN | BM` control that switches instantly after hydration while retaining normal links to separately pre-rendered English and BM routes. Language options provide a restrained hover, focus, and press response; the selected option temporarily flattens when the alternate option is being explored. The BM presentation translates the interface, project summaries, facts, milestones, and editorial update history into Malaysian Bahasa Melayu while keeping the site identity and project titles in English and preserving canonical project identities and source links. The BM introduction and footer deliberately retain the quoted English phrase `'Project tracker'` as part of the site's identity.
+- A compact `EN | BM` control that switches instantly after hydration while retaining normal links to separately pre-rendered English and BM routes. Language options provide a restrained hover, focus, and press response; the selected option temporarily flattens when the alternate option is being explored. The BM presentation translates the interface, project summaries, facts, milestones, and editorial update history into Malaysian Bahasa Melayu while keeping the site identity and project titles in English and preserving canonical project identities and source links. The BM introduction uses the idiomatic phrase `platform pemantauan bebas`, while the footer retains the quoted English phrase `'Project tracker'` as part of the site's identity.
 - An icon theme control that defaults to the reader's system preference, supports explicit light or dark selection, remembers that selection locally, and animates its icon, hover surface, and press state when toggled.
 - Status filters and the active classification-clear control use a restrained hover tint, lift,
   shadow, and press response. The active status temporarily flattens when another status is
   being explored. Card detail pills retain their category-colour hover treatment.
 - The last-updated pill rests neutrally, then links directly to the editorial update history with the same restrained hover treatment. The update history has a visible top-level pill back to the matching-language tracker.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
-- Two short introductory paragraphs explaining what the tracker covers and its source basis without
-  adding a separate promotional About section.
+- Two short introductory paragraphs explaining what the tracker covers, its independence, its
+  milestone and status content, and its public-source links without adding a separate promotional
+  About section. The full strategy name stays together on tablet and desktop, then wraps normally
+  on narrow screens to prevent overflow.
 - Plain, direct hero copy that foregrounds the tracker’s public-source value; strategy targets remain
   available in the project and methodology content rather than competing with the first-glance purpose.
 - Plain-language source wording that promises links to publicly available sources rather than

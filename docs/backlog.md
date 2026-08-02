@@ -13,8 +13,9 @@ This backlog documents known issues and recommended next tasks for the next deve
   and 115 rendered milestone statements across all 30 project cards. The site identity and project
   titles remain in English, while canonical project identities, evidence URLs, date tokens, and
   completion flags remain shared with the English source data.
-- Completed on Preview: BM mode retains the quoted English phrase `'Project tracker'` in the
-  introduction and footer, and both language versions keep the English site identity and project titles.
+- Completed on Preview: The BM introduction uses the idiomatic phrase `platform pemantauan bebas`,
+  while the footer retains the quoted English phrase `'Project tracker'`. Both language versions keep
+  the English site identity and project titles.
 - Release gate: Review both themes and languages on the deployed Preview site before any
   Production promotion.
 
