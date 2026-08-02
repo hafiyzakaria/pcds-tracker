@@ -253,20 +253,22 @@ function AnimatedMetricValue({ value }) {
 function StatusBadge({ statusMeta }) {
   return (
     <span
+      className="project-status-badge"
       title={statusMeta.description}
       style={{
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
+        gap: "6px",
         justifySelf: "start",
         width: "max-content",
         maxWidth: "100%",
         minHeight: "24px",
         padding: "4px 9px",
-        borderRadius: "3px",
+        borderRadius: "5px",
         border: "1px solid var(--border)",
         backgroundColor: "var(--surface)",
-        color: "var(--text-secondary)",
+        color: "var(--text-body)",
         fontSize: "10px",
         fontWeight: 850,
         letterSpacing: "0.08em",
@@ -276,6 +278,7 @@ function StatusBadge({ statusMeta }) {
         fontFamily: FONT_STACK,
       }}
     >
+      <span className="project-status-dot" aria-hidden="true" />
       {statusMeta.label}
     </span>
   );

@@ -111,6 +111,10 @@ Main interface colors:
 
 Project-card status badges display the project state using the shared neutral treatment. Category colour is
 reserved for the classification pill so the filterable identity remains easy to scan.
+The status badge uses a white surface in light mode and the theme surface in dark mode, with a small
+neutral dot and shared text colour. Planning, Ongoing, and Completed do not receive separate badge
+colours; the status label remains the authoritative cue while the neutral treatment keeps the cards
+calm and comparable.
 
 Sector colors are stored in `src/trackerData.js` and appear primarily on the classification pills and
 their interactive filter states.
