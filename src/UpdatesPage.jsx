@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import {
   EnvironmentBadge,
@@ -27,20 +27,25 @@ function formatUpdateDate(value, language) {
   }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
-export default function UpdatesPage({ language, onNavigate }) {
+export default function UpdatesPage({ language, onNavigate, headingRef }) {
   const copy = getUiCopy(language);
   const updates = getUpdateHistory(language);
   const environment = getAppEnvironment();
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-color-scheme: dark)");
     const followSystemTheme = (event) => {
+      const nextTheme = event.matches ? "dark" : "light";
+
       try {
         if (!localStorage.getItem("pcds-theme")) {
-          applyDocumentTheme(event.matches ? "dark" : "light");
+          applyDocumentTheme(nextTheme);
+          setTheme(nextTheme);
         }
       } catch {
-        applyDocumentTheme(event.matches ? "dark" : "light");
+        applyDocumentTheme(nextTheme);
+        setTheme(nextTheme);
       }
     };
 
@@ -48,10 +53,22 @@ export default function UpdatesPage({ language, onNavigate }) {
     return () => preference.removeEventListener("change", followSystemTheme);
   }, []);
 
+  useEffect(() => {
+    const currentTheme = document.documentElement.dataset.theme;
+
+    if (currentTheme !== "dark" && currentTheme !== "light") {
+      return undefined;
+    }
+
+    const frameId = window.requestAnimationFrame(() => setTheme(currentTheme));
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
+
   const toggleTheme = () => {
     const nextTheme =
       document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     applyDocumentTheme(nextTheme);
+    setTheme(nextTheme);
     try {
       localStorage.setItem("pcds-theme", nextTheme);
     } catch {
@@ -131,7 +148,7 @@ export default function UpdatesPage({ language, onNavigate }) {
                 malayRouteId="updates-ms"
                 onNavigate={onNavigate}
               />
-              <ThemeToggle copy={copy} onThemeToggle={toggleTheme} />
+              <ThemeToggle copy={copy} onThemeToggle={toggleTheme} theme={theme} />
             </div>
           </div>
 
@@ -150,7 +167,9 @@ export default function UpdatesPage({ language, onNavigate }) {
           </p>
 
           <h1
-            className="updates-title"
+            className="updates-title page-heading"
+            ref={headingRef}
+            tabIndex={-1}
             style={{
               margin: 0,
               color: "var(--text-strong)",
