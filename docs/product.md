@@ -121,7 +121,11 @@ The product now has three environments:
 
 - Development: local machine, orange favicon, `DEV` badge.
 - Preview: Vercel preview site, purple favicon, `PREVIEW` badge.
-- Production: GitHub Pages public site, brand favicon, no badge.
+- Production: GitHub Pages public site, teal brand favicon, no badge.
+
+The environment-coloured browser favicon uses a simplified transparent `S` at 16, 32, and 48px
+so it stays legible in a tab. Larger 512px and Apple touch icons retain the complete dark-tile
+artwork with the `S` and chart motif.
 
 All three environments use the same project-card behavior. Environment differences are limited to
 deployment, domain, indexing policy, favicon, and the Development or Preview badge.

@@ -4,22 +4,22 @@ import { copyFileSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, join, resolve } from "node:path";
 
 const publicDir = resolve("public");
+const productionColor = "#14b8a6";
+const smallIconSizes = [16, 32, 48];
 const environments = [
+  { name: "production", color: productionColor },
   { name: "development", color: "#f97316" },
   { name: "preview", color: "#7c3aed" },
 ];
 
-const sources = [
+const largeEnvironmentSources = [
   { input: "favicon.png", output: (name) => `favicon-${name}.png` },
-  { input: "favicon-32x32.png", output: (name) => `favicon-${name}-32x32.png` },
   { input: "apple-touch-icon.png", output: (name) => `apple-touch-icon-${name}.png` },
 ];
 
 const productionCopies = [
   ["favicon.png", "favicon-production.png"],
-  ["favicon-32x32.png", "favicon-production-32x32.png"],
   ["apple-touch-icon.png", "apple-touch-icon-production.png"],
-  ["favicon.ico", "favicon-production.ico"],
 ];
 
 const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
@@ -152,7 +152,21 @@ function paethPredictor(left, up, upperLeft) {
   return upperLeft;
 }
 
-function encodePng({ width, height, ihdr, raw }) {
+function createIhdr(width, height) {
+  const ihdr = Buffer.alloc(13);
+
+  ihdr.writeUInt32BE(width, 0);
+  ihdr.writeUInt32BE(height, 4);
+  ihdr.writeUInt8(8, 8);
+  ihdr.writeUInt8(6, 9);
+  ihdr.writeUInt8(0, 10);
+  ihdr.writeUInt8(0, 11);
+  ihdr.writeUInt8(0, 12);
+
+  return ihdr;
+}
+
+function encodePng({ width, height, raw }) {
   const rowLength = width * 4;
   const scanlines = Buffer.alloc((rowLength + 1) * height);
 
@@ -164,7 +178,7 @@ function encodePng({ width, height, ihdr, raw }) {
 
   return Buffer.concat([
     PNG_SIGNATURE,
-    createChunk("IHDR", ihdr),
+    createChunk("IHDR", createIhdr(width, height)),
     createChunk("IDAT", deflateSync(scanlines)),
     createChunk("IEND"),
   ]);
@@ -213,33 +227,78 @@ function luminance({ r, g, b }) {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
-function createIcoFromPng(pngBuffer) {
+function resizeLogo(png, size, targetHex) {
+  const target = parseHexColor(targetHex);
+  const raw = Buffer.alloc(size * size * 4);
+  const scaleX = png.width / size;
+  const scaleY = png.height / size;
+
+  for (let targetY = 0; targetY < size; targetY += 1) {
+    const sourceTop = targetY * scaleY;
+    const sourceBottom = (targetY + 1) * scaleY;
+
+    for (let targetX = 0; targetX < size; targetX += 1) {
+      const sourceLeft = targetX * scaleX;
+      const sourceRight = (targetX + 1) * scaleX;
+      let weightedAlpha = 0;
+      let totalWeight = 0;
+
+      for (let sourceY = Math.floor(sourceTop); sourceY < Math.ceil(sourceBottom); sourceY += 1) {
+        const overlapY = Math.min(sourceBottom, sourceY + 1) - Math.max(sourceTop, sourceY);
+
+        for (let sourceX = Math.floor(sourceLeft); sourceX < Math.ceil(sourceRight); sourceX += 1) {
+          const overlapX = Math.min(sourceRight, sourceX + 1) - Math.max(sourceLeft, sourceX);
+          const weight = overlapX * overlapY;
+          const sourceIndex = (sourceY * png.width + sourceX) * 4;
+
+          weightedAlpha += png.raw[sourceIndex + 3] * weight;
+          totalWeight += weight;
+        }
+      }
+
+      const targetIndex = (targetY * size + targetX) * 4;
+      raw[targetIndex] = target.r;
+      raw[targetIndex + 1] = target.g;
+      raw[targetIndex + 2] = target.b;
+      raw[targetIndex + 3] = Math.round(weightedAlpha / totalWeight);
+    }
+  }
+
+  return { width: size, height: size, raw };
+}
+
+function createIcoFromPngs(images) {
   const header = Buffer.alloc(6);
-  const entry = Buffer.alloc(16);
-  const imageOffset = header.length + entry.length;
+  const entries = images.map(() => Buffer.alloc(16));
+  let imageOffset = header.length + entries.reduce((total, entry) => total + entry.length, 0);
 
   header.writeUInt16LE(0, 0);
   header.writeUInt16LE(1, 2);
-  header.writeUInt16LE(1, 4);
+  header.writeUInt16LE(images.length, 4);
 
-  entry.writeUInt8(32, 0);
-  entry.writeUInt8(32, 1);
-  entry.writeUInt8(0, 2);
-  entry.writeUInt8(0, 3);
-  entry.writeUInt16LE(1, 4);
-  entry.writeUInt16LE(32, 6);
-  entry.writeUInt32LE(pngBuffer.length, 8);
-  entry.writeUInt32LE(imageOffset, 12);
+  for (const [index, image] of images.entries()) {
+    const entry = entries[index];
 
-  return Buffer.concat([header, entry, pngBuffer]);
+    entry.writeUInt8(image.size, 0);
+    entry.writeUInt8(image.size, 1);
+    entry.writeUInt8(0, 2);
+    entry.writeUInt8(0, 3);
+    entry.writeUInt16LE(1, 4);
+    entry.writeUInt16LE(32, 6);
+    entry.writeUInt32LE(image.buffer.length, 8);
+    entry.writeUInt32LE(imageOffset, 12);
+    imageOffset += image.buffer.length;
+  }
+
+  return Buffer.concat([header, ...entries, ...images.map((image) => image.buffer)]);
 }
 
 for (const [input, output] of productionCopies) {
   copyFileSync(join(publicDir, input), join(publicDir, output));
 }
 
-for (const environment of environments) {
-  for (const source of sources) {
+for (const environment of environments.filter(({ name }) => name !== "production")) {
+  for (const source of largeEnvironmentSources) {
     const inputPath = join(publicDir, source.input);
     const outputPath = join(publicDir, source.output(environment.name));
     const png = parsePng(inputPath);
@@ -248,8 +307,30 @@ for (const environment of environments) {
     writeFileSync(outputPath, output);
   }
 
-  const favicon32 = readFileSync(join(publicDir, `favicon-${environment.name}-32x32.png`));
-  writeFileSync(join(publicDir, `favicon-${environment.name}.ico`), createIcoFromPng(favicon32));
 }
 
-console.log("Generated environment favicons.");
+const smallIconMaster = parsePng(join(publicDir, "favicon-small-master.png"));
+
+for (const environment of environments) {
+  const images = smallIconSizes.map((size) => {
+    const buffer = encodePng(resizeLogo(smallIconMaster, size, environment.color));
+    const environmentFilename = `favicon-${environment.name}-${size}x${size}.png`;
+
+    writeFileSync(join(publicDir, environmentFilename), buffer);
+
+    if (environment.name === "production") {
+      writeFileSync(join(publicDir, `favicon-${size}x${size}.png`), buffer);
+    }
+
+    return { size, buffer };
+  });
+  const ico = createIcoFromPngs(images);
+
+  writeFileSync(join(publicDir, `favicon-${environment.name}.ico`), ico);
+
+  if (environment.name === "production") {
+    writeFileSync(join(publicDir, "favicon.ico"), ico);
+  }
+}
+
+console.log("Generated Production, Preview, and Development favicons.");
