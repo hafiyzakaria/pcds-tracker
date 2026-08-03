@@ -8,85 +8,6 @@ const FONT_STACK =
 const useIsomorphicLayoutEffect =
   typeof window === "undefined" ? useEffect : useLayoutEffect;
 
-function parseHexColor(color) {
-  const match = typeof color === "string"
-    ? color.trim().match(/^#([\da-f]{6})$/i)
-    : null;
-
-  if (!match) {
-    return null;
-  }
-
-  return [0, 2, 4].map((offset) => Number.parseInt(match[1].slice(offset, offset + 2), 16));
-}
-
-function getRelativeLuminance(color) {
-  const channels = parseHexColor(color);
-
-  if (!channels) {
-    return null;
-  }
-
-  return channels.map((channel) => channel / 255).reduce((sum, channel, index) => {
-    const linear = channel <= 0.03928
-      ? channel / 12.92
-      : ((channel + 0.055) / 1.055) ** 2.4;
-    return sum + linear * [0.2126, 0.7152, 0.0722][index];
-  }, 0);
-}
-
-function getContrastRatio(first, second) {
-  const firstLuminance = getRelativeLuminance(first);
-  const secondLuminance = getRelativeLuminance(second);
-
-  if (firstLuminance === null || secondLuminance === null) {
-    return 1;
-  }
-
-  const lighter = Math.max(firstLuminance, secondLuminance);
-  const darker = Math.min(firstLuminance, secondLuminance);
-  return (lighter + 0.05) / (darker + 0.05);
-}
-
-function mixHexColors(first, second, amount) {
-  const firstChannels = parseHexColor(first);
-  const secondChannels = parseHexColor(second);
-
-  if (!firstChannels || !secondChannels) {
-    return first;
-  }
-
-  const channels = firstChannels.map((channel, index) =>
-    Math.round(channel + (secondChannels[index] - channel) * amount)
-  );
-  return `#${channels.map((channel) => channel.toString(16).padStart(2, "0")).join("")}`;
-}
-
-function getAccessibleClassificationColors(color) {
-  const accent = typeof color === "string" && /^#[\da-f]{6}$/i.test(color.trim())
-    ? color.trim()
-    : "#475569";
-  const whiteContrast = getContrastRatio("#ffffff", accent);
-  const darkContrast = getContrastRatio("#111827", accent);
-  const text = whiteContrast >= darkContrast ? "#ffffff" : "#111827";
-  let background = accent;
-
-  if (Math.max(whiteContrast, darkContrast) < 4.5) {
-    const target = text === "#ffffff" ? "#000000" : "#ffffff";
-
-    for (let amount = 0.01; amount <= 0.4; amount += 0.01) {
-      const candidate = mixHexColors(accent, target, amount);
-
-      if (getContrastRatio(text, candidate) >= 4.5) {
-        background = candidate;
-        break;
-      }
-    }
-  }
-
-  return { background, text };
-}
-
 export function NavigationPillLink({
   children,
   className = "",
@@ -120,7 +41,6 @@ export function ProjectClassificationBadge({
     ? copy.categoryFilters.sectors
     : copy.categoryFilters.enablers;
   const interactive = Boolean(onCategoryFilter && onKindFilter);
-  const classificationColors = getAccessibleClassificationColors(color);
   const classificationRef = useRef(null);
   const kindRef = useRef(null);
   const nameRef = useRef(null);
@@ -203,8 +123,6 @@ export function ProjectClassificationBadge({
           "--project-classification-kind-width": `${indicatorMetrics?.kind.width ?? 0}px`,
           "--project-classification-name-left": `${indicatorMetrics?.name.left ?? 0}px`,
           "--project-classification-name-width": `${indicatorMetrics?.name.width ?? 0}px`,
-          "--project-classification-fill": classificationColors.background,
-          "--project-classification-contrast": classificationColors.text,
           maxWidth,
         }}
       >
@@ -238,8 +156,6 @@ export function ProjectClassificationBadge({
       className="project-classification"
       style={{
         "--project-classification-accent": color,
-        "--project-classification-fill": classificationColors.background,
-        "--project-classification-contrast": classificationColors.text,
         display: "inline-flex",
         alignItems: "center",
         position: "relative",
@@ -258,8 +174,8 @@ export function ProjectClassificationBadge({
           padding: "7px 10px",
           border: "1px solid var(--project-classification-accent)",
           borderRadius: "999px",
-          backgroundColor: "var(--project-classification-fill)",
-          color: "var(--project-classification-contrast)",
+          backgroundColor: "var(--project-classification-accent)",
+          color: "#ffffff",
           fontFamily: FONT_STACK,
           fontSize: "11px",
           fontWeight: 800,
@@ -396,19 +312,14 @@ export function EnvironmentBadge({ environment, copy }) {
   );
 }
 
-export function ThemeToggle({ onThemeToggle, copy, theme = "light" }) {
-  const currentTheme = theme === "dark" ? copy.themeToggle.dark : copy.themeToggle.light;
-  const nextTheme = theme === "dark" ? copy.themeToggle.light : copy.themeToggle.dark;
-  const accessibleLabel = `${copy.themeToggle.current(currentTheme)}. ${copy.themeToggle.switchTo(nextTheme)}`;
-
+export function ThemeToggle({ onThemeToggle, copy }) {
   return (
     <button
       className="theme-toggle"
       type="button"
       onClick={onThemeToggle}
-      aria-label={accessibleLabel}
-      aria-pressed={theme === "dark"}
-      title={accessibleLabel}
+      aria-label={`${copy.themeToggle.label}: ${copy.themeToggle.light} / ${copy.themeToggle.dark}`}
+      title={`${copy.themeToggle.label}: ${copy.themeToggle.light} / ${copy.themeToggle.dark}`}
       style={{
         display: "inline-flex",
         alignItems: "center",

@@ -14,14 +14,7 @@ const EN = {
     backToTracker: "Project tracker",
     source: "Source:",
   },
-  themeToggle: {
-    label: "Theme",
-    light: "Light",
-    dark: "Dark",
-    system: "System",
-    current: (theme) => `Current theme: ${theme}`,
-    switchTo: (theme) => `Switch to ${theme} theme`,
-  },
+  themeToggle: { label: "Theme", light: "Light", dark: "Dark", system: "System" },
   status: {
     "Awaiting Decision": { label: "Ongoing", description: "delivery moving, pending approval, or awaiting next public decision" },
     "In Progress": { label: "Ongoing", description: "delivery moving, pending approval, or awaiting next public decision" },
@@ -54,11 +47,7 @@ const EN = {
     intro: ["Major projects under Sarawak's Post COVID-19 Development Strategy 2030, in one place.", "An independent tracker with milestones, current status, and links to public sources."],
   },
   footer: { independent: "Built by hafiy.my — an independent tracker. Not affiliated with the Sarawak Government.", methodology: "Data sourced from public reports, news outlets, and official announcements. Milestone statuses are best-effort based on available information." },
-  accessibility: {
-    environment: (name) => `${name} environment`,
-    skipToProjects: "Skip to projects",
-    projects: "Tracked projects",
-  },
+  accessibility: { environment: (name) => `${name} environment` },
 };
 
 const MS = {
@@ -72,14 +61,7 @@ const MS = {
     backToTracker: "Project tracker",
     source: "Sumber:",
   },
-  themeToggle: {
-    label: "Tema",
-    light: "Cerah",
-    dark: "Gelap",
-    system: "Sistem",
-    current: (theme) => `Tema semasa: ${theme}`,
-    switchTo: (theme) => `Tukar kepada tema ${theme}`,
-  },
+  themeToggle: { label: "Tema", light: "Cerah", dark: "Gelap", system: "Sistem" },
   status: {
     "Awaiting Decision": { label: "Pelaksanaan", description: "pelaksanaan bergerak, menunggu kelulusan atau keputusan awam seterusnya" },
     "In Progress": { label: "Pelaksanaan", description: "pelaksanaan bergerak, menunggu kelulusan atau keputusan awam seterusnya" },
@@ -112,11 +94,7 @@ const MS = {
     intro: ["Projek utama di bawah Strategi Pembangunan Pasca COVID-19 2030 Sarawak, di satu tempat.", "Platform pemantauan bebas yang memaparkan pencapaian utama, status semasa dan pautan kepada sumber awam."],
   },
   footer: { independent: "'Project tracker' dibangunkan oleh — hafiy.my. Tidak berafiliasi dengan Kerajaan Sarawak.", methodology: "Data diperoleh daripada laporan awam, portal berita dan pengumuman rasmi. Status pencapaian utama ialah rumusan terbaik berdasarkan maklumat yang tersedia." },
-  accessibility: {
-    environment: (name) => `persekitaran ${{ development: "pembangunan", preview: "pratonton", production: "produksi" }[name] || name}`,
-    skipToProjects: "Langkau ke projek",
-    projects: "Projek yang dijejaki",
-  },
+  accessibility: { environment: (name) => `persekitaran ${{ development: "pembangunan", preview: "pratonton", production: "produksi" }[name] || name}` },
 };
 
 /** Returns all fixed rendered copy. Unknown languages safely use English. */

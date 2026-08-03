@@ -502,7 +502,7 @@ function FilterBar({
 function DetailSection({ title, children }) {
   return (
     <section style={{ display: "grid", gap: "8px" }}>
-      <h3
+      <h4
         style={{
           margin: 0,
           color: "var(--text-faint)",
@@ -514,7 +514,7 @@ function DetailSection({ title, children }) {
         }}
       >
         {title}
-      </h3>
+      </h4>
       <div
         style={{
           color: "var(--text-secondary)",
@@ -749,10 +749,9 @@ function SourceLinks({ sources, interactive = true }) {
   );
 }
 
-function AccordionReveal({ expanded, children, className = "", id }) {
+function AccordionReveal({ expanded, children, className = "" }) {
   return (
     <div
-      id={id}
       className={`accordion-reveal ${className}`.trim()}
       aria-hidden={!expanded}
       inert={expanded ? undefined : true}
@@ -989,18 +988,10 @@ function ProjectCard({
   const cardBorderColor = "var(--border-strong)";
   const kindFilterId = `group:${row.kind}`;
   const categoryFilterId = `category:${row.sectorId}`;
-  const cardAnchor = getProjectAnchor(row.name);
-  const cardButtonId = `${cardAnchor}-toggle`;
-  const detailIds = {
-    overview: `${cardAnchor}-overview`,
-    completed: `${cardAnchor}-completed-milestones`,
-    remaining: `${cardAnchor}-remaining-milestones`,
-    sources: `${cardAnchor}-sources`,
-  };
 
   return (
     <article
-      id={cardAnchor}
+      id={getProjectAnchor(row.name)}
       className="project-card"
       data-expanded={expanded ? "true" : "false"}
       style={{
@@ -1037,12 +1028,10 @@ function ProjectCard({
         />
       </div>
       <button
-        id={cardButtonId}
         className="project-card-button"
         type="button"
         onClick={onToggle}
         aria-expanded={expanded}
-        aria-controls={Object.values(detailIds).join(" ")}
         aria-label={expanded ? copy.card.collapse(row.displayName) : copy.card.expand(row.displayName)}
         style={{
           width: "100%",
@@ -1098,7 +1087,7 @@ function ProjectCard({
         </div>
 
         <div>
-          <h2
+          <h3
             className="project-card-title"
             style={{
               margin: 0,
@@ -1114,7 +1103,7 @@ function ProjectCard({
             }}
           >
             {row.displayName}
-          </h2>
+          </h3>
           <div
             style={{
               display: "flex",
@@ -1127,7 +1116,7 @@ function ProjectCard({
             <StatusBadge statusMeta={row.statusMeta} />
             {!expanded && <CollapsedMilestoneSummary row={row} copy={copy} />}
           </div>
-          <AccordionReveal expanded={expanded} className="project-card-intro-reveal" id={detailIds.overview}>
+          <AccordionReveal expanded={expanded} className="project-card-intro-reveal">
             <div
               style={{
                 display: "grid",
@@ -1146,11 +1135,11 @@ function ProjectCard({
 
         <div style={{ display: "grid", gap: "12px" }}>
           {expanded && <MilestoneIndicator row={row} copy={copy} />}
-          <AccordionReveal expanded={expanded} className="project-card-completed-reveal" id={detailIds.completed}>
+          <AccordionReveal expanded={expanded} className="project-card-completed-reveal">
             <CompletedMilestoneRows row={row} language={language} />
           </AccordionReveal>
           <NextMilestoneCallout row={row} expanded={expanded} copy={copy} language={language} />
-          <AccordionReveal expanded={expanded} className="project-card-timeline-reveal" id={detailIds.remaining}>
+          <AccordionReveal expanded={expanded} className="project-card-timeline-reveal">
             <div style={{ display: "grid", gap: "12px", paddingTop: "2px" }}>
               <FollowingMilestones row={row} copy={copy} language={language} />
             </div>
@@ -1158,7 +1147,7 @@ function ProjectCard({
         </div>
       </button>
 
-      <AccordionReveal expanded={expanded} className="project-card-sources-reveal" id={detailIds.sources}>
+      <AccordionReveal expanded={expanded} className="project-card-sources-reveal">
         <div
           style={{
             display: "grid",
@@ -1217,7 +1206,7 @@ function ProjectGrid({
   );
 }
 
-function HeaderControls({ language, onNavigate, onThemeToggle, copy, theme }) {
+function HeaderControls({ language, onNavigate, onThemeToggle, copy }) {
   return (
     <div className="header-controls" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
       <LanguageToggle
@@ -1227,7 +1216,7 @@ function HeaderControls({ language, onNavigate, onThemeToggle, copy, theme }) {
         malayRouteId="tracker-ms"
         onNavigate={onNavigate}
       />
-      <ThemeToggle copy={copy} onThemeToggle={onThemeToggle} theme={theme} />
+      <ThemeToggle copy={copy} onThemeToggle={onThemeToggle} />
     </div>
   );
 }
@@ -1248,12 +1237,11 @@ function renderIntroParagraph(paragraph, programmeName) {
   );
 }
 
-export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRef }) {
+export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeClassificationFilter, setActiveClassificationFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
   const [filterPhase, setFilterPhase] = useState(null);
-  const [theme, setTheme] = useState("light");
   const filterExitTimerRef = useRef(null);
   const filterEnterTimerRef = useRef(null);
   const environment = getAppEnvironment();
@@ -1264,32 +1252,17 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
   useEffect(() => {
     const preference = window.matchMedia("(prefers-color-scheme: dark)");
     const followSystemTheme = (event) => {
-      const nextTheme = event.matches ? "dark" : "light";
-
       try {
         if (!localStorage.getItem("pcds-theme")) {
-          applyDocumentTheme(nextTheme);
-          setTheme(nextTheme);
+          applyDocumentTheme(event.matches ? "dark" : "light");
         }
       } catch {
-        applyDocumentTheme(nextTheme);
-        setTheme(nextTheme);
+        applyDocumentTheme(event.matches ? "dark" : "light");
       }
     };
 
     preference.addEventListener("change", followSystemTheme);
     return () => preference.removeEventListener("change", followSystemTheme);
-  }, []);
-
-  useEffect(() => {
-    const currentTheme = document.documentElement.dataset.theme;
-
-    if (currentTheme !== "dark" && currentTheme !== "light") {
-      return undefined;
-    }
-
-    const frameId = window.requestAnimationFrame(() => setTheme(currentTheme));
-    return () => window.cancelAnimationFrame(frameId);
   }, []);
 
   useEffect(() => () => {
@@ -1395,7 +1368,6 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
   const toggleTheme = () => {
     const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     applyDocumentTheme(nextTheme);
-    setTheme(nextTheme);
     try {
       localStorage.setItem("pcds-theme", nextTheme);
     } catch {
@@ -1413,9 +1385,6 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
         fontFamily: FONT_STACK,
       }}
     >
-      <a className="skip-link" href="#projects">
-        {copy.accessibility.skipToProjects}
-      </a>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         * { box-sizing: border-box; }
@@ -1511,24 +1480,15 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
             min-height: 0 !important;
           }
           .project-classification-slot {
-            width: calc(100% - 58px) !important;
             max-width: calc(100% - 58px) !important;
           }
           .project-classification-slot .project-classification--interactive {
-            width: 100%;
             max-width: 100%;
-          }
-          .project-classification-slot .project-classification-name {
-            justify-content: flex-start;
-            min-width: 0;
           }
           .project-classification-slot .project-classification-name {
             white-space: normal;
           }
           .project-classification-slot .project-classification-name span {
-            display: block;
-            min-width: 0;
-            max-width: 100%;
             overflow: visible;
             text-overflow: clip;
             white-space: normal;
@@ -1613,13 +1573,10 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
               onNavigate={onNavigate}
               onThemeToggle={toggleTheme}
               copy={copy}
-              theme={theme}
             />
           </div>
           <h1
-            className="tracker-title page-heading"
-            ref={headingRef}
-            tabIndex={-1}
+            className="tracker-title"
             style={{
               margin: 0,
               color: "var(--text-strong)",
@@ -1693,12 +1650,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
           />
         </div>
 
-        <section
-          id="projects"
-          tabIndex={-1}
-          aria-label={copy.accessibility.projects}
-          style={{ scrollMarginTop: "24px" }}
-        >
+        <section>
           <FilterBar
             activeClassificationLabel={activeClassificationLabel}
             copy={copy}
@@ -1734,7 +1686,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
               href="https://hafiy.my"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "var(--brand-strong)", textDecoration: "none" }}
+              style={{ color: "var(--brand)", textDecoration: "none" }}
             >
               hafiy.my
             </a>
