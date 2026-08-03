@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 import {
   EnvironmentBadge,
   LanguageToggle,
@@ -31,24 +29,6 @@ export default function UpdatesPage({ language, onNavigate, headingRef }) {
   const copy = getUiCopy(language);
   const updates = getUpdateHistory(language);
   const environment = getAppEnvironment();
-
-  useEffect(() => {
-    const preference = window.matchMedia("(prefers-color-scheme: dark)");
-    const followSystemTheme = (event) => {
-      const nextTheme = event.matches ? "dark" : "light";
-
-      try {
-        if (!localStorage.getItem("pcds-theme")) {
-          applyDocumentTheme(nextTheme);
-        }
-      } catch {
-        applyDocumentTheme(nextTheme);
-      }
-    };
-
-    preference.addEventListener("change", followSystemTheme);
-    return () => preference.removeEventListener("change", followSystemTheme);
-  }, []);
 
   const toggleTheme = () => {
     const nextTheme =

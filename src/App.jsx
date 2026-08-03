@@ -1019,7 +1019,7 @@ function ProjectCard({
         className="project-classification-slot"
         style={{
           position: "absolute",
-          top: "18px",
+          top: expanded ? "18px" : "30px",
           left: "18px",
           zIndex: 2,
           display: "flex",
@@ -1051,9 +1051,9 @@ function ProjectCard({
           minHeight: expanded ? "190px" : "263px",
           display: "grid",
           gridTemplateRows: expanded ? "auto 1fr auto" : "auto auto auto",
-          alignContent: expanded ? "stretch" : "start",
+          alignContent: expanded ? "stretch" : "space-between",
           gap: expanded ? "14px" : "10px",
-          padding: "18px",
+          padding: expanded ? "18px" : "30px 18px",
           border: "none",
           backgroundColor: "transparent",
           color: "inherit",
@@ -1145,7 +1145,7 @@ function ProjectCard({
           </AccordionReveal>
         </div>
 
-        <div style={{ display: "grid", gap: "12px" }}>
+        <div style={{ display: "grid", gap: expanded ? "12px" : 0 }}>
           {expanded && <MilestoneIndicator row={row} copy={copy} />}
           <AccordionReveal expanded={expanded} className="project-card-completed-reveal" id={detailIds.completed}>
             <CompletedMilestoneRows row={row} language={language} />
@@ -1260,24 +1260,6 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
   const copy = getUiCopy(language);
   const filters = getFilters(copy);
   const lastUpdatedLabel = formatLastUpdated(LAST_UPDATED, language);
-
-  useEffect(() => {
-    const preference = window.matchMedia("(prefers-color-scheme: dark)");
-    const followSystemTheme = (event) => {
-      const nextTheme = event.matches ? "dark" : "light";
-
-      try {
-        if (!localStorage.getItem("pcds-theme")) {
-          applyDocumentTheme(nextTheme);
-        }
-      } catch {
-        applyDocumentTheme(nextTheme);
-      }
-    };
-
-    preference.addEventListener("change", followSystemTheme);
-    return () => preference.removeEventListener("change", followSystemTheme);
-  }, []);
 
   useEffect(() => () => {
     if (filterExitTimerRef.current) {
@@ -1495,13 +1477,13 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
           }
           .project-card-button {
             min-height: 0 !important;
+            padding: 18px !important;
           }
           .project-classification-slot {
-            width: calc(100% - 58px) !important;
+            top: 18px !important;
             max-width: calc(100% - 58px) !important;
           }
           .project-classification-slot .project-classification--interactive {
-            width: 100%;
             max-width: 100%;
           }
           .project-classification-slot .project-classification-name {

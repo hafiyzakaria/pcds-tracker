@@ -14,7 +14,7 @@
           const savedTheme = localStorage.getItem("pcds-theme");
           const theme = savedTheme === "light" || savedTheme === "dark"
             ? savedTheme
-            : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            : "light";
           document.documentElement.dataset.theme = theme;
           document.documentElement.style.colorScheme = theme;
           document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#121212" : "#ffffff";

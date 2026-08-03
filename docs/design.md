@@ -82,8 +82,13 @@ Expanded cards retain the `Milestones` label and detailed timeline for added con
 Collapsed desktop cards use a shared minimum height so every two-column row remains visually
 aligned even when titles or milestone copy vary. The narrower two-column range from `761px` to
 `980px` uses a slightly taller shared minimum to accommodate wrapped titles, milestone counts, and
-BM copy. Mobile cards return to content-driven heights in the one-column layout, and their internal
-grid and flex rows must be allowed to shrink so narrow screens do not clip card content.
+BM copy. Within that shared height, the collapsed card's three content rows use the available space
+between them so the composition remains balanced instead of leaving excess space below the final
+row. The visible classification control and final milestone callout keep matching `30px` top and
+bottom insets on collapsed desktop cards; collapsed detail panels do not add invisible grid gaps
+around the callout. Mobile cards return to content-driven heights and `18px` insets in the one-column
+layout, and their internal grid and flex rows must be allowed to shrink so narrow screens do not clip
+card content.
 
 ## Typography
 
@@ -166,7 +171,8 @@ Current interactions:
   names stay consistent across the tracker and its sources. The BM introduction uses the idiomatic
   phrase `platform pemantauan bebas`; the footer retains the quoted English phrase `'Project tracker'`,
   while the category label `Enabler` is presented as `Pemboleh`.
-- The icon theme button switches between light and dark modes and remembers the selection. Its
+- Light is the initial theme for first-time visitors regardless of their operating-system theme.
+  The icon theme button switches between light and dark modes and remembers an explicit selection. Its
   icon crossfades and rotates between moon and sun states, while the button lifts into a soft
   tinted surface with a subtle shadow on hover or keyboard focus and gives a small press response.
 - The `Projects`, `Planning`, `Ongoing`, and `Completed` summary metrics are interactive status
@@ -193,10 +199,10 @@ Current interactions:
   two fixed segments over `250ms` on hover, keyboard focus, and selection; no width, padding, overlap,
   or card geometry changes during the animation. Touch layouts keep the same joined geometry and show
   the selected accent after a press. Mobile cards reserve only the chevron's space for this control
-  and let long category labels wrap inside the pill rather than hiding them behind an ellipsis. The
-  interaction remains self-contained, with the hover and focus motion providing the affordance without
-  a duplicate tooltip. The pill interaction respects reduced-motion preferences. A compact active-filter
-  pill remains above the
+  without forcing short pills to fill that available width. Long category labels can grow up to the
+  reserved boundary and wrap inside the pill rather than hiding behind an ellipsis. The interaction
+  remains self-contained, with the hover and focus motion providing the affordance without a duplicate
+  tooltip. The pill interaction respects reduced-motion preferences. A compact active-filter pill remains above the
   grid so a classification filter can always be cleared, including when its combination with a status
   filter returns no cards.
 - Project cards expand and collapse. A collapsed card's `View details` control rests as a bare down
