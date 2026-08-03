@@ -702,6 +702,7 @@ function SourceLinks({ sources, interactive = true }) {
       {sources.map((source, index) => (
         <a
           key={source.url}
+          className="source-link"
           href={source.url}
           target="_blank"
           rel="noopener noreferrer"

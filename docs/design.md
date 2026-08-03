@@ -210,7 +210,9 @@ Current interactions:
   remain unchanged. Touch presses mirror that depth cue for immediate feedback, then return to the
   resting state after release instead of retaining a browser-dependent hover state. Reduced-motion
   preferences keep the stronger border and shadow but omit the physical lift.
-- Source links open in a new tab.
+- Source links open in a new tab. Hover and keyboard focus use a subtle brand-tinted surface,
+  stronger border, slight lift, and a clearer external-link arrow so the supporting evidence is easy
+  to identify as interactive without competing with the project content.
 - The linked last-updated control rests as plain metadata in the standard muted text colour, aligned with
   the hero text. Hover or keyboard focus reveals one soft tinted pill aligned with the summary metrics and
   filters while its label eases slightly right into the pill. The low-opacity `↗︎` cue becomes fully
