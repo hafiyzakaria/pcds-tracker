@@ -442,7 +442,7 @@ function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAl
               width: `${milestoneProgress}%`,
               height: "100%",
               borderRadius: "999px",
-              backgroundColor: "#1d4ed8cc",
+              backgroundColor: "var(--brand)",
             }}
           />
         </div>

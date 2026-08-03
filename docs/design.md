@@ -185,6 +185,8 @@ Current interactions:
   wording.
   On initial load or refresh, metric values count up with a short eased reveal; reduced-motion
   preferences show the final values immediately.
+  On mobile, the milestone summary uses the shared brand teal for its progress fill against the
+  neutral theme-aware track.
   The `Milestones` metric uses `aria-expanded` to reset status and category filters, show all projects,
   and expand their details; clicking it again collapses all projects. While it is active, the status
   metrics remain available but are visually unselected. Choosing another status or category filter
