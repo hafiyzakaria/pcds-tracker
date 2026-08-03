@@ -9,7 +9,7 @@ html[data-theme="light"] {
   --text-body: #374151;
   --text-secondary: #4b5563;
   --text-muted: #64748b;
-  --text-faint: #9ca3af;
+  --text-faint: #64748b;
   --text-icon: #475569;
   --border-strong: #cbd5e1;
   --border: #e5e7eb;
@@ -74,6 +74,32 @@ button:focus-visible,
 a:focus-visible {
   outline: 3px solid #14b8a6;
   outline-offset: 3px;
+}
+
+.page-heading:focus {
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 8px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  background-color: var(--surface);
+  color: var(--brand-strong);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 .navigation-pill-link {
@@ -340,7 +366,7 @@ a:focus-visible {
   z-index: 1;
   width: calc(var(--project-classification-kind-width) + 1px);
   border-radius: 999px;
-  background-color: var(--project-classification-accent);
+  background-color: var(--project-classification-fill);
   opacity: 0;
   pointer-events: none;
   transition:
@@ -396,7 +422,7 @@ a:focus-visible {
 
 .project-classification-kind {
   flex: 0 0 auto;
-  color: #ffffff;
+  color: var(--project-classification-contrast);
 }
 
 .project-classification-name {
@@ -419,7 +445,7 @@ a:focus-visible {
   .project-classification-kind,
 .project-classification--interactive[data-indicator-ready="false"][data-active-target="name"]
   .project-classification-name {
-  background-color: var(--project-classification-accent);
+  background-color: var(--project-classification-fill);
   box-shadow: 0 0 0 1px var(--project-classification-accent);
 }
 
@@ -432,12 +458,12 @@ a:focus-visible {
 .project-classification--interactive[data-active-target="name"] .project-classification-name,
 .project-classification--interactive:has(.project-classification-name:hover) .project-classification-name,
 .project-classification--interactive:has(.project-classification-name:focus-visible) .project-classification-name {
-  color: #ffffff;
+  color: var(--project-classification-contrast);
 }
 
 .project-classification--interactive:has(.project-classification-kind:hover) .project-classification-kind,
 .project-classification--interactive:has(.project-classification-kind:focus-visible) .project-classification-kind {
-  color: #ffffff;
+  color: var(--project-classification-contrast);
 }
 
 .project-classification--interactive:has(.project-classification-kind:hover) .project-classification-name,
@@ -599,6 +625,7 @@ a:focus-visible {
     --pill-control-height: 40px;
     --pill-control-inner-height: 32px;
   }
+
 }
 
 .visually-hidden {

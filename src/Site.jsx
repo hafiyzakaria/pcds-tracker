@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import App from "./App.jsx";
 import { applyDocumentRouteMetadata } from "./documentMetadata.js";
@@ -11,6 +11,8 @@ import UpdatesPage from "./UpdatesPage.jsx";
 
 export default function Site({ route }) {
   const [activeRoute, setActiveRoute] = useState(route);
+  const pageHeadingRef = useRef(null);
+  const previousPageRef = useRef(route.page);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -25,6 +27,20 @@ export default function Site({ route }) {
 
   useEffect(() => {
     applyDocumentRouteMetadata(activeRoute);
+
+    const pageChanged = previousPageRef.current !== activeRoute.page;
+    previousPageRef.current = activeRoute.page;
+
+    if (!pageChanged) {
+      return undefined;
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    const frameId = window.requestAnimationFrame(() => {
+      pageHeadingRef.current?.focus({ preventScroll: true });
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
   }, [activeRoute]);
 
   const navigate = (event, routeId, hash = "") => {
@@ -64,9 +80,10 @@ export default function Site({ route }) {
       <UpdatesPage
         language={activeRoute.language}
         onNavigate={navigate}
+        headingRef={pageHeadingRef}
       />
     );
   }
 
-  return <App language={activeRoute.language} onNavigate={navigate} />;
+  return <App language={activeRoute.language} onNavigate={navigate} headingRef={pageHeadingRef} />;
 }

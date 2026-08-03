@@ -502,7 +502,7 @@ function FilterBar({
 function DetailSection({ title, children }) {
   return (
     <section style={{ display: "grid", gap: "8px" }}>
-      <h4
+      <h3
         style={{
           margin: 0,
           color: "var(--text-faint)",
@@ -514,7 +514,7 @@ function DetailSection({ title, children }) {
         }}
       >
         {title}
-      </h4>
+      </h3>
       <div
         style={{
           color: "var(--text-secondary)",
@@ -749,9 +749,10 @@ function SourceLinks({ sources, interactive = true }) {
   );
 }
 
-function AccordionReveal({ expanded, children, className = "" }) {
+function AccordionReveal({ expanded, children, className = "", id }) {
   return (
     <div
+      id={id}
       className={`accordion-reveal ${className}`.trim()}
       aria-hidden={!expanded}
       inert={expanded ? undefined : true}
@@ -988,10 +989,18 @@ function ProjectCard({
   const cardBorderColor = "var(--border-strong)";
   const kindFilterId = `group:${row.kind}`;
   const categoryFilterId = `category:${row.sectorId}`;
+  const cardAnchor = getProjectAnchor(row.name);
+  const cardButtonId = `${cardAnchor}-toggle`;
+  const detailIds = {
+    overview: `${cardAnchor}-overview`,
+    completed: `${cardAnchor}-completed-milestones`,
+    remaining: `${cardAnchor}-remaining-milestones`,
+    sources: `${cardAnchor}-sources`,
+  };
 
   return (
     <article
-      id={getProjectAnchor(row.name)}
+      id={cardAnchor}
       className="project-card"
       data-expanded={expanded ? "true" : "false"}
       style={{
@@ -1028,10 +1037,12 @@ function ProjectCard({
         />
       </div>
       <button
+        id={cardButtonId}
         className="project-card-button"
         type="button"
         onClick={onToggle}
         aria-expanded={expanded}
+        aria-controls={Object.values(detailIds).join(" ")}
         aria-label={expanded ? copy.card.collapse(row.displayName) : copy.card.expand(row.displayName)}
         style={{
           width: "100%",
@@ -1087,7 +1098,7 @@ function ProjectCard({
         </div>
 
         <div>
-          <h3
+          <h2
             className="project-card-title"
             style={{
               margin: 0,
@@ -1103,7 +1114,7 @@ function ProjectCard({
             }}
           >
             {row.displayName}
-          </h3>
+          </h2>
           <div
             style={{
               display: "flex",
@@ -1116,7 +1127,7 @@ function ProjectCard({
             <StatusBadge statusMeta={row.statusMeta} />
             {!expanded && <CollapsedMilestoneSummary row={row} copy={copy} />}
           </div>
-          <AccordionReveal expanded={expanded} className="project-card-intro-reveal">
+          <AccordionReveal expanded={expanded} className="project-card-intro-reveal" id={detailIds.overview}>
             <div
               style={{
                 display: "grid",
@@ -1135,11 +1146,11 @@ function ProjectCard({
 
         <div style={{ display: "grid", gap: "12px" }}>
           {expanded && <MilestoneIndicator row={row} copy={copy} />}
-          <AccordionReveal expanded={expanded} className="project-card-completed-reveal">
+          <AccordionReveal expanded={expanded} className="project-card-completed-reveal" id={detailIds.completed}>
             <CompletedMilestoneRows row={row} language={language} />
           </AccordionReveal>
           <NextMilestoneCallout row={row} expanded={expanded} copy={copy} language={language} />
-          <AccordionReveal expanded={expanded} className="project-card-timeline-reveal">
+          <AccordionReveal expanded={expanded} className="project-card-timeline-reveal" id={detailIds.remaining}>
             <div style={{ display: "grid", gap: "12px", paddingTop: "2px" }}>
               <FollowingMilestones row={row} copy={copy} language={language} />
             </div>
@@ -1147,7 +1158,7 @@ function ProjectCard({
         </div>
       </button>
 
-      <AccordionReveal expanded={expanded} className="project-card-sources-reveal">
+      <AccordionReveal expanded={expanded} className="project-card-sources-reveal" id={detailIds.sources}>
         <div
           style={{
             display: "grid",
@@ -1237,7 +1248,7 @@ function renderIntroParagraph(paragraph, programmeName) {
   );
 }
 
-export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
+export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRef }) {
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeClassificationFilter, setActiveClassificationFilter] = useState("all");
   const [expandedIds, setExpandedIds] = useState([]);
@@ -1252,12 +1263,14 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
   useEffect(() => {
     const preference = window.matchMedia("(prefers-color-scheme: dark)");
     const followSystemTheme = (event) => {
+      const nextTheme = event.matches ? "dark" : "light";
+
       try {
         if (!localStorage.getItem("pcds-theme")) {
-          applyDocumentTheme(event.matches ? "dark" : "light");
+          applyDocumentTheme(nextTheme);
         }
       } catch {
-        applyDocumentTheme(event.matches ? "dark" : "light");
+        applyDocumentTheme(nextTheme);
       }
     };
 
@@ -1385,6 +1398,9 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
         fontFamily: FONT_STACK,
       }}
     >
+      <a className="skip-link" href="#projects">
+        {copy.accessibility.skipToProjects}
+      </a>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         * { box-sizing: border-box; }
@@ -1480,15 +1496,24 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
             min-height: 0 !important;
           }
           .project-classification-slot {
+            width: calc(100% - 58px) !important;
             max-width: calc(100% - 58px) !important;
           }
           .project-classification-slot .project-classification--interactive {
+            width: 100%;
             max-width: 100%;
+          }
+          .project-classification-slot .project-classification-name {
+            justify-content: flex-start;
+            min-width: 0;
           }
           .project-classification-slot .project-classification-name {
             white-space: normal;
           }
           .project-classification-slot .project-classification-name span {
+            display: block;
+            min-width: 0;
+            max-width: 100%;
             overflow: visible;
             text-overflow: clip;
             white-space: normal;
@@ -1576,7 +1601,9 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
             />
           </div>
           <h1
-            className="tracker-title"
+            className="tracker-title page-heading"
+            ref={headingRef}
+            tabIndex={-1}
             style={{
               margin: 0,
               color: "var(--text-strong)",
@@ -1650,7 +1677,12 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
           />
         </div>
 
-        <section>
+        <section
+          id="projects"
+          tabIndex={-1}
+          aria-label={copy.accessibility.projects}
+          style={{ scrollMarginTop: "24px" }}
+        >
           <FilterBar
             activeClassificationLabel={activeClassificationLabel}
             copy={copy}
@@ -1686,7 +1718,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate }) {
               href="https://hafiy.my"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "var(--brand)", textDecoration: "none" }}
+              style={{ color: "var(--brand-strong)", textDecoration: "none", fontWeight: 700 }}
             >
               hafiy.my
             </a>

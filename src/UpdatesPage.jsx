@@ -27,7 +27,7 @@ function formatUpdateDate(value, language) {
   }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
-export default function UpdatesPage({ language, onNavigate }) {
+export default function UpdatesPage({ language, onNavigate, headingRef }) {
   const copy = getUiCopy(language);
   const updates = getUpdateHistory(language);
   const environment = getAppEnvironment();
@@ -35,12 +35,14 @@ export default function UpdatesPage({ language, onNavigate }) {
   useEffect(() => {
     const preference = window.matchMedia("(prefers-color-scheme: dark)");
     const followSystemTheme = (event) => {
+      const nextTheme = event.matches ? "dark" : "light";
+
       try {
         if (!localStorage.getItem("pcds-theme")) {
-          applyDocumentTheme(event.matches ? "dark" : "light");
+          applyDocumentTheme(nextTheme);
         }
       } catch {
-        applyDocumentTheme(event.matches ? "dark" : "light");
+        applyDocumentTheme(nextTheme);
       }
     };
 
@@ -150,7 +152,9 @@ export default function UpdatesPage({ language, onNavigate }) {
           </p>
 
           <h1
-            className="updates-title"
+            className="updates-title page-heading"
+            ref={headingRef}
+            tabIndex={-1}
             style={{
               margin: 0,
               color: "var(--text-strong)",

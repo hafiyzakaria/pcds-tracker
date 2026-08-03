@@ -225,6 +225,26 @@ Current interactions:
 
 The expansion animation respects `prefers-reduced-motion`.
 
+## Accessibility behavior
+
+- Each tracker route starts with a localized, visually hidden skip link. When focused, it moves
+  keyboard users directly to the tracked-projects region, which has a stable `#projects` target and
+  remains focusable for reliable anchor navigation.
+- The page title is the only `h1`. Project titles are `h2` headings, and expanded-card sections such
+  as Sources and Remaining Milestones use `h3` headings while retaining their existing visual sizes.
+- Every project disclosure button exposes its expanded state and stable `aria-controls` references.
+  Expanded content receives matching IDs; collapsed content is inert and source links are excluded from
+  the keyboard sequence until the card is open. Multiple cards can remain expanded at once.
+- The theme control keeps a generic localized label, matching the neutral presentation of the language
+  control. The existing icon animation and reduced-motion behavior remain unchanged.
+- Client-side navigation between Tracker and Updates moves focus to the new page heading without
+  creating a visible pointer-navigation focus artifact. Language switches remain on the current page,
+  while browser history and direct static routes retain their normal behavior.
+- Light-theme muted text and footer links use AA-suitable contrast. Classification colors remain the
+  category identity treatment, with the text on each color choosing a contrasting foreground rather
+  than forcing white text on every category. Interactive classification labels wrap at narrow widths,
+  including a 320px viewport, without horizontal page overflow.
+
 ## Responsive Behavior
 
 The app switches to a mobile layout below `760px`.

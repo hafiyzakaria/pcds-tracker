@@ -176,6 +176,22 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Risk level: medium
 - Suggested first task: Start with a simple script that extracts project source URLs and reports non-2xx or timeout responses without failing deployments yet.
 
+### Reduce repeated keyboard stops from card-level controls
+
+- What needs to be done: Revisit the number of keyboard stops created by the interactive category
+  controls repeated across project cards when a future global search and category-filter surface is
+  approved.
+- Why it matters: The current card-level filters are useful for pointer and touch discovery, but the
+  repeated controls make keyboard traversal long on a dashboard with many cards.
+- Scope decision: Keep the current card-level category filtering for now. A deferred prototype could
+  use a borderless divider-and-chevron reveal handle, with the search field and compact category pills
+  appearing only after activation. Do not remove the repeated card controls without a follow-up review
+  of discoverability and keyboard efficiency.
+- Estimated difficulty: medium
+- Risk level: medium
+- Suggested first task: Prototype the reveal handle, then compare keyboard stops, URL/state behavior,
+  and mobile discoverability before changing the current card interaction.
+
 ### Revisit monitored 13th Malaysia Plan candidates
 
 - Sarawak High Performance Sports Centre: Strongest next candidate. The 13th Malaysia Plan

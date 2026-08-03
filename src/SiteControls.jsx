@@ -8,6 +8,13 @@ const FONT_STACK =
 const useIsomorphicLayoutEffect =
   typeof window === "undefined" ? useEffect : useLayoutEffect;
 
+function getAccessibleClassificationColors(color) {
+  const accent = typeof color === "string" && /^#[\da-f]{6}$/i.test(color.trim())
+    ? color.trim()
+    : "#475569";
+  return { background: accent, text: "#ffffff" };
+}
+
 export function NavigationPillLink({
   children,
   className = "",
@@ -41,6 +48,7 @@ export function ProjectClassificationBadge({
     ? copy.categoryFilters.sectors
     : copy.categoryFilters.enablers;
   const interactive = Boolean(onCategoryFilter && onKindFilter);
+  const classificationColors = getAccessibleClassificationColors(color);
   const classificationRef = useRef(null);
   const kindRef = useRef(null);
   const nameRef = useRef(null);
@@ -123,6 +131,8 @@ export function ProjectClassificationBadge({
           "--project-classification-kind-width": `${indicatorMetrics?.kind.width ?? 0}px`,
           "--project-classification-name-left": `${indicatorMetrics?.name.left ?? 0}px`,
           "--project-classification-name-width": `${indicatorMetrics?.name.width ?? 0}px`,
+          "--project-classification-fill": classificationColors.background,
+          "--project-classification-contrast": classificationColors.text,
           maxWidth,
         }}
       >
@@ -156,6 +166,8 @@ export function ProjectClassificationBadge({
       className="project-classification"
       style={{
         "--project-classification-accent": color,
+        "--project-classification-fill": classificationColors.background,
+        "--project-classification-contrast": classificationColors.text,
         display: "inline-flex",
         alignItems: "center",
         position: "relative",
@@ -174,8 +186,8 @@ export function ProjectClassificationBadge({
           padding: "7px 10px",
           border: "1px solid var(--project-classification-accent)",
           borderRadius: "999px",
-          backgroundColor: "var(--project-classification-accent)",
-          color: "#ffffff",
+          backgroundColor: "var(--project-classification-fill)",
+          color: "var(--project-classification-contrast)",
           fontFamily: FONT_STACK,
           fontSize: "11px",
           fontWeight: 800,
