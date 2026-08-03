@@ -4,7 +4,7 @@ export const DEFAULT_LANGUAGE = "en";
 export const SUPPORTED_LANGUAGES = ["en", "ms"];
 
 const EN = {
-  metadata: { title: "PCDS 2030 Dashboard: Projects & Status | Sarawak", description: "Explore the PCDS 2030 dashboard for the Sarawak Post COVID-19 Development Strategy 2030, with project status, milestones, and public sources." },
+  metadata: { title: "PCDS 2030 Project Tracker", description: "Explore the PCDS 2030 dashboard for the Sarawak Post COVID-19 Development Strategy 2030, with project status, milestones, and public sources." },
   languageControl: { label: "Language", current: "English", switchTo: "Bahasa Melayu" },
   navigation: { tracker: "Project tracker", updates: "PCDS 2030 updates" },
   updatesPage: {
