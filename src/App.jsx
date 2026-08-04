@@ -284,7 +284,49 @@ function StatusBadge({ statusMeta }) {
   );
 }
 
-function Metric({ value, label, active = false, flatActive = false, ariaLabel, expanded, onClick }) {
+function MetricCue({ type, expanded = false, inline = false }) {
+  const path =
+    type === "projects"
+      ? "M1 2h14M1 7h14M1 12h14"
+      : type === "milestones"
+        ? "M2 3.5 8 10.5 14 3.5"
+        : "M1 2h14M3.5 7h9M6 12h4";
+
+  return (
+    <span
+      className={`summary-metric-cue${inline ? " summary-metric-cue--inline" : ""}`}
+      aria-hidden="true"
+    >
+      <svg
+        className={type === "milestones" && expanded ? "summary-metric-cue-chevron--expanded" : ""}
+        viewBox="0 0 16 14"
+        width="9"
+        height="9"
+        fill="none"
+      >
+        <path
+          d={path}
+          stroke="currentColor"
+          strokeWidth={type === "filter" ? "1.35" : "1.4"}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  );
+}
+
+function Metric({
+  value,
+  label,
+  active = false,
+  flatActive = false,
+  ariaLabel,
+  expanded,
+  cue,
+  cuePersistent = false,
+  onClick,
+}) {
   const interactive = typeof onClick === "function";
   const MetricElement = interactive ? "button" : "div";
   const interactionProps = interactive
@@ -299,7 +341,7 @@ function Metric({ value, label, active = false, flatActive = false, ariaLabel, e
   return (
     <MetricElement
       {...interactionProps}
-      className={`summary-metric${interactive ? " summary-metric--interactive" : ""}${active ? " summary-metric--active" : ""}${flatActive ? " summary-metric--flat-active" : ""}`}
+      className={`summary-metric${interactive ? " summary-metric--interactive" : ""}${active ? " summary-metric--active" : ""}${flatActive ? " summary-metric--flat-active" : ""}${cue ? " summary-metric--cue" : ""}${cuePersistent ? " summary-metric--cue-persistent" : ""}`}
       style={{
         minHeight: "78px",
         padding: "13px 15px 14px",
@@ -333,6 +375,7 @@ function Metric({ value, label, active = false, flatActive = false, ariaLabel, e
       >
         {label}
       </div>
+      {cue && <MetricCue type={cue} expanded={expanded} />}
     </MetricElement>
   );
 }
@@ -366,6 +409,11 @@ function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAl
             flatActive={metric.id === "all"}
             key={metric.id}
             active={!allVisibleExpanded && activeFilter === metric.id}
+            cue={metric.id === "all" ? "projects" : "filter"}
+            cuePersistent={
+              !allVisibleExpanded &&
+              (metric.id === "all" ? activeFilter !== "all" : activeFilter === metric.id)
+            }
             label={metric.label}
             onClick={() => onFilter(metric.id)}
             value={metric.value}
@@ -376,6 +424,8 @@ function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAl
             active={allVisibleExpanded}
             ariaLabel={allVisibleExpanded ? copy.card.collapseAll : copy.card.expandAll}
             expanded={allVisibleExpanded}
+            cue="milestones"
+            cuePersistent={allVisibleExpanded}
             label={copy.metrics.milestones}
             onClick={onToggleAll}
             value={`${doneMilestones}/${totalMilestones}`}
@@ -406,6 +456,9 @@ function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAl
         >
           <div
             style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "7px",
               color: "var(--text-muted)",
               fontSize: "10px",
               fontWeight: 800,
@@ -414,6 +467,7 @@ function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAl
             }}
           >
             {copy.metrics.milestones}
+            <MetricCue type="milestones" expanded={allVisibleExpanded} inline />
           </div>
           <div
             style={{

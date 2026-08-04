@@ -180,7 +180,13 @@ Current interactions:
   tinted surface with a subtle shadow on hover or keyboard focus and gives a small press response.
 - The `Projects`, `Planning`, `Ongoing`, and `Completed` summary metrics are interactive status
   filters. They use `aria-pressed`, a restrained hover/focus lift, and a persistent active treatment;
-  the active `Projects` metric stays neutral and flat, while the narrower status metrics retain the
+  a small, low-emphasis descending-bar filter symbol appears in the top-right of Planning, Ongoing, and Completed on hover or
+  keyboard focus and remains visible in teal while that status is selected. Projects shows the same
+  behaviour with an equal-line list symbol on hover or keyboard focus; it remains visible when it can
+  clear an active status filter, so the default all-projects state stays quiet at rest. All metric cues
+  share the same rendered size. Milestones uses a downward chevron for expand and an upward
+  chevron for collapse; its mobile summary keeps the chevron visible because hover is unavailable.
+  The active `Projects` metric stays neutral and flat, while the narrower status metrics retain the
   pressed treatment. Hovering another metric temporarily flattens the selected status metric so
   attention follows the target. The active `Projects` metric stays flat with its normal text colour
   so it remains easy to track. Card milestone indicators mirror the dashboard metric format with a
