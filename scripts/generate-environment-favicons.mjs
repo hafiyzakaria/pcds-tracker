@@ -324,11 +324,14 @@ for (const environment of environments) {
 
     return { size, buffer };
   });
+  const browserIcon = encodePng(resizeLogo(smallIconMaster, 512, environment.color));
   const ico = createIcoFromPngs(images);
 
+  writeFileSync(join(publicDir, `favicon-${environment.name}-browser.png`), browserIcon);
   writeFileSync(join(publicDir, `favicon-${environment.name}.ico`), ico);
 
   if (environment.name === "production") {
+    writeFileSync(join(publicDir, "favicon-browser.png"), browserIcon);
     writeFileSync(join(publicDir, "favicon.ico"), ico);
   }
 }
