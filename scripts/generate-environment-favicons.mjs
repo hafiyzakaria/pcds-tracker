@@ -315,8 +315,10 @@ for (const environment of environments) {
   const images = smallIconSizes.map((size) => {
     const buffer = encodePng(resizeLogo(smallIconMaster, size, environment.color));
     const environmentFilename = `favicon-${environment.name}-${size}x${size}.png`;
+    const browserFilename = `favicon-${environment.name}-browser-${size}x${size}.png`;
 
     writeFileSync(join(publicDir, environmentFilename), buffer);
+    writeFileSync(join(publicDir, browserFilename), buffer);
 
     if (environment.name === "production") {
       writeFileSync(join(publicDir, `favicon-${size}x${size}.png`), buffer);
@@ -328,6 +330,7 @@ for (const environment of environments) {
   const ico = createIcoFromPngs(images);
 
   writeFileSync(join(publicDir, `favicon-${environment.name}-browser.png`), browserIcon);
+  writeFileSync(join(publicDir, `favicon-${environment.name}-browser.ico`), ico);
   writeFileSync(join(publicDir, `favicon-${environment.name}.ico`), ico);
 
   if (environment.name === "production") {

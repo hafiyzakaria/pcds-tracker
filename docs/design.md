@@ -294,8 +294,9 @@ Environment indicators are intentionally small and unobtrusive:
 Browser favicons use a simplified transparent `S` so the mark remains clear at every declared size.
 The mark is orange in Development, purple in Preview, and teal in Production. Each `.ico` contains
 the 16, 32, and 48px browser sizes, while a transparent 512px browser candidate helps Safari select
-the same design. The 180px Apple touch icon retains the complete `S` and chart artwork on the
-existing dark rounded tile, where the extra detail has enough room to read.
+the same design. Every browser candidate uses a browser-specific filename so Safari cannot retain a
+previous icon under the same asset path. The 180px Apple touch icon retains the complete `S` and
+chart artwork on the existing dark rounded tile, where the extra detail has enough room to read.
 
 This is a professional workflow pattern. It prevents the owner from mistaking a test build for the public website. It is recommended and common for internal, staging, and preview environments.
 
