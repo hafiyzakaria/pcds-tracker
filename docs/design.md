@@ -173,7 +173,10 @@ Current interactions:
   while the category label `Enabler` is presented as `Pemboleh`.
 - Light is the initial theme for first-time visitors regardless of their operating-system theme.
   The icon theme button switches between light and dark modes and remembers an explicit selection. Its
-  icon crossfades and rotates between moon and sun states, while the button lifts into a soft
+  single SVG morphs between sun and moon states by reshaping the centre, moving the crescent mask,
+  and rotating the rays. The sun represents the current light theme and the crescent represents the
+  current dark theme; the accessible name describes the next action and updates immediately after a
+  change. The button lifts into a soft
   tinted surface with a subtle shadow on hover or keyboard focus and gives a small press response.
 - The `Projects`, `Planning`, `Ongoing`, and `Completed` summary metrics are interactive status
   filters. They use `aria-pressed`, a restrained hover/focus lift, and a persistent active treatment;

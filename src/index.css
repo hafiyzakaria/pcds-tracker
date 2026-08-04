@@ -691,6 +691,7 @@ a:focus-visible {
   transform: translateY(-1px);
   border-color: color-mix(in srgb, var(--brand) 32%, transparent);
   background-color: color-mix(in srgb, var(--brand) 8%, var(--surface));
+  color: var(--brand-strong);
   box-shadow: 0 2px 5px var(--control-shadow);
 }
 
@@ -698,31 +699,55 @@ a:focus-visible {
   transform: translateY(0) scale(0.96);
 }
 
-.theme-icon-sun,
-.theme-icon-moon {
-  position: absolute;
+.theme-icon-morph {
   display: block;
-  opacity: 0;
-  transform: rotate(35deg) scale(0.7);
+}
+
+.theme-icon-core {
+  fill: currentColor;
+  r: 9px;
+  transition: r 260ms ease;
+}
+
+.theme-icon-hole {
+  cx: 17px;
+  cy: 7px;
   transition:
-    opacity 240ms ease,
-    transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+    cx 300ms ease,
+    cy 300ms ease;
 }
 
-html[data-theme="light"] .theme-icon-moon {
-  opacity: 1;
-  transform: rotate(0) scale(1);
+.theme-icon-rays {
+  opacity: 0;
+  stroke: currentColor;
+  stroke-width: 1.6px;
+  stroke-linecap: round;
+  transform: rotate(-40deg) scale(0.6);
+  transform-origin: 50% 50%;
+  transition:
+    opacity 220ms ease,
+    transform 320ms ease;
 }
 
-html[data-theme="dark"] .theme-icon-sun {
+html[data-theme="light"] .theme-icon-core {
+  r: 4.4px;
+}
+
+html[data-theme="light"] .theme-icon-hole {
+  cx: 32px;
+  cy: -8px;
+}
+
+html[data-theme="light"] .theme-icon-rays {
   opacity: 1;
   transform: rotate(0) scale(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .theme-toggle,
-  .theme-icon-sun,
-  .theme-icon-moon {
+  .theme-icon-core,
+  .theme-icon-hole,
+  .theme-icon-rays {
     transition: none;
   }
 }

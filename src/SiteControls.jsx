@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react";
 import { shouldShowEnvironmentBadge } from "./environment.js";
 import { getRouteHref } from "./routes.js";
 
@@ -7,6 +7,28 @@ const FONT_STACK =
 
 const useIsomorphicLayoutEffect =
   typeof window === "undefined" ? useEffect : useLayoutEffect;
+
+function getDocumentTheme() {
+  if (typeof document === "undefined") {
+    return "light";
+  }
+
+  return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+}
+
+function subscribeToDocumentTheme(onStoreChange) {
+  if (typeof MutationObserver === "undefined") {
+    return () => {};
+  }
+
+  const observer = new MutationObserver(onStoreChange);
+  observer.observe(document.documentElement, {
+    attributeFilter: ["data-theme"],
+    attributes: true,
+  });
+
+  return () => observer.disconnect();
+}
 
 function getAccessibleClassificationColors(color) {
   const accent = typeof color === "string" && /^#[\da-f]{6}$/i.test(color.trim())
@@ -325,13 +347,28 @@ export function EnvironmentBadge({ environment, copy }) {
 }
 
 export function ThemeToggle({ onThemeToggle, copy }) {
+  const currentTheme = useSyncExternalStore(
+    subscribeToDocumentTheme,
+    getDocumentTheme,
+    () => "light"
+  );
+  const nextTheme = currentTheme === "dark" ? "light" : "dark";
+  const actionLabel = nextTheme === "dark"
+    ? copy.themeToggle.switchToDark
+    : copy.themeToggle.switchToLight;
+  const handleThemeToggle = () => {
+    const requestedTheme =
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    onThemeToggle(requestedTheme);
+  };
+
   return (
     <button
       className="theme-toggle"
       type="button"
-      onClick={onThemeToggle}
-      aria-label={`${copy.themeToggle.label}: ${copy.themeToggle.light} / ${copy.themeToggle.dark}`}
-      title={`${copy.themeToggle.label}: ${copy.themeToggle.light} / ${copy.themeToggle.dark}`}
+      onClick={handleThemeToggle}
+      aria-label={actionLabel}
+      title={actionLabel}
       style={{
         display: "inline-flex",
         alignItems: "center",
@@ -343,12 +380,22 @@ export function ThemeToggle({ onThemeToggle, copy }) {
         cursor: "pointer",
       }}
     >
-      <svg className="theme-icon-moon" aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z" />
-      </svg>
-      <svg className="theme-icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3.5" />
-        <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" />
+      <svg className="theme-icon-morph" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24">
+        <mask id="theme-toggle-moon-mask">
+          <rect width="24" height="24" fill="#fff" />
+          <circle className="theme-icon-hole" cx="17" cy="7" r="7" fill="#000" />
+        </mask>
+        <circle className="theme-icon-core" cx="12" cy="12" r="9" mask="url(#theme-toggle-moon-mask)" />
+        <g className="theme-icon-rays">
+          <line x1="12" y1="1.6" x2="12" y2="3.8" />
+          <line x1="12" y1="20.2" x2="12" y2="22.4" />
+          <line x1="1.6" y1="12" x2="3.8" y2="12" />
+          <line x1="20.2" y1="12" x2="22.4" y2="12" />
+          <line x1="4.6" y1="4.6" x2="6.2" y2="6.2" />
+          <line x1="17.8" y1="17.8" x2="19.4" y2="19.4" />
+          <line x1="4.6" y1="19.4" x2="6.2" y2="17.8" />
+          <line x1="17.8" y1="6.2" x2="19.4" y2="4.6" />
+        </g>
       </svg>
     </button>
   );

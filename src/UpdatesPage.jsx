@@ -30,9 +30,7 @@ export default function UpdatesPage({ language, onNavigate, headingRef }) {
   const updates = getUpdateHistory(language);
   const environment = getAppEnvironment();
 
-  const toggleTheme = () => {
-    const nextTheme =
-      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  const toggleTheme = (nextTheme) => {
     applyDocumentTheme(nextTheme);
     try {
       localStorage.setItem("pcds-theme", nextTheme);

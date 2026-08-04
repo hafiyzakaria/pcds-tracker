@@ -1361,8 +1361,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
 
     setExpandedIds(allProjectIds);
   };
-  const toggleTheme = () => {
-    const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  const toggleTheme = (nextTheme) => {
     applyDocumentTheme(nextTheme);
     try {
       localStorage.setItem("pcds-theme", nextTheme);

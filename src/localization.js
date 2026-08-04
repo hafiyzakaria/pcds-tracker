@@ -19,6 +19,8 @@ const EN = {
     light: "Light",
     dark: "Dark",
     system: "System",
+    switchToDark: "Switch to dark mode",
+    switchToLight: "Switch to light mode",
   },
   status: {
     "Awaiting Decision": { label: "Ongoing", description: "delivery moving, pending approval, or awaiting next public decision" },
@@ -75,6 +77,8 @@ const MS = {
     light: "Cerah",
     dark: "Gelap",
     system: "Sistem",
+    switchToDark: "Tukar kepada mod gelap",
+    switchToLight: "Tukar kepada mod cerah",
   },
   status: {
     "Awaiting Decision": { label: "Pelaksanaan", description: "pelaksanaan bergerak, menunggu kelulusan atau keputusan awam seterusnya" },
