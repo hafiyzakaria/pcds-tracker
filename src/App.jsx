@@ -1454,14 +1454,16 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
             letter-spacing: 0.14em !important;
           }
           .tracker-title-row {
-            display: block !important;
-            position: relative;
+            display: flex !important;
+            flex-direction: column-reverse !important;
+            align-items: stretch !important;
+            gap: 0 !important;
           }
           .tracker-title-row .header-controls {
-            position: absolute;
-            top: 4px;
-            right: 0;
-            margin: 0;
+            position: static;
+            align-self: flex-end;
+            margin-top: 0;
+            margin-bottom: 12px;
           }
           .header-controls {
             flex-shrink: 0;
@@ -1553,20 +1555,6 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
         }
         .tracker-title-row > .header-controls {
           margin-top: 4px;
-        }
-        @media (max-width: 379px) {
-          .tracker-title-row {
-            display: flex !important;
-            flex-direction: column-reverse !important;
-            align-items: stretch !important;
-            gap: 0 !important;
-          }
-          .tracker-title-row .header-controls {
-            position: static;
-            align-self: flex-end;
-            margin-top: 0;
-            margin-bottom: 12px;
-          }
         }
       `}</style>
 
