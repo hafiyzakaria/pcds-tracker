@@ -117,6 +117,20 @@ export default function UpdatesPage({ language, onNavigate, headingRef }) {
             </div>
           </div>
 
+          <p
+            className="tracker-kicker"
+            style={{
+              margin: "0 0 12px",
+              color: "var(--text-muted)",
+              fontSize: "10px",
+              fontWeight: 800,
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+            }}
+          >
+            {copy.header.kicker}
+          </p>
+
           <h1
             className="updates-title page-heading"
             ref={headingRef}

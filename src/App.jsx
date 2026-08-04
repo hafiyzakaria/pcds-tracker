@@ -1453,17 +1453,9 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
             font-size: 9px !important;
             letter-spacing: 0.14em !important;
           }
-          .tracker-title-row {
-            display: flex !important;
-            flex-direction: column-reverse !important;
-            align-items: stretch !important;
-            gap: 0 !important;
-          }
-          .tracker-title-row .header-controls {
-            position: static;
-            align-self: flex-end;
-            margin-top: 0;
-            margin-bottom: 12px;
+          .header-meta-row {
+            align-items: flex-start !important;
+            gap: 12px !important;
           }
           .header-controls {
             flex-shrink: 0;
@@ -1553,9 +1545,6 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
             border-top: 1px solid var(--border) !important;
           }
         }
-        .tracker-title-row > .header-controls {
-          margin-top: 4px;
-        }
       `}</style>
 
       <main style={{ maxWidth: "1040px", margin: "0 auto", padding: "40px 24px 80px" }}>
@@ -1565,31 +1554,28 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
           }}
         >
           <div
-            className="tracker-title-row"
+            className="header-meta-row"
             style={{
               display: "flex",
-              alignItems: "flex-start",
+              alignItems: "center",
               justifyContent: "space-between",
-              gap: "24px",
+              gap: "20px",
+              marginBottom: "12px",
             }}
           >
-            <h1
-              className="tracker-title page-heading"
-              ref={headingRef}
-              tabIndex={-1}
+            <div
+              className="tracker-kicker"
               style={{
-                margin: 0,
-                color: "var(--text-strong)",
-                fontSize: "48px",
+                color: "var(--text-muted)",
+                fontFamily: FONT_STACK,
+                fontSize: "10px",
                 fontWeight: 800,
-                letterSpacing: "0",
-                lineHeight: 1.04,
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
               }}
             >
-              PCDS 2030
-              <br />
-              <span style={{ color: "var(--brand)" }}>{copy.header.title}</span>
-            </h1>
+              {copy.header.kicker}
+            </div>
             <HeaderControls
               language={language}
               onNavigate={onNavigate}
@@ -1597,6 +1583,23 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
               copy={copy}
             />
           </div>
+          <h1
+            className="tracker-title page-heading"
+            ref={headingRef}
+            tabIndex={-1}
+            style={{
+              margin: 0,
+              color: "var(--text-strong)",
+              fontSize: "48px",
+              fontWeight: 800,
+              letterSpacing: "0",
+              lineHeight: 1.04,
+            }}
+          >
+            PCDS 2030
+            <br />
+            <span style={{ color: "var(--brand)" }}>{copy.header.title}</span>
+          </h1>
           <div
             className="tracker-description"
             style={{
