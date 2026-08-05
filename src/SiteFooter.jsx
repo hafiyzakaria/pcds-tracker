@@ -23,13 +23,26 @@ export default function SiteFooter({ copy, currentPage, language, onNavigate }) 
   const trackerRouteId = language === "ms" ? "tracker-ms" : "tracker-en";
   const updatesRouteId = language === "ms" ? "updates-ms" : "updates";
   const independentParts = copy.footer.independent.split("hafiy.my");
+  const methodologyMarker = " Status";
+  const methodologyParts = copy.footer.methodology.split(methodologyMarker);
+  const methodologyNote =
+    methodologyParts.length === 2 ? (
+      <>
+        {methodologyParts[0]}
+        <br className="site-footer-note-break" />
+        {methodologyMarker.trimStart()}
+        {methodologyParts[1]}
+      </>
+    ) : (
+      copy.footer.methodology
+    );
 
   return (
     <footer className="site-footer">
       <div className="site-footer-main">
         <div className="site-footer-summary">
           <p className="site-footer-brand">PCDS 2030 Project Tracker</p>
-          <p className="site-footer-note">{copy.footer.methodology}</p>
+          <p className="site-footer-note">{methodologyNote}</p>
         </div>
 
         <nav aria-label={copy.footer.explore} className="site-footer-nav">

@@ -41,8 +41,9 @@ The current product is a small static React site with:
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
 - Two short introductory paragraphs explaining what the tracker covers, its independence, its
   milestone and status content, and its public-source links without adding a separate promotional
-  About section. The full strategy name stays together on tablet and desktop, then wraps normally
-  on narrow screens to prevent overflow.
+  About section. The English second line is `An independent tracker with project status, milestones
+  and links to public sources.` The full strategy name stays together on tablet and desktop, then
+  wraps normally on narrow screens to prevent overflow.
 - Plain, direct hero copy that foregrounds the tracker’s public-source value; strategy targets remain
   available in the project and methodology content rather than competing with the first-glance purpose.
 - Plain-language source wording that promises links to publicly available sources rather than
@@ -85,7 +86,8 @@ client-side React runs.
 Shared links use an explicit 1200 by 630 social-preview image instead of allowing messaging apps
 to choose a favicon or Apple touch icon as a fallback. Production uses the teal tracker mark and
 Preview uses the purple tracker mark, with absolute image URLs generated for the matching deployed
-environment.
+environment. The share-card description remains a separate, longer description from the concise
+hero line so link previews retain their existing context.
 
 Preview at `https://preview.pcds2030.com` is for development review only. Vercel sends
 `X-Robots-Tag: noindex, nofollow` for every Preview route. Pre-rendering Preview improves review
@@ -150,7 +152,7 @@ This workflow exists to prevent unfinished changes from reaching the public site
 
 ## Content Maintenance Notes
 
-The data is manually curated from public reports and announcements. The shared footer states that milestone statuses are best-effort based on available information.
+The data is manually curated from public reports and announcements. The shared footer states that status and milestones are best-effort based on available information.
 
 Current content risks:
 

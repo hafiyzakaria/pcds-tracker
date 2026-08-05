@@ -51,7 +51,7 @@ const EN = {
   header: {
     kicker: "Sarawak Development Monitor", title: "Project Tracker", lastUpdated: "Last updated:",
     programmeName: "Sarawak's Post COVID-19 Development Strategy 2030",
-    intro: ["Major projects under Sarawak's Post COVID-19 Development Strategy 2030, in one place.", "An independent tracker with milestones, current status, and links to public sources."],
+    intro: ["Major projects under Sarawak's Post COVID-19 Development Strategy 2030, in one place.", "An independent tracker with project status, milestones and links to public sources."],
   },
   footer: {
     explore: "Explore",
@@ -59,7 +59,7 @@ const EN = {
     updates: "Updates",
     contact: "Contact",
     independent: "Built by hafiy.my, an independent tracker. Not affiliated with the Sarawak Government.",
-    methodology: "Data sourced from public reports, news outlets, and official announcements. Milestone statuses are best-effort based on available information.",
+    methodology: "Data sourced from public reports, news outlets, and official announcements. Status and milestones are best-effort based on available information.",
   },
   accessibility: {
     environment: (name) => `${name} environment`,
@@ -124,7 +124,7 @@ const MS = {
     updates: "Kemas Kini",
     contact: "Hubungi",
     independent: "'Project tracker' dibangunkan oleh hafiy.my. Tidak berafiliasi dengan Kerajaan Sarawak.",
-    methodology: "Data diperoleh daripada laporan awam, portal berita dan pengumuman rasmi. Status pencapaian utama ialah rumusan terbaik berdasarkan maklumat yang tersedia.",
+    methodology: "Data diperoleh daripada laporan awam, portal berita dan pengumuman rasmi. Status dan pencapaian utama ialah rumusan terbaik berdasarkan maklumat yang tersedia.",
   },
   accessibility: {
     environment: (name) => `persekitaran ${{ development: "pembangunan", preview: "pratonton", production: "produksi" }[name] || name}`,

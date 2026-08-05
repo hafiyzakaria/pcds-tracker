@@ -40,6 +40,8 @@ The introduction uses a maximum reading width of about `720px`. This keeps the t
 connected to the compact title block and avoids an overly wide paragraph slab on desktop.
 The full strategy name is kept together as one typographic phrase above the mobile breakpoint.
 Below `760px`, it returns to normal wrapping so long English and BM names cannot overflow.
+The English second line uses the concise sentence `An independent tracker with project status,
+milestones and links to public sources.` The social-preview card keeps its separate share description.
 
 Summary metric boxes provide simple status navigation before readers scan the project cards. Their
 active, hover, focus, and press states make the filtering behavior discoverable without duplicating
@@ -252,6 +254,8 @@ Current interactions:
   uses `14px`, the uppercase Explore label remains `11px`, and the secondary disclaimer remains `12px`.
   Navigation links use a regular-medium weight, the secondary text colour, and slightly wider vertical
   spacing so they read clearly as destinations without competing with the site name or group label.
+  The public-source note places its status-and-milestones clause on a second line for desktop scanning and
+  lets mobile layouts wrap naturally.
   A subtle neutral surface separates the footer from the project grid without adding shadow or
   promotional decoration. Mobile converts the vertical divider into a horizontal separator and
   stacks the note, Explore links, and disclaimer. The hafiy.my credit remains linked in the
