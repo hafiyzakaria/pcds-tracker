@@ -87,7 +87,8 @@ Shared links use an explicit 1200 by 630 social-preview image instead of allowin
 to choose a favicon or Apple touch icon as a fallback. Production uses the teal tracker mark and
 Preview uses the purple tracker mark, with absolute image URLs generated for the matching deployed
 environment. The share-card description remains a separate, longer description from the concise
-hero line so link previews retain their existing context.
+hero line, using the same `project tracker` terminology as the site rather than the legacy
+`dashboard` label.
 
 Preview at `https://preview.pcds2030.com` is for development review only. Vercel sends
 `X-Robots-Tag: noindex, nofollow` for every Preview route. Pre-rendering Preview improves review

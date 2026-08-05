@@ -4,7 +4,7 @@ export const DEFAULT_LANGUAGE = "en";
 export const SUPPORTED_LANGUAGES = ["en", "ms"];
 
 const EN = {
-  metadata: { title: "PCDS 2030 Project Tracker", description: "Explore the PCDS 2030 dashboard for the Sarawak Post COVID-19 Development Strategy 2030, with project status, milestones, and public sources." },
+  metadata: { title: "PCDS 2030 Project Tracker", description: "Explore the PCDS 2030 project tracker for the Sarawak Post COVID-19 Development Strategy 2030, with project status, milestones, and public sources." },
   languageControl: { label: "Language", current: "English", switchTo: "Bahasa Melayu" },
   navigation: { tracker: "Project tracker", updates: "PCDS 2030 updates" },
   updatesPage: {
@@ -69,7 +69,7 @@ const EN = {
 };
 
 const MS = {
-  metadata: { title: "Papan Pemuka PCDS 2030: Projek & Status | Sarawak", description: "Terokai papan pemuka PCDS 2030 bagi Strategi Pembangunan Pasca COVID-19 Sarawak 2030, termasuk status projek, pencapaian dan sumber awam." },
+  metadata: { title: "Papan Pemuka PCDS 2030: Projek & Status | Sarawak", description: "Terokai penjejak projek PCDS 2030 bagi Strategi Pembangunan Pasca COVID-19 Sarawak 2030, termasuk status projek, pencapaian dan sumber awam." },
   languageControl: { label: "Bahasa", current: "Bahasa Melayu", switchTo: "English" },
   navigation: { tracker: "Project tracker", updates: "Kemas kini PCDS 2030" },
   updatesPage: {
