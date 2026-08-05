@@ -248,8 +248,10 @@ Current interactions:
   the public hafiy.my email address with the tracker name prefilled as the subject. The active
   internal route uses `aria-current="page"` without changing its resting visual formatting. The two
   content blocks use equal internal spacing and a faint vertical separator, while the disclaimer row
-  uses a faint horizontal separator. Footer body copy and links use `13px`, the site name uses
-  `14px`, the uppercase Explore label remains `11px`, and the secondary disclaimer remains `12px`.
+  uses a faint horizontal separator. Footer body copy and navigation links use `13px`, the site name
+  uses `14px`, the uppercase Explore label remains `11px`, and the secondary disclaimer remains `12px`.
+  Navigation links use a regular-medium weight, the secondary text colour, and slightly wider vertical
+  spacing so they read clearly as destinations without competing with the site name or group label.
   A subtle neutral surface separates the footer from the project grid without adding shadow or
   promotional decoration. Mobile converts the vertical divider into a horizontal separator and
   stacks the note, Explore links, and disclaimer. The hafiy.my credit remains linked in the

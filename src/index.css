@@ -144,17 +144,20 @@ a:focus-visible {
 }
 
 .tracker-updates-link-arrow {
-  opacity: 0.3;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-3px);
   transition:
     opacity 160ms ease,
-    visibility 0s linear 160ms;
+    visibility 0s linear 160ms,
+    transform 160ms ease;
 }
 
 .navigation-pill-link.tracker-updates-link:hover .tracker-updates-link-arrow,
 .navigation-pill-link.tracker-updates-link:focus-visible .tracker-updates-link-arrow {
   opacity: 1;
   visibility: visible;
+  transform: translateX(0);
   transition-delay: 0s;
 }
 
@@ -868,7 +871,7 @@ html[data-theme="dark"] .tracker-description strong {
 }
 
 .site-footer-nav h2 {
-  margin: 0 0 8px;
+  margin: 0 0 12px;
   color: var(--text-secondary);
   font-size: 11px;
   font-weight: 800;
@@ -885,7 +888,7 @@ html[data-theme="dark"] .tracker-description strong {
 
 .site-footer-nav ul {
   display: grid;
-  gap: 5px;
+  gap: 7px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -899,6 +902,13 @@ html[data-theme="dark"] .tracker-description strong {
   text-decoration: none;
   text-underline-offset: 3px;
   transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.site-footer-nav .site-footer-link {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.55;
 }
 
 .site-footer-link:hover,
