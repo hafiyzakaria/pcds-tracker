@@ -28,6 +28,9 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Completed on Production: `https://pcds2030.com` has canonical, Open Graph, Twitter, and
   `WebSite` structured-data metadata, plus `robots.txt` and `sitemap.xml` using the canonical
   Production domain.
+- Completed locally for Preview review: Open Graph and Twitter metadata now declare a dedicated,
+  versioned 1200 by 630 social-preview card for each environment so messaging apps do not fall back
+  to the Apple touch icon.
 
 ### Pre-render the initial dashboard content
 
@@ -70,8 +73,8 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 - Completed on Production: Development, Preview, and Production now use the same neutral card
   border, milestone formatting, completed-milestone rows, and expanded-card content.
-- Environment differences are limited to deployment, domain, indexing policy, favicon, and the
-  Development or Preview badge.
+- Environment differences are limited to deployment, domain, indexing policy, favicon,
+  social-preview branding, and the Development or Preview badge.
 
 ### Standardize card titles, statuses, and milestones
 

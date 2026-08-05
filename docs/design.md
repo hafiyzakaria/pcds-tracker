@@ -310,10 +310,17 @@ the same design. Every browser candidate uses a browser-specific filename so Saf
 previous icon under the same asset path. The 180px Apple touch icon retains the complete `S` and
 chart artwork on the existing dark rounded tile, where the extra detail has enough room to read.
 
+Link previews use dedicated 1200 by 630 images rather than a favicon fallback. The card keeps the
+simplified `S`, the restrained editorial palette, the tracker title, and a short projects,
+milestones, and public-sources descriptor. Production is teal, Preview is purple and explicitly
+labelled, and Development is orange. Open Graph and Twitter metadata must use absolute, versioned
+URLs for the matching environment.
+
 This is a professional workflow pattern. It prevents the owner from mistaking a test build for the public website. It is recommended and common for internal, staging, and preview environments.
 
 Development, Preview, and Production use the same project-card behavior so local review matches
-both deployed sites. Environment-specific presentation is limited to the badge and favicon.
+both deployed sites. Environment-specific presentation is limited to the badge, favicon, and
+social-preview branding.
 
 ## Known Design Constraints
 

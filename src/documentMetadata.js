@@ -21,11 +21,13 @@ export function applyDocumentRouteMetadata(route) {
   setMetaContent('meta[property="og:title"]', route.metadata.title);
   setMetaContent('meta[property="og:description"]', route.metadata.description);
   setMetaContent('meta[property="og:url"]', getRouteCanonical(route));
+  setMetaContent('meta[property="og:image:alt"]', route.metadata.title);
   setMetaContent('meta[name="twitter:title"]', route.metadata.title);
   setMetaContent(
     'meta[name="twitter:description"]',
     route.metadata.description
   );
+  setMetaContent('meta[name="twitter:image:alt"]', route.metadata.title);
 
   document
     .querySelectorAll('link[rel="alternate"][hreflang]')

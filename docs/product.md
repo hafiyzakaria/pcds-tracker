@@ -76,6 +76,11 @@ sitemap. Both tracker and update-history language pairs include reciprocal `href
 The pre-rendered tracker and update history give search engines meaningful content before
 client-side React runs.
 
+Shared links use an explicit 1200 by 630 social-preview image instead of allowing messaging apps
+to choose a favicon or Apple touch icon as a fallback. Production uses the teal tracker mark and
+Preview uses the purple tracker mark, with absolute image URLs generated for the matching deployed
+environment.
+
 Preview at `https://preview.pcds2030.com` is for development review only. Vercel sends
 `X-Robots-Tag: noindex, nofollow` for every Preview route. Pre-rendering Preview improves review
 fidelity but does not make Preview eligible for Google indexing.
@@ -127,8 +132,13 @@ The environment-coloured browser favicon uses a simplified transparent `S` at ev
 browser size so it stays legible in a tab and remains consistent across browsers. The 180px Apple
 touch icon retains the complete dark-tile artwork with the `S` and chart motif.
 
+The same simplified `S` anchors a dedicated social-preview card for each environment. These larger
+images include the tracker identity and domain, and are declared through Open Graph and Twitter
+metadata so link-sharing services do not substitute the Apple touch icon.
+
 All three environments use the same project-card behavior. Environment differences are limited to
-deployment, domain, indexing policy, favicon, and the Development or Preview badge.
+deployment, domain, indexing policy, favicon, social-preview branding, and the Development or
+Preview badge.
 
 This workflow exists to prevent unfinished changes from reaching the public site. It is recommended and common in modern web development.
 

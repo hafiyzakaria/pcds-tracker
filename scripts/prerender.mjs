@@ -18,6 +18,9 @@ const projectRoot = resolve(".");
 const distIndexPath = resolve("dist/index.html");
 const serverOutDir = await mkdtemp(join(tmpdir(), "pcds-tracker-prerender-"));
 const productionOrigin = "https://pcds2030.com";
+const socialOrigin =
+  mode === "preview" ? "https://preview.pcds2030.com" : productionOrigin;
+const socialImage = `${socialOrigin}/social-preview-${mode}.png?v=20260805a`;
 
 function escapeHtml(value) {
   return value
@@ -121,12 +124,32 @@ function applyRouteMetadata(template, route, allRoutes) {
       `<meta property="og:url" content="${canonical}" />`
     )
     .replace(
+      /<meta property="og:image" content="[^"]*" \/>/,
+      `<meta property="og:image" content="${socialImage}" />`
+    )
+    .replace(
+      /<meta property="og:image:secure_url" content="[^"]*" \/>/,
+      `<meta property="og:image:secure_url" content="${socialImage}" />`
+    )
+    .replace(
+      /<meta property="og:image:alt" content="[^"]*" \/>/,
+      `<meta property="og:image:alt" content="${title}" />`
+    )
+    .replace(
       /<meta name="twitter:title" content="[^"]*" \/>/,
       `<meta name="twitter:title" content="${title}" />`
     )
     .replace(
       /<meta name="twitter:description" content="[^"]*" \/>/,
       `<meta name="twitter:description" content="${description}" />`
+    )
+    .replace(
+      /<meta name="twitter:image" content="[^"]*" \/>/,
+      `<meta name="twitter:image" content="${socialImage}" />`
+    )
+    .replace(
+      /<meta name="twitter:image:alt" content="[^"]*" \/>/,
+      `<meta name="twitter:image:alt" content="${title}" />`
     )
     .replace(
       /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
