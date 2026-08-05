@@ -184,7 +184,8 @@ Current interactions:
   keyboard focus and remains visible in teal while that status is selected. Projects shows the same
   behaviour with an equal-line list symbol on hover or keyboard focus; it remains visible when it can
   clear an active status filter, so the default all-projects state stays quiet at rest. All metric cues
-  share the same rendered size. Milestones uses a downward chevron for expand and an upward
+  share the same rendered size and rise to the same full-opacity, strong-text emphasis as the card
+  chevrons on hover or keyboard focus. Milestones uses a downward chevron for expand and an upward
   chevron for collapse; its mobile summary keeps the chevron visible because hover is unavailable.
   The active `Projects` metric stays neutral and flat, while the narrower status metrics retain the
   pressed treatment. Hovering another metric temporarily flattens the selected status metric so

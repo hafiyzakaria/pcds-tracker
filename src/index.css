@@ -319,8 +319,8 @@ a:focus-visible {
 
 .summary-metric--cue:hover .summary-metric-cue,
 .summary-metric--cue:focus-visible .summary-metric-cue {
-  color: var(--text-muted);
-  opacity: 0.52;
+  color: var(--text-strong);
+  opacity: 1;
   transform: translateY(0);
 }
 
@@ -328,6 +328,11 @@ a:focus-visible {
   color: var(--brand-strong);
   opacity: 0.64;
   transform: translateY(0);
+}
+
+.summary-metric--cue.summary-metric--cue-persistent:hover .summary-metric-cue,
+.summary-metric--cue.summary-metric--cue-persistent:focus-visible .summary-metric-cue {
+  opacity: 1;
 }
 
 .summary-metric-cue svg {
