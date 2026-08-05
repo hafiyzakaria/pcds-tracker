@@ -1575,7 +1575,10 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
             font-size: 10px !important;
             line-height: 1.2 !important;
           }
-          .tracker-title {
+          .tracker-title-context {
+            font-size: 32px !important;
+          }
+          .tracker-title-product {
             font-size: 36px !important;
           }
           .tracker-description {
@@ -1603,7 +1606,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
       <main style={{ maxWidth: "1040px", margin: "0 auto", padding: "40px 24px 80px" }}>
         <header
           style={{
-            marginBottom: "14px",
+            marginBottom: "10px",
           }}
         >
           <div
@@ -1643,15 +1646,22 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
             style={{
               margin: 0,
               color: "var(--text-strong)",
-              fontSize: "48px",
               fontWeight: 800,
               letterSpacing: "0",
               lineHeight: 1.04,
+              display: "grid",
+              justifyItems: "start",
             }}
           >
-            PCDS 2030
-            <br />
-            <span style={{ color: "var(--brand)" }}>{copy.header.title}</span>
+            <span className="tracker-title-context" style={{ fontSize: "42px", lineHeight: 1.04 }}>
+              PCDS 2030
+            </span>
+            <span
+              className="tracker-title-product"
+              style={{ color: "var(--brand)", fontSize: "48px", lineHeight: 1.04 }}
+            >
+              {copy.header.title}
+            </span>
           </h1>
           <div
             className="tracker-description"

@@ -97,6 +97,8 @@ The app imports Inter from Google Fonts inside `src/App.jsx`, with system font f
 Current type style:
 
 - Strong bold headings.
+- The two-line tracker title uses a restrained hierarchy: `PCDS 2030` is slightly smaller as
+  programme context, while `Project Tracker` remains the dominant product label.
 - Small uppercase labels for metadata.
 - Compact body text for project summaries and milestones.
 - Introductory copy at `16px` with a `1.6` line height. Keep the hero language plain and direct,
