@@ -47,7 +47,13 @@ The current product is a small static React site with:
   available in the project and methodology content rather than competing with the first-glance purpose.
 - Plain-language source wording that promises links to publicly available sources rather than
   referring abstractly to "supporting public evidence".
-- Footer attribution linking to hafiy.my and stating that the tracker is not affiliated with the Sarawak Government. The BM version begins with `'Project tracker' dibangunkan oleh — hafiy.my`, while the English version additionally describes the tracker as independent.
+- A shared compact footer on the tracker and update-history routes. A subtle neutral surface separates
+  it from the project grid without adding a promotional section. Its Explore group links to the
+  current Tracker and Updates routes and provides a bilingual Contact or Hubungi email link for
+  corrections, missing sources, and feedback. The email subject is prefilled with the tracker name,
+  while hafiy.my remains linked in the credit line. It retains the public-source and best-effort
+  milestone note and states that the tracker is independent and not affiliated with the Sarawak
+  Government. No About or Methodology placeholders are shown.
 
 The English tracker at `/`, BM tracker at `/bm/`, English editorial history at `/updates/`, and BM
 editorial history at `/bm/updates/` are all pre-rendered during the build and hydrated by React in
@@ -144,7 +150,7 @@ This workflow exists to prevent unfinished changes from reaching the public site
 
 ## Content Maintenance Notes
 
-The data is manually curated from public reports and announcements. The footer already states that milestone statuses are best-effort based on available information.
+The data is manually curated from public reports and announcements. The shared footer states that milestone statuses are best-effort based on available information.
 
 Current content risks:
 

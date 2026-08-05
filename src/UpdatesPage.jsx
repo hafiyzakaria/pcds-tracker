@@ -10,6 +10,7 @@ import { getAppEnvironment } from "./environment.js";
 import { getUiCopy } from "./localization.js";
 import { getRouteHref } from "./routes.js";
 import { getUpdateHistory } from "./updateHistory.js";
+import SiteFooter from "./SiteFooter.jsx";
 
 const FONT_STACK =
   "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
@@ -241,6 +242,13 @@ export default function UpdatesPage({ language, onNavigate, headingRef }) {
             </article>
           ))}
         </section>
+
+        <SiteFooter
+          copy={copy}
+          currentPage="updates"
+          language={language}
+          onNavigate={onNavigate}
+        />
       </main>
 
       <EnvironmentBadge environment={environment} copy={copy} />

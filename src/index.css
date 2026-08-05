@@ -829,3 +829,121 @@ html[data-theme="dark"] .tracker-description strong {
   border-radius: 50%;
   background-color: var(--text-icon);
 }
+
+.site-footer {
+  margin-top: 56px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background-color: var(--surface-subtle);
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.site-footer-main {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(180px, 2fr);
+  gap: 0;
+}
+
+.site-footer-summary {
+  min-width: 0;
+  padding: 28px;
+}
+
+.site-footer-brand {
+  margin: 0;
+  color: var(--text-strong);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.site-footer-note {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.site-footer-nav h2 {
+  margin: 0 0 8px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.site-footer-nav {
+  min-width: 0;
+  padding: 28px;
+  border-left: 1px solid var(--border-soft);
+}
+
+.site-footer-nav ul {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer-link {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.55;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.site-footer-link:hover,
+.site-footer-link:focus-visible {
+  opacity: 1;
+  color: var(--brand-strong);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--brand-strong) 45%, transparent);
+}
+
+.site-footer-bottom {
+  padding: 16px 28px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.site-footer-bottom p {
+  margin: 0;
+}
+
+.site-footer-credit-link {
+  color: var(--brand-strong);
+}
+
+@media (max-width: 760px) {
+  .site-footer-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .site-footer-summary,
+  .site-footer-nav {
+    padding: 22px 20px;
+  }
+
+  .site-footer-nav {
+    border-top: 1px solid var(--border-soft);
+    border-left: 0;
+  }
+
+  .site-footer-bottom {
+    padding: 16px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer-link {
+    transition: none;
+  }
+}

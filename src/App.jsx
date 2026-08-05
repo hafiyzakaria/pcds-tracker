@@ -19,6 +19,7 @@ import {
   ProjectClassificationBadge,
   ThemeToggle,
 } from "./SiteControls.jsx";
+import SiteFooter from "./SiteFooter.jsx";
 import { applyDocumentTheme } from "./theme.js";
 
 const FONT_STACK = "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
@@ -1748,32 +1749,12 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
           />
         </section>
 
-        <footer
-          style={{
-            marginTop: "56px",
-            paddingTop: "20px",
-            borderTop: "1px solid var(--border)",
-            color: "var(--text-faint)",
-            fontSize: "12px",
-            lineHeight: 1.7,
-          }}
-        >
-          <p style={{ margin: "0 0 8px" }}>
-            {copy.footer.independent.split("hafiy.my")[0]}
-            <a
-              href="https://hafiy.my"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "var(--brand-strong)", textDecoration: "none", fontWeight: 700 }}
-            >
-              hafiy.my
-            </a>
-            {copy.footer.independent.split("hafiy.my")[1]}
-          </p>
-          <p style={{ margin: 0 }}>
-            {copy.footer.methodology}
-          </p>
-        </footer>
+        <SiteFooter
+          copy={copy}
+          currentPage="tracker"
+          language={language}
+          onNavigate={onNavigate}
+        />
       </main>
       <EnvironmentBadge environment={environment} copy={copy} />
     </div>

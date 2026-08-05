@@ -30,7 +30,7 @@ Current layout order:
 4. Summary metrics, which also provide the primary status filters.
 5. Two-column project-card grid on desktop.
 6. One-column project-card grid on mobile.
-7. Footer disclaimer and source-methodology note.
+7. Compact shared footer with current site and project links, followed by the independence disclaimer.
 
 The PCDS context belongs near the title so readers understand the dashboard at first glance.
 Keep it succinct and integrated with the introduction rather than placing a separate About section
@@ -243,6 +243,19 @@ Current interactions:
   mobile platforms do not substitute an emoji glyph.
 - The BM introduction uses `platform pemantauan bebas`, the footer quotes the borrowed phrase
   `'Project tracker'`, and navigation pills use the unquoted label `Project tracker`.
+- The tracker and update history share a compact two-column footer on desktop: a public-source note
+  and an Explore group with the short labels Tracker, Updates, and Contact or Hubungi. Contact opens
+  the public hafiy.my email address with the tracker name prefilled as the subject. The active
+  internal route uses `aria-current="page"` without changing its resting visual formatting. The two
+  content blocks use equal internal spacing and a faint vertical separator, while the disclaimer row
+  uses a faint horizontal separator. Footer body copy and links use `13px`, the site name uses
+  `14px`, the uppercase Explore label remains `11px`, and the secondary disclaimer remains `12px`.
+  A subtle neutral surface separates the footer from the project grid without adding shadow or
+  promotional decoration. Mobile converts the vertical divider into a horizontal separator and
+  stacks the note, Explore links, and disclaimer. The hafiy.my credit remains linked in the
+  disclaimer. A separate copyright line is omitted because it repeats both the site identity and
+  owner credit without adding useful context. Do not show links for unbuilt pages or duplicate
+  external destinations in a separate link group.
 - Environment badge is fixed at the bottom-right in non-production environments.
 
 The expansion animation respects `prefers-reduced-motion`.
