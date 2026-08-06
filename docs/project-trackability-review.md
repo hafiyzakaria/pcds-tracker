@@ -293,7 +293,7 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 
 ## Do Not Add
 
-> **Re-review note, 6 August 2026:** Eight candidates in this historical section were subsequently approved and added after current public-source verification: Miri Combined Cycle Gas Turbine Power Plant, Sarawak Science Centre (SSCiEX), Sarawak Infectious Disease Centre, Special Needs Community Centre, SaraCarbon's Marudi Forest Conservation and Restoration Project, Rambungan Sustainable Shrimp Aquaculture Project, OSEIC Miri, and the Sarawak Reef Ball Project. The original entries below are retained as the dated evidence position before those re-reviews. See [the standalone-candidate audit](project-audits/2026-08-06-standalone-candidate-reaudit.md) and [Sarawak Reef Ball Project Round 2 audit](project-audits/2026-08-06-sarawak-reef-ball-project-round-2.md) for the superseding decisions and accepted facts.
+> **Re-review note, 6 August 2026:** Ten candidates in this historical section were subsequently approved and added after current public-source verification. The original entries below are retained as the dated evidence position before those re-reviews. See [the standalone-candidate audit](project-audits/2026-08-06-standalone-candidate-reaudit.md), [Sarawak Reef Ball Project Round 2 audit](project-audits/2026-08-06-sarawak-reef-ball-project-round-2.md), and [remaining-candidates Round 3 audit](project-audits/2026-08-06-remaining-candidates-round-3.md) for the superseding decisions and accepted facts.
 
 ### Senari Free Zone
 
@@ -387,6 +387,8 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 
 ### Community Social Intervention Centre Network
 
+> **Superseded on 6 August 2026:** Current sources verified the operating Kuching centre, delivery structure and divisional rollout under the public name Community Social Support Centre (CSSC) Network. See the [Round 3 audit](project-audits/2026-08-06-remaining-candidates-round-3.md).
+
 - Source PDF evidence: AIP Volume II pages 544-546 lists RM40 million, multiple localities, and operations through 2030.
 - Online sources found: No adequate public online source found.
 - Proposed category/status/lead/value/milestones: Social Services, but not safe to populate.
@@ -426,6 +428,8 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 - Reason: No public opening, address, capacity, or lead evidence.
 
 ### Sago BioCNG Plant and Gas Distribution Network
+
+> **Superseded on 6 August 2026:** Current public sources verified CRAUN's BioCNG development, pipeline installation and end-2026 pilot target. See the [Round 3 audit](project-audits/2026-08-06-remaining-candidates-round-3.md).
 
 - Source PDF evidence: `Latest Sarawak Innovative Initiatives Book_EPU Sarawak.pdf`, page 44, says Phase I was completed and Phase III Sago BioCNG Plant and Gas Distribution Network is in construction.
 - Online sources found: No public online source found for the named Phase III project.
@@ -635,6 +639,8 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
    - Rambungan Sustainable Shrimp Aquaculture Project
    - One-Stop Early Intervention Centre (OSEIC) Miri
    - Sarawak Reef Ball Project, added in the subsequent single-project Round 2 review
+   - Community Social Support Centre (CSSC) Network, added in Round 3
+   - Sago BioCNG Plant and Gas Distribution Network, added in Round 3
 3. Projects needing manual review:
    - Pan Borneo Highway Sarawak Phase 1
    - Sarawak-Sabah Link Road
@@ -655,10 +661,8 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
    - Demak Laut Industrial Park Phases 2C, 2D, and 2E
    - Coastal Road Fiber Connectivity
    - Wildlife Rescue Centres and Forensics Laboratory
-   - Community Social Intervention Centre Network
    - Rumah Seri Kenangan Sibu Phase 2
    - Aged Day Care Centre Miri
-   - Sago BioCNG Plant and Gas Distribution Network
    - CPPC / Food Terminal Named Facilities Package
    - Bintulu Timber Megasite Feasibility
    - MRO Centre Facilities in Sarawak

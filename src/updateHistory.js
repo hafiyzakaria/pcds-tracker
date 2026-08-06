@@ -42,6 +42,15 @@ const updateDefinitions = [
       "https://dayakdaily.com/sarawak-cancer-centre-targets-2032-completion-as-design-and-build-tender-process-begins/",
   },
   {
+    date: "2026-07-02",
+    projectName: "Community Social Support Centre (CSSC) Network",
+    description: {
+      en: "JKR Sarawak called a one-month furniture-supply quotation for TTG and CSSC Bintulu. Full operations remain unconfirmed and undated.",
+      ms: "JKR Sarawak memanggil sebutharga pembekalan perabot selama satu bulan bagi TTG dan CSSC Bintulu. Operasi penuh masih belum disahkan dan belum mempunyai tarikh.",
+    },
+    sourceUrl: "https://jkr.sarawak.gov.my/web/subpage/webpage_view/465",
+  },
+  {
     date: "2026-06-21",
     projectName: "Bintulu Port — State Control Handover",
     description: {
@@ -179,6 +188,25 @@ const updateDefinitions = [
       "https://ukas.sarawak.gov.my/web/subpage/news_view/37208",
   },
   {
+    date: "2026-03-27",
+    projectName: "Sago BioCNG Plant and Gas Distribution Network",
+    description: {
+      en: "Gas pipelines were installed to about 122 homes and public facilities in Kampung Teh and Kampung Tabo, with the pilot project targeted for completion by the end of 2026.",
+      ms: "Paip gas dipasang ke kira-kira 122 kediaman dan kemudahan awam di Kampung Teh dan Kampung Tabo, dengan projek rintis disasarkan siap menjelang akhir 2026.",
+    },
+    sourceUrl:
+      "https://www.tvsarawak.my/2026/03/27/krisis-tenaga-dunia-sisa-sagu-jadi-emas-hijau/",
+  },
+  {
+    date: "2026-03-17",
+    projectName: "Community Social Support Centre (CSSC) Network",
+    description: {
+      en: "The Kuching centre was operating after handling 653 social cases and 760 programmes, while the statewide network continued expanding beyond Kuching.",
+      ms: "Pusat Kuching beroperasi selepas mengendalikan 653 kes sosial dan 760 program, manakala rangkaian seluruh negeri terus diperluas ke luar Kuching.",
+    },
+    sourceUrl: "https://ukas.sarawak.gov.my/web/subpage/news_view/36445",
+  },
+  {
     date: "2026-02-10",
     projectName:
       "Environment (Reduction of Greenhouse Gases Emission) Ordinance 2023",
@@ -217,6 +245,16 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://dayakdaily.com/sarawak-budget-2026-nearly-rm300-mil-allocated-to-modernise-agriculture-boost-food-security/",
+  },
+  {
+    date: "2025-11-07",
+    projectName: "Community Social Support Centre (CSSC) Network",
+    description: {
+      en: "CSSC Sibu was launched at Jalan Awang Ramli Amit and handed over to its community operator, establishing the network's second centre after Kuching.",
+      ms: "CSSC Sibu dilancarkan di Jalan Awang Ramli Amit dan diserahkan kepada pengendali komunitinya, menjadikannya pusat kedua dalam rangkaian selepas Kuching.",
+    },
+    sourceUrl:
+      "https://www.theborneopost.com/2025/11/08/community-social-support-centre-launched-in-sibu/",
   },
   {
     date: "2025-09-10",

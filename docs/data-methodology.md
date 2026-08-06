@@ -430,6 +430,8 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 ### Standalone Candidate Additions Revalidated on 6 August 2026
 
 - Sarawak Reef Ball Project - `In Progress`; value: `RM100 million`, the transparent combined public allocation comprising RM70 million for Phase I and RM30 million for Phase II. Sarawak Forestry Corporation is the implementing agency. Phase I was completed in July 2022, Phase II is officially scheduled for 2023-2027, stakeholder engagement was reported in August 2024, and 80 reef balls were deployed at Kuala Nyalau-Samalaju in July 2026. The latest deployment is treated as continuing programme activity because the source does not explicitly identify it as a Phase II work package. A long-term statewide target of 5,000 units remains open; sources: Office of the Premier of Sarawak, DayakDaily, and Borneo Post. Dated decision record: [Sarawak Reef Ball Project Round 2 audit](project-audits/2026-08-06-sarawak-reef-ball-project-round-2.md).
+- Community Social Support Centre (CSSC) Network - `In Progress`; value: `Not disclosed`. The statewide one-stop support network is led by the Ministry of Women, Childhood and Community Wellbeing Development through the Social Development Council. CSSC Sibu was launched and handed to its operator in November 2025, and UKAS recorded Kuching as operating by 17 March 2026. The former May 2026 Bintulu operations target is not retained because a July 2026 furniture-supply quotation shows that fit-out activity continued after that date; Bintulu operations remain undated and open. The RM40 million PCDS programme figure remains PDF-only and is not displayed; sources: Borneo Post, UKAS, JKR Sarawak, and DayakDaily. Dated decision record: [remaining-candidates Round 3 audit](project-audits/2026-08-06-remaining-candidates-round-3.md).
+- Sago BioCNG Plant and Gas Distribution Network - `In Progress`; value: `Not disclosed`. CRAUN Research's Kampung Tabo and Kampung Teh pilot combines sago-wastewater treatment, BioCNG development and a local gas network. Pipeline installation to about 122 homes and public facilities was reported in March 2026, with pilot completion targeted for the end of 2026. The newer 122-home scope supersedes the older 147-household figure; sources: Utusan Sarawak, Sarawak Tribune, The Star, and TVS. Dated decision record: [remaining-candidates Round 3 audit](project-audits/2026-08-06-remaining-candidates-round-3.md).
 
 ### Sustainability Vision 2030 Energy Projects Added on 13 July 2026
 
@@ -461,8 +463,8 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 The app derives display rows by flattening `SECTORS` into project rows and excluding the overview category:
 
-- Active rendered projects: 42.
-- Stored projects including overview: 43.
+- Active rendered projects: 44.
+- Stored projects including overview: 45.
 - PCDS economic sectors represented in data: 6.
 - PCDS enablers represented in data: 7.
 - Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, mining, social-services.
@@ -470,7 +472,7 @@ The app derives display rows by flattening `SECTORS` into project rows and exclu
 
 Current active dashboard status counts from `src/trackerData.js`:
 
-- `In Progress`: 29.
+- `In Progress`: 31.
 - `Awaiting Decision`: 0.
 - `Planning`: 7.
 - `Operational`: 4.
@@ -485,11 +487,11 @@ The UI groups detailed statuses into public filter labels:
 
 Current public display counts:
 
-- Tracked projects: 42.
+- Tracked projects: 44.
 - Planning: 7.
-- Ongoing: 29.
+- Ongoing: 31.
 - Completed: 6.
-- Milestones: 115 completed out of 183 active-project milestones.
+- Milestones: 125 completed out of 196 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 

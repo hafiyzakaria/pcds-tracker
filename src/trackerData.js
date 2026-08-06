@@ -387,6 +387,30 @@ export const SECTORS = [
           { label: "Borneo Post - Tudan centre targets 2026 opening (May 2026)", url: "https://www.theborneopost.com/2026/05/01/oseic-miri-homeless-transit-centres-on-track-for-2026-rollout/" },
         ],
       },
+      {
+        name: "Community Social Support Centre (CSSC) Network",
+        displayName: "Community Social Support Centre Network",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Ministry of Women, Childhood and Community Wellbeing Development / Social Development Council",
+        value: "Not disclosed",
+        summary:
+          "A statewide network of one-stop centres providing referrals, counselling, crisis support and community programmes for vulnerable people. The ministry and Social Development Council are expanding the network with public agencies, NGOs and private partners.",
+        milestones: [
+          { date: "2022-02-10", text: "Agreement for the first Kuching centre was signed", done: true },
+          { date: "2025-11-07", text: "Sibu centre was launched and handed to its operator", done: true },
+          { date: "2026-03-17", text: "Kuching centre operational", done: true },
+          { date: "2026-07-02", text: "Bintulu furniture-supply quotation was called", done: true },
+          { date: "TBD", text: "Bintulu centre begins operations", done: false },
+          { date: "TBD", text: "Additional divisional centres begin operations", done: false },
+        ],
+        sources: [
+          { label: "DayakDaily - First CSSC agreement and statewide plan (Feb 2022)", url: "https://dayakdaily.com/sarawaks-first-community-social-support-centre-to-open-in-kuching-offers-assistance-to-vulnerable-communities/" },
+          { label: "Borneo Post - Sibu centre launch and operator handover (Nov 2025)", url: "https://www.theborneopost.com/2025/11/08/community-social-support-centre-launched-in-sibu/" },
+          { label: "UKAS - Kuching operations and Sibu-Bintulu rollout (Mar 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/36445" },
+          { label: "JKR Sarawak - Bintulu furniture-supply quotation (Jul 2026)", url: "https://jkr.sarawak.gov.my/web/subpage/webpage_view/465" },
+        ],
+      },
     ],
   },
   // ─── ENABLERS (7) ─────────────────────────────────────────────────────────
@@ -897,6 +921,31 @@ export const SECTORS = [
     icon: "\u267b",
     color: "#d97706",
     projects: [
+      {
+        name: "Sago BioCNG Plant and Gas Distribution Network",
+        displayName: "Sago BioCNG and Gas Distribution Project",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "CRAUN Research Sdn Bhd",
+        value: "Not disclosed",
+        summary:
+          "A pilot renewable-energy project in Kampung Tabo and Kampung Teh, Mukah, that converts sago-processing wastewater into biogas for nearby homes and public facilities. Led by CRAUN Research, it combines waste treatment with a local gas distribution network.",
+        milestones: [
+          { date: "2019-05", text: "Sago wastewater treatment pilot plant began operating", done: true },
+          { date: "2019-11-23", text: "Sago wastewater treatment pilot plant was officially launched", done: true },
+          { date: "2020-03", text: "Biogas distribution project was approved", done: true },
+          { date: "2020-10-19", text: "Biogas development partnership was signed", done: true },
+          { date: "2023-05-25", text: "BioCNG plant development was reported underway", done: true },
+          { date: "2026-03-27", text: "Gas pipelines were installed to homes and public facilities", done: true },
+          { date: "2026-Q4", text: "Pilot project reaches completion", done: false },
+        ],
+        sources: [
+          { label: "Utusan Sarawak - Project approval and pilot-plant launch (Jul 2020)", url: "https://utusansarawak.com.my/kampung-tabo-teh-pengguna-biogas-rumbia-pertama-di-dunia/" },
+          { label: "Sarawak Tribune - Biogas development partnership (Oct 2020)", url: "https://www.sarawaktribune.com/strategic-partnership-to-develop-biogas-from-sago-waste/" },
+          { label: "The Star - BioCNG plant development and CRAUN lead (May 2023)", url: "https://www.thestar.com.my/business/business-news/2023/05/25/craun-makes-breakthrough-in-green-energy" },
+          { label: "TVS - Pipeline installation and 2026 completion target (Mar 2026)", url: "https://www.tvsarawak.my/2026/03/27/krisis-tenaga-dunia-sisa-sagu-jadi-emas-hijau/" },
+        ],
+      },
       {
         name: "Baleh Hydroelectric Project",
         status: "In Progress",
