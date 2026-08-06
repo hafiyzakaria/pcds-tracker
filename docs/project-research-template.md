@@ -11,8 +11,8 @@ Copy the template below into the dated research record, issue, or pull request. 
 
 - Review date: YYYY-MM-DD
 - Reviewer:
-- Review type: routine / milestone trigger / event-driven / new-project proposal
-- Current dashboard identity: category; canonical name; status; next open milestone
+- Review type: routine / milestone trigger / event-driven / excluded-candidate re-review / new-project proposal
+- Current dashboard identity or candidate state: category; canonical name; status or dated exclusion decision; next open milestone or follow-up trigger
 - Tracked unit: single asset / phase or package / combined card / shared system / programme / designation / policy implementation
 - Project identity checked: exact project, phase/package, location, delivery body/lead
 - Name variants checked: acronym; aliases; former names; alternate spelling; lead organisation
@@ -21,6 +21,7 @@ Copy the template below into the dated research record, issue, or pull request. 
 
 | Search type | Exact query or official domain | Findings / candidate URLs |
 | --- | --- | --- |
+| Mandatory milestone-first discovery | `"[project name]" project milestones` | Record AI synthesis when available, ordinary results, and every expanded citation-group URL |
 | Exact-name | `"[project name]" update [current year]` | |
 | Value | `"[project name]" value cost "project cost" "estimated cost" investment allocation contract funding financing` | |
 | Value in BM | `"[project name]" kos "nilai projek" anggaran peruntukan pelaburan juta bilion` | |
@@ -60,6 +61,7 @@ amount does not complete the value search.
 | | | | Total cost / estimate / investment / allocation / study funding / contract / financing / combined package / resource valuation / economic impact | About / up to / over / range / allocated / committed | | |
 
 - AI Overview and search-summary citation groups fully expanded:
+- Ordinary web results reviewed even if the AI Overview was available, unavailable, or incomplete:
 - Exact-number, currency, and quoted-phrase follow-up searches completed:
 - English, BM, alias, location, phase, lead-party, and official-domain variants completed:
 - Newer project-specific value checked:
@@ -91,6 +93,7 @@ amount does not complete the value search.
 - Required BM/localization changes:
 - Editorial update-history decision: add entry / no entry; rationale:
 - Follow-up date or trigger:
+- If excluded or deferred, evidence gap and exact re-review query:
 
 ## New-project PCDS inclusion gate (complete only for additions)
 

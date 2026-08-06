@@ -34,7 +34,7 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-02`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-06`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
@@ -195,16 +195,21 @@ Use a search-first, source-verified workflow for recurring project reviews. Goog
 
 ### Search sequence
 
-For each project:
+For each project and each excluded or deferred candidate in the audit scope:
 
-1. Start with the exact public project name and current year, for example `"Project name" update 2026`.
-2. If results are weak, repeat the search with:
+1. Start with the exact public project name plus `project milestones`, for example `"Project name" project milestones`. This is the mandatory first discovery pass because it can surface a lifecycle chronology, recent reporting, official project pages, aliases, and cited source groups in one result set.
+2. Review both the AI Overview or equivalent synthesis, when available, and the ordinary web results. An unavailable, incomplete, or unhelpful AI response does not end the search; the standard results may still expose stronger or newer sources.
+3. Expand every visible citation group, including `+n`, `view related links`, `sites`, and equivalent controls. Capture the underlying candidate URLs, then open and verify the visible source pages before accepting any claim.
+4. Run a current-status query using the exact public project name and current year, for example `"Project name" update 2026` or `"Project name" latest status 2026`.
+5. If results remain weak or the discovered chronology has gaps, repeat the search with:
    - the recognised acronym, alternate spelling, former name, or lead organisation;
    - the project name plus its current open milestone;
    - the project name plus terms such as `completed`, `commissioned`, `delayed`, `revised`, `cancelled`, or `financial close`;
    - an official-domain filter when a likely project owner or ministry is known.
-3. Search passed or near-term milestones separately. A target date passing is a review trigger, not proof that the milestone was achieved.
-4. Use AI Overview statements, search snippets, and news-result groupings only to identify candidate links. Open each candidate page before accepting it.
+6. Search passed or near-term milestones separately. A target date passing is a review trigger, not proof that the milestone was achieved.
+7. Complete the separate value, lead or party-role, and counter-searches required by the reported-value, lead-and-party, and field-verification standards. The milestone-first query accelerates discovery but does not replace field-specific evidence checks.
+
+Use AI Overview statements, search snippets, and news-result groupings only to identify candidate links. Personalised ranking and generated wording are not evidence. Acceptance depends on the opened public source page, not its search position or summary.
 
 ### Source-page checks
 
@@ -238,6 +243,9 @@ For each audit, record the audit date, query variants, candidate and accepted UR
 - Run a lightweight search on a card when its next milestone date passes.
 - Run a full dashboard sweep at least quarterly.
 - Run an event-driven check after major budgets, legislative sittings, project-owner announcements, or reported status changes.
+- Re-review a previously excluded or deferred candidate when its recorded target date passes, a new official project page appears, a material announcement or reported status change occurs, or its recorded follow-up date arrives.
+- Every exclusion or deferral must record the review date, evidence gap, follow-up date or observable trigger, and the exact identity or alias to search. `Do not add` is a dated evidence decision, not a permanent classification.
+- Include triggered excluded and deferred candidates in the same milestone-first discovery pass used for live cards. A full candidate-pool audit should begin with this pass before deciding which candidates require deeper source verification.
 - Compare each sweep with the previous dated audit so unchanged cards do not need to be researched from scratch.
 
 Latest full milestone review:
@@ -419,6 +427,10 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Yayasan Sarawak International Secondary Schools Expansion - `In Progress`; value: `RM120-135 million`, a derived estimate for the three remaining schools based on the 2022 implementation estimate of RM40 million to RM45 million per school and September 2025 confirmation that three of six schools remained. This is not an announced contract or six-school network total; sources: Rakan Sarawak, YSISS, and Borneo Post.
 - Sarawak River Aids to Navigation and Surveillance System - `In Progress` as an interim combined card; value: `RM30 million` for the first-phase Senari VTMS on the Sarawak River, excluding the later Miri system. Sarawak River VTMS was reported fully operational in December 2025, while Miri River system completion remains scheduled for Q3 2027. The PCDS 2030 Highlights 2023 report identifies Sarawak River as the first project under a wider river-management initiative and describes similar systems for Miri River and Kuala Baram as later plans. The scopes should ultimately be separated, but the combined card remains `Ongoing` while the Miri milestone is open; sources: DayakDaily, Borneo Post, and PCDS 2030 Highlights 2023, PDF page 121 (printed page 120).
 
+### Standalone Candidate Additions Revalidated on 6 August 2026
+
+- Sarawak Reef Ball Project - `In Progress`; value: `RM100 million`, the transparent combined public allocation comprising RM70 million for Phase I and RM30 million for Phase II. Sarawak Forestry Corporation is the implementing agency. Phase I was completed in July 2022, Phase II is officially scheduled for 2023-2027, stakeholder engagement was reported in August 2024, and 80 reef balls were deployed at Kuala Nyalau-Samalaju in July 2026. The latest deployment is treated as continuing programme activity because the source does not explicitly identify it as a Phase II work package. A long-term statewide target of 5,000 units remains open; sources: Office of the Premier of Sarawak, DayakDaily, and Borneo Post. Dated decision record: [Sarawak Reef Ball Project Round 2 audit](project-audits/2026-08-06-sarawak-reef-ball-project-round-2.md).
+
 ### Sustainability Vision 2030 Energy Projects Added on 13 July 2026
 
 - Sejingkat Battery Energy Storage System - `Operational`; 60MW/82MWh facility energised in December 2024 and publicly announced as commissioned in February 2025. Routine grid services and performance monitoring are operational activities rather than open delivery milestones, so the commissioned facility displays as `Completed`; source: Sarawak Energy.
@@ -449,8 +461,8 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 The app derives display rows by flattening `SECTORS` into project rows and excluding the overview category:
 
-- Active rendered projects: 34.
-- Stored projects including overview: 35.
+- Active rendered projects: 42.
+- Stored projects including overview: 43.
 - PCDS economic sectors represented in data: 6.
 - PCDS enablers represented in data: 7.
 - Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, mining, social-services.
@@ -458,10 +470,10 @@ The app derives display rows by flattening `SECTORS` into project rows and exclu
 
 Current active dashboard status counts from `src/trackerData.js`:
 
-- `In Progress`: 23.
+- `In Progress`: 29.
 - `Awaiting Decision`: 0.
-- `Planning`: 6.
-- `Operational`: 3.
+- `Planning`: 7.
+- `Operational`: 4.
 - `Designated`: 2.
 - `Enacted`: 0.
 
@@ -473,11 +485,11 @@ The UI groups detailed statuses into public filter labels:
 
 Current public display counts:
 
-- Tracked projects: 34.
-- Planning: 6.
-- Ongoing: 23.
-- Completed: 5.
-- Milestones: 93 completed out of 150 active-project milestones.
+- Tracked projects: 42.
+- Planning: 7.
+- Ongoing: 29.
+- Completed: 6.
+- Milestones: 115 completed out of 183 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 

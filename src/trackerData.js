@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-08-02";
+export const LAST_UPDATED = "2026-08-06";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -118,6 +118,25 @@ export const SECTORS = [
           { label: "TVS — Agropark and smart-farming progress update (Dec 2025)", url: "https://www.tvsarawak.my/2025/12/02/dun-sarawak-agropark-dan-pertanian-pintar-perkasa-tanaman-komersial-sarawak/" },
         ],
       },
+      {
+        name: "Rambungan Sustainable Shrimp Aquaculture Project",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Rambungan Aqua Life Sdn Bhd",
+        value: "Not disclosed",
+        summary:
+          "The Rambungan Sustainable Shrimp Aquaculture Project is a 297-hectare ESG-oriented farming initiative at Loba Stoh, Rambungan. Led by Rambungan Aqua Life Sdn Bhd, it uses modern aquaculture practices to grow premium shrimp for domestic and export markets.",
+        milestones: [
+          { date: "2025-01-08", text: "Shrimp harvesting programme was held", done: true },
+          { date: "2026", text: "94 new shrimp-farming ponds are constructed", done: false },
+          { date: "2031", text: "Annual production reaches 1,349 tonnes", done: false },
+          { date: "2031", text: "Annual exports reach RM27 million", done: false },
+        ],
+        sources: [
+          { label: "M-FICORD - Rambungan harvest, land and joint venture (Jan 2025)", url: "https://mficord.sarawak.gov.my/web/subpage/news_view/1513" },
+          { label: "DayakDaily - Rambungan production and export targets (Jan 2025)", url: "https://dayakdaily.com/rambungan-large-scale-shrimp-farming-targets-1349-tonnes-rm27-mln-in-annual-exports/" },
+        ],
+      },
     ],
   },
   {
@@ -225,6 +244,49 @@ export const SECTORS = [
           { label: "Borneo Post — Piasau discovery centre RM30M development (Jan 2026)", url: "https://www.theborneopost.com/2026/01/30/piasau-nature-reserve-discovery-centre-to-become-marine-eco-tourism-hub-with-rm30-mln-boost/" },
         ],
       },
+      {
+        name: "Marudi Forest Conservation and Restoration Project",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "SaraCarbon Sdn Bhd",
+        value: "Not disclosed",
+        summary:
+          "The Marudi Forest Conservation and Restoration Project is a 25,675-hectare peat-swamp conservation and restoration initiative in Marudi. Managed by SaraCarbon Sdn Bhd, it aims to protect forest carbon stocks and generate tradeable carbon credits under Sarawak's carbon framework.",
+        milestones: [
+          { date: "2023-03", text: "Forest-carbon study permit was granted", done: true },
+          { date: "2024-12-09", text: "Sarawak's first forest carbon licence was issued", done: true },
+          { date: "TBD", text: "Independently verified carbon credits are issued", done: false },
+        ],
+        sources: [
+          { label: "The Edge Malaysia - Marudi forest-carbon study permit (Mar 2023)", url: "https://theedgemalaysia.com/node/659392" },
+          { label: "Sarawak Tribune - First forest carbon licence issued (Dec 2024)", url: "https://www.sarawaktribune.com/sarawak-awards-first-carbon-licence-strengthening-environmental-and-economic-commitments/" },
+          { label: "SaraCarbon - Marudi project scope and management", url: "https://saracarbon.com/marudi/" },
+        ],
+      },
+      {
+        name: "Sarawak Reef Ball Project",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Sarawak Forestry Corporation",
+        value: "RM100 million",
+        summary:
+          "A statewide marine-conservation programme led by Sarawak Forestry Corporation that deploys artificial reef balls from Tanjung Datu to Lawas to restore habitats, protect fishing grounds and support coastal livelihoods. Phase I received RM70 million and Phase II RM30 million, bringing the combined public allocation for both phases to RM100 million.",
+        milestones: [
+          { date: "2022-07-19", text: "Phase I deployment was completed", done: true },
+          { date: "2022-11-21", text: "RM30 million was allocated for Phase II", done: true },
+          { date: "2023-07-10", text: "746km artificial reef barrier gained international recognition", done: true },
+          { date: "2024-08-03", text: "Phase II stakeholder engagement began", done: true },
+          { date: "2026-07-30", text: "80 reef balls were deployed at Kuala Nyalau-Samalaju", done: true },
+          { date: "TBD", text: "Long-term 5,000-reef-ball target is reached", done: false },
+        ],
+        sources: [
+          { label: "DayakDaily - Phase I completion and RM70M value (Jul 2022)", url: "https://dayakdaily.com/sfcs-final-reef-ball-drop-marks-completion-of-three-year-journey/" },
+          { label: "DayakDaily - RM30M allocated for Phase II (Nov 2022)", url: "https://dayakdaily.com/premier-rm30-million-allocated-to-implement-sarawak-reef-ball-project-phase-2/" },
+          { label: "Office of the Premier - Two-phase scope and international recognition (Jul 2023)", url: "https://premier.sarawak.gov.my/web/subpage/news_view/5503" },
+          { label: "Borneo Post - Phase II stakeholder engagement (Aug 2024)", url: "https://www.theborneopost.com/2024/08/11/sarawak-reef-ball-project-signifies-commitment-to-maintaining-marine-eco-balance/" },
+          { label: "DayakDaily - Kuala Nyalau deployment and 5,000-unit target (Jul 2026)", url: "https://dayakdaily.com/80-reef-balls-deployed-to-safeguard-marine-biodiversity-in-kuala-nyalau-samalaju/" },
+        ],
+      },
     ],
   },
   {
@@ -284,6 +346,45 @@ export const SECTORS = [
           { label: "DayakDaily — RM500M medical equipment fronted (Dec 2025)", url: "https://dayakdaily.com/patients-cannot-wait-sarawak-fronts-rm500-mln-for-cancer-centre-medical-equipment/" },
           { label: "Sarawak Tribune — Tender stage (May 2026)", url: "https://www.sarawaktribune.com/sarawak-cancer-centre-enters-tender-stage/" },
           { label: "DayakDaily — Tender begins, 2032 completion target (Jul 2026)", url: "https://dayakdaily.com/sarawak-cancer-centre-targets-2032-completion-as-design-and-build-tender-process-begins/" },
+        ],
+      },
+      {
+        name: "Special Needs Community Centre",
+        status: "Planning",
+        statusColor: "#4f46e5",
+        lead: "Sarawak Government",
+        value: "RM30 million",
+        summary:
+          "The RM30 million first phase of the Special Needs Community Centre in Samarahan will bring early intervention, vocational training, therapy and trainee accommodation into one integrated facility. It is designed to support persons with disabilities from childhood through skills development, employment readiness and long-term care.",
+        milestones: [
+          { date: "2026-06-05", text: "RM30 million Phase 1 scope was announced", done: true },
+          { date: "2026-07", text: "Project tender is called", done: false },
+          { date: "2026-11", text: "Letter of award is issued", done: false },
+          { date: "2028-05", text: "Phase 1 reaches completion", done: false },
+        ],
+        sources: [
+          { label: "DayakDaily - RM30M Phase 1 scope and delivery plan (Jun 2026)", url: "https://dayakdaily.com/sarawak-to-build-rm30-mln-special-needs-community-centre-to-deliver-lifelong-care-training-support/" },
+          { label: "Borneo Post - Phase 1 facilities and 2028 completion (Jun 2026)", url: "https://www.theborneopost.com/2026/06/05/sarawaks-first-special-needs-community-centre-set-for-completion-by-2028/" },
+        ],
+      },
+      {
+        name: "One-Stop Early Intervention Centre (OSEIC) Miri",
+        displayName: "OSEIC Miri",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Sarawak Government",
+        value: "RM5.743 million",
+        summary:
+          "OSEIC Miri is an early-intervention centre in Tudan for children under seven with special needs. Supported by RM5.743 million in government development grants, it will provide diagnosis, assessment and tailored intervention closer to families in northern Sarawak.",
+        milestones: [
+          { date: "2024", text: "RM3.047 million development grant was approved", done: true },
+          { date: "2025", text: "Further RM2.696 million grant was approved", done: true },
+          { date: "2026-04-30", text: "Project progress was assessed at the Tudan site", done: true },
+          { date: "2026", text: "Centre begins operations", done: false },
+        ],
+        sources: [
+          { label: "UKAS - OSEIC Miri progress, grants and services (Apr 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/39533" },
+          { label: "Borneo Post - Tudan centre targets 2026 opening (May 2026)", url: "https://www.theborneopost.com/2026/05/01/oseic-miri-homeless-transit-centres-on-track-for-2026-rollout/" },
         ],
       },
     ],
@@ -416,6 +517,48 @@ export const SECTORS = [
           { label: "The Star — PETRONAS explores 2027 first CO2 injection (Apr 2026)", url: "https://www.thestar.com.my/business/business-news/2026/04/01/petronas-seeks-to-bring-forward-first-co2-injection-at-kasawari-to-2027" },
         ],
       },
+      {
+        name: "Sarawak Science Centre (SSCiEX)",
+        status: "Operational",
+        statusColor: "#16a34a",
+        lead: "Sarawak Research and Development Council (SRDC)",
+        value: "Not disclosed",
+        summary:
+          "SSCiEX is a five-storey science centre on Jalan Stadium in Kuching, with 22 thematic galleries and more than 400 hands-on exhibits. It gives students, families and the wider community an immersive place to explore science, technology and innovation.",
+        milestones: [
+          { date: "2019", text: "Science-centre blueprint was approved", done: true },
+          { date: "2023-07-21", text: "Piling works began", done: true },
+          { date: "2026", text: "Five-storey centre was completed", done: true },
+          { date: "2026-07-29", text: "Centre was officially launched", done: true },
+          { date: "2026-07-30", text: "Centre opened to visitors", done: true },
+        ],
+        sources: [
+          { label: "SSCiEX - Current facility and visitor opening", url: "https://ssciex.org.my/" },
+          { label: "SSCiEX - Building development timeline", url: "https://ssciex.org.my/home/project-development-timeline/" },
+          { label: "Sarawak Tribune - Piling works began (Jul 2023)", url: "https://www.sarawaktribune.com/piling-works-on-rm239-mln-sarawak-science-centre-begin/" },
+          { label: "SRDC - Sarawak Science Centre delivery role (Jul 2022)", url: "https://www.sarawakrdc.org.my/news-events/news/3/sarawak-science-centre" },
+        ],
+      },
+      {
+        name: "Sarawak Infectious Disease Centre",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Sarawak Infectious Disease Centre (SIDC)",
+        value: "Not disclosed",
+        summary:
+          "The Sarawak Infectious Disease Centre is developing a One Health research campus beside the Sarawak Heart Centre in Samarahan. Its laboratories and supporting facilities are designed for disease surveillance, diagnostics, vaccine research and Biosafety Level 3 work.",
+        milestones: [
+          { date: "2020", text: "Sarawak Infectious Disease Centre was established", done: true },
+          { date: "2024-02", text: "Research organisation began operating", done: true },
+          { date: "2025-10", text: "Campus construction reached 40.19 percent", done: true },
+          { date: "2026-10", text: "Samarahan campus reaches completion", done: false },
+        ],
+        sources: [
+          { label: "SIDC - Organisation and research mission", url: "https://sidc.org.my/" },
+          { label: "SIDC - Samarahan campus scope and construction packages", url: "https://sidc.org.my/new-lab" },
+          { label: "DayakDaily - Campus progress and completion target (Dec 2025)", url: "https://dayakdaily.com/sarawak-infectious-disease-centre-to-be-completed-by-oct-2026/" },
+        ],
+      },
     ],
   },
   {
@@ -540,6 +683,25 @@ export const SECTORS = [
           { label: "The Star — RM1bil gas pipeline plan (Nov 2024)", url: "https://www.thestar.com.my/business/business-news/2024/11/04/rm1bil-gas-pipeline-plan" },
           { label: "Bintulu Port Authority — Pipeline pre-commissioning notice (May 2026)", url: "https://www.bpa.gov.my/web/home/notice_view/0/439/" },
           { label: "Sarawak Tribune — Samalaju pipeline operations from 2027 (May 2026)", url: "https://www.sarawaktribune.com/samalaju-power-pipeline-ready-by-2027/" },
+        ],
+      },
+      {
+        name: "Miri Combined Cycle Gas Turbine (CCGT) Power Plant",
+        displayName: "Miri CCGT Power Plant",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Petroleum Sarawak Berhad (PETROS)",
+        value: "RM2 billion",
+        summary:
+          "The RM2 billion Miri Combined Cycle Gas Turbine Power Plant is a 500MW generation facility at Jalan Pantai, Lutong. Developed by Petroleum Sarawak Berhad, it is intended to strengthen the reliability and efficiency of Sarawak's electricity supply.",
+        milestones: [
+          { date: "2023-09", text: "Earthworks began", done: true },
+          { date: "2026-03", text: "Project reached 45 percent completion", done: true },
+          { date: "2027", text: "Power plant reaches completion", done: false },
+        ],
+        sources: [
+          { label: "Miri City Council - Earthworks and PETROS delivery role (Oct 2023)", url: "https://miricouncil.gov.my/web/subpage/news_view/733" },
+          { label: "Sarawak Tribune - RM2B value and 45 percent progress (Apr 2026)", url: "https://www.sarawaktribune.com/miri-combined-cycle-gas-turbine-project-reaches-45-completion/" },
         ],
       },
       {

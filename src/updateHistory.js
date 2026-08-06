@@ -3,6 +3,25 @@ import { localizeSectors } from "./localization.js";
 
 const updateDefinitions = [
   {
+    date: "2026-07-30",
+    projectName: "Sarawak Reef Ball Project",
+    description: {
+      en: "Eighty artificial reef balls were deployed at Kuala Nyalau-Samalaju, while SFC reported a long-term statewide target of 5,000 units through continuing marine-conservation partnerships.",
+      ms: "Sebanyak 80 bebola terumbu tiruan ditempatkan di Kuala Nyalau-Samalaju, manakala SFC melaporkan sasaran jangka panjang 5,000 unit di seluruh negeri melalui kerjasama pemuliharaan marin yang berterusan.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/80-reef-balls-deployed-to-safeguard-marine-biodiversity-in-kuala-nyalau-samalaju/",
+  },
+  {
+    date: "2026-07-29",
+    projectName: "Sarawak Science Centre (SSCiEX)",
+    description: {
+      en: "The five-storey Sarawak Science Centre officially launched with 22 thematic galleries and more than 400 hands-on exhibits, before opening to visitors on 30 July.",
+      ms: "Pusat Sains Sarawak lima tingkat dilancarkan secara rasmi dengan 22 galeri bertema dan lebih 400 pameran interaktif, sebelum dibuka kepada pengunjung pada 30 Julai.",
+    },
+    sourceUrl: "https://ssciex.org.my/",
+  },
+  {
     date: "2026-07-24",
     projectName: "Kota Petra Green Technology Park",
     description: {
@@ -52,6 +71,16 @@ const updateDefinitions = [
       "https://www.theborneopost.com/2026/06/09/sarawak-recalibrates-h2biscus-and-h2ornbill-hydrogen-projects-amid-financial-constraints/",
   },
   {
+    date: "2026-06-05",
+    projectName: "Special Needs Community Centre",
+    description: {
+      en: "The RM30 million first phase was announced for Samarahan, combining early intervention, vocational training, therapy and trainee accommodation, with completion targeted for May 2028.",
+      ms: "Fasa pertama bernilai RM30 juta diumumkan bagi Samarahan, menggabungkan intervensi awal, latihan vokasional, terapi dan penginapan pelatih, dengan penyiapan disasarkan pada Mei 2028.",
+    },
+    sourceUrl:
+      "https://www.theborneopost.com/2026/06/05/sarawaks-first-special-needs-community-centre-set-for-completion-by-2028/",
+  },
+  {
     date: "2026-05-19",
     projectName: "New Kuching International Airport",
     description: {
@@ -90,6 +119,15 @@ const updateDefinitions = [
     sourceUrl: "https://www.bpa.gov.my/web/home/notice_view/0/439/",
   },
   {
+    date: "2026-04-30",
+    projectName: "One-Stop Early Intervention Centre (OSEIC) Miri",
+    description: {
+      en: "The Sarawak Government reported RM5.743 million in development grants and assessed progress at the OSEIC Miri site in Tudan ahead of its planned opening.",
+      ms: "Kerajaan Sarawak melaporkan geran pembangunan RM5.743 juta dan menilai kemajuan di tapak OSEIC Miri di Tudan menjelang pembukaan yang dirancang.",
+    },
+    sourceUrl: "https://ukas.sarawak.gov.my/web/subpage/news_view/39533",
+  },
+  {
     date: "2026-04-27",
     projectName:
       "Sarawak Delta Geopark - UNESCO Global Geopark Designation",
@@ -99,6 +137,16 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://dayakdaily.com/sarawak-delta-geopark-gets-unesco-approval/",
+  },
+  {
+    date: "2026-04-25",
+    projectName: "Miri Combined Cycle Gas Turbine (CCGT) Power Plant",
+    description: {
+      en: "The RM2 billion, 500MW Miri CCGT Power Plant reached 45 percent completion as of March 2026, with completion targeted for the end of 2027.",
+      ms: "Loji Janakuasa CCGT Miri bernilai RM2 bilion dan berkapasiti 500MW mencapai 45 peratus siap setakat Mac 2026, dengan penyiapan disasarkan pada penghujung 2027.",
+    },
+    sourceUrl:
+      "https://www.sarawaktribune.com/miri-combined-cycle-gas-turbine-project-reaches-45-completion/",
   },
   {
     date: "2026-04-25",
@@ -149,6 +197,16 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://www.theborneopost.com/2026/01/30/piasau-nature-reserve-discovery-centre-to-become-marine-eco-tourism-hub-with-rm30-mln-boost/",
+  },
+  {
+    date: "2025-12-01",
+    projectName: "Sarawak Infectious Disease Centre",
+    description: {
+      en: "The Samarahan campus reached 40.19 percent physical progress in October 2025, while the SIDC research organisation continued operating ahead of the campus completion target.",
+      ms: "Kampus Samarahan mencapai 40.19 peratus kemajuan fizikal pada Oktober 2025, manakala organisasi penyelidikan SIDC terus beroperasi sebelum sasaran penyiapan kampus.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/sarawak-infectious-disease-centre-to-be-completed-by-oct-2026/",
   },
   {
     date: "2025-11-24",

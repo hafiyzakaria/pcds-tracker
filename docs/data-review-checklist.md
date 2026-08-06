@@ -5,6 +5,7 @@ Use this checklist for a release that changes project facts, Bahasa Melayu proje
 ## Evidence and content
 
 - [ ] Read and followed `docs/data-methodology.md`; completed a dated record using the [project research template](project-research-template.md).
+- [ ] The mandatory `"[exact project name]" project milestones` discovery pass was run for every reviewed live project and every triggered excluded or deferred candidate; ordinary web results were reviewed whether or not an AI Overview was available.
 - [ ] Separate discovery searches covered value, status, milestones, lead or party roles, and newer contradictory evidence; AI Overview citations were collected when available.
 - [ ] Every changed claim has a verified public source link; discovery snippets and AI Overviews were not treated as evidence, and every accepted underlying page was opened.
 - [ ] AI-generated claims were compared with the visible source wording; generated scope changes, combinations, role assignments, dates, and currency conversions were not copied without source support.
@@ -22,6 +23,7 @@ Use this checklist for a release that changes project facts, Bahasa Melayu proje
 - [ ] Each non-completed card retains an evidence-supported open outcome, and an intermediate announcement, approval, agreement, design stage, or contract does not make the project appear fully complete.
 - [ ] Open milestones read as pending outcomes rather than completed events; completed milestones use definitive past-tense wording.
 - [ ] New project additions passed the template's stricter PCDS inclusion gate.
+- [ ] Every exclusion or deferral records its review date, evidence gap, exact identity or alias, and a follow-up date or observable re-review trigger.
 - [ ] `LAST_UPDATED` in `src/trackerData.js` is updated when the dashboard data changed, and its methodology note remains accurate.
 - [ ] Required BM entries in `src/localization.js` faithfully reflect the English evidence; missing translations safely fall back to English.
 - [ ] The `src/updateHistory.js` decision is explicit: add an entry for a meaningful reflected public development, or record why none is needed.

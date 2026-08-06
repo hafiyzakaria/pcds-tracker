@@ -293,6 +293,8 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 
 ## Do Not Add
 
+> **Re-review note, 6 August 2026:** Eight candidates in this historical section were subsequently approved and added after current public-source verification: Miri Combined Cycle Gas Turbine Power Plant, Sarawak Science Centre (SSCiEX), Sarawak Infectious Disease Centre, Special Needs Community Centre, SaraCarbon's Marudi Forest Conservation and Restoration Project, Rambungan Sustainable Shrimp Aquaculture Project, OSEIC Miri, and the Sarawak Reef Ball Project. The original entries below are retained as the dated evidence position before those re-reviews. See [the standalone-candidate audit](project-audits/2026-08-06-standalone-candidate-reaudit.md) and [Sarawak Reef Ball Project Round 2 audit](project-audits/2026-08-06-sarawak-reef-ball-project-round-2.md) for the superseding decisions and accepted facts.
+
 ### Senari Free Zone
 
 - Source PDF evidence: AIP Volume III pages 254-255 lists RM100 million resources and a 2022-2028 timeline.
@@ -624,7 +626,16 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 1. Projects safe to add now:
    - CHITOSE Carbon Capture Central Sarawak (C4 Sarawak)
    - Yayasan Sarawak International Secondary Schools expansion
-2. Projects needing manual review:
+2. Added after the 6 August 2026 standalone-candidate re-review:
+   - Miri Combined Cycle Gas Turbine Power Plant
+   - Sarawak Science Centre (SSCiEX)
+   - Sarawak Infectious Disease Centre
+   - Special Needs Community Centre
+   - Marudi Forest Conservation and Restoration Project
+   - Rambungan Sustainable Shrimp Aquaculture Project
+   - One-Stop Early Intervention Centre (OSEIC) Miri
+   - Sarawak Reef Ball Project, added in the subsequent single-project Round 2 review
+3. Projects needing manual review:
    - Pan Borneo Highway Sarawak Phase 1
    - Sarawak-Sabah Link Road
    - Miri Port Kuala Baram Capital Dredging / Northern Gateway upgrade
@@ -637,30 +648,22 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
    - Semenggoh Rainforest Discovery Centre and Piasau Nature Discovery Centre
    - PETRONAS Kasawari Carbon Capture and Storage Project
    - Sarawak River Aids to Navigation and Surveillance System
-3. Projects not suitable:
+4. Projects still excluded or deferred pending later review:
    - Senari Free Zone
    - New Tanjung Po Deep Water Port / Southern Terminal
    - New High-Tech Industrial Park
    - Demak Laut Industrial Park Phases 2C, 2D, and 2E
-   - 500 MW Miri Combined Cycle Gas Turbine Power Plant
    - Coastal Road Fiber Connectivity
-   - Sarawak Science Centre (SSCiEX)
-   - Sarawak Infectious Disease Centre
    - Wildlife Rescue Centres and Forensics Laboratory
    - Community Social Intervention Centre Network
-   - Special Needs Community Centre
    - Rumah Seri Kenangan Sibu Phase 2
    - Aged Day Care Centre Miri
    - Sago BioCNG Plant and Gas Distribution Network
-   - SaraCarbon Nature-Based Carbon Project Study
-   - Sarawak Reef Ball Project
-   - Loba Stoh Aquaculture Park / AIZ Rambungan
    - CPPC / Food Terminal Named Facilities Package
    - Bintulu Timber Megasite Feasibility
    - MRO Centre Facilities in Sarawak
    - Private Jet Hub in Sarawak
    - Southern Region Development Corridor Road Links
-   - OSEIC Miri Branch
-4. Recommended safest first batch to add:
+5. Recommended safest first batch to add:
    - CHITOSE Carbon Capture Central Sarawak (C4 Sarawak)
    - Yayasan Sarawak International Secondary Schools expansion
