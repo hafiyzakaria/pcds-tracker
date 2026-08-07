@@ -197,11 +197,9 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ### Revisit monitored 13th Malaysia Plan candidates
 
-- Sarawak High Performance Sports Centre: Strongest next candidate. The 13th Malaysia Plan
-  names the facility on page 34, and June 2026 reporting confirms planning and a site within the
-  Sarawak Sports Complex. Recheck when a project value, procurement action, construction date,
-  or completion schedule is published. Resolve the conflict with older reporting that suggested
-  operations in 2025 before creating a card.
+- Sarawak High Performance Centre: Added on 7 August 2026 at the conservative `Planning` stage
+  after newer UKAS evidence resolved the older 2025 operation expectation. Recheck when a project
+  value, procurement award, physical construction start, or completion schedule is published.
 - Sarawak AI Centre: The plan records Cabinet approval on page 13 and includes the centre in its
   AI strategy on page 30, but the public record does not yet establish whether this is a facility,
   institution, or programme. Recheck when an implementing body, location, budget, launch, or
@@ -215,9 +213,8 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Baram Renewable Energy Economic Zone: Keep as umbrella context for the Baram Agrovoltaic
   Project. Reconsider a separate card when governance, boundaries, a masterplan, an investment
   framework, or additional named projects are publicly confirmed.
-- Suggested first task: Review the sports-centre candidate first, then repeat the documented
-  project-research process for the institutional initiatives and economic zones when one of these
-  evidence triggers occurs.
+- Suggested first task: Repeat the documented project-research process for the institutional
+  initiatives and economic zones when one of these evidence triggers occurs.
 
 ## 3. Nice To Have
 

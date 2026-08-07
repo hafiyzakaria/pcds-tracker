@@ -292,6 +292,8 @@
 
 ### Lubok Punggor Mid Sadong Drainage and Irrigation Upgrade
 
+> Current disposition, 7 August 2026: added as `Lubok Punggor AgriHub and Mid Sadong 1 Irrigation Project` after live DID Sarawak and UKAS evidence resolved its standalone identity, value and implementation scope. See the [dated addition review](project-audits/2026-08-07-approved-six-card-route-first-three.md).
+
 - Project name: Upgrading and Rehabilitation of Drainage and Irrigation Infrastructure of the Mid Sadong Scheme (Lubok Punggor)
 - Why it is relevant: Named paddy-modernisation infrastructure project in Gedong.
 - Source PDF: `SarawakGovt PCDS2030 - Highlights 2023.pdf`
@@ -393,6 +395,8 @@
 
 ### Bio-Algae Initial Commercial Plant
 
+> Current disposition, 7 August 2026: added as `Bintulu Bio-Algae Initial Commercial Plant` after PETRONAS sources explicitly connected the ICP to joint technology development by PETRONAS Research and SEDC Energy, while newer reporting confirmed ongoing Bintulu studies and the planned scale-up. See the [dated addition review](project-audits/2026-08-07-approved-six-card-route-first-three.md).
+
 - Project name: Bio-Algae Initial Commercial Plant (ICP)
 - Why it is relevant: Biofuel and sustainable aviation fuel candidate in Bintulu.
 - Source PDF: `SarawakGovt PCDS2030 - Highlights 2023.pdf`
@@ -491,6 +495,8 @@
 - Missing information: Study outcome, location, and approved project status.
 
 ### Bako National Park and Lambir Hills National Park ASEAN Heritage Park Nominations
+
+> Current disposition, 7 August 2026: added as two separate designation cards after the ASEAN Centre for Biodiversity confirmed Bako and Lambir Hills as the 65th and 66th ASEAN Heritage Parks. See the [dated addition review](project-audits/2026-08-07-approved-six-card-route-first-three.md).
 
 - Project name: Bako National Park and Lambir Hills National Park ASEAN Heritage Park nominations
 - Why it is relevant: Conservation designation projects with tourism and biodiversity value.
@@ -591,7 +597,7 @@
 - Education and social assistance schemes - TVET scholarship, STEM labs, outreach, cash assistance, and training programmes are valid policy/programme items but not project-specific dashboard cards.
 - Kuching Low-Carbon Hub Economic Zone and Baram Renewable Energy Economic Zone - strategic umbrella zones in the 13MP executive summary. The airport, port, and Baram Agrovoltaic Project are the trackable project-level components currently supported by public reporting.
 - Sarawak AI Centre and Sarawak Climate Change Centre - named institutional initiatives, but public implementation evidence is not yet sufficient for useful project cards.
-- Sarawak High Performance Sports Centre - the 13MP names the facility and June 2026 reporting confirms planning and site identification within the Sarawak Sports Complex. Keep under review until implementation timing and delivery details are firmer.
+- Sarawak High Performance Sports Centre - added on 7 August 2026 as `Sarawak High Performance Centre` after UKAS confirmed its planning and study stage, Sarawak Sports Complex site, MYSED role and post-2027 SEA Games construction sequence.
 - The 13MP JKR, Projek Rakyat, Rural Transformation Programme, water-project, JENDELA, and airport-upgrade totals - aggregate portfolios rather than individually identifiable projects.
 
 ## Rejected / Not Suitable
@@ -605,7 +611,7 @@
 - Sarawak Delta Geopark - already tracked in `src/trackerData.js`.
 - Niah National Park UNESCO World Heritage - already tracked in `src/trackerData.js`.
 - Greenhouse Gas Emission Ordinance / carbon regulatory framework - already tracked as a policy item; additional PDF material is broader carbon-market context.
-- RM1 Billion Paddy Infrastructure Programme - already tracked; Lingga-Banting and Lubok Punggor may be candidate subprojects if the tracker chooses to split the programme.
+- RM1 Billion Paddy Infrastructure Programme - already tracked; Lubok Punggor was added separately on 7 August 2026 after live project-specific verification, while Lingga-Banting remains a reserve candidate pending a current procurement or progress source.
 - SMD Semiconductor / semiconductor initiative - already tracked; PDF mentions are context rather than a new card.
 - Data centre attraction in AIP Volume III - too generic and overlaps with the existing FutureData Kuching Data Centre Park tracker card.
 - BKSS, S-MM2H, SarawakID, S Pay Global, eLASIS, tourism campaigns, expos, roadshows, SCaT Fair, and similar programmes - not suitable as capital/infrastructure/economic development project cards under the current tracker scope.
@@ -620,7 +626,7 @@
 3. Number of medium-confidence candidates: 18
 4. Number of programme-only items: 24
 5. Recommended candidates for online validation:
-   - Sarawak High Performance Sports Centre
+   - Sarawak High Performance Sports Centre - added on 7 August 2026
    - Batang Ai Floating Solar Farm
    - Bintulu-Samalaju Gas Pipeline
    - 500 MW Miri Combined Cycle Gas Turbine Power Plant

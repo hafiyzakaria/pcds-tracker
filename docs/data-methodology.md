@@ -34,7 +34,7 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-06`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-07`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
@@ -433,6 +433,16 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Community Social Support Centre (CSSC) Network - `In Progress`; value: `Not disclosed`. The statewide one-stop support network is led by the Ministry of Women, Childhood and Community Wellbeing Development through the Social Development Council. CSSC Sibu was launched and handed to its operator in November 2025, and UKAS recorded Kuching as operating by 17 March 2026. The former May 2026 Bintulu operations target is not retained because a July 2026 furniture-supply quotation shows that fit-out activity continued after that date; Bintulu operations remain undated and open. The RM40 million PCDS programme figure remains PDF-only and is not displayed; sources: Borneo Post, UKAS, JKR Sarawak, and DayakDaily. Dated decision record: [remaining-candidates Round 3 audit](project-audits/2026-08-06-remaining-candidates-round-3.md).
 - Sago BioCNG Plant and Gas Distribution Network - `In Progress`; value: `Not disclosed`. CRAUN Research's Kampung Tabo and Kampung Teh pilot combines sago-wastewater treatment, BioCNG development and a local gas network. Pipeline installation to about 122 homes and public facilities was reported in March 2026, with pilot completion targeted for the end of 2026. The newer 122-home scope supersedes the older 147-household figure; sources: Utusan Sarawak, Sarawak Tribune, The Star, and TVS. Dated decision record: [remaining-candidates Round 3 audit](project-audits/2026-08-06-remaining-candidates-round-3.md).
 
+### Approved Six-Card Route Added on 7 August 2026
+
+- Lubok Punggor AgriHub and Mid Sadong 1 Irrigation Project - `In Progress`; value: `RM30 million` for the initial 54.4-hectare project. DID Sarawak confirms the project-specific amount, February 2024 approval and November 2024 launch. UKAS confirms March 2026 compensation and the AgriHub scope covering irrigation and drainage, a reservoir, warehouse and machinery workshop. The statewide RM1 billion allocation, RM6.5 million compensation payment and approximate RM100 million expansion estimate are not used as the project value.
+- Bako National Park ASEAN Heritage Park - `Designated`; value: `Not disclosed`. Sarawak Government publicly confirmed the nomination, the ASEAN Centre for Biodiversity completed its evaluation and designated Bako as the 65th ASEAN Heritage Park in September 2025. BIMP-EAGA independently confirms the designation. The ASEAN Centre for Biodiversity is the programme secretariat and designation authority, not the card's lead party.
+- Lambir Hills National Park ASEAN Heritage Park - `Designated`; value: `Not disclosed`. Sarawak Government publicly confirmed the nomination, the ASEAN Centre for Biodiversity completed its evaluation and designated Lambir Hills as the 66th ASEAN Heritage Park in September 2025. `Lambir Hills National Park` follows the ASEAN body's current English identity; `Bukit Lambir` remains a source alias.
+- Sarawak High Performance Centre - `Planning`; value: `Not disclosed`. UKAS places the centre within the Sarawak Sports Complex, confirms planning and study, identifies MYSED as the state delivery ministry and expects construction after the 2027 SEA Games. The National Sports Institute is a planned sports-science support partner rather than the project lead. Older reporting that expected 2025 operation is superseded by the 2026 planning evidence.
+- FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade - `Planning`; value: `RM0.5-1 billion` as a provisional range. JKR Sarawak's official preliminary-design scope is 42 km, while November 2025 parliamentary reporting describes about 48 km and 10 new bridges. The displayed range preserves the reported statement that the cost will exceed RM500 million and may reach RM1 billion, subject to finalisation after preliminary work. The myBina RM10 million-RM50 million range is excluded because its page is scoped to consultancy services.
+- Bintulu Bio-Algae Initial Commercial Plant - `In Progress`; value: `Not disclosed`. PETRONAS explicitly identifies the ICP collaboration between PETRONAS Research and SEDC Energy, and a second PETRONAS release confirms joint technology development for microalgae oil and SAF. September 2024 reporting confirms their studies in Bintulu and planned 10,000-acre scale-up. The card remains distinct from C4 Sarawak and does not treat the dependent future bio-refinery as an achieved project stage.
+- Dated source, value and inclusion review: [approved six-card route](project-audits/2026-08-07-approved-six-card-route-first-three.md).
+
 ### Sustainability Vision 2030 Energy Projects Added on 13 July 2026
 
 - Sejingkat Battery Energy Storage System - `Operational`; 60MW/82MWh facility energised in December 2024 and publicly announced as commissioned in February 2025. Routine grid services and performance monitoring are operational activities rather than open delivery milestones, so the commissioned facility displays as `Completed`; source: Sarawak Energy.
@@ -463,8 +473,8 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 The app derives display rows by flattening `SECTORS` into project rows and excluding the overview category:
 
-- Active rendered projects: 44.
-- Stored projects including overview: 45.
+- Active rendered projects: 50.
+- Stored projects including overview: 51.
 - PCDS economic sectors represented in data: 6.
 - PCDS enablers represented in data: 7.
 - Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, mining, social-services.
@@ -472,11 +482,11 @@ The app derives display rows by flattening `SECTORS` into project rows and exclu
 
 Current active dashboard status counts from `src/trackerData.js`:
 
-- `In Progress`: 31.
+- `In Progress`: 33.
 - `Awaiting Decision`: 0.
-- `Planning`: 7.
+- `Planning`: 9.
 - `Operational`: 4.
-- `Designated`: 2.
+- `Designated`: 4.
 - `Enacted`: 0.
 
 The UI groups detailed statuses into public filter labels:
@@ -487,11 +497,11 @@ The UI groups detailed statuses into public filter labels:
 
 Current public display counts:
 
-- Tracked projects: 44.
-- Planning: 7.
-- Ongoing: 31.
-- Completed: 6.
-- Milestones: 125 completed out of 196 active-project milestones.
+- Tracked projects: 50.
+- Planning: 9.
+- Ongoing: 33.
+- Completed: 8.
+- Milestones: 141 completed out of 218 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 

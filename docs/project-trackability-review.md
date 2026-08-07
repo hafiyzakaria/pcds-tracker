@@ -550,6 +550,8 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 
 ### Lubok Punggor Mid Sadong Drainage and Irrigation Upgrade
 
+> **Superseded 7 August 2026:** DID Sarawak and UKAS subsequently established the distinct RM30 million, 54.4-hectare initial project, Mid Sadong 1 launch, compensation and AgriHub works. It is now tracked as `Lubok Punggor AgriHub and Mid Sadong 1 Irrigation Project`. See the [dated addition review](project-audits/2026-08-07-approved-six-card-route-first-three.md).
+
 - Existing tracker project it overlaps with: `RM1 Billion Paddy Infrastructure Programme`.
 - Source PDF evidence: Highlights page 30 says the Lubok Punggor project commenced in 2022, has a RM30 million budget, and targets completion in 2025.
 - Online sources found:
@@ -566,6 +568,8 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 
 ### Bio-Algae Initial Commercial Plant
 
+> **Superseded 7 August 2026:** PETRONAS subsequently established the ICP identity and joint technology-development roles of PETRONAS Research and SEDC Energy, while September 2024 reporting confirmed that their studies were under way in Bintulu. It is now tracked as `Bintulu Bio-Algae Initial Commercial Plant`. See the [dated addition review](project-audits/2026-08-07-approved-six-card-route-first-three.md).
+
 - Existing tracker project it overlaps with: Proposed C4 Sarawak / microalgae low-carbon card.
 - Source PDF evidence: Highlights page 128 says the Bintulu Bio-Algae ICP with Petronas Research is in R&D stage, targets 10,000 acres, and projects crude algae oil output.
 - Online sources found: Sarawak Biodiversity Centre confirms algae cultivation scale-up and commercialisation context, but not the named Bintulu ICP or PETRONAS project.
@@ -580,6 +584,8 @@ Method: candidates were checked against the tracker methodology in `docs/data-me
 - Recommendation: merge with C4/microalgae context only; do not add as a separate card.
 
 ### Bako National Park and Lambir Hills National Park ASEAN Heritage Park Nominations
+
+> **Superseded 7 August 2026:** The ASEAN Centre for Biodiversity confirmed Bako and Lambir Hills as the separately numbered 65th and 66th ASEAN Heritage Parks. Both are now tracked as separate designation cards. See the [dated addition review](project-audits/2026-08-07-approved-six-card-route-first-three.md).
 
 - Existing tracker project it overlaps with: `Niah National Park - UNESCO World Heritage` as conservation-designation context.
 - Source PDF evidence: AIP Volume II pages 466-469 identifies Bako and Lambir Hills as ASEAN Heritage Park inscription candidates with 2021-2025 timeline.

@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-08-06";
+export const LAST_UPDATED = "2026-08-07";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -77,6 +77,26 @@ export const SECTORS = [
           { label: "DayakDaily — Minister warns against misuse (Feb 2026)", url: "https://dayakdaily.com/rm1-bln-in-infra-at-stake-minister-warns-against-misuse-of-paddy-facilities-for-oil-palm/" },
           { label: "DayakDaily — 500K tonnes rice target (Aug 2025)", url: "https://dayakdaily.com/sarawak-ups-rice-output-target-to-500000-tonnes-by-2030-in-premiers-bold-food-security-push/" },
           { label: "DayakDaily — Overtake Kedah as rice bowl (Aug 2025)", url: "https://dayakdaily.com/sarawak-to-overtake-kedah-as-nations-rice-bowl-by-2030-eyes-global-export-future/" },
+        ],
+      },
+      {
+        name: "Lubok Punggor AgriHub and Mid Sadong 1 Irrigation Project",
+        displayName: "Lubok Punggor AgriHub and Irrigation Project",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Sarawak Government / Department of Irrigation and Drainage Sarawak",
+        value: "RM30 million",
+        summary:
+          "A RM30 million initial project at Lubok Punggor, Gedong, covering irrigation infrastructure for 54.4 hectares of paddy fields. Its AgriHub scope includes irrigation and drainage upgrades, a water reservoir, warehouse and machinery workshop to support modern paddy production.",
+        milestones: [
+          { date: "2024-02", text: "RM30 million initial project was approved", done: true },
+          { date: "2024-11-29", text: "Mid Sadong 1 Rehabilitation Scheme was launched", done: true },
+          { date: "2026-03-08", text: "Land compensation was handed to 119 recipients", done: true },
+          { date: "TBD", text: "AgriHub and irrigation works reach completion", done: false },
+        ],
+        sources: [
+          { label: "DID Sarawak - RM30M irrigation project and 54.4-hectare scope (Nov 2024)", url: "https://did.sarawak.gov.my/web/subpage/news_view/821" },
+          { label: "UKAS - AgriHub compensation and construction scope (Mar 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/35719" },
         ],
       },
       {
@@ -208,6 +228,46 @@ export const SECTORS = [
           { label: "NREB — GHG-MS Phase 1 commenced operations (Feb 2026)", url: "https://www.nreb.gov.my/web/subpage/announcement_view/196" },
           { label: "Borneo Post — Climate governance implementation update (Mar 2026)", url: "https://www.theborneopost.com/2026/03/12/sarawak-intensifies-climate-governance-on-path-to-net-zero-2050/" },
           { label: "FULCRUM — Sarawak's low-carbon future", url: "https://fulcrum.sg/envisioning-a-low-carbon-future-sarawaks-journey-towards-sustainable-development/" },
+        ],
+      },
+      {
+        name: "Bako National Park ASEAN Heritage Park",
+        displayName: "Bako ASEAN Heritage Park",
+        status: "Designated",
+        statusColor: "#16a34a",
+        lead: "Sarawak Government",
+        value: "Not disclosed",
+        summary:
+          "Bako National Park is a 2,727-hectare protected area near Kuching with sandstone plateau and kerangas forest. Its ASEAN Heritage Park status recognises habitat for proboscis monkeys, migratory species and other threatened fauna of regional conservation importance.",
+        milestones: [
+          { date: "2025-05", text: "ASEAN Centre for Biodiversity evaluation was completed", done: true },
+          { date: "2025-08-23", text: "Sarawak Government publicly confirmed the park's nomination", done: true },
+          { date: "2025-09", text: "Designated as the 65th ASEAN Heritage Park", done: true },
+        ],
+        sources: [
+          { label: "DayakDaily - Nomination and ACB evaluation (Aug 2025)", url: "https://dayakdaily.com/sarawak-nominates-bako-bukit-lambir-as-asean-heritage-parks-to-elevate-global-conservation-status/" },
+          { label: "ASEAN Centre for Biodiversity - Heritage Park designation (Sep 2025)", url: "https://www.aseanbiodiversity.org/news-events-jobs/six-natural-wonders-in-malaysia-and-viet-nam-declared-as-asean-heritage-parks/" },
+          { label: "BIMP-EAGA - Bako and Lambir Hills added to AHP network (Jan 2026)", url: "https://bimp-eaga.asia/articles/bimp-eaga-now-home-16-asean-heritage-parks" },
+        ],
+      },
+      {
+        name: "Lambir Hills National Park ASEAN Heritage Park",
+        displayName: "Lambir Hills ASEAN Heritage Park",
+        status: "Designated",
+        statusColor: "#16a34a",
+        lead: "Sarawak Government",
+        value: "Not disclosed",
+        summary:
+          "Lambir Hills National Park near Miri protects rainforest with exceptional tree diversity, rugged terrain, escarpments and waterfalls. Its ASEAN Heritage Park status recognises the park as an Important Bird Area and a global centre of plant diversity and endemism.",
+        milestones: [
+          { date: "2025-05", text: "ASEAN Centre for Biodiversity evaluation was completed", done: true },
+          { date: "2025-08-23", text: "Sarawak Government publicly confirmed the park's nomination", done: true },
+          { date: "2025-09", text: "Designated as the 66th ASEAN Heritage Park", done: true },
+        ],
+        sources: [
+          { label: "DayakDaily - Nomination and ACB evaluation (Aug 2025)", url: "https://dayakdaily.com/sarawak-nominates-bako-bukit-lambir-as-asean-heritage-parks-to-elevate-global-conservation-status/" },
+          { label: "ASEAN Centre for Biodiversity - Heritage Park designation (Sep 2025)", url: "https://www.aseanbiodiversity.org/news-events-jobs/six-natural-wonders-in-malaysia-and-viet-nam-declared-as-asean-heritage-parks/" },
+          { label: "BIMP-EAGA - Bako and Lambir Hills added to AHP network (Jan 2026)", url: "https://bimp-eaga.asia/articles/bimp-eaga-now-home-16-asean-heritage-parks" },
         ],
       },
       {
@@ -592,6 +652,25 @@ export const SECTORS = [
     color: "#2563eb",
     projects: [
       {
+        name: "Sarawak High Performance Centre",
+        status: "Planning",
+        statusColor: "#2563eb",
+        lead: "Sarawak Government / Ministry of Youth, Sports and Entrepreneur Development",
+        value: "Not disclosed",
+        summary:
+          "A planned sports-science and elite-athlete development centre within the Sarawak Sports Complex in Petra Jaya. The project is in planning and study, with construction expected to begin after the 2027 SEA Games and National Sports Institute support planned for sports-science expertise.",
+        milestones: [
+          { date: "2026-02-18", text: "Sarawak Sports Complex site and delivery concept were announced", done: true },
+          { date: "2026-06-13", text: "Planning and study stage was publicly confirmed", done: true },
+          { date: "2027", text: "Construction begins after the 2027 SEA Games", done: false },
+          { date: "TBD", text: "High Performance Centre begins operations", done: false },
+        ],
+        sources: [
+          { label: "UKAS - Site, scope and delivery concept (Feb 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/34514" },
+          { label: "UKAS - Planning stage and post-SEA Games construction (Jun 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/42510" },
+        ],
+      },
+      {
         name: "Yayasan Sarawak International Secondary Schools Expansion",
         displayName: "Yayasan Sarawak International Schools Expansion",
         status: "In Progress",
@@ -623,6 +702,26 @@ export const SECTORS = [
     icon: "\u25a3",
     color: "#e07c3c",
     projects: [
+      {
+        name: "FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade",
+        displayName: "Jalan Serian-Tebedu-Indonesia Border Upgrade",
+        status: "Planning",
+        statusColor: "#2563eb",
+        lead: "Federal Ministry of Works / JKR Sarawak",
+        value: "RM0.5-1 billion",
+        summary:
+          "A proposed upgrade of Federal Route 21 from two lanes to four lanes between Serian, Tebedu and the Indonesian border. JKR Sarawak describes a 42 km road scope, while November 2025 parliamentary reporting describes about 48 km and 10 new bridges; its preliminary estimate is above RM500 million and may reach RM1 billion, subject to finalisation after preliminary work.",
+        milestones: [
+          { date: "2024-08-02", text: "Stakeholder briefing on preliminary works and design was held", done: true },
+          { date: "2025-11-05", text: "Preliminary estimate and wider reported scope were disclosed", done: true },
+          { date: "2026-Q4", text: "Preliminary work concludes and actual cost is finalised", done: false },
+          { date: "TBD", text: "Four-lane road and bridge upgrading begins", done: false },
+        ],
+        sources: [
+          { label: "JKR Sarawak - Preliminary design and official 42 km scope (Aug 2024)", url: "https://jkr.sarawak.gov.my/web/subpage/news_view/614" },
+          { label: "NADMA / TVS - Preliminary RM500M-RM1B estimate and reported 48 km scope (Nov 2025)", url: "https://www.nadma.gov.my/bm/media-2/berita/5439-dewan-rakyat-projek-naik-taraf-jalan-serian-tebedu-dijangka-cecah-rm1-bilion" },
+        ],
+      },
       {
         name: "SCORE — Sarawak Corridor of Renewable Energy",
         displayName: "Sarawak Corridor of Renewable Energy (SCORE)",
@@ -921,6 +1020,27 @@ export const SECTORS = [
     icon: "\u267b",
     color: "#d97706",
     projects: [
+      {
+        name: "Bintulu Bio-Algae Initial Commercial Plant",
+        displayName: "Bintulu Bio-Algae ICP",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "SEDC Energy / PETRONAS Research",
+        value: "Not disclosed",
+        summary:
+          "A Bintulu research and development plant for cultivating and harvesting microalgae and extracting crude algae oil for sustainable aviation fuel. SEDC Energy and PETRONAS Research are joint technology-development parties; larger cultivation and a later commercial plant remain subject to scale-up and commercial viability.",
+        milestones: [
+          { date: "2022-07-20", text: "Initial Commercial Plant collaboration arrangement was signed", done: true },
+          { date: "2023-01-20", text: "Microalgae oil technology development agreement was signed", done: true },
+          { date: "2024-09-16", text: "Bintulu studies and 10,000-acre scale-up plan were publicly confirmed", done: true },
+          { date: "2030", text: "Cultivation scale-up reaches the planned 10,000-acre scope", done: false },
+        ],
+        sources: [
+          { label: "PETRONAS - Initial Commercial Plant collaboration and party roles (Jul 2022)", url: "https://www.petronas.com/bm/node/40" },
+          { label: "PETRONAS - Joint microalgae oil technology development for SAF (Jan 2023)", url: "https://www.petronas.com/media/media-releases/petronas-sedc-energy-develop-microalgae-oil-sustainable-aviation-fuel" },
+          { label: "DayakDaily - Bintulu studies and planned cultivation scale-up (Sep 2024)", url: "https://dayakdaily.com/premier-swak-to-build-bio-refinery-in-bintulu-once-microalgae-cultivation-on-10000-acre-site-starts/" },
+        ],
+      },
       {
         name: "Sago BioCNG Plant and Gas Distribution Network",
         displayName: "Sago BioCNG and Gas Distribution Project",

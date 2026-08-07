@@ -70,6 +70,15 @@ const updateDefinitions = [
     sourceUrl: "https://jkr.sarawak.gov.my/web/subpage/webpage_view/403",
   },
   {
+    date: "2026-06-13",
+    projectName: "Sarawak High Performance Centre",
+    description: {
+      en: "The Sarawak Government confirmed that the centre was in planning and study, with its Sarawak Sports Complex site identified and construction expected after the 2027 SEA Games.",
+      ms: "Kerajaan Sarawak mengesahkan pusat itu berada pada peringkat perancangan dan kajian, dengan tapaknya di Kompleks Sukan Sarawak dikenal pasti serta pembinaan dijangka selepas Sukan SEA 2027.",
+    },
+    sourceUrl: "https://ukas.sarawak.gov.my/web/subpage/news_view/42510",
+  },
+  {
     date: "2026-06-09",
     projectName: "Green Hydrogen Economy — H2ornbill & H2biscus",
     description: {
@@ -207,6 +216,15 @@ const updateDefinitions = [
     sourceUrl: "https://ukas.sarawak.gov.my/web/subpage/news_view/36445",
   },
   {
+    date: "2026-03-08",
+    projectName: "Lubok Punggor AgriHub and Mid Sadong 1 Irrigation Project",
+    description: {
+      en: "Compensation totalling RM6.5 million was handed to 119 recipients for the Lubok Punggor AgriHub development, whose scope includes irrigation, drainage, a reservoir, warehouse and machinery workshop.",
+      ms: "Pampasan berjumlah RM6.5 juta diserahkan kepada 119 penerima bagi pembangunan AgriHub Lubok Punggor yang merangkumi pengairan, perparitan, takungan air, gudang dan bengkel jentera.",
+    },
+    sourceUrl: "https://ukas.sarawak.gov.my/web/subpage/news_view/35719",
+  },
+  {
     date: "2026-02-10",
     projectName:
       "Environment (Reduction of Greenhouse Gases Emission) Ordinance 2023",
@@ -257,6 +275,33 @@ const updateDefinitions = [
       "https://www.theborneopost.com/2025/11/08/community-social-support-centre-launched-in-sibu/",
   },
   {
+    date: "2025-11-05",
+    projectName: "FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade",
+    description: {
+      en: "Parliamentary reporting placed the project's preliminary estimate above RM500 million and potentially up to RM1 billion, pending finalisation after preliminary work expected by the end of 2026.",
+      ms: "Laporan Parlimen meletakkan anggaran awal projek melebihi RM500 juta dan mungkin mencecah RM1 bilion, tertakluk kepada pemuktamadan selepas kerja awalan yang dijangka siap menjelang akhir 2026.",
+    },
+    sourceUrl: "https://www.nadma.gov.my/bm/media-2/berita/5439-dewan-rakyat-projek-naik-taraf-jalan-serian-tebedu-dijangka-cecah-rm1-bilion",
+  },
+  {
+    date: "2025-09-22",
+    projectName: "Bako National Park ASEAN Heritage Park",
+    description: {
+      en: "The ASEAN Centre for Biodiversity confirmed Bako National Park as the 65th ASEAN Heritage Park, recognising its outstanding biological and conservation significance.",
+      ms: "Pusat Biodiversiti ASEAN mengesahkan Taman Negara Bako sebagai Taman Warisan ASEAN ke-65, mengiktiraf kepentingan biologi dan pemuliharaannya yang luar biasa.",
+    },
+    sourceUrl: "https://www.aseanbiodiversity.org/news-events-jobs/six-natural-wonders-in-malaysia-and-viet-nam-declared-as-asean-heritage-parks/",
+  },
+  {
+    date: "2025-09-22",
+    projectName: "Lambir Hills National Park ASEAN Heritage Park",
+    description: {
+      en: "The ASEAN Centre for Biodiversity confirmed Lambir Hills National Park as the 66th ASEAN Heritage Park, recognising its exceptional plant diversity and conservation importance.",
+      ms: "Pusat Biodiversiti ASEAN mengesahkan Taman Negara Bukit Lambir sebagai Taman Warisan ASEAN ke-66, mengiktiraf kepelbagaian tumbuhan dan kepentingan pemuliharaannya yang luar biasa.",
+    },
+    sourceUrl: "https://www.aseanbiodiversity.org/news-events-jobs/six-natural-wonders-in-malaysia-and-viet-nam-declared-as-asean-heritage-parks/",
+  },
+  {
     date: "2025-09-10",
     projectName: "RM1 Billion Paddy Infrastructure Programme",
     description: {
@@ -275,6 +320,15 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://premierdept.sarawak.gov.my/web/subpage/news_view/19825/UKAS",
+  },
+  {
+    date: "2024-09-16",
+    projectName: "Bintulu Bio-Algae Initial Commercial Plant",
+    description: {
+      en: "Ongoing Bintulu studies by SEDC Energy and PETRONAS were publicly confirmed alongside a plan to scale microalgae cultivation to 10,000 acres and support a later bio-refinery.",
+      ms: "Kajian berterusan di Bintulu oleh SEDC Energy dan PETRONAS disahkan secara terbuka bersama pelan meningkatkan penanaman mikroalga kepada 10,000 ekar serta menyokong bio-penapisan pada peringkat kemudian.",
+    },
+    sourceUrl: "https://dayakdaily.com/premier-swak-to-build-bio-refinery-in-bintulu-once-microalgae-cultivation-on-10000-acre-site-starts/",
   },
 ];
 
