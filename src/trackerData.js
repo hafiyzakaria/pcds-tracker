@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-08-07";
+export const LAST_UPDATED = "2026-08-08";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -337,7 +337,7 @@ export const SECTORS = [
           { date: "2023-07-10", text: "746km artificial reef barrier gained international recognition", done: true },
           { date: "2024-08-03", text: "Phase II stakeholder engagement began", done: true },
           { date: "2026-07-30", text: "80 reef balls were deployed at Kuala Nyalau-Samalaju", done: true },
-          { date: "TBD", text: "Long-term 5,000-reef-ball target is reached", done: false },
+          { date: "2027", text: "Phase II reaches scheduled completion", done: false },
         ],
         sources: [
           { label: "DayakDaily - Phase I completion and RM70M value (Jul 2022)", url: "https://dayakdaily.com/sfcs-final-reef-ball-drop-marks-completion-of-three-year-journey/" },
@@ -753,11 +753,11 @@ export const SECTORS = [
           { date: "2016", text: "Phase 1 construction commenced", done: true },
           { date: "2023-12", text: "Phase 1 reached 98.6 percent completion", done: true },
           { date: "2025-10", text: "Ten work packages completed and opened", done: true },
-          { date: "TBD", text: "Work Package 11 reaches completion", done: false },
+          { date: "2029-Q1", text: "Work Package 11 reaches full completion", done: false },
         ],
         sources: [
           { label: "The Edge Malaysia — RM16.5B construction cost explained (Feb 2020)", url: "https://theedgemalaysia.com/article/rm165b-represents-only-sarawaks-pan-borneo-highway-construction-cost" },
-          { label: "Sarawak Tribune — Phase 1 reaches 99.98% completion (Dec 2025)", url: "https://www.sarawaktribune.com/pan-borneo-highway-phase-1-in-sarawak-nears-full-completion/" },
+          { label: "Sarawak Tribune — Phase 1 at 99.98%, WP11 completion scheduled for Q1 2029 (Dec 2025)", url: "https://www.sarawaktribune.com/pan-borneo-highway-phase-1-in-sarawak-nears-full-completion/" },
         ],
       },
       {

@@ -30,7 +30,7 @@ The review began with the mandatory exact-name `project milestones` search, foll
 | 21 Nov 2022 | [DayakDaily](https://dayakdaily.com/premier-rm30-million-allocated-to-implement-sarawak-reef-ball-project-phase-2/) | RM30 million allocated to implement Phase II | Phase II allocation milestone and value |
 | 10 Jul 2023 | [Office of the Premier of Sarawak](https://premier.sarawak.gov.my/web/subpage/news_view/5503) | SFC implementing agency, RM70 million plus RM30 million, Phase II scheduled for 2023-2027, 746km barrier and international recognition | Lead, value, phase scope, status, recognition milestone |
 | 11 Aug 2024 | [Borneo Post](https://www.theborneopost.com/2024/08/11/sarawak-reef-ball-project-signifies-commitment-to-maintaining-marine-eco-balance/) | Phase II implementation and SFC stakeholder engagement | Phase II engagement milestone |
-| 30 Jul 2026 | [DayakDaily](https://dayakdaily.com/80-reef-balls-deployed-to-safeguard-marine-biodiversity-in-kuala-nyalau-samalaju/) | 80 reef balls deployed at Kuala Nyalau-Samalaju and long-term statewide target of 5,000 units | Latest completed milestone, open target, and update-history entry |
+| 30 Jul 2026 | [DayakDaily](https://dayakdaily.com/80-reef-balls-deployed-to-safeguard-marine-biodiversity-in-kuala-nyalau-samalaju/) | 80 reef balls deployed at Kuala Nyalau-Samalaju; PTBSB had contributed 467 units since 2022 towards a separate long-term 5,000-unit target | Latest completed milestone and update-history entry; the partner-specific target remains source context |
 
 ## Milestone treatment
 
@@ -41,16 +41,26 @@ The card uses six distinct, source-backed stages:
 3. The 746km artificial reef barrier received international recognition by 10 July 2023.
 4. Phase II stakeholder engagement began on 3 August 2024, as reported by Borneo Post on 11 August.
 5. Eighty reef balls were deployed at Kuala Nyalau-Samalaju on 30 July 2026.
-6. The long-term 5,000-unit target remains open with no published completion date.
+6. Phase II's official scheduled implementation period concludes in 2027.
 
 The July 2026 deployment is described as continuing project activity. Its sources do not explicitly identify the 80-unit corporate social responsibility deployment as a Phase II work package, so the tracker does not make that stronger claim.
+
+The 2027 milestone follows the official Office of the Premier description of Phase II as a 2023-2027 programme. It is retained as an open scheduled outcome, not a claim that Phase II has already been completed.
 
 ## Conflicts and rejected claims
 
 - A Sarawak Tribune report describes Phase II as five years while also giving `2023-2025`, which is internally inconsistent. The tracker uses the newer, official Office of the Premier schedule of 2023-2027.
 - Search-result wording and social posts were not accepted as evidence.
-- The long-term 5,000-unit figure is a target, not a completed deployment count.
+- The long-term 5,000-unit figure is a target linked by the July 2026 source to the PTBSB partnership, which had contributed 467 units since 2022. It is not presented as the statewide programme's total target because Phase I alone had already deployed more than 16,800 reef balls.
 - `RM100 million` is not presented as a separately announced single contract. It is the combined public allocation for Phase I and Phase II, and the two components are disclosed beside the total.
+
+## 8 August 2026 next-milestone date follow-up
+
+- Trigger: site-wide review of next milestones without dates.
+- Decision: replace the undated partner-specific 5,000-unit outcome with the project-level `2027` Phase II scheduled-completion outcome.
+- Source scope: the Office of the Premier identifies Phase II as `2023-2027`; the July 2026 DayakDaily article attributes the 5,000-unit target to the PTBSB partnership rather than to the full statewide programme.
+- Wording: `Phase II reaches scheduled completion` and `Fasa II mencapai penyiapan berjadual` make the reader-facing outcome clearer while keeping it open and prospective.
+- Editorial update-history decision: no new entry. This is a source-scope and schedule correction using evidence already linked to the card, not a newly published project development.
 
 ## Inclusion-gate result
 

@@ -150,6 +150,21 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ## 2. Should Improve Soon
 
+### Revisit deferred milestone wording
+
+- What needs to be done: Re-run the evidence and English/Bahasa Melayu wording review for the
+  four milestone proposals deferred during the August 2026 date update: Bau Gold Project, Lubok
+  Punggor AgriHub and Mid Sadong 1 Irrigation Project, Sarawak Bioindustrial Park, and SCORE.
+- Why it matters: These cards have proposed reader-facing wording changes, but this release only
+  implemented the approved Sarawak Reef Ball and Pan Borneo date updates. Keeping the deferred
+  work explicit prevents the current card language from being mistaken for a completed review.
+- Scope boundary: Confirm each source-backed outcome, date, open/complete state, and BM counterpart
+  before editing. Do not add milestones to meet a numeric quota or infer lifecycle stages.
+- Suggested first task: Reopen the latest audit record for each card, run the exact-name milestone
+  and current-status searches, then prepare a current-versus-proposed table for approval.
+- Estimated difficulty: low to medium
+- Risk level: medium
+
 ### Measure indexing and search performance after the next SEO release
 
 - What needs to be done: After `/bm/`, `/updates/`, and `/bm/updates/` reach Production, confirm their live HTML,

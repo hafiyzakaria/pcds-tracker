@@ -66,7 +66,7 @@ content validator now enforces the structural rules above.
 | PETRONAS Kasawari CCS Project | Revise | Add the final investment decision, correct the EPCIC award date, and describe the 2026 item as a schedule review rather than a confirmed injection plan. |
 | Yayasan Sarawak International Secondary Schools Expansion | Keep | Existing campus openings and remaining-campus completion are supported. |
 | SCORE | Keep | Retain the current programme milestones pending a future review of measurable delivery targets. |
-| Pan Borneo Highway Sarawak Phase 1 | Keep | Ten packages are complete; Work Package 11 completion remains unconfirmed. |
+| Pan Borneo Highway Sarawak Phase 1 | Revise | Ten packages are complete; the newer December 2025 report schedules full Work Package 11 completion for Q1 2029. |
 | Sarawak-Sabah Link Road | Keep | Phase launches, progress, and completion targets remain current. |
 | Bintulu-Samalaju Gas Pipeline | Revise | Remove the roadmap reference and retain commitment, physical completion, pre-commissioning, and operations. |
 | Sejingkat Battery Energy Storage System | Keep | Energisation and commissioning correctly represent completed delivery stages. |
@@ -537,11 +537,22 @@ card-level audit, so this follow-up retained those versions.
 Editorial update-history decision: no entry was added to `src/updateHistory.js` because the rewrite
 clarifies the presentation of already accepted facts rather than recording a new public development.
 
+## 8 August 2026 Pan Borneo Schedule Follow-Up
+
+- Trigger: reader review identified a date in [Sarawak Tribune, 6 March 2025](https://www.sarawaktribune.com/remaining-pan-borneo-highway-work-packages-ready-soon/).
+- Earlier evidence: the March report targeted Q4 2025 for the 80-kilometre Work Package 11 scope excluding Lambir, while its four-kilometre Lambir section required redesign and was targeted for October 2027.
+- Newer accepted evidence: [Sarawak Tribune, 4 December 2025](https://www.sarawaktribune.com/pan-borneo-highway-phase-1-in-sarawak-nears-full-completion/) reports ten of 11 packages complete, identifies LAKU water-pipe replacement and cost-and-scope negotiations as the remaining Work Package 11 constraint, and schedules phased construction from early 2026 with full completion in Q1 2029.
+- Decision: replace the undated open milestone with `2029-Q1` and clarify its wording as `Work Package 11 reaches full completion`. Retain `In Progress`; the target remains open.
+- Conflict treatment: do not use Q4 2025 or October 2027 on the current card because the later report supersedes both with a full-package completion schedule.
+- Source decision: retain the newer December report as the live-card source and do not add the superseded March article to the public card.
+- Editorial update-history decision: no entry is added to `src/updateHistory.js`. This corrects the display of a schedule already present in the card's retained December 2025 source rather than recording a newly published development.
+
 ## Residual Risks
 
 - Public confirmation is still missing for SMD's IP registration, Sungai Baji operations and
-  production, Semenggoh Phase 1 completion, Pan Borneo Work Package 11, and the Batang Ai 120MW
-  expansion.
+  production, Semenggoh Phase 1 completion, completed delivery of Pan Borneo Work Package 11,
+  and the Batang Ai 120MW expansion. Work Package 11 has a Q1 2029 target, not a completion
+  confirmation.
 - The Kuala Baram dredging card displays the RM238 million contract award, while later official
   progress reporting describes the development as RM208.9 million. The contract label is retained,
   but the two monetary scopes should be reconciled if a contract variation or official award notice
