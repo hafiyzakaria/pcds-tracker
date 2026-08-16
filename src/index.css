@@ -80,6 +80,18 @@ a:focus-visible {
   outline: none;
 }
 
+.navigation-pill-link,
+.source-link,
+.language-toggle-option,
+.summary-metric--interactive,
+.classification-clear-button,
+.project-classification-button,
+.project-card-button,
+.theme-toggle {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .skip-link {
   position: absolute;
   top: 8px;
@@ -570,6 +582,10 @@ a:focus-visible {
 .project-classification--interactive:has(.project-classification-button:focus-visible) {
   outline: 3px solid #14b8a6;
   outline-offset: 3px;
+}
+
+.project-classification-button:active {
+  opacity: 0.82;
 }
 
 .project-card-details-pill {

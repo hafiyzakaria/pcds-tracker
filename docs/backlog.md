@@ -210,6 +210,24 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Suggested first task: Prototype the reveal handle, then compare keyboard stops, URL/state behavior,
   and mobile discoverability before changing the current card interaction.
 
+### Revisit compact navigation and project search
+
+- What needs to be done: Reconsider the tested compact Tracker and Updates navigation plus the
+  visible bilingual, URL-backed project search above the card grid.
+- Why it matters: The controls improve route awareness and project findability, but they add visible
+  interface weight to a deliberately compact tracker. The local prototype was reverted after review.
+- Search behavior decision: If search returns, single-word queries should match normally while
+  multi-word queries should require the complete exact phrase within one searchable field. This
+  prevents a query such as `Sarawak Energy` from matching cards where the two generic words appear
+  separately. Keep result counts non-visual, allow normal spaces while typing, and retain clear and
+  empty-state actions plus status and classification-filter compatibility.
+- Scope decision: Do not show the primary navigation or project search for now. Keep Contact in the
+  footer, retain the current Updates entry point, and do not add links to unbuilt pages.
+- Estimated difficulty: low to medium
+- Risk level: low
+- Suggested first task: Recreate the local prototype from this specification, then compare its visual
+  weight and mobile layout with the current compact header before seeking approval.
+
 ### Revisit monitored 13th Malaysia Plan candidates
 
 - Sarawak High Performance Centre: Added on 7 August 2026 at the conservative `Planning` stage

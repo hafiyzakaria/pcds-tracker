@@ -232,6 +232,9 @@ Current interactions:
   remain unchanged. Touch presses mirror that depth cue for immediate feedback, then return to the
   resting state after release instead of retaining a browser-dependent hover state. Reduced-motion
   preferences keep the stronger border and shadow but omit the physical lift.
+- Compact buttons and links with custom press feedback use `touch-action: manipulation`; their browser
+  tap flash is suppressed only where that custom feedback already makes the interaction clear. Do not
+  disable pull-to-refresh or text selection globally.
 - Source links open in a new tab. Hover and keyboard focus use a subtle brand-tinted surface,
   stronger border, slight lift, and a clearer external-link arrow so the supporting evidence is easy
   to identify as interactive without competing with the project content.
@@ -305,6 +308,8 @@ Current mobile changes:
 - On touch or coarse-pointer devices, project-card classification controls stay joined and expose
   both filter targets through the same press and focus states. The selected classification keeps the
   active accent surface visible after the press so the filter state is not lost.
+- Fixed non-production environment badges add the device safe-area inset to their normal bottom-right
+  offset so they remain clear of home indicators and rounded display edges without moving on desktop.
 
 The update history uses a date column and content column on desktop, then becomes a single-column
 entry list below `760px`. It uses the same neutral surfaces, typography, theme control, and
