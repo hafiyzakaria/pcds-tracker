@@ -597,7 +597,9 @@
 - Education and social assistance schemes - TVET scholarship, STEM labs, outreach, cash assistance, and training programmes are valid policy/programme items but not project-specific dashboard cards.
 - Kuching Low-Carbon Hub Economic Zone and Baram Renewable Energy Economic Zone - strategic umbrella zones in the 13MP executive summary. The airport, port, and Baram Agrovoltaic Project are the trackable project-level components currently supported by public reporting.
 - Sarawak AI Centre and Sarawak Climate Change Centre - named institutional initiatives, but public implementation evidence is not yet sufficient for useful project cards.
-- Sarawak High Performance Sports Centre - added on 7 August 2026 as `Sarawak High Performance Centre` after UKAS confirmed its planning and study stage, Sarawak Sports Complex site, MYSED role and post-2027 SEA Games construction sequence.
+- Sarawak High Performance Sports Centre - added on 7 August 2026 as `Sarawak High Performance Centre`
+  after UKAS confirmed its planning and study stage, then moved to `monitored_unconfirmed` on
+  17 August because exact PCDS or 13MP inclusion was not established.
 - The 13MP JKR, Projek Rakyat, Rural Transformation Programme, water-project, JENDELA, and airport-upgrade totals - aggregate portfolios rather than individually identifiable projects.
 
 ## Rejected / Not Suitable
@@ -613,7 +615,9 @@
 - Greenhouse Gas Emission Ordinance / carbon regulatory framework - already tracked as a policy item; additional PDF material is broader carbon-market context.
 - RM1 Billion Paddy Infrastructure Programme - already tracked; Lubok Punggor was added separately on 7 August 2026 after live project-specific verification, while Lingga-Banting remains a reserve candidate pending a current procurement or progress source.
 - SMD Semiconductor / semiconductor initiative - already tracked; PDF mentions are context rather than a new card.
-- Data centre attraction in AIP Volume III - too generic and overlaps with the existing FutureData Kuching Data Centre Park tracker card.
+- Data centre attraction in AIP Volume III - too generic and overlapped with the then-active
+  FutureData Kuching Data Centre Park card. FutureData moved to `monitored_unconfirmed` on
+  17 August 2026 because exact PCDS inclusion was not established.
 - BKSS, S-MM2H, SarawakID, S Pay Global, eLASIS, tourism campaigns, expos, roadshows, SCaT Fair, and similar programmes - not suitable as capital/infrastructure/economic development project cards under the current tracker scope.
 - `Facts  Figures 2025.pdf` SCORE tables - useful statistical context but not standalone project evidence.
 - KUTS, Baleh Hydroelectric Project, Sarawak Bioindustrial Park, Bintulu Port handover, the Paddy Infrastructure Programme, and the Sarawak River navigation system - repeated in the 13MP executive summary but already represented by existing tracker cards.
@@ -626,7 +630,8 @@
 3. Number of medium-confidence candidates: 18
 4. Number of programme-only items: 24
 5. Recommended candidates for online validation:
-   - Sarawak High Performance Sports Centre - added on 7 August 2026
+   - Sarawak High Performance Sports Centre - added on 7 August 2026, then moved to
+     `monitored_unconfirmed` on 17 August 2026
    - Batang Ai Floating Solar Farm
    - Bintulu-Samalaju Gas Pipeline
    - 500 MW Miri Combined Cycle Gas Turbine Power Plant

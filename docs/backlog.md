@@ -150,6 +150,28 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ## 2. Should Improve Soon
 
+### Review the 53-unit PDF-derived future-candidate pool
+
+- What needs to be done: Work through the 53 identity-verified units recorded in the
+  [16 August 2026 PDF and online verification audit](project-audits/2026-08-16-pdf-online-verification-audit.md)
+  in evidence-depth batches of four to six.
+- Why it matters: The PDF sweep found 81 online-verifiable units. After the 17 August disposition
+  changes, 27 units are represented by 21 active cards and the Sarawak High Performance Centre is
+  already recorded separately as monitored. The remaining 53-unit candidate pool contains credible
+  project leads alongside programmes, services, events, institutions, umbrella scopes, and possible
+  duplicates.
+- Scope boundary: Resolve overlap and tracked-unit identity before adding anything. Online identity
+  verification is not approval for a card. Each retained candidate must still pass project-specific
+  value, lifecycle, lead-role, status, public-source, open-outcome, and English/Bahasa Melayu checks.
+- Inclusion gate: Do not add another card until it has a unique record in
+  `audit/project-inclusion.json`, an accepted `direct`, `official_linked`, or manually approved
+  `component` tier, and passes `npm run check:content`. Keep `unconfirmed` candidates monitored.
+- Suggested first task: Review the nine overlap decisions, then audit the strongest discrete
+  infrastructure candidates, including Coastal Road Network, Second Trunk Road, Sarawak Virtual
+  Pipeline System, SMA Rural Telecommunication, and the Kuching Port quay cranes.
+- Estimated difficulty: high
+- Risk level: high
+
 ### Revisit deferred milestone wording
 
 - What needs to be done: Re-run the evidence and English/Bahasa Melayu wording review for the
@@ -230,9 +252,16 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ### Revisit monitored 13th Malaysia Plan candidates
 
-- Sarawak High Performance Centre: Added on 7 August 2026 at the conservative `Planning` stage
-  after newer UKAS evidence resolved the older 2025 operation expectation. Recheck when a project
-  value, procurement award, physical construction start, or completion schedule is published.
+- Sarawak High Performance Centre: Moved from the active tracker to `monitored_unconfirmed` on
+  17 August 2026. UKAS confirms the exact project and planning stage, while the 13MP separately
+  names a Sarawak High Performance Sports Centre. The reviewed evidence does not conclusively
+  resolve them as the same tracked unit or connect the exact UKAS card to PCDS 2030. Recheck when
+  MYSED, UKAS, a budget document, PCDS report or 13MP implementation publication resolves the
+  identity and relationship.
+- FutureData — Kuching Data Centre Park: Moved from the active tracker to
+  `monitored_unconfirmed` on 17 August 2026. Its project evidence and Sarawak Digital Economy
+  Blueprint relationship are credible, but exact PCDS inclusion remains unverified. Recheck when a
+  PCDS, 13MP, Sarawak Government, InvestSarawak or delivery-owner publication makes the connection.
 - Sarawak AI Centre: The plan records Cabinet approval on page 13 and includes the centre in its
   AI strategy on page 30, but the public record does not yet establish whether this is a facility,
   institution, or programme. Recheck when an implementing body, location, budget, launch, or

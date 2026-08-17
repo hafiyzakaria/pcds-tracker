@@ -125,12 +125,15 @@ Corroborating source:
 
 ### FutureData - Kuching Data Centre Park
 
-- Current dashboard status: `In Progress`
-- Current next milestone: First 17MW data centre operational
+- Historical 8 July 2026 dashboard snapshot: `In Progress`; next milestone was first 17MW data
+  centre operations. The 17 August 2026 inclusion audit later moved this identity to
+  `monitored_unconfirmed` because exact PCDS inclusion was not established.
 - Existing sources reviewed: Data Center Dynamics and The Edge articles.
 - Newer public evidence found: No clear public update found.
 - Possible update: none.
-- Human review needed: no immediate dashboard change. A future audit should prioritize official FutureData, TSG Group, project-company, or government investment sources.
+- Historical decision: no immediate dashboard change in this July review. Current follow-up should
+  prioritise an authoritative PCDS, 13MP, Sarawak Government, InvestSarawak, or delivery-owner
+  source that explicitly connects the exact project to PCDS 2030.
 
 ### SCORE - Sarawak Corridor of Renewable Energy
 

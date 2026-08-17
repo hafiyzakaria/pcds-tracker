@@ -26,6 +26,11 @@ article and report titles are not misrepresented.
 
 Additional repository source material:
 
+- `audit/project-inclusion.json`: the enforced inclusion-provenance register for every audited
+  non-overview card identity. It records whether a card is active or monitored, its inclusion tier,
+  tracked unit, authoritative inclusion basis, live-evidence presence, manual component approval,
+  and follow-up trigger. `npm run check:content` requires exact parity between active register
+  records and active tracker cards.
 - `audit/pcds-audit.json`: prior evidence-quality and trackability audit notes. This file is not rendered by the dashboard and some counts/status labels differ from current `src/trackerData.js`, so it should be treated as methodology context rather than active dashboard data.
 - `docs/source-pdfs/*.pdf`: local PCDS framework and report material, including the main Post COVID-19 Development Strategy PDF, PCDS 2030 final report volumes, AIP economic-sector and enabler volumes, Sarawak Government PCDS 2030 highlights, Facts & Figures 2025, Sarawak innovative initiatives material, and the Sarawak 13th Malaysia Plan 2026-2030 executive summary. These PDFs are not automatically parsed by the app.
 - `README.md`, `docs/product.md`, `docs/design.md`, and `docs/backlog.md`: project memory and maintenance guidance.
@@ -34,10 +39,33 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-07`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-17`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
+
+## Inclusion Provenance Standard
+
+Every active card must have exactly one active record in `audit/project-inclusion.json`. Inclusion
+and live-card evidence answer different questions: an authoritative PCDS or officially linked
+strategy source establishes why the item belongs in this tracker, while accessible public webpages
+support the facts displayed on the card.
+
+Use these inclusion tiers:
+
+- `direct`: the exact tracked unit is named in the core PCDS strategy, highlights, or AIP reports.
+- `official_linked`: the exact unit is named in an official supplementary PCDS publication,
+  Sustainability Vision 2030, or the Sarawak 13th Malaysia Plan as a continuation or delivery
+  project aligned with PCDS.
+- `component`: the exact card is a distinct, publicly trackable delivery component of a named PCDS
+  programme or zone. This tier requires explicit manual approval with a date and rationale.
+- `unconfirmed`: the project exists and may align with Sarawak policy, but the reviewed evidence
+  does not establish an acceptable PCDS relationship. It must not appear as an active card.
+
+An active card may use only `direct`, `official_linked`, or an approved `component` relationship.
+An `unconfirmed` record stays in the monitored register with its evidence gap and an observable
+re-review trigger. Future additions are paused until identity, scope, live evidence, and inclusion
+provenance all pass the register and content checks.
 
 Reported-value standard:
 
@@ -342,15 +370,18 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - July 2026 update: DayakDaily reported that the project entered design-and-build procurement on 7 July 2026, with construction targeted for January 2027 and completion by 2032.
 - Gaps or uncertainty: no official JKR tender award page or health ministry project page is encoded; the contractor award and construction start still need later confirmation.
 
-### FutureData - Kuching Data Centre Park
+### FutureData - Kuching Data Centre Park (monitored, not active)
 
-- Current dashboard status: `Planning`
-- Current next milestone: Construction of first 17MW facility begins
+- Current disposition: `monitored_unconfirmed`; removed from the active dashboard on 17 August
+  2026 because the reviewed sources establish a Sarawak Digital Economy Blueprint connection but
+  do not name the exact project as part of PCDS 2030.
 - Sources currently used:
 - [TSG Group - First 17MW FutureData off-taker (Oct 2024)](https://tsggroup.my/2024/10/09/sarawaks-futuredata-welcomes-1st-offtaker-a-17mw-data-center/) - Publisher: TSG Group; type: project-developer announcement; date: 9 Oct 2024. It supports the June 2023 park announcement, Global Telecommunications as first off-taker, above-USD130-million investment for the first 17MW facility, the then-future Q2 2025 construction target, and the 2026 online target.
 - [InvestSarawak - FutureData first off-taker and schedule (Oct 2024)](https://investsarawak.gov.my/global-telecommunications-first-off-taker-for-kuchings-futuredata-park/) - Publisher: InvestSarawak; type: official investment-promotion portal; date: Oct 2024. It independently repeats the project-specific value, capacity, construction target, and online target.
 - [DCD - FutureData first off-taker (2025)](https://www.datacenterdynamics.com/en/news/futuredata-announces-first-off-taker-at-500mw-malaysian-data-center-park-in-sarawak/) - Publisher: Data Center Dynamics; type: industry media; date: 2025; supports the off-taker, 500MW park, and first 17MW facility context.
-- Gaps or uncertainty: no reviewed source confirms that construction began after the Q2 2025 target passed. Construction therefore remains open and undated, the value is limited to the first 17MW facility, and the status is `Planning` rather than `In Progress`.
+- Gaps or uncertainty: no reviewed source confirms that construction began after the Q2 2025 target
+  passed, and no authoritative source establishes exact PCDS inclusion. Re-review when a PCDS,
+  13MP, Sarawak Government, InvestSarawak, or delivery-owner publication makes that connection.
 
 ### SCORE - Sarawak Corridor of Renewable Energy
 
@@ -438,7 +469,12 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Lubok Punggor AgriHub and Mid Sadong 1 Irrigation Project - `In Progress`; value: `RM30 million` for the initial 54.4-hectare project. DID Sarawak confirms the project-specific amount, February 2024 approval and November 2024 launch. UKAS confirms March 2026 compensation and the AgriHub scope covering irrigation and drainage, a reservoir, warehouse and machinery workshop. The statewide RM1 billion allocation, RM6.5 million compensation payment and approximate RM100 million expansion estimate are not used as the project value.
 - Bako National Park ASEAN Heritage Park - `Designated`; value: `Not disclosed`. Sarawak Government publicly confirmed the nomination, the ASEAN Centre for Biodiversity completed its evaluation and designated Bako as the 65th ASEAN Heritage Park in September 2025. BIMP-EAGA independently confirms the designation. The ASEAN Centre for Biodiversity is the programme secretariat and designation authority, not the card's lead party.
 - Lambir Hills National Park ASEAN Heritage Park - `Designated`; value: `Not disclosed`. Sarawak Government publicly confirmed the nomination, the ASEAN Centre for Biodiversity completed its evaluation and designated Lambir Hills as the 66th ASEAN Heritage Park in September 2025. `Lambir Hills National Park` follows the ASEAN body's current English identity; `Bukit Lambir` remains a source alias.
-- Sarawak High Performance Centre - `Planning`; value: `Not disclosed`. UKAS places the centre within the Sarawak Sports Complex, confirms planning and study, identifies MYSED as the state delivery ministry and expects construction after the 2027 SEA Games. The National Sports Institute is a planned sports-science support partner rather than the project lead. Older reporting that expected 2025 operation is superseded by the 2026 planning evidence.
+- Sarawak High Performance Centre - added at `Planning` on 7 August 2026, then moved to
+  `monitored_unconfirmed` on 17 August 2026. UKAS confirms the project, its Sarawak Sports Complex
+  site, planning stage and MYSED delivery role. The 13MP separately names a Sarawak High
+  Performance Sports Centre, but the reviewed evidence does not conclusively resolve it as the exact
+  UKAS project or otherwise connect the exact card to PCDS 2030. Re-review when an official
+  implementation, budget, procurement or strategy publication resolves that identity and relationship.
 - FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade - `Planning`; value: `RM0.5-1 billion` as a provisional range. JKR Sarawak's official preliminary-design scope is 42 km, while November 2025 parliamentary reporting describes about 48 km and 10 new bridges. The displayed range preserves the reported statement that the cost will exceed RM500 million and may reach RM1 billion, subject to finalisation after preliminary work. The myBina RM10 million-RM50 million range is excluded because its page is scoped to consultancy services.
 - Bintulu Bio-Algae Initial Commercial Plant - `In Progress`; value: `Not disclosed`. PETRONAS explicitly identifies the ICP collaboration between PETRONAS Research and SEDC Energy, and a second PETRONAS release confirms joint technology development for microalgae oil and SAF. September 2024 reporting confirms their studies in Bintulu and planned 10,000-acre scale-up. The card remains distinct from C4 Sarawak and does not treat the dependent future bio-refinery as an achieved project stage.
 - Dated source, value and inclusion review: [approved six-card route](project-audits/2026-08-07-approved-six-card-route-first-three.md).
@@ -457,7 +493,10 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Kota Petra Green Technology Park - `In Progress`; 3,000-acre Zecon development near Demak Laut and Senari Port. Phase 1 site preparation was under way by May 2026, a RM328 million EPCC contract was awarded in July 2026, and commercial operations remain scheduled for December 2027; sources: Zecon, UKAS, and The Star.
 - PDF research basis: `docs/source-pdfs/Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf`, especially pages 18 and 30. The PDF confirms strategic inclusion and naming; every live-card claim is also supported by a project-specific public webpage.
 - Dated source and inclusion review: `docs/project-audits/2026-07-28-13mp-candidate-review.md`.
-- Not added: the Kuching Low-Carbon Hub and Baram Renewable Energy Economic Zone remain umbrella-zone context; Sarawak AI Centre, Sarawak Climate Change Centre, and Sarawak High Performance Sports Centre remain monitored candidates pending firmer public implementation evidence.
+- Not active: the Kuching Low-Carbon Hub and Baram Renewable Energy Economic Zone remain
+  umbrella-zone context. Sarawak AI Centre and Sarawak Climate Change Centre remain monitored
+  pending firmer public implementation evidence. The exact Sarawak High Performance Centre is
+  recorded in `audit/project-inclusion.json` as monitored pending an explicit PCDS or 13MP link.
 
 ### PCDS 2030 - Overarching Framework
 
@@ -473,18 +512,18 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 The app derives display rows by flattening `SECTORS` into project rows and excluding the overview category:
 
-- Active rendered projects: 50.
-- Stored projects including overview: 51.
+- Active rendered projects: 48.
+- Stored projects including overview: 49.
 - PCDS economic sectors represented in data: 6.
 - PCDS enablers represented in data: 7.
 - Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, mining, social-services.
-- Populated enabler ids: digital-transformation, innovation, education, infrastructure, utilities, transport, renewable-energy.
+- Populated enabler ids: innovation, education, infrastructure, utilities, transport, renewable-energy.
 
 Current active dashboard status counts from `src/trackerData.js`:
 
 - `In Progress`: 33.
 - `Awaiting Decision`: 0.
-- `Planning`: 9.
+- `Planning`: 7.
 - `Operational`: 4.
 - `Designated`: 4.
 - `Enacted`: 0.
@@ -497,11 +536,11 @@ The UI groups detailed statuses into public filter labels:
 
 Current public display counts:
 
-- Tracked projects: 50.
-- Planning: 9.
+- Tracked projects: 48.
+- Planning: 7.
 - Ongoing: 33.
 - Completed: 8.
-- Milestones: 141 completed out of 218 active-project milestones.
+- Milestones: 137 completed out of 210 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 
@@ -547,7 +586,6 @@ Inferred methodology based on data structure:
 
 Unknown methodology needing human confirmation:
 
-- The exact project inclusion criteria.
 - The exact definition and scoring formula for `PRESS_total` and `PRESS_tier` in `audit/pcds-audit.json`.
 - Whether every completed milestone has been checked against a direct source, or whether some are inferred from broader reporting.
 - Whether `LAST_UPDATED` means any data edit, source review, link check, or full tracker review.

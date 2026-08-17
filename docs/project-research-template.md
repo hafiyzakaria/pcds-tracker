@@ -98,7 +98,11 @@ amount does not complete the value search.
 ## New-project PCDS inclusion gate (complete only for additions)
 
 - [ ] The proposed item is a distinct, trackable project, programme, designation, or legislative implementation effort; it is not merely a policy aspiration, event, general sector activity, or duplicate.
-- [ ] Its direct connection to PCDS 2030 is supported by an authoritative PCDS, government, delivery-agency, or project-owner source.
+- [ ] Its PCDS relationship is classified as `direct`, `official_linked`, `component`, or
+  `unconfirmed` under the methodology, with an authoritative source, exact locator, and relationship
+  statement recorded in `audit/project-inclusion.json`.
+- [ ] Any `component` relationship has explicit manual approval with its approval date and rationale;
+  an `unconfirmed` item remains monitored and is not added to the active tracker.
 - [ ] Exact identity, phase/package, location, lead/delivery body, and scope are resolved; close-name projects and umbrella programmes have been excluded.
 - [ ] At least one live, public, project-specific webpage independently supports the proposed card. A PCDS PDF alone is insufficient for a live card.
 - [ ] The source evidence supports each proposed status, milestone, value, and completion claim; unknown monetary values use `Not disclosed` or `Not applicable` as the methodology requires.
@@ -106,7 +110,12 @@ amount does not complete the value search.
 - [ ] The addition has a meaningful public milestone or outcome to track, rather than a speculative future possibility.
 - [ ] A stronger primary source, or two independent reputable reports, supports any consequential status claim.
 - [ ] Proposed English facts, BM rendering/fallback, sources, and any editorial-history entry comply with the methodology.
+- [ ] The candidate has one unique inclusion record, and `npm run check:content` passes after the
+  proposed active or monitored disposition is applied.
 - Inclusion decision: include / defer for evidence / reject
+- Inclusion tier: direct / official_linked / component / unconfirmed
+- Inclusion source and exact locator:
+- Manual component approval date and rationale, if applicable:
 - Gate rationale and evidence URLs:
 ```
 

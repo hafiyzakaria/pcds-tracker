@@ -23,6 +23,10 @@ Use this checklist for a release that changes project facts, Bahasa Melayu proje
 - [ ] Each non-completed card retains an evidence-supported open outcome, and an intermediate announcement, approval, agreement, design stage, or contract does not make the project appear fully complete.
 - [ ] Open milestones read as pending outcomes rather than completed events; completed milestones use definitive past-tense wording.
 - [ ] New project additions passed the template's stricter PCDS inclusion gate.
+- [ ] Every active card has exactly one active record in `audit/project-inclusion.json`; no active
+  record uses the `unconfirmed` tier, and every monitored record is absent from `src/trackerData.js`.
+- [ ] Every `component` inclusion has explicit manual approval with a date and rationale, and every
+  monitored deferral records an evidence gap and observable follow-up trigger.
 - [ ] Every exclusion or deferral records its review date, evidence gap, exact identity or alias, and a follow-up date or observable re-review trigger.
 - [ ] `LAST_UPDATED` in `src/trackerData.js` is updated when the dashboard data changed, and its methodology note remains accurate.
 - [ ] Required BM entries in `src/localization.js` faithfully reflect the English evidence; missing translations safely fall back to English.

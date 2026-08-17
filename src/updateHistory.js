@@ -70,15 +70,6 @@ const updateDefinitions = [
     sourceUrl: "https://jkr.sarawak.gov.my/web/subpage/webpage_view/403",
   },
   {
-    date: "2026-06-13",
-    projectName: "Sarawak High Performance Centre",
-    description: {
-      en: "The Sarawak Government confirmed that the centre was in planning and study, with its Sarawak Sports Complex site identified and construction expected after the 2027 SEA Games.",
-      ms: "Kerajaan Sarawak mengesahkan pusat itu berada pada peringkat perancangan dan kajian, dengan tapaknya di Kompleks Sukan Sarawak dikenal pasti serta pembinaan dijangka selepas Sukan SEA 2027.",
-    },
-    sourceUrl: "https://ukas.sarawak.gov.my/web/subpage/news_view/42510",
-  },
-  {
     date: "2026-06-09",
     projectName: "Green Hydrogen Economy — H2ornbill & H2biscus",
     description: {

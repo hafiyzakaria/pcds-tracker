@@ -1,6 +1,6 @@
 # PCDS 2030 Project Tracker
 
-An independent public tracker for major projects under Sarawak's Post COVID-19 Development Strategy 2030 (PCDS 2030).
+An independent public tracker for major projects connected to Sarawak's Post COVID-19 Development Strategy 2030 (PCDS 2030).
 
 **View the tracker: [pcds2030.com](https://pcds2030.com)**
 
@@ -25,7 +25,7 @@ The tracker is independently maintained and is not affiliated with the Sarawak G
 
 ## How the information is maintained
 
-Project information is reviewed and added manually. Each tracked project includes source links where available, and the website displays the date of the latest data update. Any change to project data, Bahasa Melayu project copy, editorial updates, or a tracked-project addition must follow the [data methodology](docs/data-methodology.md).
+Project information is reviewed and added manually. Each active project must have documented PCDS inclusion provenance and public source links, and the website displays the date of the latest data update. Any change to project data, Bahasa Melayu project copy, editorial updates, or a tracked-project addition must follow the [data methodology](docs/data-methodology.md).
 
 Because the process is manual:
 

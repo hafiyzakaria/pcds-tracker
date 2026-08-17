@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-08-08";
+export const LAST_UPDATED = "2026-08-17";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -479,29 +479,7 @@ export const SECTORS = [
     name: "Digital Transformation",
     icon: "\u25c7",
     color: "#7c3aed",
-    projects: [
-      {
-        name: "FutureData — Kuching Data Centre Park",
-        displayName: "Kuching Data Centre Park",
-        status: "Planning",
-        statusColor: "#4f46e5",
-        lead: "TSG Group / Global Telecommunications Group",
-        value: "USD130 million",
-        summary:
-          "A planned 500MW data centre park in Kuching, with its first 17MW facility intended for Global Telecommunications Group. The first facility represents an investment above USD130 million and supports Sarawak's digital-economy and renewable-energy ambitions.",
-        milestones: [
-          { date: "2023-06", text: "FutureData Park announced", done: true },
-          { date: "2024-10-09", text: "Global Telecommunications named first off-taker", done: true },
-          { date: "TBD", text: "Construction of first 17MW facility begins", done: false },
-          { date: "2026", text: "First 17MW data centre begins operations", done: false },
-        ],
-        sources: [
-          { label: "TSG Group — First 17MW FutureData off-taker (Oct 2024)", url: "https://tsggroup.my/2024/10/09/sarawaks-futuredata-welcomes-1st-offtaker-a-17mw-data-center/" },
-          { label: "InvestSarawak — FutureData first off-taker and schedule (Oct 2024)", url: "https://investsarawak.gov.my/global-telecommunications-first-off-taker-for-kuchings-futuredata-park/" },
-          { label: "DCD — FutureData first off-taker (2025)", url: "https://www.datacenterdynamics.com/en/news/futuredata-announces-first-off-taker-at-500mw-malaysian-data-center-park-in-sarawak/" },
-        ],
-      },
-    ],
+    projects: [],
   },
   {
     id: "innovation",
@@ -651,25 +629,6 @@ export const SECTORS = [
     icon: "\u25c6",
     color: "#2563eb",
     projects: [
-      {
-        name: "Sarawak High Performance Centre",
-        status: "Planning",
-        statusColor: "#2563eb",
-        lead: "Sarawak Government / Ministry of Youth, Sports and Entrepreneur Development",
-        value: "Not disclosed",
-        summary:
-          "A planned sports-science and elite-athlete development centre within the Sarawak Sports Complex in Petra Jaya. The project is in planning and study, with construction expected to begin after the 2027 SEA Games and National Sports Institute support planned for sports-science expertise.",
-        milestones: [
-          { date: "2026-02-18", text: "Sarawak Sports Complex site and delivery concept were announced", done: true },
-          { date: "2026-06-13", text: "Planning and study stage was publicly confirmed", done: true },
-          { date: "2027", text: "Construction begins after the 2027 SEA Games", done: false },
-          { date: "TBD", text: "High Performance Centre begins operations", done: false },
-        ],
-        sources: [
-          { label: "UKAS - Site, scope and delivery concept (Feb 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/34514" },
-          { label: "UKAS - Planning stage and post-SEA Games construction (Jun 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/42510" },
-        ],
-      },
       {
         name: "Yayasan Sarawak International Secondary Schools Expansion",
         displayName: "Yayasan Sarawak International Schools Expansion",

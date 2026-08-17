@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-17",
+  "scope": {
+    "auditedCardCount": 50,
+    "expectedActiveCount": 48,
+    "expectedMonitoredCount": 2,
+    "expectedManualComponentApprovalCount": 3
+  },
+  "documents": {
+    "main-report": "docs/source-pdfs/PCDS 2030 Final Report Volume I Main Report.pdf",
+    "highlights": "docs/source-pdfs/SarawakGovt PCDS2030 - Highlights 2023.pdf",
+    "aip-economic": "docs/source-pdfs/PCDS 2030 AIP Final Report Volume II Economic Sectors.pdf",
+    "aip-enablers": "docs/source-pdfs/PCDS 2030 AIP Final Report Volume III Enablers_Poverty Alleviation.pdf",
+    "initiatives": "docs/source-pdfs/Latest Sarawak Innovative Initiatives Book_EPU Sarawak.pdf",
+    "13mp": "docs/source-pdfs/Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf",
+    "sustainability": "docs/source-pdfs/Sarawak-Sustainability-Vision-2030-Datu-Dr.-Muhammad-Abdullah-Zaidel.pdf"
+  },
+  "overview": {
+    "canonicalName": "PCDS 2030 — Overarching Framework",
+    "categoryId": "overview",
+    "isOverview": true,
+    "excludedFromCardCounts": true,
+    "inclusionBasis": [
+      { "source": "main-report", "locator": "PCDS 2030 framework", "relationship": "Overarching strategy record" }
+    ]
+  },
+  "cards": [
+    {
+      "canonicalName": "SMD Semiconductor — GaN Chip Development",
+      "categoryId": "manufacturing",
+      "disposition": "active",
+      "reviewClass": "manual_component_approval",
+      "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "component", "basis": [{ "source": "initiatives", "locator": "PDF p.24", "relationship": "GaN is a later delivery output of the official SMD semiconductor and chip-design programme" }] },
+      "identityChecked": true,
+      "scopeResolved": true,
+      "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/sarawak-to-establish-smd-advanced-chip-integration-centre-to-power-semiconductor-leap/",
+      "manualApproval": { "approvedOn": "2026-08-17", "rationale": "Retain the card as a trackable component output of the official SMD programme." },
+      "evidenceGap": null,
+      "lastReviewed": "2026-08-17",
+      "followUp": null
+    },
+    {
+      "canonicalName": "RM1 Billion Paddy Infrastructure Programme",
+      "categoryId": "agriculture",
+      "disposition": "active",
+      "reviewClass": "standard",
+      "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "aip-economic", "locator": "PDF pp.179-191; 13MP p.32", "relationship": "Official PCDS implementation programme continued under the 13MP" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://premierdept.sarawak.gov.my/web/subpage/news_view/24582/UKAS",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Lubok Punggor AgriHub and Mid Sadong 1 Irrigation Project",
+      "categoryId": "agriculture",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "combined_card",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.30", "relationship": "Named PCDS agriculture delivery project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://did.sarawak.gov.my/web/subpage/news_view/821",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak Agrotechnology Park",
+      "categoryId": "agriculture",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "aip-economic", "locator": "PDF pp.176-178", "relationship": "Named PCDS agriculture initiative" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://mficord.sarawak.gov.my/web/subpage/news_view/1370",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sungai Baji Agropark",
+      "categoryId": "agriculture",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "aip-economic", "locator": "PDF pp.31-32; Highlights p.31", "relationship": "Named PCDS agropark project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://did.sarawak.gov.my/web/subpage/news_view/897",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Rambungan Sustainable Shrimp Aquaculture Project",
+      "categoryId": "agriculture",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.36", "relationship": "Named PCDS aquaculture project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://mficord.sarawak.gov.my/web/subpage/news_view/1513",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak Delta Geopark - UNESCO Global Geopark Designation",
+      "categoryId": "tourism",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "designation",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF pp.42 and 55", "relationship": "Named PCDS tourism designation effort" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.unesco.org/en/iggp/sarawak-delta-unesco-global-geopark",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "The Archaeological Heritage of Niah National Park’s Caves Complex",
+      "categoryId": "tourism",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "designation",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "aip-economic", "locator": "PDF pp.466-469", "relationship": "Named PCDS heritage nomination and conservation effort" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://whc.unesco.org/en/list/1014",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Environment (Reduction of Greenhouse Gases Emission) Ordinance 2023",
+      "categoryId": "forestry",
+      "disposition": "active", "reviewClass": "manual_component_approval", "trackedUnit": "policy_implementation",
+      "inclusion": { "decision": "included", "tier": "component", "basis": [{ "source": "13mp", "locator": "GHG governance and low-carbon implementation sections", "relationship": "Implementation mechanism for PCDS and 13MP greenhouse-gas governance" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.nreb.gov.my/web/subpage/announcement_view/196",
+      "manualApproval": { "approvedOn": "2026-08-17", "rationale": "Retain the ordinance as a trackable PCDS implementation mechanism rather than a standalone capital asset." },
+      "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Bako National Park ASEAN Heritage Park",
+      "categoryId": "forestry",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "designation",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "aip-economic", "locator": "PDF pp.466-469", "relationship": "Named PCDS protected-area recognition effort" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/sarawak-nominates-bako-bukit-lambir-as-asean-heritage-parks-to-elevate-global-conservation-status/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Lambir Hills National Park ASEAN Heritage Park",
+      "categoryId": "forestry",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "designation",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "aip-economic", "locator": "PDF pp.466-469", "relationship": "Named PCDS protected-area recognition effort" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/sarawak-nominates-bako-bukit-lambir-as-asean-heritage-parks-to-elevate-global-conservation-status/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Semenggoh Rainforest Discovery Centre",
+      "categoryId": "forestry",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "aip-economic", "locator": "PDF pp.504-507", "relationship": "Named PCDS discovery-centre project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.theborneopost.com/2020/08/19/state-govt-pledges-rm30-mln-to-upgrade-semenggoh-wildlife-centre-provide-high-speed-internet/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Piasau Nature Reserve Discovery Centre",
+      "categoryId": "forestry",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "aip-economic", "locator": "PDF pp.504 and 508", "relationship": "Named PCDS discovery-centre project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.theborneopost.com/2026/01/30/piasau-nature-reserve-discovery-centre-to-become-marine-eco-tourism-hub-with-rm30-mln-boost/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Marudi Forest Conservation and Restoration Project",
+      "categoryId": "forestry",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "initiatives", "locator": "PDF p.42", "relationship": "Official supplementary PCDS conservation initiative" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://theedgemalaysia.com/node/659392",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak Reef Ball Project",
+      "categoryId": "forestry",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "initiatives", "locator": "PDF pp.47-49", "relationship": "Official supplementary PCDS marine-conservation initiative" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/sfcs-final-reef-ball-drop-marks-completion-of-three-year-journey/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Bau Gold Project",
+      "categoryId": "mining",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.60", "relationship": "Named PCDS mining project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/baus-3-3-mln-ounce-gold-find-ranks-sarawak-13th-in-asia-valued-at-rm24-3-bln/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak Cancer Centre",
+      "categoryId": "social-services",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "13mp", "locator": "PDF p.30", "relationship": "Official 13MP project aligned with the PCDS delivery period" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/sarawak-cancer-centre-construction-to-start-by-2026-with-rm1-52-bln-preliminary-estimate-cost/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Special Needs Community Centre",
+      "categoryId": "social-services",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "aip-enablers", "locator": "PDF pp.544 and 558-560", "relationship": "Named PCDS social-development facility" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/sarawak-to-build-rm30-mln-special-needs-community-centre-to-deliver-lifelong-care-training-support/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "One-Stop Early Intervention Centre (OSEIC) Miri",
+      "categoryId": "social-services",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF pp.66 and 72", "relationship": "Named PCDS social-services initiative" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://ukas.sarawak.gov.my/web/subpage/news_view/39533",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Community Social Support Centre (CSSC) Network",
+      "categoryId": "social-services",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF pp.67-68", "relationship": "Named PCDS social-support network" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/sarawaks-first-community-social-support-centre-to-open-in-kuching-offers-assistance-to-vulnerable-communities/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "FutureData — Kuching Data Centre Park",
+      "categoryId": "digital-transformation",
+      "disposition": "monitored_unconfirmed", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "defer_for_evidence", "tier": "unconfirmed", "basis": [{ "source": "https://investsarawak.gov.my/global-telecommunications-first-off-taker-for-kuchings-futuredata-park/", "locator": "Official project announcement", "relationship": "Confirms a Sarawak Digital Economy Blueprint connection, but not exact PCDS inclusion" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://tsggroup.my/2024/10/09/sarawaks-futuredata-welcomes-1st-offtaker-a-17mw-data-center/",
+      "manualApproval": null,
+      "evidenceGap": "No authoritative source reviewed on 2026-08-17 names the exact FutureData project as part of PCDS 2030 or an approved PCDS delivery programme.",
+      "lastReviewed": "2026-08-17",
+      "followUp": "Re-review when a PCDS, 13MP, Sarawak Government, InvestSarawak or delivery-owner publication explicitly connects the exact project to PCDS 2030."
+    },
+    {
+      "canonicalName": "CHITOSE Carbon Capture Central Sarawak",
+      "categoryId": "innovation",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.128", "relationship": "Named PCDS innovation project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://chitose-bio.com/news/5155/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak Bioindustrial Park",
+      "categoryId": "innovation",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF pp.89-90", "relationship": "Named PCDS bioeconomy delivery project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://ukas.sarawak.gov.my/web/subpage/news_view/2352",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Kota Petra Green Technology Park",
+      "categoryId": "innovation",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "13mp", "locator": "PDF p.30", "relationship": "Official 13MP green-technology project aligned with PCDS" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://zecon.com.my/project/kota-petra-green-technology-park/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "PETRONAS Kasawari Carbon Capture and Storage Project",
+      "categoryId": "innovation",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "phase_or_package",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "initiatives", "locator": "PDF p.46", "relationship": "Official supplementary low-carbon initiative" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.petronas.com/media/media-releases/petronas-carigali-reaches-final-investment-decision-kasawari-ccs-project",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak Science Centre (SSCiEX)",
+      "categoryId": "innovation",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.88", "relationship": "Named PCDS science and innovation facility" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://ssciex.org.my/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak Infectious Disease Centre",
+      "categoryId": "innovation",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.88", "relationship": "Named PCDS research and health facility" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://sidc.org.my/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak High Performance Centre",
+      "categoryId": "education",
+      "disposition": "monitored_unconfirmed", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "defer_for_evidence", "tier": "unconfirmed", "basis": [{ "source": "https://ukas.sarawak.gov.my/web/subpage/news_view/42510", "locator": "Official planning-stage announcement", "relationship": "Confirms the project and delivery stage, but not exact PCDS or 13MP inclusion" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://ukas.sarawak.gov.my/web/subpage/news_view/34514",
+      "manualApproval": null,
+      "evidenceGap": "The 13MP names a Sarawak High Performance Sports Centre, but no authoritative source reviewed on 2026-08-17 conclusively resolves that unit as the exact UKAS Sarawak High Performance Centre or otherwise connects the exact card to PCDS 2030.",
+      "lastReviewed": "2026-08-17",
+      "followUp": "Re-review when MYSED, UKAS, a budget document, PCDS report or 13MP implementation publication explicitly connects the exact centre to PCDS 2030."
+    },
+    {
+      "canonicalName": "Yayasan Sarawak International Secondary Schools Expansion",
+      "categoryId": "education",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.93", "relationship": "Named PCDS education programme" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://ysiss.edu.my/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade",
+      "categoryId": "infrastructure",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "aip-enablers", "locator": "PDF pp.303-304", "relationship": "Named PCDS road-upgrade project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://jkr.sarawak.gov.my/web/subpage/news_view/614",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "SCORE — Sarawak Corridor of Renewable Energy",
+      "categoryId": "infrastructure",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "SCORE sections throughout the report", "relationship": "Core PCDS regional development programme" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/score-fuels-sarawaks-economic-growth-with-rm125-bln-investment-53000-jobs-created/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Pan Borneo Highway Sarawak Phase 1",
+      "categoryId": "infrastructure",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "phase_or_package",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF pp.100-101", "relationship": "Named PCDS road-infrastructure project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://theedgemalaysia.com/article/rm165b-represents-only-sarawaks-pan-borneo-highway-construction-cost",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak-Sabah Link Road",
+      "categoryId": "infrastructure",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "combined_card",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.107", "relationship": "Named PCDS inter-state road project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.thestar.com.my/news/nation/2025/09/12/anwar-launches-second-phase-of-sslr-project",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Bintulu-Samalaju Gas Pipeline",
+      "categoryId": "utilities",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.112", "relationship": "Named PCDS gas-infrastructure project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.thestar.com.my/business/business-news/2024/11/04/rm1bil-gas-pipeline-plan",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Miri Combined Cycle Gas Turbine (CCGT) Power Plant",
+      "categoryId": "utilities",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF pp.61, 113 and 116", "relationship": "Named PCDS electricity-generation project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://miricouncil.gov.my/web/subpage/news_view/733",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sejingkat Battery Energy Storage System",
+      "categoryId": "utilities",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "sustainability", "locator": "PDF p.8", "relationship": "Official Sustainability Vision project supporting PCDS energy resilience" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.sarawakenergy.com/media-info/media-releases/2025/sarawak-energy-strengthens-grid-resilience-with-battery-energy-storage-system",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak-Singapore Electricity Interconnection",
+      "categoryId": "utilities",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "shared_system",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "sustainability", "locator": "PDF p.13", "relationship": "Official Sustainability Vision interconnection supporting PCDS regional energy goals" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.sarawakenergy.com/media-info/media-releases/2023/sarawak-moves-closer-to-regional-powerhouse-aspiration-through-hydropower-venture-in-indonesia",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Miri Port Kuala Baram Capital Dredging",
+      "categoryId": "transport",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.108; AIP Enablers pp.252-253", "relationship": "Named PCDS port-access project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.dredgingtoday.com/2024/06/19/malaysian-chinese-jv-wins-miri-port-dredging-contract/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak River Aids to Navigation and Surveillance System",
+      "categoryId": "transport",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "combined_card",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.121", "relationship": "Named PCDS river-navigation system and later network scope" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/rm30-mln-vessel-monitoring-system-for-senari-port-ready-by-may-rm56-9-mln-vehicle-yard-ahead-of-schedule/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "KUTS — Kuching Urban Transportation System",
+      "categoryId": "transport",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF pp.117-119", "relationship": "Named PCDS urban-transport programme" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/hydrogen-powered-art-to-begin-service-in-kuching-in-final-quarter-of-2026-premier/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Bintulu Port — State Control Handover",
+      "categoryId": "transport",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "policy_implementation",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.106", "relationship": "Named PCDS port-governance initiative" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/rm1-8-bln-bintulu-port-takeover-agreed-in-principle-as-handover-enters-final-stage/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "New Kuching International Airport",
+      "categoryId": "transport",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "13mp", "locator": "PDF pp.18 and 30", "relationship": "Official 13MP transport project aligned with PCDS" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://mot.sarawak.gov.my/web/subpage/news_view/688",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Tanjung Embang Deep-Sea Port",
+      "categoryId": "transport",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "13mp", "locator": "PDF pp.18 and 30", "relationship": "Official 13MP port project aligned with PCDS" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://theedgemalaysia.com/node/734490",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Bintulu Bio-Algae Initial Commercial Plant",
+      "categoryId": "renewable-energy",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF p.128", "relationship": "Named PCDS bioenergy commercialisation project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.petronas.com/bm/node/40",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Sago BioCNG Plant and Gas Distribution Network",
+      "categoryId": "renewable-energy",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "combined_card",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "initiatives", "locator": "PDF p.44", "relationship": "Official supplementary PCDS bioenergy initiative" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://utusansarawak.com.my/kampung-tabo-teh-pengguna-biogas-rumbia-pertama-di-dunia/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Baleh Hydroelectric Project",
+      "categoryId": "renewable-energy",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF pp.123-124 and 128", "relationship": "Named PCDS hydropower project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://premierdept.sarawak.gov.my/web/subpage/news_view/19825/UKAS",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Mentarang Induk Hydroelectric Project",
+      "categoryId": "renewable-energy",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "sustainability", "locator": "PDF p.12", "relationship": "Official Sustainability Vision cross-border hydropower project supporting PCDS energy goals" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.sarawakenergy.com/media-info/media-releases/2023/sarawak-moves-closer-to-regional-powerhouse-aspiration-through-hydropower-venture-in-indonesia",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Green Hydrogen Economy — H2ornbill & H2biscus",
+      "categoryId": "renewable-energy",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "combined_card",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF pp.123 and 127-128", "relationship": "Named PCDS hydrogen-economy projects" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.samsungena.com/en/newsroom/news/view?idx=15543",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Batang Ai Floating Solar Farm",
+      "categoryId": "renewable-energy",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF pp.123, 125 and 128; AIP Enablers pp.409-410", "relationship": "Named PCDS floating-solar project" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.sarawakenergy.com/media-info/media-releases/2024/sarawak-energys-first-floating-solar-farm-on-track-for-commissioning-by-october-2024",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Baram Agrovoltaic Project",
+      "categoryId": "renewable-energy",
+      "disposition": "active", "reviewClass": "manual_component_approval", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "component", "basis": [{ "source": "13mp", "locator": "PDF p.30 plus UKAS exact-project announcement", "relationship": "Trackable component of the officially named Baram Renewable Energy Economic Zone" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://ukas.sarawak.gov.my/web/subpage/news_view/37208",
+      "manualApproval": { "approvedOn": "2026-08-17", "rationale": "Retain the exact agrovoltaic project as a public, trackable component of the official Baram renewable-energy zone." },
+      "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    }
+  ]
+}
