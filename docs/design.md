@@ -197,10 +197,9 @@ Current interactions:
   so it remains easy to track. Card milestone indicators mirror the dashboard metric format with a
   compact `1/5 complete` count; expanded cards retain the `Milestones` label and the full accessible
   wording.
-  On initial load or refresh, final metric values appear immediately while the complete summary block
-  fades upward by `10px` over `320ms`, beginning after a short `140ms` delay so the movement remains
-  visible within the page entrance. The metrics move as one group without individual number rolling or
-  stagger. Reduced-motion preferences show the final block immediately.
+  On initial load or refresh, each numeric segment in the metric values counts up from zero over
+  `1.4s` with an eased finish. Compound values such as milestone completion animate both numbers
+  independently. Reduced-motion preferences show the final values immediately.
   On mobile, the milestone summary uses the shared brand teal for its progress fill against the
   neutral theme-aware track.
   The `Milestones` metric uses `aria-expanded` to reset status and category filters, show all projects,

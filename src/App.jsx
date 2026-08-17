@@ -190,8 +190,65 @@ function formatLastUpdated(value, language = DEFAULT_LANGUAGE) {
   }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
-function MetricValue({ value }) {
-  return <span aria-hidden="true">{value}</span>;
+function useCountUp(target, duration = 1400) {
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    if (!Number.isFinite(target) || target === 0 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const frameId = window.requestAnimationFrame(() => setDisplayValue(Number.isFinite(target) ? target : 0));
+      return () => window.cancelAnimationFrame(frameId);
+    }
+
+    let frameId = null;
+    let startTime = null;
+    const animate = (timestamp) => {
+      if (startTime === null) {
+        startTime = timestamp;
+      }
+
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      setDisplayValue(Math.round(target * easedProgress));
+
+      if (progress < 1) {
+        frameId = window.requestAnimationFrame(animate);
+      }
+    };
+
+    frameId = window.requestAnimationFrame(animate);
+
+    return () => {
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
+    };
+  }, [duration, target]);
+
+  return displayValue;
+}
+
+function AnimatedMetricNumber({ value }) {
+  const displayValue = useCountUp(value);
+
+  return <span>{displayValue}</span>;
+}
+
+function AnimatedMetricValue({ value }) {
+  const segments = String(value).split(/(\d+)/);
+
+  return (
+    <span aria-hidden="true">
+      {segments.map((segment, index) => {
+        if (!segment) {
+          return null;
+        }
+
+        return /^\d+$/.test(segment)
+          ? <AnimatedMetricNumber key={`${segment}-${index}`} value={Number(segment)} />
+          : <span key={`${segment}-${index}`}>{segment}</span>;
+      })}
+    </span>
+  );
 }
 
 function StatusBadge({ statusMeta }) {
@@ -303,7 +360,7 @@ function Metric({
           lineHeight: 1,
         }}
       >
-        <MetricValue value={value} />
+        <AnimatedMetricValue value={value} />
       </div>
       <div
         style={{
@@ -422,7 +479,7 @@ function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAl
               lineHeight: 1,
             }}
           >
-            <MetricValue value={`${doneMilestones}/${totalMilestones}`} />
+            <AnimatedMetricValue value={`${doneMilestones}/${totalMilestones}`} />
           </div>
         </div>
         <div
