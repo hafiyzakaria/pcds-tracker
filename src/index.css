@@ -84,7 +84,6 @@ a:focus-visible {
 .source-link,
 .language-toggle-option,
 .summary-metric--interactive,
-.classification-clear-button,
 .project-classification-button,
 .project-card-button,
 .theme-toggle {
@@ -112,6 +111,256 @@ a:focus-visible {
 
 .skip-link:focus {
   transform: translateY(0);
+}
+
+.discovery-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(210px, 240px);
+  gap: 12px;
+  align-items: center;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.project-search {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 40px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background-color: var(--surface);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.project-search:focus-within {
+  border-color: color-mix(in srgb, var(--brand) 58%, var(--border));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 17%, transparent);
+}
+
+.project-search-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  margin-left: 11px;
+  color: var(--text-icon);
+}
+
+.project-search-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.project-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 9px 11px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-strong);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.project-search input::placeholder {
+  color: var(--text-faint);
+}
+
+.project-search input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.project-search-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  margin-right: 5px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.project-search-clear:hover,
+.project-search-clear:focus-visible {
+  background-color: var(--surface-tint);
+  color: var(--brand-strong);
+}
+
+.classification-filter-area {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+}
+
+.classification-filter-area--can-back::before,
+.classification-filter-area--can-forward::after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  width: 44px;
+  background: var(--page-bg);
+  content: "";
+  pointer-events: none;
+}
+
+.classification-filter-area--can-back::before {
+  left: 0;
+}
+
+.classification-filter-area--can-forward::after {
+  right: 0;
+}
+
+.classification-filter-strip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 1px 36px 1px 1px;
+  scrollbar-width: none;
+}
+
+.classification-filter-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.classification-filter-scroll {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: var(--page-bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 25px;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.classification-filter-back {
+  left: 0;
+}
+
+.classification-filter-forward {
+  right: 0;
+}
+
+.classification-filter-scroll:hover,
+.classification-filter-scroll:focus-visible {
+  background: color-mix(in srgb, var(--brand) 8%, var(--page-bg));
+  color: var(--brand-strong);
+}
+
+.classification-filter-scroll:disabled {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.classification-filter-option {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 8px 15px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.classification-filter-option:hover,
+.classification-filter-option:focus-visible {
+  border-color: color-mix(in srgb, var(--brand) 48%, var(--border-strong));
+  color: var(--brand-strong);
+  background-color: color-mix(in srgb, var(--brand) 8%, var(--surface));
+}
+
+.classification-filter-option--active {
+  border-color: var(--brand);
+  background-color: var(--brand);
+  color: var(--page-bg);
+}
+
+.project-empty-state {
+  display: grid;
+  gap: 5px;
+  margin: 4px 0 0;
+  padding: 28px 20px;
+  border: 1px dashed var(--border-strong);
+  border-radius: 10px;
+  background-color: var(--surface-subtle);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.project-empty-state p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.project-empty-state span {
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .discovery-controls {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 9px;
+    margin-bottom: 14px;
+  }
+
+  .classification-filter-strip {
+    width: 100%;
+  }
+
+  .classification-filter-scroll {
+    width: 30px;
+    height: 36px;
+  }
+
+  .classification-filter-strip {
+    padding-right: 32px;
+  }
+
+  .classification-filter-option {
+    min-height: 36px;
+    padding: 7px 12px;
+  }
 }
 
 .navigation-pill-link {
@@ -419,34 +668,6 @@ a:focus-visible {
   color: var(--text-muted) !important;
 }
 
-.classification-clear-button {
-  border: 1px solid transparent;
-  background-color: transparent;
-  color: var(--text-muted);
-  box-shadow: none;
-  transform: translateY(0);
-  transition:
-    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
-    background-color 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    color 180ms ease;
-}
-
-.classification-clear-button:hover,
-.classification-clear-button:focus-visible {
-  opacity: 1;
-  transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--brand) 32%, transparent);
-  background-color: color-mix(in srgb, var(--brand) 8%, var(--surface));
-  color: var(--brand-strong);
-  box-shadow: 0 2px 5px var(--control-shadow);
-}
-
-.classification-clear-button:active {
-  transform: translateY(0) scale(0.97);
-}
-
 .project-classification--interactive {
   display: inline-grid;
   grid-template-columns: max-content minmax(0, 1fr);
@@ -703,7 +924,6 @@ a:focus-visible {
   .summary-metric,
   .summary-metric-cue,
   .summary-metric-cue svg,
-  .classification-clear-button,
   .project-classification-indicator,
   .project-classification-button,
   .project-card-details-pill,

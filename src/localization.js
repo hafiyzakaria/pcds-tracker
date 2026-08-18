@@ -6,7 +6,7 @@ export const SUPPORTED_LANGUAGES = ["en", "ms"];
 const EN = {
   metadata: { title: "PCDS 2030 Project Tracker", description: "Explore the PCDS 2030 project tracker for the Sarawak Post COVID-19 Development Strategy 2030, with project status, milestones, and public sources." },
   languageControl: { label: "Language", current: "English", switchTo: "Bahasa Melayu" },
-  navigation: { tracker: "Project tracker", updates: "PCDS 2030 updates" },
+  navigation: { primary: "Primary navigation", home: "Home", tracker: "Tracker", updates: "Updates" },
   updatesPage: {
     title: "Updates",
     intro: "A dated record of meaningful public developments reflected in the project tracker, with a supporting source for each entry.",
@@ -44,6 +44,17 @@ const EN = {
     clearActive: (label) => `Clear active filter: ${label}`,
     results: (count) => `${count} ${count === 1 ? "project" : "projects"} shown`,
   },
+  classificationFilters: { label: "Project classification", all: "All", scrollBackward: "Scroll project categories left", scrollForward: "Show more project categories" },
+  discovery: {
+    label: "Find projects",
+    searchLabel: "Search projects",
+    placeholder: "Search",
+    clear: "Clear",
+    clearSearch: "Clear search",
+    noSearchResults: (query) => `No projects match “${query}”.`,
+    noFilteredResults: "No projects match these filters.",
+    refineHint: "Try another search or clear a filter.",
+  },
   metrics: { trackedProjects: "Projects", planning: "Planning", ongoing: "Ongoing", completed: "Completed", milestones: "Milestones" },
   milestones: { label: "Milestones", remaining: "Remaining Milestones", next: "Next Milestone", final: "Final milestone", noOpen: "No open milestone", none: "No milestones", count: (done, total, statusGroup) => statusGroup === "completed" ? `${done}/${total}` : `${done}/${total} complete`, progress: (done, total) => `${done} of ${total} milestones completed` },
   facts: { lead: "Lead / parties", value: "Reported value", sources: "Sources" },
@@ -71,7 +82,7 @@ const EN = {
 const MS = {
   metadata: { title: "Papan Pemuka PCDS 2030: Projek & Status | Sarawak", description: "Terokai penjejak projek PCDS 2030 bagi Strategi Pembangunan Pasca COVID-19 Sarawak 2030, termasuk status projek, pencapaian dan sumber awam." },
   languageControl: { label: "Bahasa", current: "Bahasa Melayu", switchTo: "English" },
-  navigation: { tracker: "Project tracker", updates: "Kemas kini PCDS 2030" },
+  navigation: { primary: "Navigasi utama", home: "Utama", tracker: "Tracker", updates: "Kemas Kini" },
   updatesPage: {
     title: "Kemas Kini",
     intro: "Rekod bertarikh mengenai perkembangan awam penting yang dicerminkan dalam 'project tracker', berserta sumber sokongan bagi setiap catatan.",
@@ -108,6 +119,17 @@ const MS = {
     filteredBy: "Ditapis mengikut",
     clearActive: (label) => `Kosongkan penapis aktif: ${label}`,
     results: (count) => `${count} projek dipaparkan`,
+  },
+  classificationFilters: { label: "Pengelasan projek", all: "Semua", scrollBackward: "Tatal kategori projek ke kiri", scrollForward: "Tunjukkan lebih banyak kategori projek" },
+  discovery: {
+    label: "Cari projek",
+    searchLabel: "Cari projek",
+    placeholder: "Cari",
+    clear: "Kosongkan",
+    clearSearch: "Kosongkan carian",
+    noSearchResults: (query) => `Tiada projek sepadan dengan “${query}”.`,
+    noFilteredResults: "Tiada projek sepadan dengan penapis ini.",
+    refineHint: "Cuba carian lain atau kosongkan penapis.",
   },
   metrics: { trackedProjects: "Projek", planning: "Perancangan", ongoing: "Pelaksanaan", completed: "Selesai", milestones: "Pencapaian" },
   milestones: { label: "Pencapaian Utama", remaining: "Pencapaian Utama yang Baki", next: "Pencapaian Seterusnya", final: "Pencapaian Akhir", noOpen: "Tiada pencapaian utama yang belum selesai", none: "Tiada pencapaian utama", count: (done, total, statusGroup) => statusGroup === "completed" ? `${done}/${total}` : `${done}/${total} selesai`, progress: (done, total) => `${done} daripada ${total} pencapaian utama selesai` },

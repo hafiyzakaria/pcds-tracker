@@ -109,20 +109,41 @@ function filterRowsByClassification(rows, filterId) {
   return rows;
 }
 
-function getClassificationFilterLabel(rows, filterId, copy) {
-  if (filterId === "group:sector") {
-    return copy.categoryFilters.sectors;
+function getSearchableProjectFields(row) {
+  return [
+    row.displayName,
+    row.name,
+    row.sectorName,
+    row.summary,
+    row.lead,
+    row.value,
+    ...row.milestones.map((milestone) => milestone.text),
+    ...row.sources.map((source) => source.label),
+  ].filter(Boolean);
+}
+
+function filterRowsBySearch(rows, query) {
+  const normalizedQuery = query.trim().replace(/\s+/g, " ").toLocaleLowerCase();
+
+  if (!normalizedQuery) {
+    return rows;
   }
 
-  if (filterId === "group:enabler") {
-    return copy.categoryFilters.enablers;
+  // A complete phrase must occur within one public field. This deliberately
+  // avoids loose multi-token matches spread across unrelated card content.
+  return rows.filter((row) =>
+    getSearchableProjectFields(row).some((field) =>
+      field.toLocaleLowerCase().includes(normalizedQuery)
+    )
+  );
+}
+
+function getInitialSearchQuery() {
+  if (typeof window === "undefined") {
+    return "";
   }
 
-  if (filterId.startsWith("category:")) {
-    return rows.find((row) => row.sectorId === filterId.slice("category:".length))?.sectorName || null;
-  }
-
-  return null;
+  return new URLSearchParams(window.location.search).get("q") || "";
 }
 
 function getMilestoneCountLabel(row, copy) {
@@ -506,51 +527,11 @@ function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAl
   );
 }
 
-function FilterBar({
-  activeClassificationLabel,
-  copy,
-  onClearClassification,
-  resultCount,
-}) {
+function ProjectResultStatus({ copy, resultCount }) {
   return (
-    <div
-      style={{
-        display: activeClassificationLabel ? "grid" : "block",
-        gap: "9px",
-        marginBottom: activeClassificationLabel ? "16px" : 0,
-      }}
-    >
-      {activeClassificationLabel && (
-        <button
-          className="classification-clear-button"
-          type="button"
-          onClick={onClearClassification}
-          aria-label={copy.categoryFilters.clearActive(activeClassificationLabel)}
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            justifySelf: "start",
-            gap: "7px",
-            minHeight: "30px",
-            padding: "6px 10px",
-            borderRadius: "999px",
-            cursor: "pointer",
-            fontFamily: FONT_STACK,
-            fontSize: "11px",
-            fontWeight: 800,
-          }}
-        >
-          <span style={{ color: "var(--text-muted)", fontWeight: 700 }}>
-            {copy.categoryFilters.filteredBy}
-          </span>
-          <span>{activeClassificationLabel}</span>
-          <span aria-hidden="true" style={{ fontSize: "14px", lineHeight: 1 }}>×</span>
-        </button>
-      )}
-      <span className="visually-hidden" aria-live="polite">
-        {copy.categoryFilters.results(resultCount)}
-      </span>
-    </div>
+    <span className="visually-hidden" aria-live="polite">
+      {copy.categoryFilters.results(resultCount)}
+    </span>
   );
 }
 
@@ -1032,19 +1013,14 @@ function NextMilestoneCallout({ row, expanded, copy, language }) {
 }
 
 function ProjectCard({
-  activeClassificationFilter,
   filterIndex = 0,
   row,
   expanded,
-  onCategoryFilter,
-  onKindFilter,
   onToggle,
   copy,
   language,
 }) {
   const cardBorderColor = "var(--border-strong)";
-  const kindFilterId = `group:${row.kind}`;
-  const categoryFilterId = `category:${row.sectorId}`;
   const cardAnchor = getProjectAnchor(row.name);
   const cardButtonId = `${cardAnchor}-toggle`;
   const detailIds = {
@@ -1082,14 +1058,10 @@ function ProjectCard({
         }}
       >
         <ProjectClassificationBadge
-          activeCategory={activeClassificationFilter === categoryFilterId}
-          activeKind={activeClassificationFilter === kindFilterId}
           color={row.sectorColor}
           copy={copy}
           kind={row.kind}
           name={row.sectorName}
-          onCategoryFilter={() => onCategoryFilter(row.sectorId)}
-          onKindFilter={() => onKindFilter(row.kind)}
         />
       </div>
       <button
@@ -1232,12 +1204,9 @@ function ProjectCard({
 }
 
 function ProjectGrid({
-  activeClassificationFilter,
   filterPhase,
   rows,
   expandedIds,
-  onCategoryFilter,
-  onKindFilter,
   onToggle,
   copy,
   language,
@@ -1257,13 +1226,10 @@ function ProjectGrid({
     >
       {rows.map((row, index) => (
         <ProjectCard
-          activeClassificationFilter={activeClassificationFilter}
           filterIndex={Math.round((index / filterIndexDenominator) * maxFilterIndex)}
           key={row.id}
           row={row}
           expanded={expandedIds.includes(row.id)}
-          onCategoryFilter={onCategoryFilter}
-          onKindFilter={onKindFilter}
           onToggle={() => onToggle(row.id)}
           copy={copy}
           language={language}
@@ -1288,6 +1254,187 @@ function HeaderControls({ language, onNavigate, onThemeToggle, copy }) {
   );
 }
 
+function DiscoveryControls({
+  activeClassificationFilter,
+  copy,
+  onClassificationFilter,
+  onSearchChange,
+  query,
+  rows,
+}) {
+  const classificationStripRef = useRef(null);
+  const [canScrollClassificationBack, setCanScrollClassificationBack] = useState(false);
+  const [canScrollClassificationForward, setCanScrollClassificationForward] = useState(false);
+  const classificationOptions = [
+    { id: "all", label: copy.classificationFilters.all },
+    ...Array.from(
+      new Map(
+        rows.map((row) => [
+          row.sectorId,
+          { id: `category:${row.sectorId}`, label: row.sectorName },
+        ])
+      ).values()
+    ).sort((a, b) => a.label.localeCompare(b.label)),
+  ];
+  const classificationOptionCount = classificationOptions.length;
+
+  useEffect(() => {
+    const strip = classificationStripRef.current;
+
+    if (!strip) {
+      return undefined;
+    }
+
+    const updateScrollControls = () => {
+      const maximumScrollLeft = Math.max(0, strip.scrollWidth - strip.clientWidth);
+      setCanScrollClassificationBack(strip.scrollLeft > 2);
+      setCanScrollClassificationForward(strip.scrollLeft < maximumScrollLeft - 2);
+    };
+
+    updateScrollControls();
+    strip.addEventListener("scroll", updateScrollControls, { passive: true });
+    window.addEventListener("resize", updateScrollControls);
+
+    return () => {
+      strip.removeEventListener("scroll", updateScrollControls);
+      window.removeEventListener("resize", updateScrollControls);
+    };
+  }, [classificationOptionCount]);
+
+  useEffect(() => {
+    const strip = classificationStripRef.current;
+
+    if (!strip) {
+      return undefined;
+    }
+
+    const ensureSelectedOptionIsVisible = () => {
+      const selectedOption = Array.from(strip.children).find(
+        (option) => option.dataset.classificationFilter === activeClassificationFilter
+      );
+
+      if (!selectedOption) {
+        return;
+      }
+
+      const stripRect = strip.getBoundingClientRect();
+      const optionRect = selectedOption.getBoundingClientRect();
+      const edgeInset = 44;
+      let scrollOffset = 0;
+
+      if (optionRect.left < stripRect.left + edgeInset) {
+        scrollOffset = optionRect.left - stripRect.left - edgeInset;
+      } else if (optionRect.right > stripRect.right - edgeInset) {
+        scrollOffset = optionRect.right - stripRect.right + edgeInset;
+      }
+
+      if (scrollOffset !== 0) {
+        strip.scrollBy({
+          left: scrollOffset,
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        });
+      }
+    };
+
+    const frameId = window.requestAnimationFrame(ensureSelectedOptionIsVisible);
+    window.addEventListener("resize", ensureSelectedOptionIsVisible);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      window.removeEventListener("resize", ensureSelectedOptionIsVisible);
+    };
+  }, [activeClassificationFilter]);
+
+  return (
+    <section className="discovery-controls" aria-label={copy.discovery.label}>
+      <div
+        className={`classification-filter-area${canScrollClassificationBack ? " classification-filter-area--can-back" : ""}${canScrollClassificationForward ? " classification-filter-area--can-forward" : ""}`}
+      >
+        <button
+          className="classification-filter-scroll classification-filter-back"
+          type="button"
+          aria-label={copy.classificationFilters.scrollBackward}
+          disabled={!canScrollClassificationBack}
+          onClick={() => classificationStripRef.current?.scrollBy({ left: -260, behavior: "smooth" })}
+        >
+          <span aria-hidden="true">‹</span>
+        </button>
+        <div
+          className="classification-filter-strip"
+          role="group"
+          aria-label={copy.classificationFilters.label}
+          ref={classificationStripRef}
+        >
+          {classificationOptions.map((option) => (
+            <button
+              type="button"
+              key={option.id}
+              data-classification-filter={option.id}
+              className={`classification-filter-option${activeClassificationFilter === option.id ? " classification-filter-option--active" : ""}`}
+              onClick={() => onClassificationFilter(
+                activeClassificationFilter !== "all" && activeClassificationFilter === option.id
+                  ? "all"
+                  : option.id
+              )}
+              aria-pressed={activeClassificationFilter === option.id}
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
+        <button
+          className="classification-filter-scroll classification-filter-forward"
+          type="button"
+          aria-label={copy.classificationFilters.scrollForward}
+          disabled={!canScrollClassificationForward}
+          onClick={() => classificationStripRef.current?.scrollBy({ left: 260, behavior: "smooth" })}
+        >
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
+      <div className="project-search">
+        <label className="visually-hidden" htmlFor="project-search-input">
+          {copy.discovery.searchLabel}
+        </label>
+        <span className="project-search-icon" aria-hidden="true">
+          <svg viewBox="0 0 20 20" focusable="false">
+            <circle cx="8.5" cy="8.5" r="5.5" />
+            <path d="m12.5 12.5 4 4" />
+          </svg>
+        </span>
+        <input
+          id="project-search-input"
+          type="search"
+          value={query}
+          onChange={(event) => onSearchChange(event.target.value)}
+          placeholder=""
+          autoComplete="off"
+          spellCheck="false"
+        />
+        {query && (
+          <button
+            type="button"
+            className="project-search-clear"
+            onClick={() => onSearchChange("")}
+            aria-label={copy.discovery.clearSearch}
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function NoResults({ copy, query }) {
+  return (
+    <div className="project-empty-state" role="status">
+      <p>{query ? copy.discovery.noSearchResults(query) : copy.discovery.noFilteredResults}</p>
+      <span>{copy.discovery.refineHint}</span>
+    </div>
+  );
+}
+
 function renderIntroParagraph(paragraph, programmeName) {
   const programmeNameStart = paragraph.indexOf(programmeName);
 
@@ -1307,6 +1454,7 @@ function renderIntroParagraph(paragraph, programmeName) {
 export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRef }) {
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeClassificationFilter, setActiveClassificationFilter] = useState("all");
+  const [searchQuery, setSearchQuery] = useState(getInitialSearchQuery);
   const [expandedIds, setExpandedIds] = useState([]);
   const [filterPhase, setFilterPhase] = useState(null);
   const filterExitTimerRef = useRef(null);
@@ -1325,22 +1473,28 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
     }
   }, []);
 
+  useEffect(() => {
+    const updateSearchFromLocation = () => {
+      setSearchQuery(getInitialSearchQuery());
+    };
+
+    window.addEventListener("popstate", updateSearchFromLocation);
+    return () => window.removeEventListener("popstate", updateSearchFromLocation);
+  }, []);
+
   const localizedSectors = localizeSectors(SECTORS, language);
   const rows = sortProjectRows(getProjectRows(localizedSectors, copy), language);
   const selectedFilter = filters.find((filter) => filter.id === activeFilter) || filters[0];
   const filteredRows = sortProjectRows(
-    filterRowsByClassification(
-      filterRowsByStatus(rows, selectedFilter),
-      activeClassificationFilter
+    filterRowsBySearch(
+      filterRowsByClassification(
+        filterRowsByStatus(rows, selectedFilter),
+        activeClassificationFilter
+      ),
+      searchQuery
     ),
     language
   );
-  const activeClassificationLabel = getClassificationFilterLabel(
-    rows,
-    activeClassificationFilter,
-    copy
-  );
-
   const transitionFilter = (updateFilter) => {
     if (filterExitTimerRef.current) {
       window.clearTimeout(filterExitTimerRef.current);
@@ -1376,26 +1530,31 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
     setExpandedIds([]);
     transitionFilter(() => setActiveFilter(filterId));
   };
-  const toggleKindFilter = (kind) => {
-    const filterId = `group:${kind}`;
+  const setGlobalClassificationFilter = (filterId) => {
     setExpandedIds([]);
-    transitionFilter(() => {
-      setActiveClassificationFilter((current) => current === filterId ? "all" : filterId);
-    });
+    transitionFilter(() => setActiveClassificationFilter(filterId));
   };
-  const toggleCategoryFilter = (sectorId) => {
-    const filterId = `category:${sectorId}`;
+  const handleSearchChange = (nextQuery) => {
     setExpandedIds([]);
-    transitionFilter(() => {
-      setActiveClassificationFilter((current) => current === filterId ? "all" : filterId);
-    });
-  };
-  const clearClassificationFilter = () => {
-    setExpandedIds([]);
-    transitionFilter(() => setActiveClassificationFilter("all"));
+    setSearchQuery(nextQuery);
+
+    try {
+      const nextUrl = new URL(window.location.href);
+      const normalizedQuery = nextQuery.trim();
+
+      if (normalizedQuery) {
+        nextUrl.searchParams.set("q", normalizedQuery);
+      } else {
+        nextUrl.searchParams.delete("q");
+      }
+
+      window.history.replaceState(window.history.state, "", nextUrl);
+    } catch {
+      // Search remains useful when the browser does not permit URL updates.
+    }
   };
   const allProjectIds = rows.map((row) => row.id);
-  const allProjectsVisible = activeFilter === "all" && activeClassificationFilter === "all";
+  const allProjectsVisible = activeFilter === "all" && activeClassificationFilter === "all" && !searchQuery.trim();
   const allProjectsExpanded = allProjectIds.length > 0 && allProjectIds.every((id) => expandedIds.includes(id));
   const allVisibleExpanded = allProjectsVisible && allProjectsExpanded;
   const toggleAllVisible = () => {
@@ -1409,6 +1568,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
       transitionFilter(() => {
         setActiveFilter("all");
         setActiveClassificationFilter("all");
+        handleSearchChange("");
         setExpandedIds(allProjectIds);
       });
       return;
@@ -1424,7 +1584,6 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
       // Theme selection still works for this session when storage is unavailable.
     }
   };
-
   return (
     <div
       className="app-shell"
@@ -1724,29 +1883,31 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
           />
         </div>
 
+        <DiscoveryControls
+          activeClassificationFilter={activeClassificationFilter}
+          copy={copy}
+          onClassificationFilter={setGlobalClassificationFilter}
+          onSearchChange={handleSearchChange}
+          query={searchQuery}
+          rows={rows}
+        />
+
         <section
           id="projects"
           tabIndex={-1}
           aria-label={copy.accessibility.projects}
           style={{ scrollMarginTop: "24px" }}
         >
-          <FilterBar
-            activeClassificationLabel={activeClassificationLabel}
-            copy={copy}
-            onClearClassification={clearClassificationFilter}
-            resultCount={filteredRows.length}
-          />
+          <ProjectResultStatus copy={copy} resultCount={filteredRows.length} />
           <ProjectGrid
-            activeClassificationFilter={activeClassificationFilter}
             filterPhase={filterPhase}
             rows={filteredRows}
             expandedIds={expandedIds}
-            onCategoryFilter={toggleCategoryFilter}
-            onKindFilter={toggleKindFilter}
             onToggle={toggleExpanded}
             copy={copy}
             language={language}
           />
+          {filteredRows.length === 0 && <NoResults copy={copy} query={searchQuery.trim()} />}
         </section>
 
         <SiteFooter

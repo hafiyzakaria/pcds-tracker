@@ -45,8 +45,8 @@ milestones and links to public sources.` The social-preview card keeps its separ
 
 Summary metric boxes provide simple status navigation before readers scan the project cards. Their
 active, hover, focus, and press states make the filtering behavior discoverable without duplicating
-the same choices in a second pill group. The active classification-clear chip remains separate because
-category filters originate inside the project cards.
+the same choices in a second pill group. Category filtering uses the separate horizontal discovery
+row; its highlighted category is the only visible category-state indicator.
 
 The language, theme, and navigation pills use one shared physical system: a fully rounded capsule,
 an `11px` label, and a `36px` total height on desktop. The language control retains its segmented
@@ -145,7 +145,8 @@ Important components:
 
 - `EnvironmentBadge`
 - `SummaryMetrics`
-- `FilterBar`
+- `DiscoveryControls`
+- `ProjectResultStatus`
 - `ProjectGrid`
 - `ProjectCard`
 - `StatusBadge`
@@ -202,6 +203,9 @@ Current interactions:
   independently. Reduced-motion preferences show the final values immediately.
   On mobile, the milestone summary uses the shared brand teal for its progress fill against the
   neutral theme-aware track.
+  The project search remains visually quiet at rest, showing only the search icon without visible
+  placeholder text. A compact × clear control appears at the far right only while the field contains
+  text. The input and clear action retain localized accessible labels in both languages.
   The `Milestones` metric uses `aria-expanded` to reset status and category filters, show all projects,
   and expand their details; clicking it again collapses all projects. While it is active, the status
   metrics remain available but are visually unselected. Choosing another status or category filter
@@ -210,18 +214,12 @@ Current interactions:
   status or category filter briefly fades the current card grid out, then reveals the filtered cards
   with a short lead-in, a row-aware stagger, and a restrained scale transition; reduced-motion
   preferences bypass this transition.
-- Each project card's joined classification pill keeps one stable two-tone silhouette. The `Sector`
-  or `Enabler` segment filters the broad group, while the named segment filters the specific category.
-  A single shared accent surface uses the SmoothUI Animated Tabs motion pattern to slide between the
-  two fixed segments over `250ms` on hover, keyboard focus, and selection; no width, padding, overlap,
-  or card geometry changes during the animation. Touch layouts keep the same joined geometry and show
-  the selected accent after a press. Mobile cards reserve only the chevron's space for this control
-  without forcing short pills to fill that available width. Long category labels can grow up to the
-  reserved boundary and wrap inside the pill rather than hiding behind an ellipsis. The interaction
-  remains self-contained, with the hover and focus motion providing the affordance without a duplicate
-  tooltip. The pill interaction respects reduced-motion preferences. A compact active-filter pill remains above the
-  grid so a classification filter can always be cleared, including when its combination with a status
-  filter returns no cards.
+- Each project card's joined classification pill keeps one stable two-tone silhouette as a static
+  identity label. It no longer morphs or filters the grid. Specific category filtering belongs to the
+  horizontal row beneath the metrics, which can be combined with status and search. Pressing the
+  selected category again returns to `All`; the row automatically scrolls to keep the selected option
+  visible. Mobile cards reserve only the chevron's space for the label, and long category names may
+  wrap within that boundary.
 - Project cards expand and collapse. A collapsed card's `View details` control rests as a bare down
   chevron inside a fixed hit area; expanded cards use the same control with an up chevron. Hover or
   keyboard focus on hover-capable devices, including hovering the card itself, reveals a soft neutral

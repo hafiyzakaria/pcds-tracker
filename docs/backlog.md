@@ -150,6 +150,24 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ## 2. Should Improve Soon
 
+### Revisit the full-bleed navigation and editorial hero prototype
+
+- Preserved direction: A local August 2026 prototype combined a full-width teal-tinted navigation
+  bar and hero, favicon-led site identity, Home and Updates links, a single-language toggle, a
+  centred two-line editorial headline, and a 295px desktop hero aligned to the KampungSpirit
+  reference proportions.
+- Current decision: Keep the established Production header and hero. The prototype made navigation
+  clearer and created a stronger landing-page identity, but it also displaced the tracker-first
+  hierarchy and needs a broader product decision before returning.
+- Revisit boundary: Treat this as a coordinated header and hero redesign rather than adopting its
+  pieces individually. Reassess the information architecture, mobile header density, language
+  control, title copy, and the relationship between the hero, metrics, filters, and search.
+- Suggested first task: Recreate the prototype on a temporary branch from this documented direction,
+  compare it with the current Production header at desktop and mobile sizes, and seek explicit
+  approval before changing Preview again.
+- Estimated difficulty: medium
+- Risk level: medium
+
 ### Review the 50-unit PDF-derived future-candidate pool
 
 - What needs to be done: Work through the 50 remaining identity-verified units recorded in the
