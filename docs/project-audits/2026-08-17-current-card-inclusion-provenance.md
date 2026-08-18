@@ -6,6 +6,11 @@
 - Method: [data methodology](../data-methodology.md), [project research template](../project-research-template.md), and [data review checklist](../data-review-checklist.md)
 - Decision authority: the three component relationships and the two monitored dispositions were approved by the site owner on 17 August 2026
 
+> **18 August 2026 follow-up:** SMART and the combined CSTR programme were added as direct cards.
+> The register now contains 52 audited identities: 50 active and two monitored, with 35 direct,
+> 12 official-linked, three component and two unconfirmed records. The SMD GaN `trackedUnit` was
+> corrected from `programme` to `component`; its approved inclusion tier did not change.
+
 ## Result
 
 | Inclusion outcome | Count | Active after review |

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-08-17",
+  "reviewedOn": "2026-08-18",
   "scope": {
-    "auditedCardCount": 50,
-    "expectedActiveCount": 48,
+    "auditedCardCount": 52,
+    "expectedActiveCount": 50,
     "expectedMonitoredCount": 2,
     "expectedManualComponentApprovalCount": 3
   },
@@ -31,7 +31,7 @@
       "categoryId": "manufacturing",
       "disposition": "active",
       "reviewClass": "manual_component_approval",
-      "trackedUnit": "programme",
+      "trackedUnit": "component",
       "inclusion": { "decision": "included", "tier": "component", "basis": [{ "source": "initiatives", "locator": "PDF p.24", "relationship": "GaN is a later delivery output of the official SMD semiconductor and chip-design programme" }] },
       "identityChecked": true,
       "scopeResolved": true,
@@ -304,6 +304,15 @@
       "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
     },
     {
+      "canonicalName": "SMA Rural Telecommunication (SMART)",
+      "categoryId": "digital-transformation",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "aip-enablers", "locator": "PDF p.160", "relationship": "Named PCDS rural-telecommunications programme" }, { "source": "highlights", "locator": "PDF p.75", "relationship": "Named PCDS digital-connectivity initiative" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://sdec.com.my/web/2025/08/14/rapatkan-jurang-digital-luar-bandar-projek-smart600-perkasa-kesalinhubungan-sarawak-dengan-sokongan-mcmc/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-18", "followUp": null
+    },
+    {
       "canonicalName": "FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade",
       "categoryId": "infrastructure",
       "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
@@ -311,6 +320,15 @@
       "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
       "liveEvidenceUrl": "https://jkr.sarawak.gov.my/web/subpage/news_view/614",
       "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Coastal Road Network and Second Trunk Road (CSTR)",
+      "categoryId": "infrastructure",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "combined_card",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF pp.103-104", "relationship": "Paired named PCDS road-programme components consolidated into one direct combined card to avoid duplicate component cards" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://investsarawak.gov.my/sarawaks-coastal-road-network-77-9-pct-complete-second-trunk-roadprogressing-with-15-projects-underway/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-18", "followUp": null
     },
     {
       "canonicalName": "SCORE — Sarawak Corridor of Renewable Energy",

@@ -39,7 +39,7 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-17`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-18`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
@@ -443,6 +443,14 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Gaps or uncertainty: no updated project plan, investment value, or production timeline has been published. Former 2027, 2028, 2029, and 2030 delivery targets are historical planning references and are not retained after the 2026 recalibration. Final investment decisions, construction, and commercial production remain undated open outcomes because the earlier official project sequence identifies these delivery stages but newer evidence does not provide replacement dates.
 - Editorial update-history decision: no new entry. The existing 9 June 2026 recalibration entry remains the latest material public development; the added milestones document earlier project stages.
 
+### Candidate Additions Approved on 18 August 2026
+
+- SMA Rural Telecommunication (SMART) - `In Progress`; value: `Not disclosed`. The direct PCDS rural-connectivity programme is represented by the current SMART600 delivery scope, which deploys carrier-neutral towers and enables MySRBN home broadband for underserved communities. SDEC pages support the August 2022 Nanga Sekukut launch, towers operating with MySRBN by March 2024, the July 2025 MCMC-SDEC operating-support agreement, and continuing active SMART infrastructure in July 2026. Conflicting July 2025 tower totals are excluded from the card, the historical RM5.5 billion figure belongs to an earlier 1,500-tower PDF scope, and the RM8.99 million figure is statewide vandalism loss rather than project value.
+- Coastal Road Network and Second Trunk Road (CSTR) - `In Progress`; value: `RM11 billion`, the transparent combined programme figure formed by InvestSarawak's RM5.42 billion Coastal Road Network and RM5.58 billion Second Trunk Road component values. The combined card avoids duplicate component cards and introduces the statewide road, bridge and rehabilitation programme. DayakDaily's 17 August 2026 report supports the active Sejingkat Bridge package and its 1 October 2026 opening target; older programme-wide progress percentages are not presented as current.
+- Inclusion decision: both cards use the `direct` tier. SMART is a `programme`; CSTR is a `combined_card`. The existing SMD GaN card's `trackedUnit` was corrected from `programme` to `component` so its metadata matches its approved component tier and rationale.
+- Editorial update-history decision: the Sejingkat Bridge opening update is retained because it is a material current delivery development for CSTR. SMART's July 2026 resilience visit remains a status source rather than a separate update-history entry.
+- Dated decision record: [PDF and online verification audit](project-audits/2026-08-16-pdf-online-verification-audit.md), 18 August implementation section.
+
 ### Provisional Additions Revalidated on 10 July 2026
 
 - Pan Borneo Highway Sarawak Phase 1 - `In Progress`; value: RM16.5 billion construction cost. Ten of 11 work packages were complete by October 2025. Sarawak Tribune's March 2025 report gave a Q4 2025 target for most of Work Package 11 and an October 2027 target for its four-kilometre Lambir section, but its newer December 2025 report supersedes those dates after water-pipe replacement and scope negotiations, scheduling full Work Package 11 completion for Q1 2029. The open milestone therefore uses `2029-Q1`; sources: The Edge Malaysia and Sarawak Tribune.
@@ -512,8 +520,8 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 The app derives display rows by flattening `SECTORS` into project rows and excluding the overview category:
 
-- Active rendered projects: 48.
-- Stored projects including overview: 49.
+- Active rendered projects: 50.
+- Stored projects including overview: 51.
 - PCDS economic sectors represented in data: 6.
 - PCDS enablers represented in data: 7.
 - Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, mining, social-services.
@@ -521,7 +529,7 @@ The app derives display rows by flattening `SECTORS` into project rows and exclu
 
 Current active dashboard status counts from `src/trackerData.js`:
 
-- `In Progress`: 33.
+- `In Progress`: 35.
 - `Awaiting Decision`: 0.
 - `Planning`: 7.
 - `Operational`: 4.
@@ -536,11 +544,11 @@ The UI groups detailed statuses into public filter labels:
 
 Current public display counts:
 
-- Tracked projects: 48.
+- Tracked projects: 50.
 - Planning: 7.
-- Ongoing: 33.
+- Ongoing: 35.
 - Completed: 8.
-- Milestones: 137 completed out of 210 active-project milestones.
+- Milestones: 141 completed out of 217 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 

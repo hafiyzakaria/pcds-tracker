@@ -150,14 +150,15 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ## 2. Should Improve Soon
 
-### Review the 53-unit PDF-derived future-candidate pool
+### Review the 50-unit PDF-derived future-candidate pool
 
-- What needs to be done: Work through the 53 identity-verified units recorded in the
+- What needs to be done: Work through the 50 remaining identity-verified units recorded in the
   [16 August 2026 PDF and online verification audit](project-audits/2026-08-16-pdf-online-verification-audit.md)
   in evidence-depth batches of four to six.
 - Why it matters: The PDF sweep found 81 online-verifiable units. After the 17 August disposition
-  changes, 27 units are represented by 21 active cards and the Sarawak High Performance Centre is
-  already recorded separately as monitored. The remaining 53-unit candidate pool contains credible
+  changes and the 18 August SMART and CSTR additions, 30 units are represented by 23 active cards
+  and the Sarawak High Performance Centre is already recorded separately as monitored. The remaining
+  50-unit candidate pool contains credible
   project leads alongside programmes, services, events, institutions, umbrella scopes, and possible
   duplicates.
 - Scope boundary: Resolve overlap and tracked-unit identity before adding anything. Online identity
@@ -166,9 +167,9 @@ This backlog documents known issues and recommended next tasks for the next deve
 - Inclusion gate: Do not add another card until it has a unique record in
   `audit/project-inclusion.json`, an accepted `direct`, `official_linked`, or manually approved
   `component` tier, and passes `npm run check:content`. Keep `unconfirmed` candidates monitored.
-- Suggested first task: Review the nine overlap decisions, then audit the strongest discrete
-  infrastructure candidates, including Coastal Road Network, Second Trunk Road, Sarawak Virtual
-  Pipeline System, SMA Rural Telecommunication, and the Kuching Port quay cranes.
+- Suggested first task: Audit the next discrete and identity-resolution batch, starting with Sarawak
+  Rural Broadband Network, Miri Smart City, Old Kuching Smart Heritage, the Pig Farming Area
+  Initiative, Sama Jaya Free Industrial Zone, and Samalaju Industrial Park.
 - Estimated difficulty: high
 - Risk level: high
 

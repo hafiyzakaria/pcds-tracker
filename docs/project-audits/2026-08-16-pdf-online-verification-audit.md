@@ -120,3 +120,71 @@ Screening routes:
 4. For any candidate retained after scope review, run the full value, lead-role, lifecycle, status, counter-search, source-quality, and BM-parity audit before proposing a card.
 
 No candidate in this document should be added solely because it appears in a PCDS PDF and has one qualifying public page.
+
+## 17 August 2026 follow-up depth review
+
+This follow-up resolves the nine overlap cases and applies the full inclusion, identity, value,
+lifecycle, role and live-source gate to the first five discrete candidates. It is an approval record,
+not implementation. No tracker card or inclusion-register record changed in this review.
+
+### Overlap decisions
+
+| Candidate | Decision | Evidence boundary and follow-up |
+| --- | --- | --- |
+| Collection, Processing and Packaging Centre / Food Terminal programme | Do not add as one card | The AIP identifies a multi-site facilities programme. Review named facilities only when a current official page establishes their individual delivery boundary and outcome. |
+| Kuching hydrogen production plant and refuelling station | Keep as KUTS and hydrogen-mobility context | The 2019 demonstration facility is completed enabling infrastructure, not a current standalone delivery programme. Reconsider only after a distinct upgrade or replacement project is announced. |
+| Lingga-Banting paddy farm-infrastructure project | Distinct candidate, deferred | PCDS Highlights p.30 establishes a separate RM153.6 million irrigation and drainage asset. It is not the statewide paddy programme or the Lubok Punggor project, but no current public page confirms its passed March 2026 completion target. |
+| One-Stop Early Intervention Centre, Kuching | Distinct candidate, deferred | It is a separate location-specific facility from the active OSEIC Miri card. A facility-specific current status, value or open delivery outcome is still required. |
+| Rembus Hydrogen Plant and Refuelling Station | Keep as KUTS milestone context | It is the current KUTS fuel-supply enabling facility. The RM526 million and USD4.2 billion figures are wider combined commitments, not a Rembus-only value. Confirm commissioning after the conflicting Q2 and Q4 2026 targets before completing the milestone. |
+| S-MM2H Management and Online Application System | Do not add under current product scope | The AIP treats the online system as a direct PCDS unit separate from the wider S-MM2H programme, but it is an operating digital service rather than a major project card under the current boundary. |
+| Sarawak Microelectronics Design semiconductor collaboration | Keep as inclusion context for the active GaN card | The collaboration is the wider programme; GaN is its approved trackable output. The inclusion register should later correct the GaN card's `trackedUnit` from `programme` to `component` so it matches its approved tier and rationale. |
+| Sarawak-Malaysia My Second Home Programme | Do not add under current product scope | The broader visa, policy, promotion and one-stop-centre programme is distinct from its online application system but remains a service programme rather than a major delivery card. |
+| Sungai Baji Food Terminal | Keep within the active Sungai Baji Agropark card | RECODA's 2 April 2022 page states that the 2,367-square-metre terminal is located within the 127-hectare park and that RECODA is its implementing agency. Programme-level and conflicting terminal figures must not replace the agropark's value. |
+
+### First discrete-candidate batch
+
+| Candidate | Inclusion and identity | Live evidence decision | Recommendation |
+| --- | --- | --- | --- |
+| Coastal Road Network | Direct PCDS component of the CSTR programme | InvestSarawak records a RM5.42 billion network of road, bridge and rehabilitation packages. Current 17 August reporting confirms the RM365.74 million Sejingkat Bridge remains under construction for an October 2026 opening. | Manual tracked-unit review. Prefer one combined CSTR programme card unless separate component cards can maintain independent values and lifecycle outcomes. |
+| Second Trunk Road | Direct PCDS component of the CSTR programme | InvestSarawak separately records RM5.58 billion and 20 work packages, but the available programme schedule is not a current package-by-package completion record. | Manual tracked-unit review together with Coastal Road Network. Do not create two cards by default. |
+| Sarawak Virtual Pipeline System | Direct PCDS LNG-trucking pilot, distinct from the Bintulu-Samalaju fixed pipeline | DayakDaily reported on 1 December 2025 that operations were targeted for Q1 2026. No public confirmation of operations, delay or revised schedule was found by 17 August 2026. | Monitor. The passed target triggers re-review but does not prove operation; defer an active card until the current delivery state is clarified. |
+| SMA Rural Telecommunication (SMART) | Direct PCDS rural-connectivity programme; the current delivery scope is SMART600 | SDEC reported 587 of 600 towers built and 431 on air on 9 July 2025, then confirmed active SMART sites and continuing resilience work in July 2026. A separate July 2025 report used 603 of 618 and 502 on-air, so the card must avoid an unreconciled precise progress count. | Ready for approval as an `In Progress` programme card with `Not disclosed` value and an open remaining-tower activation outcome. |
+| Two New Quay Cranes for Kuching Port Authority | Direct PCDS equipment project at Senari Terminal Two | MIPD's 5 March 2024 page confirms handover of QC6 and QC7, the RM70 million acquisition value, and the intended increase in handling capacity. The earlier assembly and factory-acceptance stage remains PDF-only. | Defer pending manual product review or another live source. A handover-only lifecycle is too thin for a credible project card, and the PDF-only preceding stage must not be displayed. |
+
+### Source and value decisions
+
+- [SDEC, SMART600 rollout and operating-support agreement, 9 July 2025](https://sdec.com.my/web/2025/08/14/rapatkan-jurang-digital-luar-bandar-projek-smart600-perkasa-kesalinhubungan-sarawak-dengan-sokongan-mcmc/) supports the two-phase 600-tower scope, 587 completed towers, 431 activated towers, SDEC implementation lead and the MCMC/operator OPEX arrangement.
+- [SDEC, SMART site resilience visit, 25 July 2026](https://sdec.com.my/web/2026/08/05/minister-visits-smart-sites-at-sungai-rayah-to-review-anti-vandalism-measures-and-strengthen-infrastructure-resilience/) confirms that SMART sites remain active infrastructure. The RM8.99 million vandalism loss is statewide telecommunications damage, not a SMART project value.
+- [DayakDaily, VPS Q1 2026 operations target, 1 December 2025](https://dayakdaily.com/swaks-virtual-pipeline-set-for-q1-2026-launch-kuching-low-carbon-hub-to-spearhead-new-gas-network/) supports the LNG transport scope and target only. The historical AIP RM1 billion plan remains PDF-only and is not accepted as a live-card value.
+- [RECODA, Sungai Baji food-terminal site visit, 2 April 2022](https://recoda.gov.my/work-visit-to-sungai-baji-agro-park-sarikei-to-inspect-food-terminal-project/) resolves the terminal as a facility within the agropark.
+- [InvestSarawak, CSTR programme status and values](https://investsarawak.gov.my/sarawaks-coastal-road-network-77-9-pct-complete-second-trunk-roadprogressing-with-15-projects-underway/) supports separate RM5.42 billion and RM5.58 billion programme-component values, but its body reproduces an older schedule and does not by itself prove current package completion.
+- [DayakDaily, Sejingkat Bridge status, 17 August 2026](https://dayakdaily.com/sejingkat-bridge-on-track-to-open-to-traffic-by-oct-1/) supports an active Coastal Road Network subproject and an October 2026 opening target.
+- [MIPD, Senari quay-crane handover, 5 March 2024](https://mipd.sarawak.gov.my/web/subpage/news_view/467) supports the RM70 million value, QC6 and QC7 identity, Kuching Port Authority handover and expected handling-capacity improvement.
+
+### Approval boundary
+
+The recommended first implementation candidate is SMART. The two Senari quay cranes remain a
+manual product decision because their live-source lifecycle is limited to the handover. A combined
+Coastal Road Network and Second Trunk Road programme card requires the site owner's tracked-unit
+decision before implementation. VPS remains monitored, and every overlap case remains merged,
+deferred or outside the current product scope. Any approved addition still requires BM parity, a
+unique inclusion-register record, content validation and four-route Preview review.
+
+## 18 August 2026 approved implementation
+
+The site owner approved the recommended SMART addition, selected one combined CSTR programme card
+instead of separate Coastal Road Network and Second Trunk Road cards, and approved the SMD GaN
+tracked-unit correction.
+
+| Approved item | Implemented result | Evidence and scope safeguard |
+| --- | --- | --- |
+| SMA Rural Telecommunication (SMART) | Added as `SMART Rural Connectivity`, `In Progress`, `Not disclosed`, under Digital Transformation | The card represents the current SMART600 programme, avoids conflicting July 2025 tower totals, rejects the older RM5.5 billion 1,500-tower scope, and keeps remaining tower activation open. |
+| Coastal Road Network and Second Trunk Road | Added as one combined `Coastal Road Network and Second Trunk Road (CSTR)` card, `In Progress`, with a combined `RM11 billion` value | The summary states the RM5.42 billion and RM5.58 billion component values. The current lifecycle uses the active Sejingkat Bridge package and does not present the older programme-wide progress schedule as current. |
+| SMD Semiconductor - GaN Chip Development | Corrected `trackedUnit` from `programme` to `component` | The field now matches its approved `component` tier, manual approval and inclusion rationale. No reader-facing card fact changed. |
+
+The two additions raise the active tracker from 48 to 50 cards. They represent three PDF units, so
+23 active cards now represent 30 of the 81 online-verifiable PDF units. With the Sarawak High
+Performance Centre retained separately as monitored, the future-candidate pool falls from 53 to 50
+units. The two new cards have complete BM parity and unique `direct` inclusion records. A CSTR
+update-history entry records the 17 August 2026 Sejingkat Bridge opening report; SMART's resilience
+visit remains a supporting status source rather than a separate editorial update.

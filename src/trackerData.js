@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-08-17";
+export const LAST_UPDATED = "2026-08-18";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -479,7 +479,30 @@ export const SECTORS = [
     name: "Digital Transformation",
     icon: "\u25c7",
     color: "#7c3aed",
-    projects: [],
+    projects: [
+      {
+        name: "SMA Rural Telecommunication (SMART)",
+        displayName: "SMART Rural Connectivity",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Sarawak Multimedia Authority / SDEC",
+        value: "Not disclosed",
+        summary:
+          "A statewide rural-connectivity programme that deploys carrier-neutral SMART600 towers and enables MySRBN home broadband for underserved communities. SMA owns the programme and SDEC leads implementation, with MCMC and mobile operators supporting service operations.",
+        milestones: [
+          { date: "2022-08-09", text: "SMART launched at Nanga Sekukut", done: true },
+          { date: "2024-03", text: "SMART towers began operating with MySRBN", done: true },
+          { date: "2025-07-09", text: "SMART600 operating-support agreement signed", done: true },
+          { date: "TBD", text: "Remaining SMART600 towers enter service", done: false },
+        ],
+        sources: [
+          { label: "SDEC — SMART launch at Nanga Sekukut (Aug 2022)", url: "https://sdec.com.my/web/2022/08/09/51-smart-projects-planned-to-be-built-in-kapit-division-says-sdec/" },
+          { label: "SDEC — SMART implementation and tower activation (May 2024)", url: "https://sdec.com.my/web/2024/07/09/smart-project-implementation-in-sarawak-by-sdec/" },
+          { label: "SDEC — SMART600 operating-support agreement (Jul 2025)", url: "https://sdec.com.my/web/2025/08/14/rapatkan-jurang-digital-luar-bandar-projek-smart600-perkasa-kesalinhubungan-sarawak-dengan-sokongan-mcmc/" },
+          { label: "SDEC — SMART site resilience visit (Jul 2026)", url: "https://sdec.com.my/web/2026/08/05/minister-visits-smart-sites-at-sungai-rayah-to-review-anti-vandalism-measures-and-strengthen-infrastructure-resilience/" },
+        ],
+      },
+    ],
   },
   {
     id: "innovation",
@@ -661,6 +684,25 @@ export const SECTORS = [
     icon: "\u25a3",
     color: "#e07c3c",
     projects: [
+      {
+        name: "Coastal Road Network and Second Trunk Road (CSTR)",
+        displayName: "Coastal Road Network & Second Trunk Road",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Sarawak Government",
+        value: "RM11 billion",
+        summary:
+          "A statewide road, bridge and rehabilitation programme comprising the Coastal Road Network and Second Trunk Road. Their respective RM5.42 billion and RM5.58 billion values form a combined RM11 billion programme, including the active Sejingkat Bridge package.",
+        milestones: [
+          { date: "2026-08-17", text: "Sejingkat Bridge construction remained on track", done: true },
+          { date: "2026-10-01", text: "Sejingkat Bridge opens to traffic", done: false },
+          { date: "TBD", text: "Remaining CSTR road and bridge packages reach completion", done: false },
+        ],
+        sources: [
+          { label: "InvestSarawak — CSTR component values and reported progress", url: "https://investsarawak.gov.my/sarawaks-coastal-road-network-77-9-pct-complete-second-trunk-roadprogressing-with-15-projects-underway/" },
+          { label: "DayakDaily — Sejingkat Bridge opening target (Aug 2026)", url: "https://dayakdaily.com/sejingkat-bridge-on-track-to-open-to-traffic-by-oct-1/" },
+        ],
+      },
       {
         name: "FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade",
         displayName: "Jalan Serian-Tebedu-Indonesia Border Upgrade",

@@ -3,6 +3,16 @@ import { localizeSectors } from "./localization.js";
 
 const updateDefinitions = [
   {
+    date: "2026-08-17",
+    projectName: "Coastal Road Network and Second Trunk Road (CSTR)",
+    description: {
+      en: "The RM365.74 million Sejingkat Bridge within the Coastal Road Network remained on track to open to traffic by 1 October 2026.",
+      ms: "Jambatan Sejingkat bernilai RM365.74 juta di bawah Rangkaian Jalan Pesisir kekal mengikut jadual untuk dibuka kepada lalu lintas menjelang 1 Oktober 2026.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/sejingkat-bridge-on-track-to-open-to-traffic-by-oct-1/",
+  },
+  {
     date: "2026-07-30",
     projectName: "Sarawak Reef Ball Project",
     description: {

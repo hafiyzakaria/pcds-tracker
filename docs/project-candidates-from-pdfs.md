@@ -575,6 +575,11 @@
 
 ## Programmes / Not Yet Trackable
 
+> **18 August 2026 update:** SMART was admitted as a direct programme card after current SMART600
+> lifecycle verification. Coastal Road Network and Second Trunk Road were admitted as one direct
+> combined CSTR card after the site owner resolved the tracked-unit decision. The historical notes
+> below are retained to show their earlier pre-verification position.
+
 - Borneo Grid / ASEAN Power Grid expansion - the Sustainability Vision presentation shows broad proposed interconnections across Borneo, but only the named Mentarang Induk and Sarawak-Singapore projects have enough public evidence for standalone cards.
 - Smart-grid digitalisation - advanced metering, distribution automation, asset monitoring, field-force automation, and substation surveillance are presented as capabilities rather than one named project with a delivery schedule.
 - Coastal Road Network and Second Trunk Road (CSTR) - RM11 billion and 60 subprojects, including 10 major bridge crossings. It is highly relevant, but should either be tracked as an umbrella programme or split into bridge/road packages after online validation.

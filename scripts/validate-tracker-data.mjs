@@ -29,6 +29,7 @@ const TRACKED_UNITS = new Set([
   "single_asset",
   "phase_or_package",
   "combined_card",
+  "component",
   "shared_system",
   "programme",
   "designation",
@@ -44,13 +45,13 @@ const MONITORED_UNCONFIRMED = new Set([
   "Sarawak High Performance Centre",
 ]);
 const APPROVED_INCLUSION_SCOPE = {
-  auditedCardCount: 50,
-  expectedActiveCount: 48,
+  auditedCardCount: 52,
+  expectedActiveCount: 50,
   expectedMonitoredCount: 2,
   expectedManualComponentApprovalCount: 3,
 };
 const APPROVED_TIER_COUNTS = {
-  direct: 33,
+  direct: 35,
   official_linked: 12,
   component: 3,
   unconfirmed: 2,
