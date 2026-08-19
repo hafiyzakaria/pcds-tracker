@@ -28,7 +28,8 @@ The current product is a small static React site with:
 - A URL-backed project search below the metrics. Its quiet default state shows only the search icon;
   once a query is entered, a right-aligned × control appears to clear it.
 - Last updated indicator beneath the page description, sourced from `LAST_UPDATED` in `src/trackerData.js`.
-- Status filters for all, planning, ongoing, and completed projects.
+- Status filters for all, planning, ongoing, and completed projects. Pressing the selected Planning,
+  Ongoing, or Completed metric a second time resets the status view to all projects.
 - A horizontally scrollable row of specific project categories beneath the metrics, paired with the
   project search. Category and status filters can be combined. The selected category remains visible,
   can be pressed again to return to `All`, and uses `All` as the second explicit reset path.
@@ -41,6 +42,8 @@ The current product is a small static React site with:
   category-colour hover treatment.
 - The last-updated pill rests neutrally, then links directly to the editorial update history with the same restrained hover treatment. The update history has a visible top-level pill back to the matching-language tracker.
 - Expandable project cards with lead parties, reported value, summary, milestones, and source links.
+- Project details expand and collapse individually; the Milestones metric remains a non-interactive
+  progress summary.
 - Two short introductory paragraphs explaining what the tracker covers, its independence, its
   milestone and status content, and its public-source links without adding a separate promotional
   About section. The English second line is `An independent tracker with project status, milestones

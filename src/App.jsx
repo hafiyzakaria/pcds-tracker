@@ -358,7 +358,9 @@ function Metric({
         "aria-label": ariaLabel || `${label}: ${value}`,
         ...(expanded === undefined ? { "aria-pressed": active } : { "aria-expanded": expanded }),
       }
-    : {};
+    : ariaLabel
+      ? { "aria-label": ariaLabel, role: "group" }
+      : {};
 
   return (
     <MetricElement
@@ -402,7 +404,7 @@ function Metric({
   );
 }
 
-function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAll, rows, copy }) {
+function SummaryMetrics({ activeFilter, onFilter, rows, copy }) {
   const planning = rows.filter((row) => row.statusMeta.group === "planning").length;
   const ongoing = rows.filter((row) => row.statusMeta.group === "ongoing").length;
   const completeLike = rows.filter((row) => row.statusMeta.group === "completed").length;
@@ -430,10 +432,9 @@ function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAl
           <Metric
             flatActive={metric.id === "all"}
             key={metric.id}
-            active={!allVisibleExpanded && activeFilter === metric.id}
+            active={activeFilter === metric.id}
             cue={metric.id === "all" ? "projects" : "filter"}
             cuePersistent={
-              !allVisibleExpanded &&
               (metric.id === "all" ? activeFilter !== "all" : activeFilter === metric.id)
             }
             label={metric.label}
@@ -443,23 +444,16 @@ function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAl
         ))}
         <div className="desktop-milestone-metric">
           <Metric
-            active={allVisibleExpanded}
-            ariaLabel={allVisibleExpanded ? copy.card.collapseAll : copy.card.expandAll}
-            expanded={allVisibleExpanded}
-            cue="milestones"
-            cuePersistent={allVisibleExpanded}
+            ariaLabel={copy.milestones.progress(doneMilestones, totalMilestones)}
             label={copy.metrics.milestones}
-            onClick={onToggleAll}
             value={`${doneMilestones}/${totalMilestones}`}
           />
         </div>
       </div>
-      <button
-        type="button"
-        className={`mobile-milestone-summary summary-metric summary-metric--interactive${allVisibleExpanded ? " summary-metric--active" : ""}`}
-        onClick={onToggleAll}
-        aria-expanded={allVisibleExpanded}
-        aria-label={allVisibleExpanded ? copy.card.collapseAll : copy.card.expandAll}
+      <div
+        className="mobile-milestone-summary summary-metric"
+        aria-label={copy.milestones.progress(doneMilestones, totalMilestones)}
+        role="group"
         style={{
           display: "none",
           padding: "16px 18px",
@@ -489,7 +483,6 @@ function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAl
             }}
           >
             {copy.metrics.milestones}
-            <MetricCue type="milestones" expanded={allVisibleExpanded} inline />
           </div>
           <div
             style={{
@@ -522,7 +515,7 @@ function SummaryMetrics({ activeFilter, allVisibleExpanded, onFilter, onToggleAl
             }}
           />
         </div>
-      </button>
+      </div>
     </section>
   );
 }
@@ -1216,6 +1209,7 @@ function ProjectGrid({
 
   return (
     <section
+      id="project-card-grid"
       className={`project-card-grid${filterPhase ? ` project-card-grid--filter-${filterPhase}` : ""}`}
       style={{
         display: "grid",
@@ -1528,7 +1522,9 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
   };
   const handleStatusFilter = (filterId) => {
     setExpandedIds([]);
-    transitionFilter(() => setActiveFilter(filterId));
+    transitionFilter(() => {
+      setActiveFilter((current) => current === filterId && filterId !== "all" ? "all" : filterId);
+    });
   };
   const setGlobalClassificationFilter = (filterId) => {
     setExpandedIds([]);
@@ -1552,29 +1548,6 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
     } catch {
       // Search remains useful when the browser does not permit URL updates.
     }
-  };
-  const allProjectIds = rows.map((row) => row.id);
-  const allProjectsVisible = activeFilter === "all" && activeClassificationFilter === "all" && !searchQuery.trim();
-  const allProjectsExpanded = allProjectIds.length > 0 && allProjectIds.every((id) => expandedIds.includes(id));
-  const allVisibleExpanded = allProjectsVisible && allProjectsExpanded;
-  const toggleAllVisible = () => {
-    if (allVisibleExpanded) {
-      setExpandedIds([]);
-      return;
-    }
-
-    if (!allProjectsVisible) {
-      setExpandedIds([]);
-      transitionFilter(() => {
-        setActiveFilter("all");
-        setActiveClassificationFilter("all");
-        handleSearchChange("");
-        setExpandedIds(allProjectIds);
-      });
-      return;
-    }
-
-    setExpandedIds(allProjectIds);
   };
   const toggleTheme = (nextTheme) => {
     applyDocumentTheme(nextTheme);
@@ -1875,9 +1848,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
         <div style={{ marginBottom: "24px" }}>
           <SummaryMetrics
             activeFilter={activeFilter}
-            allVisibleExpanded={allVisibleExpanded}
             onFilter={handleStatusFilter}
-            onToggleAll={toggleAllVisible}
             rows={rows}
             copy={copy}
           />

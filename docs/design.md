@@ -190,12 +190,12 @@ Current interactions:
   behaviour with an equal-line list symbol on hover or keyboard focus; it remains visible when it can
   clear an active status filter, so the default all-projects state stays quiet at rest. All metric cues
   share the same rendered size and rise to the same full-opacity, strong-text emphasis as the card
-  chevrons on hover or keyboard focus. Milestones uses a downward chevron for expand and an upward
-  chevron for collapse; its mobile summary keeps the chevron visible because hover is unavailable.
+  chevrons on hover or keyboard focus. Milestones has no action cue because it is a static summary.
   The active `Projects` metric stays neutral and flat, while the narrower status metrics retain the
   pressed treatment. Hovering another metric temporarily flattens the selected status metric so
   attention follows the target. The active `Projects` metric stays flat with its normal text colour
-  so it remains easy to track. Card milestone indicators mirror the dashboard metric format with a
+  so it remains easy to track. Pressing the selected Planning, Ongoing, or Completed metric again
+  returns the status filter to Projects. Card milestone indicators mirror the dashboard metric format with a
   compact `1/5 complete` count; expanded cards retain the `Milestones` label and the full accessible
   wording.
   On initial load or refresh, each numeric segment in the metric values counts up from zero over
@@ -206,10 +206,9 @@ Current interactions:
   The project search remains visually quiet at rest, showing only the search icon without visible
   placeholder text. A compact × clear control appears at the far right only while the field contains
   text. The input and clear action retain localized accessible labels in both languages.
-  The `Milestones` metric uses `aria-expanded` to reset status and category filters, show all projects,
-  and expand their details; clicking it again collapses all projects. While it is active, the status
-  metrics remain available but are visually unselected. Choosing another status or category filter
-  collapses expanded cards before applying the new filter. The separate status pill
+  The `Milestones` metric is a non-interactive progress summary, and project details expand or
+  collapse individually. Choosing a status or category filter collapses expanded cards before
+  applying the new filter. The separate status pill
   group is intentionally omitted so the dashboard has one primary status-filtering path. Applying a
   status or category filter briefly fades the current card grid out, then reveals the filtered cards
   with a short lead-in, a row-aware stagger, and a restrained scale transition; reduced-motion
