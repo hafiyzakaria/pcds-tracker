@@ -13,6 +13,26 @@ const updateDefinitions = [
       "https://dayakdaily.com/sejingkat-bridge-on-track-to-open-to-traffic-by-oct-1/",
   },
   {
+    date: "2026-08-13",
+    projectName: "Sarawak Bioindustrial Park",
+    description: {
+      en: "Construction of the Sarawak Bioindustrial Park Central Hub officially commenced after the foundation-laying ceremony. The 24-month construction period targets completion in August 2028.",
+      ms: "Pembinaan Hab Pusat Taman Bioindustri Sarawak dimulakan secara rasmi selepas majlis peletakan asas. Tempoh pembinaan 24 bulan menyasarkan penyiapan pada Ogos 2028.",
+    },
+    sourceUrl:
+      "https://www.sbc.org.my/component/content/article/1226-premier-officiates-foundation-laying-for-100-acre-sarawak-bioindustrial-park?catid=50&Itemid=201",
+  },
+  {
+    date: "2026-07-31",
+    projectName: "Bau Gold Project",
+    description: {
+      en: "Gladioli Group formally accepted the conditional renewal offer for Mining Lease ML 05/2012/1D. Engagement with Sarawak authorities continues on the final renewal terms.",
+      ms: "Gladioli Group menerima secara rasmi tawaran pembaharuan bersyarat bagi Pajakan Perlombongan ML 05/2012/1D. Libat urus dengan pihak berkuasa Sarawak diteruskan berhubung syarat pembaharuan muktamad.",
+    },
+    sourceUrl:
+      "https://www.besra.com/update-on-ml-05-2012-1d-renewal-discussions/",
+  },
+  {
     date: "2026-07-30",
     projectName: "Sarawak Reef Ball Project",
     description: {

@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-08-18";
+export const LAST_UPDATED = "2026-08-20";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -367,6 +367,7 @@ export const SECTORS = [
           { date: "2025-11-13", text: "Independent technical review completed", done: true },
           { date: "2026-02-25", text: "Jugan mining lease renewal conditionally approved", done: true },
           { date: "2026-05-13", text: "Conditional lease-renewal terms received", done: true },
+          { date: "2026-07-31", text: "Conditional renewal offer formally accepted", done: true },
           { date: "TBD", text: "Finalisation of mining lease conditions", done: false },
         ],
         sources: [
@@ -374,6 +375,7 @@ export const SECTORS = [
           { label: "Besra Gold — Independent technical review (Nov 2025)", url: "https://www.besra.com/independent-technical-review-and-corporate-update/" },
           { label: "Besra Gold — Jugan mining lease renewal (Feb 2026)", url: "https://www.besra.com/renewal-of-ml-05-2012-1d-mining-lease-conditionally-approved/" },
           { label: "Besra Gold — Conditional renewal terms (May 2026)", url: "https://www.besra.com/conditional-renewal-terms-received-ml-05-2012-1d-jugan-project/" },
+          { label: "Besra Gold — Conditional renewal offer accepted (Jul 2026)", url: "https://www.besra.com/update-on-ml-05-2012-1d-renewal-discussions/" },
         ],
       },
     ],
@@ -418,13 +420,14 @@ export const SECTORS = [
           "The RM30 million first phase of the Special Needs Community Centre in Samarahan will bring early intervention, vocational training, therapy and trainee accommodation into one integrated facility. It is designed to support persons with disabilities from childhood through skills development, employment readiness and long-term care.",
         milestones: [
           { date: "2026-06-05", text: "RM30 million Phase 1 scope was announced", done: true },
-          { date: "2026-07", text: "Project tender is called", done: false },
+          { date: "2026-07", text: "Project tender is called", done: true },
           { date: "2026-11", text: "Letter of award is issued", done: false },
           { date: "2028-05", text: "Phase 1 reaches completion", done: false },
         ],
         sources: [
           { label: "DayakDaily - RM30M Phase 1 scope and delivery plan (Jun 2026)", url: "https://dayakdaily.com/sarawak-to-build-rm30-mln-special-needs-community-centre-to-deliver-lifelong-care-training-support/" },
           { label: "Borneo Post - Phase 1 facilities and 2028 completion (Jun 2026)", url: "https://www.theborneopost.com/2026/06/05/sarawaks-first-special-needs-community-centre-set-for-completion-by-2028/" },
+          { label: "JKR Sarawak - SNCC state tender T/388/07/2026", url: "https://jkr.sarawak.gov.my/web/subpage/tender_and_quotation_list/tender" },
         ],
       },
       {
@@ -543,8 +546,9 @@ export const SECTORS = [
           { date: "2025", text: "BioVerde established with park management mandate", done: true },
           { date: "2025-11-24", text: "RM10M combined Budget 2026 allocation announced", done: true },
           { date: "2026-06-15", text: "Combined delivery-package tender awarded", done: true },
+          { date: "2026-08-13", text: "Central Hub construction officially commenced", done: true },
           { date: "TBD", text: "Anchor and research partner selection", done: false },
-          { date: "TBD", text: "Phase 1 central hub and Bioprocess Commercial Centre reach completion", done: false },
+          { date: "2028-08", text: "Central Hub construction reaches completion", done: false },
           { date: "TBD", text: "Combined facilities begin operations", done: false },
         ],
         sources: [
@@ -553,6 +557,7 @@ export const SECTORS = [
           { label: "Office of the Premier — RM10M combined Budget 2026 allocation (Nov 2025)", url: "https://premier.sarawak.gov.my/web/subpage/news_view/5780" },
           { label: "SBC — Organisational grouping of both facilities (Feb 2026)", url: "https://sbc.org.my/index.php/about-sbc/organisation-chart" },
           { label: "JKR Sarawak — Combined delivery-package tender award (Jun 2026)", url: "https://jkr.sarawak.gov.my/web/subpage/webpage_view/403" },
+          { label: "SBC — Central Hub construction commenced (Aug 2026)", url: "https://www.sbc.org.my/component/content/article/1226-premier-officiates-foundation-laying-for-100-acre-sarawak-bioindustrial-park?catid=50&Itemid=201" },
           { label: "BioVerde — Sarawak Bioindustrial Park under development", url: "https://www.bioverde.com.my/sbp" },
           { label: "BioVerde — About BioVerde Technologies", url: "https://www.bioverde.com.my/about" },
         ],
@@ -642,6 +647,7 @@ export const SECTORS = [
           { label: "SIDC - Organisation and research mission", url: "https://sidc.org.my/" },
           { label: "SIDC - Samarahan campus scope and construction packages", url: "https://sidc.org.my/new-lab" },
           { label: "DayakDaily - Campus progress and completion target (Dec 2025)", url: "https://dayakdaily.com/sarawak-infectious-disease-centre-to-be-completed-by-oct-2026/" },
+          { label: "DayakDaily - Campus nearing completion (Aug 2026)", url: "https://dayakdaily.com/sarawaks-rm300-mln-disease-centre-nears-completion-to-drive-research-prepare-for-the-next-covid/" },
         ],
       },
     ],

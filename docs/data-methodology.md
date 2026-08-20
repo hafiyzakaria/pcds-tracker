@@ -39,7 +39,7 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-18`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-20`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
@@ -277,7 +277,7 @@ For each audit, record the audit date, query variants, candidate and accepted UR
 - Compare each sweep with the previous dated audit so unchanged cards do not need to be researched from scratch.
 
 Latest full milestone review:
-`docs/project-audits/2026-07-29-full-milestone-audit.md`.
+`docs/project-audits/2026-08-20-full-milestone-update-sweep.md`.
 
 ## Project Summary Writing Standard
 
@@ -456,7 +456,10 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Pan Borneo Highway Sarawak Phase 1 - `In Progress`; value: RM16.5 billion construction cost. Ten of 11 work packages were complete by October 2025. Sarawak Tribune's March 2025 report gave a Q4 2025 target for most of Work Package 11 and an October 2027 target for its four-kilometre Lambir section, but its newer December 2025 report supersedes those dates after water-pipe replacement and scope negotiations, scheduling full Work Package 11 completion for Q1 2029. The open milestone therefore uses `2029-Q1`; sources: The Edge Malaysia and Sarawak Tribune.
 - Sarawak-Sabah Link Road - `In Progress`; Phase 1 reached 70.05 percent and Phase 2 reached 10.55 percent in April 2026; next milestone: expected Phase 1 completion in 2027; sources: The Star and DayakDaily.
 - Miri Port Kuala Baram Capital Dredging - `In Progress`; value: RM238 million contract; physical progress reached about 55 percent in April 2026; next milestone: dredging completion in October 2026; sources: MIPD, DayakDaily, and Dredging Today.
-- Bau Gold Project - `Planning`; value: RM1.38 billion projected upstream investment in the PCDS 2030 Highlights 2023 report, corroborated by DayakDaily in November 2024. The separate RM24.3 billion in-ground gold value is a resource valuation and is excluded from the reported-value field. Besra completed an independent technical review and received conditional Jugan mining-lease renewal progress; next milestone: finalised mining lease conditions; sources: DayakDaily and Besra Gold company disclosures.
+- Bau Gold Project - `Planning`; value: RM1.38 billion projected upstream investment in the PCDS 2030 Highlights 2023 report, corroborated by DayakDaily in November 2024. The separate RM24.3 billion in-ground gold value is a resource valuation and is excluded from the reported-value field. Besra completed an independent technical review, received conditional Jugan mining-lease renewal terms and formally accepted the conditional renewal offer on 31 July 2026; next milestone: finalised mining lease conditions; sources: DayakDaily and Besra Gold company disclosures.
+- Special Needs Community Centre - `Planning`; value: RM30 million for Phase 1 in Samarahan. JKR Sarawak's live tender list records state tender T/388/07/2026 and a 23 September 2026 closing date, confirming that the July tender milestone was reached. The letter of award and May 2028 completion remain open; sources: JKR Sarawak, DayakDaily and Borneo Post.
+- Sarawak Bioindustrial Park - `In Progress`; value: RM10 million combined Budget 2026 allocation for the park and SBC Bioprocess Commercial Centre. Sarawak Biodiversity Centre confirms that Central Hub construction commenced on 13 August 2026 with a 24-month construction period; the August 2028 target applies to the Central Hub, not automatically to the separate Bioprocess Commercial Centre. Anchor-partner selection and combined facility operations remain open.
+- Sarawak Infectious Disease Centre - `In Progress`; value remains `Not disclosed`. An opened 10 August 2026 report says the campus was nearing completion and reports RM300 million invested in the centre, but the sweep did not convert that wording into a distinct milestone or re-scope the value field. The October 2026 campus-completion milestone remains open pending formal confirmation.
 - Bintulu-Samalaju Gas Pipeline - `In Progress`; value: RM1 billion committed; offshore work was reported complete in October 2025 and pre-commissioning activity was publicly notified in May 2026; next milestone: progressive commercial operations expected from 2027; sources: The Star, Bintulu Port Authority, and Sarawak Tribune.
 - Sarawak Agrotechnology Park - `In Progress`; value: RM19.5 million Budget 2026 allocation for further development of Semenggok and Tarat. Official M-FICORD reporting confirms that a coral-shrimp farm at SARTECH Tarat has operated since 2022, while wider development of both sites remains incomplete; next milestone: completion of Semenggok and Tarat site development; sources: M-FICORD, Sarawak Tribune, and DayakDaily. The DayakDaily budget article is broader than SARTECH but contains an exact project-specific allocation line.
 - Sungai Baji Agropark - `In Progress`; value: `RM180 million`, retained from the PCDS 2030 AIP as a user-approved planned state-funding figure comprising RM29 million approved under RMK-12 and an estimated RM151 million for the remaining area, pending an accessible online value source. December 2025 reporting states that infrastructure and agricultural components were complete by October 2025 and that LCDA appointed an anchor company on 14 May 2025. Operations were expected in Q1 2026 and commercial production in Q3 2026, but neither milestone is marked complete without a confirming public update; live sources: DID Sarawak and TVS.
@@ -548,7 +551,7 @@ Current public display counts:
 - Planning: 7.
 - Ongoing: 35.
 - Completed: 8.
-- Milestones: 141 completed out of 217 active-project milestones.
+- Milestones: 144 completed out of 219 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 
