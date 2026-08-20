@@ -164,7 +164,8 @@ GitHub Actions separates read-only change validation from Production deployment.
 `preview` and `main` run the relevant content, lint, and environment build checks without Pages
 deployment permission. The Production workflow runs only for a push to `main` or an explicit manual
 start, and only its deploy job receives Pages and identity-token write permission. Third-party actions
-are pinned to reviewed commits and maintained through weekly Dependabot proposals.
+are pinned to reviewed commits and maintained through weekly Dependabot proposals targeting
+`preview`.
 
 ## Content Maintenance Notes
 
