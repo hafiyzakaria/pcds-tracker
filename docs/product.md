@@ -105,6 +105,13 @@ fidelity but does not make Preview eligible for Google indexing.
 Search Console measurement for new routes starts only after an approved Production release and
 crawler discovery. The review process is documented in `docs/seo-measurement.md`.
 
+Production also loads Cloudflare Web Analytics for privacy-first aggregate traffic measurement,
+including visits, page views, referrers, countries, devices, and Core Web Vitals. The beacon uses
+the app's History API support so navigation between tracker and update-history routes is measured.
+It does not use cookies, fingerprint visitors, or collect personally identifiable information.
+Development and Preview builds do not load the beacon, and analytics reports remain available only
+through the Cloudflare dashboard.
+
 ## Current Data Model
 
 Project data lives in `src/trackerData.js`.
