@@ -160,6 +160,12 @@ Preview badge.
 
 This workflow exists to prevent unfinished changes from reaching the public site. It is recommended and common in modern web development.
 
+GitHub Actions separates read-only change validation from Production deployment. Pull requests to
+`preview` and `main` run the relevant content, lint, and environment build checks without Pages
+deployment permission. The Production workflow runs only for a push to `main` or an explicit manual
+start, and only its deploy job receives Pages and identity-token write permission. Third-party actions
+are pinned to reviewed commits and maintained through weekly Dependabot proposals.
+
 ## Content Maintenance Notes
 
 The data is manually curated from public reports and announcements. The shared footer states that status and milestones are best-effort based on available information.

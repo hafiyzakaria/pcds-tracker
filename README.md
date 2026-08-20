@@ -81,6 +81,11 @@ Normal workflow:
 
 Preview deploys through Vercel. Production deploys through GitHub Pages. Preview is marked `noindex` so search engines should only index the Production website.
 
+GitHub Actions keeps validation separate from Production deployment. Pull requests to `preview` or
+`main` run read-only content, lint, and matching-environment build checks. Only a push to `main` or
+an explicitly started Production workflow can deploy to GitHub Pages. Actions are pinned to reviewed
+commits, with Dependabot proposing weekly GitHub Actions updates for review.
+
 ### Project documentation
 
 - [Product and audience](docs/product.md)

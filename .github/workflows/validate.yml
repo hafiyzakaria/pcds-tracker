@@ -1,10 +1,10 @@
-name: Validate preview
+name: Validate changes
 
 on:
   push:
     branches: [preview]
   pull_request:
-    branches: [preview]
+    branches: [preview, main]
 
 permissions:
   contents: read
@@ -13,12 +13,19 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
       - run: npm ci
       - run: npm run check:content
       - run: npm run lint
-      - run: npm run build:preview
+      - name: Build Preview
+        if: github.event_name == 'push' || github.base_ref == 'preview'
+        run: npm run build:preview
+      - name: Build Production
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
+        run: npm run build

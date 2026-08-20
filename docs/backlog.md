@@ -4,6 +4,18 @@ This backlog documents known issues and recommended next tasks for the next deve
 
 ## Completed
 
+### Harden the GitHub Actions release boundary
+
+- Completed on 20 August 2026: Pull requests to `preview` and `main` now use one read-only validation
+  workflow with the matching Preview or Production build, while the Pages deployment workflow runs
+  only for pushes to `main` or an explicit manual start.
+- Completed on 20 August 2026: Build jobs no longer retain checkout credentials, permissions default
+  to none, and only the Pages deploy job receives Pages and identity-token write access.
+- Completed on 20 August 2026: GitHub-maintained actions are pinned to reviewed full commit hashes,
+  with weekly Dependabot proposals configured for future GitHub Actions updates.
+- Scope decision: Additional Production response headers remain optional while the tracker is a static
+  GitHub Pages site without accounts, private data, payments, or dynamic APIs.
+
 ### Add dark mode and a Bahasa Melayu presentation
 
 - Completed on Preview: A compact icon control now supports light and dark modes,
