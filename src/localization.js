@@ -73,6 +73,7 @@ const EN = {
     methodology: "Data sourced from public reports, news outlets, and official announcements. Status and milestones are best-effort based on available information.",
   },
   accessibility: {
+    backToTop: "Back to top",
     environment: (name) => `${name} environment`,
     skipToProjects: "Skip to projects",
     projects: "Tracked projects",
@@ -149,6 +150,7 @@ const MS = {
     methodology: "Data diperoleh daripada laporan awam, portal berita dan pengumuman rasmi. Status dan pencapaian utama ialah rumusan terbaik berdasarkan maklumat yang tersedia.",
   },
   accessibility: {
+    backToTop: "Kembali ke atas",
     environment: (name) => `persekitaran ${{ development: "pembangunan", preview: "pratonton", production: "produksi" }[name] || name}`,
     skipToProjects: "Langkau ke projek",
     projects: "Projek yang dijejaki",

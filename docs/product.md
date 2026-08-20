@@ -60,6 +60,9 @@ The current product is a small static React site with:
   while hafiy.my remains linked in the credit line. It retains the public-source and best-effort
   milestone note and states that the tracker is independent and not affiliated with the Sarawak
   Government. No About or Methodology placeholders are shown.
+- A compact localized Back to top control appears in the lower-right corner after the reader has
+  moved beyond the opening viewport. It is shared by the tracker and update-history routes, uses the
+  active light or dark theme, and stays clear of the non-production environment badge.
 
 The English tracker at `/`, BM tracker at `/bm/`, English editorial history at `/updates/`, and BM
 editorial history at `/bm/updates/` are all pre-rendered during the build and hydrated by React in

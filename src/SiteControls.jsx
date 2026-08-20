@@ -321,6 +321,7 @@ export function EnvironmentBadge({ environment, copy }) {
 
   return (
     <div
+      className="environment-badge"
       aria-label={copy.accessibility.environment(environment.name)}
       style={{
         position: "fixed",

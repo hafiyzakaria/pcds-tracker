@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
 import App from "./App.jsx";
+import BackToTop from "./BackToTop.jsx";
 import { applyDocumentRouteMetadata } from "./documentMetadata.js";
+import { getUiCopy } from "./localization.js";
 import {
   getRouteById,
   getRouteHref,
@@ -13,6 +15,7 @@ export default function Site({ route }) {
   const [activeRoute, setActiveRoute] = useState(route);
   const pageHeadingRef = useRef(null);
   const previousPageRef = useRef(route.page);
+  const copy = getUiCopy(activeRoute.language);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -75,15 +78,26 @@ export default function Site({ route }) {
     }
   };
 
-  if (activeRoute.page === "updates") {
-    return (
+  const page = activeRoute.page === "updates"
+    ? (
       <UpdatesPage
         language={activeRoute.language}
         onNavigate={navigate}
         headingRef={pageHeadingRef}
       />
+    )
+    : (
+      <App
+        language={activeRoute.language}
+        onNavigate={navigate}
+        headingRef={pageHeadingRef}
+      />
     );
-  }
 
-  return <App language={activeRoute.language} onNavigate={navigate} headingRef={pageHeadingRef} />;
+  return (
+    <>
+      {page}
+      <BackToTop label={copy.accessibility.backToTop} />
+    </>
+  );
 }
