@@ -339,6 +339,10 @@ a:focus-visible {
 }
 
 @media (max-width: 760px) {
+  .project-search input {
+    font-size: 16px;
+  }
+
   .discovery-controls {
     grid-template-columns: minmax(0, 1fr);
     gap: 9px;
