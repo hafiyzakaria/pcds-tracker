@@ -62,7 +62,8 @@ The current product is a small static React site with:
   Government. No About or Methodology placeholders are shown.
 - A compact localized Back to top control appears in the lower-right corner after the reader has
   moved beyond the opening viewport. It is shared by the tracker and update-history routes, uses the
-  active light or dark theme, and stays clear of the non-production environment badge.
+  active light or dark theme, stays clear of the non-production environment badge, and uses an
+  icon-only arrow on mobile.
 
 The English tracker at `/`, BM tracker at `/bm/`, English editorial history at `/updates/`, and BM
 editorial history at `/bm/updates/` are all pre-rendered during the build and hydrated by React in

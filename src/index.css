@@ -1266,8 +1266,17 @@ body:has(.environment-badge) .back-to-top {
   .back-to-top {
     right: calc(12px + env(safe-area-inset-right, 0px));
     bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    width: 40px;
     min-height: 40px;
-    padding: 9px 12px;
+    padding: 0;
+  }
+
+  .back-to-top > span:first-child {
+    display: none;
+  }
+
+  .back-to-top-arrow {
+    font-size: 16px;
   }
 
   body:has(.environment-badge) .back-to-top {

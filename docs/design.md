@@ -168,9 +168,10 @@ Current interactions:
   browser back/forward restoration and deliberate in-page anchor navigation keep their existing behavior.
 - After the reader moves beyond the opening viewport, a compact fixed Back to top control appears in
   the lower-right corner on tracker and update-history routes. It uses the shared neutral control
-  surface, brand-coloured arrow, focus ring and localized EN/BM label. Activation scrolls smoothly to
-  the page start, or immediately when reduced motion is preferred. In Preview and development it sits
-  above the environment badge rather than overlapping it.
+  surface, brand-coloured arrow, focus ring and localized EN/BM accessible label. On mobile it becomes
+  a 40px icon-only arrow button. Activation scrolls smoothly to the page start, or immediately when
+  reduced motion is preferred. In Preview and development it sits above the environment badge rather
+  than overlapping it.
 - `EN | BM` controls switch the hydrated presentation without a document reload and retain real
   route links for direct navigation and fallback. The same pill treatment appears on the tracker
   and update-history pages. Each language option gently lifts and gains a tinted surface on

@@ -39,6 +39,7 @@ export default function BackToTop({ label }) {
   return (
     <button
       aria-hidden={!isVisible}
+      aria-label={label}
       className="back-to-top"
       data-visible={isVisible ? "true" : "false"}
       onClick={scrollToTop}
