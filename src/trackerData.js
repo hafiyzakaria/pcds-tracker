@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-08-20";
+export const LAST_UPDATED = "2026-08-27";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -503,6 +503,7 @@ export const SECTORS = [
           { label: "SDEC — SMART implementation and tower activation (May 2024)", url: "https://sdec.com.my/web/2024/07/09/smart-project-implementation-in-sarawak-by-sdec/" },
           { label: "SDEC — SMART600 operating-support agreement (Jul 2025)", url: "https://sdec.com.my/web/2025/08/14/rapatkan-jurang-digital-luar-bandar-projek-smart600-perkasa-kesalinhubungan-sarawak-dengan-sokongan-mcmc/" },
           { label: "SDEC — SMART site resilience visit (Jul 2026)", url: "https://sdec.com.my/web/2026/08/05/minister-visits-smart-sites-at-sungai-rayah-to-review-anti-vandalism-measures-and-strengthen-infrastructure-resilience/" },
+          { label: "Utusan Sarawak — 618 SMART towers reported fully operational (Aug 2026)", url: "https://utusansarawak.com.my/618-menara-smart-sudah-beroperasi-di-seluruh-sarawak/" },
         ],
       },
     ],
