@@ -23,6 +23,26 @@ const updateDefinitions = [
       "https://www.sbc.org.my/component/content/article/1226-premier-officiates-foundation-laying-for-100-acre-sarawak-bioindustrial-park?catid=50&Itemid=201",
   },
   {
+    date: "2026-08-10",
+    projectName: "Sarawak Infectious Disease Centre",
+    description: {
+      en: "The Premier said the Sarawak government had invested more than RM300 million to establish the centre, which was nearing completion.",
+      ms: "Premier berkata kerajaan Sarawak telah melabur lebih RM300 juta untuk menubuhkan pusat ini, yang kini hampir siap.",
+    },
+    sourceUrl:
+      "https://www.theborneopost.com/2026/08/10/premier-urges-regency-specialist-hospital-kuching-to-work-with-sidc-on-tropical-disease-research/",
+  },
+  {
+    date: "2026-08-01",
+    projectName: "KUTS — Kuching Urban Transportation System",
+    description: {
+      en: "The first two ART trains arrived in Kuching, moving the project from construction into system integration ahead of the fourth-quarter pilot.",
+      ms: "Dua unit kereta api ART pertama tiba di Kuching, menandakan peralihan projek daripada pembinaan kepada integrasi sistem menjelang operasi rintis suku keempat.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/kuchings-art-pilot-operations-move-closer-with-arrival-of-first-two-trains/",
+  },
+  {
     date: "2026-07-31",
     projectName: "Bau Gold Project",
     description: {
@@ -60,6 +80,16 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://www.thestar.com.my/business/business-news/2026/07/24/zecon-unit-secures-contract-for-sarawak-solar-project",
+  },
+  {
+    date: "2026-07-19",
+    projectName: "One-Stop Early Intervention Centre (OSEIC) Miri",
+    description: {
+      en: "The minister said OSEIC Miri would begin operations in 2027 as Sarawak's third centre after Kuching and Dalat, superseding the earlier 2026 opening target.",
+      ms: "Menteri berkata OSEIC Miri akan mula beroperasi pada 2027 sebagai pusat ketiga Sarawak selepas Kuching dan Dalat, menggantikan sasaran pembukaan 2026 yang lebih awal.",
+    },
+    sourceUrl:
+      "https://www.theborneopost.com/2026/07/19/oseic-helps-over-500-kids-progress-to-formal-education/",
   },
   {
     date: "2026-07-07",
@@ -264,6 +294,16 @@ const updateDefinitions = [
       ms: "Sistem Pengurusan Gas Rumah Hijau Fasa 1 NREB mula beroperasi bagi pelaporan pelepasan karbon serta permohonan kebenaran pembakaran dan pelepasan gas.",
     },
     sourceUrl: "https://www.nreb.gov.my/web/subpage/announcement_view/196",
+  },
+  {
+    date: "2026-01-31",
+    projectName: "Yayasan Sarawak International Secondary Schools Expansion",
+    description: {
+      en: "The Premier said construction of the Miri and Bintulu campuses had commenced after their tenders were awarded, with a sixth school still in planning.",
+      ms: "Premier berkata pembinaan kampus Miri dan Bintulu telah dimulakan selepas tender dianugerahkan, manakala sekolah keenam masih dalam perancangan.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/yayasan-swak-intl-secondary-school-campuses-in-bintulu-miri-underway-sixth-school-planned/",
   },
   {
     date: "2026-01-30",
