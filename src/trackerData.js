@@ -486,8 +486,8 @@ export const SECTORS = [
       {
         name: "SMA Rural Telecommunication (SMART)",
         displayName: "SMART Rural Connectivity",
-        status: "In Progress",
-        statusColor: "#d97706",
+        status: "Operational",
+        statusColor: "#16a34a",
         lead: "Sarawak Multimedia Authority / SDEC",
         value: "Not disclosed",
         summary:
@@ -496,12 +496,13 @@ export const SECTORS = [
           { date: "2022-08-09", text: "SMART launched at Nanga Sekukut", done: true },
           { date: "2024-03", text: "SMART towers began operating with MySRBN", done: true },
           { date: "2025-07-09", text: "SMART600 operating-support agreement signed", done: true },
-          { date: "TBD", text: "Remaining SMART600 towers enter service", done: false },
+          { date: "2026-04-30", text: "Remaining SMART600 towers entered service", done: true },
         ],
         sources: [
           { label: "SDEC — SMART launch at Nanga Sekukut (Aug 2022)", url: "https://sdec.com.my/web/2022/08/09/51-smart-projects-planned-to-be-built-in-kapit-division-says-sdec/" },
           { label: "SDEC — SMART implementation and tower activation (May 2024)", url: "https://sdec.com.my/web/2024/07/09/smart-project-implementation-in-sarawak-by-sdec/" },
           { label: "SDEC — SMART600 operating-support agreement (Jul 2025)", url: "https://sdec.com.my/web/2025/08/14/rapatkan-jurang-digital-luar-bandar-projek-smart600-perkasa-kesalinhubungan-sarawak-dengan-sokongan-mcmc/" },
+          { label: "Borneo Post — Communications Ministry parliamentary reply, SMART600 as of 30 Apr 2026 (Jul 2026)", url: "https://www.theborneopost.com/2026/07/14/baram-tops-list-of-jendela-telecoms-towers-completed-in-sarawak-109-fully-operational/" },
           { label: "SDEC — SMART site resilience visit (Jul 2026)", url: "https://sdec.com.my/web/2026/08/05/minister-visits-smart-sites-at-sungai-rayah-to-review-anti-vandalism-measures-and-strengthen-infrastructure-resilience/" },
           { label: "Utusan Sarawak — 618 SMART towers reported fully operational (Aug 2026)", url: "https://utusansarawak.com.my/618-menara-smart-sudah-beroperasi-di-seluruh-sarawak/" },
         ],

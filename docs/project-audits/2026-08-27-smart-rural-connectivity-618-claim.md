@@ -109,3 +109,36 @@
 ## New-project PCDS inclusion gate (complete only for additions)
 
 Not applicable. No card was added or removed.
+
+## Owner follow-up: 27 August 2026
+
+The tracker owner instructed that the remaining-tower milestone be closed now, and that the earlier hold-out for an SDEC or project-owner page does not apply to this live-card claim.
+
+Owner rule applied: a live-card claim may be based on a public webpage. It does not have to be an SDEC or project-owner page. The page must name the exact project and support the displayed field.
+
+Closer (opened and accepted):
+
+- URL: https://www.theborneopost.com/2026/07/14/baram-tops-list-of-jendela-telecoms-towers-completed-in-sarawak-109-fully-operational/
+- Publisher: Borneo Post Online
+- Dateline: Miri, 14 July 2026
+- Attribution: Communications Ministry written parliamentary reply published on the Parliament portal; Dewan Rakyat sitting 9 July 2026; question from Baram MP Dato Anyi Ngau
+- JENDELA figures: as of June 2026 / “as of last month”; 636 Phase 1 towers completed and activated, all operational; Baram 109
+- SMART paragraph: “It added that Sarawak had also rolled out the SMART 600 initiative to further expand communications coverage across the state. As of April 30, the ministry said all 600 telecommunications towers under the initiative had been completed and were operational, including 29 towers in the Baram parliamentary constituency.”
+
+Identity check: the passage names the exact tracked unit, SMART 600 / 600 telecommunications towers, not JENDELA and not 618. The article’s main subject is JENDELA Baram; the SMART sentence still names the project and directly supports remaining-tower completion and Operational status.
+
+Not used as closer:
+
+- Utusan Sarawak, 15 August 2026, remains on the card as a reported 618-tower claim only. It does not close the milestone and does not change the tracked unit from 600 to 618.
+- The first-pass Wedoany aggregator that claimed an 30 April 2026 SMART600 completion is still rejected as a source. The Borneo Post parliamentary-reply report is the accepted public webpage for that as-of date.
+
+Implemented card effect:
+
+- Milestone `Remaining SMART600 towers entered service`, date `2026-04-30`, `done: true`
+- Status `Operational` (public label Completed)
+- Source label: `Borneo Post — Communications Ministry parliamentary reply, SMART600 as of 30 Apr 2026 (Jul 2026)` so the JENDELA Baram headline is not presented as a dedicated SMART report
+- Updates-page entry dated 30 April 2026 for the SMART600 as-of claim only; JENDELA completion is not presented as a SMART update
+- BM milestone: `Baki menara SMART600 telah beroperasi`
+- `LAST_UPDATED` remains `2026-08-27`
+
+Outcome of this follow-up: Update recommended. Confidence: High under the owner rule, because the opened public page names SMART 600 and states that all 600 towers had been completed and were operational as of 30 April 2026.

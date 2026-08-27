@@ -445,10 +445,10 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 ### Candidate Additions Approved on 18 August 2026
 
-- SMA Rural Telecommunication (SMART) - `In Progress`; value: `Not disclosed`. The direct PCDS rural-connectivity programme is represented by the current SMART600 delivery scope, which deploys carrier-neutral towers and enables MySRBN home broadband for underserved communities. SDEC pages support the August 2022 Nanga Sekukut launch, towers operating with MySRBN by March 2024, the July 2025 MCMC-SDEC operating-support agreement, and continuing active SMART infrastructure in July 2026. Conflicting July 2025 tower totals are excluded from the card, the historical RM5.5 billion figure belongs to an earlier 1,500-tower PDF scope, and the RM8.99 million figure is statewide vandalism loss rather than project value. A 15 August 2026 Utusan Sarawak report quoting Minister Julaihi that all 618 SMART towers are fully operational is linked as a reported claim only; independent coverage of the same Connecting Jepak event did not repeat that wording, no SDEC, SMA, or MCMC primary confirmation was found, and the remaining-tower activation milestone stays open. Dated decision record: [SMART 618-claim review](project-audits/2026-08-27-smart-rural-connectivity-618-claim.md).
+- SMA Rural Telecommunication (SMART) - `Operational`; value: `Not disclosed`. The direct PCDS rural-connectivity programme is represented by the current SMART600 delivery scope, which deploys carrier-neutral towers and enables MySRBN home broadband for underserved communities. SDEC pages support the August 2022 Nanga Sekukut launch, towers operating with MySRBN by March 2024, the July 2025 MCMC-SDEC operating-support agreement, and continuing active SMART infrastructure in July 2026. A 14 July 2026 Borneo Post report of a Communications Ministry written parliamentary reply states that as of 30 April 2026 all 600 SMART towers had been completed and were operational, including 29 in Baram. That public webpage closes the remaining-tower milestone; the tracked unit remains 600, not 618. Conflicting July 2025 tower totals are excluded from the card, the historical RM5.5 billion figure belongs to an earlier 1,500-tower PDF scope, and the RM8.99 million figure is statewide vandalism loss rather than project value. A 15 August 2026 Utusan Sarawak report quoting Minister Julaihi that all 618 SMART towers are fully operational remains linked as a reported claim only and is not the closer. Dated decision record: [SMART 618-claim review and 30 April 2026 closer](project-audits/2026-08-27-smart-rural-connectivity-618-claim.md).
 - Coastal Road Network and Second Trunk Road (CSTR) - `In Progress`; value: `RM11 billion`, the transparent combined programme figure formed by InvestSarawak's RM5.42 billion Coastal Road Network and RM5.58 billion Second Trunk Road component values. The combined card avoids duplicate component cards and introduces the statewide road, bridge and rehabilitation programme. DayakDaily's 17 August 2026 report supports the active Sejingkat Bridge package and its 1 October 2026 opening target; older programme-wide progress percentages are not presented as current.
 - Inclusion decision: both cards use the `direct` tier. SMART is a `programme`; CSTR is a `combined_card`. The existing SMD GaN card's `trackedUnit` was corrected from `programme` to `component` so its metadata matches its approved component tier and rationale.
-- Editorial update-history decision: the Sejingkat Bridge opening update is retained because it is a material current delivery development for CSTR. SMART's July 2026 resilience visit remains a status source rather than a separate update-history entry.
+- Editorial update-history decision: the Sejingkat Bridge opening update is retained because it is a material current delivery development for CSTR. SMART has a 30 April 2026 Updates-page entry for the Communications Ministry SMART600 operational as-of date; the July 2026 SDEC resilience visit remains a later status source rather than a separate update-history entry.
 - Dated decision record: [PDF and online verification audit](project-audits/2026-08-16-pdf-online-verification-audit.md), 18 August implementation section.
 
 ### Provisional Additions Revalidated on 10 July 2026
@@ -532,10 +532,10 @@ The app derives display rows by flattening `SECTORS` into project rows and exclu
 
 Current active dashboard status counts from `src/trackerData.js`:
 
-- `In Progress`: 35.
+- `In Progress`: 34.
 - `Awaiting Decision`: 0.
 - `Planning`: 7.
-- `Operational`: 4.
+- `Operational`: 5.
 - `Designated`: 4.
 - `Enacted`: 0.
 
@@ -549,9 +549,9 @@ Current public display counts:
 
 - Tracked projects: 50.
 - Planning: 7.
-- Ongoing: 35.
-- Completed: 8.
-- Milestones: 144 completed out of 219 active-project milestones.
+- Ongoing: 34.
+- Completed: 9.
+- Milestones: 145 completed out of 219 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 
