@@ -55,6 +55,7 @@ Useful checks and build commands:
 ```bash
 npm run lint           # Check the code
 npm run check:content   # Validate tracker and editorial content
+npm run check:links     # Report public source links that need manual review
 npm run build:preview  # Build the Preview version
 npm run build          # Build the Production version
 npm run preview        # Serve the latest build locally
@@ -101,10 +102,11 @@ These files are the project's source of truth for product intent, design decisio
 
 ## Current limitations
 
-- Data updates and source checks are manual.
+- Data updates are manual. A report-only source-link checker flags unavailable links for manual review.
 - Project facts are maintained in the codebase rather than a content management system.
 - Most tracker interface code and styling currently live in one large `src/App.jsx` file.
-- Automated content checks validate structure and consistency, but factual accuracy and live
-  source availability still require manual review.
+- Automated content checks validate structure and consistency. The source-link checker tests
+  availability without blocking releases, while factual accuracy and flagged links still require
+  manual review.
 
 See the [backlog](docs/backlog.md) for the current list of known issues and recommended next tasks.

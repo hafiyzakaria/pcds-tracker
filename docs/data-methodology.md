@@ -583,6 +583,9 @@ Explicit methodology found in docs/code:
 - Milestone statuses are best-effort based on available public information.
 - `LAST_UPDATED` is manually maintained.
 - Source links are not automatically checked.
+- Run `npm run check:links` to test every unique project and update-history source URL. The command
+  is report-only: HTTP failures, timeouts, redirects, and network errors are review triggers rather
+  than proof that a source should be removed, and they do not fail a release.
 - Detailed statuses are grouped into simplified public labels.
 
 Inferred methodology based on data structure:

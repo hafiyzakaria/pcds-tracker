@@ -182,7 +182,9 @@ The data is manually curated from public reports and announcements. The shared f
 Current content risks:
 
 - Data freshness is manual.
-- Source links are not automatically checked.
+- Source-link availability checking is report-only and must be run deliberately. HTTP failures,
+  timeouts, redirects, and bot-blocking responses still require manual review before a source is
+  changed or removed.
 - `LAST_UPDATED` is displayed in the UI but still depends on manual maintenance when tracker data changes.
 - Project facts are embedded in code rather than stored in a separate content file or CMS.
 
