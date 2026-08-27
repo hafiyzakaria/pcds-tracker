@@ -159,6 +159,16 @@ const updateDefinitions = [
   },
   {
     date: "2026-04-30",
+    projectName: "SMA Rural Telecommunication (SMART)",
+    description: {
+      en: "As of 30 April 2026, all 600 SMART telecommunications towers had been completed and were operational, including 29 in Baram.",
+      ms: "Setakat 30 April 2026, kesemua 600 menara telekomunikasi SMART telah siap dan beroperasi, termasuk 29 di Baram.",
+    },
+    sourceUrl:
+      "https://www.theborneopost.com/2026/07/14/baram-tops-list-of-jendela-telecoms-towers-completed-in-sarawak-109-fully-operational/",
+  },
+  {
+    date: "2026-04-30",
     projectName: "One-Stop Early Intervention Centre (OSEIC) Miri",
     description: {
       en: "The Sarawak Government reported RM5.743 million in development grants and assessed progress at the OSEIC Miri site in Tudan ahead of its planned opening.",
