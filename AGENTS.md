@@ -30,6 +30,7 @@ This repository is the PCDS 2030 Project Tracker, a Vite and React static site.
 - Build preview with `npm run build:preview`.
 - Serve a built site with `npm run preview`.
 - Run `npm run check:content` for data or editorial-content changes.
+- Run `npm run check:links` for a report-only review of public source availability.
 
 ## Documentation Expectations
 
