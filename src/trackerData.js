@@ -1,12 +1,12 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-08-27";
+export const LAST_UPDATED = "2026-08-29";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
   status: "Operational",
   statusColor: "#16a34a",
   lead: "Sarawak Government",
-  value: "RM282 billion",
+  value: "Not applicable",
   summary:
     "Post COVID-19 Development Strategy 2030. Vision: a thriving society driven by data and innovation. Targets 8% annual GDP growth, RM15,000 median household income by 2030, 45% GHG intensity reduction, and 195,000 new jobs. Anchored on 6 Economic Sectors and 7 Enablers.",
   milestones: [
@@ -41,6 +41,7 @@ export const SECTORS = [
           "A state-owned semiconductor venture developing AI-enhanced gallium nitride (GaN) chips through its keteq.GaN and keteq.ai platforms. It aims to build Sarawak's semiconductor capability and support the state's technology sector.",
         milestones: [
           { date: "2026-Q1", text: "Premier announced GaN chip development success", done: true },
+          { date: "2026-08-13", text: "Linyang integration and commercialisation MoA signed", done: true },
           { date: "TBD", text: "Global IP registration", done: false },
           { date: "TBD", text: "Commercialisation begins", done: false },
         ],
@@ -48,6 +49,7 @@ export const SECTORS = [
           { label: "DayakDaily — SMD Advanced Chip Integration Centre (Sep 2025)", url: "https://dayakdaily.com/sarawak-to-establish-smd-advanced-chip-integration-centre-to-power-semiconductor-leap/" },
           { label: "DayakDaily — keteq.GaN and AI converter unveiled (Oct 2025)", url: "https://dayakdaily.com/smd-semiconductor-unveils-keteq-gan-ai-convertor-in-london-cementing-sarawak-as-tech-leader/" },
           { label: "DayakDaily — Keteq AI chip secures global IP rights (Oct 2025)", url: "https://dayakdaily.com/sarawak-designed-keteq-ai-chip-set-to-secure-global-ip-rights-by-early-2026/" },
+          { label: "SMD Semiconductor — Linyang integration and commercialisation MoA (Aug 2026)", url: "https://smdsemiconductor.com/smd-linyang-partner-to-bring-sarawak-semiconductor-technologies-to-global-markets" },
         ],
       },
     ],
@@ -148,6 +150,7 @@ export const SECTORS = [
           "The Rambungan Sustainable Shrimp Aquaculture Project is a 297-hectare ESG-oriented farming initiative at Loba Stoh, Rambungan. Led by Rambungan Aqua Life Sdn Bhd, it uses modern aquaculture practices to grow premium shrimp for domestic and export markets.",
         milestones: [
           { date: "2025-01-08", text: "Shrimp harvesting programme was held", done: true },
+          { date: "2026-05-07", text: "Nursery tank construction tender was published", done: true },
           { date: "2026", text: "94 new shrimp-farming ponds are constructed", done: false },
           { date: "2031", text: "Annual production reaches 1,349 tonnes", done: false },
           { date: "2031", text: "Annual exports reach RM27 million", done: false },
@@ -155,6 +158,7 @@ export const SECTORS = [
         sources: [
           { label: "M-FICORD - Rambungan harvest, land and joint venture (Jan 2025)", url: "https://mficord.sarawak.gov.my/web/subpage/news_view/1513" },
           { label: "DayakDaily - Rambungan production and export targets (Jan 2025)", url: "https://dayakdaily.com/rambungan-large-scale-shrimp-farming-targets-1349-tonnes-rm27-mln-in-annual-exports/" },
+          { label: "State Farmers’ Organisation Sarawak — Nursery tank construction tender (May 2026)", url: "https://peladangsarawak.com.my/2026/05/07/kenyataan-tender-terbuka-kerja-pembinaan-sistem-tangki-asuhan-udang-di-bawah-projek-penternakan-udang-di-zon-industri-akuakultur-rambungan-loba-stoh-lundu-sarawak-tender-no-ppns-kpkm-shrimp-202/" },
         ],
       },
     ],
@@ -773,6 +777,7 @@ export const SECTORS = [
         sources: [
           { label: "The Edge Malaysia — RM16.5B construction cost explained (Feb 2020)", url: "https://theedgemalaysia.com/article/rm165b-represents-only-sarawaks-pan-borneo-highway-construction-cost" },
           { label: "Sarawak Tribune — Phase 1 at 99.98%, WP11 completion scheduled for Q1 2029 (Dec 2025)", url: "https://www.sarawaktribune.com/pan-borneo-highway-phase-1-in-sarawak-nears-full-completion/" },
+          { label: "DanaInfra — Ten of 11 packages complete as of Jun 2026", url: "https://www.danainfra.com.my/index.php/pan-borneo-sarawak-project" },
         ],
       },
       {

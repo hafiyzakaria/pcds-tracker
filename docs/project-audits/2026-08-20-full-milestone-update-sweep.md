@@ -83,3 +83,36 @@ The status counts are unchanged. Bau and Sarawak Bioindustrial Park each add one
 ## Release review
 
 Before publication, run `npm run check:content`, `npm run lint`, `npm run build:preview` and `git diff --check`. Review `/`, `/bm/`, `/updates/` and `/bm/updates/`, with the four affected cards checked in both languages for milestone order, next-milestone selection, source links and layout.
+
+## 29 August 2026 follow-up
+
+This follow-up reviewed all 51 stored records. The active grid contains 50 public project cards. The other record is the hidden PCDS 2030 framework overview.
+
+### Approved changes
+
+| Record | Decision | Implemented effect |
+| --- | --- | --- |
+| SMD Semiconductor - GaN Chip Development | Update recommended | Added the completed 13 August 2026 Linyang integration and commercialisation MoA milestone and the official SMD source. Global IP registration and actual commercialisation remain open. |
+| Rambungan Sustainable Shrimp Aquaculture Project | Update recommended | Added the completed 7 May 2026 nursery tank construction tender milestone and the official State Farmers' Organisation Sarawak source. The 94-pond delivery outcome remains open. |
+| Pan Borneo Highway Sarawak Phase 1 | Evidence enhancement | Added DanaInfra's official 30 June 2026 evidence that the project was 99.98 percent complete and 10 of 11 packages were complete. Milestones, status, value, and summary remain unchanged. |
+| PCDS 2030 - Overarching Framework | Semantic correction | Changed the hidden framework value to `Not applicable`. The RM282 billion GDP target remains an open framework milestone and is not treated as a project value. |
+
+SMART remains `Not disclosed`. The RM116 million MOCN allocation was not added because it is not accepted as the total value of the tracked SMART scope. H2ornbill and H2biscus retain the approved `USD4.2 billion` historical combined-package value. These manual-review items were not implemented in this follow-up.
+
+Only SMD received an Updates entry because the signed MoA is a meaningful current public development. Rambungan is an evidence and chronology enrichment. Pan Borneo is a source enhancement. The framework change is a semantic correction.
+
+### Metrics after the follow-up
+
+- Stored records: 51
+- Public project cards: 50
+- Hidden framework records: 1
+- Planning: 7
+- Ongoing: 34
+- Completed: 9
+- Completed milestones: 147 of 221
+
+Status counts are unchanged. The completed milestone count increases by two.
+
+### Source-link review limits
+
+Accepted pages were opened and checked during the audit. Public link availability can change after review. Automated source checks are report-only, and access blocks, bot responses, redirect loops, or timeouts require manual review rather than automatic source removal.

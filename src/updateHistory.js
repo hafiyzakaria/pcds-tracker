@@ -14,6 +14,16 @@ const updateDefinitions = [
   },
   {
     date: "2026-08-13",
+    projectName: "SMD Semiconductor — GaN Chip Development",
+    description: {
+      en: "SMD Semiconductor and Jiangsu Linyang Energy signed an MoA covering technical evaluation, integration, qualification and commercialisation of Sarawak-developed power-semiconductor technologies.",
+      ms: "SMD Semiconductor dan Jiangsu Linyang Energy menandatangani MoA yang merangkumi penilaian teknikal, integrasi, kelayakan dan pengkomersialan teknologi semikonduktor kuasa yang dibangunkan di Sarawak.",
+    },
+    sourceUrl:
+      "https://smdsemiconductor.com/smd-linyang-partner-to-bring-sarawak-semiconductor-technologies-to-global-markets",
+  },
+  {
+    date: "2026-08-13",
     projectName: "Sarawak Bioindustrial Park",
     description: {
       en: "Construction of the Sarawak Bioindustrial Park Central Hub officially commenced after the foundation-laying ceremony. The 24-month construction period targets completion in August 2028.",

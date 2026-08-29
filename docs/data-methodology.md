@@ -39,7 +39,7 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-27`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-29`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
@@ -320,7 +320,17 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - [DayakDaily - SMD Advanced Chip Integration Centre (Sep 2025)](https://dayakdaily.com/sarawak-to-establish-smd-advanced-chip-integration-centre-to-power-semiconductor-leap/) - Publisher: DayakDaily; type: news report; date: Sep 2025; appears to support the SMD centre/chip-development context.
 - [DayakDaily - keteq.GaN and AI converter unveiled (Oct 2025)](https://dayakdaily.com/smd-semiconductor-unveils-keteq-gan-ai-convertor-in-london-cementing-sarawak-as-tech-leader/) - Publisher: DayakDaily; type: news report; date: Oct 2025; appears to support platform/product unveiling claims.
 - [DayakDaily - Keteq AI chip secures global IP rights (Oct 2025)](https://dayakdaily.com/sarawak-designed-keteq-ai-chip-set-to-secure-global-ip-rights-by-early-2026/) - Publisher: DayakDaily; type: news report; date: Oct 2025; appears to support the IP-rights/commercialisation pathway.
-- Gaps or uncertainty: no official SMD/company primary source is encoded; commercialisation timing remains a future public milestone.
+- [SMD Semiconductor - Linyang integration and commercialisation MoA (Aug 2026)](https://smdsemiconductor.com/smd-linyang-partner-to-bring-sarawak-semiconductor-technologies-to-global-markets) - Publisher: SMD Semiconductor; type: project-owner announcement; date: 13 Aug 2026; directly supports the signed MoA and its technical evaluation, integration, qualification, and commercialisation scope.
+- Decision: the Linyang MoA is a completed agreement milestone. It does not confirm global IP registration or the start of commercial production, so both delivery outcomes remain open.
+- Gaps or uncertainty: the timing of global IP registration and actual commercialisation remains unconfirmed.
+
+### Rambungan Sustainable Shrimp Aquaculture Project
+
+- Current dashboard status: `In Progress`
+- Current next milestone: 94 new shrimp-farming ponds are constructed
+- [State Farmers' Organisation Sarawak - Nursery tank construction tender (May 2026)](https://peladangsarawak.com.my/2026/05/07/kenyataan-tender-terbuka-kerja-pembinaan-sistem-tangki-asuhan-udang-di-bawah-projek-penternakan-udang-di-zon-industri-akuakultur-rambungan-loba-stoh-lundu-sarawak-tender-no-ppns-kpkm-shrimp-202/) - Publisher: State Farmers' Organisation Sarawak; type: official implementing-body tender notice; date: 7 May 2026; directly supports publication of the tender for the shrimp nursery tank system.
+- Decision: the tender publication is a completed procurement milestone. It does not confirm construction completion or delivery of the planned 94 ponds, so the 94-pond outcome remains open.
+- Editorial update-history decision: no entry. The tender improves the card's evidence and chronology but is not used as a current headline development.
 
 ### RM1 Billion Paddy Infrastructure Programme
 
@@ -457,7 +467,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 ### Provisional Additions Revalidated on 10 July 2026
 
-- Pan Borneo Highway Sarawak Phase 1 - `In Progress`; value: RM16.5 billion construction cost. Ten of 11 work packages were complete by October 2025. Sarawak Tribune's March 2025 report gave a Q4 2025 target for most of Work Package 11 and an October 2027 target for its four-kilometre Lambir section, but its newer December 2025 report supersedes those dates after water-pipe replacement and scope negotiations, scheduling full Work Package 11 completion for Q1 2029. The open milestone therefore uses `2029-Q1`; sources: The Edge Malaysia and Sarawak Tribune.
+- Pan Borneo Highway Sarawak Phase 1 - `In Progress`; value: RM16.5 billion construction cost. DanaInfra's official project page records 99.98 percent completion as of 30 June 2026 and confirms that 10 of 11 work packages were complete, with the remaining package scheduled for 2029. Sarawak Tribune's December 2025 report gives Q1 2029 as the more precise completion target after water-pipe replacement and scope negotiations. The open milestone therefore remains `2029-Q1`; sources: DanaInfra, The Edge Malaysia, and Sarawak Tribune. DanaInfra's financing figures do not replace the RM16.5 billion construction cost.
 - Sarawak-Sabah Link Road - `In Progress`; Phase 1 reached 70.05 percent and Phase 2 reached 10.55 percent in April 2026; next milestone: expected Phase 1 completion in 2027; sources: The Star and DayakDaily.
 - Miri Port Kuala Baram Capital Dredging - `In Progress`; value: RM238 million contract; physical progress reached about 55 percent in April 2026; next milestone: dredging completion in October 2026; sources: MIPD, DayakDaily, and Dredging Today.
 - Bau Gold Project - `Planning`; value: RM1.38 billion projected upstream investment in the PCDS 2030 Highlights 2023 report, corroborated by DayakDaily in November 2024. The separate RM24.3 billion in-ground gold value is a resource valuation and is excluded from the reported-value field. Besra completed an independent technical review, received conditional Jugan mining-lease renewal terms and formally accepted the conditional renewal offer on 31 July 2026; next milestone: finalised mining lease conditions; sources: DayakDaily and Besra Gold company disclosures.
@@ -516,6 +526,7 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 ### PCDS 2030 - Overarching Framework
 
 - Current dashboard status: `Operational`
+- Current dashboard value: `Not applicable`. The RM282 billion figure is a 2030 GDP target, not a project value.
 - Current next milestone: RM282B GDP goal
 - Rendering note: this record is stored in `src/trackerData.js` under the `overview` category, but `src/App.jsx` excludes `isOverview` rows from the active project grid.
 - Sources currently used:
