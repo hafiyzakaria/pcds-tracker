@@ -109,7 +109,7 @@ Only SMD received an Updates entry because the signed MoA is a meaningful curren
 - Planning: 7
 - Ongoing: 34
 - Completed: 9
-- Completed milestones: 147 of 221
+- Completed milestones: 148 of 223
 
 Status counts are unchanged. The completed milestone count increases by two.
 
