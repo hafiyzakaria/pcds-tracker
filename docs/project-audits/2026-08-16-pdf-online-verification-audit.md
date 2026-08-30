@@ -114,10 +114,11 @@ Screening routes:
 
 ## Recommended next review order
 
-1. Resolve the nine bold overlap decisions first so components and umbrella programmes do not become duplicate cards.
-2. Audit the discrete infrastructure and asset candidates in batches of four to six, starting with Coastal Road Network, Second Trunk Road, the Sarawak Virtual Pipeline System, SMA Rural Telecommunication, and the Kuching Port quay cranes.
-3. Review programmes, services, events, operating institutions, and the statutory fund against the product's project-card boundary before spending time on full field research.
-4. For any candidate retained after scope review, run the full value, lead-role, lifecycle, status, counter-search, source-quality, and BM-parity audit before proposing a card.
+1. Resolve the nine bold overlap decisions first so components and umbrella programmes do not become duplicate cards. Done on 17 August 2026.
+2. Audit the discrete infrastructure and asset candidates in batches of four to six, starting with Coastal Road Network, Second Trunk Road, the Sarawak Virtual Pipeline System, SMA Rural Telecommunication, and the Kuching Port quay cranes. First discrete batch closed on 17-18 August 2026.
+3. Depth-review the next identity and operating-zone batch: Sarawak Rural Broadband Network, Miri Smart City, Old Kuching Smart Heritage, the Pig Farming Area Initiative, Sama Jaya Free Industrial Zone, and Samalaju Industrial Park. Closed on 30 August 2026 with no new card. Dated leftover: [30 August 2026 PDF candidate batch](2026-08-30-pdf-candidate-batch.md).
+4. Review remaining programmes, services, events, operating institutions, and the statutory fund against the product's project-card boundary, starting with Sarawak Digital Bank, AirBorneo, Digital Community Centre, Digital Village Accelerator, SARES, and the Sarawak Water Supply Grid.
+5. For any candidate retained after scope review, run the full value, lead-role, lifecycle, status, counter-search, source-quality, and BM-parity audit before proposing a card.
 
 No candidate in this document should be added solely because it appears in a PCDS PDF and has one qualifying public page.
 
@@ -188,3 +189,19 @@ Performance Centre retained separately as monitored, the future-candidate pool f
 units. The two new cards have complete BM parity and unique `direct` inclusion records. A CSTR
 update-history entry records the 17 August 2026 Sejingkat Bridge opening report; SMART's resilience
 visit remains a supporting status source rather than a separate editorial update.
+
+## 30 August 2026 leftover: next six PDF candidates
+
+The next identity and operating-zone batch is recorded in
+[30 August 2026 PDF candidate batch](2026-08-30-pdf-candidate-batch.md).
+
+| Candidate | Decision |
+| --- | --- |
+| Sarawak Rural Broadband Network (MySRBN) | Do not add. Overlap with the live SMART card. |
+| Miri Smart City | Do not add. Municipal multi-system programme. |
+| Old Kuching Smart Heritage (OKSHE) | Do not add. Heritage and tourism programme. |
+| Pig Farming Area Initiative | Do not add the initiative. Monitor Selangau PFA. |
+| Sama Jaya Free Industrial Zone | Do not add. Operating 1992 zone. |
+| Samalaju Industrial Park | Do not add. SCORE growth node already on the SCORE card. |
+
+No live card, inclusion-register row, or SMART / Kota Petra / Lubok Punggor / SCORE edit. The 50-unit pool is unchanged. Six units now have a dated depth decision and a re-review trigger.

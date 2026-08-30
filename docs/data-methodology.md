@@ -282,6 +282,9 @@ Latest full milestone review:
 Focused six-card live audit (27 August 2026):
 `docs/project-audits/2026-08-27-six-card-live-audit.md`.
 
+Latest PDF-derived candidate leftover (30 August 2026):
+`docs/project-audits/2026-08-30-pdf-candidate-batch.md`.
+
 ## Project Summary Writing Standard
 
 - Write each summary as a concise introduction to what the project is, where it is, its defining scope or capacity, its purpose, and why it matters. Two short sentences are usually enough.

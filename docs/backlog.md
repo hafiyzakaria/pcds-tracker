@@ -4,7 +4,7 @@ This file lists outstanding work only. Completed behavior belongs in `docs/produ
 `docs/design.md`, the data methodology, and Git history rather than remaining mixed into the
 active backlog.
 
-Last reconciled with the current `preview` implementation on 27 August 2026.
+Last reconciled with the current `preview` implementation on 30 August 2026.
 
 ## Release blockers
 
@@ -32,7 +32,9 @@ content, lint, Preview build, Production build, and human Preview-review gates.
 
 - What needs to be done: Continue the 50-unit candidate pool recorded in the
   [16 August 2026 PDF and online verification audit](project-audits/2026-08-16-pdf-online-verification-audit.md)
-  in evidence-depth batches of four to six.
+  in evidence-depth batches of four to six. The 30 August leftover closed Rural Broadband / MySRBN,
+  Miri Smart City, Old Kuching Smart Heritage, the Pig Farming Area Initiative, Sama Jaya Free
+  Industrial Zone, and Samalaju Industrial Park with no new card.
 - Why it matters: The remaining pool contains credible project leads alongside programmes,
   services, events, institutions, umbrella scopes, and possible duplicates. Each needs an identity
   and evidence decision before it can become a tracker card.
@@ -42,9 +44,9 @@ content, lint, Preview build, Production build, and human Preview-review gates.
 - Inclusion gate: A new card needs a unique `audit/project-inclusion.json` record, an accepted
   `direct`, `official_linked`, or manually approved `component` tier, and a passing
   `npm run check:content`. Keep unresolved candidates monitored.
-- Suggested first task: Audit Sarawak Rural Broadband Network, Miri Smart City, Old Kuching Smart
-  Heritage, the Pig Farming Area Initiative, Sama Jaya Free Industrial Zone, and Samalaju Industrial
-  Park as the next bounded batch.
+- Suggested first task: Audit Sarawak Digital Bank, AirBorneo, Digital Community Centre, Digital
+  Village Accelerator, SARES, and the Sarawak Water Supply Grid / SAWAS. Reopen Virtual Pipeline
+  or the Senari quay cranes only if their 17 August triggers fire.
 - Estimated difficulty: high
 - Risk level: high
 
