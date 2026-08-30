@@ -144,3 +144,75 @@ Status counts are unchanged. The completed milestone count increases by two.
 ### Source-link review limits
 
 Accepted pages were opened and checked during the audit. Public link availability can change after review. Automated source checks are report-only, and access blocks, bot responses, redirect loops, or timeouts require manual review rather than automatic source removal.
+
+## 30 August 2026 leftover: Kota Petra Phase 1 site clearing
+
+- Review date: 2026-08-30
+- Reviewer: Cursor cloud agent, on behalf of the tracker owner
+- Review type: milestone trigger. The 20 August sweep left Kota Petra on Monitor and named the August 2026 site-clearing target. The 27 August six-card live audit left this card out of that batch.
+- Current dashboard identity: Innovation; `Kota Petra Green Technology Park`; `In Progress`; next open milestone `Phase 1 site clearing completes` (`2026-08`)
+- Tracked unit: programme (3,000-acre park, with Phase 1 100MWac / 300-acre solar as the live delivery package)
+- Name variants checked: KPGTP; Taman Teknologi Hijau Kota Petra; Zecon Renewables (Sarawak); Zecon Renewables Sdn Bhd
+
+Search syntheses were discovery only. Claims rest on opened pages.
+
+### Searches performed
+
+| Search type | Exact query or official domain | Findings |
+| --- | --- | --- |
+| Mandatory milestone-first | `"Kota Petra Green Technology Park" project milestones` | Zecon project page; May 2026 bridge and clearing target; July 2026 RM328 million EPCC; no later clearing-completion page |
+| Exact-name / 2026 status | `"Kota Petra Green Technology Park" update 2026` | The Edge weekly 10-16 Aug 2026 partner-seeking piece; Newswav 19 Aug 2026 BM reprint; July EPCC repeats |
+| Site clearing | `"Kota Petra" "site clearing" / "fully cleared" / pembersihan tapak` | May 2026 target only. BM clearing hits were a Kelantan flood project, not Kota Petra |
+| Value EN / BM / numeric | RM328 million; RM12 billion / 12 bilion; RM900 million | RM328 million remains the Phase 1 EPCC / 100MW plant figure. RM12 billion is expected park investment. RM900 million is a 2024 solar-and-infrastructure capex estimate |
+| Lead / parties | Zecon, Zecon Renewables, Knight Frank, SDEC, CENTEXS | Zecon remains landowner and master developer. Subsidiaries are IPP and intra-group EPCC contractor. Knight Frank is marketing agent |
+| Counter-search | delayed / suspended / cancelled / completed / commercial operations 2026 | No delay, cancellation, or COD change. No page says Phase 1 clearing finished |
+| Official-domain | `site:zecon.com.my`; UKAS; Premier; SRB | Zecon project page and May 20 news reprint. UKAS `news_view/41040` redirected and returned an empty body on 30 Aug. SRB 13 July 2026 engagement on the temporary Sungai Serai bridge |
+
+### Opened pages
+
+| URL | Publication date | Exact wording checked | Decision |
+| --- | --- | --- | --- |
+| https://zecon.com.my/news/sg-serai-bridge-set-for-june-completion-ahead-of-solar-farm-development/ | 20 May 2026 (Borneo Post reprint on Zecon news) | "around 150 acres of the Phase 1 site have already been cleared and are expected to be fully cleared by this August." COD "December 2027." Permanent bridge "Aug 2028." | Accepted as the source of the open August target. Not a completion notice |
+| https://dayakdaily.com/kota-petra-green-technology-park-gathers-pace-with-temporary-sungai-serai-bridge-set-to-unlock-phase-1-development/ | 21 May 2026 | "around 150 acres of the Phase One site have already been cleared, with full clearing expected to be completed by August this year." | Same May statement. Photo caption: land "already been cleared as of May 2026." |
+| https://zecon.com.my/project/kota-petra-green-technology-park/ | Opened 30 Aug 2026 | 3,000-acre masterplan, PCDS alignment, 300MW solar, 600 MWh BESS, six AI data-centre sites. Related-news list still tops out at the 21 May 2026 bridge article. | Retained for identity and scope. No August clearing update |
+| https://www.thestar.com.my/business/business-news/2026/07/24/zecon-unit-secures-contract-for-sarawak-solar-project | 24 Jul 2026 | RM328 million EPCC for the 100MWac Phase 1 facility at KPGTP. "shift from planning and approvals to execution." | Already on the card. No clearing-complete claim |
+| https://dayakdaily.com/zecon-subsidiary-secures-rm328-mln-contract-for-sarawaks-first-agrivoltaics-solar-project/ | 23 Jul 2026 | EPCC includes "a proposed 130-metre bridge across Sungai Serai, as well as site infrastructure and earthworks." COD "by Dec 31, 2027." | Corroboration. Earthworks in contract scope is not clearing completion |
+| https://www.bernamabiz.com/news.php?id=2584954 | 23 Jul 2026 | Same EPCC scope: "proposed 130-metre bridge" and "site infrastructure and earthworks within" KPGTP | Corroboration. Not added |
+| https://solarquarter.com/2026/07/23/zecon-awards-rm328-million-epcc-contract-for-100-mw-agrivoltaic-solar-project-in-sarawak/ | 23 Jul 2026 | "extensive site preparation and earthworks"; COD "December 31, 2027" | Corroboration. Industry rewrite. Not added |
+| https://srb.sarawak.gov.my/web/subpage/news_view/900 | Posted 15 Jul 2026; event 13 Jul 2026 | Engagement on "the construction and operation of the Temporary Steel Bridge over Sungai Serai." Zecon "was advised to obtain SRB approval prior to commencement of the project." | Research context only. After the June temporary-bridge target. Does not state that Phase 1 clearing finished or slipped |
+| https://theedgemalaysia.com/node/814620 | Weekly 10-16 Aug 2026; page opened 30 Aug 2026 | "Zecon is also constructing a RM328 million 100mw agrivoltaic solar plant at KPGTP spanning 300 acres" and "targeting commercial operations by end-2027." Also "about RM12 billion in investment value." | Accepted for restated construction and COD. Not a clearing closer. RM12 billion rejected as displayed value |
+| https://newswav.com/article/zecon-cari-pelabur-bangunkan-taman-teknologi-hijau-1-214-hektar-di-sarawak-A2608_u9C0bc | 19 Aug 2026 | "sedang membangunkan loji solar agrivoltaik berkapasiti 100 megawatt (MW) bernilai RM328 juta" and "disasarkan mula beroperasi secara komersial pada akhir 2027." | BM reprint of The Edge. Same decision |
+| https://www.mida.gov.my/mida-news/awg-tengah-sarawak-to-develop-kota-petra-green-tech-park-generate-rm12-bln-investments/ | 20 Nov 2024 | "expected to generate RM12 billion investments and create 10,000 jobs during the construction phase in 2030." | Rejected as displayed value. Expected investment / economic impact, not the Phase 1 contract |
+
+UKAS `https://ukas.sarawak.gov.my/web/subpage/news_view/41040` is still on the card from the May 2026 Phase 1 progress report. On 30 August the URL returned HTTP 302 and an empty body, so the August target was verified from the opened Zecon and DayakDaily reprints of that statement, not from a fresh UKAS render.
+
+### Field matrix
+
+| Field | Current | Newer claim | Decision |
+| --- | --- | --- | --- |
+| `status` | In Progress | The Edge: constructing the 100MW plant | Keep. Matches current status |
+| `value` | RM328 million | Still the Phase 1 EPCC / 100MW plant figure. RM12 billion is expected park investment | Keep RM328 million. Qualifier stays in the summary |
+| `lead` | Zecon Berhad | Still landowner and master developer | Keep |
+| `summary` | 3,000 acres; Phase 1 300 acres and 100MWac under RM328 million EPCC | No newer scope wording that changes the introduction | Keep |
+| Open milestone | `2026-08` Phase 1 site clearing completes | August was a target in May 2026. No later page says it happened or names a new date | Leave open. Do not mark complete from the month alone |
+| Later milestones | Commercial operations `2027-12`; permanent Sungai Serai bridge `2028-08` | End-2027 / 31 Dec 2027 restated in July and August. No page revises the 2028 bridge | Keep |
+| `sources` | Zecon project page; UKAS May 2026; The Star 24 Jul 2026 | The Edge restates construction and COD. Existing three sources already carry those fields | No add. Smallest sufficient set |
+| BM / Updates | Matching BM milestone still open | Partner-seeking and MoU talk is not a current delivery event | No localization or `updateHistory` edit |
+
+### Value log
+
+| Amount | Date | Scope | Type | Qualifier | Decision |
+| --- | --- | --- | --- | --- | --- |
+| RM328 million | 23-24 Jul 2026; restated 10-16 Aug 2026 | 100MWac Phase 1 agrivoltaic plant | EPCC contract / plant figure | contract / constructing a RM328 million plant | Keep as displayed value |
+| About RM12 billion | Nov 2024; repeated Aug 2026 via Zecon website | Full park over the development period | Expected investment / economic impact | expected / about | Reject as displayed value |
+| RM900 million | Oct 2024 | Solar farm and associated infrastructure | Capex estimate | estimated | Reject. Older than the Phase 1 contract and a wider package |
+
+### Decision
+
+- Outcome: Monitor. No card change.
+- Confidence: High that clearing is not evidenced as complete. Medium that the work is still under way, because the newest pages talk about construction and partner-seeking without a site-progress figure.
+- Hypothesis discarded: Phase 1 site clearing may have completed or slipped. Opened pages do not confirm either.
+- Editorial update-history decision: no entry. Seeking partners is not a delivery event. The July EPCC award is already on Updates.
+- Follow-up trigger: a public page that names Kota Petra / KPGTP and says Phase 1 site clearing finished, or that replaces the August 2026 target with a new date. Recheck commercial operations if a page revises December 2027.
+
+No change to `src/trackerData.js`, `src/localization.js`, or `src/updateHistory.js`. SMART, H2ornbill, and every other card were left untouched.
