@@ -101,6 +101,42 @@ SMART remains `Not disclosed`. The RM116 million MOCN allocation was not added b
 
 Only SMD received an Updates entry because the signed MoA is a meaningful current public development. Rambungan is an evidence and chronology enrichment. Pan Borneo is a source enhancement. The framework change is a semantic correction.
 
+### 30 August 2026 leftover: SMART displayed value
+
+The tracker owner later directed that this leftover be implemented: show the RM116 million MOCN allocation on the SMART card. That is a product decision. The amount is funding for MOCN equipment, not the total cost of the tracked SMART600 scope. H2ornbill and H2biscus stay on the approved `USD4.2 billion` historical combined-package figure. This leftover does not name an evidence-backed displayed-value change for them.
+
+Opened source used for the displayed value:
+
+- URL: https://dayakdaily.com/rm116-mln-to-power-600-sarawak-telco-towers-with-worlds-first-6-way-network-technology/
+- Publisher: DayakDaily
+- Dateline: Kuching, May 24 (2024). Photo caption: Hikmah Exchange Event Centre, Kuching, 24 May 2024
+- Exact visible wording: "Malaysian Communications and Multimedia Commission (MCMC) and Ministry of Finance (MOF) are set to allocate a substantial RM116 million to power 600 Sarawak Multimedia Authority Rural Telecommunication ((SMART600) towers with six-way Multi-Operator Core Network (MOCN) technology."
+- Same page: Communications Minister Fahmi Fadzil said MCMC will disburse RM42 million for the first year and RM37 million for the subsequent two years, and "overall amount for the project is RM200 million to ensure that all SMART600 towers are equipped with six-way MOCN."
+
+Identity and value type: the page names SMART600 / Sarawak Multimedia Authority Rural Telecommunication and the 600-tower unit. RM116 million is the MCMC/MOF allocation for six-way MOCN. It is not total SMART cost and not the RM200 million overall MOCN package that includes telco contributions.
+
+Other pages opened in this pass:
+
+| URL | Publication date | Visible claim checked | Decision |
+| --- | --- | --- | --- |
+| https://www.thestar.com.my/news/nation/2024/05/24/digital-connectivity-in-rural-s039wak-set-to-improve-with-signing-of-six-way-mocn-deal | 24 May 2024 | Names SMART600 and the six-way MOCN signing. The opened lead does not publish RM116 million; the rest is paywalled. | Rejected as the value source |
+| https://www.malaymail.com/news/malaysia/2024/05/24/fahmi-247-smart-towers-fully-activated-in-sarawak/136296 | 24 May 2024 | Same signing. Names SMART and MOCN. Opened text does not publish RM116 million. | Rejected as the value source |
+| https://sdec.com.my/web/2024/07/09/smart-project-implementation-in-sarawak-by-sdec/ | 10 May 2024 | Names SMART and MOCN equipment. Does not publish RM116 million. | Retained as an existing identity source |
+| https://www.theborneopost.com/2024/03/25/fahmi-169-smart-towers-are-functioning-well-in-sarawak/ | 25 Mar 2024 (search discovery) | Search snippets quote an earlier MCMC/MOF/telco yearly breakdown totaling about RM206.78 million. Cloudflare blocked the opened page in this review. | Not used. The leftover and the opened DayakDaily page name RM116 million. |
+
+Rejected for the displayed value, unchanged from earlier reviews: SALURAN RM2.25–2.3 billion; historical 1,500-tower RM5.5 billion; vandalism loss RM8.99 million; Connecting Jepak RM5 million; JENDELA RM4.09 billion. No later SMART600-only total cost was found.
+
+Implemented card effect:
+
+- `value`: `RM116 million` (amount-only). Summary and source label keep the 2024 MCMC/MOF MOCN-allocation meaning.
+- Source added: `DayakDaily — RM116M MCMC/MOF MOCN allocation for SMART600 (May 2024)`
+- Status, milestones, and lead unchanged. The card stays Completed/Operational on the 14 July 2026 Borneo Post / SMART600-as-of-30-April-2026 evidence. This pass is value-only.
+- BM value `RM116 juta` and matching summary.
+- No Updates entry. This is a 2024 allocation now shown on the card, not a new public development.
+- `LAST_UPDATED`: `2026-08-30`
+
+Outcome: Update recommended. Confidence: High for the opened DayakDaily wording and project identity. The displayed amount follows the leftover product decision and is not a claim that RM116 million is total SMART cost.
+
 ### Metrics after the follow-up
 
 - Stored records: 51

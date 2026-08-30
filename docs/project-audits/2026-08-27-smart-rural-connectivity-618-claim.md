@@ -142,3 +142,7 @@ Implemented card effect:
 - `LAST_UPDATED` remains `2026-08-27`
 
 Outcome of this follow-up: Update recommended. Confidence: High under the owner rule, because the opened public page names SMART 600 and states that all 600 towers had been completed and were operational as of 30 April 2026.
+
+## 30 August 2026 value leftover
+
+The 27 August value decision (`Not disclosed`) is superseded for the displayed amount only. The tracker owner later accepted the leftover RM116 million MCMC/MOF MOCN allocation as the dashboard value. Status and the 600-tower closer are unchanged. Evidence and wording are in the [29 August 2026 follow-up, 30 August leftover](2026-08-20-full-milestone-update-sweep.md#29-august-2026-follow-up).
