@@ -147,6 +147,70 @@ Status counts are unchanged. The completed milestone count increases by two.
 
 Accepted pages were opened and checked during the audit. Public link availability can change after review. Automated source checks are report-only, and access blocks, bot responses, redirect loops, or timeouts require manual review rather than automatic source removal.
 
+### 30 August 2026 leftover: deferred milestone wording
+
+This leftover closes the two wording reviews left open after the 20 August sweep. Bau Gold and Sarawak Bioindustrial Park were already resolved in that sweep. SMART, Kota Petra, H2ornbill, and every other card were left alone.
+
+Method: exact-name `project milestones` and 2026 status searches, then value, lead, official-domain, BM, and counter-searches. Search syntheses were discovery only. A claim was accepted only after an opened page named the exact project and supported the field.
+
+#### Lubok Punggor AgriHub and Mid Sadong 1 Irrigation Project
+
+| Field | Current | Proposed | Decision |
+| --- | --- | --- | --- |
+| Status | In Progress | In Progress | No change |
+| Value | RM30 million | RM30 million | No change |
+| Lead | Sarawak Government / DID Sarawak | Same | No change |
+| Completed | RM30 million initial project was approved (2024-02) | Same | Keep. DID, 29 Nov 2024: “the RM30 million project, approved last February.” |
+| Completed | Mid Sadong 1 Rehabilitation Scheme was launched (2024-11-29) | Same | Keep. DID, 29 Nov 2024: “after launching the Mid Sadong 1 Rehabilitation Scheme at Lubok Punggor here today.” |
+| Completed | Land compensation was handed to 119 recipients (2026-03-08) | Same | Keep. DayakDaily, 8 Mar 2026: “A total of 119 landowners received RM6.5 million in compensation to facilitate the implementation of the AgriHub Lubok Punggor development project.” |
+| Open | AgriHub and irrigation works reach completion (TBD) | Same | No change. The line already states the remaining delivery outcome. No opened page says those works finished. |
+
+Opened pages:
+
+- https://did.sarawak.gov.my/web/subpage/news_view/821 (29 Nov 2024). “The Sarawak government, through the Department of Irrigation and Drainage (DID) Sarawak, is developing infrastructure and an irrigation system for 54.4 hectares of padi fields in Lubok Punggor.” Approval and Mid Sadong 1 launch. Statewide 50 percent rice target and the RM100 million / 500-hectare expansion are not this card’s value.
+- https://dayakdaily.com/119-landowners-receive-rm6-5-mln-compensation-for-agrihub-lubok-punggor-project/ (8 Mar 2026). Compensation “to facilitate the implementation.” Scope: warehouse facilities, machinery workshops, water retention ponds, irrigation and drainage. Not completion.
+- UKAS `news_view/35719` is still on the card. This review timed out on the live page. The same 8 March handover was checked from the opened DayakDaily report. A Borneo Post UKAS reprint at `theborneopost.com/2026/03/09/rm6-5-mln-compensation-paid-to-119-recipients-for-lubok-punggor-agrihub-project-in-gedong/` was not reliably retrieved.
+
+Rejected or identity-only:
+
+- PCDS Highlights PDF: Mid Sadong works “commenced” in 2022 with a 2025 completion target. PDF-only. 2025 passed without a public closer.
+- Search syntheses that said works were “approaching completion” or “45 percent” complete. No opened page said that.
+- UPM AgriHub@Gedong and the Biris seed farm. Related Gedong activity, not this RM30 million DID irrigation and AgriHub package.
+
+Outcome: No card change. Confidence: High. Completion stays TBD. No Updates entry.
+
+#### SCORE — Sarawak Corridor of Renewable Energy
+
+| Field | Current | Proposed | Decision |
+| --- | --- | --- | --- |
+| Status | In Progress | In Progress | No change |
+| Value | RM125 billion | RM125 billion | No change. Keep amount-only. Summary now carries the source qualifier “more than.” |
+| Lead | RECODA | RECODA | No change |
+| Completed | RM125B investment and 53,000 jobs reported (2025-05-10) | More than RM125B investment and 53,000 jobs reported | Accept. DayakDaily, 10 May 2025: “investments surpassing RM125 billion and more than 53,000 job opportunities created.” RECODA, 15 Jul 2025: “more than RM125 billion in investments and created over 53,000 jobs.” |
+| Open | Industrial park expansion and investor support (TBD) | Industrial parks expand and attract investment | Accept as wording only. Same open programme outcome. DayakDaily names Samalaju’s growth from a greenfield site into a heavy-industry hub. No dated park-completion event. |
+| Open | Rural infrastructure delivery through URDA, HDA, and NRDA (TBD) | URDA, HDA and NRDA complete rural infrastructure | Accept as wording only. DayakDaily, 2 Apr 2026: Recoda “is implementing 243 critical basic infrastructure projects” through URDA, HDA and NRDA. Still underway. Do not mark complete. Do not lock the 247/243 count into the milestone. |
+| Summary | “With RM125 billion in cumulative investment” | “With more than RM125 billion in cumulative investment” | Accept. Restores the opened qualifier. Value field stays RM125 billion. |
+
+Opened pages:
+
+- https://dayakdaily.com/score-fuels-sarawaks-economic-growth-with-rm125-bln-investment-53000-jobs-created/ (10 May 2025). SCORE named. Surpassing RM125 billion. More than 53,000 jobs. Samalaju industrial-park growth. RM4.5 billion to HDA, NRDA and URDA for 247 infrastructure projects.
+- https://recoda.gov.my/pbm-miri-2025-transforming-sarawak-through-score/ (15 Jul 2025). Official repeat: more than RM125 billion, over 53,000 jobs, 247 projects “currently underway.”
+- https://dayakdaily.com/243-critical-projects-worth-rm4-5-bln-to-boost-infrastructure-devt-rural-connectivity-across-sarawak/ (2 Apr 2026). Recoda “is implementing 243 critical basic infrastructure projects” through URDA, HDA and NRDA. No completion claim. This page does not state RM151.5 billion.
+- https://recoda.gov.my/ (opened 30 Aug 2026). Agency homepage. Latest listed item 26 Aug 2026 is an NREB seminar, not a SCORE delivery closer.
+- https://jiwabakti.com.my/score-tarik-pelaburan-berjumlah-rm151-5-bilion-tawarkan-60000-peluang-pekerjaan/ (Rindok Raya, same 1 Apr 2026 event). “Jumlah pelaburan yang diluluskan di kawasan Koridor Tenaga Boleh Diperbaharui Sarawak (SCORE) setakat ini mencecah RM151.5 bilion” across 655 projects, “berpotensi mewujudkan lebih 60,000 peluang pekerjaan.” Used only as a value candidate.
+
+Rejected for the live card:
+
+- RM151.5 billion approved investment / 60,000 potential jobs. Opened on Jiwa Bakti. DayakDaily’s same-event report omits it. Borneo Post and Suara Sarawak reprints were not reliably opened. One community page is not enough to replace the displayed value.
+- Samalaju Port expansion, Samalaju CCPP, and the Bintulu-Samalaju gas pipeline. Adjacent SCORE-region assets, already tracked elsewhere or outside this corridor card.
+- Historical RECODA RM123 billion (end-2024) and RM334 billion 2030 target. Older or target figures. They do not replace the May 2025 report.
+
+Outcome: Update recommended for wording, qualifier, and rural-implementation source. Confidence: High for the May 2025 / July 2025 RM125 billion report and the still-open rural works. Medium that the industrial-park line should stay programme-level until a named park event is published. No Updates entry. The April 2026 page confirms continuing work. It is not a new headline development.
+
+Next SCORE trigger: an official RECODA, UKAS, or second reputable page that names SCORE and either (a) confirms a dated industrial-park or rural-package completion, or (b) repeats the RM151.5 billion approved-investment figure.
+
+BM: Lubok unchanged. SCORE summary and all three milestone strings updated to match the English evidence.
+
 ## 30 August 2026 leftover: Kota Petra Phase 1 site clearing
 
 - Review date: 2026-08-30

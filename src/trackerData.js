@@ -750,14 +750,16 @@ export const SECTORS = [
         lead: "RECODA",
         value: "RM125 billion",
         summary:
-          "An economic corridor linking the Samalaju, Tanjung Manis, Mukah, Baram and Tunoh growth nodes. With RM125 billion in cumulative investment, SCORE supports industrial development and rural and interior delivery through RECODA, URDA, HDA and NRDA.",
+          "An economic corridor linking the Samalaju, Tanjung Manis, Mukah, Baram and Tunoh growth nodes. With more than RM125 billion in cumulative investment, SCORE supports industrial development and rural and interior delivery through RECODA, URDA, HDA and NRDA.",
         milestones: [
-          { date: "2025-05-10", text: "RM125B investment and 53,000 jobs reported", done: true },
-          { date: "TBD", text: "Industrial park expansion and investor support", done: false },
-          { date: "TBD", text: "Rural infrastructure delivery through URDA, HDA, and NRDA", done: false },
+          { date: "2025-05-10", text: "More than RM125B investment and 53,000 jobs reported", done: true },
+          { date: "TBD", text: "Industrial parks expand and attract investment", done: false },
+          { date: "TBD", text: "URDA, HDA and NRDA complete rural infrastructure", done: false },
         ],
         sources: [
           { label: "DayakDaily — SCORE: RM125B investment, 53K jobs (May 2025)", url: "https://dayakdaily.com/score-fuels-sarawaks-economic-growth-with-rm125-bln-investment-53000-jobs-created/" },
+          { label: "RECODA — SCORE attracted more than RM125B and 247 rural projects underway (Jul 2025)", url: "https://recoda.gov.my/pbm-miri-2025-transforming-sarawak-through-score/" },
+          { label: "DayakDaily — RECODA implementing 243 rural infrastructure projects (Apr 2026)", url: "https://dayakdaily.com/243-critical-projects-worth-rm4-5-bln-to-boost-infrastructure-devt-rural-connectivity-across-sarawak/" },
           { label: "RECODA official site", url: "https://recoda.gov.my/" },
         ],
       },
