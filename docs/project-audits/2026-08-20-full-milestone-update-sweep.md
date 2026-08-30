@@ -101,6 +101,34 @@ SMART remains `Not disclosed`. The RM116 million MOCN allocation was not added b
 
 Only SMD received an Updates entry because the signed MoA is a meaningful current public development. Rambungan is an evidence and chronology enrichment. Pan Borneo is a source enhancement. The framework change is a semantic correction.
 
+### 30 August 2026 leftover: SMART displayed value
+
+The 29 August leftover left SMART at `Not disclosed` and rejected RM116 million as the total value of the tracked SMART scope. That rejection stands. RM116 million, RM200 million, and about RM207 million remain MOCN or OPEX figures and are not shown on the card.
+
+The approved displayed value is the construction total in the Premier's Budget Speech 2025. H2ornbill and H2biscus stay on the approved `USD4.2 billion` historical combined-package figure.
+
+Opened official source:
+
+- URL: https://premier.sarawak.gov.my/web/attachment/show/?docid=T2xGRlE0L2czZnVhUjdUYVFyT0hIQT09OjrWlE9RPDMkUq7fTAYY4SJ4
+- Document: Budget Speech 2025, YAB Premier Sarawak, Dewan Undangan Negeri, Monday 11 November 2024. Embargo until delivered that day.
+- Paragraph 126, exact visible wording: "Another key initiative is construction of 600 towers under Sarawak Multimedia Authority Rural Telecommunication (SMART) project by SDEC with a total cost of RM1.5 billion. As of third quarter of 2024, 545 out of 600 towers have been constructed. For next year, RM397 million will be provided under Alternative Funding for continuation of the project."
+
+Identity and value type: the passage names SMART, SDEC, and the 600-tower unit. The figure is total construction cost. Do not convert it to an allocation. RM397 million in the same paragraph is a 2025 continuation allocation and is not the displayed value. Paragraph 125 SALURAN RM1.9 billion and paragraph 127 MySRBN are adjacent programmes.
+
+A Digital News Asia reprint that changes the qualifier from total cost to allocated is not used. The official speech is sufficient.
+
+Implemented card effect:
+
+- `value`: `RM1.5 billion` (amount-only). Summary and source label keep SDEC construction of 600 SMART towers, total cost, Premier Budget Speech 2025 / 11 November 2024.
+- Source added: `Office of the Premier — Budget Speech 2025, SDEC SMART 600-tower construction total (Nov 2024)`
+- DayakDaily RM116 million MOCN allocation is not on the card.
+- Status, milestones, and lead unchanged. The card stays Completed/Operational on the 14 July 2026 Borneo Post / SMART600-as-of-30-April-2026 evidence. Tracked unit remains 600, not 618.
+- BM value `RM1.5 bilion` and matching summary.
+- No Updates entry. The 2024 speech is historical relative to the existing 30 April 2026 SMART600 completion update.
+- `LAST_UPDATED`: `2026-08-30`
+
+Outcome: Update recommended. Confidence: High. The opened official speech names the exact project and states a total construction cost of RM1.5 billion.
+
 ### Metrics after the follow-up
 
 - Stored records: 51
