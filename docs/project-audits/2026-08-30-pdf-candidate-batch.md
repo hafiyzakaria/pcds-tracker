@@ -5,7 +5,8 @@
 - Base: current `preview` at `677df54`. Not the unmerged SCORE/Lubok wording branch.
 - Method: [data methodology](../data-methodology.md), [project research template](../project-research-template.md), [data review checklist](../data-review-checklist.md)
 - Parent inventory: [16 August 2026 PDF and online verification audit](2026-08-16-pdf-online-verification-audit.md)
-- Implementation boundary: no new live card. No change to SMART, Kota Petra, Lubok Punggor, or SCORE cards. Overlap is recorded here only.
+- Implementation boundary for the six audited units: no new live card. No change to SMART, Kota Petra, Lubok Punggor, or SCORE cards. Overlap is recorded here only.
+- Later on the same date, the two spun-off proposals were approved and implemented as cards. That work is recorded in [Implementation, 30 August 2026](#implementation-30-august-2026) rather than in a duplicate document.
 - Verification pass, same day: every unit was re-run against the milestone-first sequence before this document was accepted. The pass confirmed all six top-level `Do not add` decisions, corrected three factual statements, and overturned the Selangau sub-decision. Each unit carries its own `Verification pass` block below, and the consolidated result is in [Verification pass summary](#verification-pass-summary).
 
 This batch is candidate-pool work. A public webpage that names the unit is not a card. The six names were already identity-verified on 16 August. This leftover resolves tracked unit, overlap, inclusion, and whether any unit can pass the live-card gate.
@@ -23,9 +24,9 @@ Search syntheses were discovery only. Every accepted claim below comes from an o
 | Sama Jaya Free Industrial Zone | Operating 1992 high-tech zone | Location context for SMD. Adjacent to Kota Petra. Expansion is Kuching High-Tech Park | Do not add | Highlights describes an established 400-hectare park. RM14.95 billion, later RM15.4 billion, is approved investor commitment, not a delivery cost. The live expansion name is Kuching High-Tech Park, a later candidate. |
 | Samalaju Industrial Park | Operating 2008 SCORE growth node | Named on the SCORE card. Supplied by the Bintulu-Samalaju gas pipeline | Do not add | Highlights and RECODA describe an existing park. Current public work is water supply, an internal road, port free-zone status, and the SME Cluster. Those are components, not a reason to split SCORE. The SME Cluster is now a separate candidate in its own right. |
 
-No card, inclusion-register row, localisation, or update-history entry is added by this document. The future-candidate pool stays at 50 units. These six now have a dated depth decision and a re-review trigger.
+None of the six audited units receives a card, inclusion-register row, localisation, or update-history entry. The future-candidate pool stays at 50 units. These six now have a dated depth decision and a re-review trigger.
 
-Two units are handed forward as proposals rather than additions: [Selangau Pig Farming Area](#proposal-selangau-pig-farming-area) and [Samalaju SME Cluster](#proposal-samalaju-sme-cluster). Neither is implemented here.
+Two units were handed forward as proposals rather than additions: [Selangau Pig Farming Area](#proposal-selangau-pig-farming-area) and [Samalaju SME Cluster](#proposal-samalaju-sme-cluster). Both were subsequently approved and are now live cards; the delivery record is in [Implementation, 30 August 2026](#implementation-30-august-2026).
 
 ## Shared method notes
 
@@ -291,7 +292,7 @@ Corrections withdrawn from the first pass:
 
 ## Proposal: Selangau Pig Farming Area
 
-Overturned from monitor to propose. This is a comparison for approval, not an implementation. No card, inclusion-register row, localisation entry, or update-history entry is written by this document.
+Overturned from monitor to propose. The table below is the comparison that went for approval; it is retained as the original proposal record. The proposal was approved and implemented on 30 August 2026, and the delivered fields, including where they differ from this table, are recorded in [Implementation, 30 August 2026](#implementation-30-august-2026).
 
 | Field | Current state | Proposed card |
 | --- | --- | --- |
@@ -314,7 +315,7 @@ Open questions for approval:
 
 ## Proposal: Samalaju SME Cluster
 
-Spun off by the Samalaju Industrial Park trigger. It is not one of the six units, and it is offered for the next batch rather than for immediate addition.
+Spun off by the Samalaju Industrial Park trigger. It is not one of the six units. The table below is the original proposal record; it was approved and implemented on 30 August 2026, and the delivered fields are recorded in [Implementation, 30 August 2026](#implementation-30-august-2026).
 
 | Field | Current state | Proposed card |
 | --- | --- | --- |
@@ -334,22 +335,123 @@ Open questions for approval:
 - The relationship to the SCORE card needs a decision. SCORE keeps "Industrial park expansion and investor support" open, and a cluster card would sit inside that. This audit did not touch the SCORE card.
 - The AIP hectarage of 43.2 disagrees with the current 96.72, so the AIP figure is historical scope only.
 
+## Implementation, 30 August 2026
+
+Both proposals were approved and are now live cards. The candidate pool is unaffected: it stays at 50 units, and the six audited units above keep their `Do not add` decisions. SMART, Kota Petra, Lubok Punggor, MySRBN, Miri Smart City, OKSHE, Sama Jaya Free Industrial Zone, Samalaju Industrial Park and the Pig Farming Area Initiative are unchanged. The SCORE card is unchanged; see [SCORE cross-reference](#score-cross-reference) for why no edit was forced.
+
+### Re-open log
+
+Every accepted source page was re-opened before the cards were written.
+
+| URL | Re-opened | Result |
+| --- | --- | --- |
+| [M-FICORD - Another modern pig farm will be built in Sarawak](https://mficord.sarawak.gov.my/web/subpage/news_view/1458) | 2026-08-30 | Rendered. RM300 million, 232.69 hectares, 6 November 2024 groundbreaking at Sungai Selabi, 12,000 breeders, Best Pork Sdn Bhd, 2027 production expectation |
+| [BERNAMA - Construction of modern pig farm begins in Sarawak](https://bernama.com/en/news.php?id=2360375) | 2026-08-30 | Rendered. "the RM300 million project on the 232.69 hectares plot"; "designed to house 12,000 Parent Stock (PS)" |
+| [DayakDaily - Work underway at Selangau pig farm](https://dayakdaily.com/work-underway-at-selangau-pig-farm-set-to-produce-250000-porkers-a-year/) | 2026-08-30 | Rendered. SPA site approval 22 February 2021; about 10 hectares cleared with infrastructure works begun early 2025; operator appointed in collaboration with SLDB; three phases; closed-house, zero-discharge and biogas |
+| [M-FICORD - Development of the Selangau Pig Farming Area](https://mficord.sarawak.gov.my/web/subpage/news_view/1605) | 2026-08-30 | Rendered. Works began earlier in 2025; three phases; closed houses, biosecurity and biogas; 12,000 maximum breeding capacity; SLDB collaboration |
+| [DayakDaily - 860,000 porkers through three pig farming areas](https://dayakdaily.com/sarawak-to-produce-860000-porkers-valued-at-rm1-29-billion-annually-through-3-pig-farming-areas/) | 2026-08-30 | Rendered. Selangau operated by a private company but monitored by DVS; 233 hectares; 10 hectares cleared; basic infrastructure expected complete in 2028 |
+| [Borneo Post - RM1.5 billion additional swine revenue](https://www.theborneopost.com/2024/11/06/swak-expects-additional-rm1-5-bln-annual-revenue-from-swine-industry-says-dr-rundi/) | 2026-08-30 | Cloudflare bot challenge on three direct fetches and a direct HTTP request, which returned 403. Not used as a card source |
+| [DayakDaily - Samalaju township to back industrial expansion](https://dayakdaily.com/samalaju-township-set-to-back-fast-growing-industrial-expansion/) | 2026-08-30 | Rendered. 10 phases across 96.72 hectares, total estimated cost RM223 million; Phases 1 and 2 completed involving RM25.8 million and 21 industrial lots; 29 June 2026 launch; MINTRED to run SCORE-MSME |
+| [Jiwa Bakti - Kluster PKMS perkukuhkan ekosistem perindustrian](https://jiwabakti.com.my/kluster-pkms-perkukuhkan-ekosistem-perindustrian/) | 2026-08-30 | Rendered. "10 fasa di kawasan seluas 96.72 hektar dengan anggaran kos RM223 juta"; "Fasa 1 dan Fasa 2 yang telah siap dibangunkan membabitkan kos RM25.8 juta serta menyediakan 21 lot industri" |
+| [DayakDaily - RM183 million for 17 industrial park projects](https://dayakdaily.com/rm183-mln-approved-for-17-industrial-park-projects-in-swak-supporting-rural-growth-and-msmes/) | 2026-08-30 | Rendered, with a correction below. Awang Tengah speaks as Minister for International Trade, Industry and Investment; Samalaju SME Cluster Phases 1 and 2 appear in the completed list |
+| [Borneo Post - Sarawak expands industrial access through SME Cluster](https://www.theborneopost.com/2026/06/29/sarawak-expands-industrial-access-through-sme-cluster-ecosystem/) | 2026-08-30 | Cloudflare bot challenge again, as in the verification pass. Not used as a card source |
+
+Both Borneo Post pages were left off the cards because neither could be opened on this pass. Their bodies were visible only through search retrieval, which is discovery rather than evidence. Nothing displayed on either card depends on them: the Borneo Post swine report adds the operator's own "set up at a cost of RM300 million" attribution and a 575-acre restatement, and the Borneo Post cluster report adds 21.53 hectares for Phases 1 and 2. Re-check both URLs at the next sweep and add them if they render.
+
+One official page was newly opened and is recorded as research material rather than a card source, because it is a Hansard attachment: the [DUN Sarawak sitting record](https://duns.sarawak.gov.my/web/attachment/show/?docid=c3dadHNScy93MmlEc1pRVWJkRXlvdz09Ojr4aGM0Dnc0oObTTgivtD_N) independently confirms the 22 February 2021 SPA approval, the SLDB collaboration, the 10 cleared hectares, the early-2025 start of infrastructure works, and the closed-house, zero-discharge and biogas scope.
+
+### Correction to this document
+
+The verification pass above states that the 20 May 2026 DayakDaily report approved "RM183.07 million for 17 industrial park projects under the 13th Malaysia Plan" and that "six are complete, including Samalaju SME Cluster Phases 1 and 2". The second half is misattributed. On re-opening, the six completed projects belong to the 12th Malaysia Plan list of 23 industrial park projects worth RM128.05 million. The 13MP RM183.07 million line covers 17 new projects. Both portfolio figures are rejected as the cluster's value, so the conclusion is unchanged, but the RM128.05 million 12MP portfolio now also joins the rejected list.
+
+### Fields written
+
+| Field | Selangau Pig Farming Area | Samalaju SME Cluster |
+| --- | --- | --- |
+| Category | `agriculture` (Commercial Agriculture) | `manufacturing` (Manufacturing) |
+| `name` | `Selangau Pig Farming Area`, no `displayName` | `Samalaju SME Cluster`, no `displayName` |
+| Tracked unit | `single_asset`, the 232.69-hectare farm at Sungai Selabi, Selangau | `programme`, the phased industrial-lot development inside Samalaju Industrial Park |
+| Inclusion | `direct`, AIP Volume II printed pp.148-150 action step 4.1 | `direct`, PCDS Highlights 2023 printed p.25 and AIP Volume II printed p.14 action step 1.6 |
+| `status` | `In Progress` | `In Progress` |
+| `value` | `RM300 million` | `RM223 million` |
+| `lead` | `Best Pork Sdn Bhd / Sarawak Land Development Board` | `Ministry of International Trade, Industry and Investment (MINTRED)` |
+| `summary` | 232.69 hectares at Sungai Selabi, 12,000 parent stock, closed-house, zero-discharge, biogas, and the RM300 million project cost dated to the November 2024 groundbreaking | 10 phases, 96.72 hectares, RM223 million estimated total development cost, and the completed Phases 1 and 2 at RM25.8 million with 21 industrial lots. The June 2026 launch month stays in the milestone array only |
+| `milestones` | `2021-02-22` site approved, done; `2024-11-06` groundbreaking, done; `2025` clearing and infrastructure works began, done; `2028` basic site infrastructure reaches completion, open; `TBD` farm begins porker production, open | `2026-06-29` cluster launched, with Phases 1 and 2 already complete (21 industrial lots), done; `TBD` remaining phases reach completion, open |
+| `sources` | M-FICORD 6 Nov 2024; BERNAMA 6 Nov 2024; DayakDaily 23 May 2025; M-FICORD 23 May 2025; DayakDaily 19 May 2026 | DayakDaily 30 Jun 2026; Jiwa Bakti 30 Jun 2026; DayakDaily 20 May 2026 |
+
+Deviations from the proposal tables, both deliberate:
+
+1. The Selangau proposal listed the Borneo Post report as a source and omitted M-FICORD's 23 May 2025 page. The delivered card swaps them, because the M-FICORD page opened and the Borneo Post page did not, and the M-FICORD page carries the same three-phase, closed-house and biogas scope.
+2. The first write split Phases 1 and 2 completion onto an `Achieved` date label, then listed the 29 June 2026 launch below it. `Achieved` is reserved for the excluded PCDS overview row. No completion date is published for either phase, so none was invented, and the undated completion sitting above the dated launch was unreadable beside `29 June 2026`. The approved reconstruction collapses those two completed rows into one `2026-06-29` milestone that records the official launch and that Phases 1 and 2 were already complete with 21 industrial lots. The card now reads `1/2 complete`. `formatMilestoneDate` still returns `Dicapai` for `Achieved` on the overview row. No other UI behaviour changed.
+
+The Selangau summary names November 2024 only as the dated project-cost qualifier. The cluster summary no longer restates the June 2026 launch month; that date stays in the milestone array.
+
+### Format pass, same day
+
+A later FORMAT + EVIDENCE pass compared the two live cards with sibling Commercial Agriculture and Manufacturing cards. Status, value, lead, milestones, inclusion records, and update-history entries were kept. Two format fixes were applied without adding or removing source URLs:
+
+1. Source labels were rewritten to the established `Publisher — short claim (Mon YYYY)` pattern. The previous labels packed multiple audit findings and made broader township, sitting, and 12MP-portfolio pages read as dedicated project reports.
+2. The Samalaju English and BM summaries dropped the launch-month clause so they stay two reader sentences rather than a compressed timeline.
+
+Re-opened source pages on this pass matched the earlier re-open log. Both Borneo Post URLs still returned Cloudflare challenges and remain off the cards.
+
+### Milestone reconstruction, same day
+
+The three-milestone `Achieved` shape was later rejected. The cluster now has two milestones only: the combined 29 June 2026 launch-plus-Phases-1-and-2 fact, and the open remaining-phases outcome. The English and BM summaries still omit the launch month. The 29 June 2026 update-history entry is unchanged; it already says the cluster launched with Phases 1 and 2 already complete. `LAST_UPDATED` remains `2026-08-30`.
+
+### Value decisions
+
+| Amount | Scope | Type | Card | Decision |
+| --- | --- | --- | --- | --- |
+| RM300 million | Selangau PFA, 232.69 hectares | Project cost stated by the minister at the 6 November 2024 groundbreaking, and by the operator as the farm's set-up cost | Selangau | Accept, displayed amount-only with the 2024 date and project-cost qualifier in the summary |
+| RM1.5 billion | Statewide swine industry by 2030 | Additional annual revenue | Selangau | Reject, economic impact |
+| RM1.29 billion | Three pig farming areas | Annual production value | Selangau | Reject, economic impact across a wider scope |
+| RM27 million | New PFAs, May 2024 | Statewide allocation | Selangau | Reject, wider and older than the tracked unit |
+| RM312 million, RM129.8 million, RM21.7 million | Pasir Puteh and statewide live-pig exports | Export earnings | Selangau | Reject, another site and not a project cost |
+| RM6.5 million | 233 hectares of NCR land | Land compensation, PDF-only | Selangau | Reject, a component of the project rather than its cost |
+| RM223 million | 10 phases, 96.72 hectares | Estimated total development cost, from "total estimated cost" and "anggaran kos" | Samalaju SME Cluster | Accept, with the estimate qualifier preserved in the summary |
+| RM25.8 million | Completed Phases 1 and 2 | Phase cost with 21 industrial lots | Samalaju SME Cluster | Accept for the summary only, not as the dashboard value |
+| RM60 billion | Samalaju Industrial Park | Cumulative investor commitment | Samalaju SME Cluster | Reject, park-wide investor money |
+| RM183.07 million | 17 industrial park projects, 13MP | Portfolio approval | Samalaju SME Cluster | Reject, portfolio |
+| RM128.05 million | 23 industrial park projects, 12MP | Portfolio allocation | Samalaju SME Cluster | Reject, portfolio |
+| RM58.2 million | Five industrial-park items in the 2026 Budget Speech | Shared allocation line | Samalaju SME Cluster | Reject, shared and PDF-only |
+
+### Data and register work
+
+- `audit/project-inclusion.json`: two unique `active` records at the `direct` tier, `reviewedOn` moved to 2026-08-30. Scope moves to 54 audited records and 52 active records, and `scripts/validate-tracker-data.mjs` moves its approved scope and `direct` tier count to match, from 35 to 37.
+- `src/trackerData.js`: English cards only, appended to the existing `manufacturing` and `agriculture` categories. No new category, no category rename, no change to any other card.
+- `src/localization.js`: explicit Bahasa Melayu `lead`, `value`, `summary` and milestone arrays for both cards, in the same order as the English milestones.
+- `LAST_UPDATED`: already `2026-08-30`, which is the correct freshness date for this change. No edit was required.
+- `src/updateHistory.js`: one entry each. Selangau uses the 6 November 2024 groundbreaking, which is the project's material construction-start development and lands at the older end of the feed in the same way the 16 September 2024 Bintulu Bio-Algae entry did when that card was added. The cluster uses the 29 June 2026 launch. Neither entry is editorial-only, and no other project received an entry.
+
+### SCORE cross-reference
+
+No opened source forced a SCORE edit, so the SCORE card is untouched. The relationship is recorded here instead. SCORE keeps `Industrial parks expand and attract investment` open as a corridor-level outcome, and the SME Cluster sits inside that outcome as a separately funded, separately launched development with its own value, phasing and delivery ministry. Only the Cloudflare-blocked Borneo Post cluster report mentions SCORE-adjacent material, through the SCORE-MSME programme name and the park's cumulative investor total, and neither claim changes a SCORE displayed field. Revisit only if a future opened page reports a corridor-level completion or a value change for SCORE itself.
+
+### Residual open questions
+
+Carried forward from the proposal tables and still unresolved:
+
+- Selangau schedule. The 6 November 2024 sources expected completion within a year and first sales by early 2027. The 19 May 2026 sitting places basic infrastructure completion in 2028. The card follows the later date and leaves production undated. Re-check when the 2028 target approaches or any first-production claim appears.
+- Selangau capacity. 250,000 porkers a year and a 125,000 standing pig population appear in 2024 and 2025 reporting, while the 2026 sitting gives a three-farm total instead. The card displays only the 12,000 parent stock design. Re-check when a site-level capacity figure is published without conflict.
+- Selangau value age. RM300 million is a November 2024 figure with no 2026 replacement, retained as a dated project value under the historical-estimate rule rather than as a current final cost.
+- Cluster phase dates. No completion date is published for Phase 1 or Phase 2, and none was invented. That undated completion now sits inside the 29 June 2026 launch milestone rather than on an `Achieved` date label. Split it again only if a dated Phases 1 and 2 completion source appears.
+- Cluster Phase 3. No opened page confirms a tender or an award, so no procurement milestone exists. A search synthesis on this pass claimed that "tender documentation for Samalaju SME Cluster Phase 3 Stage 1 was updated as recently as August 17, 2026" and cited a November 2022 RECODA park-infrastructure page that says nothing of the kind. That is a false positive and is not evidence. An official MINTRED or state tender notice for Phase 3 is the trigger.
+- Cluster lead detail. MINTRED is the delivering ministry and runs SCORE-MSME. No contractor, consultant or estate manager is named on any opened page.
+
 ## Product boundary
 
 The live tracker is for major, publicly trackable delivery units. These six are a rural broadband service already covered by SMART, a municipal smart-city bundle, a heritage programme, a three-farm livestock initiative, and two operating industrial parks. Online identity was never the hard part. The hard part is still scope.
 
 Adding all six would have filled a quota and duplicated SMART and SCORE. None of them received an inclusion-register row.
 
-The verification pass did not change that. What it changed is where the trackable unit sits. Twice, the deliverable turned out to be one level below the candidate name: Selangau under the pig farming initiative, and the SME Cluster under Samalaju. Both are proposals awaiting approval, and neither is a reason to add the umbrella above it.
+The verification pass did not change that. What it changed is where the trackable unit sits. Twice, the deliverable turned out to be one level below the candidate name: Selangau under the pig farming initiative, and the SME Cluster under Samalaju. Both were approved and added as their own cards, and neither is a reason to add the umbrella above it.
 
 ## Next batch
 
-The 50-unit pool remains 50. Two proposals now sit ahead of it and should be resolved first, because both already have a value, an inclusion locator, and an open outcome:
+The 50-unit pool remains 50. The two proposals that sat ahead of it are resolved: Selangau Pig Farming Area and the Samalaju SME Cluster are live cards, recorded in [Implementation, 30 August 2026](#implementation-30-august-2026).
 
-1. Selangau Pig Farming Area, awaiting approval
-2. Samalaju SME Cluster, awaiting approval
-
-The next evidence-depth batch should then move to remaining identity and programme units that have not had this treatment:
+The next evidence-depth batch should move to remaining identity and programme units that have not had this treatment:
 
 1. Sarawak Digital Bank
 2. AirBorneo

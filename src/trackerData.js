@@ -52,6 +52,24 @@ export const SECTORS = [
           { label: "SMD Semiconductor — Linyang integration and commercialisation MoA (Aug 2026)", url: "https://smdsemiconductor.com/smd-linyang-partner-to-bring-sarawak-semiconductor-technologies-to-global-markets" },
         ],
       },
+      {
+        name: "Samalaju SME Cluster",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Ministry of International Trade, Industry and Investment (MINTRED)",
+        value: "RM223 million",
+        summary:
+          "A phased industrial-lot development inside Samalaju Industrial Park, planned as 10 phases across 96.72 hectares at an estimated total development cost of RM223 million. Completed Phases 1 and 2 cost RM25.8 million and provide 21 industrial lots for local micro, small and medium enterprises supplying Samalaju industries.",
+        milestones: [
+          { date: "2026-06-29", text: "Cluster launched, with Phases 1 and 2 already complete (21 industrial lots)", done: true },
+          { date: "TBD", text: "Remaining phases reach completion", done: false },
+        ],
+        sources: [
+          { label: "DayakDaily — Samalaju township and SME Cluster launch (Jun 2026)", url: "https://dayakdaily.com/samalaju-township-set-to-back-fast-growing-industrial-expansion/" },
+          { label: "Jiwa Bakti — Kluster PKMS, anggaran kos RM223 juta (Jun 2026)", url: "https://jiwabakti.com.my/kluster-pkms-perkukuhkan-ekosistem-perindustrian/" },
+          { label: "DayakDaily — 12MP completions include Samalaju SME Cluster Phases 1-2 (May 2026)", url: "https://dayakdaily.com/rm183-mln-approved-for-17-industrial-park-projects-in-swak-supporting-rural-growth-and-msmes/" },
+        ],
+      },
     ],
   },
   {
@@ -159,6 +177,29 @@ export const SECTORS = [
           { label: "M-FICORD - Rambungan harvest, land and joint venture (Jan 2025)", url: "https://mficord.sarawak.gov.my/web/subpage/news_view/1513" },
           { label: "DayakDaily - Rambungan production and export targets (Jan 2025)", url: "https://dayakdaily.com/rambungan-large-scale-shrimp-farming-targets-1349-tonnes-rm27-mln-in-annual-exports/" },
           { label: "State Farmers’ Organisation Sarawak — Nursery tank construction tender (May 2026)", url: "https://peladangsarawak.com.my/2026/05/07/kenyataan-tender-terbuka-kerja-pembinaan-sistem-tangki-asuhan-udang-di-bawah-projek-penternakan-udang-di-zon-industri-akuakultur-rambungan-loba-stoh-lundu-sarawak-tender-no-ppns-kpkm-shrimp-202/" },
+        ],
+      },
+      {
+        name: "Selangau Pig Farming Area",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Best Pork Sdn Bhd / Sarawak Land Development Board",
+        value: "RM300 million",
+        summary:
+          "A 232.69-hectare centralised pig farming area at Sungai Selabi, Selangau, built for 12,000 parent stock using closed-house systems, zero-discharge practices and biogas facilities. Its RM300 million project cost was stated at the November 2024 groundbreaking, and the farm is intended to expand Sarawak's swine production under stricter biosecurity standards.",
+        milestones: [
+          { date: "2021-02-22", text: "State Planning Authority approved the farm site", done: true },
+          { date: "2024-11-06", text: "Groundbreaking held at Sungai Selabi", done: true },
+          { date: "2025", text: "Land clearing and infrastructure works began", done: true },
+          { date: "2028", text: "Basic site infrastructure reaches completion", done: false },
+          { date: "TBD", text: "Farm begins porker production", done: false },
+        ],
+        sources: [
+          { label: "M-FICORD — RM300M Selangau pig farm groundbreaking (Nov 2024)", url: "https://mficord.sarawak.gov.my/web/subpage/news_view/1458" },
+          { label: "BERNAMA — Construction of modern pig farm begins (Nov 2024)", url: "https://bernama.com/en/news.php?id=2360375" },
+          { label: "DayakDaily — Work underway at Selangau pig farm (May 2025)", url: "https://dayakdaily.com/work-underway-at-selangau-pig-farm-set-to-produce-250000-porkers-a-year/" },
+          { label: "M-FICORD — Selangau PFA modern-technology sitting update (May 2025)", url: "https://mficord.sarawak.gov.my/web/subpage/news_view/1605" },
+          { label: "DayakDaily — Three pig farming areas, Selangau 2028 works (May 2026)", url: "https://dayakdaily.com/sarawak-to-produce-860000-porkers-valued-at-rm1-29-billion-annually-through-3-pig-farming-areas/" },
         ],
       },
     ],
