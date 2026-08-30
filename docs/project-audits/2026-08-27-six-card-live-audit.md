@@ -18,7 +18,7 @@ Search syntheses, snippets, and result previews were discovery only. Every accep
 | One-Stop Early Intervention Centre (OSEIC) Miri | Update recommended | Operations milestone moved from `2026` to `2027`; July 2026 source added | Confirmed opening or a newer official date |
 | Community Social Support Centre (CSSC) Network | No card change | Value remains `Not disclosed`; Bintulu operations remain undated | Bintulu opening, launch, or operator handover |
 | Special Needs Community Centre | No card change / Monitor | Tender T/388/07/2026 still open (closes 23 Sep 2026); November letter of award remains open | Tender close, letter of award, or construction start |
-| Yayasan Sarawak International Secondary Schools Expansion | Update recommended | Added 31 Jan 2026 Miri and Bintulu construction start; remaining completion split into 2027 (Miri/Bintulu) and TBD (sixth campus) | Miri or Bintulu opening, or a dated sixth-campus decision |
+| Yayasan Sarawak International Secondary Schools Expansion | Update recommended; 30 Aug 2026 evidence enhancement | Added 31 Jan 2026 Miri and Bintulu construction start; remaining completion split into 2027 (Miri/Bintulu) and TBD (sixth campus). 30 Aug 2026: campus count confirmed; DayakDaily/About source notes added; sixth row stays TBD | Miri or Bintulu opening, or a dated sixth-campus decision |
 | KUTS — Kuching Urban Transportation System | Update recommended | ART arrival date corrected from `2026-Q1` to `2026-08-01`; Aug 2026 source added; Q4 pilot remains open | Confirmed ART pilot service or a revised schedule |
 
 Nazirul approved implementation of the evidence-backed changes. Unchanged cards were left unchanged.
@@ -195,6 +195,70 @@ No newer per-school contract total was found. The sixth campus remains planning/
 - Confidence: High for Miri construction start (two independent reports). High for Bintulu construction start from the Premier’s opened DayakDaily wording (“the campuses are under construction… The Bintulu campus is also the same”). Medium that the sixth campus should stay undated.
 - Changes: completed construction-start milestone `2026-01-31`; remaining completion split to `2027` Miri/Bintulu and `TBD` sixth campus; two sources; updateHistory 31 Jan 2026; matching BM milestones
 - Follow-up: Miri or Bintulu opening, or a dated sixth-campus decision
+
+### 30 August 2026 re-review: YSISS sixth campus
+
+- Review date: 2026-08-30
+- Reviewer: Cursor cloud agent, on behalf of the tracker owner
+- Review type: milestone trigger / source-note clarification
+- Current dashboard identity: Education; `Yayasan Sarawak International Secondary Schools Expansion`; `In Progress`; next open milestone `Miri and Bintulu campuses reach completion` (`2027`), then `Sixth campus reaches completion` (`TBD`)
+- Tracked unit: programme (remaining expansion of the six-school YSISS network)
+- Name variants checked: YSISS; Yayasan Sarawak International School; Yayasan Sarawak International Secondary School; Kuching / Sibu / Bintulu / Miri / Betong campus; Sekolah Antarabangsa Yayasan Sarawak
+
+#### Searches performed
+
+| Search type | Exact query or official domain | Findings / candidate URLs |
+| --- | --- | --- |
+| Mandatory milestone-first discovery | `"Yayasan Sarawak International Schools" project milestones` | DayakDaily 31 Jan 2026; Borneo Post Sep 2025 six-school network; Borneo Post May 2025 Bintulu/Miri 2027; official About/Contact pages |
+| Alias / campus | `YSISS` / `Yayasan Sarawak International School` Kuching Sibu Bintulu Miri Betong campus | Official About lists three operating campuses and Bintulu/Miri as future; DayakDaily and Jiwa Bakti for the sixth-in-planning claim |
+| Exact-name / status | `"Yayasan Sarawak International" update 2026` | Same 31 Jan 2026 Premier event; official homepage news is operating-school activity, 2027 intake, and a Kuching AC tender |
+| Value | cost / estimated cost / RM40 million / kos / nilai projek | Rakan Sarawak Apr 2022 RM40-45 million per school reopened and retained; older RM60 million 12MP figure remains historical |
+| Lead / parties | owner / Yayasan Sarawak / government | Official site and Rakan Sarawak keep Yayasan Sarawak / Sarawak Government as lead |
+| Counter-search | delayed / cancelled / completed 2026 / sixth / Betong | No opened page marks Miri, Bintulu, or a sixth campus complete, delayed, or cancelled |
+| Official-domain | `site:ysiss.edu.my` | About, Contact, News, homepage Facebook feed |
+
+Search syntheses and snippets were discovery only.
+
+#### Candidate-source log
+
+| URL | Discovery origin | Publisher | Publication date | Identity and visible claim checked | Decision | Reason |
+| --- | --- | --- | --- | --- | --- | --- |
+| https://ysiss.edu.my/ | Official-domain | YSISS | opened 30 Aug 2026 | Operating-school news, 2027 intake, Kuching AC tender; no remaining-campus construction or sixth-campus date | Retained | Owner page; no new delivery event |
+| https://ysiss.edu.my/about-ysiss/ | Official-domain | YSISS | opened 30 Aug 2026 | Operating: Petra Jaya, Kuching, Sibu. Future projects: Bintulu, Miri. No Betong | Accepted (campus count) | Owner page names the exact network and the five listed campuses |
+| https://ysiss.edu.my/contact-us/ | Official-domain | YSISS | opened 30 Aug 2026 | Contact numbers and addresses for Petra Jaya, Kuching 12th Mile, and Sibu only | Accepted (operating count) | Confirms three operating campuses |
+| https://ysiss.edu.my/news/ | Official-domain | YSISS | opened 30 Aug 2026 | Latest listed items are operating-school and 2025 Sibu/Bintulu planning news | Retained | No 2026 remaining-campus construction notice |
+| https://dayakdaily.com/yayasan-swak-intl-secondary-school-campuses-in-bintulu-miri-underway-sixth-school-planned/ | Milestone-first | DayakDaily | 31 Jan 2026 | Premier: Miri and Bintulu under construction after tenders; “five international schools, with one more currently in the planning stage.” Article: discussions underway for a new international school in Betong Division. No sixth-campus date | Accepted | Names YSISS and supports construction, campus count, and undated sixth-campus planning |
+| https://jiwabakti.com.my/sarawak-negeri-pertama-miliki-sekolah-antarabangsa/ | Status search | Jiwa Bakti | same 31 Jan 2026 event | Premier: construction started in Bekenu for Miri and likewise Bintulu; “Kita ada lima sekolah antarabangsa di mana satu lagi masih dalam perancangan.” Does not name Betong | Monitor / not added | Same event as DayakDaily; adds no unique field. Smallest source set retained |
+| https://www.sarawaktribune.com/construction-has-begun-on-yayasan-sarawak-international-school-in-miri/ | Existing live source | Sarawak Tribune | 31 Jan 2026 | Miri construction commenced, tender awarded, Bekenu-Beraya; “the same applies to Bintulu, and then we will have five international schools.” Sagah previously: Miri and Bintulu completion by 2027. No sixth campus or Betong | Retained | Independent construction-start source; does not date or locate the sixth campus |
+| https://www.rakansarawak.com/know-more-about-the-sarawak-owned-international-schools/ | Existing live source | Rakan Sarawak | 7 Apr 2022 | “Each school will need RM40 million to RM45 million to implement.” Original five-school plan | Value retained | Still the accepted per-school implementation estimate |
+| https://dayakdaily.com/establishing-five-international-schools-a-new-dawn-of-academic-excellence/ | Value / Betong follow-up | DayakDaily | book excerpt; accurate as of Q1 2025 | Historical five-school plan; RM60 million 12MP estimate; 5 Jun 2024 Uggah request for a Betong Division school | Context only | Superseded for construction status by 31 Jan 2026; RM60 million is not used as the displayed value |
+| https://www.sarawaktribune.com/betong-to-get-international-secondary-school/ | Betong follow-up | Sarawak Tribune | 5 Jun 2024 | Premier will discuss establishing another YSISS for Sri Aman, Betong, and Sarikei and will discuss finding a location | Context only | 2024 discussion, not a dated sixth-campus decision or construction start |
+| https://www.thestar.com.my/news/nation/2025/05/20/ysiss-students-surpass-international-average-in-cambridge-exams | Status search | The Star | 20 May 2025 | Then three operating schools (Petra Jaya, 12th Mile, Sibu); planned Bintulu campus at Jepak | Context only | Older operating-count snapshot; exam results are not a delivery field |
+| https://www.theborneopost.com/2025/09/07/dr-annuar-ysiss-established-to-uplift-rural-low-income-students/ | Existing live source | Borneo Post | 7 Sep 2025 | Cloudflare challenge on this pass; 27 Aug 2026 audit already accepted six-school / three-remaining wording | Retained | Existing source; this pass could not re-open the body |
+| https://www.utusanborneo.com.my/2025/06/15/penubuhan-ysiss-di-betong-akan-perkasa-pendidikan-stem-di-luar-bandar | Betong follow-up | Utusan Borneo | 15 Jun 2025 | HTTP 403; body not opened | Rejected | Inaccessible; not used |
+| https://content.astroawani.com/video/video-terkini-x7sio1/sekolah-menengah-antarabangsa-keenam-yayasan-sarawak-dibina-di-betong-x8zoes4 | Betong follow-up | Astro Awani | undated video title | HTTP 403; title only; body/transcript not opened | Rejected | Discovery only; cannot accept an unopened video as naming Betong as the sixth campus |
+
+#### Field-by-field claim matrix
+
+| Field | Current value | Candidate claim | Decision |
+| --- | --- | --- | --- |
+| Campus count | Three operating; Miri and Bintulu under construction; sixth in planning | Official About/Contact: three operating, Bintulu and Miri future. Premier 31 Jan 2026: those additions make five, with one more in planning | Keep count. Label the About page and DayakDaily source so the count is visible |
+| `milestones` sixth row | `TBD` / `Sixth campus reaches completion` / `done: false` | No opened page publishes a sixth-campus date or completion | Keep TBD. Do not invent a date. Do not rename the row to Betong |
+| `status` | `In Progress` | Latest achieved stage remains Miri/Bintulu construction | No change |
+| `value` | `RM120-135 million` derived remaining-three | Rakan Sarawak RM40-45 million per school still opened; no newer remaining-three figure | Retain |
+| `lead` | `Yayasan Sarawak / Sarawak Government` | Official site and Rakan Sarawak support Yayasan Sarawak delivery under the state initiative | No change |
+| `summary` | Remaining three-school derived estimate | No new scope or value type | No change; planning detail stays in sources |
+| `sources` | DayakDaily label names construction only | Opened DayakDaily page also supports undated sixth-campus planning and Betong-division discussions | Update the DayakDaily and About labels |
+| `localization` | BM milestones already match | Source labels stay in the original language | No BM fact change required |
+| `updateHistory` | 31 Jan 2026 construction-start entry exists | This pass is an editorial source-note clarification | No new entry |
+
+#### Decision
+
+- Outcome: Evidence enhancement
+- Confidence: High for the campus count and that the sixth campus remains undated. Medium that Betong should stay off the milestone and summary, because the Premier’s opened 31 Jan 2026 wording does not name the sixth campus and the official site lists only Bintulu and Miri as future projects
+- Changes: DayakDaily source label now records sixth-school planning / Betong-division discussions; About YSISS label now records three operating campuses plus Bintulu and Miri as future; sixth-campus row stays `TBD`; no summary, value, status, lead, BM, or updateHistory change
+- Editorial update-history decision: no entry. The 31 Jan 2026 construction-start item remains the latest material public development
+- Follow-up: Miri or Bintulu opening, or a dated sixth-campus decision that names the site on an opened page
 
 ---
 
