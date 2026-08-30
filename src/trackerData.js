@@ -63,7 +63,7 @@ export const SECTORS = [
         milestones: [
           { date: "2023", text: "Phases 1 and 2 reached completion", done: true },
           { date: "2026-06-29", text: "Cluster officially launched", done: true },
-          { date: "TBD", text: "Remaining phases reach completion", done: false },
+          { date: "TBD", text: "Remaining eight phases deliver industrial lots for local MSMEs", done: false },
         ],
         sources: [
           { label: "DayakDaily — Samalaju SME Cluster listed as under construction (May 2023)", url: "https://dayakdaily.com/sama-jaya-free-industrial-zone-samalaju-industrial-park-records-healthy-numbers-in-employment-wages-paid/" },

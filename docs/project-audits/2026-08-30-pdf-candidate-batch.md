@@ -376,7 +376,7 @@ The verification pass above states that the 20 May 2026 DayakDaily report approv
 | `value` | `RM300 million` | `RM223 million` |
 | `lead` | `Best Pork Sdn Bhd / Sarawak Land Development Board` | `Ministry of International Trade, Industry and Investment (MINTRED)` |
 | `summary` | 232.69 hectares at Sungai Selabi, 12,000 parent stock, closed-house, zero-discharge, biogas, and the RM300 million project cost dated to the November 2024 groundbreaking | 10 phases, 96.72 hectares, RM223 million estimated total development cost, and the completed Phases 1 and 2 at RM25.8 million with 21 industrial lots. The June 2026 launch month stays in the milestone array only |
-| `milestones` | `2021-02-22` site approved, done; `2024-11-06` groundbreaking, done; `2025` clearing and infrastructure works began, done; `2028` basic site infrastructure reaches completion, open; `TBD` farm begins porker production, open | `2023` Phases 1 and 2 reached completion, done; `2026-06-29` cluster officially launched, done; `TBD` remaining phases reach completion, open |
+| `milestones` | `2021-02-22` site approved, done; `2024-11-06` groundbreaking, done; `2025` clearing and infrastructure works began, done; `2028` basic site infrastructure reaches completion, open; `TBD` farm begins porker production, open | `2023` Phases 1 and 2 reached completion, done; `2026-06-29` cluster officially launched, done; `TBD` remaining eight phases deliver industrial lots for local MSMEs, open |
 | `sources` | M-FICORD 6 Nov 2024; BERNAMA 6 Nov 2024; DayakDaily 23 May 2025; M-FICORD 23 May 2025; DayakDaily 19 May 2026 | DayakDaily 24 May 2023; Borneo Post 20 Oct 2023 via Wayback; DayakDaily 20 May 2026; DayakDaily 30 Jun 2026; Jiwa Bakti 30 Jun 2026 |
 
 Deviations from the proposal tables, both deliberate:
@@ -501,9 +501,31 @@ Nazirul asked why the live card had only two milestones. The honest answer is th
 | --- | --- | --- |
 | 1 | `2026-06-29` Cluster launched, with Phases 1 and 2 already complete (21 industrial lots), done | `2023` Phases 1 and 2 reached completion, done |
 | 2 | `TBD` Remaining phases reach completion, open | `2026-06-29` Cluster officially launched, done |
-| 3 | | `TBD` Remaining phases reach completion, open |
+| 3 | | `TBD` Remaining eight phases deliver industrial lots for local MSMEs, open |
 
 Progress moves from `1/2` to `2/3`. The date column shows `2023` and `29 June 2026`, not `Achieved`. Value stays amount-only `RM223 million` with estimated / anggaran in the summary. Launch chronology stays out of the summary. No update-history entry: the 29 June 2026 launch is already recorded, and this pass is an editorial reconstruction.
+
+### Open-milestone wording, same day
+
+The open row first read `Remaining phases reach completion`. That was circular: it restated the phase structure without naming what gets delivered or who uses it. A wording exploration re-opened every accepted page and ranked five source-close alternatives. The approved wording is `Remaining eight phases deliver industrial lots for local MSMEs`, BM `Baki lapan fasa menyediakan lot industri untuk PMKS tempatan`, still `TBD` and still `done: false`.
+
+Basis for each element:
+
+- `eight` is arithmetic, not a quoted figure. No source says "eight phases". The launch pages state 10 phases and that Phases 1 and 2 are complete, so 10 minus 2 is shown as eight. Revisit if a source merges, splits, or renumbers phases.
+- `deliver industrial lots` follows DayakDaily's "providing 21 industrial lots" and Jiwa Bakti's "menyediakan 21 lot industri". Applying that outcome to later phases is an inference from the completed phases, not a quoted promise.
+- `local MSMEs` follows the launch wording that the cluster expands opportunities for local micro, small and medium enterprises; BM uses the source's own `PMKS tempatan`.
+- No year, no lot count, and no hectare figure is attached to the later phases. The remaining phases cover roughly 75 hectares rather than the full 96.72, so a 96.72-hectare open row was rejected as inaccurate.
+
+Rejected alternatives: an occupancy or take-up row, because the only evidence is the undated MINTRED vacant-lot attachment; and any "work is underway" framing, because no opened page says the later phases are in construction. The 20 May 2026 DayakDaily line "the remaining projects are at various stages of implementation" refers to the remaining projects among the 23 twelfth-Malaysia-Plan industrial park projects, not to this cluster's remaining phases.
+
+### Extra-milestone re-check, same day
+
+The same pass tested whether opened pages support a fourth or later row. They do not, so the card stays at three. Failures beyond those already listed above: the 18 July 2018 tender-stage snippet still has no opened body; the 3 November 2022 RECODA "1,000 acres / 100 acres" remark is park-wide SME land and never names the cluster; the 24 May 2023 "under construction" line is a status snapshot with no start date; the 20 May 2026 12MP completed list restates the 2023 completion; SCORE-MSME is still future tense; the 200 MLD water plant, power capacity, and the port free-commercial-zone approval are Samalaju-wide or SIP assets; and the SMEIPA 2023 "80.8% under Increase Formation and Formalisation of Businesses" score is an evaluation metric on a third-party mirror rather than a delivery event.
+
+Two new false-positive notes:
+
+1. The phantom Phase 3 tender now has a likely origin. Search syntheses asserted a September 2024 "Samalaju SME Cluster Phase 3 Stage 1" site-clearing and earthworks tender three times in one pass, once inventing the number `MINTRED/5/2024`, and cited the Sarawak Treasury attachment, the RECODA board terms of reference, and the 20 May 2026 DayakDaily report. None of those page texts contains "Phase 3", "earthworks", or "site clearing" for this cluster. MINTRED's live tender page does carry notices in exactly that shape, such as "Proposed Site Clearing and Earthworks at Demak Laut Industrial Park, Phase 2C, Kuching Division, Sarawak (Stage 3)", which appears to be the borrowed template. Wayback holds a single capture of that tender page, 18 January 2026, and none from September 2024.
+2. The MINTRED vacant-lot attachment lists 13 vacant plots numbered up to 38, against the 21 lots stated for Phases 1 and 2. The attachment is undated and is research material only, but the plot-count conflict should be resolved before any lot-count claim is displayed.
 
 ### Outcome
 
