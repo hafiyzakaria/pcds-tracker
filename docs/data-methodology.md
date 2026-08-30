@@ -462,6 +462,14 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Gaps or uncertainty: no updated project plan, investment value, or production timeline has been published. Former 2027, 2028, 2029, and 2030 delivery targets are historical planning references and are not retained after the 2026 recalibration. Final investment decisions, construction, and commercial production remain undated open outcomes because the earlier official project sequence identifies these delivery stages but newer evidence does not provide replacement dates.
 - Editorial update-history decision: no new entry. The existing 9 June 2026 recalibration entry remains the latest material public development; the added milestones document earlier project stages.
 
+### Proposal Cards Approved on 30 August 2026
+
+- Selangau Pig Farming Area - `In Progress`; value: `RM300 million`, the project cost stated by the Minister for Food Industry, Commodity and Regional Development at the 6 November 2024 groundbreaking and carried on M-FICORD's own news page and the BERNAMA wire report. The tracked unit is the single 232.69-hectare farm at Sungai Selabi, Selangau, not the three-farm Pig Farming Area Initiative. Best Pork Sdn Bhd is the developer and operator in collaboration with the Sarawak Land Development Board; the Department of Veterinary Services monitors the site and M-FICORD owns the wider swine programme. The AIP-era anchor farms and MPF Agronomy Sdn Bhd are historical parties and are not shown as lead. The State Planning Authority approved the site on 22 February 2021, land clearing and infrastructure works began in early 2025, and the 19 May 2026 sitting places basic infrastructure completion in 2028, superseding the 2024 expectation of completion "within a year". Porker production remains undated. RM1.5 billion and RM1.29 billion are annual swine-industry production values, RM27 million was a 2024 statewide new-PFA allocation, RM312 million and RM129.8 million are Pasir Puteh export earnings, and RM6.5 million is PDF-only NCR land compensation; none is used as this card's value. Capacity reporting conflicts, so the card displays only the 12,000 parent stock design that every source agrees on. Sources: M-FICORD, BERNAMA, and DayakDaily.
+- Samalaju SME Cluster - `In Progress`; value: `RM223 million`, the estimated total development cost for 10 phases across 96.72 hectares, preserved as an estimate from "total estimated cost" and "anggaran kos". The tracked unit is the phased industrial-lot development inside Samalaju Industrial Park, not the park and not SCORE. MINTRED leads delivery and will run the SCORE-MSME programme. Phases 1 and 2 are publicly reported complete at RM25.8 million with 21 industrial lots, but no completion date has been published, so that milestone carries the `Achieved` label rather than an invented date. The project was officially launched on 29 June 2026 and later phases remain open. The RM60 billion Samalaju Industrial Park investor total, the RM183.07 million 13MP industrial-park portfolio, the RM128.05 million 12MP industrial-park portfolio, and the RM58.2 million shared budget line are rejected as this card's value. The AIP's 43.2-hectare scope is historical. Sources: DayakDaily and Jiwa Bakti.
+- Inclusion decision: both cards use the `direct` tier. Selangau is a `single_asset`; the SME Cluster is a `programme`. Neither addition changes the SMART, Kota Petra, Lubok Punggor, Samalaju Industrial Park, or SCORE records.
+- Editorial update-history decision: both cards receive one entry. The 6 November 2024 Selangau groundbreaking and the 29 June 2026 cluster launch are material public delivery developments rather than editorial notes.
+- Dated decision record: [PDF candidate batch implementation section](project-audits/2026-08-30-pdf-candidate-batch.md#implementation-30-august-2026).
+
 ### Candidate Additions Approved on 18 August 2026
 
 - SMA Rural Telecommunication (SMART) - `Operational`; value: `RM1.5 billion`, the construction total for 600 SMART towers by SDEC in the Premier's Budget Speech 2025, delivered 11 November 2024. The amount is total construction cost, not an allocation. RM397 million in the same paragraph is a 2025 continuation allocation and is not displayed. RM116 million, RM200 million, and about RM207 million remain rejected as MOCN or OPEX. The direct PCDS rural-connectivity programme is represented by the current SMART600 delivery scope, which deploys carrier-neutral towers and enables MySRBN home broadband for underserved communities. SDEC pages support the August 2022 Nanga Sekukut launch, towers operating with MySRBN by March 2024, the July 2025 MCMC-SDEC operating-support agreement, and continuing active SMART infrastructure in July 2026. A 14 July 2026 Borneo Post report of a Communications Ministry written parliamentary reply states that as of 30 April 2026 all 600 SMART towers had been completed and were operational, including 29 in Baram. That public webpage closes the remaining-tower milestone; the tracked unit remains 600, not 618. Conflicting July 2025 tower totals are excluded from the card, the historical RM5.5 billion figure belongs to an earlier 1,500-tower PDF scope, and the RM8.99 million figure is statewide vandalism loss rather than project value. A 15 August 2026 Utusan Sarawak report quoting Minister Julaihi that all 618 SMART towers are fully operational remains linked as a reported claim only and is not the closer. Dated decision record: [SMART 618-claim review and 30 April 2026 closer](project-audits/2026-08-27-smart-rural-connectivity-618-claim.md). The construction-total leftover is recorded in the [29 August 2026 follow-up](project-audits/2026-08-20-full-milestone-update-sweep.md#29-august-2026-follow-up).
@@ -543,8 +551,8 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 The app derives display rows by flattening `SECTORS` into project rows and excluding the overview category:
 
-- Active rendered projects: 50.
-- Stored projects including overview: 51.
+- Active rendered projects: 52.
+- Stored projects including overview: 53.
 - PCDS economic sectors represented in data: 6.
 - PCDS enablers represented in data: 7.
 - Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, mining, social-services.
@@ -552,7 +560,7 @@ The app derives display rows by flattening `SECTORS` into project rows and exclu
 
 Current active dashboard status counts from `src/trackerData.js`:
 
-- `In Progress`: 34.
+- `In Progress`: 36.
 - `Awaiting Decision`: 0.
 - `Planning`: 7.
 - `Operational`: 5.
@@ -567,11 +575,11 @@ The UI groups detailed statuses into public filter labels:
 
 Current public display counts:
 
-- Tracked projects: 50.
+- Tracked projects: 52.
 - Planning: 7.
-- Ongoing: 34.
+- Ongoing: 36.
 - Completed: 9.
-- Milestones: 146 completed out of 221 active-project milestones.
+- Milestones: 153 completed out of 231 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 
