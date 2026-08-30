@@ -375,7 +375,7 @@ The verification pass above states that the 20 May 2026 DayakDaily report approv
 | `status` | `In Progress` | `In Progress` |
 | `value` | `RM300 million` | `RM223 million` |
 | `lead` | `Best Pork Sdn Bhd / Sarawak Land Development Board` | `Ministry of International Trade, Industry and Investment (MINTRED)` |
-| `summary` | 232.69 hectares at Sungai Selabi, 12,000 parent stock, closed-house, zero-discharge, biogas, and the RM300 million project cost dated to the November 2024 groundbreaking | 10 phases, 96.72 hectares, RM223 million estimated total development cost, June 2026 launch, and the completed Phases 1 and 2 at RM25.8 million with 21 industrial lots |
+| `summary` | 232.69 hectares at Sungai Selabi, 12,000 parent stock, closed-house, zero-discharge, biogas, and the RM300 million project cost dated to the November 2024 groundbreaking | 10 phases, 96.72 hectares, RM223 million estimated total development cost, and the completed Phases 1 and 2 at RM25.8 million with 21 industrial lots. The June 2026 launch month stays in the milestone array only |
 | `milestones` | `2021-02-22` site approved, done; `2024-11-06` groundbreaking, done; `2025` clearing and infrastructure works began, done; `2028` basic site infrastructure reaches completion, open; `TBD` farm begins porker production, open | `Achieved` Phases 1 and 2 completed with 21 industrial lots, done; `2026-06-29` cluster officially launched, done; `TBD` remaining phases reach completion, open |
 | `sources` | M-FICORD 6 Nov 2024; BERNAMA 6 Nov 2024; DayakDaily 23 May 2025; M-FICORD 23 May 2025; DayakDaily 19 May 2026 | DayakDaily 30 Jun 2026; Jiwa Bakti 30 Jun 2026; DayakDaily 20 May 2026 |
 
@@ -384,7 +384,16 @@ Deviations from the proposal tables, both deliberate:
 1. The Selangau proposal listed the Borneo Post report as a source and omitted M-FICORD's 23 May 2025 page. The delivered card swaps them, because the M-FICORD page opened and the Borneo Post page did not, and the M-FICORD page carries the same three-phase, closed-house and biogas scope.
 2. The cluster's Phases 1 and 2 milestone uses the established `Achieved` date label. No completion date is published for either phase, `TBD` is not allowed on a completed milestone, and a year label would have implied a completion year that no source states. This is the first time `Achieved` appears on a rendered card rather than on the excluded framework overview row, and it rendered untranslated on the Bahasa Melayu route. `formatMilestoneDate` in `src/App.jsx` now returns `Dicapai` for it, matching the existing `Ongoing` and `Berterusan` branch. No other UI behaviour changed.
 
-The summaries name the month rather than the exact launch or groundbreaking date, so the precise chronology stays in the milestone arrays as the summary-writing standard requires.
+The Selangau summary names November 2024 only as the dated project-cost qualifier. The cluster summary no longer restates the June 2026 launch month; that date stays in the milestone array.
+
+### Format pass, same day
+
+A later FORMAT + EVIDENCE pass compared the two live cards with sibling Commercial Agriculture and Manufacturing cards. Status, value, lead, milestones, inclusion records, and update-history entries were kept. Two format fixes were applied without adding or removing source URLs:
+
+1. Source labels were rewritten to the established `Publisher — short claim (Mon YYYY)` pattern. The previous labels packed multiple audit findings and made broader township, sitting, and 12MP-portfolio pages read as dedicated project reports.
+2. The Samalaju English and BM summaries dropped the launch-month clause so they stay two reader sentences rather than a compressed timeline.
+
+Re-opened source pages on this pass matched the earlier re-open log. Both Borneo Post URLs still returned Cloudflare challenges and remain off the cards.
 
 ### Value decisions
 
