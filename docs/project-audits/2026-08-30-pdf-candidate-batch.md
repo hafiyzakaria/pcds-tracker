@@ -376,13 +376,13 @@ The verification pass above states that the 20 May 2026 DayakDaily report approv
 | `value` | `RM300 million` | `RM223 million` |
 | `lead` | `Best Pork Sdn Bhd / Sarawak Land Development Board` | `Ministry of International Trade, Industry and Investment (MINTRED)` |
 | `summary` | 232.69 hectares at Sungai Selabi, 12,000 parent stock, closed-house, zero-discharge, biogas, and the RM300 million project cost dated to the November 2024 groundbreaking | 10 phases, 96.72 hectares, RM223 million estimated total development cost, and the completed Phases 1 and 2 at RM25.8 million with 21 industrial lots. The June 2026 launch month stays in the milestone array only |
-| `milestones` | `2021-02-22` site approved, done; `2024-11-06` groundbreaking, done; `2025` clearing and infrastructure works began, done; `2028` basic site infrastructure reaches completion, open; `TBD` farm begins porker production, open | `Achieved` Phases 1 and 2 completed with 21 industrial lots, done; `2026-06-29` cluster officially launched, done; `TBD` remaining phases reach completion, open |
+| `milestones` | `2021-02-22` site approved, done; `2024-11-06` groundbreaking, done; `2025` clearing and infrastructure works began, done; `2028` basic site infrastructure reaches completion, open; `TBD` farm begins porker production, open | `2026-06-29` cluster launched, with Phases 1 and 2 already complete (21 industrial lots), done; `TBD` remaining phases reach completion, open |
 | `sources` | M-FICORD 6 Nov 2024; BERNAMA 6 Nov 2024; DayakDaily 23 May 2025; M-FICORD 23 May 2025; DayakDaily 19 May 2026 | DayakDaily 30 Jun 2026; Jiwa Bakti 30 Jun 2026; DayakDaily 20 May 2026 |
 
 Deviations from the proposal tables, both deliberate:
 
 1. The Selangau proposal listed the Borneo Post report as a source and omitted M-FICORD's 23 May 2025 page. The delivered card swaps them, because the M-FICORD page opened and the Borneo Post page did not, and the M-FICORD page carries the same three-phase, closed-house and biogas scope.
-2. The cluster's Phases 1 and 2 milestone uses the established `Achieved` date label. No completion date is published for either phase, `TBD` is not allowed on a completed milestone, and a year label would have implied a completion year that no source states. This is the first time `Achieved` appears on a rendered card rather than on the excluded framework overview row, and it rendered untranslated on the Bahasa Melayu route. `formatMilestoneDate` in `src/App.jsx` now returns `Dicapai` for it, matching the existing `Ongoing` and `Berterusan` branch. No other UI behaviour changed.
+2. The first write split Phases 1 and 2 completion onto an `Achieved` date label, then listed the 29 June 2026 launch below it. `Achieved` is reserved for the excluded PCDS overview row. No completion date is published for either phase, so none was invented, and the undated completion sitting above the dated launch was unreadable beside `29 June 2026`. The approved reconstruction collapses those two completed rows into one `2026-06-29` milestone that records the official launch and that Phases 1 and 2 were already complete with 21 industrial lots. The card now reads `1/2 complete`. `formatMilestoneDate` still returns `Dicapai` for `Achieved` on the overview row. No other UI behaviour changed.
 
 The Selangau summary names November 2024 only as the dated project-cost qualifier. The cluster summary no longer restates the June 2026 launch month; that date stays in the milestone array.
 
@@ -394,6 +394,10 @@ A later FORMAT + EVIDENCE pass compared the two live cards with sibling Commerci
 2. The Samalaju English and BM summaries dropped the launch-month clause so they stay two reader sentences rather than a compressed timeline.
 
 Re-opened source pages on this pass matched the earlier re-open log. Both Borneo Post URLs still returned Cloudflare challenges and remain off the cards.
+
+### Milestone reconstruction, same day
+
+The three-milestone `Achieved` shape was later rejected. The cluster now has two milestones only: the combined 29 June 2026 launch-plus-Phases-1-and-2 fact, and the open remaining-phases outcome. The English and BM summaries still omit the launch month. The 29 June 2026 update-history entry is unchanged; it already says the cluster launched with Phases 1 and 2 already complete. `LAST_UPDATED` remains `2026-08-30`.
 
 ### Value decisions
 
@@ -431,7 +435,7 @@ Carried forward from the proposal tables and still unresolved:
 - Selangau schedule. The 6 November 2024 sources expected completion within a year and first sales by early 2027. The 19 May 2026 sitting places basic infrastructure completion in 2028. The card follows the later date and leaves production undated. Re-check when the 2028 target approaches or any first-production claim appears.
 - Selangau capacity. 250,000 porkers a year and a 125,000 standing pig population appear in 2024 and 2025 reporting, while the 2026 sitting gives a three-farm total instead. The card displays only the 12,000 parent stock design. Re-check when a site-level capacity figure is published without conflict.
 - Selangau value age. RM300 million is a November 2024 figure with no 2026 replacement, retained as a dated project value under the historical-estimate rule rather than as a current final cost.
-- Cluster phase dates. No completion date is published for Phase 1 or Phase 2, and none was invented. Replace the `Achieved` label as soon as a dated completion source appears.
+- Cluster phase dates. No completion date is published for Phase 1 or Phase 2, and none was invented. That undated completion now sits inside the 29 June 2026 launch milestone rather than on an `Achieved` date label. Split it again only if a dated Phases 1 and 2 completion source appears.
 - Cluster Phase 3. No opened page confirms a tender or an award, so no procurement milestone exists. A search synthesis on this pass claimed that "tender documentation for Samalaju SME Cluster Phase 3 Stage 1 was updated as recently as August 17, 2026" and cited a November 2022 RECODA park-infrastructure page that says nothing of the kind. That is a false positive and is not evidence. An official MINTRED or state tender notice for Phase 3 is the trigger.
 - Cluster lead detail. MINTRED is the delivering ministry and runs SCORE-MSME. No contractor, consultant or estate manager is named on any opened page.
 

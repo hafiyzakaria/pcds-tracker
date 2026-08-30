@@ -61,8 +61,7 @@ export const SECTORS = [
         summary:
           "A phased industrial-lot development inside Samalaju Industrial Park, planned as 10 phases across 96.72 hectares at an estimated total development cost of RM223 million. Completed Phases 1 and 2 cost RM25.8 million and provide 21 industrial lots for local micro, small and medium enterprises supplying Samalaju industries.",
         milestones: [
-          { date: "Achieved", text: "Phases 1 and 2 completed with 21 industrial lots", done: true },
-          { date: "2026-06-29", text: "Cluster project officially launched", done: true },
+          { date: "2026-06-29", text: "Cluster launched, with Phases 1 and 2 already complete (21 industrial lots)", done: true },
           { date: "TBD", text: "Remaining phases reach completion", done: false },
         ],
         sources: [
