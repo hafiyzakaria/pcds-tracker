@@ -37,9 +37,9 @@ content, lint, Preview build, Production build, and human Preview-review gates.
   if their 17 August triggers fire.
 - Carried-forward evidence gaps from the two new cards are recorded in the
   [30 August 2026 PDF candidate batch](project-audits/2026-08-30-pdf-candidate-batch.md#residual-open-questions):
-  no published completion date for Samalaju SME Cluster Phases 1 and 2, no confirmed Phase 3 tender,
-  no dated Selangau production milestone, and two Borneo Post URLs that returned Cloudflare
-  challenges and should be re-checked at the next sweep.
+  Samalaju SME Cluster Phases 1 and 2 now use year-only 2023 rather than an invented day, no
+  confirmed Phase 3 tender, no dated Selangau production milestone, and live Borneo Post URLs that
+  still return Cloudflare challenges and should be re-checked at the next sweep.
 - Estimated difficulty: high
 - Risk level: high
 

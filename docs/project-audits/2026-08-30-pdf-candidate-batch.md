@@ -376,8 +376,8 @@ The verification pass above states that the 20 May 2026 DayakDaily report approv
 | `value` | `RM300 million` | `RM223 million` |
 | `lead` | `Best Pork Sdn Bhd / Sarawak Land Development Board` | `Ministry of International Trade, Industry and Investment (MINTRED)` |
 | `summary` | 232.69 hectares at Sungai Selabi, 12,000 parent stock, closed-house, zero-discharge, biogas, and the RM300 million project cost dated to the November 2024 groundbreaking | 10 phases, 96.72 hectares, RM223 million estimated total development cost, and the completed Phases 1 and 2 at RM25.8 million with 21 industrial lots. The June 2026 launch month stays in the milestone array only |
-| `milestones` | `2021-02-22` site approved, done; `2024-11-06` groundbreaking, done; `2025` clearing and infrastructure works began, done; `2028` basic site infrastructure reaches completion, open; `TBD` farm begins porker production, open | `2026-06-29` cluster launched, with Phases 1 and 2 already complete (21 industrial lots), done; `TBD` remaining phases reach completion, open |
-| `sources` | M-FICORD 6 Nov 2024; BERNAMA 6 Nov 2024; DayakDaily 23 May 2025; M-FICORD 23 May 2025; DayakDaily 19 May 2026 | DayakDaily 30 Jun 2026; Jiwa Bakti 30 Jun 2026; DayakDaily 20 May 2026 |
+| `milestones` | `2021-02-22` site approved, done; `2024-11-06` groundbreaking, done; `2025` clearing and infrastructure works began, done; `2028` basic site infrastructure reaches completion, open; `TBD` farm begins porker production, open | `2023` Phases 1 and 2 reached completion, done; `2026-06-29` cluster officially launched, done; `TBD` remaining eight phases deliver industrial lots for local MSMEs, open |
+| `sources` | M-FICORD 6 Nov 2024; BERNAMA 6 Nov 2024; DayakDaily 23 May 2025; M-FICORD 23 May 2025; DayakDaily 19 May 2026 | DayakDaily 24 May 2023; Borneo Post 20 Oct 2023 via Wayback; DayakDaily 20 May 2026; DayakDaily 30 Jun 2026; Jiwa Bakti 30 Jun 2026 |
 
 Deviations from the proposal tables, both deliberate:
 
@@ -397,7 +397,9 @@ Re-opened source pages on this pass matched the earlier re-open log. Both Borneo
 
 ### Milestone reconstruction, same day
 
-The three-milestone `Achieved` shape was later rejected. The cluster now has two milestones only: the combined 29 June 2026 launch-plus-Phases-1-and-2 fact, and the open remaining-phases outcome. The English and BM summaries still omit the launch month. The 29 June 2026 update-history entry is unchanged; it already says the cluster launched with Phases 1 and 2 already complete. `LAST_UPDATED` remains `2026-08-30`.
+The three-milestone `Achieved` shape was later rejected. That collapse produced a two-row card: the combined 29 June 2026 launch-plus-Phases-1-and-2 fact, and the open remaining-phases outcome. It removed an undated `Achieved` label. It was not a full lifecycle reconstruction. The English and BM summaries still omit the launch month. The 29 June 2026 update-history entry is unchanged; it already says the cluster launched with Phases 1 and 2 already complete. `LAST_UPDATED` remains `2026-08-30`.
+
+A later same-day re-run of the skill on this card only is recorded in [Milestone re-run, 30 August 2026](#milestone-re-run-30-august-2026). That pass found a year for Phases 1 and 2 and split the collapsed row.
 
 ### Value decisions
 
@@ -435,9 +437,99 @@ Carried forward from the proposal tables and still unresolved:
 - Selangau schedule. The 6 November 2024 sources expected completion within a year and first sales by early 2027. The 19 May 2026 sitting places basic infrastructure completion in 2028. The card follows the later date and leaves production undated. Re-check when the 2028 target approaches or any first-production claim appears.
 - Selangau capacity. 250,000 porkers a year and a 125,000 standing pig population appear in 2024 and 2025 reporting, while the 2026 sitting gives a three-farm total instead. The card displays only the 12,000 parent stock design. Re-check when a site-level capacity figure is published without conflict.
 - Selangau value age. RM300 million is a November 2024 figure with no 2026 replacement, retained as a dated project value under the historical-estimate rule rather than as a current final cost.
-- Cluster phase dates. No completion date is published for Phase 1 or Phase 2, and none was invented. That undated completion now sits inside the 29 June 2026 launch milestone rather than on an `Achieved` date label. Split it again only if a dated Phases 1 and 2 completion source appears.
-- Cluster Phase 3. No opened page confirms a tender or an award, so no procurement milestone exists. A search synthesis on this pass claimed that "tender documentation for Samalaju SME Cluster Phase 3 Stage 1 was updated as recently as August 17, 2026" and cited a November 2022 RECODA park-infrastructure page that says nothing of the kind. That is a false positive and is not evidence. An official MINTRED or state tender notice for Phase 3 is the trigger.
+- Cluster phase dates. No day-level completion date is published for Phase 1 or Phase 2, and none was invented. The 20 October 2023 Borneo Post article, opened via Wayback, quotes Awang Tengah that phases 1 and 2 were already complete and then covered 16.4 hectares. The card now uses year-only `2023` for that closer. Later 2026 pages restate the completed area as 21.53 hectares with 21 lots. Split to a month or day only if a source publishes one.
+- Cluster Phase 3. No opened page confirms a tender or an award, so no procurement milestone exists. A search synthesis on this pass claimed that "tender documentation for Samalaju SME Cluster Phase 3 Stage 1 was updated as recently as August 17, 2026" and cited a November 2022 RECODA park-infrastructure page that says nothing of the kind. A later synthesis invented a `MINTRED/5/2024` tender number and cited the RECODA SIP park page, which also does not mention Phase 3. Both are false positives. An official MINTRED or state tender notice for Phase 3 is the trigger.
 - Cluster lead detail. MINTRED is the delivering ministry and runs SCORE-MSME. No contractor, consultant or estate manager is named on any opened page.
+- 2018 tender-stage claim. A 18 July 2018 Borneo Post snippet says "Samalaju SME Clusters are at various stages of tender" under the 11th Malaysia Plan. The live page is Cloudflare-blocked and no Wayback body was opened on this pass, so no 2018 procurement milestone was added. Re-open that URL, or a DayakDaily or UKAS copy, before using it.
+
+## Milestone re-run, 30 August 2026
+
+Nazirul asked why the live card had only two milestones. The honest answer is that the two-row shape was a format collapse to remove an undated `Achieved` label, not a milestone-first lifecycle reconstruction. This pass re-ran the skill on the Samalaju SME Cluster card only. No other card was edited. SCORE was not touched.
+
+### Discovery queries
+
+| Search type | Query |
+| --- | --- |
+| Mandatory first | `"Samalaju SME Cluster" project milestones` |
+| Alias | `"Kluster PKMS Samalaju" project milestones` |
+| Alias | `"SCORE-MSME" Samalaju project milestones` |
+| Alias | `"Samalaju SME Clusters" project milestones` |
+| Current year | `"Samalaju SME Cluster" update 2026` |
+| Current year | `"Samalaju SME Cluster" latest status 2026` |
+| Value EN | `"Samalaju SME Cluster" value cost "project cost" "estimated cost" investment allocation contract funding financing` |
+| Value BM | `"Samalaju SME Cluster" OR "Kluster PKMS Samalaju" kos "nilai projek" anggaran peruntukan pelaburan juta bilion` |
+| Lead | `"Samalaju SME Cluster" owner developer implementing agency operator contractor investor partners MINTRED` |
+| Counter | `"Samalaju SME Cluster" revised delayed suspended cancelled completed 2026` |
+| Lifecycle | `"Samalaju SME Cluster" approval design tender construction commissioning operations completion` |
+| Official domain | `site:mid.sarawak.gov.my OR site:recoda.gov.my OR site:mintred.sarawak.gov.my` plus MINTRED sitemap follow-up |
+| Phase 3 | `"Samalaju SME Cluster" "Phase 3"` / `"Fasa 3"` tender, and `"Phase 3 Stage 1"` |
+| 2023 closer | `"16.4" hectares "SME Cluster" Samalaju` and the 20 October 2023 LONGi speech |
+
+### Opened pages
+
+| URL | Opened | Visible claim used | Decision |
+| --- | --- | --- | --- |
+| [DayakDaily — township and cluster launch](https://dayakdaily.com/samalaju-township-set-to-back-fast-growing-industrial-expansion/) | 2026-08-30 | 30 June 2026, reporting the 29 June 2026 launch. 10 phases, 96.72 ha, total estimated cost RM223 million. Phases 1 and 2 already completed, RM25.8 million, 21 lots. MINTRED to run SCORE-MSME. | Accepted for launch date, current scope, value, lead |
+| [Jiwa Bakti — Kluster PKMS](https://jiwabakti.com.my/kluster-pkms-perkukuhkan-ekosistem-perindustrian/) | 2026-08-30 | Same launch in BM. "anggaran kos RM223 juta". Fasa 1 dan Fasa 2 telah siap, RM25.8 juta, 21 lot. | Accepted for BM value qualifier |
+| [DayakDaily — 12MP completions](https://dayakdaily.com/rm183-mln-approved-for-17-industrial-park-projects-in-swak-supporting-rural-growth-and-msmes/) | 2026-08-30 | 20 May 2026. Samalaju SME Cluster Phases 1 and 2 in the completed 12MP list. RM128.05 million and RM183.07 million are portfolio figures. | Accepted for independent completion restatement. Portfolio amounts rejected |
+| [DayakDaily — DUN 24 May 2023](https://dayakdaily.com/sama-jaya-free-industrial-zone-samalaju-industrial-park-records-healthy-numbers-in-employment-wages-paid/) | 2026-08-30 | 24 May 2023. "Ten projects are currently under construction: five industrial parks in Bau, Sibu, Rantau Panjang, Samalaju SME Cluster, and Marudi." | Accepted as a 2023 construction-stage snapshot. Not used as a start-date milestone |
+| [Borneo Post 20 Oct 2023 via Wayback](https://web.archive.org/web/20231022155202/https://www.theborneopost.com/2023/10/20/swak-govt-continues-to-attract-more-high-quality-investments-to-become-high-income-economy-by-2030/) | 2026-08-30 | 20 October 2023. "his ministry is implementing the SME Cluster in Samalaju Industrial Park... 100 hectares... 10 phases. As of now, we have completed phase 1 and phase 2 which consist of a total area of 16.4 hectares." Live Borneo Post URL remains Cloudflare-blocked. | Accepted for the year-only Phases 1 and 2 closer. 100 ha is the historical plan size |
+| [RECODA — SIP park page](https://recoda.gov.my/sarawak-corridor-of-renewable-energy/samalaju-industrial-park-sip/) | 2026-08-30 | Park identity. 8,000 ha, launched 2008, RM17.5 billion committed. No SME Cluster phase, no Phase 3, no `MINTRED/5/2024`. | Rejected as cluster evidence. Confirms the Phase 3 synthesis false positive |
+| [RECODA — 3 Nov 2022 SIP infrastructure](https://recoda.gov.my/awg-tengah-samalaju-industrial-park-to-see-more-infrastructure-projects-to-attract-more-investments/) | 2026-08-30 | "developing 1,000 acres of land at Samalaju Industrial Park for the small and medium enterprises... A portion of the said development (100 acres) is expected to be completed by end of 2023." Does not name the cluster. | Rejected. Identity collision with the park-wide SME land remark |
+| [MIDA — LONGi groundbreaking](https://www.mida.gov.my/media-release/longi-malaysia-breaks-ground-on-its-new-rm1-3-billion-bintulu-samalaju-plant/) | 2026-08-30 | 20 October 2023 LONGi plant, 125 acres, RM1.3 billion. No SME Cluster passage. | Rejected. Same event as the Borneo Post speech, different project |
+| [MINTRED — vacant-lot attachment](https://mintred.sarawak.gov.my/web/attachment/show/?docid=YkF4Z204Ykp1dTZmR1I3Sk5vRlZSQT09Ojo47YiJffQGmSM-cBTtkqs4) | 2026-08-30 | "SME CLUSTER SAMALAJU INDUSTRIAL PARK Vacant Lot" lists 13 plots. No dates. | Research only. Attachment, not a live-card source |
+| [MINTRED industrial parks page](https://mintred.sarawak.gov.my/web/subpage/webpage_view/140) | 2026-08-30 | AJAX shell. Sitemap names "Samalaju SME Cluster Phase 1 & 2" but the page body did not render. | Identity only |
+| Live Borneo Post 29 Jun 2026, 20 May 2026, 24 May 2023, 20 Oct 2023, 18 Jul 2018 | 2026-08-30 | Cloudflare challenge or timeout | Not used as live-card evidence except where Wayback rendered the 20 Oct 2023 body |
+| Tribune industrial-park pages | 2026-08-30 | Site shell only | Unusable |
+
+### Failed extra stages
+
+| Stage | Why it is not on the card |
+| --- | --- |
+| Approval / AIP designation | Highlights and AIP name the cluster, but those are PDFs. No opened webpage gives a dated approval, SPA decision, or study completion. |
+| 2018 11MP tender | Search snippet only. Live Borneo Post 18 July 2018 did not open. |
+| Design / contract award | No contractor, consultant, or award page opened. |
+| Construction start | 24 May 2023 says the cluster was under construction. That is a status snapshot, not a start date. |
+| Phase 3 tender or award | Synthesis false positive. Opened RECODA pages do not say it. |
+| Phases 1 and 2 day or month | No source publishes one. Year 2023 is allowed because sibling cards use year-only dates and the 20 October 2023 page supports that year. |
+| SCORE-MSME commencement | Announced as a future MINTRED programme at the launch. Not an achieved cluster delivery stage. |
+| Nov 2022 "1,000 acres / 100 acres" | Park-wide SME land remark. Does not name this tracked unit. |
+
+### Current vs proposed milestones
+
+| | Current two-row collapse | Proposed lifecycle |
+| --- | --- | --- |
+| 1 | `2026-06-29` Cluster launched, with Phases 1 and 2 already complete (21 industrial lots), done | `2023` Phases 1 and 2 reached completion, done |
+| 2 | `TBD` Remaining phases reach completion, open | `2026-06-29` Cluster officially launched, done |
+| 3 | | `TBD` Remaining eight phases deliver industrial lots for local MSMEs, open |
+
+Progress moves from `1/2` to `2/3`. The date column shows `2023` and `29 June 2026`, not `Achieved`. Value stays amount-only `RM223 million` with estimated / anggaran in the summary. Launch chronology stays out of the summary. No update-history entry: the 29 June 2026 launch is already recorded, and this pass is an editorial reconstruction.
+
+### Open-milestone wording, same day
+
+The open row first read `Remaining phases reach completion`. That was circular: it restated the phase structure without naming what gets delivered or who uses it. A wording exploration re-opened every accepted page and ranked five source-close alternatives. The approved wording is `Remaining eight phases deliver industrial lots for local MSMEs`, BM `Baki lapan fasa menyediakan lot industri untuk PMKS tempatan`, still `TBD` and still `done: false`.
+
+Basis for each element:
+
+- `eight` is arithmetic, not a quoted figure. No source says "eight phases". The launch pages state 10 phases and that Phases 1 and 2 are complete, so 10 minus 2 is shown as eight. Revisit if a source merges, splits, or renumbers phases.
+- `deliver industrial lots` follows DayakDaily's "providing 21 industrial lots" and Jiwa Bakti's "menyediakan 21 lot industri". Applying that outcome to later phases is an inference from the completed phases, not a quoted promise.
+- `local MSMEs` follows the launch wording that the cluster expands opportunities for local micro, small and medium enterprises; BM uses the source's own `PMKS tempatan`.
+- No year, no lot count, and no hectare figure is attached to the later phases. The remaining phases cover roughly 75 hectares rather than the full 96.72, so a 96.72-hectare open row was rejected as inaccurate.
+
+Rejected alternatives: an occupancy or take-up row, because the only evidence is the undated MINTRED vacant-lot attachment; and any "work is underway" framing, because no opened page says the later phases are in construction. The 20 May 2026 DayakDaily line "the remaining projects are at various stages of implementation" refers to the remaining projects among the 23 twelfth-Malaysia-Plan industrial park projects, not to this cluster's remaining phases.
+
+### Extra-milestone re-check, same day
+
+The same pass tested whether opened pages support a fourth or later row. They do not, so the card stays at three. Failures beyond those already listed above: the 18 July 2018 tender-stage snippet still has no opened body; the 3 November 2022 RECODA "1,000 acres / 100 acres" remark is park-wide SME land and never names the cluster; the 24 May 2023 "under construction" line is a status snapshot with no start date; the 20 May 2026 12MP completed list restates the 2023 completion; SCORE-MSME is still future tense; the 200 MLD water plant, power capacity, and the port free-commercial-zone approval are Samalaju-wide or SIP assets; and the SMEIPA 2023 "80.8% under Increase Formation and Formalisation of Businesses" score is an evaluation metric on a third-party mirror rather than a delivery event.
+
+Two new false-positive notes:
+
+1. The phantom Phase 3 tender now has a likely origin. Search syntheses asserted a September 2024 "Samalaju SME Cluster Phase 3 Stage 1" site-clearing and earthworks tender three times in one pass, once inventing the number `MINTRED/5/2024`, and cited the Sarawak Treasury attachment, the RECODA board terms of reference, and the 20 May 2026 DayakDaily report. None of those page texts contains "Phase 3", "earthworks", or "site clearing" for this cluster. MINTRED's live tender page does carry notices in exactly that shape, such as "Proposed Site Clearing and Earthworks at Demak Laut Industrial Park, Phase 2C, Kuching Division, Sarawak (Stage 3)", which appears to be the borrowed template. Wayback holds a single capture of that tender page, 18 January 2026, and none from September 2024.
+2. The MINTRED vacant-lot attachment lists 13 vacant plots numbered up to 38, against the 21 lots stated for Phases 1 and 2. The attachment is undated and is research material only, but the plot-count conflict should be resolved before any lot-count claim is displayed.
+
+### Outcome
+
+Update recommended. Confidence high for the split, medium for the exact 2023 day, which remains unpublished. BM milestone count matches. SCORE, SMART, Selangau, Kota Petra, and Lubok Punggor were not edited.
 
 ## Product boundary
 
