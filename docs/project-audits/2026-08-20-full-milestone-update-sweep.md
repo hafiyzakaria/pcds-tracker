@@ -103,39 +103,31 @@ Only SMD received an Updates entry because the signed MoA is a meaningful curren
 
 ### 30 August 2026 leftover: SMART displayed value
 
-The tracker owner later directed that this leftover be implemented: show the RM116 million MOCN allocation on the SMART card. That is a product decision. The amount is funding for MOCN equipment, not the total cost of the tracked SMART600 scope. H2ornbill and H2biscus stay on the approved `USD4.2 billion` historical combined-package figure. This leftover does not name an evidence-backed displayed-value change for them.
+The 29 August leftover left SMART at `Not disclosed` and rejected RM116 million as the total value of the tracked SMART scope. That rejection stands. RM116 million, RM200 million, and about RM207 million remain MOCN or OPEX figures and are not shown on the card.
 
-Opened source used for the displayed value:
+The approved displayed value is the construction total in the Premier's Budget Speech 2025. H2ornbill and H2biscus stay on the approved `USD4.2 billion` historical combined-package figure.
 
-- URL: https://dayakdaily.com/rm116-mln-to-power-600-sarawak-telco-towers-with-worlds-first-6-way-network-technology/
-- Publisher: DayakDaily
-- Dateline: Kuching, May 24 (2024). Photo caption: Hikmah Exchange Event Centre, Kuching, 24 May 2024
-- Exact visible wording: "Malaysian Communications and Multimedia Commission (MCMC) and Ministry of Finance (MOF) are set to allocate a substantial RM116 million to power 600 Sarawak Multimedia Authority Rural Telecommunication ((SMART600) towers with six-way Multi-Operator Core Network (MOCN) technology."
-- Same page: Communications Minister Fahmi Fadzil said MCMC will disburse RM42 million for the first year and RM37 million for the subsequent two years, and "overall amount for the project is RM200 million to ensure that all SMART600 towers are equipped with six-way MOCN."
+Opened official source:
 
-Identity and value type: the page names SMART600 / Sarawak Multimedia Authority Rural Telecommunication and the 600-tower unit. RM116 million is the MCMC/MOF allocation for six-way MOCN. It is not total SMART cost and not the RM200 million overall MOCN package that includes telco contributions.
+- URL: https://premier.sarawak.gov.my/web/attachment/show/?docid=T2xGRlE0L2czZnVhUjdUYVFyT0hIQT09OjrWlE9RPDMkUq7fTAYY4SJ4
+- Document: Budget Speech 2025, YAB Premier Sarawak, Dewan Undangan Negeri, Monday 11 November 2024. Embargo until delivered that day.
+- Paragraph 126, exact visible wording: "Another key initiative is construction of 600 towers under Sarawak Multimedia Authority Rural Telecommunication (SMART) project by SDEC with a total cost of RM1.5 billion. As of third quarter of 2024, 545 out of 600 towers have been constructed. For next year, RM397 million will be provided under Alternative Funding for continuation of the project."
 
-Other pages opened in this pass:
+Identity and value type: the passage names SMART, SDEC, and the 600-tower unit. The figure is total construction cost. Do not convert it to an allocation. RM397 million in the same paragraph is a 2025 continuation allocation and is not the displayed value. Paragraph 125 SALURAN RM1.9 billion and paragraph 127 MySRBN are adjacent programmes.
 
-| URL | Publication date | Visible claim checked | Decision |
-| --- | --- | --- | --- |
-| https://www.thestar.com.my/news/nation/2024/05/24/digital-connectivity-in-rural-s039wak-set-to-improve-with-signing-of-six-way-mocn-deal | 24 May 2024 | Names SMART600 and the six-way MOCN signing. The opened lead does not publish RM116 million; the rest is paywalled. | Rejected as the value source |
-| https://www.malaymail.com/news/malaysia/2024/05/24/fahmi-247-smart-towers-fully-activated-in-sarawak/136296 | 24 May 2024 | Same signing. Names SMART and MOCN. Opened text does not publish RM116 million. | Rejected as the value source |
-| https://sdec.com.my/web/2024/07/09/smart-project-implementation-in-sarawak-by-sdec/ | 10 May 2024 | Names SMART and MOCN equipment. Does not publish RM116 million. | Retained as an existing identity source |
-| https://www.theborneopost.com/2024/03/25/fahmi-169-smart-towers-are-functioning-well-in-sarawak/ | 25 Mar 2024 (search discovery) | Search snippets quote an earlier MCMC/MOF/telco yearly breakdown totaling about RM206.78 million. Cloudflare blocked the opened page in this review. | Not used. The leftover and the opened DayakDaily page name RM116 million. |
-
-Rejected for the displayed value, unchanged from earlier reviews: SALURAN RM2.25–2.3 billion; historical 1,500-tower RM5.5 billion; vandalism loss RM8.99 million; Connecting Jepak RM5 million; JENDELA RM4.09 billion. No later SMART600-only total cost was found.
+A Digital News Asia reprint that changes the qualifier from total cost to allocated is not used. The official speech is sufficient.
 
 Implemented card effect:
 
-- `value`: `RM116 million` (amount-only). Summary and source label keep the 2024 MCMC/MOF MOCN-allocation meaning.
-- Source added: `DayakDaily — RM116M MCMC/MOF MOCN allocation for SMART600 (May 2024)`
-- Status, milestones, and lead unchanged. The card stays Completed/Operational on the 14 July 2026 Borneo Post / SMART600-as-of-30-April-2026 evidence. This pass is value-only.
-- BM value `RM116 juta` and matching summary.
-- No Updates entry. This is a 2024 allocation now shown on the card, not a new public development.
+- `value`: `RM1.5 billion` (amount-only). Summary and source label keep SDEC construction of 600 SMART towers, total cost, Premier Budget Speech 2025 / 11 November 2024.
+- Source added: `Office of the Premier — Budget Speech 2025, SDEC SMART 600-tower construction total (Nov 2024)`
+- DayakDaily RM116 million MOCN allocation is not on the card.
+- Status, milestones, and lead unchanged. The card stays Completed/Operational on the 14 July 2026 Borneo Post / SMART600-as-of-30-April-2026 evidence. Tracked unit remains 600, not 618.
+- BM value `RM1.5 bilion` and matching summary.
+- No Updates entry. The 2024 speech is historical relative to the existing 30 April 2026 SMART600 completion update.
 - `LAST_UPDATED`: `2026-08-30`
 
-Outcome: Update recommended. Confidence: High for the opened DayakDaily wording and project identity. The displayed amount follows the leftover product decision and is not a claim that RM116 million is total SMART cost.
+Outcome: Update recommended. Confidence: High. The opened official speech names the exact project and states a total construction cost of RM1.5 billion.
 
 ### Metrics after the follow-up
 
