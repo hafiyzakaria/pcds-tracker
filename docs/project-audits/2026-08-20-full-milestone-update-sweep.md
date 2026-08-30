@@ -127,6 +127,8 @@ Implemented card effect:
 - No Updates entry. The 2024 speech is historical relative to the existing 30 April 2026 SMART600 completion update.
 - `LAST_UPDATED`: `2026-08-30`
 
+Owner later restored the previous programme-description sentence on the card. The displayed value remains `RM1.5 billion`.
+
 Outcome: Update recommended. Confidence: High. The opened official speech names the exact project and states a total construction cost of RM1.5 billion.
 
 ### Metrics after the follow-up
