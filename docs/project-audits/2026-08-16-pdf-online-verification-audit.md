@@ -200,8 +200,10 @@ The next identity and operating-zone batch is recorded in
 | Sarawak Rural Broadband Network (MySRBN) | Do not add. Overlap with the live SMART card. |
 | Miri Smart City | Do not add. Municipal multi-system programme. |
 | Old Kuching Smart Heritage (OKSHE) | Do not add. Heritage and tourism programme. |
-| Pig Farming Area Initiative | Do not add the initiative. Monitor Selangau PFA. |
+| Pig Farming Area Initiative | Do not add the initiative. Selangau PFA proposed as a card. |
 | Sama Jaya Free Industrial Zone | Do not add. Operating 1992 zone. |
-| Samalaju Industrial Park | Do not add. SCORE growth node already on the SCORE card. |
+| Samalaju Industrial Park | Do not add. SCORE growth node already on the SCORE card. Samalaju SME Cluster proposed separately. |
 
 No live card, inclusion-register row, or SMART / Kota Petra / Lubok Punggor / SCORE edit. The 50-unit pool is unchanged. Six units now have a dated depth decision and a re-review trigger.
+
+A same-day verification pass confirmed all six `Do not add` decisions and overturned one sub-decision. Selangau Pig Farming Area is a named AIP Volume II action step with an official RM300 million project value, and the Samalaju SME Cluster trigger fired on its 29 June 2026 launch. Both are written up as proposals awaiting approval, not as additions.
