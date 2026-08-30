@@ -382,7 +382,7 @@ The verification pass above states that the 20 May 2026 DayakDaily report approv
 Deviations from the proposal tables, both deliberate:
 
 1. The Selangau proposal listed the Borneo Post report as a source and omitted M-FICORD's 23 May 2025 page. The delivered card swaps them, because the M-FICORD page opened and the Borneo Post page did not, and the M-FICORD page carries the same three-phase, closed-house and biogas scope.
-2. The cluster's Phases 1 and 2 milestone uses the established `Achieved` date label. No completion date is published for either phase, `TBD` is not allowed on a completed milestone, and a year label would have implied a completion year that no source states.
+2. The cluster's Phases 1 and 2 milestone uses the established `Achieved` date label. No completion date is published for either phase, `TBD` is not allowed on a completed milestone, and a year label would have implied a completion year that no source states. This is the first time `Achieved` appears on a rendered card rather than on the excluded framework overview row, and it rendered untranslated on the Bahasa Melayu route. `formatMilestoneDate` in `src/App.jsx` now returns `Dicapai` for it, matching the existing `Ongoing` and `Berterusan` branch. No other UI behaviour changed.
 
 The summaries name the month rather than the exact launch or groundbreaking date, so the precise chronology stays in the milestone arrays as the summary-writing standard requires.
 

@@ -803,6 +803,10 @@ function formatMilestoneDate(value, language = DEFAULT_LANGUAGE) {
     return language === "ms" ? "Berterusan" : "Ongoing";
   }
 
+  if (date.toLowerCase() === "achieved") {
+    return language === "ms" ? "Dicapai" : "Achieved";
+  }
+
   const yearQuarter = date.match(/^(\d{4})-Q([1-4])$/);
   if (yearQuarter) {
     return language === "ms"

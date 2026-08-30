@@ -165,6 +165,7 @@ Milestone date display standard:
 
 - Keep source values compact and sortable where possible: `YYYY-MM-DD`, `YYYY-MM`, `YYYY-Q#`, or `YYYY`.
 - Use `TBD` when no reliable date has been published or continuous work has no single completion date; the UI omits the date label.
+- Use `Achieved` for a completed milestone whose date has never been published. `TBD` is not available on a completed milestone, and a year or month label would assert a date that no source states. The UI renders it as `Achieved` in English and `Dicapai` in BM.
 - Reserve `Ongoing` for the public project-status label rather than displaying it as a milestone date.
 - The UI formats full dates, month targets, quarter targets, ranges, and open-ended years consistently rather than exposing the compact source syntax directly.
 
