@@ -142,3 +142,7 @@ Implemented card effect:
 - `LAST_UPDATED` remains `2026-08-27`
 
 Outcome of this follow-up: Update recommended. Confidence: High under the owner rule, because the opened public page names SMART 600 and states that all 600 towers had been completed and were operational as of 30 April 2026.
+
+## 30 August 2026 value leftover
+
+The 27 August value decision (`Not disclosed`) is superseded for the displayed amount only. The approved figure is the RM1.5 billion construction total in the Premier's Budget Speech 2025. RM116 million remains rejected as MOCN or OPEX, not total SMART cost. Status and the 600-tower closer are unchanged. Record: [29 August 2026 follow-up](2026-08-20-full-milestone-update-sweep.md#29-august-2026-follow-up).

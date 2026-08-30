@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-08-29";
+export const LAST_UPDATED = "2026-08-30";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -494,9 +494,9 @@ export const SECTORS = [
         status: "Operational",
         statusColor: "#16a34a",
         lead: "Sarawak Multimedia Authority / SDEC",
-        value: "Not disclosed",
+        value: "RM1.5 billion",
         summary:
-          "A statewide rural-connectivity programme that deploys carrier-neutral SMART600 towers and enables MySRBN home broadband for underserved communities. SMA owns the programme and SDEC leads implementation, with MCMC and mobile operators supporting service operations.",
+          "A statewide rural-connectivity programme that deploys carrier-neutral SMART600 towers and enables MySRBN home broadband for underserved communities. SDEC construction of the 600 SMART towers has a total cost of RM1.5 billion, stated in the Premier's Budget Speech 2025 on 11 November 2024.",
         milestones: [
           { date: "2022-08-09", text: "SMART launched at Nanga Sekukut", done: true },
           { date: "2024-03", text: "SMART towers began operating with MySRBN", done: true },
@@ -506,6 +506,7 @@ export const SECTORS = [
         sources: [
           { label: "SDEC — SMART launch at Nanga Sekukut (Aug 2022)", url: "https://sdec.com.my/web/2022/08/09/51-smart-projects-planned-to-be-built-in-kapit-division-says-sdec/" },
           { label: "SDEC — SMART implementation and tower activation (May 2024)", url: "https://sdec.com.my/web/2024/07/09/smart-project-implementation-in-sarawak-by-sdec/" },
+          { label: "Office of the Premier — Budget Speech 2025, SDEC SMART 600-tower construction total (Nov 2024)", url: "https://premier.sarawak.gov.my/web/attachment/show/?docid=T2xGRlE0L2czZnVhUjdUYVFyT0hIQT09OjrWlE9RPDMkUq7fTAYY4SJ4" },
           { label: "SDEC — SMART600 operating-support agreement (Jul 2025)", url: "https://sdec.com.my/web/2025/08/14/rapatkan-jurang-digital-luar-bandar-projek-smart600-perkasa-kesalinhubungan-sarawak-dengan-sokongan-mcmc/" },
           { label: "Borneo Post — Communications Ministry parliamentary reply, SMART600 as of 30 Apr 2026 (Jul 2026)", url: "https://www.theborneopost.com/2026/07/14/baram-tops-list-of-jendela-telecoms-towers-completed-in-sarawak-109-fully-operational/" },
           { label: "SDEC — SMART site resilience visit (Jul 2026)", url: "https://sdec.com.my/web/2026/08/05/minister-visits-smart-sites-at-sungai-rayah-to-review-anti-vandalism-measures-and-strengthen-infrastructure-resilience/" },
