@@ -61,13 +61,16 @@ export const SECTORS = [
         summary:
           "A phased industrial-lot development inside Samalaju Industrial Park, planned as 10 phases across 96.72 hectares at an estimated total development cost of RM223 million. Completed Phases 1 and 2 cost RM25.8 million and provide 21 industrial lots for local micro, small and medium enterprises supplying Samalaju industries.",
         milestones: [
-          { date: "2026-06-29", text: "Cluster launched, with Phases 1 and 2 already complete (21 industrial lots)", done: true },
+          { date: "2023", text: "Phases 1 and 2 reached completion", done: true },
+          { date: "2026-06-29", text: "Cluster officially launched", done: true },
           { date: "TBD", text: "Remaining phases reach completion", done: false },
         ],
         sources: [
+          { label: "DayakDaily — Samalaju SME Cluster listed as under construction (May 2023)", url: "https://dayakdaily.com/sama-jaya-free-industrial-zone-samalaju-industrial-park-records-healthy-numbers-in-employment-wages-paid/" },
+          { label: "Borneo Post — Phases 1 and 2 completed (Oct 2023)", url: "https://web.archive.org/web/20231022155202/https://www.theborneopost.com/2023/10/20/swak-govt-continues-to-attract-more-high-quality-investments-to-become-high-income-economy-by-2030/" },
+          { label: "DayakDaily — 12MP completions include Samalaju SME Cluster Phases 1-2 (May 2026)", url: "https://dayakdaily.com/rm183-mln-approved-for-17-industrial-park-projects-in-swak-supporting-rural-growth-and-msmes/" },
           { label: "DayakDaily — Samalaju township and SME Cluster launch (Jun 2026)", url: "https://dayakdaily.com/samalaju-township-set-to-back-fast-growing-industrial-expansion/" },
           { label: "Jiwa Bakti — Kluster PKMS, anggaran kos RM223 juta (Jun 2026)", url: "https://jiwabakti.com.my/kluster-pkms-perkukuhkan-ekosistem-perindustrian/" },
-          { label: "DayakDaily — 12MP completions include Samalaju SME Cluster Phases 1-2 (May 2026)", url: "https://dayakdaily.com/rm183-mln-approved-for-17-industrial-park-projects-in-swak-supporting-rural-growth-and-msmes/" },
         ],
       },
     ],
