@@ -4,7 +4,7 @@ This file lists outstanding work only. Completed behavior belongs in `docs/produ
 `docs/design.md`, the data methodology, and Git history rather than remaining mixed into the
 active backlog.
 
-Last reconciled with the current `preview` implementation on 27 August 2026.
+Last reconciled with the current `preview` implementation on 30 August 2026.
 
 ## Release blockers
 
@@ -12,21 +12,6 @@ No unresolved release blocker is currently recorded. Every release must still pa
 content, lint, Preview build, Production build, and human Preview-review gates.
 
 ## 1. Should Improve Soon
-
-### Resolve the two deferred milestone wording reviews
-
-- What needs to be done: Re-run the evidence and English/Bahasa Melayu wording review for Lubok
-  Punggor AgriHub and Mid Sadong 1 Irrigation Project, and SCORE. Bau Gold Project and Sarawak
-  Bioindustrial Park were resolved during the 20 August 2026 sweep.
-- Why it matters: These two cards still have proposed reader-facing wording changes that were not
-  resolved by the evidence sweep. Recording the remaining scope prevents their current wording from
-  being mistaken for a completed review.
-- Scope boundary: Confirm each source-backed outcome, date, open or complete state, and BM
-  counterpart before editing. Do not infer lifecycle stages or add milestones to meet a quota.
-- Suggested first task: Reopen the latest audit record for each card, run exact-name milestone and
-  current-status searches, then prepare a current-versus-proposed table for approval.
-- Estimated difficulty: low to medium
-- Risk level: medium
 
 ### Review the next PDF-derived candidate batch
 

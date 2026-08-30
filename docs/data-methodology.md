@@ -399,11 +399,13 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 ### SCORE - Sarawak Corridor of Renewable Energy
 
 - Current dashboard status: `In Progress`
-- Current next milestone: Industrial park expansion and investor support
+- Current next milestone: Industrial parks expand and attract investment
 - Sources currently used:
-- [DayakDaily - SCORE: RM125B investment, 53K jobs (May 2025)](https://dayakdaily.com/score-fuels-sarawaks-economic-growth-with-rm125-bln-investment-53000-jobs-created/) - Publisher: DayakDaily; type: news report; date: May 2025; appears to support reported investment and job figures.
-- [RECODA official site](https://recoda.gov.my/) - Publisher: RECODA; type: official agency site; date: not encoded in label; appears to support lead/agency context and corridor identity.
-- Gaps or uncertainty: SCORE is an umbrella programme; current active sources do not map individual growth nodes or annual progress.
+- [DayakDaily - SCORE: RM125B investment, 53K jobs (May 2025)](https://dayakdaily.com/score-fuels-sarawaks-economic-growth-with-rm125-bln-investment-53000-jobs-created/) - Publisher: DayakDaily; type: news report; date: 10 May 2025; supports investments surpassing RM125 billion, more than 53,000 jobs, Samalaju industrial-park growth, and RM4.5 billion for 247 rural infrastructure projects through HDA, NRDA and URDA.
+- [RECODA - PBM Miri 2025 SCORE update (Jul 2025)](https://recoda.gov.my/pbm-miri-2025-transforming-sarawak-through-score/) - Publisher: RECODA; type: official agency page; date: 15 Jul 2025; repeats more than RM125 billion and over 53,000 jobs, and says 247 infrastructure projects are currently underway through HDA, NRDA and URDA.
+- [DayakDaily - RECODA implementing 243 rural infrastructure projects (Apr 2026)](https://dayakdaily.com/243-critical-projects-worth-rm4-5-bln-to-boost-infrastructure-devt-rural-connectivity-across-sarawak/) - Publisher: DayakDaily; type: news report of a TVS account; date: 2 Apr 2026; supports continuing URDA, HDA and NRDA implementation of 243 funded rural projects. It does not mark those projects complete.
+- [RECODA official site](https://recoda.gov.my/) - Publisher: RECODA; type: official agency site; date: not encoded in label; supports lead/agency context and corridor identity.
+- Gaps or uncertainty: SCORE is an umbrella programme. Opened pages do not give a dated industrial-park or rural-package completion event. A 1–2 April 2026 Rindok Raya claim of RM151.5 billion approved investment and 60,000 potential jobs was opened on Jiwa Bakti but omitted from DayakDaily’s same-event report, so the displayed value stays RM125 billion pending a second opened reputable or official page.
 
 ### KUTS - Kuching Urban Transportation System
 
