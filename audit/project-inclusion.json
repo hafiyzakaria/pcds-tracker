@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-08-18",
+  "reviewedOn": "2026-08-30",
   "scope": {
-    "auditedCardCount": 52,
-    "expectedActiveCount": 50,
+    "auditedCardCount": 54,
+    "expectedActiveCount": 52,
     "expectedMonitoredCount": 2,
     "expectedManualComponentApprovalCount": 3
   },
@@ -41,6 +41,15 @@
       "evidenceGap": null,
       "lastReviewed": "2026-08-17",
       "followUp": null
+    },
+    {
+      "canonicalName": "Samalaju SME Cluster",
+      "categoryId": "manufacturing",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "highlights", "locator": "PDF printed p.25", "relationship": "Named PCDS manufacturing project being developed within Samalaju Industrial Park" }, { "source": "aip-economic", "locator": "PDF printed p.14, action step 1.6", "relationship": "Listed as an ongoing PCDS industrial-cluster project; the AIP 43.2-hectare scope is historical" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://dayakdaily.com/samalaju-township-set-to-back-fast-growing-industrial-expansion/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-30", "followUp": null
     },
     {
       "canonicalName": "RM1 Billion Paddy Infrastructure Programme",
@@ -88,6 +97,15 @@
       "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
       "liveEvidenceUrl": "https://mficord.sarawak.gov.my/web/subpage/news_view/1513",
       "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Selangau Pig Farming Area",
+      "categoryId": "agriculture",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "single_asset",
+      "inclusion": { "decision": "included", "tier": "direct", "basis": [{ "source": "aip-economic", "locator": "PDF printed pp.148-150, action step 4.1", "relationship": "Named PCDS swine-programme action step, Proposed Pig Farming Area (PFA) Selangau, Sungai Selabi, Sibu" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://mficord.sarawak.gov.my/web/subpage/news_view/1458",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-30", "followUp": null
     },
     {
       "canonicalName": "Sarawak Delta Geopark - UNESCO Global Geopark Designation",

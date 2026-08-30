@@ -121,6 +121,16 @@ const updateDefinitions = [
     sourceUrl: "https://jkr.sarawak.gov.my/web/subpage/webpage_view/465",
   },
   {
+    date: "2026-06-29",
+    projectName: "Samalaju SME Cluster",
+    description: {
+      en: "The Samalaju SME Cluster was officially launched, with Phases 1 and 2 already completed at a cost of RM25.8 million and providing 21 industrial lots out of a planned 10 phases.",
+      ms: "Projek Samalaju SME Cluster dilancarkan secara rasmi, dengan Fasa 1 dan Fasa 2 telah siap pada kos RM25.8 juta serta menyediakan 21 lot industri daripada 10 fasa yang dirancang.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/samalaju-township-set-to-back-fast-growing-industrial-expansion/",
+  },
+  {
     date: "2026-06-21",
     projectName: "Bintulu Port — State Control Handover",
     description: {
@@ -401,6 +411,15 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://premierdept.sarawak.gov.my/web/subpage/news_view/19825/UKAS",
+  },
+  {
+    date: "2024-11-06",
+    projectName: "Selangau Pig Farming Area",
+    description: {
+      en: "Construction of the RM300 million Selangau Pig Farming Area began with a groundbreaking ceremony at Sungai Selabi, on a 232.69-hectare site designed for 12,000 parent stock.",
+      ms: "Pembinaan Kawasan Penternakan Babi Selangau bernilai RM300 juta bermula dengan majlis pecah tanah di Sungai Selabi, di tapak seluas 232.69 hektar yang direka untuk 12,000 ternakan induk.",
+    },
+    sourceUrl: "https://mficord.sarawak.gov.my/web/subpage/news_view/1458",
   },
   {
     date: "2024-09-16",
