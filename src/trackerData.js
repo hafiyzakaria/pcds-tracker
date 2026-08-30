@@ -496,7 +496,7 @@ export const SECTORS = [
         lead: "Sarawak Multimedia Authority / SDEC",
         value: "RM1.5 billion",
         summary:
-          "A statewide rural-connectivity programme that deploys carrier-neutral SMART600 towers and enables MySRBN home broadband for underserved communities. SDEC construction of the 600 SMART towers has a total cost of RM1.5 billion, stated in the Premier's Budget Speech 2025 on 11 November 2024.",
+          "A statewide rural-connectivity programme that deploys carrier-neutral SMART600 towers and enables MySRBN home broadband for underserved communities. SMA owns the programme and SDEC leads implementation, with MCMC and mobile operators supporting service operations.",
         milestones: [
           { date: "2022-08-09", text: "SMART launched at Nanga Sekukut", done: true },
           { date: "2024-03", text: "SMART towers began operating with MySRBN", done: true },
