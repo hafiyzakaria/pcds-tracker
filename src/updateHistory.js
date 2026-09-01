@@ -208,16 +208,6 @@ const updateDefinitions = [
       "https://www.thestar.com.my/news/nation/2026/05/18/kuching-urban-transportation-system-to-start-pilot-run-in-q4",
   },
   {
-    date: "2026-05-13",
-    projectName: "Baram Renewable Energy Economic Zone",
-    description: {
-      en: "The Telang Usan assemblyman said a DeepTech solar farm at Temala, Long Lama would anchor the proposed Baram Renewable Energy Economic Zone.",
-      ms: "ADUN Telang Usan berkata ladang solar DeepTech di Temala, Long Lama akan menjadi sauh cadangan Zon Ekonomi Tenaga Boleh Baharu Baram.",
-    },
-    sourceUrl:
-      "https://dayakdaily.com/deeptech-energy-programme-to-transform-baram-into-green-energy-and-economic-hub/",
-  },
-  {
     date: "2026-05-12",
     projectName: "Tanjung Embang Deep-Sea Port",
     description: {

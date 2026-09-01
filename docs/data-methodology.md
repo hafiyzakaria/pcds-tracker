@@ -286,8 +286,8 @@ Focused six-card live audit (27 August 2026):
 Latest PDF-derived candidate leftover (30 August 2026):
 `docs/project-audits/2026-08-30-pdf-candidate-batch.md`.
 
-Parked 13MP / zone candidate-pool re-review and four live cards (1 September 2026):
-`docs/project-audits/2026-09-01-13mp-zone-candidate-pool.md`.
+Parked 13MP / zone candidate-pool re-review (1 September 2026):
+`docs/project-audits/2026-09-01-13mp-zone-candidate-pool.md`. Three live cards were added (SAIC, Sarawak Climate Change Centre, Kuching Low-Carbon Hub). The Baram Renewable Energy Economic Zone remains umbrella context for the Baram Agrovoltaic Project.
 
 ## Project Summary Writing Standard
 
@@ -536,11 +536,11 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Kota Petra Green Technology Park - `In Progress`; 3,000-acre Zecon development near Demak Laut and Senari Port. Phase 1 site preparation was under way by May 2026, a RM328 million EPCC contract was awarded in July 2026, and commercial operations remain scheduled for December 2027; sources: Zecon, UKAS, and The Star.
 - PDF research basis: `docs/source-pdfs/Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf`, especially pages 18 and 30. The PDF confirms strategic inclusion and naming; every live-card claim is also supported by a project-specific public webpage.
 - Dated source and inclusion review: `docs/project-audits/2026-07-28-13mp-candidate-review.md`.
-- Four 13MP / zone cards added on 1 September 2026 after the parked-pool re-review:
+- Three 13MP / zone cards added on 1 September 2026 after the parked-pool re-review:
   - Sarawak Artificial Intelligence Centre (SAIC) - `In Progress`; value: `RM5 million`, the 2026 Budget operations allocation, not a capital cost. Operating state AI agency launched in 2025 at Unifor Complex; distinct from SAINS Sovereign AI. Open milestone: publication of the Sarawak AI Blueprint. Sources: SAIC, Budget Speech 2026, DayakDaily, UKAS.
   - Sarawak Climate Change Centre - `Planning`; value: `Not disclosed`. Proposed technical-arm climate hub under PCDS/13MP, still establishing. Google AI Mode’s 2025 operational-launch claim is rejected. RM7 million nearby climate-study lines are not this centre’s cost. Sources: Premier Department / UKAS, Malay Mail, FULCRUM, DayakDaily, Budget Speech 2026, SDI.
   - Kuching Low-Carbon Hub - `Planning`; value: `Not disclosed`. PETROS-led 13MP proposed zone at Tanjung Embang. Cross-links the existing airport and deep-sea port cards without duplicating their milestones. Open: detailed masterplan finalisation and 2027 PPP works. Sources: The Edge Malaysia, PETROS, UKAS, DayakDaily.
-  - Baram Renewable Energy Economic Zone - `Planning`; value: `Not disclosed` for the zone. Proposed 13MP zone; Planet QEOS / DeepTech is the named private delivery. The Baram Agrovoltaic Project remains the live delivery unit and keeps the RM6 billion figure. Sources: UKAS, DayakDaily.
+- Not a live card: the Baram Renewable Energy Economic Zone remains umbrella-zone context for the Baram Agrovoltaic Project. The 13MP names the zone; the agrovoltaic project is the tracked delivery unit and keeps the RM6 billion figure. Same-day owner reversal recorded in `docs/project-audits/2026-09-01-13mp-zone-candidate-pool.md`.
 - Still not active: FutureData remains `monitored_unconfirmed`. The exact Sarawak High Performance Centre stays in `audit/project-inclusion.json` as monitored pending an explicit PCDS or 13MP identity link. Dated record: `docs/project-audits/2026-09-01-13mp-zone-candidate-pool.md`.
 
 ### PCDS 2030 - Overarching Framework
@@ -558,8 +558,8 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 The app derives display rows by flattening `SECTORS` into project rows and excluding the overview category:
 
-- Active rendered projects: 56.
-- Stored projects including overview: 57.
+- Active rendered projects: 55.
+- Stored projects including overview: 56.
 - PCDS economic sectors represented in data: 6.
 - PCDS enablers represented in data: 7.
 - Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, mining, social-services.
@@ -569,7 +569,7 @@ Current active dashboard status counts from `src/trackerData.js`:
 
 - `In Progress`: 37.
 - `Awaiting Decision`: 0.
-- `Planning`: 10.
+- `Planning`: 9.
 - `Operational`: 5.
 - `Designated`: 4.
 - `Enacted`: 0.
@@ -582,11 +582,11 @@ The UI groups detailed statuses into public filter labels:
 
 Current public display counts:
 
-- Tracked projects: 56.
-- Planning: 10.
+- Tracked projects: 55.
+- Planning: 9.
 - Ongoing: 37.
 - Completed: 9.
-- Milestones: 167 completed out of 250 active-project milestones.
+- Milestones: 165 completed out of 247 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 
