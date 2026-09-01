@@ -285,7 +285,7 @@ export const SECTORS = [
         lead: "Ministry of Energy and Environmental Sustainability (MEESty) / Premier's Department",
         value: "Not disclosed",
         summary:
-          "The proposed Sarawak Climate Change Centre is a PCDS and 13MP climate-policy hub, described as the future technical arm of the Climate and Energy Diplomacy Unit. It is not yet operating as a standalone institution; no address, director or centre-only budget has been published.",
+          "The proposed Sarawak Climate Change Centre is a climate-policy hub, described as the future technical arm of the Climate and Energy Diplomacy Unit. It is not yet operating as a standalone institution; no address, director or centre-only budget has been published.",
         milestones: [
           { date: "2024-05", text: "State announced the centre after completing the study", done: true },
           { date: "2025-02", text: "Premier described the centre as a regional hub being established", done: true },
@@ -589,9 +589,9 @@ export const SECTORS = [
         lead: "Sarawak Artificial Intelligence Centre (SAIC) / Sarawak Artificial Intelligence Centre Sdn Bhd",
         value: "RM5 million",
         summary:
-          "Sarawak Artificial Intelligence Centre (SAIC) is the state's operating AI agency, launched in 2025 at Unifor Complex, Kuching, to drive homegrown AI for public services, talent and data sovereignty under PCDS 2030. Budget 2026 allocates RM5 million for operations; the Sarawak AI Blueprint is in development after a July 2026 kick-off.",
+          "Sarawak Artificial Intelligence Centre (SAIC) is the state's operating AI agency, launched in 2025 at Unifor Complex, Kuching, to drive homegrown AI for public services, talent and data sovereignty. Budget 2026 allocates RM5 million for operations; the Sarawak AI Blueprint is in development after a July 2026 kick-off.",
         milestones: [
-          { date: "2025", text: "State launched SAIC as a PCDS-aligned AI centre", done: true },
+          { date: "2025", text: "State launched SAIC as an operating AI agency", done: true },
           { date: "2025-10-24", text: "CEO publicly identified and IDECS prototypes shown", done: true },
           { date: "2026", text: "RM5 million allocated for SAIC operations", done: true },
           { date: "2026-07-27", text: "SAIC and SCSDU kicked off the AI Blueprint", done: true },
@@ -863,11 +863,11 @@ export const SECTORS = [
         lead: "PETROS",
         value: "Not disclosed",
         summary:
-          "The proposed Kuching Low-Carbon Hub at Tanjung Embang is a 13MP strategic zone for low-carbon industry, trade and logistics, led by PETROS with China Jiangsu International and Sumitomo as anchor partners. It sits alongside the separately tracked New Kuching International Airport and Tanjung Embang Deep-Sea Port; a hub-wide capital cost has not been disclosed.",
+          "The proposed Kuching Low-Carbon Hub at Tanjung Embang is a strategic zone for low-carbon industry, trade and logistics, led by PETROS with China Jiangsu International and Sumitomo as anchor partners. It sits alongside the separately tracked New Kuching International Airport and Tanjung Embang Deep-Sea Port; a hub-wide capital cost has not been disclosed.",
         milestones: [
           { date: "2024-11", text: "Launched at the Sarawak Gas Roadmap Summit", done: true },
           { date: "2025-05-20", text: "PETROS and CJI signed a Strategic Cooperation Agreement", done: true },
-          { date: "2025-10-20", text: "Named a proposed 13MP strategic zone", done: true },
+          { date: "2025-10-20", text: "Named a proposed strategic zone", done: true },
           { date: "2025-12-11", text: "PETROS and CJI signed a Framework Agreement", done: true },
           { date: "2025-12-17", text: "PETROS and Sumitomo advanced hub co-development", done: true },
           { date: "TBD", text: "Detailed masterplan reaches finalisation", done: false },
@@ -1317,9 +1317,9 @@ export const SECTORS = [
         lead: "Planet QEOS Sdn Bhd / DeepTech (named private delivery)",
         value: "Not disclosed",
         summary:
-          "The Baram Renewable Energy Economic Zone is a proposed 13MP strategic zone at Temala, Long Lama in Telang Usan. It remains ungazetted, with no zone-level authority; Planet QEOS / DeepTech is the named private delivery, and the separately tracked Baram Agrovoltaic Project is the live delivery unit.",
+          "The Baram Renewable Energy Economic Zone is a proposed zone at Temala, Long Lama in Telang Usan. It remains ungazetted, with no zone-level authority; Planet QEOS / DeepTech is the named private delivery, and the separately tracked Baram Agrovoltaic Project is the live delivery unit.",
         milestones: [
-          { date: "2025-10-20", text: "13MP named the proposed Baram renewable-energy zone", done: true },
+          { date: "2025-10-20", text: "Named a proposed zone at Temala", done: true },
           { date: "2026-05-13", text: "ADUN located DeepTech solar as the Temala zone anchor", done: true },
           { date: "TBD", text: "Zone reaches gazettal or a second named project", done: false },
         ],
