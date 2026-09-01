@@ -144,8 +144,8 @@ Also accepted but not required on the live card: DayakDaily 5 Mar 2026 Llamalít
 
 ## 6. Baram Renewable Energy Economic Zone — live card added as Planning
 
-- Tracked unit: proposed 13MP zone (PCDS-yes; do not park). Not a gazetted SEZ authority. Planet QEOS / DeepTech is the named private delivery at Temala, Long Lama, Telang Usan. Do not invent a zone CEO.
-- Status: `Planning`. Value: `Not disclosed` for the **zone**. Do not put RM2.32 billion or RM6 billion on this card (those belong to DeepTech / agrovoltaic).
+- Tracked unit: proposed 13MP zone / programme (PCDS-yes; do not park). Not a gazetted SEZ authority. Do not invent a zone CEO. Planet QEOS / DeepTech is summary-only named private delivery of the agrovoltaic component, not the zone `lead`.
+- Status: `Planning`. Lead: `Sarawak Government`. Value: `Not disclosed` for the **zone**. Do not put RM2.32 billion or RM6 billion on this card (those belong to DeepTech / agrovoltaic).
 - Inclusion: `official_linked`. The existing Baram Agrovoltaic Project remains the `component` card.
 
 ### Accepted opened pages
@@ -157,8 +157,34 @@ Also accepted but not required on the live card: DayakDaily 5 Mar 2026 Llamalít
 
 ### Milestones
 
-- Done: 20 Oct 2025 13MP naming; 13 May 2026 ADUN DeepTech/Temala locator.
+- Done: 20 Oct 2025 13MP naming (`Named a proposed strategic zone`; UKAS 27018 does not locate Temala); 13 May 2026 ADUN DeepTech/Temala locator.
 - Open: zone gazettal or a second named project beyond agrovoltaic.
+
+## Identity/scope follow-up: zone vs Baram Agrovoltaic Project
+
+Same-day IDENTITY/SCOPE review against `docs/data-methodology.md` (tracked unit, combined vs component, umbrella vs live delivery, lead-and-party). Base: `preview` at `8eeb8e1` (after PR 43).
+
+| Question | Finding |
+| --- | --- |
+| Clash? | **Yes, on displayed `lead` and a Temala location bleed on the 13MP naming milestone.** No clash on value or on the farm's delivery milestones. |
+| Zone tracked unit | 13MP proposed strategic zone / `programme`. Ungazetted; no zone-level authority. |
+| Farm tracked unit | Exact agrovoltaic project / `single_asset`, approved `component` of the zone. |
+| Location overlap | Expected. Both sit at Temala / Long Lama / Telang Usan because the farm is inside the named zone. |
+| Lead overlap | **Clash.** Zone had `Planet QEOS Sdn Bhd / DeepTech (named private delivery)`; farm has `Planet QEOS Sdn Bhd`. UKAS 27018 names the zone only. The 13 May 2026 DayakDaily page names the DeepTech solar farm as the zone **anchor**, not as zone owner, developer, implementing agency, or operator. Planet QEOS is not named on either zone source page. |
+| Value overlap | **No steal.** Zone `Not disclosed`; farm keeps `RM6 billion`. |
+| Milestone overlap | **No steal of farm delivery outcomes.** Agriculture, paddy, logistics, 300MW, and township stay on the farm card. The May 2026 ADUN line is a zone locator, not a farm construction/operations milestone. The first zone milestone had incorrectly attached Temala to the 13MP naming event. |
+| Summary overlap | Cross-link only. Farm already sits “in the Baram Renewable Energy Economic Zone”; zone names the farm as the live delivery unit. |
+
+Decision: **A — keep both**, with field corrections. Folding (B) or dropping (C) would hide the 13MP-named zone, which is a distinct designation from the farm, parallel to Kuching Low-Carbon Hub versus the airport and port. The zone's open watch remains gazettal or a second named project.
+
+Applied dashboard diffs (zone card only; farm unchanged):
+
+- `lead`: `Planet QEOS Sdn Bhd / DeepTech (named private delivery)` → `Sarawak Government`
+- milestone `2025-10-20` text: `Named a proposed zone at Temala` → `Named a proposed strategic zone` (same wording as the KLCH 13MP naming milestone from the same UKAS page)
+- BM parity: lead `Kerajaan Sarawak`; first milestone `Dinamakan zon strategik cadangan`
+- Summary, value, remaining milestones, sources, and the 13 May 2026 update-history entry are unchanged
+- `LAST_UPDATED` stays `2026-09-01` (already the dashboard date)
+- No new `updateHistory` entry: this is an identity-field correction, not a public development
 
 ## Inclusion-register updates
 

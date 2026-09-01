@@ -102,9 +102,10 @@ permanent classifications.
   port stay separate cards. Recheck when the detailed masterplan is published or 2027 PPP works
   begin, without copying airport or port milestones onto this card.
 - Baram Renewable Energy Economic Zone: Added as a live `Planning` proposed-zone card on
-  1 September 2026. Agrovoltaic/DeepTech remains the live delivery unit. Recheck on zone gazettal,
-  zone-level governance, or a second named project beyond agrovoltaic. Do not add Long Bedian hybrid
-  as a zone milestone.
+  1 September 2026. Same-day identity follow-up keeps both cards: the zone is the 13MP
+  designation/programme and the agrovoltaic project remains the live delivery unit. Zone lead is
+  Sarawak Government, not Planet QEOS / DeepTech. Recheck on zone gazettal, zone-level governance,
+  or a second named project beyond agrovoltaic. Do not add Long Bedian hybrid as a zone milestone.
 - Suggested first task: Watch the remaining HPC and FutureData triggers, plus the open milestones
   on the four new cards.
 
