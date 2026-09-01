@@ -39,7 +39,7 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-08-30`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-09-01`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
@@ -286,6 +286,9 @@ Focused six-card live audit (27 August 2026):
 Latest PDF-derived candidate leftover (30 August 2026):
 `docs/project-audits/2026-08-30-pdf-candidate-batch.md`.
 
+Parked 13MP / zone candidate-pool re-review and four live cards (1 September 2026):
+`docs/project-audits/2026-09-01-13mp-zone-candidate-pool.md`.
+
 ## Project Summary Writing Standard
 
 - Write each summary as a concise introduction to what the project is, where it is, its defining scope or capacity, its purpose, and why it matters. Two short sentences are usually enough.
@@ -396,9 +399,10 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - [TSG Group - First 17MW FutureData off-taker (Oct 2024)](https://tsggroup.my/2024/10/09/sarawaks-futuredata-welcomes-1st-offtaker-a-17mw-data-center/) - Publisher: TSG Group; type: project-developer announcement; date: 9 Oct 2024. It supports the June 2023 park announcement, Global Telecommunications as first off-taker, above-USD130-million investment for the first 17MW facility, the then-future Q2 2025 construction target, and the 2026 online target.
 - [InvestSarawak - FutureData first off-taker and schedule (Oct 2024)](https://investsarawak.gov.my/global-telecommunications-first-off-taker-for-kuchings-futuredata-park/) - Publisher: InvestSarawak; type: official investment-promotion portal; date: Oct 2024. It independently repeats the project-specific value, capacity, construction target, and online target.
 - [DCD - FutureData first off-taker (2025)](https://www.datacenterdynamics.com/en/news/futuredata-announces-first-off-taker-at-500mw-malaysian-data-center-park-in-sarawak/) - Publisher: Data Center Dynamics; type: industry media; date: 2025; supports the off-taker, 500MW park, and first 17MW facility context.
-- Gaps or uncertainty: no reviewed source confirms that construction began after the Q2 2025 target
-  passed, and no authoritative source establishes exact PCDS inclusion. Re-review when a PCDS,
-  13MP, Sarawak Government, InvestSarawak, or delivery-owner publication makes that connection.
+- Gaps or uncertainty: the 1 September 2026 re-review found the same inclusion hold. Opened
+  InvestSarawak wording still cites the Digital Economy Blueprint 2030, not PCDS 2030. No opened
+  TSG or InvestSarawak page confirms construction after the Q2 2025 target. Re-review when a PCDS,
+  13MP, Sarawak Government, InvestSarawak, or delivery-owner publication makes the PCDS connection.
 
 ### SCORE - Sarawak Corridor of Renewable Energy
 
@@ -509,10 +513,10 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Bako National Park ASEAN Heritage Park - `Designated`; value: `Not disclosed`. Sarawak Government publicly confirmed the nomination, the ASEAN Centre for Biodiversity completed its evaluation and designated Bako as the 65th ASEAN Heritage Park in September 2025. BIMP-EAGA independently confirms the designation. The ASEAN Centre for Biodiversity is the programme secretariat and designation authority, not the card's lead party.
 - Lambir Hills National Park ASEAN Heritage Park - `Designated`; value: `Not disclosed`. Sarawak Government publicly confirmed the nomination, the ASEAN Centre for Biodiversity completed its evaluation and designated Lambir Hills as the 66th ASEAN Heritage Park in September 2025. `Lambir Hills National Park` follows the ASEAN body's current English identity; `Bukit Lambir` remains a source alias.
 - Sarawak High Performance Centre - added at `Planning` on 7 August 2026, then moved to
-  `monitored_unconfirmed` on 17 August 2026. UKAS confirms the project, its Sarawak Sports Complex
-  site, planning stage and MYSED delivery role. The 13MP separately names a Sarawak High
-  Performance Sports Centre, but the reviewed evidence does not conclusively resolve it as the exact
-  UKAS project or otherwise connect the exact card to PCDS 2030. Re-review when an official
+  `monitored_unconfirmed` on 17 August 2026. The 1 September 2026 re-review found the same identity
+  hold: 2026 MYSED reporting still places a high-performance centre at the Sarawak Sports Complex,
+  while the 13MP separately names a Sarawak High Performance Sports Centre. No opened official page
+  equates those units or connects the exact UKAS project to PCDS 2030. Re-review when an official
   implementation, budget, procurement or strategy publication resolves that identity and relationship.
 - FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade - `Planning`; value: `RM0.5-1 billion` as a provisional range. JKR Sarawak's official preliminary-design scope is 42 km, while November 2025 parliamentary reporting describes about 48 km and 10 new bridges. The displayed range preserves the reported statement that the cost will exceed RM500 million and may reach RM1 billion, subject to finalisation after preliminary work. The myBina RM10 million-RM50 million range is excluded because its page is scoped to consultancy services.
 - Bintulu Bio-Algae Initial Commercial Plant - `In Progress`; value: `Not disclosed`. PETRONAS explicitly identifies the ICP collaboration between PETRONAS Research and SEDC Energy, and a second PETRONAS release confirms joint technology development for microalgae oil and SAF. September 2024 reporting confirms their studies in Bintulu and planned 10,000-acre scale-up. The card remains distinct from C4 Sarawak and does not treat the dependent future bio-refinery as an achieved project stage.
@@ -532,10 +536,12 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Kota Petra Green Technology Park - `In Progress`; 3,000-acre Zecon development near Demak Laut and Senari Port. Phase 1 site preparation was under way by May 2026, a RM328 million EPCC contract was awarded in July 2026, and commercial operations remain scheduled for December 2027; sources: Zecon, UKAS, and The Star.
 - PDF research basis: `docs/source-pdfs/Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf`, especially pages 18 and 30. The PDF confirms strategic inclusion and naming; every live-card claim is also supported by a project-specific public webpage.
 - Dated source and inclusion review: `docs/project-audits/2026-07-28-13mp-candidate-review.md`.
-- Not active: the Kuching Low-Carbon Hub and Baram Renewable Energy Economic Zone remain
-  umbrella-zone context. Sarawak AI Centre and Sarawak Climate Change Centre remain monitored
-  pending firmer public implementation evidence. The exact Sarawak High Performance Centre is
-  recorded in `audit/project-inclusion.json` as monitored pending an explicit PCDS or 13MP link.
+- Four 13MP / zone cards added on 1 September 2026 after the parked-pool re-review:
+  - Sarawak Artificial Intelligence Centre (SAIC) - `In Progress`; value: `RM5 million`, the 2026 Budget operations allocation, not a capital cost. Operating state AI agency launched in 2025 at Unifor Complex; distinct from SAINS Sovereign AI. Open milestone: publication of the Sarawak AI Blueprint. Sources: SAIC, Budget Speech 2026, DayakDaily, UKAS.
+  - Sarawak Climate Change Centre - `Planning`; value: `Not disclosed`. Proposed technical-arm climate hub under PCDS/13MP, still establishing. Google AI Mode’s 2025 operational-launch claim is rejected. RM7 million nearby climate-study lines are not this centre’s cost. Sources: Premier Department / UKAS, Malay Mail, FULCRUM, DayakDaily, Budget Speech 2026, SDI.
+  - Kuching Low-Carbon Hub - `Planning`; value: `Not disclosed`. PETROS-led 13MP proposed zone at Tanjung Embang. Cross-links the existing airport and deep-sea port cards without duplicating their milestones. Open: detailed masterplan finalisation and 2027 PPP works. Sources: The Edge Malaysia, PETROS, UKAS, DayakDaily.
+  - Baram Renewable Energy Economic Zone - `Planning`; value: `Not disclosed` for the zone. Proposed 13MP zone; Planet QEOS / DeepTech is the named private delivery. The Baram Agrovoltaic Project remains the live delivery unit and keeps the RM6 billion figure. Sources: UKAS, DayakDaily.
+- Still not active: FutureData remains `monitored_unconfirmed`. The exact Sarawak High Performance Centre stays in `audit/project-inclusion.json` as monitored pending an explicit PCDS or 13MP identity link. Dated record: `docs/project-audits/2026-09-01-13mp-zone-candidate-pool.md`.
 
 ### PCDS 2030 - Overarching Framework
 
@@ -552,18 +558,18 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 
 The app derives display rows by flattening `SECTORS` into project rows and excluding the overview category:
 
-- Active rendered projects: 52.
-- Stored projects including overview: 53.
+- Active rendered projects: 56.
+- Stored projects including overview: 57.
 - PCDS economic sectors represented in data: 6.
 - PCDS enablers represented in data: 7.
 - Populated economic-sector ids: manufacturing, agriculture, tourism, forestry, mining, social-services.
-- Populated enabler ids: innovation, education, infrastructure, utilities, transport, renewable-energy.
+- Populated enabler ids: digital-transformation, innovation, education, infrastructure, utilities, transport, renewable-energy.
 
 Current active dashboard status counts from `src/trackerData.js`:
 
-- `In Progress`: 36.
+- `In Progress`: 37.
 - `Awaiting Decision`: 0.
-- `Planning`: 7.
+- `Planning`: 10.
 - `Operational`: 5.
 - `Designated`: 4.
 - `Enacted`: 0.
@@ -576,11 +582,11 @@ The UI groups detailed statuses into public filter labels:
 
 Current public display counts:
 
-- Tracked projects: 52.
-- Planning: 7.
-- Ongoing: 36.
+- Tracked projects: 56.
+- Planning: 10.
+- Ongoing: 37.
 - Completed: 9.
-- Milestones: 153 completed out of 231 active-project milestones.
+- Milestones: 167 completed out of 250 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 

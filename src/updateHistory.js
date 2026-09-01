@@ -82,6 +82,15 @@ const updateDefinitions = [
     sourceUrl: "https://ssciex.org.my/",
   },
   {
+    date: "2026-07-27",
+    projectName: "Sarawak Artificial Intelligence Centre (SAIC)",
+    description: {
+      en: "SAIC and the Sarawak Civil Service Digitalisation Unit kicked off the Sarawak AI Blueprint, beginning a PCDS-aligned plan for statewide AI adoption.",
+      ms: "SAIC dan Unit Pendigitalan Perkhidmatan Awam Sarawak memulakan Pelan Induk AI Sarawak, menandakan permulaan pelan selaras PCDS bagi penggunaan AI seluruh negeri.",
+    },
+    sourceUrl: "https://ukas.sarawak.gov.my/web/subpage/news_view/45255",
+  },
+  {
     date: "2026-07-24",
     projectName: "Kota Petra Green Technology Park",
     description: {
@@ -170,6 +179,16 @@ const updateDefinitions = [
       "https://www.theborneopost.com/2026/06/05/sarawaks-first-special-needs-community-centre-set-for-completion-by-2028/",
   },
   {
+    date: "2026-05-20",
+    projectName: "Kuching Low-Carbon Hub",
+    description: {
+      en: "The Premier said the detailed KLCH masterplan was still being finalised, with physical and infrastructure development expected to begin in 2027 through a public-private partnership.",
+      ms: "Premier berkata pelan induk terperinci KLCH masih dimuktamadkan, dengan pembangunan fizikal dan infrastruktur dijangka bermula pada 2027 melalui perkongsian awam-swasta.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/tanjung-embangs-kuching-low-carbon-hub-positioned-as-future-low-carbon-industrial-trade-and-logistic-hub/",
+  },
+  {
     date: "2026-05-19",
     projectName: "New Kuching International Airport",
     description: {
@@ -187,6 +206,16 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://www.thestar.com.my/news/nation/2026/05/18/kuching-urban-transportation-system-to-start-pilot-run-in-q4",
+  },
+  {
+    date: "2026-05-13",
+    projectName: "Baram Renewable Energy Economic Zone",
+    description: {
+      en: "The Telang Usan assemblyman said a DeepTech solar farm at Temala, Long Lama would anchor the proposed Baram Renewable Energy Economic Zone.",
+      ms: "ADUN Telang Usan berkata ladang solar DeepTech di Temala, Long Lama akan menjadi sauh cadangan Zon Ekonomi Tenaga Boleh Baharu Baram.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/deeptech-energy-programme-to-transform-baram-into-green-energy-and-economic-hub/",
   },
   {
     date: "2026-05-12",
@@ -334,6 +363,16 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://www.theborneopost.com/2026/01/30/piasau-nature-reserve-discovery-centre-to-become-marine-eco-tourism-hub-with-rm30-mln-boost/",
+  },
+  {
+    date: "2025-12-03",
+    projectName: "Sarawak Climate Change Centre",
+    description: {
+      en: "The Premier said the Climate Change Centre will be placed under the new Climate and Energy Diplomacy Unit as its technical arm. The centre is not yet operating as a standalone institution.",
+      ms: "Premier berkata Pusat Perubahan Iklim akan diletakkan di bawah Unit Diplomasi Iklim dan Tenaga baharu sebagai lengan teknikalnya. Pusat ini belum beroperasi sebagai institusi berasingan.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/sarawak-climate-and-energy-diplomacy-unit-to-lead-all-regional-and-international-climate-energy-engagements/",
   },
   {
     date: "2025-12-01",
