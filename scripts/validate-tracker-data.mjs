@@ -45,14 +45,14 @@ const MONITORED_UNCONFIRMED = new Set([
   "Sarawak High Performance Centre",
 ]);
 const APPROVED_INCLUSION_SCOPE = {
-  auditedCardCount: 54,
-  expectedActiveCount: 52,
+  auditedCardCount: 58,
+  expectedActiveCount: 56,
   expectedMonitoredCount: 2,
   expectedManualComponentApprovalCount: 3,
 };
 const APPROVED_TIER_COUNTS = {
   direct: 37,
-  official_linked: 12,
+  official_linked: 16,
   component: 3,
   unconfirmed: 2,
 };

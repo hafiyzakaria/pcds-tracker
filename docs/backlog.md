@@ -4,7 +4,9 @@ This file lists outstanding work only. Completed behavior belongs in `docs/produ
 `docs/design.md`, the data methodology, and Git history rather than remaining mixed into the
 active backlog.
 
-Last reconciled with the current `preview` implementation on 30 August 2026.
+Last reconciled with the current `preview` implementation on 1 September 2026.
+Section 2 was re-reviewed on 1 September 2026. Dated record:
+[13MP / zone candidate pool re-review](project-audits/2026-09-01-13mp-zone-candidate-pool.md).
 
 ## Release blockers
 
@@ -74,22 +76,37 @@ content, lint, Preview build, Production build, and human Preview-review gates.
 
 ### Revisit unresolved 13th Malaysia Plan candidates only when a trigger appears
 
-- Sarawak High Performance Centre: Keep `monitored_unconfirmed` until public evidence resolves
-  whether the UKAS project and the 13MP Sarawak High Performance Sports Centre are the same tracked
-  unit and connects it to PCDS 2030.
-- FutureData — Kuching Data Centre Park: Keep `monitored_unconfirmed` until a PCDS, 13MP, Sarawak
-  Government, InvestSarawak, or delivery-owner publication explicitly makes the PCDS connection.
-- Sarawak AI Centre: Recheck when an implementing body, location, budget, launch, or operational
-  milestone establishes whether it is a facility, institution, or programme.
-- Sarawak Climate Change Centre: Recheck after an official establishment announcement identifies
-  its lead agency, location, budget, or operational milestone.
-- Kuching Low-Carbon Hub Economic Zone: Keep as umbrella context for the new Kuching airport and
-  Tanjung Embang deep-sea port. Reconsider a card only after its designation, boundaries, governing
-  body, masterplan, or zone-wide infrastructure delivery is confirmed.
-- Baram Renewable Energy Economic Zone: Keep as context for the Baram Agrovoltaic Project.
-  Reconsider a card when governance, boundaries, a masterplan, an investment framework, or more
-  named projects are publicly confirmed.
-- Suggested first task: Do nothing until one of these evidence triggers appears.
+1 September 2026 re-review of these six names: four live cards added (SAIC, Sarawak Climate Change
+Centre, Kuching Low-Carbon Hub, Baram Renewable Energy Economic Zone). FutureData and Sarawak High
+Performance Centre remain parked. Prior `Do not add` decisions remain dated evidence holds, not
+permanent classifications.
+
+- Sarawak High Performance Centre: Keep `monitored_unconfirmed`. Prior review 17 August 2026.
+  Evidence gap unchanged: 13MP names a Sarawak High Performance Sports Centre, but opened 2026
+  MYSED/DayakDaily pages still do not equate that Game Changer with the Petra Jaya UKAS facility
+  or place the exact UKAS unit on a PCDS list. Next follow-up 2027-01-15, or sooner if MYSED,
+  UKAS, Treasury, or a 13MP implementation page makes that identity link or publishes a tender,
+  allocation, or construction start.
+- FutureData — Kuching Data Centre Park: Keep `monitored_unconfirmed`. Prior review 17 August
+  2026. Evidence gap unchanged: opened InvestSarawak wording still cites the Digital Economy
+  Blueprint 2030, not PCDS 2030. Next follow-up 2026-12-15, or sooner if a PCDS/13MP/InvestSarawak/TSG
+  page names the exact park as PCDS 2030 or publishes construction, cancellation, or
+  replacement-partner status.
+- Sarawak Artificial Intelligence Centre (SAIC): Added as a live `In Progress` card on 1 September
+  2026. Remaining watch: publication of the Sarawak AI Blueprint. Do not mix SAINS Sovereign AI or
+  the wider RM33 million digital package.
+- Sarawak Climate Change Centre: Added as a live `Planning` card on 1 September 2026. It remains
+  in motion, not operational. Recheck when an official page gives an address, director, centre-only
+  budget, or operations start. Google AI Mode’s 2025 operational-launch claim is rejected.
+- Kuching Low-Carbon Hub: Added as a live `Planning` zone card on 1 September 2026. Airport and
+  port stay separate cards. Recheck when the detailed masterplan is published or 2027 PPP works
+  begin, without copying airport or port milestones onto this card.
+- Baram Renewable Energy Economic Zone: Added as a live `Planning` proposed-zone card on
+  1 September 2026. Agrovoltaic/DeepTech remains the live delivery unit. Recheck on zone gazettal,
+  zone-level governance, or a second named project beyond agrovoltaic. Do not add Long Bedian hybrid
+  as a zone milestone.
+- Suggested first task: Watch the remaining HPC and FutureData triggers, plus the open milestones
+  on the four new cards.
 
 ### Retain the legacy tracker redirect until its scheduled review
 
