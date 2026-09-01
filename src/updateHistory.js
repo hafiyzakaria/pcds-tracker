@@ -85,8 +85,8 @@ const updateDefinitions = [
     date: "2026-07-27",
     projectName: "Sarawak Artificial Intelligence Centre (SAIC)",
     description: {
-      en: "SAIC and the Sarawak Civil Service Digitalisation Unit kicked off the Sarawak AI Blueprint, beginning a PCDS-aligned plan for statewide AI adoption.",
-      ms: "SAIC dan Unit Pendigitalan Perkhidmatan Awam Sarawak memulakan Pelan Induk AI Sarawak, menandakan permulaan pelan selaras PCDS bagi penggunaan AI seluruh negeri.",
+      en: "SAIC and the Sarawak Civil Service Digitalisation Unit kicked off the Sarawak AI Blueprint, beginning a plan for statewide AI adoption.",
+      ms: "SAIC dan Unit Pendigitalan Perkhidmatan Awam Sarawak memulakan Pelan Induk AI Sarawak, menandakan permulaan pelan bagi penggunaan AI seluruh negeri.",
     },
     sourceUrl: "https://ukas.sarawak.gov.my/web/subpage/news_view/45255",
   },
