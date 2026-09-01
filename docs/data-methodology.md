@@ -286,6 +286,9 @@ Focused six-card live audit (27 August 2026):
 Latest PDF-derived candidate leftover (30 August 2026):
 `docs/project-audits/2026-08-30-pdf-candidate-batch.md`.
 
+Parked 13MP / zone candidate-pool re-review (1 September 2026):
+`docs/project-audits/2026-09-01-13mp-zone-candidate-pool.md`.
+
 ## Project Summary Writing Standard
 
 - Write each summary as a concise introduction to what the project is, where it is, its defining scope or capacity, its purpose, and why it matters. Two short sentences are usually enough.
@@ -396,9 +399,13 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - [TSG Group - First 17MW FutureData off-taker (Oct 2024)](https://tsggroup.my/2024/10/09/sarawaks-futuredata-welcomes-1st-offtaker-a-17mw-data-center/) - Publisher: TSG Group; type: project-developer announcement; date: 9 Oct 2024. It supports the June 2023 park announcement, Global Telecommunications as first off-taker, above-USD130-million investment for the first 17MW facility, the then-future Q2 2025 construction target, and the 2026 online target.
 - [InvestSarawak - FutureData first off-taker and schedule (Oct 2024)](https://investsarawak.gov.my/global-telecommunications-first-off-taker-for-kuchings-futuredata-park/) - Publisher: InvestSarawak; type: official investment-promotion portal; date: Oct 2024. It independently repeats the project-specific value, capacity, construction target, and online target.
 - [DCD - FutureData first off-taker (2025)](https://www.datacenterdynamics.com/en/news/futuredata-announces-first-off-taker-at-500mw-malaysian-data-center-park-in-sarawak/) - Publisher: Data Center Dynamics; type: industry media; date: 2025; supports the off-taker, 500MW park, and first 17MW facility context.
-- Gaps or uncertainty: no reviewed source confirms that construction began after the Q2 2025 target
-  passed, and no authoritative source establishes exact PCDS inclusion. Re-review when a PCDS,
-  13MP, Sarawak Government, InvestSarawak, or delivery-owner publication makes that connection.
+- Gaps or uncertainty: the 1 September 2026 re-review reopened InvestSarawak; the exact park is
+  still attached to the Sarawak Digital Economy Blueprint 2030, not PCDS 2030. No opened TSG or
+  InvestSarawak page confirms construction after the Q2 2025 target. Lianhe Zaobao reports that
+  Cyclect ended the joint venture earlier in 2025; TSG had not confirmed a replacement status.
+  Re-review when a PCDS, 13MP, Sarawak Government, InvestSarawak, or delivery-owner publication
+  makes the PCDS connection, or when TSG or InvestSarawak publish construction, cancellation, or
+  replacement-partner status.
 
 ### SCORE - Sarawak Corridor of Renewable Energy
 
@@ -509,11 +516,12 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Bako National Park ASEAN Heritage Park - `Designated`; value: `Not disclosed`. Sarawak Government publicly confirmed the nomination, the ASEAN Centre for Biodiversity completed its evaluation and designated Bako as the 65th ASEAN Heritage Park in September 2025. BIMP-EAGA independently confirms the designation. The ASEAN Centre for Biodiversity is the programme secretariat and designation authority, not the card's lead party.
 - Lambir Hills National Park ASEAN Heritage Park - `Designated`; value: `Not disclosed`. Sarawak Government publicly confirmed the nomination, the ASEAN Centre for Biodiversity completed its evaluation and designated Lambir Hills as the 66th ASEAN Heritage Park in September 2025. `Lambir Hills National Park` follows the ASEAN body's current English identity; `Bukit Lambir` remains a source alias.
 - Sarawak High Performance Centre - added at `Planning` on 7 August 2026, then moved to
-  `monitored_unconfirmed` on 17 August 2026. UKAS confirms the project, its Sarawak Sports Complex
-  site, planning stage and MYSED delivery role. The 13MP separately names a Sarawak High
-  Performance Sports Centre, but the reviewed evidence does not conclusively resolve it as the exact
-  UKAS project or otherwise connect the exact card to PCDS 2030. Re-review when an official
-  implementation, budget, procurement or strategy publication resolves that identity and relationship.
+  `monitored_unconfirmed` on 17 August 2026. The 1 September 2026 re-review found the same identity
+  hold: 2026 MYSED reporting still places a high-performance centre at the Sarawak Sports Complex
+  after the SEA Games, while the 13MP separately names a Sarawak High Performance Sports Centre.
+  No opened official page equates those units or connects the exact UKAS project to PCDS 2030.
+  Re-review when an official implementation, budget, procurement or strategy publication resolves
+  that identity and relationship.
 - FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade - `Planning`; value: `RM0.5-1 billion` as a provisional range. JKR Sarawak's official preliminary-design scope is 42 km, while November 2025 parliamentary reporting describes about 48 km and 10 new bridges. The displayed range preserves the reported statement that the cost will exceed RM500 million and may reach RM1 billion, subject to finalisation after preliminary work. The myBina RM10 million-RM50 million range is excluded because its page is scoped to consultancy services.
 - Bintulu Bio-Algae Initial Commercial Plant - `In Progress`; value: `Not disclosed`. PETRONAS explicitly identifies the ICP collaboration between PETRONAS Research and SEDC Energy, and a second PETRONAS release confirms joint technology development for microalgae oil and SAF. September 2024 reporting confirms their studies in Bintulu and planned 10,000-acre scale-up. The card remains distinct from C4 Sarawak and does not treat the dependent future bio-refinery as an achieved project stage.
 - Dated source, value and inclusion review: [approved six-card route](project-audits/2026-08-07-approved-six-card-route-first-three.md).
@@ -532,10 +540,13 @@ This map records the earlier source-audit set. The 10 provisional additions reva
 - Kota Petra Green Technology Park - `In Progress`; 3,000-acre Zecon development near Demak Laut and Senari Port. Phase 1 site preparation was under way by May 2026, a RM328 million EPCC contract was awarded in July 2026, and commercial operations remain scheduled for December 2027; sources: Zecon, UKAS, and The Star.
 - PDF research basis: `docs/source-pdfs/Final - Sarawak 13th Malaysia Plan 2026-2030_Executive Summary -13.01.2026.pdf`, especially pages 18 and 30. The PDF confirms strategic inclusion and naming; every live-card claim is also supported by a project-specific public webpage.
 - Dated source and inclusion review: `docs/project-audits/2026-07-28-13mp-candidate-review.md`.
-- Not active: the Kuching Low-Carbon Hub and Baram Renewable Energy Economic Zone remain
-  umbrella-zone context. Sarawak AI Centre and Sarawak Climate Change Centre remain monitored
-  pending firmer public implementation evidence. The exact Sarawak High Performance Centre is
-  recorded in `audit/project-inclusion.json` as monitored pending an explicit PCDS or 13MP link.
+- Not active after the 1 September 2026 re-review: the Kuching Low-Carbon Hub and Baram Renewable
+  Energy Economic Zone remain umbrella-zone context. Sarawak AI Centre is now resolved as an
+  operating 13MP-named institution and is still not a capital-project card. Sarawak Climate Change
+  Centre remains monitored pending an establishment announcement. The exact Sarawak High
+  Performance Centre stays in `audit/project-inclusion.json` as monitored pending an explicit PCDS
+  or 13MP identity link. Dated record:
+  `docs/project-audits/2026-09-01-13mp-zone-candidate-pool.md`.
 
 ### PCDS 2030 - Overarching Framework
 

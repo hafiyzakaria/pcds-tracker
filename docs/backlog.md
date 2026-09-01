@@ -5,6 +5,8 @@ This file lists outstanding work only. Completed behavior belongs in `docs/produ
 active backlog.
 
 Last reconciled with the current `preview` implementation on 30 August 2026.
+Section 2 was re-reviewed on 1 September 2026 with no dashboard change. Dated record:
+[13MP / zone candidate pool re-review](project-audits/2026-09-01-13mp-zone-candidate-pool.md).
 
 ## Release blockers
 
@@ -74,21 +76,40 @@ content, lint, Preview build, Production build, and human Preview-review gates.
 
 ### Revisit unresolved 13th Malaysia Plan candidates only when a trigger appears
 
-- Sarawak High Performance Centre: Keep `monitored_unconfirmed` until public evidence resolves
-  whether the UKAS project and the 13MP Sarawak High Performance Sports Centre are the same tracked
-  unit and connects it to PCDS 2030.
-- FutureData — Kuching Data Centre Park: Keep `monitored_unconfirmed` until a PCDS, 13MP, Sarawak
-  Government, InvestSarawak, or delivery-owner publication explicitly makes the PCDS connection.
-- Sarawak AI Centre: Recheck when an implementing body, location, budget, launch, or operational
-  milestone establishes whether it is a facility, institution, or programme.
-- Sarawak Climate Change Centre: Recheck after an official establishment announcement identifies
-  its lead agency, location, budget, or operational milestone.
+1 September 2026 re-review of these six names only: no live card added. Prior `Do not add`
+decisions remain dated evidence holds, not permanent classifications.
+
+- Sarawak High Performance Centre: Keep `monitored_unconfirmed`. Prior review 17 August 2026.
+  Evidence gap unchanged: 13MP names a Sarawak High Performance Sports Centre, but opened 2026
+  MYSED/DayakDaily pages still do not equate that Game Changer with the Petra Jaya UKAS facility
+  or place the exact UKAS unit on a PCDS list. Next follow-up 2027-01-15, or sooner if MYSED,
+  UKAS, Treasury, or a 13MP implementation page makes that identity link or publishes a tender,
+  allocation, or construction start.
+- FutureData — Kuching Data Centre Park: Keep `monitored_unconfirmed`. Prior review 17 August
+  2026. Evidence gap unchanged: opened InvestSarawak wording still cites the Digital Economy
+  Blueprint 2030, not PCDS 2030. Lianhe Zaobao reports a 2025 Cyclect exit; that is not the
+  inclusion trigger. Next follow-up 2026-12-15, or sooner if a PCDS/13MP/InvestSarawak/TSG page
+  names the exact park as PCDS 2030 or publishes construction, cancellation, or replacement-partner
+  status.
+- Sarawak AI Centre: Identity is now resolved as an operating state-owned institution (SAIC Sdn
+  Bhd, Unifor Complex, launched 2025, RM5 million 2026 operations allocation). PCDS relationship
+  is official-linked through 13MP DT-S3. Still not a capital-project card. Prior review 16 August
+  2026. Remaining gap: no dedicated campus or named delivery programme beyond institutional
+  operations. Next follow-up 2026-12-31, or sooner if a campus/facility or published AI Blueprint
+  programme appears.
+- Sarawak Climate Change Centre: Keep parked. Prior review 28 July / 16 August 2026. 13MP and
+  the 2026 Budget Speech name it, but both still say it will be established. Evidence gap:
+  no launch, location, ring-fenced budget, or operational milestone. Next follow-up 2026-12-31,
+  or sooner if the Premier’s Department, MEESTY, or NREB publishes establishment facts.
 - Kuching Low-Carbon Hub Economic Zone: Keep as umbrella context for the new Kuching airport and
-  Tanjung Embang deep-sea port. Reconsider a card only after its designation, boundaries, governing
-  body, masterplan, or zone-wide infrastructure delivery is confirmed.
+  Tanjung Embang deep-sea port. Prior review 28 July 2026. PETROS, CJI, and Sumitomo are
+  masterplanning; the plan is not published and works remain a 2027 target. Next follow-up
+  2027-03-01, or sooner if a masterplan, gazettal, or zone-wide delivery not already covered by
+  the airport or port cards is published.
 - Baram Renewable Energy Economic Zone: Keep as context for the Baram Agrovoltaic Project.
-  Reconsider a card when governance, boundaries, a masterplan, an investment framework, or more
-  named projects are publicly confirmed.
+  Prior review 28 July 2026. May 2026 DUN reporting still treats DeepTech / the agrovoltaic
+  project as the named delivery unit. Next follow-up 2026-12-31, or sooner if zone governance,
+  a masterplan, or a second named project is published.
 - Suggested first task: Do nothing until one of these evidence triggers appears.
 
 ### Retain the legacy tracker redirect until its scheduled review
