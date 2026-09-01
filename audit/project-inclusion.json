@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-08-30",
+  "reviewedOn": "2026-09-01",
   "scope": {
-    "auditedCardCount": 54,
-    "expectedActiveCount": 52,
+    "auditedCardCount": 57,
+    "expectedActiveCount": 55,
     "expectedMonitoredCount": 2,
     "expectedManualComponentApprovalCount": 3
   },
@@ -136,6 +136,15 @@
       "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
     },
     {
+      "canonicalName": "Sarawak Climate Change Centre",
+      "categoryId": "forestry",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "13mp", "locator": "FNAM-S6 / NEW Game Changer: Establish Sarawak Climate Change Centre; UKAS 13MP launch 20 Oct 2025", "relationship": "Named 13MP climate-action Game Changer aligned with PCDS Phase 2" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://premierdept.sarawak.gov.my/web/subpage/news_view/1847/UKAS",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-09-01", "followUp": null
+    },
+    {
       "canonicalName": "Bako National Park ASEAN Heritage Park",
       "categoryId": "forestry",
       "disposition": "active", "reviewClass": "standard", "trackedUnit": "designation",
@@ -242,9 +251,9 @@
       "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
       "liveEvidenceUrl": "https://tsggroup.my/2024/10/09/sarawaks-futuredata-welcomes-1st-offtaker-a-17mw-data-center/",
       "manualApproval": null,
-      "evidenceGap": "No authoritative source reviewed on 2026-08-17 names the exact FutureData project as part of PCDS 2030 or an approved PCDS delivery programme.",
-      "lastReviewed": "2026-08-17",
-      "followUp": "Re-review when a PCDS, 13MP, Sarawak Government, InvestSarawak or delivery-owner publication explicitly connects the exact project to PCDS 2030."
+      "evidenceGap": "No authoritative source reviewed on 2026-09-01 names the exact FutureData project as part of PCDS 2030 or an approved PCDS delivery programme. Opened InvestSarawak wording still cites the Digital Economy Blueprint 2030.",
+      "lastReviewed": "2026-09-01",
+      "followUp": "Re-review by 2026-12-15, or sooner if a PCDS, 13MP, Sarawak Government, InvestSarawak or delivery-owner publication explicitly connects the exact project to PCDS 2030, or if TSG or InvestSarawak publishes construction, cancellation, or replacement-partner status after the reported 2025 Cyclect exit."
     },
     {
       "canonicalName": "CHITOSE Carbon Capture Central Sarawak",
@@ -308,9 +317,9 @@
       "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
       "liveEvidenceUrl": "https://ukas.sarawak.gov.my/web/subpage/news_view/34514",
       "manualApproval": null,
-      "evidenceGap": "The 13MP names a Sarawak High Performance Sports Centre, but no authoritative source reviewed on 2026-08-17 conclusively resolves that unit as the exact UKAS Sarawak High Performance Centre or otherwise connects the exact card to PCDS 2030.",
-      "lastReviewed": "2026-08-17",
-      "followUp": "Re-review when MYSED, UKAS, a budget document, PCDS report or 13MP implementation publication explicitly connects the exact centre to PCDS 2030."
+      "evidenceGap": "The 13MP names a Sarawak High Performance Sports Centre, but no authoritative source reviewed on 2026-09-01 conclusively resolves that unit as the exact UKAS Sarawak High Performance Centre or otherwise connects the exact card to PCDS 2030.",
+      "lastReviewed": "2026-09-01",
+      "followUp": "Re-review by 2027-01-15, or sooner if MYSED, UKAS, a budget document, PCDS report or 13MP implementation publication explicitly connects the exact Petra Jaya centre to PCDS 2030 or the 13MP Sports Centre, or publishes a tender, allocation, or construction start."
     },
     {
       "canonicalName": "Yayasan Sarawak International Secondary Schools Expansion",
@@ -329,6 +338,15 @@
       "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
       "liveEvidenceUrl": "https://sdec.com.my/web/2025/08/14/rapatkan-jurang-digital-luar-bandar-projek-smart600-perkasa-kesalinhubungan-sarawak-dengan-sokongan-mcmc/",
       "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-18", "followUp": null
+    },
+    {
+      "canonicalName": "Sarawak Artificial Intelligence Centre (SAIC)",
+      "categoryId": "digital-transformation",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "13mp", "locator": "DT-S3 / NEW Game Changer: Sarawak Artificial Intelligence Centre (SAIC); UKAS 13MP launch 20 Oct 2025", "relationship": "Named 13MP Digital Transformation Game Changer aligned with PCDS Phase 2" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://saic.com.my/",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-09-01", "followUp": null
     },
     {
       "canonicalName": "FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade",
@@ -356,6 +374,15 @@
       "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
       "liveEvidenceUrl": "https://dayakdaily.com/score-fuels-sarawaks-economic-growth-with-rm125-bln-investment-53000-jobs-created/",
       "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
+    },
+    {
+      "canonicalName": "Kuching Low-Carbon Hub",
+      "categoryId": "infrastructure",
+      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
+      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "13mp", "locator": "Proposed Kuching Low-Carbon Hub Economic Zone; UKAS 13MP launch 20 Oct 2025", "relationship": "Named 13MP proposed economic zone aligned with PCDS Phase 2" }] },
+      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
+      "liveEvidenceUrl": "https://www.petroleumsarawak.com/publications/2025/20-may-2025-petros-and-china-jiangsu-international-sign-strategic-cooperation-agreement-to-advance-kuching-low-carbon-hub",
+      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-09-01", "followUp": null
     },
     {
       "canonicalName": "Pan Borneo Highway Sarawak Phase 1",

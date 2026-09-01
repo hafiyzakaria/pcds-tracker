@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-08-30";
+export const LAST_UPDATED = "2026-09-01";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -276,6 +276,30 @@ export const SECTORS = [
           { label: "NREB — GHG-MS Phase 1 commenced operations (Feb 2026)", url: "https://www.nreb.gov.my/web/subpage/announcement_view/196" },
           { label: "Borneo Post — Climate governance implementation update (Mar 2026)", url: "https://www.theborneopost.com/2026/03/12/sarawak-intensifies-climate-governance-on-path-to-net-zero-2050/" },
           { label: "FULCRUM — Sarawak's low-carbon future", url: "https://fulcrum.sg/envisioning-a-low-carbon-future-sarawaks-journey-towards-sustainable-development/" },
+        ],
+      },
+      {
+        name: "Sarawak Climate Change Centre",
+        status: "Planning",
+        statusColor: "#4f46e5",
+        lead: "Ministry of Energy and Environmental Sustainability (MEESty) / Premier's Department",
+        value: "Not disclosed",
+        summary:
+          "The proposed Sarawak Climate Change Centre is a climate-policy hub, described as the future technical arm of the Climate and Energy Diplomacy Unit. It is not yet operating as a standalone institution; no address, director or centre-only budget has been published.",
+        milestones: [
+          { date: "2024-05", text: "State announced the centre after completing the study", done: true },
+          { date: "2025-02", text: "Premier described the centre as a regional hub being established", done: true },
+          { date: "2025-12-03", text: "Named technical arm of the Diplomacy Unit", done: true },
+          { date: "TBD", text: "Centre begins operations as a standalone institution", done: false },
+        ],
+        sources: [
+          { label: "Office of the Premier / UKAS — Centre being established, study completed (May 2024)", url: "https://premierdept.sarawak.gov.my/web/subpage/news_view/1847/UKAS" },
+          { label: "Malay Mail — Region's first climate change centre announced (May 2024)", url: "https://www.malaymail.com/news/malaysia/2024/05/15/sarawak-announces-regions-first-climate-change-centre-in-bid-to-spearhead-malaysias-response-to-crisis/134512" },
+          { label: "FULCRUM — Premier: we are establishing the centre as a regional hub (Feb 2025)", url: "https://fulcrum.sg/envisioning-a-low-carbon-future-sarawaks-journey-towards-sustainable-development/" },
+          { label: "Office of the Premier / UKAS — 13MP names creation of the centre (Oct 2025)", url: "https://premierdept.sarawak.gov.my/web/subpage/news_view/27018/UKAS" },
+          { label: "Office of the Premier — Budget Speech 2026, centre will be established (Nov 2025)", url: "https://premier.sarawak.gov.my/web/attachment/show/?docid=SFhLM2J4c1Z4Ymxlb0pTOEVMYVlRUT09OjoH96R7oV1RindRYgYUin5k" },
+          { label: "DayakDaily — Centre will be placed as Diplomacy Unit technical arm (Dec 2025)", url: "https://dayakdaily.com/sarawak-climate-and-energy-diplomacy-unit-to-lead-all-regional-and-international-climate-energy-engagements/" },
+          { label: "Sarawak Development Institute — CCIA: CCC would be set up", url: "https://sdi.com.my/think/" },
         ],
       },
       {
@@ -557,6 +581,31 @@ export const SECTORS = [
           { label: "Utusan Sarawak — 618 SMART towers reported fully operational (Aug 2026)", url: "https://utusansarawak.com.my/618-menara-smart-sudah-beroperasi-di-seluruh-sarawak/" },
         ],
       },
+      {
+        name: "Sarawak Artificial Intelligence Centre (SAIC)",
+        displayName: "Sarawak AI Centre (SAIC)",
+        status: "In Progress",
+        statusColor: "#d97706",
+        lead: "Sarawak Artificial Intelligence Centre (SAIC) / Sarawak Artificial Intelligence Centre Sdn Bhd",
+        value: "RM5 million",
+        summary:
+          "Sarawak Artificial Intelligence Centre (SAIC) is the state's operating AI agency, launched in 2025 at Unifor Complex, Kuching, to drive homegrown AI for public services, talent and data sovereignty. Budget 2026 allocates RM5 million for operations; the Sarawak AI Blueprint is in development after a July 2026 kick-off.",
+        milestones: [
+          { date: "2025", text: "State launched SAIC as an operating AI agency", done: true },
+          { date: "2025-10-24", text: "CEO publicly identified and IDECS prototypes shown", done: true },
+          { date: "2026", text: "RM5 million allocated for SAIC operations", done: true },
+          { date: "2026-07-27", text: "SAIC and SCSDU kicked off the AI Blueprint", done: true },
+          { date: "TBD", text: "Publication of the Sarawak AI Blueprint", done: false },
+        ],
+        sources: [
+          { label: "SAIC — Official centre site and Unifor Complex address", url: "https://saic.com.my/" },
+          { label: "Office of the Premier — Budget Speech 2026, SAIC launch and RM5 million operations allocation (Nov 2025)", url: "https://premier.sarawak.gov.my/web/attachment/show/?docid=SFhLM2J4c1Z4Ymxlb0pTOEVMYVlRUT09OjoH96R7oV1RindRYgYUin5k" },
+          { label: "DayakDaily — RM5 million 2026 SAIC operations allocation (Nov 2025)", url: "https://dayakdaily.com/sarawak-targets-digital-leap-with-rm33-million-for-ai-financial-inclusion-and-e-services-in-2026/" },
+          { label: "Office of the Premier / UKAS — SAIC CEO and IDECS prototypes (Oct 2025)", url: "https://premierdept.sarawak.gov.my/web/subpage/news_view/27209/UKAS" },
+          { label: "SDEC — SBC and SAIC Sdn Bhd MoU (Nov 2025)", url: "https://sdec.com.my/web/2025/11/03/sarawaks-startup-village-lights-up-idecs25-turning-ideas-into-impact/" },
+          { label: "UKAS — Sarawak AI Blueprint kick-off (Jul 2026)", url: "https://ukas.sarawak.gov.my/web/subpage/news_view/45255" },
+        ],
+      },
     ],
   },
   {
@@ -805,6 +854,32 @@ export const SECTORS = [
           { label: "RECODA — SCORE attracted more than RM125B and 247 rural projects underway (Jul 2025)", url: "https://recoda.gov.my/pbm-miri-2025-transforming-sarawak-through-score/" },
           { label: "DayakDaily — RECODA implementing 243 rural infrastructure projects (Apr 2026)", url: "https://dayakdaily.com/243-critical-projects-worth-rm4-5-bln-to-boost-infrastructure-devt-rural-connectivity-across-sarawak/" },
           { label: "RECODA official site", url: "https://recoda.gov.my/" },
+        ],
+      },
+      {
+        name: "Kuching Low-Carbon Hub",
+        status: "Planning",
+        statusColor: "#4f46e5",
+        lead: "PETROS",
+        value: "Not disclosed",
+        summary:
+          "The proposed Kuching Low-Carbon Hub at Tanjung Embang is a strategic zone for low-carbon industry, trade and logistics, led by PETROS with China Jiangsu International and Sumitomo as anchor partners. It sits alongside the separately tracked New Kuching International Airport and Tanjung Embang Deep-Sea Port; a hub-wide capital cost has not been disclosed.",
+        milestones: [
+          { date: "2024-11", text: "Launched at the Sarawak Gas Roadmap Summit", done: true },
+          { date: "2025-05-20", text: "PETROS and CJI signed a Strategic Cooperation Agreement", done: true },
+          { date: "2025-10-20", text: "Named a proposed strategic zone", done: true },
+          { date: "2025-12-11", text: "PETROS and CJI signed a Framework Agreement", done: true },
+          { date: "2025-12-17", text: "PETROS and Sumitomo advanced hub co-development", done: true },
+          { date: "TBD", text: "Detailed masterplan reaches finalisation", done: false },
+          { date: "2027", text: "Physical and infrastructure development begins through PPP", done: false },
+        ],
+        sources: [
+          { label: "The Edge Malaysia — KLCH launched at Gas Roadmap Summit; PETROS-CJI pact (May 2025)", url: "https://theedgemalaysia.com/node/755927" },
+          { label: "PETROS — Strategic Cooperation Agreement with CJI (May 2025)", url: "https://www.petroleumsarawak.com/publications/2025/20-may-2025-petros-and-china-jiangsu-international-sign-strategic-cooperation-agreement-to-advance-kuching-low-carbon-hub" },
+          { label: "Office of the Premier / UKAS — 13MP names Kuching Low-Carbon Hub (Oct 2025)", url: "https://premierdept.sarawak.gov.my/web/subpage/news_view/27018/UKAS" },
+          { label: "DayakDaily — PETROS-CJI Framework Agreement (Dec 2025)", url: "https://dayakdaily.com/petros-cji-ink-framework-agreement-to-advance-kuching-low-carbon-hub-development/" },
+          { label: "PETROS — Sumitomo co-development of KLCH (Dec 2025)", url: "https://www.petroleumsarawak.com/publications/2025/17-dec-2025-petros-and-sumitomo-corporation-advance-co-development-of-kuching-low-carbon-hub" },
+          { label: "DayakDaily — Detailed masterplan being finalised; 2027 PPP works (May 2026)", url: "https://dayakdaily.com/tanjung-embangs-kuching-low-carbon-hub-positioned-as-future-low-carbon-industrial-trade-and-logistic-hub/" },
         ],
       },
       {
