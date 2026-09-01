@@ -76,10 +76,10 @@ content, lint, Preview build, Production build, and human Preview-review gates.
 
 ### Revisit unresolved 13th Malaysia Plan candidates only when a trigger appears
 
-1 September 2026 re-review of these six names: four live cards added (SAIC, Sarawak Climate Change
-Centre, Kuching Low-Carbon Hub, Baram Renewable Energy Economic Zone). FutureData and Sarawak High
-Performance Centre remain parked. Prior `Do not add` decisions remain dated evidence holds, not
-permanent classifications.
+1 September 2026 re-review of these six names: three live cards added (SAIC, Sarawak Climate Change
+Centre, Kuching Low-Carbon Hub). The Baram Renewable Energy Economic Zone remains umbrella context
+for the Baram Agrovoltaic Project. FutureData and Sarawak High Performance Centre remain parked.
+Prior `Do not add` decisions remain dated evidence holds, not permanent classifications.
 
 - Sarawak High Performance Centre: Keep `monitored_unconfirmed`. Prior review 17 August 2026.
   Evidence gap unchanged: 13MP names a Sarawak High Performance Sports Centre, but opened 2026
@@ -101,12 +101,12 @@ permanent classifications.
 - Kuching Low-Carbon Hub: Added as a live `Planning` zone card on 1 September 2026. Airport and
   port stay separate cards. Recheck when the detailed masterplan is published or 2027 PPP works
   begin, without copying airport or port milestones onto this card.
-- Baram Renewable Energy Economic Zone: Added as a live `Planning` proposed-zone card on
-  1 September 2026. Agrovoltaic/DeepTech remains the live delivery unit. Recheck on zone gazettal,
-  zone-level governance, or a second named project beyond agrovoltaic. Do not add Long Bedian hybrid
-  as a zone milestone.
+- Baram Renewable Energy Economic Zone: Not a live card. The 13MP names the zone, but it remains
+  umbrella context for the Baram Agrovoltaic Project, which is the tracked delivery unit. Recheck
+  only if the zone is gazetted, a zone-level authority is named, or a second distinct project
+  beyond agrovoltaic is publicly trackable. Do not add Long Bedian hybrid as a zone milestone.
 - Suggested first task: Watch the remaining HPC and FutureData triggers, plus the open milestones
-  on the four new cards.
+  on the three new cards.
 
 ### Retain the legacy tracker redirect until its scheduled review
 

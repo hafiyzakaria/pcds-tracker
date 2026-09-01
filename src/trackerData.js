@@ -1311,24 +1311,6 @@ export const SECTORS = [
         ],
       },
       {
-        name: "Baram Renewable Energy Economic Zone",
-        status: "Planning",
-        statusColor: "#4f46e5",
-        lead: "Planet QEOS Sdn Bhd / DeepTech (named private delivery)",
-        value: "Not disclosed",
-        summary:
-          "The Baram Renewable Energy Economic Zone is a proposed zone at Temala, Long Lama in Telang Usan. It remains ungazetted, with no zone-level authority; Planet QEOS / DeepTech is the named private delivery, and the separately tracked Baram Agrovoltaic Project is the live delivery unit.",
-        milestones: [
-          { date: "2025-10-20", text: "Named a proposed zone at Temala", done: true },
-          { date: "2026-05-13", text: "ADUN located DeepTech solar as the Temala zone anchor", done: true },
-          { date: "TBD", text: "Zone reaches gazettal or a second named project", done: false },
-        ],
-        sources: [
-          { label: "Office of the Premier / UKAS — 13MP names Baram Renewable Energy Economic Zone (Oct 2025)", url: "https://premierdept.sarawak.gov.my/web/subpage/news_view/27018/UKAS" },
-          { label: "DayakDaily — DeepTech solar farm anchors the zone at Temala (May 2026)", url: "https://dayakdaily.com/deeptech-energy-programme-to-transform-baram-into-green-energy-and-economic-hub/" },
-        ],
-      },
-      {
         name: "Baram Agrovoltaic Project",
         status: "Planning",
         statusColor: "#4f46e5",

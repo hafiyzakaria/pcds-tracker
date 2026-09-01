@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "reviewedOn": "2026-09-01",
   "scope": {
-    "auditedCardCount": 58,
-    "expectedActiveCount": 56,
+    "auditedCardCount": 57,
+    "expectedActiveCount": 55,
     "expectedMonitoredCount": 2,
     "expectedManualComponentApprovalCount": 3
   },
@@ -545,15 +545,6 @@
       "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
       "liveEvidenceUrl": "https://www.sarawakenergy.com/media-info/media-releases/2024/sarawak-energys-first-floating-solar-farm-on-track-for-commissioning-by-october-2024",
       "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-08-17", "followUp": null
-    },
-    {
-      "canonicalName": "Baram Renewable Energy Economic Zone",
-      "categoryId": "renewable-energy",
-      "disposition": "active", "reviewClass": "standard", "trackedUnit": "programme",
-      "inclusion": { "decision": "included", "tier": "official_linked", "basis": [{ "source": "13mp", "locator": "Proposed Baram Renewable Energy Economic Zone; UKAS 13MP launch 20 Oct 2025", "relationship": "Named 13MP proposed economic zone aligned with PCDS Phase 2" }] },
-      "identityChecked": true, "scopeResolved": true, "liveEvidencePresent": true,
-      "liveEvidenceUrl": "https://premierdept.sarawak.gov.my/web/subpage/news_view/27018/UKAS",
-      "manualApproval": null, "evidenceGap": null, "lastReviewed": "2026-09-01", "followUp": null
     },
     {
       "canonicalName": "Baram Agrovoltaic Project",

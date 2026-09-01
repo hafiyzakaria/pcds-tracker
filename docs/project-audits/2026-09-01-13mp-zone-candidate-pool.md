@@ -1,7 +1,7 @@
 # Parked 13MP / zone candidate pool: 1 September 2026 re-review
 
 - Review date: 2026-09-01
-- Review type: excluded-candidate re-review of the six named parked units in `docs/backlog.md` §2, then same-day live-card implementation of four units
+- Review type: excluded-candidate re-review of the six named parked units in `docs/backlog.md` §2, then same-day live-card implementation of three units. The Baram Renewable Energy Economic Zone is restored as umbrella context for the Baram Agrovoltaic Project (owner reversal of the keep-both / live-zone decision).
 - Base: current `preview` at `c333fe0`. Not a Codex branch. No merge. No promote to `main`. Pull request 41 is research-only and is left unmerged.
 - Method: [data methodology](../data-methodology.md), [project research template](../project-research-template.md), [data review checklist](../data-review-checklist.md)
 - Prior dated decisions: [13MP candidate review](2026-07-28-13mp-candidate-review.md) (28 July 2026); [approved six-card route](2026-08-07-approved-six-card-route-first-three.md) (7 August 2026, HPC added then later parked); [PDF and online verification audit](2026-08-16-pdf-online-verification-audit.md) (16 August 2026); [inclusion provenance](2026-08-17-current-card-inclusion-provenance.md) (17 August 2026)
@@ -10,7 +10,7 @@ This is not a site-wide inventory. The six watchlist names were checked only. Se
 
 ## Implementation outcome (same day)
 
-Four live cards are added. FutureData and Sarawak High Performance Centre remain parked.
+Three live cards are added (SAIC, Sarawak Climate Change Centre, Kuching Low-Carbon Hub). The Baram Renewable Energy Economic Zone is not a live dashboard row; it remains umbrella context for the existing Baram Agrovoltaic Project. FutureData and Sarawak High Performance Centre remain parked.
 
 | Watchlist name | PCDS 2030 | Decision | Why |
 | --- | --- | --- | --- |
@@ -19,7 +19,7 @@ Four live cards are added. FutureData and Sarawak High Performance Centre remain
 | Sarawak Artificial Intelligence Centre (SAIC) | yes | **Add live card** | Operating 13MP-named agency. An operating agency is a valid card. Distinct from SAINS Sovereign AI. |
 | Sarawak Climate Change Centre | yes | **Add live card** as Planning | 13MP and Budget 2026 name it. Opened pages still use establishing / will be placed / will be established. In motion, not operational. |
 | Kuching Low-Carbon Hub | yes (zone) | **Add live card** as Planning | Named 13MP proposed zone with PETROS lead and published partner agreements. Cross-link NKIA and Deep-Sea Port; do not duplicate their milestones. |
-| Baram Renewable Energy Economic Zone | yes (zone) | **Add live card** as Planning | Named 13MP proposed zone. Do not park. Agrovoltaic/DeepTech remains the live delivery unit. |
+| Baram Renewable Energy Economic Zone | yes (zone) | **Umbrella context only** | Named 13MP proposed zone, but it is not a live dashboard row. The Baram Agrovoltaic Project is the tracked delivery unit. Same-day owner reversal of the keep-both / live-zone card. |
 
 ## AI Mode / search-synthesis discovery
 
@@ -42,7 +42,7 @@ Tribune pages were not successfully opened (shell only) and are not cited. Faceb
 - Tribune article bodies returned a site shell and were treated as unusable. Borneo Post pages returned Cloudflare challenges and were not used as evidence.
 - A live-card claim may rest on a public webpage. The page must name the exact unit and support a displayed field.
 - `Do not add` remains a dated evidence decision, not a permanent classification.
-- Existing live cards were not duplicated: New Kuching International Airport, Tanjung Embang Deep-Sea Port, and Baram Agrovoltaic Project stay as separate cards. Zone summaries cross-link them. Their next milestones were not copied onto the zone cards.
+- Existing live cards were not duplicated: New Kuching International Airport, Tanjung Embang Deep-Sea Port, and Baram Agrovoltaic Project stay as separate cards. The Kuching Low-Carbon Hub summary cross-links the airport and port. The Baram zone is geography/context on the agrovoltaic card, not a second live row.
 - RM33 million (wider 2026 digital package), RM7 million (nearby climate-study lines), RM2.32 billion and RM6 billion (DeepTech / agrovoltaic), and the 405 ha AI campus figure were not assigned to these cards.
 
 ## Official-list inclusion check
@@ -142,32 +142,32 @@ Also accepted but not required on the live card: DayakDaily 5 Mar 2026 Llamalít
 - Done: Nov 2024 launch; 20 May 2025 PETROS–CJI SCA; 20 Oct 2025 13MP naming; 11 Dec 2025 Framework Agreement; 17 Dec 2025 Sumitomo co-development.
 - Open: detailed masterplan reaches finalisation; 2027 physical and infrastructure development through PPP.
 
-## 6. Baram Renewable Energy Economic Zone — live card added as Planning
+## 6. Baram Renewable Energy Economic Zone — umbrella context, not a live card
 
-- Tracked unit: proposed 13MP zone (PCDS-yes; do not park). Not a gazetted SEZ authority. Planet QEOS / DeepTech is the named private delivery at Temala, Long Lama, Telang Usan. Do not invent a zone CEO.
-- Status: `Planning`. Value: `Not disclosed` for the **zone**. Do not put RM2.32 billion or RM6 billion on this card (those belong to DeepTech / agrovoltaic).
-- Inclusion: `official_linked`. The existing Baram Agrovoltaic Project remains the `component` card.
+- Tracked unit on the dashboard: the existing **Baram Agrovoltaic Project** (`single_asset`, approved `component` of the named zone). The 13MP names the Baram Renewable Energy Economic Zone, but that designation is not a live dashboard row.
+- Same-day owner reversal: a keep-both / live-zone card was drafted, then reversed. The zone stays umbrella context in the agrovoltaic summary. Do not invent a zone CEO. Do not put RM2.32 billion or RM6 billion on a zone card.
+- Inclusion: no active register record for the zone. Baram Agrovoltaic remains the approved `component` card of the officially named zone.
 
-### Accepted opened pages
+### Accepted opened pages (research context)
 
 | URL | Publication date | Visible claim | Decision |
 | --- | --- | --- | --- |
-| UKAS 27018 | 20 Oct 2025 | 13MP names the proposed Baram Renewable Energy Economic Zone | Accepted |
-| https://dayakdaily.com/deeptech-energy-programme-to-transform-baram-into-green-energy-and-economic-hub/ | 13 May 2026 | ADUN: DeepTech solar farm anchors the zone at Temala, Long Lama | Accepted as political locator, not gazettal. Long Bedian hybrid is a separate rural proposal and is **not** a zone milestone |
+| UKAS 27018 | 20 Oct 2025 | 13MP names the proposed Baram Renewable Energy Economic Zone | Accepted as zone naming / inclusion basis for the agrovoltaic component relationship. Not a live zone card. |
+| https://dayakdaily.com/deeptech-energy-programme-to-transform-baram-into-green-energy-and-economic-hub/ | 13 May 2026 | ADUN: DeepTech solar farm anchors the zone at Temala, Long Lama | Accepted as political locator for the farm-in-zone geography. Long Bedian hybrid is a separate rural proposal and is **not** a farm or zone milestone |
 
-### Milestones
+### Live-card decision
 
-- Done: 20 Oct 2025 13MP naming; 13 May 2026 ADUN DeepTech/Temala locator.
-- Open: zone gazettal or a second named project beyond agrovoltaic.
+- Keep the Baram Agrovoltaic Project card unchanged, including its summary mention of the zone as geography/context.
+- Do not add a Baram Renewable Energy Economic Zone live card.
+- Recheck the zone as a possible future card only if it is gazetted, a zone-level authority is named, or a second distinct project beyond agrovoltaic is publicly trackable.
 
 ## Inclusion-register updates
 
-`audit/project-inclusion.json` now has four new active `official_linked` records. FutureData and Sarawak High Performance Centre stay `monitored_unconfirmed` with 2026-09-01 last-reviewed dates. Baram Agrovoltaic remains the approved `component` of the zone. Airport and port records are unchanged.
+`audit/project-inclusion.json` has three new active `official_linked` records from this review (SAIC, Sarawak Climate Change Centre, Kuching Low-Carbon Hub). The Baram Renewable Energy Economic Zone has no live-card register record. FutureData and Sarawak High Performance Centre stay `monitored_unconfirmed` with 2026-09-01 last-reviewed dates. Baram Agrovoltaic remains the approved `component` of the named zone. Airport and port records are unchanged.
 
 ## Checks
 
 - `LAST_UPDATED` moved to `2026-09-01`.
 - EN/BM parity required in `src/localization.js`.
-- `src/updateHistory.js` receives one entry per new card.
-- Run `npm run check:content`, lint, `build:preview`, and `git diff --check`.
-- Open a PR into `preview` only. Do not merge. Do not promote to `main`. Do not merge or continue PR 41.
+- `src/updateHistory.js` receives one entry per new **live** card. The Baram zone does not receive an Updates-page entry.
+- Open a PR into `preview` only. Do not merge. Do not promote to `main`. Do not merge or continue PR 41. PR 44 (keep-both identity fix) is closed unmerged as superseded.
