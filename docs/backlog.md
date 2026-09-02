@@ -12,6 +12,8 @@ accessibility / a11y smoke checks, empty-sectors UI, visual-regression screensho
 `App.jsx` split. The same date, a four-card live monitor-trigger re-review left SIDC, OSEIC
 Miri, CSSC Bintulu, and KUTS watch-only. Dated record:
 [six-card live audit, 2 September re-review](project-audits/2026-08-27-six-card-live-audit.md#2-september-2026-re-review-four-live-card-monitor-triggers).
+The 28-day Production SEO baseline was established on 2 September 2026. Monthly Search Console
+rechecks are tracked in Notion, not here. The how-to checklist remains in `docs/seo-measurement.md`.
 
 ## Release blockers
 
@@ -49,19 +51,6 @@ content, lint, Preview build, Production build, and human Preview-review gates.
   still return Cloudflare challenges and should be re-checked at the next sweep.
 - Estimated difficulty: high
 - Risk level: high
-
-### Establish a meaningful search-performance baseline
-
-- What needs to be done: Use `docs/seo-measurement.md` to review indexing, queries, and page-level
-  performance once Production has enough data for a stable 28-day comparison.
-- Why it matters: The four public routes and Production analytics are implemented, but useful search
-  decisions require real traffic and crawl data rather than build or Preview evidence.
-- Scope boundary: Keep this measurement-only. Do not request indexing or change titles based on a
-  few days of volatile data.
-- Suggested first task: At the next scheduled review, record the data window and whether traffic is
-  sufficient. If not, retain the current implementation and recheck later.
-- Estimated difficulty: low
-- Risk level: low
 
 ## 2. Monitor Until Evidence Changes
 
