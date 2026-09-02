@@ -4,9 +4,16 @@ This file lists outstanding work only. Completed behavior belongs in `docs/produ
 `docs/design.md`, the data methodology, and Git history rather than remaining mixed into the
 active backlog.
 
-Last reconciled with the current `preview` implementation on 1 September 2026.
+Last reconciled with the current `preview` implementation on 2 September 2026.
 Section 2 was re-reviewed on 1 September 2026. Dated record:
 [13MP / zone candidate pool re-review](project-audits/2026-09-01-13mp-zone-candidate-pool.md).
+On 2 September 2026, four discarded Notion polish cards were removed from this backlog:
+accessibility / a11y smoke checks, empty-sectors UI, visual-regression screenshots, and the
+`App.jsx` split. The same date, a four-card live monitor-trigger re-review left SIDC, OSEIC
+Miri, CSSC Bintulu, and KUTS watch-only. Dated record:
+[six-card live audit, 2 September re-review](project-audits/2026-08-27-six-card-live-audit.md#2-september-2026-re-review-four-live-card-monitor-triggers).
+The 28-day Production SEO baseline was established on 2 September 2026. Monthly Search Console
+rechecks are tracked in Notion, not here. The how-to checklist remains in `docs/seo-measurement.md`.
 
 ## Release blockers
 
@@ -45,33 +52,6 @@ content, lint, Preview build, Production build, and human Preview-review gates.
 - Estimated difficulty: high
 - Risk level: high
 
-### Add lightweight interaction and accessibility regression checks
-
-- What needs to be done: Add a small repeatable browser check for the tracker behaviors most likely
-  to regress: the skip link, heading hierarchy, route focus, search query state, combined status and
-  category filters, card disclosures, and narrow-screen overflow.
-- Why it matters: These behaviors now work, but the current automated checks cover content shape,
-  linting, builds, and source availability rather than user-facing interaction.
-- Scope boundary: Start with a few critical paths across the four EN/BM routes and light/dark
-  themes. Do not turn this into a redesign or a large end-to-end test suite.
-- Suggested first task: Document one manual smoke path, automate that path at desktop and 320px,
-  and add more coverage only when it catches a real regression.
-- Estimated difficulty: medium
-- Risk level: low to medium
-
-### Establish a meaningful search-performance baseline
-
-- What needs to be done: Use `docs/seo-measurement.md` to review indexing, queries, and page-level
-  performance once Production has enough data for a stable 28-day comparison.
-- Why it matters: The four public routes and Production analytics are implemented, but useful search
-  decisions require real traffic and crawl data rather than build or Preview evidence.
-- Scope boundary: Keep this measurement-only. Do not request indexing or change titles based on a
-  few days of volatile data.
-- Suggested first task: At the next scheduled review, record the data window and whether traffic is
-  sufficient. If not, retain the current implementation and recheck later.
-- Estimated difficulty: low
-- Risk level: low
-
 ## 2. Monitor Until Evidence Changes
 
 ### Revisit unresolved 13th Malaysia Plan candidates only when a trigger appears
@@ -108,6 +88,24 @@ Prior `Do not add` decisions remain dated evidence holds, not permanent classifi
 - Suggested first task: Watch the remaining HPC and FutureData triggers, plus the open milestones
   on the three new cards.
 
+### Watch four live cards only when their next public trigger appears
+
+2 September 2026 monitor-trigger re-review. No dashboard field changed. Recheck only when
+the named event is publicly confirmed, or a later official date replaces the current target.
+
+- Sarawak Infectious Disease Centre: Oct 2026 Samarahan campus completion remains open.
+  Opened owner and news pages still say construction or “nearing completion”. Recheck on
+  formal campus completion, commissioning, or a revised completion date.
+- One-Stop Early Intervention Centre (OSEIC) Miri: 2027 operations date remains the latest
+  opened ministerial statement. Recheck on a confirmed opening or a newer official date.
+- Community Social Support Centre (CSSC) Network: Bintulu operations remain `TBD`. The
+  26 August 2026 key-handover synthesis is rejected again; cited pages were older TTG or
+  Sibu stories. Recheck on a Bintulu opening, launch, or operator handover.
+- KUTS — Kuching Urban Transportation System: Q4 2026 ART pilot remains open. 28 August
+  2026 Sungai Kuap last-girder reports confirm continuing construction and the same
+  year-end target; they are not a pilot start. Recheck on confirmed ART pilot service or
+  a revised schedule.
+
 ### Retain the legacy tracker redirect until its scheduled review
 
 - What needs to be done: Keep `tracker.hafiy.my`, its permanent redirect, and its CNAME active until
@@ -120,39 +118,10 @@ Prior `Do not add` decisions remain dated evidence holds, not permanent classifi
 
 ## 3. Nice To Have
 
-### Add visual regression coverage if layout churn increases
-
-- What needs to be done: Capture a small set of stable reference screenshots for the tracker and
-  update-history layouts.
-- Why it matters: Much of the interface is shared, so a small style change can affect cards,
-  discovery controls, themes, languages, and mobile layouts together.
-- Trigger: Add this only after the interaction smoke checks exist or repeated visual regressions make
-  screenshot maintenance worthwhile.
-- Suggested first task: Define the minimum desktop and mobile views before selecting tooling.
-- Estimated difficulty: medium
-- Risk level: medium
-
-### Represent empty sectors or enablers only after a reader need is observed
-
-- What needs to be done: Decide whether classifications with no current project records should appear
-  anywhere in the interface.
-- Why it matters: The current scan-first view intentionally shows classifications represented by
-  project cards. Empty classifications may add completeness, but they may also add noise.
-- Suggested first task: Keep the interface unchanged and record a real reader question that would
-  justify exposing empty classifications.
-- Estimated difficulty: medium
-- Risk level: low
+No items currently recorded. Visual-regression screenshots and empty-sectors UI were discarded
+with the matching Notion polish cards on 2 September 2026.
 
 ## 4. Technical Cleanup
 
-### Split the large app file when related work makes it worthwhile
-
-- What needs to be done: Move stable components out of `src/App.jsx` gradually during related edits.
-- Why it matters: Smaller files are easier to review safely as project-card, discovery, and summary
-  behavior evolves.
-- Scope boundary: Avoid a standalone rewrite. Extract one component only when its area is already
-  being changed and the extraction keeps behavior identical.
-- Suggested first task: Choose one stable boundary such as `ProjectCard`, `SummaryMetrics`,
-  `DiscoveryControls`, or `EnvironmentBadge` during the next related implementation task.
-- Estimated difficulty: medium
-- Risk level: medium
+No items currently recorded. The `App.jsx` split was discarded with the matching Notion polish
+card on 2 September 2026.
