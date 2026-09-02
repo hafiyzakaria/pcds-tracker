@@ -4,9 +4,12 @@ This file lists outstanding work only. Completed behavior belongs in `docs/produ
 `docs/design.md`, the data methodology, and Git history rather than remaining mixed into the
 active backlog.
 
-Last reconciled with the current `preview` implementation on 1 September 2026.
+Last reconciled with the current `preview` implementation on 2 September 2026.
 Section 2 was re-reviewed on 1 September 2026. Dated record:
 [13MP / zone candidate pool re-review](project-audits/2026-09-01-13mp-zone-candidate-pool.md).
+On 2 September 2026, four discarded Notion polish cards were removed from this backlog:
+accessibility / a11y smoke checks, empty-sectors UI, visual-regression screenshots, and the
+`App.jsx` split.
 
 ## Release blockers
 
@@ -44,20 +47,6 @@ content, lint, Preview build, Production build, and human Preview-review gates.
   still return Cloudflare challenges and should be re-checked at the next sweep.
 - Estimated difficulty: high
 - Risk level: high
-
-### Add lightweight interaction and accessibility regression checks
-
-- What needs to be done: Add a small repeatable browser check for the tracker behaviors most likely
-  to regress: the skip link, heading hierarchy, route focus, search query state, combined status and
-  category filters, card disclosures, and narrow-screen overflow.
-- Why it matters: These behaviors now work, but the current automated checks cover content shape,
-  linting, builds, and source availability rather than user-facing interaction.
-- Scope boundary: Start with a few critical paths across the four EN/BM routes and light/dark
-  themes. Do not turn this into a redesign or a large end-to-end test suite.
-- Suggested first task: Document one manual smoke path, automate that path at desktop and 320px,
-  and add more coverage only when it catches a real regression.
-- Estimated difficulty: medium
-- Risk level: low to medium
 
 ### Establish a meaningful search-performance baseline
 
@@ -120,39 +109,10 @@ Prior `Do not add` decisions remain dated evidence holds, not permanent classifi
 
 ## 3. Nice To Have
 
-### Add visual regression coverage if layout churn increases
-
-- What needs to be done: Capture a small set of stable reference screenshots for the tracker and
-  update-history layouts.
-- Why it matters: Much of the interface is shared, so a small style change can affect cards,
-  discovery controls, themes, languages, and mobile layouts together.
-- Trigger: Add this only after the interaction smoke checks exist or repeated visual regressions make
-  screenshot maintenance worthwhile.
-- Suggested first task: Define the minimum desktop and mobile views before selecting tooling.
-- Estimated difficulty: medium
-- Risk level: medium
-
-### Represent empty sectors or enablers only after a reader need is observed
-
-- What needs to be done: Decide whether classifications with no current project records should appear
-  anywhere in the interface.
-- Why it matters: The current scan-first view intentionally shows classifications represented by
-  project cards. Empty classifications may add completeness, but they may also add noise.
-- Suggested first task: Keep the interface unchanged and record a real reader question that would
-  justify exposing empty classifications.
-- Estimated difficulty: medium
-- Risk level: low
+No items currently recorded. Visual-regression screenshots and empty-sectors UI were discarded
+with the matching Notion polish cards on 2 September 2026.
 
 ## 4. Technical Cleanup
 
-### Split the large app file when related work makes it worthwhile
-
-- What needs to be done: Move stable components out of `src/App.jsx` gradually during related edits.
-- Why it matters: Smaller files are easier to review safely as project-card, discovery, and summary
-  behavior evolves.
-- Scope boundary: Avoid a standalone rewrite. Extract one component only when its area is already
-  being changed and the extraction keeps behavior identical.
-- Suggested first task: Choose one stable boundary such as `ProjectCard`, `SummaryMetrics`,
-  `DiscoveryControls`, or `EnvironmentBadge` during the next related implementation task.
-- Estimated difficulty: medium
-- Risk level: medium
+No items currently recorded. The `App.jsx` split was discarded with the matching Notion polish
+card on 2 September 2026.

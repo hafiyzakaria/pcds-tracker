@@ -104,7 +104,6 @@ These files are the project's source of truth for product intent, design decisio
 
 - Data updates are manual. A report-only source-link checker flags unavailable links for manual review.
 - Project facts are maintained in the codebase rather than a content management system.
-- Most tracker interface code and styling currently live in one large `src/App.jsx` file.
 - Automated content checks validate structure and consistency. The source-link checker tests
   availability without blocking releases, while factual accuracy and flagged links still require
   manual review.
