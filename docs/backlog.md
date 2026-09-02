@@ -9,7 +9,9 @@ Section 2 was re-reviewed on 1 September 2026. Dated record:
 [13MP / zone candidate pool re-review](project-audits/2026-09-01-13mp-zone-candidate-pool.md).
 On 2 September 2026, four discarded Notion polish cards were removed from this backlog:
 accessibility / a11y smoke checks, empty-sectors UI, visual-regression screenshots, and the
-`App.jsx` split.
+`App.jsx` split. The same date, a four-card live monitor-trigger re-review left SIDC, OSEIC
+Miri, CSSC Bintulu, and KUTS watch-only. Dated record:
+[six-card live audit, 2 September re-review](project-audits/2026-08-27-six-card-live-audit.md#2-september-2026-re-review-four-live-card-monitor-triggers).
 
 ## Release blockers
 
@@ -96,6 +98,24 @@ Prior `Do not add` decisions remain dated evidence holds, not permanent classifi
   beyond agrovoltaic is publicly trackable. Do not add Long Bedian hybrid as a zone milestone.
 - Suggested first task: Watch the remaining HPC and FutureData triggers, plus the open milestones
   on the three new cards.
+
+### Watch four live cards only when their next public trigger appears
+
+2 September 2026 monitor-trigger re-review. No dashboard field changed. Recheck only when
+the named event is publicly confirmed, or a later official date replaces the current target.
+
+- Sarawak Infectious Disease Centre: Oct 2026 Samarahan campus completion remains open.
+  Opened owner and news pages still say construction or “nearing completion”. Recheck on
+  formal campus completion, commissioning, or a revised completion date.
+- One-Stop Early Intervention Centre (OSEIC) Miri: 2027 operations date remains the latest
+  opened ministerial statement. Recheck on a confirmed opening or a newer official date.
+- Community Social Support Centre (CSSC) Network: Bintulu operations remain `TBD`. The
+  26 August 2026 key-handover synthesis is rejected again; cited pages were older TTG or
+  Sibu stories. Recheck on a Bintulu opening, launch, or operator handover.
+- KUTS — Kuching Urban Transportation System: Q4 2026 ART pilot remains open. 28 August
+  2026 Sungai Kuap last-girder reports confirm continuing construction and the same
+  year-end target; they are not a pilot start. Recheck on confirmed ART pilot service or
+  a revised schedule.
 
 ### Retain the legacy tracker redirect until its scheduled review
 

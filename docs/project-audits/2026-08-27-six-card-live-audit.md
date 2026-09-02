@@ -23,6 +23,8 @@ Search syntheses, snippets, and result previews were discovery only. Every accep
 
 Nazirul approved implementation of the evidence-backed changes. Unchanged cards were left unchanged.
 
+A 2 September 2026 monitor-trigger re-review of four of these cards (SIDC, OSEIC Miri, CSSC Bintulu, KUTS) is recorded below. Special Needs Community Centre and YSISS were out of scope for that pass.
+
 ---
 
 ## 1. Sarawak Infectious Disease Centre
@@ -291,6 +293,204 @@ Northbank IBRACO station naming rights on the same day is a commercial naming ev
 - Confidence: High for arrival-date correction and that the Q4 2026 pilot remains open
 - Changes: arrival milestone date `2026-08-01`; add DayakDaily 1 Aug 2026 source; updateHistory 1 Aug 2026
 - Follow-up: confirmed ART pilot service, hydrogen-plant relocation completion, or a revised schedule
+
+---
+
+## 2 September 2026 re-review: four live-card monitor triggers
+
+- Review date: 2026-09-02
+- Reviewer: Cursor cloud agent, on behalf of the tracker owner
+- Review type: milestone trigger / monitor-only re-review
+- Scope: SIDC campus completion/commissioning (~2026-10); OSEIC Miri confirmed opening or operations (~2027); CSSC Bintulu opening/handover (TBD); KUTS ART pilot or a revised schedule (~2026-Q4)
+- Out of scope: Special Needs Community Centre; Yayasan Sarawak International Secondary Schools Expansion; site-wide sweep
+- Method: [data methodology](../data-methodology.md) search sequence. Mandatory first query for each card was `"[exact name]" project milestones`, then update/latest status 2026, field discovery, identity check, and counter-search. Value-search exhaustion was not re-run because no displayed value is being changed. Search syntheses, snippets, and AI Mode wording were discovery only. Every accepted claim was checked against an opened public page.
+
+No live-card field change is recommended. All four remain watch-only.
+
+| Project | Outcome | Implemented effect | Next trigger |
+| --- | --- | --- | --- |
+| Sarawak Infectious Disease Centre | Monitor / No card change | Oct 2026 campus completion remains open; latest opened owner and news pages still describe construction or “nearing completion”, not a completion or commissioning event | Formal campus completion, commissioning, or a revised completion date |
+| One-Stop Early Intervention Centre (OSEIC) Miri | Monitor / No card change | 2027 operations date still the latest opened ministerial statement; no opening page | Confirmed opening or a newer official date |
+| Community Social Support Centre (CSSC) Network | Monitor / No card change | Bintulu operations remain undated; JKR furniture quotation still listed as closed 16 Jul 2026; no launch or operator-handover page | Bintulu opening, launch, or operator handover |
+| KUTS — Kuching Urban Transportation System | Monitor / No card change | Q4 2026 ART pilot remains open. 28 Aug 2026 Sungai Kuap last-girder reports confirm continuing Blue Line construction and the same year-end pilot target; not added as a card field | Confirmed ART pilot service or a revised schedule |
+
+### Shared discovery notes
+
+- Google / search syntheses were used only to collect candidate URLs. Generated completion, opening, and handover dates were discarded unless an opened page stated the same claim.
+- Borneo Post bodies often returned a Cloudflare challenge in this environment. Where a Borneo Post URL could not be opened, the claim was not accepted from that URL. Independent opened DayakDaily, official, or UKAS pages were used instead.
+- Wikipedia and aggregator pages (including `sarawakdaily.com`) were discovery only and were not cited.
+
+### 1. Sarawak Infectious Disease Centre
+
+- Current dashboard identity: Innovation; `Sarawak Infectious Disease Centre`; `In Progress`; next open milestone `Samarahan campus reaches completion` (`2026-10`)
+- Tracked unit: single asset (Samarahan One Health research campus; distinct from the already operating research organisation)
+- Name variants checked: SIDC; Pusat Penyakit Berjangkit Sarawak; Pusat Penyelidikan Penyakit Tropika Sarawak
+- Identity check: Samarahan SIDC campus beside Sarawak Heart Centre. The 10 Aug 2026 Regency Specialist Hospital groundbreaking remains a different project.
+
+#### Searches performed
+
+| Search type | Exact query or official domain | Findings / candidate URLs |
+| --- | --- | --- |
+| Mandatory milestone-first | `"Sarawak Infectious Disease Centre" project milestones` | SIDC about and new-lab pages; DayakDaily Dec 2025 Oct-2026 target; DayakDaily 10 Aug 2026 “nearing completion”; UM SPM Sep 2025 site visit (construction still scheduled for 2026) |
+| Update / latest status 2026 | `"Sarawak Infectious Disease Centre" update 2026` | Same Aug 2026 investment / nearing-completion pages; SIDC home advertises SHInE conference 9–11 Sep 2026; no campus-completion notice |
+| Counter-search | completed / commissioned / delayed / cancelled 2026 | No opened completion, commissioning, delay, or cancellation page |
+| Official-domain | `site:sidc.org.my` | Home, about, new-lab, PacBio 14 May 2026. New-lab still describes packages in progress. PacBio is organisation equipment, not campus completion |
+| BM / alias | `"Pusat Penyakit Berjangkit Sarawak" siap OR ditauliah 2026` | Utusan DUN page restates October 2026 target; no siap-sepenuhnya event |
+
+#### Candidate-source log
+
+| URL | Discovery origin | Publisher | Publication date | Identity and visible claim checked | Decision | Reason |
+| --- | --- | --- | --- | --- | --- | --- |
+| https://sidc.org.my/ | Official-domain | SIDC | opened 2 Sep 2026 | Owner home; SHInE conference 9–11 Sep 2026; no campus-completion claim | Retained | Owner page; conference is organisation activity |
+| https://sidc.org.my/new-lab/ | Official-domain | SIDC | opened 2 Sep 2026 | Samarahan campus; three packages; “is being developed”; no completion claim | Retained | Owner campus page still describes construction |
+| https://sidc.org.my/about-us/ | Official-domain | SIDC | opened 2 Sep 2026 | Established 2020; SRDC subsidiary; chronology graphic not transcribed as a new date | Retained | Identity and lead; no new delivery event |
+| https://dayakdaily.com/sarawak-infectious-disease-centre-to-be-completed-by-oct-2026/ | Milestone-first | DayakDaily | 1 Dec 2025 | 40.19% as of Oct 2025; full completion targeted Oct 2026; organisation operating since Feb 2024 | Retained | Still the dated progress / target source |
+| https://dayakdaily.com/sarawaks-rm300-mln-disease-centre-nears-completion-to-drive-research-prepare-for-the-next-covid/ | Status search | DayakDaily | 10 Aug 2026 | Names SIDC. Premier: invested RM300 million; campus “nearing completion” at a different hospital groundbreaking | Retained | Newest opened campus-status wording; not a completion event |
+| https://spm.um.edu.my/2025/09/29/visit-to-sarawak-infectious-disease-centre-and-kuching-division-health-office/ | Milestone-first | Universiti Malaya SPM | 29 Sep 2025 | Delegation toured “the new SIDC building, currently under construction and scheduled for completion in 2026” | Context only | Older construction confirmation; no unique field |
+| https://sidc.org.my/2026/05/14/pacbio/ | Official-domain | SIDC | 14 May 2026 | PacBio Revio sequencer acquired | Rejected for this trigger | Organisation capability, not campus completion |
+| https://utusansarawak.com.my/dun-pusat-penyakit-berjangkit-sarawak-dijangka-siap-sepenuhnya-oktober-2026/ | BM search | Utusan Sarawak | DUN reporting of the Dec 2025 target | “dijangka siap sepenuhnya pada Oktober 2026” | Monitor / not added | Restates the existing target |
+
+#### Field-by-field claim matrix
+
+| Field | Current value | Candidate claim | Decision |
+| --- | --- | --- | --- |
+| `status` | `In Progress` | Latest achieved stage remains organisation operating + campus under construction | No change |
+| `milestones` Oct 2026 row | `Samarahan campus reaches completion` / `done: false` | “Nearing completion” and owner “being developed” wording | Keep open. Do not mark `done` |
+| `value` / `summary` / `lead` / `sources` | RM300 million government investment; SIDC lead | No newer project-specific value, party, or unique source | No change |
+| `localization` / `updateHistory` | Matching BM; 10 Aug 2026 entry exists | No new public delivery event | No entry |
+
+- Outcome: Monitor / No card change
+- Confidence: High that the campus is not yet complete on opened pages
+- Follow-up: official campus completion, commissioning, or a revised completion date
+
+### 2. One-Stop Early Intervention Centre (OSEIC) Miri
+
+- Current dashboard identity: Social Services; `One-Stop Early Intervention Centre (OSEIC) Miri`; `In Progress`; next open milestone `Centre begins operations` (`2027`)
+- Tracked unit: single asset (Tudan early-intervention facility for children under seven)
+- Name variants checked: OSEIC Miri; One Stop Early Intervention Centre Miri; Pusat Intervensi Awal Sehenti / Bersepadu Miri
+- Identity check: Miri Tudan centre. Kuching and Dalat remain the operating centres. YSD/PIBAKAT capacity-building is network support, not this card’s value.
+
+#### Searches performed
+
+| Search type | Exact query or official domain | Findings |
+| --- | --- | --- |
+| Mandatory milestone-first | `"One-Stop Early Intervention Centre" Miri project milestones` | Older 2024–mid-2026 opening targets; May 2026 2026-opening target; July 2026 2027 operations statement |
+| Update / latest status 2026 | `"OSEIC Miri" 2026 OR 2027 opening` | No opened page newer than 19 Jul 2026 that confirms opening or changes the 2027 date |
+| Official-domain | `site:ukas.sarawak.gov.my` OSEIC Miri | Apr 2026 Tudan grants page (existing source; fetch timed out this pass). A later UKAS festive page names OSEIC Sarawak children, not a Miri opening |
+| Counter-search | opened / delayed / cancelled 2026 | No opening confirmation. Earlier June 2025 / Jan 2026 / May 2026 targets remain superseded by the opened July 2026 ministerial 2027 wording |
+
+#### Candidate-source log
+
+| URL | Date | Claim | Decision |
+| --- | --- | --- | --- |
+| https://www.theborneopost.com/2026/07/19/oseic-helps-over-500-kids-progress-to-formal-education/ | 19 Jul 2026 | Search-result body (Cloudflare on this pass): Minister Fatimah, “Miri will become the third location to house an OSEIC when it begins operations in 2027.” | Retained as the current operations date. Same page was opened and accepted on 27 Aug 2026 |
+| https://www.theborneopost.com/2026/05/01/oseic-miri-homeless-transit-centres-on-track-for-2026-rollout/ | 1 May 2026 | Target opening “this year”; Tudan visit; RM5.7 million disbursed | Retained; superseded for the operations year |
+| https://ukas.sarawak.gov.my/web/subpage/news_view/39533 | 30 Apr 2026 | Existing Tudan grants / progress source | Retained; this pass timed out |
+| https://www.yayasansimedarby.com/yayasan-sime-darby-and-pibakat-collaborate-strengthen-early-intervention-services-children-living | Jan 2026 event | OSEIC Miri scheduled July 2026; RM350,000 network capacity | Still rejected for displayed value and as the current operations date |
+| https://www.sarawaktribune.com/rm2-028mil-allocated-for-one-stop-early-intervention-centre-in-miri/ | older allocation | RM2.028 million; “begin operations in October this year” | Rejected as current value and date; superseded by RM5.743 million grants and the 2027 statement |
+
+#### Field-by-field claim matrix
+
+| Field | Current value | Candidate claim | Decision |
+| --- | --- | --- | --- |
+| `milestones` operations row | `2027` / `Centre begins operations` / `done: false` | No opened post-19 Jul 2026 opening or newer official date | Keep 2027 open |
+| `status` / `value` / `lead` / `summary` / `sources` | `In Progress`; `RM5.743 million`; Sarawak Government | No newer grant, lead, or opening evidence | No change |
+| `updateHistory` | 19 Jul 2026 2027-date entry exists | No new public development | No entry |
+
+- Outcome: Monitor / No card change
+- Confidence: High that the centre has not opened; High that 2027 remains the latest dated official target on an accepted page
+- Follow-up: confirmed opening, or a later official date
+
+### 3. Community Social Support Centre (CSSC) Network — Bintulu trigger
+
+- Current dashboard identity: Social Services; `Community Social Support Centre (CSSC) Network`; `In Progress`; next open milestone `Bintulu centre begins operations` (`TBD`)
+- Tracked unit: programme (statewide CSSC rollout). This pass watched only the Bintulu opening/handover trigger.
+- Name variants checked: CSSC Bintulu; Pusat Sokongan Sosial Komuniti Bintulu; TTG Bintulu (co-located building, different service)
+- Identity check: CSSC Bintulu is not TTG Bintulu, Teratak Kasih Tok Nan Bintulu (HIV facility, opened 3 Feb 2026), federal PSSS, or CDIC Bau.
+
+#### Searches performed
+
+Milestone-first (`"Community Social Support Centre" Bintulu project milestones`), 2026 update, BM (`"Pusat Sokongan Sosial Komuniti" Bintulu dilancarkan OR diserahkan`), JKR furniture quotation, and counter-search for launch/handover/delay.
+
+Search syntheses again claimed a 26 August 2026 Bintulu key handover. The cited pages were 2023–2025 TTG articles, the Nov 2025 Sibu CSSC launch, a Jan 2024 Bintulu administration note, and a CDIC Bau story. That synthesis is rejected again. No opened 2026 Bintulu CSSC launch, opening, or operator-handover page.
+
+Opened JKR Bintulu quotation list on 2 Sep 2026 still shows `JKRS/BTU/QN/18/2026` “Term Contract for Supply and Delivery of Furniture to TTG and CSSC Bintulu”, called 2 Jul 2026 and closed 16 Jul 2026. Presence on a historical quotation list after close is not evidence of operations.
+
+UKAS 17 Mar 2026 (opened) still says CSSC Sibu was expected in April and Bintulu in May. That May 2026 operations target remains superseded by the July furniture quotation and the absence of a later opening page.
+
+No new project-specific capital figure was found. The RM40 million PCDS PDF figure, RM1 million Budget 2026 multi-centre allocation, RM600,000 TTG shelter line, and RM1.8 million four-TTG operations figure stay rejected as this card’s value. Value remains `Not disclosed` without a new exhaustion table because the displayed value is not being changed.
+
+#### Candidate-source log
+
+| URL | Date | Claim | Decision |
+| --- | --- | --- | --- |
+| https://jkr.sarawak.gov.my/web/subpage/webpage_view/465 | opened 2 Sep 2026 | Furniture quotation for TTG and CSSC Bintulu still listed; close 16 Jul 2026 | Retained; not an operations event |
+| https://ukas.sarawak.gov.my/web/subpage/news_view/36445 | 17 Mar 2026 | Kuching operating; Sibu expected April; Bintulu expected May | Retained; Bintulu date superseded |
+| https://www.theborneopost.com/2025/11/08/community-social-support-centre-launched-in-sibu/ | 8 Nov 2025 | Sibu launch and key handover. Cloudflare on this pass | Existing completed Sibu milestone; not a Bintulu event |
+| https://www.theborneopost.com/2026/02/04/teratak-kasih-tok-nan-facility-opens-in-bintulu/ | 4 Feb 2026 | Teratak Kasih Tok Nan HIV facility opens in Bintulu | Rejected; different identity |
+| https://www.utusanborneo.com.my/2025/07/25/ttg-bintulu-dijangka-mula-beroperasi-pada-bulan-oktober | 25 Jul 2025 | TTG Bintulu expected Oct 2025; building will also house CSSC | Context only; not a 2026 CSSC opening |
+
+#### Field-by-field claim matrix
+
+| Field | Current value | Candidate claim | Decision |
+| --- | --- | --- | --- |
+| `milestones` Bintulu row | `TBD` / `Bintulu centre begins operations` / `done: false` | No opened opening, launch, or operator handover | Keep TBD open |
+| `status` / `value` / `lead` / `summary` / `sources` | `In Progress`; `Not disclosed` | No new capital figure or party change | No change |
+| `updateHistory` | 2 Jul 2026 furniture-quotation entry exists | No new public development | No entry |
+
+- Outcome: Monitor / No card change
+- Confidence: High
+- Follow-up: Bintulu opening, launch, or operator handover; any project-specific capital figure
+
+### 4. KUTS — Kuching Urban Transportation System
+
+- Current dashboard identity: Transport; `KUTS — Kuching Urban Transportation System`; `In Progress`; next open milestone `ART pilot service begins` (`2026-Q4`)
+- Tracked unit: combined card / system (KUTS Phase 1 ART network)
+- Name variants checked: KUTS; ART; Autonomous Rapid Transit; Sarawak Metro; Sungai Kuap / Sg Kuap ART bridge
+- Identity check: Blue Line Package 1 construction (Rembus to Northbank-IBRACO) is part of the tracked Phase 1 system. A last-girder event is an intermediate construction increment, not pilot commencement.
+
+#### Searches performed
+
+| Search type | Exact query or official domain | Findings |
+| --- | --- | --- |
+| Mandatory milestone-first | `"Kuching Urban Transportation System" project milestones` | May 2026 Q4 pilot / 38.2% pages; 1 Aug 2026 ART arrival; 28 Aug 2026 Sungai Kuap last girder |
+| Update / latest status 2026 | `"Kuching Urban Transportation System" OR KUTS ART pilot 2026 latest status` | Same 28 Aug girder pages; official Metro project page still construction-progress photos, not a pilot-start notice |
+| Official-domain | `site:mysarawakmetro.com` | Project page opened. Gallery captions still describe Q4 2026 pilot as scheduled. No “pilot has begun” wording |
+| Counter-search | delayed / postponed / “revised schedule” / cancelled 2026 | 2025 delay pages already reflected in the current Q4 2026 / 2027 / 2030-Q3 dates. No newer opened slip of the Q4 2026 pilot |
+
+#### Candidate-source log
+
+| URL | Date | Claim | Decision |
+| --- | --- | --- | --- |
+| https://dayakdaily.com/art-lane-across-sg-kuap-nears-completion-with-final-girder-installed-ahead-of-year-end-pilot/ | 28 Aug 2026 | Last girder installed on the 400 m Sungai Kuap bridging structure. Work now focuses on completing the bridge in time for ART pilot “scheduled at the end of this year.” Names KUTS, Blue Line, ICJV | Accepted as monitor context. Not added to the card: construction increment, Q4 target unchanged, smallest source set already supports the open pilot |
+| https://www.theborneopost.com/2026/08/28/final-girder-installed-for-400m-art-bridge-over-sungai-kuap/ | 28 Aug 2026 | Same Sarawak Metro statement. Cloudflare on this pass; DayakDaily body opened | Corroboration / not added |
+| https://www.mysarawakmetro.com/what-we-do/kuching-urban-transportation-system | opened 2 Sep 2026 | Phase 1 scope; current-progress photos through mid-2026; no pilot commencement | Retained |
+| https://dayakdaily.com/kuchings-art-pilot-operations-move-closer-with-arrival-of-first-two-trains/ | 1 Aug 2026 | First two ART trains arrived; system integration; pilot still ahead | Retained |
+| https://www.thestar.com.my/news/nation/2026/05/18/kuching-urban-transportation-system-to-start-pilot-run-in-q4 | 18 May 2026 | Q4 2026 pilot; 2027 commercial; 38.2% as of 30 Apr 2026 | Retained |
+| https://en.wikipedia.org/wiki/Kuching_Urban_Transportation_System | secondary | Pilot and revenue-service dating | Discovery only; not cited |
+
+The card already has nine milestones. Adding a Sungai Kuap last-girder row would over-granularise construction inside an already complete lifecycle (arrival → open pilot → open commercial). The 28 Aug pages do not revise the Q4 2026 pilot, the 2027 commercial target, the hydrogen-plant date, or the RM6 billion allocation.
+
+#### Field-by-field claim matrix
+
+| Field | Current value | Candidate claim | Decision |
+| --- | --- | --- | --- |
+| `milestones` pilot row | `2026-Q4` / `ART pilot service begins` / `done: false` | 28 Aug pages still say the pilot is scheduled for year-end | Keep open |
+| `status` | `In Progress` | Latest achieved stage remains ART arrival and continuing construction | No change |
+| `value` / `lead` / `summary` | `RM6 billion` state allocation; Sarawak Metro | No newer allocation or party | No change |
+| `sources` | Eight live pages | 28 Aug girder pages add no unique displayed field | Not added |
+| `updateHistory` | 1 Aug 2026 ART-arrival entry exists | Girder installation is construction progress, not a new public delivery stage | No entry |
+
+- Outcome: Monitor / No card change
+- Confidence: High that the Q4 2026 pilot has not begun on opened pages, and that the 28 Aug reports do not revise the schedule
+- Follow-up: confirmed ART pilot service, hydrogen-plant relocation completion, or a revised schedule
+
+### Editorial decision for this re-review
+
+- No `src/trackerData.js`, `src/localization.js`, or `src/updateHistory.js` edits.
+- `LAST_UPDATED` stays `2026-09-01`.
+- English/BM parity is unchanged because no card facts changed.
+- Special Needs and YSISS were not re-opened.
 
 ---
 
