@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const CLOUDFLARE_WEB_ANALYTICS_TOKEN = 'd9128ca2b1024d93b53724e64048e6d5'
+const CLOUDFLARE_WEB_ANALYTICS_TOKEN = '5e17ff78afe6423a8a9834b7870b55fd'
 
 function cloudflareWebAnalytics(mode) {
   return {
