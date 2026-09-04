@@ -12,6 +12,10 @@ This repository is the PCDS 2030 Project Tracker, a Vite and React static site.
 - Treat `README.md`, `docs/product.md`, `docs/design.md`, and `docs/backlog.md` as the project memory.
 - Treat [the data methodology](docs/data-methodology.md) as mandatory, canonical guidance for any work that changes `src/trackerData.js`, `src/localization.js`, `src/updateHistory.js`, or adds a tracked project. Read it before editing and follow its evidence, identity, source-link, milestone, localisation, and review-record rules. Do not duplicate or override that methodology in other documents.
 
+## Agent skills
+
+- Opt-in audit skill: `/audit-pcds-2030-projects`. Not for every run. Canonical methodology remains `docs/data-methodology.md`.
+
 ## Branch Workflow
 
 - `preview` is the normal development branch.
