@@ -102,7 +102,7 @@ export default function Site({ route, concept = false }) {
       window.requestAnimationFrame(() => {
         document.getElementById(hash)?.scrollIntoView();
       });
-    } else if (pageChanged) {
+    } else if (pageChanged || concept) {
       window.scrollTo({ top: 0 });
     }
   };
@@ -112,6 +112,7 @@ export default function Site({ route, concept = false }) {
     : activeRoute.page === "updates"
     ? (
       <UpdatesPage
+        concept={concept}
         language={activeRoute.language}
         onNavigate={navigate}
         headingRef={pageHeadingRef}
@@ -134,7 +135,7 @@ export default function Site({ route, concept = false }) {
         </a>
         <div id="concept-navigation-links" className={`concept-links${menuOpen ? " concept-links--open" : ""}`}>
           <a className="concept-about-link" href={getRouteHref(activeRoute.language === "ms" ? "about-ms" : "about") + "?concept=xai"} onClick={(event) => navigate(event, activeRoute.language === "ms" ? "about-ms" : "about")}>{activeRoute.language === "ms" ? "Tentang" : "About"}</a>
-          <a href={getRouteHref(activeRoute.language === "ms" ? "tracker-ms" : "tracker-en") + "?concept=xai#projects"} onClick={(event) => navigate(event, activeRoute.language === "ms" ? "tracker-ms" : "tracker-en", "projects")}>{activeRoute.language === "ms" ? "Projek" : "Projects"}</a>
+          <a href={getRouteHref(activeRoute.language === "ms" ? "tracker-ms" : "tracker-en") + "?concept=xai"} onClick={(event) => navigate(event, activeRoute.language === "ms" ? "tracker-ms" : "tracker-en")}>{activeRoute.language === "ms" ? "Projek" : "Projects"}</a>
           <a href={getRouteHref(activeRoute.language === "ms" ? "updates-ms" : "updates") + "?concept=xai"} onClick={(event) => navigate(event, activeRoute.language === "ms" ? "updates-ms" : "updates")}>{activeRoute.language === "ms" ? "Kemas kini" : "Updates"}</a>
         </div>
         <div className="concept-utilities">

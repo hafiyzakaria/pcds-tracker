@@ -1450,6 +1450,41 @@ function renderIntroParagraph(paragraph, programmeName) {
 }
 
 export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRef, concept = false }) {
+  useEffect(() => {
+    if (!concept || !('IntersectionObserver' in window)) return;
+    const grid = document.getElementById('project-card-grid');
+    if (!grid) return;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const seen = new Set();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (!isIntersecting) return;
+        observer.unobserve(target);
+        if (seen.has(target.id)) return;
+        seen.add(target.id);
+        if (motion.matches || grid.className.includes('--filter-')) return;
+        const cards = [...grid.querySelectorAll('.project-card')];
+        const index = cards.indexOf(target);
+        const previous = cards[index - 1];
+        const secondInRow = previous && Math.abs(previous.offsetTop - target.offsetTop) < 2;
+        target.animate([
+          { opacity: 0, translate: '0 20px' },
+          { opacity: 1, translate: '0 0' },
+        ], { duration: 450, delay: secondInRow ? 70 : 0, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' });
+      });
+    }, { threshold: 0.08 });
+    const observeCards = () => grid.querySelectorAll('.project-card').forEach((card) => {
+      if (!seen.has(card.id)) observer.observe(card);
+    });
+    observeCards();
+    const mutations = new MutationObserver(observeCards);
+    mutations.observe(grid, { childList: true });
+    const stopMotion = () => {
+      if (motion.matches) grid.querySelectorAll('.project-card').forEach((card) => card.getAnimations().forEach((animation) => animation.cancel()));
+    };
+    motion.addEventListener('change', stopMotion);
+    return () => { observer.disconnect(); mutations.disconnect(); motion.removeEventListener('change', stopMotion); };
+  }, [concept]);
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeClassificationFilter, setActiveClassificationFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState(getInitialSearchQuery);
@@ -1886,6 +1921,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
         </section>
 
         <SiteFooter
+          concept={concept}
           copy={copy}
           currentPage="tracker"
           language={language}

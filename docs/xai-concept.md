@@ -43,6 +43,38 @@ touch-device and reduced-motion rules remain in effect. This adjustment is local
 
 ## Review deployment
 
+Cards reveal once per page visit as they enter the viewport: a 20px rise and fade over 450ms,
+with a 70ms delay for the second card in a row. The effect does not block rendering, does not
+replace hover transforms, and is skipped during filter transitions or with reduced motion.
+
+Navigation links show a soft rounded neutral highlight on hover and keyboard focus, without
+moving the text. Hovering or focusing the alternate language removes the selected language's
+fill and highlights the alternate. The selected fill returns when interaction ends; selection
+does not change until activation. Hover effects are limited to mouse/trackpad devices.
+
+The local v2 hero no longer shows the Sarawak Development Monitor kicker. Desktop hero
+padding is 32px above and 20px below. Footer navigation matches Projects, Updates, About
+and Contact, with Malay labels and concept-preserving links. V1 footer labels are unchanged.
+
+The v2 navigation stays at the top while scrolling on desktop and mobile. It keeps its
+64px layout space, with a full-width page-colour background and a thin bottom border.
+Anchor scrolling reserves 80px so targets are not hidden behind the navigation. The mobile
+menu opens below the sticky bar. This refinement is local pending review.
+
+Projects in the concept navigation opens the tracker at the top, without a `#projects`
+anchor. Selecting it while already on the tracker also returns to the top. The mobile
+menu uses the same link and closes on selection.
+
+The local Updates hero shares the Projects title scale, centred layout and teal second line.
+Its English title is PCDS 2030 / Tracker Updates. The redundant back-control row is hidden
+only in the concept, and the introduction is centred across the content width.
+Project Tracker also uses teal. The original non-concept Updates layout remains available.
+
+Local refinement: About introduction and body use the same full content width as the footer.
+About and Updates have a stronger one-time entrance: titles rise 32px and fade in, followed
+by the introduction and staggered content. Delays stop at 340ms, so long update lists do not
+wait progressively longer. Reduced-motion preferences disable these effects.
+
 The About page is available in English and Malay from desktop navigation and the mobile menu.
 The language control retains the About route. Source content and project data are unchanged.
 Use the `codex/v2-review` branch for this review design, separate from routine preview releases.
