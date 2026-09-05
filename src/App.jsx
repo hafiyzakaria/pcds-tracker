@@ -1449,7 +1449,7 @@ function renderIntroParagraph(paragraph, programmeName) {
   );
 }
 
-export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRef }) {
+export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRef, concept = false }) {
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeClassificationFilter, setActiveClassificationFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState(getInitialSearchQuery);
@@ -1828,7 +1828,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
             lineHeight: 1.4,
           }}
         >
-          <NavigationPillLink
+          {concept ? <span>{copy.header.lastUpdated} {lastUpdatedLabel}</span> : <NavigationPillLink
             className="tracker-updates-link"
             href={getRouteHref(language === "ms" ? "updates-ms" : "updates")}
             onClick={(event) =>
@@ -1846,7 +1846,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
             >
               {"\u2197\uFE0E"}
             </span>
-          </NavigationPillLink>
+          </NavigationPillLink>}
         </p>
 
         <div style={{ marginBottom: "24px" }}>

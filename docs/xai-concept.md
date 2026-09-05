@@ -1,0 +1,58 @@
+# x.ai design study
+
+Local concept requested on 5 September 2026. Open `/?concept=xai` with the Vite development server.
+
+The reference homepage was reviewed in the in-app browser. Its white surface, centred large headline,
+wide spacing, rounded actions and softly outlined panels inform this study. PCDS retains teal accents,
+its existing copy, real project data, search, category filters, status metrics and card expansion.
+
+The navigation uses the production PCDS favicon without a text title. The home link retains an
+accessible name. The reference navigation measures 64px high with 1232px of centred content at a
+1470px viewport. The concept matches these dimensions and uses smaller side margins on mobile.
+
+The concept supports light and dark themes. Language and theme controls appear at the right of the
+navigation bar. Language and page changes retain the concept query parameter and search query.
+The language selector has one outer border and a soft teal active fill, without a separator or
+inner outline. Desktop mouse controls are 32px high to match the logo. Touch devices retain
+44px language targets and 46px theme/menu buttons.
+The description uses the full content width so each sentence can occupy one desktop line.
+Text wraps naturally on smaller screens; there is no forced no-wrap or smaller type.
+At widths up to 760px, Projects and Updates move into a small menu below the navigation.
+The menu closes on selection, outside press, Escape, or return to desktop width. Escape returns
+focus to its button. Desktop links remain visible. These changes are local pending review.
+The last-updated date is plain text with no link, border or animation.
+It uses semibold weight for subtle emphasis. The kicker is a plain, spaced uppercase label,
+with no capsule border or background.
+The two title lines rise and fade in once, 100ms apart. A teal underline reveals from left to
+right and the description fades in. The sequence finishes within 950ms. These effects run
+only when reduced motion is not requested. The date and project data remain static.
+The hero uses reduced vertical spacing while retaining the headline size: desktop padding is
+48px above and 24px below; mobile padding is 32px above and 20px below. The gap after the date
+is 36px on desktop and 24px on mobile.
+It is not the public release design. The query switch is development-only. A separate v2 build
+sets `VITE_DESIGN_CONCEPT=xai` and runs `npm run build:preview`. Both client and server rendering
+use this flag. Normal builds without the flag retain the existing design.
+The planned unlisted address is `v2.pcds2030.com`, on a separate Vercel project. It is not private.
+Preview builds and the Vercel response header use noindex. Do not link v2 from the public site.
+
+The left-aligned comparison was rejected. The kicker, title, underline, description and update
+date are centred again. Type sizes, spacing and motion are unchanged.
+Cards retain the original 3px hover lift, stronger border and hover shadow while keeping the
+concept's rounded shape. Keyboard focus receives the same border and shadow. Existing
+touch-device and reduced-motion rules remain in effect. This adjustment is local pending review.
+
+## Review deployment
+
+The About page is available in English and Malay from desktop navigation and the mobile menu.
+The language control retains the About route. Source content and project data are unchanged.
+Use the `codex/v2-review` branch for this review design, separate from routine preview releases.
+
+The concept is deployed to the separate `pcds-tracker-v2` Vercel project:
+https://pcds-tracker-v2.vercel.app . Public access returns HTTP 200 with
+`X-Robots-Tag: noindex, nofollow`. The centred concept was verified in the browser.
+The existing production and preview projects were not changed.
+
+`v2.pcds2030.com` is assigned to the new project. Cloudflare has an A record named `v2`
+pointing to `76.76.21.21`, DNS only, TTL Auto. Vercel confirms valid DNS and verified
+ownership. HTTPS was still pending at the initial check. The root domain, preview record
+and nameservers were not changed.

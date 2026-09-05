@@ -30,9 +30,14 @@ if (navigationEntry?.type === 'reload') {
 
 const container = document.getElementById('root')
 const route = resolveRoute(window.location.pathname, import.meta.env.BASE_URL)
+const showConcept = import.meta.env.VITE_DESIGN_CONCEPT === 'xai' || (import.meta.env.DEV && new URLSearchParams(window.location.search).get('concept') === 'xai')
+if (showConcept) {
+  await import('./xai-concept.css')
+  document.documentElement.dataset.concept = 'xai'
+}
 const app = (
   <StrictMode>
-    <Site route={route} />
+    <Site route={route} concept={showConcept} />
   </StrictMode>
 )
 
