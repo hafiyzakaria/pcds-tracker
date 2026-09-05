@@ -134,9 +134,9 @@ export default function Site({ route, concept = false }) {
           <img src="/favicon-production-browser.png?v=20260804d" alt="" width="32" height="32" />
         </a>
         <div id="concept-navigation-links" className={`concept-links${menuOpen ? " concept-links--open" : ""}`}>
-          <a className="concept-about-link" href={getRouteHref(activeRoute.language === "ms" ? "about-ms" : "about") + "?concept=xai"} onClick={(event) => navigate(event, activeRoute.language === "ms" ? "about-ms" : "about")}>{activeRoute.language === "ms" ? "Tentang" : "About"}</a>
-          <a href={getRouteHref(activeRoute.language === "ms" ? "tracker-ms" : "tracker-en") + "?concept=xai"} onClick={(event) => navigate(event, activeRoute.language === "ms" ? "tracker-ms" : "tracker-en")}>{activeRoute.language === "ms" ? "Projek" : "Projects"}</a>
-          <a href={getRouteHref(activeRoute.language === "ms" ? "updates-ms" : "updates") + "?concept=xai"} onClick={(event) => navigate(event, activeRoute.language === "ms" ? "updates-ms" : "updates")}>{activeRoute.language === "ms" ? "Kemas kini" : "Updates"}</a>
+          <a aria-current={activeRoute.page === 'tracker' ? 'page' : undefined} href={getRouteHref(activeRoute.language === "ms" ? "tracker-ms" : "tracker-en") + "?concept=xai"} onClick={(event) => navigate(event, activeRoute.language === "ms" ? "tracker-ms" : "tracker-en")}>{activeRoute.language === "ms" ? "Projek" : "Projects"}</a>
+          <a aria-current={activeRoute.page === 'updates' ? 'page' : undefined} href={getRouteHref(activeRoute.language === "ms" ? "updates-ms" : "updates") + "?concept=xai"} onClick={(event) => navigate(event, activeRoute.language === "ms" ? "updates-ms" : "updates")}>{activeRoute.language === "ms" ? "Kemas kini" : "Updates"}</a>
+          <a aria-current={activeRoute.page === 'about' ? 'page' : undefined} href={getRouteHref(activeRoute.language === "ms" ? "about-ms" : "about") + "?concept=xai"} onClick={(event) => navigate(event, activeRoute.language === "ms" ? "about-ms" : "about")}>{activeRoute.language === "ms" ? "Tentang" : "About"}</a>
         </div>
         <div className="concept-utilities">
           <LanguageToggle copy={copy} language={activeRoute.language} englishRouteId={activeRoute.page === "about" ? "about" : activeRoute.page === "updates" ? "updates" : "tracker-en"} malayRouteId={activeRoute.page === "about" ? "about-ms" : activeRoute.page === "updates" ? "updates-ms" : "tracker-ms"} onNavigate={navigate} />

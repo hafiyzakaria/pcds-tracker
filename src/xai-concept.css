@@ -1,5 +1,5 @@
 /* Local design study. Loaded only with ?concept=xai in Vite development. */
-.concept-about-link { order:1; }
+.concept-nav .concept-links > a[aria-current="page"] { text-decoration:underline; text-decoration-color:var(--brand-strong); text-decoration-thickness:2px; text-underline-offset:7px; }
 .concept-about { margin:0 auto; padding:0 24px 48px; color:var(--text-body); font-family:Inter,system-ui,sans-serif; }
 .concept-about h1 { font-size:clamp(32px,5vw,48px); color:var(--text-strong); letter-spacing:-.04em; }
 .concept-about-title-accent { color:var(--brand-strong); }
@@ -46,6 +46,22 @@ html[data-concept="xai"]:not([data-theme="dark"]) {
 .concept-brand img { display:block; width:32px; height:32px; object-fit:contain; }
 .concept-nav > div { display:flex; gap:30px; }
 .concept-nav > .concept-utilities { margin-left:auto; gap:8px; align-items:center; }
+/* These persistent elements animate on initial load, not on route changes. */
+@media (prefers-reduced-motion: no-preference) {
+  .concept-brand img { animation:concept-logo-enter 360ms ease-out both; }
+  .concept-nav > .concept-utilities { animation:concept-nav-enter 280ms 120ms ease-out both; }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width:761px) {
+  .concept-nav > .concept-links { animation:concept-nav-enter 280ms 120ms ease-out both; }
+}
+@keyframes concept-logo-enter {
+  from { opacity:0; transform:scale(.92); }
+  to { opacity:1; transform:scale(1); }
+}
+@keyframes concept-nav-enter {
+  from { opacity:0; }
+  to { opacity:1; }
+}
 .concept-nav { position:sticky; top:0; z-index:40; background:var(--page-bg); }
 .concept-nav::before { content:""; position:absolute; inset:0 calc((100% - 100vw) / 2); background:var(--page-bg); border-bottom:1px solid var(--border); z-index:-1; pointer-events:none; }
 html[data-concept="xai"] { scroll-padding-top:80px; }

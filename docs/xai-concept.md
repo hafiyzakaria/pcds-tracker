@@ -43,6 +43,16 @@ touch-device and reduced-motion rules remain in effect. This adjustment is local
 
 ## Review deployment
 
+On initial load, the logo fades in and scales from 92% to full size over 360ms.
+Desktop links and utility controls fade in over 280ms after a 120ms delay.
+Their layout positions do not change. The persistent navigation does not replay this
+effect during page changes. Mobile menu links appear without an entrance delay.
+Reduced-motion preferences disable the navigation entrance effects.
+The About heading retains programmatic focus without a browser outline after navigation.
+
+Navigation uses the same DOM and visual order: Projects, Updates, About. The current page
+has `aria-current="page"` and a thin teal underline, including in the mobile menu.
+
 Cards reveal once per page visit as they enter the viewport: a 20px rise and fade over 450ms,
 with a 70ms delay for the second card in a row. The effect does not block rendering, does not
 replace hover transforms, and is skipped during filter transitions or with reduced motion.
