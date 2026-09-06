@@ -96,6 +96,7 @@ commits, with Dependabot proposing weekly GitHub Actions updates to `preview` fo
 - [Data review checklist](docs/data-review-checklist.md)
 - [SEO measurement after release](docs/seo-measurement.md)
 - [Known issues and next tasks](docs/backlog.md)
+- [Weekly milestone automation contract](docs/automation.md)
 - [Contributor and agent instructions](AGENTS.md)
 
 These files are the project's source of truth for product intent, design decisions, data handling, and planned work.
