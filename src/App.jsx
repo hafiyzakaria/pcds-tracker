@@ -154,6 +154,19 @@ function getMilestoneCountLabel(row, copy) {
   return copy.milestones.count(row.doneMilestones, row.totalMilestones, row.statusMeta.group);
 }
 
+function renderTrackerHeroTitle(title) {
+  const match = title.match(/^(.*?)(Tracker)$/i);
+
+  if (!match) {
+    return title;
+  }
+
+  return <>
+    <span className="tracker-title-word tracker-title-word-prefix">{match[1].trim()}</span>{" "}
+    <span className="tracker-title-word tracker-title-word-accent">{match[2]}</span>
+  </>;
+}
+
 function getProjectRows(sectors, copy) {
   return sectors.filter((sector) => !sector.isOverview).flatMap((sector) => {
     const kind = ECONOMIC_SECTOR_IDS.has(sector.id) ? "sector" : "enabler";
@@ -1832,7 +1845,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
               className="tracker-title-product"
               style={{ color: "var(--brand)", fontSize: "48px", lineHeight: 1.04 }}
             >
-              {copy.header.title}
+              {renderTrackerHeroTitle(copy.header.title)}
             </span>
           </h1>
           <div

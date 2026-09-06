@@ -47,15 +47,18 @@ html[data-concept="xai"]:not([data-theme="dark"]) {
 .concept-brand-name > span { color:var(--brand-strong); }
 .concept-brand img { display:block; width:32px; height:32px; object-fit:contain; }
 .concept-nav > div { display:flex; gap:30px; }
+.concept-nav > .concept-links { flex:1; align-items:center; }
+.concept-language-menu { display:none; }
+.concept-language-desktop { display:flex; align-items:center; }
 .concept-nav > .concept-utilities { margin-left:auto; gap:8px; align-items:center; }
-/* These persistent elements animate on initial load, not on route changes. */
+/* These persistent elements animate after the hero lead-in, not on route changes. */
 @media (prefers-reduced-motion: no-preference) {
-  .concept-brand-name { animation:concept-brand-contract 1600ms cubic-bezier(.22,1,.36,1) both; }
-  .concept-brand img { animation:concept-logo-enter 1600ms ease-out both; }
-  .concept-nav > .concept-utilities { animation:concept-nav-enter 300ms 1400ms ease-out both; }
+  .concept-brand-name { animation:concept-brand-contract 1600ms cubic-bezier(.22,1,.36,1) 800ms both; }
+  .concept-brand img { animation:concept-logo-enter 1600ms ease-out 800ms both; }
+  .concept-nav > .concept-utilities { animation:concept-nav-enter 300ms 2200ms ease-out both; }
 }
 @media (prefers-reduced-motion: no-preference) and (min-width:761px) {
-  .concept-nav > .concept-links { animation:concept-nav-enter 300ms 1400ms ease-out both; }
+  .concept-nav > .concept-links { animation:concept-nav-enter 300ms 2200ms ease-out both; }
 }
 /* Keyboard use takes priority over the decorative entrance. */
 .concept-nav--ready .concept-brand-name,
@@ -122,8 +125,30 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
   html[data-concept="xai"] :is(.concept-about-copy > section, .updates-entry):nth-child(n+3) { animation-delay:340ms; }
   html[data-concept="xai"] .tracker-title { perspective:1000px; }
   html[data-concept="xai"] .tracker-title-context { animation:concept-title-enter 600ms cubic-bezier(.22,1,.36,1) both; }
-  html[data-concept="xai"] .tracker-title-product { animation:concept-title-enter 600ms cubic-bezier(.22,1,.36,1) 100ms both; }
-  html[data-concept="xai"] .tracker-title-product::after { transform-origin:left center; animation:concept-underline-enter 650ms cubic-bezier(.22,1,.36,1) 300ms both; }
+  html[data-concept="xai"] .app-shell:not(.updates-shell) .tracker-title-product { animation:none; }
+  html[data-concept="xai"] .app-shell:not(.updates-shell) .tracker-title-word {
+    display:inline-block;
+    position:relative;
+    opacity:0;
+    transform:translateY(42%) rotateX(-28deg) scale(.96);
+    transform-style:preserve-3d;
+    filter:blur(2px);
+  }
+  html[data-concept="xai"] .app-shell:not(.updates-shell) .tracker-title-product::after {
+    opacity:0;
+    transform:scaleX(0);
+  }
+  html[data-concept="xai"] .concept-nav--ready + .app-shell:not(.updates-shell) .tracker-title-word {
+    animation:concept-word-enter 680ms cubic-bezier(.22,1,.36,1) 100ms both;
+  }
+  html[data-concept="xai"] .concept-nav--ready + .app-shell:not(.updates-shell) .tracker-title-word-accent {
+    animation-delay:220ms;
+    animation-duration:720ms;
+  }
+  html[data-concept="xai"] .concept-nav--ready + .app-shell:not(.updates-shell) .tracker-title-product::after {
+    animation:concept-underline-enter 650ms cubic-bezier(.22,1,.36,1) 400ms both;
+  }
+  html[data-concept="xai"] .updates-shell .tracker-title-product::after { transform-origin:left center; animation:concept-underline-enter 650ms cubic-bezier(.22,1,.36,1) 300ms both; }
   html[data-concept="xai"] .tracker-description { animation:concept-copy-enter 450ms ease-out 300ms both; }
 }
 @keyframes concept-page-enter {
@@ -133,6 +158,12 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
 @keyframes concept-title-enter {
   from { opacity:0; transform:translateY(18px) rotateX(-12deg); }
   to { opacity:1; transform:none; }
+}
+@keyframes concept-word-enter {
+  0% { opacity:0; transform:translateY(42%) rotateX(-28deg) scale(.96); filter:blur(2px); }
+  58% { opacity:1; transform:translateY(-1.5%) rotateX(1.5deg) scale(1.01); filter:blur(0); }
+  78% { opacity:1; transform:translateY(.5%) rotateX(-.5deg) scale(.999); filter:blur(0); }
+  100% { opacity:1; transform:none; filter:none; }
 }
 @keyframes concept-underline-enter {
   from { opacity:0; transform:scaleX(0); }
@@ -173,6 +204,8 @@ html[data-concept="xai"] .site-footer { margin-top:70px; background:transparent;
   .concept-links a { display:flex; align-items:center; min-height:44px; padding:0 12px; border-radius:8px; }
   .concept-links > a::before { inset:0; }
   .concept-links a:hover { background:var(--surface-subtle); }
+  .concept-language-menu { display:flex; align-items:center; justify-content:center; width:100%; margin:8px 0 0; padding:8px 4px 0; border-top:1px solid var(--border-soft); }
+  .concept-language-desktop { display:none; }
   .concept-menu-toggle { display:inline-flex; }
   .concept-nav { width:calc(100% - 32px); gap:12px; }
   .concept-nav > div { gap:12px; font-size:12px; }

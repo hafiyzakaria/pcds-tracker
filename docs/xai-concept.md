@@ -11,13 +11,16 @@ accessible name. The reference navigation measures 64px high with 1232px of cent
 1470px viewport. The concept matches these dimensions and uses smaller side margins on mobile.
 
 The concept supports light and dark themes. Language and theme controls appear at the right of the
-navigation bar. Language and page changes retain the concept query parameter and search query.
+navigation bar on desktop. On mobile, the language control moves into the hamburger menu and is
+centred with the menu links, while the theme control remains beside the menu button. Language and
+page changes retain the concept query parameter and search query.
 The language selector has one outer border and a soft teal active fill, without a separator or
 inner outline. Desktop mouse controls are 32px high to match the logo. Touch devices retain
 44px language targets and 46px theme/menu buttons.
 The description uses the full content width so each sentence can occupy one desktop line.
 Text wraps naturally on smaller screens; there is no forced no-wrap or smaller type.
-At widths up to 760px, Projects and Updates move into a small menu below the navigation.
+At widths up to 760px, Projects, Updates, About and the language control move into a small menu
+below the navigation.
 The menu closes on selection, outside press, Escape, or return to desktop width. Escape returns
 focus to its button. Desktop links remain visible. These changes are local pending review.
 The last-updated date is plain text with no link, border or animation.
@@ -48,11 +51,18 @@ and 24px bottom on mobile. This adds breathing room without matching the much
 taller reference hero. The name reveal uses clipping and translation, not text
 compression. Navigation entrance completion is retained in Site state; keyboard
 focus ends it permanently for that page load, so route focus cannot restart it.
+The Projects hero now uses the reference-style word entrance for its product
+title after the navigation finishes its logo transformation. Project and
+Tracker rise from 42% below with a -28 degree X rotation, scale from 96%, and
+clear a 2px blur as they settle over 680ms. Tracker uses 720ms and follows
+120ms after Project. A restrained overshoot keeps the movement visible without
+changing the final layout. Reduced-motion preferences show the title without
+the effect.
 
-On initial load, the logo and full PCDS 2030 Project Tracker name appear.
-The name holds briefly, then contracts towards the logo and fades out over a
-1600ms sequence. Project Tracker is teal. The logo settles to its normal size.
-Desktop links and utility controls fade in over 300ms after a 1400ms delay.
+On initial load, the hero leads for 800ms. The full PCDS 2030 Project Tracker
+name then appears, holds briefly, and contracts towards the logo over a 1600ms
+sequence. Project Tracker is teal. The logo settles to its normal size.
+Desktop links and utility controls fade in over 300ms after the logo sequence.
 Keyboard focus skips the decorative sequence so navigation remains usable.
 Their layout positions do not change. The persistent navigation does not replay this
 effect during page changes. Mobile menu links appear without an entrance delay.
