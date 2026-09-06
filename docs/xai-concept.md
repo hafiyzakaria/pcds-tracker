@@ -14,6 +14,9 @@ The concept supports light and dark themes. Language and theme controls appear a
 navigation bar on desktop. On mobile, the language control moves into the hamburger menu and is
 centred with the menu links, while the theme control remains beside the menu button. Language and
 page changes retain the concept query parameter and search query.
+Critical navbar rules in the document head reserve the 64px layout and hide the animated brand
+elements until the concept stylesheet loads, so the first paint does not show an unstyled navbar
+at the far left.
 The language selector has one outer border and a soft teal active fill, without a separator or
 inner outline. Desktop mouse controls are 32px high to match the logo. Touch devices retain
 44px language targets and 46px theme/menu buttons.
@@ -27,8 +30,9 @@ The last-updated date is plain text with no link, border or animation.
 It uses semibold weight for subtle emphasis. The kicker is a plain, spaced uppercase label,
 with no capsule border or background.
 The two title lines rise and fade in once, 100ms apart. A teal underline reveals from left to
-right and the description fades in. The sequence finishes within 950ms. These effects run
-only when reduced motion is not requested. The date and project data remain static.
+right and the description follows the product-title entrance. The sequence finishes within
+950ms after the navigation entrance. These effects run only when reduced motion is not requested.
+The date and project data remain static.
 The hero uses reduced vertical spacing while retaining the headline size: desktop padding is
 48px above and 24px below; mobile padding is 32px above and 20px below. The gap after the date
 is 36px on desktop and 24px on mobile.
@@ -59,14 +63,21 @@ clear a 2px blur as they settle over 680ms. Tracker uses 720ms and follows
 changing the final layout. Reduced-motion preferences show the title without
 the effect.
 
-On initial load, the hero leads for 800ms. The full PCDS 2030 Project Tracker
-name then appears, holds briefly, and contracts towards the logo over a 1600ms
-sequence. Project Tracker is teal. The logo settles to its normal size.
-Desktop links and utility controls fade in over 300ms after the logo sequence.
+On initial load, links and utility controls fade in over 300ms. The single-line full brand
+occupies a 230px area on desktop. Its letters fold inward as that area contracts to 32px,
+moving the links left while the right controls stay fixed. The compact logo reveals with
+a brief colour sweep. Mobile uses a narrower responsive brand area.
+The brand sequence lasts 2200ms after a 300ms delay. The compact logo has no size pulse.
+The logo animation completion starts the product-title entrance, followed by the description.
+This follows the reference sequence with PCDS artwork; it is not the reference canvas morph.
 Keyboard focus skips the decorative sequence so navigation remains usable.
 Their layout positions do not change. The persistent navigation does not replay this
 effect during page changes. Mobile menu links appear without an entrance delay.
 Reduced-motion preferences disable the navigation entrance effects.
+The navbar entrance runs only on the initial document load. Internal navigation, including
+the logo home link and browser Back/Forward, does not replay the navbar sequence.
+The Projects hero entrance replays when returning from another page. A full reload replays
+both entrances. About/Updates content entrances and project-card reveals are unchanged.
 The About heading retains programmatic focus without a browser outline after navigation.
 
 Navigation uses the same DOM and visual order: Projects, Updates, About. The current page
@@ -99,7 +110,12 @@ Its English title is PCDS 2030 / Tracker Updates. The redundant back-control row
 only in the concept, and the introduction is centred across the content width.
 Project Tracker also uses teal. The original non-concept Updates layout remains available.
 
-Local refinement: About introduction and body use the same full content width as the footer.
+The About page uses an article layout inspired by the reference news page: an 824px reading
+column, left-aligned title, larger introduction and one divider before the body. Sections
+use spacing instead of repeated borders. The footer retains its wider layout. Mobile text
+wraps naturally with smaller spacing. Existing copy, links and entrance effects are retained.
+The navbar introduction uses the hero text colour for PCDS 2030 (black in light mode and
+light text in dark mode), while Project Tracker remains teal.
 About and Updates have a stronger one-time entrance: titles rise 32px and fade in, followed
 by the introduction and staggered content. Delays stop at 340ms, so long update lists do not
 wait progressively longer. Reduced-motion preferences disable these effects.

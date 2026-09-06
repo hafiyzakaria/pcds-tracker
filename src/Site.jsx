@@ -47,6 +47,7 @@ export default function Site({ route, concept = false }) {
 
   useEffect(() => {
     const handlePopState = () => {
+      setNavIntroDone(true);
       setMenuOpen(false);
       setActiveRoute(
         resolveRoute(window.location.pathname, import.meta.env.BASE_URL)
@@ -88,6 +89,7 @@ export default function Site({ route, concept = false }) {
     }
 
     event.preventDefault();
+    setNavIntroDone(true);
     setMenuOpen(false);
     const nextRoute = getRouteById(routeId);
     const pageChanged = nextRoute.page !== activeRoute.page;
@@ -133,11 +135,11 @@ export default function Site({ route, concept = false }) {
       {concept && <nav ref={navRef} className={`concept-nav${navIntroDone ? " concept-nav--ready" : ""}`} aria-label="Primary navigation"
         onFocusCapture={() => setNavIntroDone(true)}
         onAnimationEnd={(event) => {
-          if (event.animationName === "concept-nav-enter") setNavIntroDone(true);
+          if (event.animationName === "concept-logo-enter") setNavIntroDone(true);
         }}>
-        <a className="concept-brand" href="/?concept=xai" aria-label="PCDS 2030 Project Tracker home">
+        <a className="concept-brand" href="/?concept=xai" onClick={(event) => navigate(event, activeRoute.language === "ms" ? "tracker-ms" : "tracker-en")} aria-label="PCDS 2030 Project Tracker home">
           <img src="/favicon-production-browser.png?v=20260804d" alt="" width="32" height="32" />
-          <span className="concept-brand-name" aria-hidden="true">PCDS 2030 <span>Project Tracker</span></span>
+          <span className="concept-brand-name" aria-hidden="true">{Array.from("PCDS 2030 Project Tracker").map((letter, index) => <span key={index} className="concept-brand-letter" style={{ "--letter-index": index }}>{letter === " " ? "\u00a0" : letter}</span>)}</span>
         </a>
         <div id="concept-navigation-links" className={`concept-links${menuOpen ? " concept-links--open" : ""}`}>
           <a aria-current={activeRoute.page === 'tracker' ? 'page' : undefined} href={getRouteHref(activeRoute.language === "ms" ? "tracker-ms" : "tracker-en") + "?concept=xai"} onClick={(event) => navigate(event, activeRoute.language === "ms" ? "tracker-ms" : "tracker-en")}>{activeRoute.language === "ms" ? "Projek" : "Projects"}</a>

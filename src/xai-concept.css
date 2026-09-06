@@ -5,9 +5,9 @@
 .concept-about-title-accent { color:var(--brand-strong); }
 .concept-about header p { max-width:100%; margin:20px auto 0; line-height:1.7; }
 .concept-about-copy { max-width:100%; margin:24px auto 0; }
-.concept-about-copy section { padding:24px 0; border-bottom:1px solid var(--border); }
+.concept-about-copy section { padding:0 0 32px; }
 .concept-about-copy h2 { color:var(--text-strong); font-size:20px; margin:0 0 12px; }
-.concept-about-copy p { font-size:16px; line-height:1.8; margin:0 0 12px; }
+.concept-about-copy p { font-size:18px; line-height:1.75; margin:0 0 12px; }
 .concept-about-copy a { color:var(--brand-strong); }
 html[data-concept="xai"]:not([data-theme="dark"]) {
   --page-bg: #ffffff;
@@ -45,6 +45,7 @@ html[data-concept="xai"]:not([data-theme="dark"]) {
 .concept-nav .concept-brand { position:relative; display:flex; align-items:center; justify-content:center; flex:0 0 32px; }
 .concept-brand-name { position:absolute; left:40px; width:max-content; max-width:calc(100vw - 88px); white-space:nowrap; font-size:18px; font-weight:600; color:var(--text-strong); transform-origin:left center; opacity:0; visibility:hidden; pointer-events:none; }
 .concept-brand-name > span { color:var(--brand-strong); }
+.concept-brand-name > span:nth-child(-n+9) { color:var(--text-strong); }
 .concept-brand img { display:block; width:32px; height:32px; object-fit:contain; }
 .concept-nav > div { display:flex; gap:30px; }
 .concept-nav > .concept-links { flex:1; align-items:center; }
@@ -53,28 +54,47 @@ html[data-concept="xai"]:not([data-theme="dark"]) {
 .concept-nav > .concept-utilities { margin-left:auto; gap:8px; align-items:center; }
 /* These persistent elements animate after the hero lead-in, not on route changes. */
 @media (prefers-reduced-motion: no-preference) {
-  .concept-brand-name { animation:concept-brand-contract 1600ms cubic-bezier(.22,1,.36,1) 800ms both; }
-  .concept-brand img { animation:concept-logo-enter 1600ms ease-out 800ms both; }
-  .concept-nav > .concept-utilities { animation:concept-nav-enter 300ms 2200ms ease-out both; }
+  .concept-nav .concept-brand { --brand-expanded:230px; justify-content:flex-start; animation:concept-brand-width 2200ms cubic-bezier(.65,0,.25,1) 300ms both; }
+  .concept-brand-name { left:0; font-size:16px; max-width:none; white-space:nowrap; line-height:1.15; animation:concept-brand-contract 2200ms linear 300ms both; }
+  .concept-brand-letter { display:inline-block; animation:concept-letter-fold 700ms cubic-bezier(.65,0,.25,1) calc(1730ms + var(--letter-index) * 3ms) both; }
+  .concept-brand img { animation:concept-logo-enter 2200ms cubic-bezier(.22,1,.36,1) 300ms both; }
+  .concept-nav > .concept-utilities { animation:concept-nav-enter 300ms ease-out both; }
 }
 @media (prefers-reduced-motion: no-preference) and (min-width:761px) {
-  .concept-nav > .concept-links { animation:concept-nav-enter 300ms 2200ms ease-out both; }
+  .concept-nav > .concept-links { animation:concept-nav-enter 300ms ease-out both; }
 }
 /* Keyboard use takes priority over the decorative entrance. */
 .concept-nav--ready .concept-brand-name,
+.concept-nav.concept-nav--ready .concept-brand,
+.concept-nav--ready .concept-brand-letter,
 .concept-nav--ready .concept-brand img,
 .concept-nav.concept-nav--ready > .concept-links,
 .concept-nav.concept-nav--ready > .concept-utilities { animation:none; }
+.concept-nav--ready .concept-brand-name { opacity:0; visibility:hidden; }
+.concept-nav--ready .concept-brand img { opacity:1; visibility:visible; transform:none; }
+.concept-nav.concept-nav--ready > .concept-links,
+.concept-nav.concept-nav--ready > .concept-utilities { opacity:1; visibility:visible; }
 @keyframes concept-brand-contract {
   0% { opacity:0; visibility:visible; clip-path:inset(0 0 0 0); transform:translateX(0); }
-  15%, 55% { opacity:1; visibility:visible; clip-path:inset(0 0 0 0); transform:translateX(0); }
-  99% { opacity:0; visibility:visible; clip-path:inset(0 100% 0 0); transform:translateX(-32px); }
-  100% { opacity:0; visibility:hidden; clip-path:inset(0 100% 0 0); transform:translateX(-32px); }
+  15%, 65% { opacity:1; visibility:visible; clip-path:inset(0 0 0 0); transform:translateX(0); }
+  100% { opacity:0; visibility:hidden; clip-path:inset(0 0 0 0); transform:none; }
+}
+@keyframes concept-brand-width {
+  0%, 65% { flex-basis:var(--brand-expanded); }
+  100% { flex-basis:32px; }
+}
+@keyframes concept-letter-fold {
+  from { opacity:1; transform:none; }
+  to { opacity:0; transform:translateX(calc(var(--letter-index) * -7px)) translateY(-3px) rotateY(85deg) scale(.3); }
 }
 @keyframes concept-logo-enter {
-  0% { opacity:0; transform:scale(.9); }
-  15%, 55% { opacity:1; transform:scale(1.12); }
-  100% { opacity:1; transform:scale(1); }
+  0%, 65% { opacity:0; clip-path:inset(0 100% 0 0); transform:none; filter:hue-rotate(80deg); }
+  83% { opacity:1; filter:hue-rotate(160deg); }
+  100% { opacity:1; clip-path:inset(0 0 0 0); transform:none; filter:none; }
+}
+@media (max-width:760px) and (prefers-reduced-motion:no-preference) {
+  .concept-nav .concept-brand { --brand-expanded:min(200px, calc(100vw - 140px)); }
+  .concept-brand-name { font-size:clamp(10px, 3vw, 14px); }
 }
 @keyframes concept-nav-enter {
   from { opacity:0; visibility:hidden; }
@@ -91,8 +111,20 @@ html[data-concept="xai"] { scroll-padding-top:80px; }
 .concept-menu-toggle { display:none; align-items:center; justify-content:center; padding:0; background:var(--surface); color:var(--text-secondary); border:1px solid var(--border); cursor:pointer; }
 .concept-menu-toggle:focus-visible, .concept-links a:focus-visible { outline:2px solid var(--brand); outline-offset:3px; }
 .concept-nav .concept-nav-action { margin-left:auto; border:1px solid #dee4df; border-radius:999px; padding:6px 16px; color:#18221c; white-space:nowrap; font-size:13px; }
+@media (min-width:761px) {
+  .concept-links > a { display:inline-flex; align-items:center; min-height:32px; }
+}
 html[data-concept="xai"] main { max-width:1180px !important; padding-top:0 !important; }
 html[data-concept="xai"] main > header { position:relative; text-align:center; padding:72px 0 32px; margin-bottom:0 !important; }
+html[data-concept="xai"] .concept-about > header { max-width:824px; margin:0 auto; padding:80px 0 48px; text-align:left; border-bottom:1px solid var(--border); }
+html[data-concept="xai"] .concept-about > header h1 { margin:0; font-size:clamp(36px,5vw,52px); line-height:1.12; font-weight:500; }
+html[data-concept="xai"] .concept-about > header p { max-width:720px; margin:28px 0 0; font-size:clamp(19px,2.2vw,22px); line-height:1.55; color:var(--text-secondary); }
+html[data-concept="xai"] .concept-about-copy { max-width:824px; margin:48px auto 0; text-align:left; }
+@media (max-width:760px) {
+  html[data-concept="xai"] .concept-about > header { padding:48px 0 32px; }
+  html[data-concept="xai"] .concept-about-copy { margin-top:32px; }
+  .concept-about-copy p { font-size:16px; }
+}
 html[data-concept="xai"] main > header > .header-meta-row,
 html[data-concept="xai"] main > header > .tracker-kicker { display:none !important; }
 html[data-concept="xai"] .header-meta-row { justify-content:center !important; margin-bottom:20px !important; }
@@ -124,6 +156,7 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
   html[data-concept="xai"] :is(.concept-about-copy > section, .updates-entry):nth-child(2) { animation-delay:260ms; }
   html[data-concept="xai"] :is(.concept-about-copy > section, .updates-entry):nth-child(n+3) { animation-delay:340ms; }
   html[data-concept="xai"] .tracker-title { perspective:1000px; }
+  html[data-concept="xai"] .app-shell:not(.updates-shell) .tracker-description { opacity:0; transform:translateY(8px); }
   html[data-concept="xai"] .tracker-title-context { animation:concept-title-enter 600ms cubic-bezier(.22,1,.36,1) both; }
   html[data-concept="xai"] .app-shell:not(.updates-shell) .tracker-title-product { animation:none; }
   html[data-concept="xai"] .app-shell:not(.updates-shell) .tracker-title-word {
@@ -149,7 +182,10 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
     animation:concept-underline-enter 650ms cubic-bezier(.22,1,.36,1) 400ms both;
   }
   html[data-concept="xai"] .updates-shell .tracker-title-product::after { transform-origin:left center; animation:concept-underline-enter 650ms cubic-bezier(.22,1,.36,1) 300ms both; }
-  html[data-concept="xai"] .tracker-description { animation:concept-copy-enter 450ms ease-out 300ms both; }
+  html[data-concept="xai"] .updates-shell .tracker-description { animation:concept-copy-enter 450ms ease-out 300ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .app-shell:not(.updates-shell) .tracker-description {
+    animation:concept-copy-enter 450ms ease-out 960ms both;
+  }
 }
 @keyframes concept-page-enter {
   from { opacity:0; transform:translateY(32px); }
