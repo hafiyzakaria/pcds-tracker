@@ -42,25 +42,40 @@ html[data-concept="xai"]:not([data-theme="dark"]) {
 @media (prefers-reduced-motion:reduce) {
   .concept-links > a::before { transition:none; }
 }
-.concept-nav .concept-brand { display:flex; align-items:center; justify-content:center; flex:0 0 32px; }
+.concept-nav .concept-brand { position:relative; display:flex; align-items:center; justify-content:center; flex:0 0 32px; }
+.concept-brand-name { position:absolute; left:40px; width:max-content; max-width:calc(100vw - 88px); white-space:nowrap; font-size:18px; font-weight:600; color:var(--text-strong); transform-origin:left center; opacity:0; visibility:hidden; pointer-events:none; }
+.concept-brand-name > span { color:var(--brand-strong); }
 .concept-brand img { display:block; width:32px; height:32px; object-fit:contain; }
 .concept-nav > div { display:flex; gap:30px; }
 .concept-nav > .concept-utilities { margin-left:auto; gap:8px; align-items:center; }
 /* These persistent elements animate on initial load, not on route changes. */
 @media (prefers-reduced-motion: no-preference) {
-  .concept-brand img { animation:concept-logo-enter 360ms ease-out both; }
-  .concept-nav > .concept-utilities { animation:concept-nav-enter 280ms 120ms ease-out both; }
+  .concept-brand-name { animation:concept-brand-contract 1600ms cubic-bezier(.22,1,.36,1) both; }
+  .concept-brand img { animation:concept-logo-enter 1600ms ease-out both; }
+  .concept-nav > .concept-utilities { animation:concept-nav-enter 300ms 1400ms ease-out both; }
 }
 @media (prefers-reduced-motion: no-preference) and (min-width:761px) {
-  .concept-nav > .concept-links { animation:concept-nav-enter 280ms 120ms ease-out both; }
+  .concept-nav > .concept-links { animation:concept-nav-enter 300ms 1400ms ease-out both; }
+}
+/* Keyboard use takes priority over the decorative entrance. */
+.concept-nav--ready .concept-brand-name,
+.concept-nav--ready .concept-brand img,
+.concept-nav.concept-nav--ready > .concept-links,
+.concept-nav.concept-nav--ready > .concept-utilities { animation:none; }
+@keyframes concept-brand-contract {
+  0% { opacity:0; visibility:visible; clip-path:inset(0 0 0 0); transform:translateX(0); }
+  15%, 55% { opacity:1; visibility:visible; clip-path:inset(0 0 0 0); transform:translateX(0); }
+  99% { opacity:0; visibility:visible; clip-path:inset(0 100% 0 0); transform:translateX(-32px); }
+  100% { opacity:0; visibility:hidden; clip-path:inset(0 100% 0 0); transform:translateX(-32px); }
 }
 @keyframes concept-logo-enter {
-  from { opacity:0; transform:scale(.92); }
-  to { opacity:1; transform:scale(1); }
+  0% { opacity:0; transform:scale(.9); }
+  15%, 55% { opacity:1; transform:scale(1.12); }
+  100% { opacity:1; transform:scale(1); }
 }
 @keyframes concept-nav-enter {
-  from { opacity:0; }
-  to { opacity:1; }
+  from { opacity:0; visibility:hidden; }
+  to { opacity:1; visibility:visible; }
 }
 .concept-nav { position:sticky; top:0; z-index:40; background:var(--page-bg); }
 .concept-nav::before { content:""; position:absolute; inset:0 calc((100% - 100vw) / 2); background:var(--page-bg); border-bottom:1px solid var(--border); z-index:-1; pointer-events:none; }
@@ -74,7 +89,7 @@ html[data-concept="xai"] { scroll-padding-top:80px; }
 .concept-menu-toggle:focus-visible, .concept-links a:focus-visible { outline:2px solid var(--brand); outline-offset:3px; }
 .concept-nav .concept-nav-action { margin-left:auto; border:1px solid #dee4df; border-radius:999px; padding:6px 16px; color:#18221c; white-space:nowrap; font-size:13px; }
 html[data-concept="xai"] main { max-width:1180px !important; padding-top:0 !important; }
-html[data-concept="xai"] main > header { position:relative; text-align:center; padding:32px 0 20px; margin-bottom:0 !important; }
+html[data-concept="xai"] main > header { position:relative; text-align:center; padding:72px 0 32px; margin-bottom:0 !important; }
 html[data-concept="xai"] main > header > .header-meta-row,
 html[data-concept="xai"] main > header > .tracker-kicker { display:none !important; }
 html[data-concept="xai"] .header-meta-row { justify-content:center !important; margin-bottom:20px !important; }
@@ -163,7 +178,7 @@ html[data-concept="xai"] .site-footer { margin-top:70px; background:transparent;
   .concept-nav > div { gap:12px; font-size:12px; }
   .concept-nav > .concept-utilities { gap:4px; }
   .concept-nav .concept-nav-action { padding:7px 12px; font-size:11px; }
-  html[data-concept="xai"] main > header { padding:32px 0 20px; }
+  html[data-concept="xai"] main > header { padding:48px 0 24px; }
   html[data-concept="xai"] .tracker-title { letter-spacing:-2px !important; }
   html[data-concept="xai"] .tracker-description { font-size:16px !important; }
   html[data-concept="xai"] .tracker-last-updated { margin-bottom:24px !important; }

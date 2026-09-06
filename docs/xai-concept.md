@@ -43,8 +43,17 @@ touch-device and reduced-motion rules remain in effect. This adjustment is local
 
 ## Review deployment
 
-On initial load, the logo fades in and scales from 92% to full size over 360ms.
-Desktop links and utility controls fade in over 280ms after a 120ms delay.
+The hero now uses 72px top and 32px bottom padding on desktop, and 48px top
+and 24px bottom on mobile. This adds breathing room without matching the much
+taller reference hero. The name reveal uses clipping and translation, not text
+compression. Navigation entrance completion is retained in Site state; keyboard
+focus ends it permanently for that page load, so route focus cannot restart it.
+
+On initial load, the logo and full PCDS 2030 Project Tracker name appear.
+The name holds briefly, then contracts towards the logo and fades out over a
+1600ms sequence. Project Tracker is teal. The logo settles to its normal size.
+Desktop links and utility controls fade in over 300ms after a 1400ms delay.
+Keyboard focus skips the decorative sequence so navigation remains usable.
 Their layout positions do not change. The persistent navigation does not replay this
 effect during page changes. Mobile menu links appear without an entrance delay.
 Reduced-motion preferences disable the navigation entrance effects.
