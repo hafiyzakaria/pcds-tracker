@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-09-01";
+export const LAST_UPDATED = "2026-09-06";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -808,11 +808,12 @@ export const SECTORS = [
         milestones: [
           { date: "2026-08-17", text: "Sejingkat Bridge construction remained on track", done: true },
           { date: "2026-10-01", text: "Sejingkat Bridge opens to traffic", done: false },
+          { date: "2026-10-22", text: "Sejingkat Bridge reaches contractual completion", done: false },
           { date: "TBD", text: "Remaining CSTR road and bridge packages reach completion", done: false },
         ],
         sources: [
           { label: "InvestSarawak — CSTR component values and reported progress", url: "https://investsarawak.gov.my/sarawaks-coastal-road-network-77-9-pct-complete-second-trunk-roadprogressing-with-15-projects-underway/" },
-          { label: "DayakDaily — Sejingkat Bridge opening target (Aug 2026)", url: "https://dayakdaily.com/sejingkat-bridge-on-track-to-open-to-traffic-by-oct-1/" },
+          { label: "DayakDaily — Sejingkat Bridge opening and contractual completion (Aug 2026)", url: "https://dayakdaily.com/sejingkat-bridge-on-track-to-open-to-traffic-by-oct-1/" },
         ],
       },
       {
@@ -827,12 +828,16 @@ export const SECTORS = [
         milestones: [
           { date: "2024-08-02", text: "Stakeholder briefing on preliminary works and design was held", done: true },
           { date: "2025-11-05", text: "Preliminary estimate and wider reported scope were disclosed", done: true },
-          { date: "2026-Q4", text: "Preliminary work concludes and actual cost is finalised", done: false },
+          { date: "2025-11-13", text: "Federal Works confirmed RM13 million 12MP preliminary works", done: true },
+          { date: "2026-06-11", text: "JKR closed C&S consultancy retender including RSA and TIA", done: true },
+          { date: "2026-Q4", text: "Preliminary work concludes by end-2026 and actual cost is finalised", done: false },
           { date: "TBD", text: "Four-lane road and bridge upgrading begins", done: false },
         ],
         sources: [
           { label: "JKR Sarawak - Preliminary design and official 42 km scope (Aug 2024)", url: "https://jkr.sarawak.gov.my/web/subpage/news_view/614" },
           { label: "NADMA / TVS - Preliminary RM500M-RM1B estimate and reported 48 km scope (Nov 2025)", url: "https://www.nadma.gov.my/bm/media-2/berita/5439-dewan-rakyat-projek-naik-taraf-jalan-serian-tebedu-dijangka-cecah-rm1-bilion" },
+          { label: "DayakDaily — Federal Works confirms RM13 million FR21 preliminary works (Nov 2025)", url: "https://dayakdaily.com/works-ministry-calls-on-sarawak-epu-to-submit-applications-for-rural-road-projects/" },
+          { label: "JKR Sarawak — FR21 C&S consultancy retender T/CTK/004/05/2026", url: "https://jkr.sarawak.gov.my/web/attachment/show/?docid=dytyeG5qUE43OGJMU0poZUNXdTRudz09OjoHlqZszbIwzNRqkuObHR9F" },
         ],
       },
       {

@@ -159,6 +159,16 @@ const updateDefinitions = [
     sourceUrl: "https://jkr.sarawak.gov.my/web/subpage/webpage_view/403",
   },
   {
+    date: "2026-06-11",
+    projectName: "FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade",
+    description: {
+      en: "JKR closed a retender for FR21 civil and structural consultancy, including road-safety audit and traffic-impact assessment.",
+      ms: "JKR menutup tender semula perundingan kejuruteraan awam dan struktur FR21, termasuk audit keselamatan jalan dan kajian impak trafik.",
+    },
+    sourceUrl:
+      "https://jkr.sarawak.gov.my/web/attachment/show/?docid=dytyeG5qUE43OGJMU0poZUNXdTRudz09OjoHlqZszbIwzNRqkuObHR9F",
+  },
+  {
     date: "2026-06-09",
     projectName: "Green Hydrogen Economy — H2ornbill & H2biscus",
     description: {
@@ -383,6 +393,16 @@ const updateDefinitions = [
     },
     sourceUrl:
       "https://dayakdaily.com/sarawak-budget-2026-nearly-rm300-mil-allocated-to-modernise-agriculture-boost-food-security/",
+  },
+  {
+    date: "2025-11-13",
+    projectName: "FR21 Jalan Serian-Tebedu-Indonesia Border Upgrade",
+    description: {
+      en: "Federal Works confirmed RM13 million under the 12MP Rolling Plan for FR21 preliminary works, expected to be completed by December 2026.",
+      ms: "Kementerian Kerja Raya Persekutuan mengesahkan RM13 juta di bawah Pelan Bergulir RMK-12 bagi kerja awalan FR21, dijangka siap menjelang Disember 2026.",
+    },
+    sourceUrl:
+      "https://dayakdaily.com/works-ministry-calls-on-sarawak-epu-to-submit-applications-for-rural-road-projects/",
   },
   {
     date: "2025-11-07",
