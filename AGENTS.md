@@ -15,6 +15,8 @@ This repository is the PCDS 2030 Project Tracker, a Vite and React static site.
 ## Agent skills
 
 - Opt-in audit skill: `/audit-pcds-2030-projects`. Not for every run. Canonical methodology remains `docs/data-methodology.md`.
+- [`docs/automation.md`](docs/automation.md) is the weekly milestone audit Stage A+B contract.
+- [`automation/prompts/weekly-milestone-agent.md`](automation/prompts/weekly-milestone-agent.md) is the injectable Cloud Agent prompt.
 
 ## Branch Workflow
 
@@ -44,6 +46,7 @@ This repository is the PCDS 2030 Project Tracker, a Vite and React static site.
 - Put known issues and recommended next tasks in `docs/backlog.md`.
 - Keep README focused on setup, workflow, and links to deeper docs.
 - Use [the project research template](docs/project-research-template.md) for project reviews and [the data review checklist](docs/data-review-checklist.md) before releasing evidence-based data changes.
+- [`docs/automation.md`](docs/automation.md) is the weekly milestone audit Stage A+B contract.
 
 ## Current Architecture Notes
 
