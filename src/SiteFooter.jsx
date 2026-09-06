@@ -2,7 +2,7 @@ import { getRouteHref } from "./routes.js";
 
 const HAFIY_URL = "https://hafiy.my";
 const CONTACT_URL =
-  "mailto:nazirul@hafiy.my?subject=PCDS%202030%20Project%20Tracker";
+  "mailto:contact@pcds2030.com?subject=PCDS%202030%20Project%20Tracker";
 
 function FooterLink({ children, currentPage, href, onClick, page }) {
   const isCurrentPage = currentPage === page;
