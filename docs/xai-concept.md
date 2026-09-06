@@ -17,6 +17,9 @@ page changes retain the concept query parameter and search query.
 Critical navbar rules in the document head reserve the 64px layout and hide the animated brand
 elements until the concept stylesheet loads, so the first paint does not show an unstyled navbar
 at the far left.
+V2 prerendered pages include the concept attribute and a render-blocking V2 stylesheet
+after the base stylesheet. This prevents the original design from appearing while JavaScript
+loads. Normal builds do not receive either addition. A missing V2 stylesheet fails the build.
 The language selector has one outer border and a soft teal active fill, without a separator or
 inner outline. Desktop mouse controls are 32px high to match the logo. Touch devices retain
 44px language targets and 46px theme/menu buttons.
