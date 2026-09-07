@@ -590,7 +590,7 @@ Current public display counts:
 - Planning: 9.
 - Ongoing: 37.
 - Completed: 9.
-- Milestones: 166 completed out of 248 active-project milestones.
+- Milestones: 168 completed out of 251 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 
