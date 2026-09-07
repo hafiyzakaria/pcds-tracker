@@ -154,7 +154,29 @@ function getMilestoneCountLabel(row, copy) {
   return copy.milestones.count(row.doneMilestones, row.totalMilestones, row.statusMeta.group);
 }
 
-function renderTrackerHeroTitle(title) {
+function TrackerWordCycle({ finalWord }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const element = ref.current;
+    const measure = () => {
+      element.querySelectorAll('.tracker-word-rotator-track > span').forEach((word, index) => {
+        element.style.setProperty(`--word-width-${index}`, `${word.offsetWidth}px`);
+      });
+    };
+    const observer = new ResizeObserver(measure);
+    element.querySelectorAll('.tracker-word-rotator-track > span').forEach(word => observer.observe(word));
+    measure();
+    return () => observer.disconnect();
+  }, []);
+  return <span ref={ref} className="tracker-word-rotator" aria-label={finalWord}>
+    <span className="tracker-word-sizer" aria-hidden="true">{finalWord}</span>
+    <span className="tracker-word-rotator-track" aria-hidden="true">
+      <span>Status</span><span>Milestones</span><span>Links</span><span>{finalWord}</span>
+    </span>
+  </span>;
+}
+
+function renderTrackerHeroTitle(title, concept = false) {
   const match = title.match(/^(.*?)(Tracker)$/i);
 
   if (!match) {
@@ -163,7 +185,9 @@ function renderTrackerHeroTitle(title) {
 
   return <>
     <span className="tracker-title-word tracker-title-word-prefix">{match[1].trim()}</span>{" "}
-    <span className="tracker-title-word tracker-title-word-accent">{match[2]}</span>
+    <span className="tracker-title-word tracker-title-word-accent">
+      {concept ? <TrackerWordCycle finalWord={match[2]} /> : match[2]}
+    </span>
   </>;
 }
 
@@ -1611,7 +1635,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
   };
   return (
     <div
-      className="app-shell"
+      className={`app-shell${concept ? " tracker-shell" : ""}`}
       style={{
         minHeight: "100vh",
         backgroundColor: "var(--page-bg)",
@@ -1845,7 +1869,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
               className="tracker-title-product"
               style={{ color: "var(--brand)", fontSize: "48px", lineHeight: 1.04 }}
             >
-              {renderTrackerHeroTitle(copy.header.title)}
+              {renderTrackerHeroTitle(copy.header.title, concept)}
             </span>
           </h1>
           <div
@@ -1897,7 +1921,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
           </NavigationPillLink>}
         </p>
 
-        <div style={{ marginBottom: "24px" }}>
+        <div className="tracker-summary-stage" style={{ marginBottom: "24px" }}>
           <SummaryMetrics
             activeFilter={activeFilter}
             onFilter={handleStatusFilter}

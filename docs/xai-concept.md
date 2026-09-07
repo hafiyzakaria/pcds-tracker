@@ -83,6 +83,20 @@ The Projects hero entrance replays when returning from another page. A full relo
 both entrances. About/Updates content entrances and project-card reveals are unchanged.
 The About heading retains programmatic focus without a browser outline after navigation.
 
+On the Projects page, all page content remains hidden until the navbar finishes its initial
+transformation into the compact logo. The title starts first. The description, update date,
+summary, filters, project cards and footer then enter in a short sequence. When a visitor
+returns to Projects through internal navigation, the navbar is already ready, so the page
+sequence starts without replaying the navbar transformation. Reduced-motion preferences
+show all Projects content immediately.
+After the navbar transformation, the second title word cycles through Status, Milestones
+and Links before it settles on Tracker. The description and remaining page sections wait
+for the final word. Reduced-motion preferences show Tracker without the cycle.
+The rotating word uses the same line height and baseline as Project. Its slot uses
+measured text widths, refreshed when fonts or viewport sizes change. The title moves
+smoothly to remain centred as the slot changes width. Words share a left edge and
+a normal word space; there are no estimated font-width values or vertical offsets.
+
 Navigation uses the same DOM and visual order: Projects, Updates, About. The current page
 has `aria-current="page"` and a thin teal underline, including in the mobile menu.
 

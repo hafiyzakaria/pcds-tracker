@@ -156,10 +156,19 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
   html[data-concept="xai"] :is(.concept-about-copy > section, .updates-entry):nth-child(2) { animation-delay:260ms; }
   html[data-concept="xai"] :is(.concept-about-copy > section, .updates-entry):nth-child(n+3) { animation-delay:340ms; }
   html[data-concept="xai"] .tracker-title { perspective:1000px; }
-  html[data-concept="xai"] .app-shell:not(.updates-shell) .tracker-description { opacity:0; transform:translateY(8px); }
-  html[data-concept="xai"] .tracker-title-context { animation:concept-title-enter 600ms cubic-bezier(.22,1,.36,1) both; }
-  html[data-concept="xai"] .app-shell:not(.updates-shell) .tracker-title-product { animation:none; }
-  html[data-concept="xai"] .app-shell:not(.updates-shell) .tracker-title-word {
+  html[data-concept="xai"] .tracker-shell .tracker-title-context,
+  html[data-concept="xai"] .tracker-shell .tracker-description,
+  html[data-concept="xai"] .tracker-shell main > .tracker-last-updated,
+  html[data-concept="xai"] .tracker-shell main > .tracker-summary-stage,
+  html[data-concept="xai"] .tracker-shell main > .discovery-controls,
+  html[data-concept="xai"] .tracker-shell main > #projects,
+  html[data-concept="xai"] .tracker-shell main > .site-footer {
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+  }
+  html[data-concept="xai"] .tracker-shell .tracker-title-product { animation:none; }
+  html[data-concept="xai"] .tracker-shell .tracker-title-word {
     display:inline-block;
     position:relative;
     opacity:0;
@@ -167,33 +176,57 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
     transform-style:preserve-3d;
     filter:blur(2px);
   }
-  html[data-concept="xai"] .app-shell:not(.updates-shell) .tracker-title-product::after {
+  html[data-concept="xai"] .tracker-shell .tracker-title-product::after {
     opacity:0;
     transform:scaleX(0);
   }
-  html[data-concept="xai"] .concept-nav--ready + .app-shell:not(.updates-shell) .tracker-title-word {
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-title-context {
+    animation:concept-title-enter 600ms cubic-bezier(.22,1,.36,1) both;
+  }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-title-word {
     animation:concept-word-enter 680ms cubic-bezier(.22,1,.36,1) 100ms both;
   }
-  html[data-concept="xai"] .concept-nav--ready + .app-shell:not(.updates-shell) .tracker-title-word-accent {
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-title-word-accent {
     animation-delay:220ms;
     animation-duration:720ms;
   }
-  html[data-concept="xai"] .concept-nav--ready + .app-shell:not(.updates-shell) .tracker-title-product::after {
-    animation:concept-underline-enter 650ms cubic-bezier(.22,1,.36,1) 400ms both;
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator { animation:concept-measured-width 1700ms ease-in-out 300ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator-track > span:nth-child(1) { animation:concept-cycle-word 650ms cubic-bezier(.22,1,.36,1) 300ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator-track > span:nth-child(2) { animation:concept-cycle-word 650ms cubic-bezier(.22,1,.36,1) 700ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator-track > span:nth-child(3) { animation:concept-cycle-word 650ms cubic-bezier(.22,1,.36,1) 1100ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator-track > span:nth-child(4) { animation:concept-final-word 500ms cubic-bezier(.22,1,.36,1) 1500ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-title-product::after {
+    animation:concept-underline-enter 650ms cubic-bezier(.22,1,.36,1) 1820ms both;
   }
   html[data-concept="xai"] .updates-shell .tracker-title-product::after { transform-origin:left center; animation:concept-underline-enter 650ms cubic-bezier(.22,1,.36,1) 300ms both; }
   html[data-concept="xai"] .updates-shell .tracker-description { animation:concept-copy-enter 450ms ease-out 300ms both; }
-  html[data-concept="xai"] .concept-nav--ready + .app-shell:not(.updates-shell) .tracker-description {
-    animation:concept-copy-enter 450ms ease-out 960ms both;
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-description {
+    animation:concept-copy-enter 450ms ease-out 2020ms both;
   }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .tracker-last-updated { animation:concept-section-enter 480ms cubic-bezier(.22,1,.36,1) 2140ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .tracker-summary-stage { animation:concept-section-enter 520ms cubic-bezier(.22,1,.36,1) 2260ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .discovery-controls { animation:concept-section-enter 520ms cubic-bezier(.22,1,.36,1) 2380ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > #projects { animation:concept-section-enter 560ms cubic-bezier(.22,1,.36,1) 2500ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .site-footer { animation:concept-section-enter 520ms cubic-bezier(.22,1,.36,1) 2600ms both; }
+}
+.tracker-word-rotator { display:inline-block; position:relative; width:var(--word-width-3, auto); vertical-align:baseline; }
+.tracker-word-sizer { visibility:hidden; white-space:nowrap; }
+.tracker-word-rotator-track { position:absolute; inset:0; }
+.tracker-word-rotator-track > span { position:absolute; top:0; left:0; width:max-content; line-height:inherit; white-space:nowrap; opacity:0; }
+.tracker-word-rotator-track > span:last-child { opacity:1; }
+@keyframes concept-measured-width {
+  0%, 16% { width:var(--word-width-0); }
+  24%, 40% { width:var(--word-width-1); }
+  48%, 64% { width:var(--word-width-2); }
+  72%, 100% { width:var(--word-width-3); }
 }
 @keyframes concept-page-enter {
   from { opacity:0; transform:translateY(32px); }
   to { opacity:1; transform:none; }
 }
 @keyframes concept-title-enter {
-  from { opacity:0; transform:translateY(18px) rotateX(-12deg); }
-  to { opacity:1; transform:none; }
+  from { opacity:0; visibility:hidden; transform:translateY(18px) rotateX(-12deg); }
+  to { opacity:1; visibility:visible; transform:none; }
 }
 @keyframes concept-word-enter {
   0% { opacity:0; transform:translateY(42%) rotateX(-28deg) scale(.96); filter:blur(2px); }
@@ -205,9 +238,22 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
   from { opacity:0; transform:scaleX(0); }
   to { opacity:1; transform:scaleX(1); }
 }
+@keyframes concept-cycle-word {
+  0% { opacity:0; transform:translateY(55%); filter:blur(2px); }
+  18%, 68% { opacity:1; transform:none; filter:blur(0); }
+  100% { opacity:0; transform:translateY(-55%); filter:blur(2px); }
+}
+@keyframes concept-final-word {
+  from { opacity:0; transform:translateY(55%); filter:blur(2px); }
+  to { opacity:1; transform:none; filter:blur(0); }
+}
 @keyframes concept-copy-enter {
-  from { opacity:0; transform:translateY(6px); }
-  to { opacity:1; transform:none; }
+  from { opacity:0; visibility:hidden; transform:translateY(6px); }
+  to { opacity:1; visibility:visible; transform:none; }
+}
+@keyframes concept-section-enter {
+  from { opacity:0; visibility:hidden; transform:translateY(10px); }
+  to { opacity:1; visibility:visible; transform:none; }
 }
 html[data-concept="xai"] .summary-wrap { padding:22px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 html[data-concept="xai"] .summary-metrics { justify-content:center; }
