@@ -39,7 +39,7 @@ Additional repository source material:
 
 Global fields:
 
-- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-09-01`.
+- `LAST_UPDATED`: one manually maintained ISO date string for the tracker data freshness indicator. Current value: `2026-09-07`.
 - `SECTORS`: the main data array. It contains PCDS economic sectors, enablers, and a framework overview entry.
 - `ECONOMIC_SECTOR_IDS`: set used by the UI to label rows as `Sector`.
 - `ENABLER_IDS`: set listing the PCDS enabler category ids. It is exported but not currently imported by `src/App.jsx`.
@@ -289,6 +289,9 @@ Latest PDF-derived candidate leftover (30 August 2026):
 
 Parked 13MP / zone candidate-pool re-review (1 September 2026):
 `docs/project-audits/2026-09-01-13mp-zone-candidate-pool.md`. Three live cards were added (SAIC, Sarawak Climate Change Centre, Kuching Low-Carbon Hub). The Baram Renewable Energy Economic Zone remains umbrella context for the Baram Agrovoltaic Project.
+
+Weekly milestone audit (7 September 2026):
+`docs/project-audits/2026-09-07-weekly-milestone.md`. Six Planning / In Progress cards were reviewed. Only the Miri Combined Cycle Gas Turbine (CCGT) Power Plant received a page-backed field change: the M701F gas-turbine installation.
 
 ## Project Summary Writing Standard
 
@@ -587,7 +590,7 @@ Current public display counts:
 - Planning: 9.
 - Ongoing: 37.
 - Completed: 9.
-- Milestones: 165 completed out of 247 active-project milestones.
+- Milestones: 166 completed out of 248 active-project milestones.
 
 Milestone completion is calculated from each milestone's manual `done` boolean:
 

@@ -121,6 +121,16 @@ const updateDefinitions = [
       "https://dayakdaily.com/sarawak-cancer-centre-targets-2032-completion-as-design-and-build-tender-process-begins/",
   },
   {
+    date: "2026-07-03",
+    projectName: "Miri Combined Cycle Gas Turbine (CCGT) Power Plant",
+    description: {
+      en: "Mitsubishi Power Asia Pacific said its M701F gas turbine had been installed at the 500MW Miri Combined Cycle Gas Turbine Power Plant.",
+      ms: "Mitsubishi Power Asia Pacific menyatakan turbin gas M701Fnya telah dipasang di Loji Janakuasa Turbin Gas Kitaran Gabungan Miri berkapasiti 500MW.",
+    },
+    sourceUrl:
+      "https://www.linkedin.com/posts/mitsubishi-power-asia-pacific_miri-gas-turbine-on-base-ceremony-activity-7478688984571998209-_gf6",
+  },
+  {
     date: "2026-07-02",
     projectName: "Community Social Support Centre (CSSC) Network",
     description: {
