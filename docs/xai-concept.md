@@ -96,6 +96,10 @@ The rotating word uses the same line height and baseline as Project. Its slot us
 measured text widths, refreshed when fonts or viewport sizes change. The title moves
 smoothly to remain centred as the slot changes width. Words share a left edge and
 a normal word space; there are no estimated font-width values or vertical offsets.
+Each word now reveals its letters from left to right at 28ms intervals, with a soft
+blur and at most 5px of vertical movement. Each letter holds for about 800ms before
+the next transition. The sequence runs once and settles on Tracker. The description
+starts after the final letters settle. Reduced motion shows the final title directly.
 
 Navigation uses the same DOM and visual order: Projects, Updates, About. The current page
 has `aria-current="page"` and a thin teal underline, including in the mobile menu.

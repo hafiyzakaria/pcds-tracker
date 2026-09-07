@@ -190,24 +190,24 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
     animation-delay:220ms;
     animation-duration:720ms;
   }
-  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator { animation:concept-measured-width 1700ms ease-in-out 300ms both; }
-  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator-track > span:nth-child(1) { animation:concept-cycle-word 650ms cubic-bezier(.22,1,.36,1) 300ms both; }
-  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator-track > span:nth-child(2) { animation:concept-cycle-word 650ms cubic-bezier(.22,1,.36,1) 700ms both; }
-  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator-track > span:nth-child(3) { animation:concept-cycle-word 650ms cubic-bezier(.22,1,.36,1) 1100ms both; }
-  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator-track > span:nth-child(4) { animation:concept-final-word 500ms cubic-bezier(.22,1,.36,1) 1500ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator { animation:concept-measured-width 4700ms ease-in-out 300ms both; }
+  html[data-concept="xai"] .tracker-shell .tracker-word-rotator-track > span { opacity:1; }
+  html[data-concept="xai"] .tracker-shell .tracker-cycle-letter { opacity:0; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-cycle-letter { animation:concept-letter-cycle 1400ms linear calc(var(--word-start) + var(--letter-delay)) both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator-track > span:last-child .tracker-cycle-letter { animation-name:concept-letter-settle; animation-duration:320ms; }
   html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-title-product::after {
-    animation:concept-underline-enter 650ms cubic-bezier(.22,1,.36,1) 1820ms both;
+    animation:concept-underline-enter 650ms cubic-bezier(.22,1,.36,1) 4750ms both;
   }
   html[data-concept="xai"] .updates-shell .tracker-title-product::after { transform-origin:left center; animation:concept-underline-enter 650ms cubic-bezier(.22,1,.36,1) 300ms both; }
   html[data-concept="xai"] .updates-shell .tracker-description { animation:concept-copy-enter 450ms ease-out 300ms both; }
   html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-description {
-    animation:concept-copy-enter 450ms ease-out 2020ms both;
+    animation:concept-copy-enter 450ms ease-out 5020ms both;
   }
-  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .tracker-last-updated { animation:concept-section-enter 480ms cubic-bezier(.22,1,.36,1) 2140ms both; }
-  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .tracker-summary-stage { animation:concept-section-enter 520ms cubic-bezier(.22,1,.36,1) 2260ms both; }
-  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .discovery-controls { animation:concept-section-enter 520ms cubic-bezier(.22,1,.36,1) 2380ms both; }
-  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > #projects { animation:concept-section-enter 560ms cubic-bezier(.22,1,.36,1) 2500ms both; }
-  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .site-footer { animation:concept-section-enter 520ms cubic-bezier(.22,1,.36,1) 2600ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .tracker-last-updated { animation:concept-section-enter 480ms cubic-bezier(.22,1,.36,1) 5140ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .tracker-summary-stage { animation:concept-section-enter 520ms cubic-bezier(.22,1,.36,1) 5260ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .discovery-controls { animation:concept-section-enter 520ms cubic-bezier(.22,1,.36,1) 5380ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > #projects { animation:concept-section-enter 560ms cubic-bezier(.22,1,.36,1) 5500ms both; }
+  html[data-concept="xai"] .concept-nav--ready + .tracker-shell main > .site-footer { animation:concept-section-enter 520ms cubic-bezier(.22,1,.36,1) 5600ms both; }
 }
 .tracker-word-rotator { display:inline-block; position:relative; width:var(--word-width-3, auto); vertical-align:baseline; }
 .tracker-word-sizer { visibility:hidden; white-space:nowrap; }
@@ -215,10 +215,20 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
 .tracker-word-rotator-track > span { position:absolute; top:0; left:0; width:max-content; line-height:inherit; white-space:nowrap; opacity:0; }
 .tracker-word-rotator-track > span:last-child { opacity:1; }
 @keyframes concept-measured-width {
-  0%, 16% { width:var(--word-width-0); }
-  24%, 40% { width:var(--word-width-1); }
-  48%, 64% { width:var(--word-width-2); }
-  72%, 100% { width:var(--word-width-3); }
+  0%, 26% { width:var(--word-width-0); }
+  34%, 56% { width:var(--word-width-1); }
+  64%, 86% { width:var(--word-width-2); }
+  94%, 100% { width:var(--word-width-3); }
+}
+.tracker-cycle-letter { display:inline-block; }
+@keyframes concept-letter-cycle {
+  0% { opacity:0; transform:translateY(5px); filter:blur(4px); }
+  23%, 80% { opacity:1; transform:none; filter:blur(0); }
+  100% { opacity:0; transform:translateY(-3px); filter:blur(4px); }
+}
+@keyframes concept-letter-settle {
+  from { opacity:0; transform:translateY(5px); filter:blur(4px); }
+  to { opacity:1; transform:none; filter:none; }
 }
 @keyframes concept-page-enter {
   from { opacity:0; transform:translateY(32px); }
@@ -230,8 +240,6 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
 }
 @keyframes concept-word-enter {
   0% { opacity:0; transform:translateY(42%) rotateX(-28deg) scale(.96); filter:blur(2px); }
-  58% { opacity:1; transform:translateY(-1.5%) rotateX(1.5deg) scale(1.01); filter:blur(0); }
-  78% { opacity:1; transform:translateY(.5%) rotateX(-.5deg) scale(.999); filter:blur(0); }
   100% { opacity:1; transform:none; filter:none; }
 }
 @keyframes concept-underline-enter {

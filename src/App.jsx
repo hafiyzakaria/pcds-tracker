@@ -171,7 +171,11 @@ function TrackerWordCycle({ finalWord }) {
   return <span ref={ref} className="tracker-word-rotator" aria-label={finalWord}>
     <span className="tracker-word-sizer" aria-hidden="true">{finalWord}</span>
     <span className="tracker-word-rotator-track" aria-hidden="true">
-      <span>Status</span><span>Milestones</span><span>Links</span><span>{finalWord}</span>
+      {['Status', 'Milestones', 'Links', finalWord].map((word, wordIndex) => (
+        <span key={wordIndex} style={{ '--word-start': `${300 + wordIndex * 1400}ms` }}>
+          {Array.from(word).map((letter, index) => <span className="tracker-cycle-letter" key={index} style={{ '--letter-delay': `${index * 28}ms` }}>{letter}</span>)}
+        </span>
+      ))}
     </span>
   </span>;
 }
