@@ -154,6 +154,47 @@ function getMilestoneCountLabel(row, copy) {
   return copy.milestones.count(row.doneMilestones, row.totalMilestones, row.statusMeta.group);
 }
 
+function TrackerWordCycle({ finalWord }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const element = ref.current;
+    const measure = () => {
+      element.querySelectorAll('.tracker-word-rotator-track > span').forEach((word, index) => {
+        element.style.setProperty(`--word-width-${index}`, `${word.offsetWidth}px`);
+      });
+    };
+    const observer = new ResizeObserver(measure);
+    element.querySelectorAll('.tracker-word-rotator-track > span').forEach(word => observer.observe(word));
+    measure();
+    return () => observer.disconnect();
+  }, []);
+  return <span ref={ref} className="tracker-word-rotator" aria-label={finalWord}>
+    <span className="tracker-word-sizer" aria-hidden="true">{finalWord}</span>
+    <span className="tracker-word-rotator-track" aria-hidden="true">
+      {['Status', 'Milestones', 'Links', finalWord].map((word, wordIndex) => (
+        <span key={wordIndex} style={{ '--word-start': `${300 + wordIndex * 1400}ms` }}>
+          {Array.from(word).map((letter, index) => <span className="tracker-cycle-letter" key={index} style={{ '--letter-delay': `${index * 28}ms` }}>{letter}</span>)}
+        </span>
+      ))}
+    </span>
+  </span>;
+}
+
+function renderTrackerHeroTitle(title, concept = false) {
+  const match = title.match(/^(.*?)(Tracker)$/i);
+
+  if (!match) {
+    return title;
+  }
+
+  return <>
+    <span className="tracker-title-word tracker-title-word-prefix">{match[1].trim()}</span>{" "}
+    <span className="tracker-title-word tracker-title-word-accent">
+      {concept ? <TrackerWordCycle finalWord={match[2]} /> : match[2]}
+    </span>
+  </>;
+}
+
 function getProjectRows(sectors, copy) {
   return sectors.filter((sector) => !sector.isOverview).flatMap((sector) => {
     const kind = ECONOMIC_SECTOR_IDS.has(sector.id) ? "sector" : "enabler";
@@ -1449,7 +1490,42 @@ function renderIntroParagraph(paragraph, programmeName) {
   );
 }
 
-export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRef }) {
+export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRef, concept = false }) {
+  useEffect(() => {
+    if (!concept || !('IntersectionObserver' in window)) return;
+    const grid = document.getElementById('project-card-grid');
+    if (!grid) return;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const seen = new Set();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (!isIntersecting) return;
+        observer.unobserve(target);
+        if (seen.has(target.id)) return;
+        seen.add(target.id);
+        if (motion.matches || grid.className.includes('--filter-')) return;
+        const cards = [...grid.querySelectorAll('.project-card')];
+        const index = cards.indexOf(target);
+        const previous = cards[index - 1];
+        const secondInRow = previous && Math.abs(previous.offsetTop - target.offsetTop) < 2;
+        target.animate([
+          { opacity: 0, translate: '0 20px' },
+          { opacity: 1, translate: '0 0' },
+        ], { duration: 450, delay: secondInRow ? 70 : 0, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' });
+      });
+    }, { threshold: 0.08 });
+    const observeCards = () => grid.querySelectorAll('.project-card').forEach((card) => {
+      if (!seen.has(card.id)) observer.observe(card);
+    });
+    observeCards();
+    const mutations = new MutationObserver(observeCards);
+    mutations.observe(grid, { childList: true });
+    const stopMotion = () => {
+      if (motion.matches) grid.querySelectorAll('.project-card').forEach((card) => card.getAnimations().forEach((animation) => animation.cancel()));
+    };
+    motion.addEventListener('change', stopMotion);
+    return () => { observer.disconnect(); mutations.disconnect(); motion.removeEventListener('change', stopMotion); };
+  }, [concept]);
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeClassificationFilter, setActiveClassificationFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState(getInitialSearchQuery);
@@ -1563,7 +1639,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
   };
   return (
     <div
-      className="app-shell"
+      className={`app-shell${concept ? " tracker-shell" : ""}`}
       style={{
         minHeight: "100vh",
         backgroundColor: "var(--page-bg)",
@@ -1797,7 +1873,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
               className="tracker-title-product"
               style={{ color: "var(--brand)", fontSize: "48px", lineHeight: 1.04 }}
             >
-              {copy.header.title}
+              {renderTrackerHeroTitle(copy.header.title, concept)}
             </span>
           </h1>
           <div
@@ -1828,7 +1904,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
             lineHeight: 1.4,
           }}
         >
-          <NavigationPillLink
+          {concept ? <span>{copy.header.lastUpdated} {lastUpdatedLabel}</span> : <NavigationPillLink
             className="tracker-updates-link"
             href={getRouteHref(language === "ms" ? "updates-ms" : "updates")}
             onClick={(event) =>
@@ -1846,10 +1922,10 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
             >
               {"\u2197\uFE0E"}
             </span>
-          </NavigationPillLink>
+          </NavigationPillLink>}
         </p>
 
-        <div style={{ marginBottom: "24px" }}>
+        <div className="tracker-summary-stage" style={{ marginBottom: "24px" }}>
           <SummaryMetrics
             activeFilter={activeFilter}
             onFilter={handleStatusFilter}
@@ -1886,6 +1962,7 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
         </section>
 
         <SiteFooter
+          concept={concept}
           copy={copy}
           currentPage="tracker"
           language={language}

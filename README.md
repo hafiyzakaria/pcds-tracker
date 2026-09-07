@@ -1,5 +1,10 @@
 # PCDS 2030 Project Tracker
 
+V2 is now the default interface for local development and Preview. Read the
+[V2 maintenance and release guide](docs/v2.md). Start all new work from the latest
+`preview` branch. Cursor data changes should use pull requests into `preview`.
+Production remains on V1 until the V2 release is approved.
+
 An independent public tracker for major projects connected to Sarawak's Post COVID-19 Development Strategy 2030 (PCDS 2030).
 
 **View the tracker: [pcds2030.com](https://pcds2030.com)**

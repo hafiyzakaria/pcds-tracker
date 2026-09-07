@@ -1,5 +1,12 @@
 # Design Notes
 
+## V2 Preview
+
+V2 is the default local and Preview interface. Its active behavior is documented in
+[the V2 guide](v2.md). Earlier design notes below also describe V1, which remains on
+Production until release approval. The x.ai name is a historical design reference;
+internal `concept` identifiers remain for compatibility, not as an optional Preview mode.
+
 ## Current Design Direction
 
 The current site is a compact civic-data tracker. It should feel clear, restrained, and evidence-oriented rather than promotional.
