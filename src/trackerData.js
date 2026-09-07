@@ -1,5 +1,5 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-export const LAST_UPDATED = "2026-09-06";
+export const LAST_UPDATED = "2026-09-07";
 
 const PCDS_SUMMARY = {
   name: "PCDS 2030 — Overarching Framework",
@@ -967,11 +967,13 @@ export const SECTORS = [
         milestones: [
           { date: "2023-09", text: "Earthworks began", done: true },
           { date: "2026-03", text: "Project reached 45 percent completion", done: true },
+          { date: "2026-07", text: "M701F gas turbine was installed", done: true },
           { date: "2027", text: "Power plant reaches completion", done: false },
         ],
         sources: [
           { label: "Miri City Council - Earthworks and PETROS delivery role (Oct 2023)", url: "https://miricouncil.gov.my/web/subpage/news_view/733" },
           { label: "Sarawak Tribune - RM2B value and 45 percent progress (Apr 2026)", url: "https://www.sarawaktribune.com/miri-combined-cycle-gas-turbine-project-reaches-45-completion/" },
+          { label: "Mitsubishi Power Asia Pacific - M701F gas turbine installed (Jul 2026)", url: "https://www.linkedin.com/posts/mitsubishi-power-asia-pacific_miri-gas-turbine-on-base-ceremony-activity-7478688984571998209-_gf6" },
         ],
       },
       {
