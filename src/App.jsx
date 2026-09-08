@@ -1496,11 +1496,19 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
     const grid = document.getElementById('project-card-grid');
     if (!grid) return;
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileEntrance = window.matchMedia('(max-width: 760px)').matches;
     const seen = new Set();
+    const pending = new Set();
+    const reveal = (card) => {
+      if (!pending.delete(card)) return false;
+      card.style.removeProperty('opacity');
+      return true;
+    };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(({ target, isIntersecting }) => {
         if (!isIntersecting) return;
         observer.unobserve(target);
+        const wasHidden = reveal(target);
         if (seen.has(target.id)) return;
         seen.add(target.id);
         if (motion.matches || grid.className.includes('--filter-')) return;
@@ -1512,22 +1520,39 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
         // Never hide a card that the user can already see.
         const alreadyVisible = target.getBoundingClientRect().top < window.innerHeight;
         target.animate([
-          { opacity: alreadyVisible ? 1 : 0, translate: '0 12px' },
+          { opacity: wasHidden ? 0 : alreadyVisible ? 1 : 0, translate: mobileEntrance ? '0 20px' : '0 12px' },
           { opacity: 1, translate: '0 0' },
         ], { duration: 450, delay: !alreadyVisible && secondInRow ? 70 : 0, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' });
       });
-    }, { threshold: 0, rootMargin: '0px 0px 64px 0px' });
+    }, { threshold: 0, rootMargin: mobileEntrance ? '0px 0px -16px 0px' : '0px 0px 64px 0px' });
     const observeCards = () => grid.querySelectorAll('.project-card').forEach((card) => {
-      if (!seen.has(card.id)) observer.observe(card);
+      if (seen.has(card.id)) { reveal(card); return; }
+      if (mobileEntrance && !motion.matches && !grid.className.includes('--filter-') && card.getBoundingClientRect().top >= window.innerHeight && !pending.has(card)) {
+        pending.add(card);
+        card.style.opacity = '0';
+      }
+      observer.observe(card);
     });
     observeCards();
     const mutations = new MutationObserver(observeCards);
     mutations.observe(grid, { childList: true });
     const stopMotion = () => {
-      if (motion.matches) grid.querySelectorAll('.project-card').forEach((card) => card.getAnimations().forEach((animation) => animation.cancel()));
+      if (motion.matches) {
+        [...pending].forEach(reveal);
+        grid.querySelectorAll('.project-card').forEach((card) => card.getAnimations().forEach((animation) => animation.cancel()));
+      }
     };
+    const revealFocused = (event) => {
+      const card = event.target.closest('.project-card');
+      if (card && pending.has(card)) {
+        reveal(card);
+        seen.add(card.id);
+        observer.unobserve(card);
+      }
+    };
+    grid.addEventListener('focusin', revealFocused);
     motion.addEventListener('change', stopMotion);
-    return () => { observer.disconnect(); mutations.disconnect(); motion.removeEventListener('change', stopMotion); };
+    return () => { observer.disconnect(); mutations.disconnect(); [...pending].forEach(reveal); grid.removeEventListener('focusin', revealFocused); motion.removeEventListener('change', stopMotion); };
   }, [concept]);
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeClassificationFilter, setActiveClassificationFilter] = useState("all");
