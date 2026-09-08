@@ -17,7 +17,7 @@ const content = {
   },
   ms: {
     title: 'Tentang platform ini',
-    intro: <>Pandangan bebas tentang projek utama yang berkaitan dengan{' '}<span className="concept-about-intro-strategy">Strategi Pembangunan Pasca COVID-19 2030 Sarawak.</span></>,
+    intro: <>Maklumat perkembangan projek utama yang berkaitan dengan{' '}<span className="concept-about-intro-strategy">Strategi Pembangunan Pasca COVID-19 2030 Sarawak.</span></>,
     sections: [
       ['Maklumat yang tersedia', 'Bandingkan status projek, semak pencapaian utama dan ikuti pautan ke sumber awam. Setiap kad menghimpunkan skop, pihak peneraju, nilai dan pencapaian seterusnya yang dilaporkan, apabila maklumat tersedia.'],
       ['Sumber maklumat', 'Platform ini menggunakan laporan awam, media berita dan pengumuman rasmi. Pautan sumber disertakan pada setiap kad projek untuk rujukan kepada laporan asal. Senarai ini meliputi projek terpilih, bukan daftar lengkap semua inisiatif PCDS.'],
