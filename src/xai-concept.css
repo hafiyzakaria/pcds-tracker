@@ -144,6 +144,9 @@ html[data-concept="xai"] main > header { position:relative; text-align:center; p
 html[data-concept="xai"] .concept-about > header { max-width:824px; margin:0 auto; padding:80px 0 48px; text-align:left; border-bottom:1px solid var(--border); }
 html[data-concept="xai"] .concept-about > header h1 { margin:0; font-size:clamp(36px,5vw,52px); line-height:1.12; font-weight:500; }
 html[data-concept="xai"] .concept-about > header p { max-width:720px; margin:28px 0 0; font-size:clamp(19px,2.2vw,22px); line-height:1.55; color:var(--text-secondary); }
+@media (min-width:761px) {
+  .concept-about-intro-strategy { display:block; }
+}
 html[data-concept="xai"] .concept-about-copy { max-width:824px; margin:48px auto 0; text-align:left; }
 @media (max-width:760px) {
   html[data-concept="xai"] .concept-about > header { padding:48px 0 32px; }

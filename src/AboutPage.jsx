@@ -4,7 +4,7 @@ import { getUiCopy } from './localization.js';
 const content = {
   en: {
     title: 'About this tracker',
-    intro: 'An independent view of major projects connected to Sarawak’s Post COVID-19 Development Strategy 2030.',
+    intro: <>An independent view of major projects connected to{' '}<span className="concept-about-intro-strategy">Sarawak’s Post COVID-19 Development Strategy 2030.</span></>,
     sections: [
       ['What you can find', 'Compare project status, review milestones, and follow links to public sources. Each card brings together the reported scope, lead parties, value and next milestone where this information is available.'],
       ['Where the information comes from', 'The tracker uses public reports, news outlets and official announcements. Source links are listed on each project card so you can read the original reports. This is a selected project list, not a complete register of every PCDS initiative.'],
@@ -17,7 +17,7 @@ const content = {
   },
   ms: {
     title: 'Tentang platform ini',
-    intro: 'Pandangan bebas tentang projek utama yang berkaitan dengan Strategi Pembangunan Pasca COVID-19 2030 Sarawak.',
+    intro: <>Pandangan bebas tentang projek utama yang berkaitan dengan{' '}<span className="concept-about-intro-strategy">Strategi Pembangunan Pasca COVID-19 2030 Sarawak.</span></>,
     sections: [
       ['Maklumat yang tersedia', 'Bandingkan status projek, semak pencapaian utama dan ikuti pautan ke sumber awam. Setiap kad menghimpunkan skop, pihak peneraju, nilai dan pencapaian seterusnya yang dilaporkan, apabila maklumat tersedia.'],
       ['Sumber maklumat', 'Platform ini menggunakan laporan awam, media berita dan pengumuman rasmi. Pautan sumber disertakan pada setiap kad projek untuk rujukan kepada laporan asal. Senarai ini meliputi projek terpilih, bukan daftar lengkap semua inisiatif PCDS.'],
