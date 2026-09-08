@@ -18,6 +18,21 @@ export default function Site({ route, concept = false }) {
   const [activeRoute, setActiveRoute] = useState(route);
   const [menuOpen, setMenuOpen] = useState(false);
   const [navIntroDone, setNavIntroDone] = useState(false);
+  const [skipIntro, setSkipIntro] = useState(false);
+  const introChecked = useRef(false);
+  useEffect(() => {
+    if (!concept || introChecked.current) return;
+    introChecked.current = true;
+    try {
+      if (sessionStorage.getItem('pcds-v2-intro-seen') === '1') {
+        queueMicrotask(() => {
+          setNavIntroDone(true);
+          setSkipIntro(true);
+        });
+      }
+      sessionStorage.setItem('pcds-v2-intro-seen', '1');
+    } catch { /* In-memory navigation still skips the introduction. */ }
+  }, [concept]);
   const menuButtonRef = useRef(null);
   const navRef = useRef(null);
   const pageHeadingRef = useRef(null);
@@ -47,6 +62,7 @@ export default function Site({ route, concept = false }) {
 
   useEffect(() => {
     const handlePopState = () => {
+      setSkipIntro(true);
       setNavIntroDone(true);
       setMenuOpen(false);
       setActiveRoute(
@@ -89,6 +105,7 @@ export default function Site({ route, concept = false }) {
     }
 
     event.preventDefault();
+    setSkipIntro(true);
     setNavIntroDone(true);
     setMenuOpen(false);
     const nextRoute = getRouteById(routeId);
@@ -132,7 +149,7 @@ export default function Site({ route, concept = false }) {
 
   return (
     <>
-      {concept && <nav ref={navRef} className={`concept-nav${navIntroDone ? " concept-nav--ready" : ""}`} aria-label="Primary navigation"
+      {concept && <nav ref={navRef} className={`concept-nav${navIntroDone ? " concept-nav--ready" : ""}${skipIntro ? " concept-nav--skip-intro" : ""}`} aria-label="Primary navigation"
         onFocusCapture={() => setNavIntroDone(true)}
         onAnimationEnd={(event) => {
           if (event.animationName === "concept-logo-enter") setNavIntroDone(true);

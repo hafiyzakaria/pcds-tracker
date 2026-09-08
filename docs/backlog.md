@@ -4,7 +4,7 @@
 
 - Review V2 on Preview before authorizing production promotion.
 - At production promotion, enable V2 explicitly for the production build and verify all six routes and SEO metadata.
-- Retire the separate V2 review deployment only after explicit approval.
+- Remove the remaining `v2` DNS record. The Vercel domain mapping is removed; retain the old deployment for recovery.
 
 This file lists outstanding work only. Completed behavior belongs in `docs/product.md`,
 `docs/design.md`, the data methodology, and Git history rather than remaining mixed into the
