@@ -218,7 +218,6 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
     animation-delay:220ms;
     animation-duration:720ms;
   }
-  html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-word-rotator { animation:concept-measured-width 4700ms ease-in-out 300ms both; }
   html[data-concept="xai"] .tracker-shell .tracker-word-rotator-track > span { opacity:1; }
   html[data-concept="xai"] .tracker-shell .tracker-cycle-letter { opacity:0; }
   html[data-concept="xai"] .concept-nav--ready + .tracker-shell .tracker-cycle-letter { animation:concept-letter-cycle 1400ms linear calc(var(--word-start) + var(--letter-delay)) both; }
@@ -242,12 +241,6 @@ html[data-concept="xai"] .tracker-last-updated > span { display:inline-block; pa
 .tracker-word-rotator-track { position:absolute; inset:0; }
 .tracker-word-rotator-track > span { position:absolute; top:0; left:0; width:max-content; line-height:inherit; white-space:nowrap; opacity:0; }
 .tracker-word-rotator-track > span:last-child { opacity:1; }
-@keyframes concept-measured-width {
-  0%, 26% { width:var(--word-width-0); }
-  34%, 56% { width:var(--word-width-1); }
-  64%, 86% { width:var(--word-width-2); }
-  94%, 100% { width:var(--word-width-3); }
-}
 .tracker-cycle-letter { display:inline-block; }
 @keyframes concept-letter-cycle {
   0% { opacity:0; transform:translateY(5px); filter:blur(4px); }

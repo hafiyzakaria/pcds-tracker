@@ -1508,12 +1508,15 @@ export default function App({ language = DEFAULT_LANGUAGE, onNavigate, headingRe
         const index = cards.indexOf(target);
         const previous = cards[index - 1];
         const secondInRow = previous && Math.abs(previous.offsetTop - target.offsetTop) < 2;
+        // Fast scrolling can deliver the observer callback after the card is visible.
+        // Never hide a card that the user can already see.
+        const alreadyVisible = target.getBoundingClientRect().top < window.innerHeight;
         target.animate([
-          { opacity: 0, translate: '0 20px' },
+          { opacity: alreadyVisible ? 1 : 0, translate: '0 12px' },
           { opacity: 1, translate: '0 0' },
-        ], { duration: 450, delay: secondInRow ? 70 : 0, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' });
+        ], { duration: 450, delay: !alreadyVisible && secondInRow ? 70 : 0, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' });
       });
-    }, { threshold: 0.08 });
+    }, { threshold: 0, rootMargin: '0px 0px 64px 0px' });
     const observeCards = () => grid.querySelectorAll('.project-card').forEach((card) => {
       if (!seen.has(card.id)) observer.observe(card);
     });
